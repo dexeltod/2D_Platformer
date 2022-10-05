@@ -1,0 +1,7604 @@
+fileFormatVersion: 2
+guid: 17bc3ce6248b40c49b3aa3ce8ac2623d
+ScriptedImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5068580113603754135
+    second: RoadNight16x16 2.2.1_0
+  - first:
+      213: -34353126604423041
+    second: RoadNight16x16 2.2.1_1
+  - first:
+      213: 9084150374625523238
+    second: RoadNight16x16 2.2.1_2
+  - first:
+      213: -5216733425846575423
+    second: RoadNight16x16 2.2.1_3
+  - first:
+      213: -2660559058736647200
+    second: RoadNight16x16 2.2.1_4
+  - first:
+      213: -5365877488188195270
+    second: RoadNight16x16 2.2.1_5
+  - first:
+      213: -8151046833130256652
+    second: RoadNight16x16 2.2.1_6
+  - first:
+      213: 2394639843810200614
+    second: RoadNight16x16 2.2.1_7
+  - first:
+      213: -2397051898835806299
+    second: RoadNight16x16 2.2.1_8
+  - first:
+      213: 3303437928013988591
+    second: RoadNight16x16 2.2.1_9
+  - first:
+      213: 3583649729805137635
+    second: RoadNight16x16 2.2.1_10
+  - first:
+      213: -8040179301836714860
+    second: RoadNight16x16 2.2.1_11
+  - first:
+      213: -5918510460492953614
+    second: RoadNight16x16 2.2.1_12
+  - first:
+      213: -5534697098945288760
+    second: RoadNight16x16 2.2.1_13
+  - first:
+      213: -701999700988393734
+    second: RoadNight16x16 2.2.1_14
+  - first:
+      213: -6175785169759577438
+    second: RoadNight16x16 2.2.1_15
+  - first:
+      213: 7431784878297542199
+    second: RoadNight16x16 2.2.1_16
+  - first:
+      213: 2719668516816749715
+    second: RoadNight16x16 2.2.1_17
+  - first:
+      213: -6957801876064227436
+    second: RoadNight16x16 2.2.1_18
+  - first:
+      213: -4844483054017227803
+    second: RoadNight16x16 2.2.1_19
+  - first:
+      213: 2965067393177629376
+    second: RoadNight16x16 2.2.1_20
+  - first:
+      213: -9134684940774391438
+    second: RoadNight16x16 2.2.1_21
+  - first:
+      213: -4688127547173372910
+    second: RoadNight16x16 2.2.1_22
+  - first:
+      213: 6392543228242056606
+    second: RoadNight16x16 2.2.1_23
+  - first:
+      213: -2737947638000485598
+    second: RoadNight16x16 2.2.1_24
+  - first:
+      213: 5380636548585550327
+    second: RoadNight16x16 2.2.1_25
+  - first:
+      213: 1811257579674286649
+    second: RoadNight16x16 2.2.1_26
+  - first:
+      213: -7877069674575782615
+    second: RoadNight16x16 2.2.1_27
+  - first:
+      213: -5709191034435378069
+    second: RoadNight16x16 2.2.1_28
+  - first:
+      213: 4557180424901106597
+    second: RoadNight16x16 2.2.1_29
+  - first:
+      213: -931364222375536217
+    second: RoadNight16x16 2.2.1_30
+  - first:
+      213: 8330571658578456639
+    second: RoadNight16x16 2.2.1_31
+  - first:
+      213: -1803860927663748806
+    second: RoadNight16x16 2.2.1_32
+  - first:
+      213: 540677470504725846
+    second: RoadNight16x16 2.2.1_33
+  - first:
+      213: -4814874729816522089
+    second: RoadNight16x16 2.2.1_34
+  - first:
+      213: -2351041394602941311
+    second: RoadNight16x16 2.2.1_35
+  - first:
+      213: -6967119284040585539
+    second: RoadNight16x16 2.2.1_36
+  - first:
+      213: 5923044313921207360
+    second: RoadNight16x16 2.2.1_37
+  - first:
+      213: 303709493654445465
+    second: RoadNight16x16 2.2.1_38
+  - first:
+      213: -4738587116033393940
+    second: RoadNight16x16 2.2.1_39
+  - first:
+      213: 7376881366621298216
+    second: RoadNight16x16 2.2.1_40
+  - first:
+      213: 4860296135264777965
+    second: RoadNight16x16 2.2.1_41
+  - first:
+      213: -3304031254681983098
+    second: RoadNight16x16 2.2.1_42
+  - first:
+      213: -6976725146331330187
+    second: RoadNight16x16 2.2.1_43
+  - first:
+      213: 6780988137657446113
+    second: RoadNight16x16 2.2.1_44
+  - first:
+      213: 8859563517922323586
+    second: RoadNight16x16 2.2.1_45
+  - first:
+      213: -7796739422722318587
+    second: RoadNight16x16 2.2.1_46
+  - first:
+      213: -6042476430108282782
+    second: RoadNight16x16 2.2.1_47
+  - first:
+      213: -5209321922707779642
+    second: RoadNight16x16 2.2.1_48
+  - first:
+      213: 8584613835293247891
+    second: RoadNight16x16 2.2.1_49
+  - first:
+      213: -7052368361400946820
+    second: RoadNight16x16 2.2.1_50
+  - first:
+      213: -4017392920289105346
+    second: RoadNight16x16 2.2.1_51
+  - first:
+      213: 1301262016110526669
+    second: RoadNight16x16 2.2.1_52
+  - first:
+      213: 6635607228660705068
+    second: RoadNight16x16 2.2.1_53
+  - first:
+      213: 1750598311134215951
+    second: RoadNight16x16 2.2.1_54
+  - first:
+      213: 6737954243695164116
+    second: RoadNight16x16 2.2.1_55
+  - first:
+      213: -7068326114222301701
+    second: RoadNight16x16 2.2.1_56
+  - first:
+      213: -5663589038366963669
+    second: RoadNight16x16 2.2.1_57
+  - first:
+      213: 4213518488284493073
+    second: RoadNight16x16 2.2.1_58
+  - first:
+      213: -3333090415097368553
+    second: RoadNight16x16 2.2.1_59
+  - first:
+      213: 5825684859172452685
+    second: RoadNight16x16 2.2.1_60
+  - first:
+      213: 5376085670014688786
+    second: RoadNight16x16 2.2.1_61
+  - first:
+      213: -233828996894269091
+    second: RoadNight16x16 2.2.1_62
+  - first:
+      213: 204861443430517134
+    second: RoadNight16x16 2.2.1_63
+  - first:
+      213: -1936132609067486794
+    second: RoadNight16x16 2.2.1_64
+  - first:
+      213: -2117619059476929672
+    second: RoadNight16x16 2.2.1_65
+  - first:
+      213: -4596284922397263042
+    second: RoadNight16x16 2.2.1_66
+  - first:
+      213: 7120718224295980411
+    second: RoadNight16x16 2.2.1_67
+  - first:
+      213: 3993226357772979567
+    second: RoadNight16x16 2.2.1_68
+  - first:
+      213: 8126604541982298856
+    second: RoadNight16x16 2.2.1_69
+  - first:
+      213: -3691127181935101261
+    second: RoadNight16x16 2.2.1_70
+  - first:
+      213: 8546728749505962197
+    second: RoadNight16x16 2.2.1_71
+  - first:
+      213: -4397772951059612815
+    second: RoadNight16x16 2.2.1_72
+  - first:
+      213: -1741944713837253969
+    second: RoadNight16x16 2.2.1_73
+  - first:
+      213: 1536623624292860825
+    second: RoadNight16x16 2.2.1_74
+  - first:
+      213: 5376716026304402584
+    second: RoadNight16x16 2.2.1_75
+  - first:
+      213: 6900296032600819551
+    second: RoadNight16x16 2.2.1_76
+  - first:
+      213: 5180585023764159167
+    second: RoadNight16x16 2.2.1_77
+  - first:
+      213: 6287541669510331705
+    second: RoadNight16x16 2.2.1_78
+  - first:
+      213: -5761992024660928586
+    second: RoadNight16x16 2.2.1_79
+  - first:
+      213: -8161801947936716344
+    second: RoadNight16x16 2.2.1_80
+  - first:
+      213: 7540177002094647498
+    second: RoadNight16x16 2.2.1_81
+  - first:
+      213: -4763804086366657467
+    second: RoadNight16x16 2.2.1_82
+  - first:
+      213: -4055196334783703914
+    second: RoadNight16x16 2.2.1_83
+  - first:
+      213: -5891661996574843098
+    second: RoadNight16x16 2.2.1_84
+  - first:
+      213: 8958795072950447444
+    second: RoadNight16x16 2.2.1_85
+  - first:
+      213: 7591146623692371838
+    second: RoadNight16x16 2.2.1_86
+  - first:
+      213: -7719930325825790282
+    second: RoadNight16x16 2.2.1_87
+  - first:
+      213: -7171765177502495952
+    second: RoadNight16x16 2.2.1_88
+  - first:
+      213: 552366254046373593
+    second: RoadNight16x16 2.2.1_89
+  - first:
+      213: 5640221097894402538
+    second: RoadNight16x16 2.2.1_90
+  - first:
+      213: -4539738418446007724
+    second: RoadNight16x16 2.2.1_91
+  - first:
+      213: 7197654626956191627
+    second: RoadNight16x16 2.2.1_92
+  - first:
+      213: 3664051758259609992
+    second: RoadNight16x16 2.2.1_93
+  - first:
+      213: -5193801249932174144
+    second: RoadNight16x16 2.2.1_94
+  - first:
+      213: 6539917475871717898
+    second: RoadNight16x16 2.2.1_95
+  - first:
+      213: -4328563436947093943
+    second: RoadNight16x16 2.2.1_96
+  - first:
+      213: 5808525488870062638
+    second: RoadNight16x16 2.2.1_97
+  - first:
+      213: -8628420657589703503
+    second: RoadNight16x16 2.2.1_98
+  - first:
+      213: 1735892499195397980
+    second: RoadNight16x16 2.2.1_99
+  - first:
+      213: -2324606291493580957
+    second: RoadNight16x16 2.2.1_100
+  - first:
+      213: -775373676823154076
+    second: RoadNight16x16 2.2.1_101
+  - first:
+      213: 6323955249178038034
+    second: RoadNight16x16 2.2.1_102
+  - first:
+      213: 6743367400502862357
+    second: RoadNight16x16 2.2.1_103
+  - first:
+      213: 3442815812956992925
+    second: RoadNight16x16 2.2.1_104
+  - first:
+      213: 6602051490967621121
+    second: RoadNight16x16 2.2.1_105
+  - first:
+      213: 5631100523431788224
+    second: RoadNight16x16 2.2.1_106
+  - first:
+      213: -2784311266221243406
+    second: RoadNight16x16 2.2.1_107
+  - first:
+      213: -6932254404366306472
+    second: RoadNight16x16 2.2.1_108
+  - first:
+      213: 1982455523610557339
+    second: RoadNight16x16 2.2.1_109
+  - first:
+      213: -5222833057104163788
+    second: RoadNight16x16 2.2.1_110
+  - first:
+      213: -292273504291033102
+    second: RoadNight16x16 2.2.1_111
+  - first:
+      213: -5559417285893753809
+    second: RoadNight16x16 2.2.1_112
+  - first:
+      213: 2674839412144000028
+    second: RoadNight16x16 2.2.1_113
+  - first:
+      213: 1514813899630412135
+    second: RoadNight16x16 2.2.1_114
+  - first:
+      213: -2073629705514034375
+    second: RoadNight16x16 2.2.1_115
+  - first:
+      213: 1887611972092993874
+    second: RoadNight16x16 2.2.1_116
+  - first:
+      213: -5651267332692720333
+    second: RoadNight16x16 2.2.1_117
+  - first:
+      213: 6493695285057529768
+    second: RoadNight16x16 2.2.1_118
+  - first:
+      213: -6213099500546763008
+    second: RoadNight16x16 2.2.1_119
+  - first:
+      213: 8418524224958586163
+    second: RoadNight16x16 2.2.1_120
+  - first:
+      213: 6260349574253616066
+    second: RoadNight16x16 2.2.1_121
+  - first:
+      213: -4187352929014149682
+    second: RoadNight16x16 2.2.1_122
+  - first:
+      213: -4297651908916556808
+    second: RoadNight16x16 2.2.1_123
+  - first:
+      213: -5423169205927274665
+    second: RoadNight16x16 2.2.1_124
+  - first:
+      213: 6914805360016779212
+    second: RoadNight16x16 2.2.1_125
+  - first:
+      213: 4804908376122842499
+    second: RoadNight16x16 2.2.1_126
+  - first:
+      213: 5168394322709029009
+    second: RoadNight16x16 2.2.1_127
+  - first:
+      213: -4258773918412756952
+    second: RoadNight16x16 2.2.1_128
+  - first:
+      213: -6332970104320664304
+    second: RoadNight16x16 2.2.1_129
+  - first:
+      213: -2124725752508727422
+    second: RoadNight16x16 2.2.1_130
+  - first:
+      213: 1992684522200079106
+    second: RoadNight16x16 2.2.1_131
+  - first:
+      213: -5165602186089289760
+    second: RoadNight16x16 2.2.1_132
+  - first:
+      213: 5441086902578310355
+    second: RoadNight16x16 2.2.1_133
+  - first:
+      213: -867380035854886969
+    second: RoadNight16x16 2.2.1_134
+  - first:
+      213: 30302332739590362
+    second: RoadNight16x16 2.2.1_135
+  - first:
+      213: 7159669156034103250
+    second: RoadNight16x16 2.2.1_136
+  - first:
+      213: -7824369382161487754
+    second: RoadNight16x16 2.2.1_137
+  - first:
+      213: -4886925824283113484
+    second: RoadNight16x16 2.2.1_138
+  - first:
+      213: 6944353013648651931
+    second: RoadNight16x16 2.2.1_139
+  - first:
+      213: -1393437015790994346
+    second: RoadNight16x16 2.2.1_140
+  - first:
+      213: 5479288068029555791
+    second: RoadNight16x16 2.2.1_141
+  - first:
+      213: 337688812425336438
+    second: RoadNight16x16 2.2.1_142
+  - first:
+      213: 5314992481850284965
+    second: RoadNight16x16 2.2.1_143
+  - first:
+      213: 5637451432996944174
+    second: RoadNight16x16 2.2.1_144
+  - first:
+      213: 8581450412656794526
+    second: RoadNight16x16 2.2.1_145
+  - first:
+      213: -7301485901411013536
+    second: RoadNight16x16 2.2.1_146
+  - first:
+      213: 8042965700837852029
+    second: RoadNight16x16 2.2.1_147
+  - first:
+      213: -2897981794680221944
+    second: RoadNight16x16 2.2.1_148
+  - first:
+      213: 8774177473873536150
+    second: RoadNight16x16 2.2.1_149
+  - first:
+      213: 2134646407500681738
+    second: RoadNight16x16 2.2.1_150
+  - first:
+      213: 564921929892209911
+    second: RoadNight16x16 2.2.1_151
+  - first:
+      213: -6014548695265578677
+    second: RoadNight16x16 2.2.1_152
+  - first:
+      213: -1336664204424871301
+    second: RoadNight16x16 2.2.1_153
+  - first:
+      213: 4601169651634653954
+    second: RoadNight16x16 2.2.1_154
+  - first:
+      213: -1681224364627990002
+    second: RoadNight16x16 2.2.1_155
+  - first:
+      213: 4301391324556695308
+    second: RoadNight16x16 2.2.1_156
+  - first:
+      213: -5435270059135652925
+    second: RoadNight16x16 2.2.1_157
+  - first:
+      213: -2939691830287801727
+    second: RoadNight16x16 2.2.1_158
+  - first:
+      213: 2577041180807352927
+    second: RoadNight16x16 2.2.1_159
+  - first:
+      213: 4685163125961849230
+    second: RoadNight16x16 2.2.1_160
+  - first:
+      213: -4951624252836484890
+    second: RoadNight16x16 2.2.1_161
+  - first:
+      213: 4809340275706630935
+    second: RoadNight16x16 2.2.1_162
+  - first:
+      213: -8287230599336572930
+    second: RoadNight16x16 2.2.1_163
+  - first:
+      213: 529279238603658368
+    second: RoadNight16x16 2.2.1_164
+  - first:
+      213: 7368006225594605667
+    second: RoadNight16x16 2.2.1_165
+  - first:
+      213: -3435344118033454477
+    second: RoadNight16x16 2.2.1_166
+  - first:
+      213: -8487221306568925374
+    second: RoadNight16x16 2.2.1_167
+  - first:
+      213: 1863466709663901406
+    second: RoadNight16x16 2.2.1_168
+  - first:
+      213: -3127004178825426259
+    second: RoadNight16x16 2.2.1_169
+  - first:
+      213: -5861328533938662390
+    second: RoadNight16x16 2.2.1_170
+  - first:
+      213: 2256826167698025614
+    second: RoadNight16x16 2.2.1_171
+  - first:
+      213: -2272358197827365422
+    second: RoadNight16x16 2.2.1_172
+  - first:
+      213: 9203941281433111773
+    second: RoadNight16x16 2.2.1_173
+  - first:
+      213: -8035075058782345613
+    second: RoadNight16x16 2.2.1_174
+  - first:
+      213: -505487999140395835
+    second: RoadNight16x16 2.2.1_175
+  - first:
+      213: 6729393826466409707
+    second: RoadNight16x16 2.2.1_176
+  - first:
+      213: -7273083667108950187
+    second: RoadNight16x16 2.2.1_177
+  - first:
+      213: -947955568508624254
+    second: RoadNight16x16 2.2.1_178
+  - first:
+      213: 7978778930015966430
+    second: RoadNight16x16 2.2.1_179
+  - first:
+      213: -8308736467985698747
+    second: RoadNight16x16 2.2.1_180
+  - first:
+      213: -4921078408766701155
+    second: RoadNight16x16 2.2.1_181
+  - first:
+      213: -2509790808011662376
+    second: RoadNight16x16 2.2.1_182
+  - first:
+      213: 1855821628201249427
+    second: RoadNight16x16 2.2.1_183
+  - first:
+      213: -1697398043444052366
+    second: RoadNight16x16 2.2.1_184
+  - first:
+      213: -5192598128634337968
+    second: RoadNight16x16 2.2.1_185
+  - first:
+      213: -442786048912937426
+    second: RoadNight16x16 2.2.1_186
+  - first:
+      213: -598894642521117985
+    second: RoadNight16x16 2.2.1_187
+  - first:
+      213: -3289989439715250172
+    second: RoadNight16x16 2.2.1_188
+  - first:
+      213: -2647866972955407063
+    second: RoadNight16x16 2.2.1_189
+  - first:
+      213: 6638997518164103682
+    second: RoadNight16x16 2.2.1_190
+  - first:
+      213: -6864137104230380180
+    second: RoadNight16x16 2.2.1_191
+  - first:
+      213: 2271947481620239882
+    second: RoadNight16x16 2.2.1_192
+  - first:
+      213: -3670514616113486773
+    second: RoadNight16x16 2.2.1_193
+  - first:
+      213: -7085723708124729925
+    second: RoadNight16x16 2.2.1_194
+  - first:
+      213: 4608342476040452862
+    second: RoadNight16x16 2.2.1_195
+  - first:
+      213: -6990632516224941299
+    second: RoadNight16x16 2.2.1_196
+  - first:
+      213: -1684362070748205505
+    second: RoadNight16x16 2.2.1_197
+  - first:
+      213: 5231638321004706082
+    second: RoadNight16x16 2.2.1_198
+  - first:
+      213: -4165122593230934920
+    second: RoadNight16x16 2.2.1_199
+  - first:
+      213: 2888553647793774021
+    second: RoadNight16x16 2.2.1_200
+  - first:
+      213: -2581529153115856303
+    second: RoadNight16x16 2.2.1_201
+  - first:
+      213: -4716267255929112577
+    second: RoadNight16x16 2.2.1_202
+  - first:
+      213: 4631075072783911353
+    second: RoadNight16x16 2.2.1_203
+  - first:
+      213: 2159369725787478294
+    second: RoadNight16x16 2.2.1_204
+  - first:
+      213: 6316496499080723477
+    second: RoadNight16x16 2.2.1_205
+  - first:
+      213: -1881799352454472846
+    second: RoadNight16x16 2.2.1_206
+  - first:
+      213: -7526107156620773682
+    second: RoadNight16x16 2.2.1_207
+  - first:
+      213: 6773325564949777718
+    second: RoadNight16x16 2.2.1_208
+  - first:
+      213: 406718911548591941
+    second: RoadNight16x16 2.2.1_209
+  - first:
+      213: 6226551722059103471
+    second: RoadNight16x16 2.2.1_210
+  - first:
+      213: -5930665674474616524
+    second: RoadNight16x16 2.2.1_211
+  - first:
+      213: 2815384680552447009
+    second: RoadNight16x16 2.2.1_212
+  - first:
+      213: 928197429433515139
+    second: RoadNight16x16 2.2.1_213
+  - first:
+      213: 1139468634681760591
+    second: RoadNight16x16 2.2.1_214
+  - first:
+      213: 8659147412210821018
+    second: RoadNight16x16 2.2.1_215
+  - first:
+      213: -499431041350618147
+    second: RoadNight16x16 2.2.1_216
+  - first:
+      213: -5194955780738240410
+    second: RoadNight16x16 2.2.1_217
+  - first:
+      213: -1632686007017592402
+    second: RoadNight16x16 2.2.1_218
+  - first:
+      213: 8976814435851387631
+    second: RoadNight16x16 2.2.1_219
+  - first:
+      213: -5114056836360884445
+    second: RoadNight16x16 2.2.1_220
+  - first:
+      213: -617566595391380141
+    second: RoadNight16x16 2.2.1_221
+  - first:
+      213: 3798292474352658269
+    second: RoadNight16x16 2.2.1_222
+  - first:
+      213: -4565416906727230726
+    second: RoadNight16x16 2.2.1_223
+  - first:
+      213: -3072527761153903168
+    second: RoadNight16x16 2.2.1_224
+  - first:
+      213: -4583144382091727668
+    second: RoadNight16x16 2.2.1_225
+  - first:
+      213: 2008784241348888993
+    second: RoadNight16x16 2.2.1_226
+  - first:
+      213: 1627172201726145208
+    second: RoadNight16x16 2.2.1_227
+  - first:
+      213: -3854736468612469727
+    second: RoadNight16x16 2.2.1_228
+  - first:
+      213: -3524390371627312246
+    second: RoadNight16x16 2.2.1_229
+  - first:
+      213: -5341011990015124312
+    second: RoadNight16x16 2.2.1_230
+  - first:
+      213: 1956708308716829717
+    second: RoadNight16x16 2.2.1_231
+  - first:
+      213: 2178731702211709960
+    second: RoadNight16x16 2.2.1_232
+  - first:
+      213: 7623266801936416582
+    second: RoadNight16x16 2.2.1_233
+  - first:
+      213: -4868956953924739119
+    second: RoadNight16x16 2.2.1_234
+  - first:
+      213: 8720659222465018327
+    second: RoadNight16x16 2.2.1_235
+  - first:
+      213: -7783303373315024676
+    second: RoadNight16x16 2.2.1_236
+  - first:
+      213: -2957054662112120242
+    second: RoadNight16x16 2.2.1_237
+  - first:
+      213: 7877552281508248642
+    second: RoadNight16x16 2.2.1_238
+  - first:
+      213: -1825280824033002585
+    second: RoadNight16x16 2.2.1_239
+  - first:
+      213: 1192850265349971498
+    second: RoadNight16x16 2.2.1_240
+  - first:
+      213: -4472199575113500823
+    second: RoadNight16x16 2.2.1_241
+  - first:
+      213: -11440802538687560
+    second: RoadNight16x16 2.2.1_242
+  - first:
+      213: 4034323943920712840
+    second: RoadNight16x16 2.2.1_243
+  - first:
+      213: 7361349861990688222
+    second: RoadNight16x16 2.2.1_244
+  - first:
+      213: -2817564506925948433
+    second: RoadNight16x16 2.2.1_245
+  - first:
+      213: -6564818827849888347
+    second: RoadNight16x16 2.2.1_246
+  - first:
+      213: 4623509731634742917
+    second: RoadNight16x16 2.2.1_247
+  - first:
+      213: 5072802930110757282
+    second: RoadNight16x16 2.2.1_248
+  - first:
+      213: -3504947212804398488
+    second: RoadNight16x16 2.2.1_249
+  - first:
+      213: -4174865218240632011
+    second: RoadNight16x16 2.2.1_250
+  - first:
+      213: 7891474587963316299
+    second: RoadNight16x16 2.2.1_251
+  - first:
+      213: -808999020567047657
+    second: RoadNight16x16 2.2.1_252
+  - first:
+      213: -5853908576180770435
+    second: RoadNight16x16 2.2.1_253
+  - first:
+      213: -8262656558551104938
+    second: RoadNight16x16 2.2.1_254
+  - first:
+      213: -1833048175471353071
+    second: RoadNight16x16 2.2.1_255
+  - first:
+      213: -1122562942997306469
+    second: RoadNight16x16 2.2.1_256
+  - first:
+      213: -4674235689550076411
+    second: RoadNight16x16 2.2.1_257
+  - first:
+      213: 2662182742388148982
+    second: RoadNight16x16 2.2.1_258
+  - first:
+      213: 5411396350601667666
+    second: RoadNight16x16 2.2.1_259
+  - first:
+      213: -961458267440823416
+    second: RoadNight16x16 2.2.1_260
+  - first:
+      213: 4704947601548984296
+    second: RoadNight16x16 2.2.1_261
+  - first:
+      213: -1765886573604542456
+    second: RoadNight16x16 2.2.1_262
+  - first:
+      213: 3911046214928981263
+    second: RoadNight16x16 2.2.1_263
+  - first:
+      213: 2995917782247624046
+    second: RoadNight16x16 2.2.1_264
+  - first:
+      213: -3948742872744065557
+    second: RoadNight16x16 2.2.1_265
+  - first:
+      213: 4902144903968355680
+    second: RoadNight16x16 2.2.1_266
+  - first:
+      213: -6628721787620652911
+    second: RoadNight16x16 2.2.1_267
+  - first:
+      213: -423668908773925575
+    second: RoadNight16x16 2.2.1_268
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: d1956ce1ff810451f9738b29e9df561a, type: 3}
+  settings:
+    importType: 0
+    transparencyMode: 0
+    transparentColor: {r: 1, g: 0, b: 1, a: 1}
+    pixelsPerUnit: 16
+    spriteAlignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    generateAnimations: 1
+    createAnimationAssets: 0
+    bindType: 0
+    animType: 0
+    baseAnimator: {instanceID: 0}
+    buildAtlas: 0
+    tileSize: {x: 16, y: 16}
+    tileNameType: 0
+    tileEmpty: 0
+  textureImporterSettings:
+    seamlessCubemap: 0
+    mipmapBias: 0.5
+    wrapMode: 1
+    wrapModeU: 0
+    wrapModeV: 0
+    wrapModeW: 0
+    alphaIsTransparency: 1
+    spriteMode: 2
+    spritePixelsPerUnit: 16
+    spriteTessellationDetail: 0
+    spriteExtrude: 0
+    spriteMeshType: 1
+    spriteAlignment: 0
+    spritePivot: {x: 0, y: 0}
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 1
+    aniso: 1
+    filterMode: 0
+    cubemapConvolution: 0
+    textureType: 8
+    textureShape: 1
+    mipmapFilter: 0
+    mipmapEnabled: 0
+    sRGBTexture: 1
+    fadeOut: 0
+    borderMipmap: 0
+    mipMapsPreserveCoverage: 0
+    mipmapFadeDistanceStart: 1
+    alphaTestReferenceValue: 1
+    convertToNormalMap: 0
+    heightmapScale: 0
+    normalMapFilter: 0
+    alphaSource: 1
+    singleChannelComponent: 0
+    readable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    npotScale: 0
+    generateCubemap: 0
+    mipmapFadeDistanceEnd: 3
+  animationSettings: []
+  texture: {instanceID: 0}
+  spriteImportData:
+  - name: RoadNight16x16 2.2.1_0
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 366
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 9670a0dbd39c8a9b0800000000000000
+  - name: RoadNight16x16 2.2.1_1
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 366
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: f70c1db6304f58ff0800000000000000
+  - name: RoadNight16x16 2.2.1_2
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 350
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 62639c5c2a2611e70800000000000000
+  - name: RoadNight16x16 2.2.1_3
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 350
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 1ce1280b6907a97b0800000000000000
+  - name: RoadNight16x16 2.2.1_4
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 350
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 0e3fd00e1abc31bd0800000000000000
+  - name: RoadNight16x16 2.2.1_5
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 350
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: a3ef648aad29885b0800000000000000
+  - name: RoadNight16x16 2.2.1_6
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 350
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 4f6c2b3671aa1ee80800000000000000
+  - name: RoadNight16x16 2.2.1_7
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 350
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 62ccd4720487b3120800000000000000
+  - name: RoadNight16x16 2.2.1_8
+    rect:
+      serializedVersion: 2
+      x: 368
+      y: 350
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 5a757b58ff5fbbed0800000000000000
+  - name: RoadNight16x16 2.2.1_9
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 350
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: fe283dc0b4b28dd20800000000000000
+  - name: RoadNight16x16 2.2.1_10
+    rect:
+      serializedVersion: 2
+      x: 400
+      y: 350
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 3e6b578317eabb130800000000000000
+  - name: RoadNight16x16 2.2.1_11
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 350
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 49c039f068b8b6090800000000000000
+  - name: RoadNight16x16 2.2.1_12
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 334
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 2f742e2081a3ddda0800000000000000
+  - name: RoadNight16x16 2.2.1_13
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 334
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 8c52bf5005ec033b0800000000000000
+  - name: RoadNight16x16 2.2.1_14
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 334
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: af60826cdfef146f0800000000000000
+  - name: RoadNight16x16 2.2.1_15
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 334
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 2aada5bdb143b4aa0800000000000000
+  - name: RoadNight16x16 2.2.1_16
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 334
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 73e6b06b8f0032760800000000000000
+  - name: RoadNight16x16 2.2.1_17
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 334
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 3940dab4b143eb520800000000000000
+  - name: RoadNight16x16 2.2.1_18
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 334
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 49f25a7ce0ce07f90800000000000000
+  - name: RoadNight16x16 2.2.1_19
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 334
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 5e357ec5450f4ccb0800000000000000
+  - name: RoadNight16x16 2.2.1_20
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 334
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 0c23271a519062920800000000000000
+  - name: RoadNight16x16 2.2.1_21
+    rect:
+      serializedVersion: 2
+      x: 432
+      y: 334
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 271480aa1741b3180800000000000000
+  - name: RoadNight16x16 2.2.1_22
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 334
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 21cf109a5dc60feb0800000000000000
+  - name: RoadNight16x16 2.2.1_23
+    rect:
+      serializedVersion: 2
+      x: 464
+      y: 334
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: e9552ba6230e6b850800000000000000
+  - name: RoadNight16x16 2.2.1_24
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 318
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 22b7c57212bd00ad0800000000000000
+  - name: RoadNight16x16 2.2.1_25
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 318
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 7f1fcefde6cdbaa40800000000000000
+  - name: RoadNight16x16 2.2.1_26
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 318
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 93a38391c21e22910800000000000000
+  - name: RoadNight16x16 2.2.1_27
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 318
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 92d98ef8dd60fa290800000000000000
+  - name: RoadNight16x16 2.2.1_28
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 318
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: b6462a5b001e4c0b0800000000000000
+  - name: RoadNight16x16 2.2.1_29
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 318
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 5ab1893937b5e3f30800000000000000
+  - name: RoadNight16x16 2.2.1_30
+    rect:
+      serializedVersion: 2
+      x: 368
+      y: 318
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 7a95cc0ac212313f0800000000000000
+  - name: RoadNight16x16 2.2.1_31
+    rect:
+      serializedVersion: 2
+      x: 432
+      y: 318
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: f30718549c22c9370800000000000000
+  - name: RoadNight16x16 2.2.1_32
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 318
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: a3945662b0667f6e0800000000000000
+  - name: RoadNight16x16 2.2.1_33
+    rect:
+      serializedVersion: 2
+      x: 464
+      y: 318
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 65dad777b4fd08700800000000000000
+  - name: RoadNight16x16 2.2.1_34
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 302
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 792084b81f02e2db0800000000000000
+  - name: RoadNight16x16 2.2.1_35
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 302
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 184e376de4c6f5fd0800000000000000
+  - name: RoadNight16x16 2.2.1_36
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 302
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: dbeacfeace1df4f90800000000000000
+  - name: RoadNight16x16 2.2.1_37
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 302
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 04cbb200c61e23250800000000000000
+  - name: RoadNight16x16 2.2.1_38
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 302
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 99ddf24ec2ef63400800000000000000
+  - name: RoadNight16x16 2.2.1_39
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 302
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: cea3693cf182d3eb0800000000000000
+  - name: RoadNight16x16 2.2.1_40
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 302
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 82e19afb482ff5660800000000000000
+  - name: RoadNight16x16 2.2.1_41
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 302
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: de639a5859d337340800000000000000
+  - name: RoadNight16x16 2.2.1_42
+    rect:
+      serializedVersion: 2
+      x: 336
+      y: 302
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 68764e15419b522d0800000000000000
+  - name: RoadNight16x16 2.2.1_43
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 302
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 579c2659171bd2f90800000000000000
+  - name: RoadNight16x16 2.2.1_44
+    rect:
+      serializedVersion: 2
+      x: 368
+      y: 302
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 1eea533b8c8ea1e50800000000000000
+  - name: RoadNight16x16 2.2.1_45
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 302
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 28c25ce541e73fa70800000000000000
+  - name: RoadNight16x16 2.2.1_46
+    rect:
+      serializedVersion: 2
+      x: 400
+      y: 302
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 50f1a5ecdca6cc390800000000000000
+  - name: RoadNight16x16 2.2.1_47
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 302
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 260b9b383bfc42ca0800000000000000
+  - name: RoadNight16x16 2.2.1_48
+    rect:
+      serializedVersion: 2
+      x: 432
+      y: 302
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 6cf095cbf45c4b7b0800000000000000
+  - name: RoadNight16x16 2.2.1_49
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 302
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 399ce8acccca22770800000000000000
+  - name: RoadNight16x16 2.2.1_50
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 286
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: c7f2e712754f02e90800000000000000
+  - name: RoadNight16x16 2.2.1_51
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 286
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: e3aaffe8c6a5f38c0800000000000000
+  - name: RoadNight16x16 2.2.1_52
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 286
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: dc00af5c8e20f0210800000000000000
+  - name: RoadNight16x16 2.2.1_53
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 286
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: c27e5551e99661c50800000000000000
+  - name: RoadNight16x16 2.2.1_54
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 286
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: f0fbd8f83ef5b4810800000000000000
+  - name: RoadNight16x16 2.2.1_55
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 286
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 4da39487fa5028d50800000000000000
+  - name: RoadNight16x16 2.2.1_56
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 286
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: bfd992549d248ed90800000000000000
+  - name: RoadNight16x16 2.2.1_57
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 286
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: b28475ec6c3e661b0800000000000000
+  - name: RoadNight16x16 2.2.1_58
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 286
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 115fcbcadbc697a30800000000000000
+  - name: RoadNight16x16 2.2.1_59
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 286
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 710bcdb4deb7eb1d0800000000000000
+  - name: RoadNight16x16 2.2.1_60
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 286
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: d49785c738df8d050800000000000000
+  - name: RoadNight16x16 2.2.1_61
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 286
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 21e1b43ee61bb9a40800000000000000
+  - name: RoadNight16x16 2.2.1_62
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 286
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: d516ee524c541ccf0800000000000000
+  - name: RoadNight16x16 2.2.1_63
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 286
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: e8989dbb560d7d200800000000000000
+  - name: RoadNight16x16 2.2.1_64
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 286
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 6b17b7e66a97125e0800000000000000
+  - name: RoadNight16x16 2.2.1_65
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 286
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 873e74e5fa4bc92e0800000000000000
+  - name: RoadNight16x16 2.2.1_66
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 286
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: e3bf60a1737b630c0800000000000000
+  - name: RoadNight16x16 2.2.1_67
+    rect:
+      serializedVersion: 2
+      x: 336
+      y: 286
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: b7defc07f7fd1d260800000000000000
+  - name: RoadNight16x16 2.2.1_68
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 286
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: f6d09c2273aca6730800000000000000
+  - name: RoadNight16x16 2.2.1_69
+    rect:
+      serializedVersion: 2
+      x: 368
+      y: 286
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 8e25eea36cf77c070800000000000000
+  - name: RoadNight16x16 2.2.1_70
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 286
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 3ba38fb626b76ccc0800000000000000
+  - name: RoadNight16x16 2.2.1_71
+    rect:
+      serializedVersion: 2
+      x: 400
+      y: 286
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 5d0ebe1e3841c9670800000000000000
+  - name: RoadNight16x16 2.2.1_72
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 286
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 17b35492dc8f7f2c0800000000000000
+  - name: RoadNight16x16 2.2.1_73
+    rect:
+      serializedVersion: 2
+      x: 432
+      y: 286
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: faa6c51138e53d7e0800000000000000
+  - name: RoadNight16x16 2.2.1_74
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 286
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 993037f7b0f235510800000000000000
+  - name: RoadNight16x16 2.2.1_75
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 270
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 89416062dbeed9a40800000000000000
+  - name: RoadNight16x16 2.2.1_76
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 270
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: f57853caea6c2cf50800000000000000
+  - name: RoadNight16x16 2.2.1_77
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 270
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: fbadb2691a225e740800000000000000
+  - name: RoadNight16x16 2.2.1_78
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 270
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 93d31a9e5d5d14750800000000000000
+  - name: RoadNight16x16 2.2.1_79
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 270
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 6b7937b28ca4900b0800000000000000
+  - name: RoadNight16x16 2.2.1_80
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 270
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 8c904261f547bbe80800000000000000
+  - name: RoadNight16x16 2.2.1_81
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 270
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: ac8db69a80714a860800000000000000
+  - name: RoadNight16x16 2.2.1_82
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 270
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 544af845c6193edb0800000000000000
+  - name: RoadNight16x16 2.2.1_83
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 270
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 69450ca3b6c09b7c0800000000000000
+  - name: RoadNight16x16 2.2.1_84
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 270
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 62fdc7521ac9c3ea0800000000000000
+  - name: RoadNight16x16 2.2.1_85
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 270
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 45d2bb237a8045c70800000000000000
+  - name: RoadNight16x16 2.2.1_86
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 270
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: e77f61772ab295960800000000000000
+  - name: RoadNight16x16 2.2.1_87
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 270
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 6be5366454c4dd490800000000000000
+  - name: RoadNight16x16 2.2.1_88
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 270
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 03b82769195c87c90800000000000000
+  - name: RoadNight16x16 2.2.1_89
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 270
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 9d6e8567e266aa700800000000000000
+  - name: RoadNight16x16 2.2.1_90
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 270
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: ae9d8a29437164e40800000000000000
+  - name: RoadNight16x16 2.2.1_91
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 270
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 452055306fb9ff0c0800000000000000
+  - name: RoadNight16x16 2.2.1_92
+    rect:
+      serializedVersion: 2
+      x: 336
+      y: 270
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: b87aba79fb433e360800000000000000
+  - name: RoadNight16x16 2.2.1_93
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 270
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 881a5b149a359d230800000000000000
+  - name: RoadNight16x16 2.2.1_94
+    rect:
+      serializedVersion: 2
+      x: 368
+      y: 270
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 0cc10d7f749ebe7b0800000000000000
+  - name: RoadNight16x16 2.2.1_95
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 270
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: a0af3b95b4472ca50800000000000000
+  - name: RoadNight16x16 2.2.1_96
+    rect:
+      serializedVersion: 2
+      x: 400
+      y: 270
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 9464601ec7adde3c0800000000000000
+  - name: RoadNight16x16 2.2.1_97
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 270
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: e2af6e048270c9050800000000000000
+  - name: RoadNight16x16 2.2.1_98
+    rect:
+      serializedVersion: 2
+      x: 432
+      y: 270
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 1bc29b39021b14880800000000000000
+  - name: RoadNight16x16 2.2.1_99
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 270
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: c578ec6e701271810800000000000000
+  - name: RoadNight16x16 2.2.1_100
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 254
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 36f03e8e4e65dbfd0800000000000000
+  - name: RoadNight16x16 2.2.1_101
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 254
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 46274c0cfb15d35f0800000000000000
+  - name: RoadNight16x16 2.2.1_102
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 254
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 21f49ba1bc333c750800000000000000
+  - name: RoadNight16x16 2.2.1_103
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 254
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 5122ce04ce0459d50800000000000000
+  - name: RoadNight16x16 2.2.1_104
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 254
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: d953666bdb657cf20800000000000000
+  - name: RoadNight16x16 2.2.1_105
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 254
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 10e86f31ad23f9b50800000000000000
+  - name: RoadNight16x16 2.2.1_106
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 254
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 0cefaa95710b52e40800000000000000
+  - name: RoadNight16x16 2.2.1_107
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 254
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 2f3c3c0c7a32c59d0800000000000000
+  - name: RoadNight16x16 2.2.1_108
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 254
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 853fb1f095fabcf90800000000000000
+  - name: RoadNight16x16 2.2.1_109
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 254
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: b9b71d39bc8138b10800000000000000
+  - name: RoadNight16x16 2.2.1_110
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 254
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 43c832e9105c487b0800000000000000
+  - name: RoadNight16x16 2.2.1_111
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 254
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 2ff697fdbc2a1fbf0800000000000000
+  - name: RoadNight16x16 2.2.1_112
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 254
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: f24f22cfe6bf8d2b0800000000000000
+  - name: RoadNight16x16 2.2.1_113
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 254
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: c1cce000640fe1520800000000000000
+  - name: RoadNight16x16 2.2.1_114
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 254
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 7618b444733b50510800000000000000
+  - name: RoadNight16x16 2.2.1_115
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 254
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 93b5327f4ccf833e0800000000000000
+  - name: RoadNight16x16 2.2.1_116
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 254
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 251a06e6615223a10800000000000000
+  - name: RoadNight16x16 2.2.1_117
+    rect:
+      serializedVersion: 2
+      x: 336
+      y: 254
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 335c4187d4aa291b0800000000000000
+  - name: RoadNight16x16 2.2.1_118
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 254
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 8a7ab79e47d3e1a50800000000000000
+  - name: RoadNight16x16 2.2.1_119
+    rect:
+      serializedVersion: 2
+      x: 368
+      y: 254
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 007d0c33ce2a6c9a0800000000000000
+  - name: RoadNight16x16 2.2.1_120
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 254
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 33d5da9ed2b94d470800000000000000
+  - name: RoadNight16x16 2.2.1_121
+    rect:
+      serializedVersion: 2
+      x: 400
+      y: 254
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 2cb972fd4ca31e650800000000000000
+  - name: RoadNight16x16 2.2.1_122
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 254
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: ecd8be452b883e5c0800000000000000
+  - name: RoadNight16x16 2.2.1_123
+    rect:
+      serializedVersion: 2
+      x: 432
+      y: 254
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 8fbcfb8db5cab54c0800000000000000
+  - name: RoadNight16x16 2.2.1_124
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 254
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 7571ed327580db4b0800000000000000
+  - name: RoadNight16x16 2.2.1_125
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 238
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: cc764c6b6d256ff50800000000000000
+  - name: RoadNight16x16 2.2.1_126
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 238
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 38dd919e5b67ea240800000000000000
+  - name: RoadNight16x16 2.2.1_127
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 238
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 190a730d043d9b740800000000000000
+  - name: RoadNight16x16 2.2.1_128
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 238
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 8282f466fabc5e4c0800000000000000
+  - name: RoadNight16x16 2.2.1_129
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 238
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 01d5cce5e35cc18a0800000000000000
+  - name: RoadNight16x16 2.2.1_130
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 238
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 28fb7947f257382e0800000000000000
+  - name: RoadNight16x16 2.2.1_131
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 238
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 20b9727e30077ab10800000000000000
+  - name: RoadNight16x16 2.2.1_132
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 238
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 0e7aa272e281058b0800000000000000
+  - name: RoadNight16x16 2.2.1_133
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 238
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 3dce534b5bf928b40800000000000000
+  - name: RoadNight16x16 2.2.1_134
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 238
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 7c79a95f37276f3f0800000000000000
+  - name: RoadNight16x16 2.2.1_135
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 238
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: ad81fc2afc7ab6000800000000000000
+  - name: RoadNight16x16 2.2.1_136
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 238
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 2d7cbb2f9214c5360800000000000000
+  - name: RoadNight16x16 2.2.1_137
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 238
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 67862d090814a6390800000000000000
+  - name: RoadNight16x16 2.2.1_138
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 238
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 4f70ce7dad62e2cb0800000000000000
+  - name: RoadNight16x16 2.2.1_139
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 238
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: b96f07de54c4f5060800000000000000
+  - name: RoadNight16x16 2.2.1_140
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 238
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 65cb5e8ba6489ace0800000000000000
+  - name: RoadNight16x16 2.2.1_141
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 238
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: f4420f4a7775a0c40800000000000000
+  - name: RoadNight16x16 2.2.1_142
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 238
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 6765c3d8f26bfa400800000000000000
+  - name: RoadNight16x16 2.2.1_143
+    rect:
+      serializedVersion: 2
+      x: 368
+      y: 238
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 5abde809085a2c940800000000000000
+  - name: RoadNight16x16 2.2.1_144
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 238
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: e29bc46b5304c3e40800000000000000
+  - name: RoadNight16x16 2.2.1_145
+    rect:
+      serializedVersion: 2
+      x: 400
+      y: 238
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: e9b99001faf671770800000000000000
+  - name: RoadNight16x16 2.2.1_146
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 238
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 06cafd1f149ebaa90800000000000000
+  - name: RoadNight16x16 2.2.1_147
+    rect:
+      serializedVersion: 2
+      x: 432
+      y: 238
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: d73471301ba5e9f60800000000000000
+  - name: RoadNight16x16 2.2.1_148
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 238
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 80f498279ec48c7d0800000000000000
+  - name: RoadNight16x16 2.2.1_149
+    rect:
+      serializedVersion: 2
+      x: 464
+      y: 238
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 6946776cce324c970800000000000000
+  - name: RoadNight16x16 2.2.1_150
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 222
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: a0254280999cf9d10800000000000000
+  - name: RoadNight16x16 2.2.1_151
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 222
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 7f4ad0d808107d700800000000000000
+  - name: RoadNight16x16 2.2.1_152
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 222
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: b41f76ef3d7088ca0800000000000000
+  - name: RoadNight16x16 2.2.1_153
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 222
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: b72864fecf6337de0800000000000000
+  - name: RoadNight16x16 2.2.1_154
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 222
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 20bcdfc8b63aadf30800000000000000
+  - name: RoadNight16x16 2.2.1_155
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 222
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: e0aed9e09571ba8e0800000000000000
+  - name: RoadNight16x16 2.2.1_156
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 222
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: c071624be9c91bb30800000000000000
+  - name: RoadNight16x16 2.2.1_157
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 222
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 3cb27e2bdaa0294b0800000000000000
+  - name: RoadNight16x16 2.2.1_158
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 222
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 182e3920bdd1437d0800000000000000
+  - name: RoadNight16x16 2.2.1_159
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 222
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: f525399dc4d73c320800000000000000
+  - name: RoadNight16x16 2.2.1_160
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 222
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: e89f6bd3a0b050140800000000000000
+  - name: RoadNight16x16 2.2.1_161
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 222
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 6e8e8741afb484bb0800000000000000
+  - name: RoadNight16x16 2.2.1_162
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 222
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 7131971ff753eb240800000000000000
+  - name: RoadNight16x16 2.2.1_163
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 222
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: ef7cbc27da7ddfc80800000000000000
+  - name: RoadNight16x16 2.2.1_164
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 222
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 084d5fbc9a0685700800000000000000
+  - name: RoadNight16x16 2.2.1_165
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 222
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 360ee63ff9a604660800000000000000
+  - name: RoadNight16x16 2.2.1_166
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 222
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 37a6363d9b43350d0800000000000000
+  - name: RoadNight16x16 2.2.1_167
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 222
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 24f15db5035573a80800000000000000
+  - name: RoadNight16x16 2.2.1_168
+    rect:
+      serializedVersion: 2
+      x: 368
+      y: 222
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: ed66840791d5cd910800000000000000
+  - name: RoadNight16x16 2.2.1_169
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 222
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: daac2f55446aa94d0800000000000000
+  - name: RoadNight16x16 2.2.1_170
+    rect:
+      serializedVersion: 2
+      x: 400
+      y: 222
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: a0499b6c0c068aea0800000000000000
+  - name: RoadNight16x16 2.2.1_171
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 222
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: e8c627d317bd15f10800000000000000
+  - name: RoadNight16x16 2.2.1_172
+    rect:
+      serializedVersion: 2
+      x: 432
+      y: 222
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 2d59d003246f670e0800000000000000
+  - name: RoadNight16x16 2.2.1_173
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 222
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: ddccf55b4d7fabf70800000000000000
+  - name: RoadNight16x16 2.2.1_174
+    rect:
+      serializedVersion: 2
+      x: 464
+      y: 222
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 3766da14ecdad7090800000000000000
+  - name: RoadNight16x16 2.2.1_175
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 206
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 5c4830dc7552cf8f0800000000000000
+  - name: RoadNight16x16 2.2.1_176
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 206
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: becac34080c936d50800000000000000
+  - name: RoadNight16x16 2.2.1_177
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 206
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 55f864070f0d01b90800000000000000
+  - name: RoadNight16x16 2.2.1_178
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 206
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 282a034de6f28d2f0800000000000000
+  - name: RoadNight16x16 2.2.1_179
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 206
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: ed419f8d9215abe60800000000000000
+  - name: RoadNight16x16 2.2.1_180
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 206
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 540f065343071bc80800000000000000
+  - name: RoadNight16x16 2.2.1_181
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 206
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: d91cd9d9241d4bbb0800000000000000
+  - name: RoadNight16x16 2.2.1_182
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 206
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 8db9cebbe8e6b2dd0800000000000000
+  - name: RoadNight16x16 2.2.1_183
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 206
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 39a2c6330f331c910800000000000000
+  - name: RoadNight16x16 2.2.1_184
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 206
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 27ef2120971a178e0800000000000000
+  - name: RoadNight16x16 2.2.1_185
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 206
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 0556469738f20f7b0800000000000000
+  - name: RoadNight16x16 2.2.1_186
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 206
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: e2eab0b3f68ead9f0800000000000000
+  - name: RoadNight16x16 2.2.1_187
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 206
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: fdae4a6ee7c40b7f0800000000000000
+  - name: RoadNight16x16 2.2.1_188
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 206
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 4007cf2290c9752d0800000000000000
+  - name: RoadNight16x16 2.2.1_189
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 206
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 92d01806403e04bd0800000000000000
+  - name: RoadNight16x16 2.2.1_190
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 206
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 2021fde5115722c50800000000000000
+  - name: RoadNight16x16 2.2.1_191
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 206
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: c6d05c4ebafadb0a0800000000000000
+  - name: RoadNight16x16 2.2.1_192
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 206
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: a06515e7234978f10800000000000000
+  - name: RoadNight16x16 2.2.1_193
+    rect:
+      serializedVersion: 2
+      x: 368
+      y: 206
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: b442da36766bf0dc0800000000000000
+  - name: RoadNight16x16 2.2.1_194
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 206
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: bbd69a844d37aad90800000000000000
+  - name: RoadNight16x16 2.2.1_195
+    rect:
+      serializedVersion: 2
+      x: 400
+      y: 206
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: efa3cbfd01f14ff30800000000000000
+  - name: RoadNight16x16 2.2.1_196
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 206
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: d030e13b3c84cfe90800000000000000
+  - name: RoadNight16x16 2.2.1_197
+    rect:
+      serializedVersion: 2
+      x: 432
+      y: 206
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: f3e69ebee91ff98e0800000000000000
+  - name: RoadNight16x16 2.2.1_198
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 206
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 2297ec4a5538a9840800000000000000
+  - name: RoadNight16x16 2.2.1_199
+    rect:
+      serializedVersion: 2
+      x: 464
+      y: 206
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 87c2488b1138236c0800000000000000
+  - name: RoadNight16x16 2.2.1_200
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 190
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 5cd186b0d34361820800000000000000
+  - name: RoadNight16x16 2.2.1_201
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 190
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 152e63ba9e09c2cd0800000000000000
+  - name: RoadNight16x16 2.2.1_202
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 190
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: ff7f9882be37c8eb0800000000000000
+  - name: RoadNight16x16 2.2.1_203
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 190
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 9b983710e32e44040800000000000000
+  - name: RoadNight16x16 2.2.1_204
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 190
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 6199b44235f97fd10800000000000000
+  - name: RoadNight16x16 2.2.1_205
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 190
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 51c74b48914b8a750800000000000000
+  - name: RoadNight16x16 2.2.1_206
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 190
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 27b146a857182e5e0800000000000000
+  - name: RoadNight16x16 2.2.1_207
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 190
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: ec6f7148a65ed8790800000000000000
+  - name: RoadNight16x16 2.2.1_208
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 190
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 63d47e6f6bfaffd50800000000000000
+  - name: RoadNight16x16 2.2.1_209
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 190
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 54f8946f1b4f4a500800000000000000
+  - name: RoadNight16x16 2.2.1_210
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 190
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: fecfde03dc7296650800000000000000
+  - name: RoadNight16x16 2.2.1_211
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 190
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 4398657bdfa02bda0800000000000000
+  - name: RoadNight16x16 2.2.1_212
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 190
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 12cb76e4371421720800000000000000
+  - name: RoadNight16x16 2.2.1_213
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 190
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 38cb0dee4ae91ec00800000000000000
+  - name: RoadNight16x16 2.2.1_214
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 190
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: f4bd7e2afa430df00800000000000000
+  - name: RoadNight16x16 2.2.1_215
+    rect:
+      serializedVersion: 2
+      x: 400
+      y: 190
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: a97a19a71b87b2870800000000000000
+  - name: RoadNight16x16 2.2.1_216
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 190
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: dd33e7e2d1aa119f0800000000000000
+  - name: RoadNight16x16 2.2.1_217
+    rect:
+      serializedVersion: 2
+      x: 432
+      y: 190
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 6603c31dd3fc7e7b0800000000000000
+  - name: RoadNight16x16 2.2.1_218
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 190
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: ea927f91ab88759e0800000000000000
+  - name: RoadNight16x16 2.2.1_219
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 174
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: fe2458f0b2d049c70800000000000000
+  - name: RoadNight16x16 2.2.1_220
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 174
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 32f2d8b17683709b0800000000000000
+  - name: RoadNight16x16 2.2.1_221
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 174
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 355ac881476fd67f0800000000000000
+  - name: RoadNight16x16 2.2.1_222
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 174
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: d5764d691ee36b430800000000000000
+  - name: RoadNight16x16 2.2.1_223
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 174
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: af2f5fe038164a0c0800000000000000
+  - name: RoadNight16x16 2.2.1_224
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 174
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 0c535e9b7403c55d0800000000000000
+  - name: RoadNight16x16 2.2.1_225
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 174
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: ccc681f87766560c0800000000000000
+  - name: RoadNight16x16 2.2.1_226
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 174
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 1a9c000ef92a0eb10800000000000000
+  - name: RoadNight16x16 2.2.1_227
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 174
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 8b2f6401f70e49610800000000000000
+  - name: RoadNight16x16 2.2.1_228
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 174
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 12c2c95ea99318ac0800000000000000
+  - name: RoadNight16x16 2.2.1_229
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 174
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: a8bd85941a9d61fc0800000000000000
+  - name: RoadNight16x16 2.2.1_230
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 174
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 8acdb0a94e9e0e5b0800000000000000
+  - name: RoadNight16x16 2.2.1_231
+    rect:
+      serializedVersion: 2
+      x: 336
+      y: 174
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 51c3f16f6df972b10800000000000000
+  - name: RoadNight16x16 2.2.1_232
+    rect:
+      serializedVersion: 2
+      x: 368
+      y: 174
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 80c063390f86c3e10800000000000000
+  - name: RoadNight16x16 2.2.1_233
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 174
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 64fb27d34c84bc960800000000000000
+  - name: RoadNight16x16 2.2.1_234
+    rect:
+      serializedVersion: 2
+      x: 432
+      y: 174
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 1dfd5ae727dfd6cb0800000000000000
+  - name: RoadNight16x16 2.2.1_235
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 174
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 7d9f24adb51060970800000000000000
+  - name: RoadNight16x16 2.2.1_236
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 158
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: cd85576d1d62cf390800000000000000
+  - name: RoadNight16x16 2.2.1_237
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 158
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: e42f463b37e66f6d0800000000000000
+  - name: RoadNight16x16 2.2.1_238
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 158
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 24cfdde1010b25d60800000000000000
+  - name: RoadNight16x16 2.2.1_239
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 158
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 7ab3e24e2cc4ba6e0800000000000000
+  - name: RoadNight16x16 2.2.1_240
+    rect:
+      serializedVersion: 2
+      x: 336
+      y: 158
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: a2e5a601ffadd8010800000000000000
+  - name: RoadNight16x16 2.2.1_241
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 158
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 967f4b06e2e8fe1c0800000000000000
+  - name: RoadNight16x16 2.2.1_242
+    rect:
+      serializedVersion: 2
+      x: 368
+      y: 158
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 8b37cb496aa57dff0800000000000000
+  - name: RoadNight16x16 2.2.1_243
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 158
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 88c3f32904cccf730800000000000000
+  - name: RoadNight16x16 2.2.1_244
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 142
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: ed5635782b4c82660800000000000000
+  - name: RoadNight16x16 2.2.1_245
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 142
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: fe12ee0520006e8d0800000000000000
+  - name: RoadNight16x16 2.2.1_246
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 142
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 5ad0637de0415e4a0800000000000000
+  - name: RoadNight16x16 2.2.1_247
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 142
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 58686a1ca910a2040800000000000000
+  - name: RoadNight16x16 2.2.1_248
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 142
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 2a9ffc85367366640800000000000000
+  - name: RoadNight16x16 2.2.1_249
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 142
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 8626c48741deb5fc0800000000000000
+  - name: RoadNight16x16 2.2.1_250
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 142
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 53b22a11436ef06c0800000000000000
+  - name: RoadNight16x16 2.2.1_251
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 142
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: b485391b356248d60800000000000000
+  - name: RoadNight16x16 2.2.1_252
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 142
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 71256735dabd5c4f0800000000000000
+  - name: RoadNight16x16 2.2.1_253
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 142
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: d79e1215a2db2cea0800000000000000
+  - name: RoadNight16x16 2.2.1_254
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 142
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 652828e23a5255d80800000000000000
+  - name: RoadNight16x16 2.2.1_255
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 142
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 1132ad47564bf86e0800000000000000
+  - name: RoadNight16x16 2.2.1_256
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 142
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: b93e0a073fadb60f0800000000000000
+  - name: RoadNight16x16 2.2.1_257
+    rect:
+      serializedVersion: 2
+      x: 336
+      y: 142
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 5062aefc767c12fb0800000000000000
+  - name: RoadNight16x16 2.2.1_258
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 142
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 6fa883f6919f1f420800000000000000
+  - name: RoadNight16x16 2.2.1_259
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 126
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 25425706f44291b40800000000000000
+  - name: RoadNight16x16 2.2.1_260
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 126
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 883c3debcc638a2f0800000000000000
+  - name: RoadNight16x16 2.2.1_261
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 126
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 8ef372d6ae45b4140800000000000000
+  - name: RoadNight16x16 2.2.1_262
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 126
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 8086ba2748f4e77e0800000000000000
+  - name: RoadNight16x16 2.2.1_263
+    rect:
+      serializedVersion: 2
+      x: 336
+      y: 126
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: f0d5af49fc3d64630800000000000000
+  - name: RoadNight16x16 2.2.1_264
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 126
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: e6d45239953a39920800000000000000
+  - name: RoadNight16x16 2.2.1_265
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 110
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: be50cb0574f3339c0800000000000000
+  - name: RoadNight16x16 2.2.1_266
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 110
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 065768641dae70440800000000000000
+  - name: RoadNight16x16 2.2.1_267
+    rect:
+      serializedVersion: 2
+      x: 336
+      y: 110
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 1988af597ac0204a0800000000000000
+  - name: RoadNight16x16 2.2.1_268
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 110
+      width: 16
+      height: 16
+    alignment: 0
+    pivot: {x: 0, y: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    tessellationDetail: 0
+    spriteID: 93d17264f53de1af0800000000000000
+  spriteRects:
+  - name: RoadNight16x16 2.2.1_0
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 366
+      width: 16
+      height: 16
+    spriteID: 9670a0dbd39c8a9b0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_1
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 366
+      width: 16
+      height: 16
+    spriteID: f70c1db6304f58ff0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_2
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 350
+      width: 16
+      height: 16
+    spriteID: 62639c5c2a2611e70800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_3
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 350
+      width: 16
+      height: 16
+    spriteID: 1ce1280b6907a97b0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_4
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 350
+      width: 16
+      height: 16
+    spriteID: 0e3fd00e1abc31bd0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_5
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 350
+      width: 16
+      height: 16
+    spriteID: a3ef648aad29885b0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_6
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 350
+      width: 16
+      height: 16
+    spriteID: 4f6c2b3671aa1ee80800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_7
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 350
+      width: 16
+      height: 16
+    spriteID: 62ccd4720487b3120800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_8
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 368
+      y: 350
+      width: 16
+      height: 16
+    spriteID: 5a757b58ff5fbbed0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_9
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 350
+      width: 16
+      height: 16
+    spriteID: fe283dc0b4b28dd20800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_10
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 400
+      y: 350
+      width: 16
+      height: 16
+    spriteID: 3e6b578317eabb130800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_11
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 350
+      width: 16
+      height: 16
+    spriteID: 49c039f068b8b6090800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_12
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 334
+      width: 16
+      height: 16
+    spriteID: 2f742e2081a3ddda0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_13
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 334
+      width: 16
+      height: 16
+    spriteID: 8c52bf5005ec033b0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_14
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 334
+      width: 16
+      height: 16
+    spriteID: af60826cdfef146f0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_15
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 334
+      width: 16
+      height: 16
+    spriteID: 2aada5bdb143b4aa0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_16
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 334
+      width: 16
+      height: 16
+    spriteID: 73e6b06b8f0032760800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_17
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 334
+      width: 16
+      height: 16
+    spriteID: 3940dab4b143eb520800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_18
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 334
+      width: 16
+      height: 16
+    spriteID: 49f25a7ce0ce07f90800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_19
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 334
+      width: 16
+      height: 16
+    spriteID: 5e357ec5450f4ccb0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_20
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 334
+      width: 16
+      height: 16
+    spriteID: 0c23271a519062920800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_21
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 432
+      y: 334
+      width: 16
+      height: 16
+    spriteID: 271480aa1741b3180800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_22
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 334
+      width: 16
+      height: 16
+    spriteID: 21cf109a5dc60feb0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_23
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 464
+      y: 334
+      width: 16
+      height: 16
+    spriteID: e9552ba6230e6b850800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_24
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 318
+      width: 16
+      height: 16
+    spriteID: 22b7c57212bd00ad0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_25
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 318
+      width: 16
+      height: 16
+    spriteID: 7f1fcefde6cdbaa40800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_26
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 318
+      width: 16
+      height: 16
+    spriteID: 93a38391c21e22910800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_27
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 318
+      width: 16
+      height: 16
+    spriteID: 92d98ef8dd60fa290800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_28
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 318
+      width: 16
+      height: 16
+    spriteID: b6462a5b001e4c0b0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_29
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 318
+      width: 16
+      height: 16
+    spriteID: 5ab1893937b5e3f30800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_30
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 368
+      y: 318
+      width: 16
+      height: 16
+    spriteID: 7a95cc0ac212313f0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_31
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 432
+      y: 318
+      width: 16
+      height: 16
+    spriteID: f30718549c22c9370800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_32
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 318
+      width: 16
+      height: 16
+    spriteID: a3945662b0667f6e0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_33
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 464
+      y: 318
+      width: 16
+      height: 16
+    spriteID: 65dad777b4fd08700800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_34
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 302
+      width: 16
+      height: 16
+    spriteID: 792084b81f02e2db0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_35
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 302
+      width: 16
+      height: 16
+    spriteID: 184e376de4c6f5fd0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_36
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 302
+      width: 16
+      height: 16
+    spriteID: dbeacfeace1df4f90800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_37
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 302
+      width: 16
+      height: 16
+    spriteID: 04cbb200c61e23250800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_38
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 302
+      width: 16
+      height: 16
+    spriteID: 99ddf24ec2ef63400800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_39
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 302
+      width: 16
+      height: 16
+    spriteID: cea3693cf182d3eb0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_40
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 302
+      width: 16
+      height: 16
+    spriteID: 82e19afb482ff5660800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_41
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 302
+      width: 16
+      height: 16
+    spriteID: de639a5859d337340800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_42
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 336
+      y: 302
+      width: 16
+      height: 16
+    spriteID: 68764e15419b522d0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_43
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 302
+      width: 16
+      height: 16
+    spriteID: 579c2659171bd2f90800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_44
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 368
+      y: 302
+      width: 16
+      height: 16
+    spriteID: 1eea533b8c8ea1e50800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_45
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 302
+      width: 16
+      height: 16
+    spriteID: 28c25ce541e73fa70800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_46
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 400
+      y: 302
+      width: 16
+      height: 16
+    spriteID: 50f1a5ecdca6cc390800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_47
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 302
+      width: 16
+      height: 16
+    spriteID: 260b9b383bfc42ca0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_48
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 432
+      y: 302
+      width: 16
+      height: 16
+    spriteID: 6cf095cbf45c4b7b0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_49
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 302
+      width: 16
+      height: 16
+    spriteID: 399ce8acccca22770800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_50
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 286
+      width: 16
+      height: 16
+    spriteID: c7f2e712754f02e90800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_51
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 286
+      width: 16
+      height: 16
+    spriteID: e3aaffe8c6a5f38c0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_52
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 286
+      width: 16
+      height: 16
+    spriteID: dc00af5c8e20f0210800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_53
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 286
+      width: 16
+      height: 16
+    spriteID: c27e5551e99661c50800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_54
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 286
+      width: 16
+      height: 16
+    spriteID: f0fbd8f83ef5b4810800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_55
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 286
+      width: 16
+      height: 16
+    spriteID: 4da39487fa5028d50800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_56
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 286
+      width: 16
+      height: 16
+    spriteID: bfd992549d248ed90800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_57
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 286
+      width: 16
+      height: 16
+    spriteID: b28475ec6c3e661b0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_58
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 286
+      width: 16
+      height: 16
+    spriteID: 115fcbcadbc697a30800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_59
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 286
+      width: 16
+      height: 16
+    spriteID: 710bcdb4deb7eb1d0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_60
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 286
+      width: 16
+      height: 16
+    spriteID: d49785c738df8d050800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_61
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 286
+      width: 16
+      height: 16
+    spriteID: 21e1b43ee61bb9a40800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_62
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 286
+      width: 16
+      height: 16
+    spriteID: d516ee524c541ccf0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_63
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 286
+      width: 16
+      height: 16
+    spriteID: e8989dbb560d7d200800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_64
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 286
+      width: 16
+      height: 16
+    spriteID: 6b17b7e66a97125e0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_65
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 286
+      width: 16
+      height: 16
+    spriteID: 873e74e5fa4bc92e0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_66
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 286
+      width: 16
+      height: 16
+    spriteID: e3bf60a1737b630c0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_67
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 336
+      y: 286
+      width: 16
+      height: 16
+    spriteID: b7defc07f7fd1d260800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_68
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 286
+      width: 16
+      height: 16
+    spriteID: f6d09c2273aca6730800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_69
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 368
+      y: 286
+      width: 16
+      height: 16
+    spriteID: 8e25eea36cf77c070800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_70
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 286
+      width: 16
+      height: 16
+    spriteID: 3ba38fb626b76ccc0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_71
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 400
+      y: 286
+      width: 16
+      height: 16
+    spriteID: 5d0ebe1e3841c9670800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_72
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 286
+      width: 16
+      height: 16
+    spriteID: 17b35492dc8f7f2c0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_73
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 432
+      y: 286
+      width: 16
+      height: 16
+    spriteID: faa6c51138e53d7e0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_74
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 286
+      width: 16
+      height: 16
+    spriteID: 993037f7b0f235510800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_75
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 270
+      width: 16
+      height: 16
+    spriteID: 89416062dbeed9a40800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_76
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 270
+      width: 16
+      height: 16
+    spriteID: f57853caea6c2cf50800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_77
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 270
+      width: 16
+      height: 16
+    spriteID: fbadb2691a225e740800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_78
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 270
+      width: 16
+      height: 16
+    spriteID: 93d31a9e5d5d14750800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_79
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 270
+      width: 16
+      height: 16
+    spriteID: 6b7937b28ca4900b0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_80
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 270
+      width: 16
+      height: 16
+    spriteID: 8c904261f547bbe80800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_81
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 270
+      width: 16
+      height: 16
+    spriteID: ac8db69a80714a860800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_82
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 270
+      width: 16
+      height: 16
+    spriteID: 544af845c6193edb0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_83
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 270
+      width: 16
+      height: 16
+    spriteID: 69450ca3b6c09b7c0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_84
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 270
+      width: 16
+      height: 16
+    spriteID: 62fdc7521ac9c3ea0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_85
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 270
+      width: 16
+      height: 16
+    spriteID: 45d2bb237a8045c70800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_86
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 270
+      width: 16
+      height: 16
+    spriteID: e77f61772ab295960800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_87
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 270
+      width: 16
+      height: 16
+    spriteID: 6be5366454c4dd490800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_88
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 270
+      width: 16
+      height: 16
+    spriteID: 03b82769195c87c90800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_89
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 270
+      width: 16
+      height: 16
+    spriteID: 9d6e8567e266aa700800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_90
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 270
+      width: 16
+      height: 16
+    spriteID: ae9d8a29437164e40800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_91
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 270
+      width: 16
+      height: 16
+    spriteID: 452055306fb9ff0c0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_92
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 336
+      y: 270
+      width: 16
+      height: 16
+    spriteID: b87aba79fb433e360800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_93
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 270
+      width: 16
+      height: 16
+    spriteID: 881a5b149a359d230800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_94
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 368
+      y: 270
+      width: 16
+      height: 16
+    spriteID: 0cc10d7f749ebe7b0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_95
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 270
+      width: 16
+      height: 16
+    spriteID: a0af3b95b4472ca50800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_96
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 400
+      y: 270
+      width: 16
+      height: 16
+    spriteID: 9464601ec7adde3c0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_97
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 270
+      width: 16
+      height: 16
+    spriteID: e2af6e048270c9050800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_98
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 432
+      y: 270
+      width: 16
+      height: 16
+    spriteID: 1bc29b39021b14880800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_99
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 270
+      width: 16
+      height: 16
+    spriteID: c578ec6e701271810800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_100
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 254
+      width: 16
+      height: 16
+    spriteID: 36f03e8e4e65dbfd0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_101
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 254
+      width: 16
+      height: 16
+    spriteID: 46274c0cfb15d35f0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_102
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 254
+      width: 16
+      height: 16
+    spriteID: 21f49ba1bc333c750800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_103
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 254
+      width: 16
+      height: 16
+    spriteID: 5122ce04ce0459d50800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_104
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 254
+      width: 16
+      height: 16
+    spriteID: d953666bdb657cf20800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_105
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 254
+      width: 16
+      height: 16
+    spriteID: 10e86f31ad23f9b50800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_106
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 254
+      width: 16
+      height: 16
+    spriteID: 0cefaa95710b52e40800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_107
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 254
+      width: 16
+      height: 16
+    spriteID: 2f3c3c0c7a32c59d0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_108
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 254
+      width: 16
+      height: 16
+    spriteID: 853fb1f095fabcf90800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_109
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 254
+      width: 16
+      height: 16
+    spriteID: b9b71d39bc8138b10800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_110
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 254
+      width: 16
+      height: 16
+    spriteID: 43c832e9105c487b0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_111
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 254
+      width: 16
+      height: 16
+    spriteID: 2ff697fdbc2a1fbf0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_112
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 254
+      width: 16
+      height: 16
+    spriteID: f24f22cfe6bf8d2b0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_113
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 254
+      width: 16
+      height: 16
+    spriteID: c1cce000640fe1520800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_114
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 254
+      width: 16
+      height: 16
+    spriteID: 7618b444733b50510800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_115
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 254
+      width: 16
+      height: 16
+    spriteID: 93b5327f4ccf833e0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_116
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 254
+      width: 16
+      height: 16
+    spriteID: 251a06e6615223a10800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_117
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 336
+      y: 254
+      width: 16
+      height: 16
+    spriteID: 335c4187d4aa291b0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_118
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 254
+      width: 16
+      height: 16
+    spriteID: 8a7ab79e47d3e1a50800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_119
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 368
+      y: 254
+      width: 16
+      height: 16
+    spriteID: 007d0c33ce2a6c9a0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_120
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 254
+      width: 16
+      height: 16
+    spriteID: 33d5da9ed2b94d470800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_121
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 400
+      y: 254
+      width: 16
+      height: 16
+    spriteID: 2cb972fd4ca31e650800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_122
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 254
+      width: 16
+      height: 16
+    spriteID: ecd8be452b883e5c0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_123
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 432
+      y: 254
+      width: 16
+      height: 16
+    spriteID: 8fbcfb8db5cab54c0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_124
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 254
+      width: 16
+      height: 16
+    spriteID: 7571ed327580db4b0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_125
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 238
+      width: 16
+      height: 16
+    spriteID: cc764c6b6d256ff50800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_126
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 238
+      width: 16
+      height: 16
+    spriteID: 38dd919e5b67ea240800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_127
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 238
+      width: 16
+      height: 16
+    spriteID: 190a730d043d9b740800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_128
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 238
+      width: 16
+      height: 16
+    spriteID: 8282f466fabc5e4c0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_129
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 238
+      width: 16
+      height: 16
+    spriteID: 01d5cce5e35cc18a0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_130
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 238
+      width: 16
+      height: 16
+    spriteID: 28fb7947f257382e0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_131
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 238
+      width: 16
+      height: 16
+    spriteID: 20b9727e30077ab10800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_132
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 238
+      width: 16
+      height: 16
+    spriteID: 0e7aa272e281058b0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_133
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 238
+      width: 16
+      height: 16
+    spriteID: 3dce534b5bf928b40800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_134
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 238
+      width: 16
+      height: 16
+    spriteID: 7c79a95f37276f3f0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_135
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 238
+      width: 16
+      height: 16
+    spriteID: ad81fc2afc7ab6000800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_136
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 238
+      width: 16
+      height: 16
+    spriteID: 2d7cbb2f9214c5360800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_137
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 238
+      width: 16
+      height: 16
+    spriteID: 67862d090814a6390800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_138
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 238
+      width: 16
+      height: 16
+    spriteID: 4f70ce7dad62e2cb0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_139
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 238
+      width: 16
+      height: 16
+    spriteID: b96f07de54c4f5060800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_140
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 238
+      width: 16
+      height: 16
+    spriteID: 65cb5e8ba6489ace0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_141
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 238
+      width: 16
+      height: 16
+    spriteID: f4420f4a7775a0c40800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_142
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 238
+      width: 16
+      height: 16
+    spriteID: 6765c3d8f26bfa400800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_143
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 368
+      y: 238
+      width: 16
+      height: 16
+    spriteID: 5abde809085a2c940800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_144
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 238
+      width: 16
+      height: 16
+    spriteID: e29bc46b5304c3e40800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_145
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 400
+      y: 238
+      width: 16
+      height: 16
+    spriteID: e9b99001faf671770800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_146
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 238
+      width: 16
+      height: 16
+    spriteID: 06cafd1f149ebaa90800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_147
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 432
+      y: 238
+      width: 16
+      height: 16
+    spriteID: d73471301ba5e9f60800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_148
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 238
+      width: 16
+      height: 16
+    spriteID: 80f498279ec48c7d0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_149
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 464
+      y: 238
+      width: 16
+      height: 16
+    spriteID: 6946776cce324c970800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_150
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 222
+      width: 16
+      height: 16
+    spriteID: a0254280999cf9d10800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_151
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 222
+      width: 16
+      height: 16
+    spriteID: 7f4ad0d808107d700800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_152
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 222
+      width: 16
+      height: 16
+    spriteID: b41f76ef3d7088ca0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_153
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 222
+      width: 16
+      height: 16
+    spriteID: b72864fecf6337de0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_154
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 222
+      width: 16
+      height: 16
+    spriteID: 20bcdfc8b63aadf30800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_155
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 222
+      width: 16
+      height: 16
+    spriteID: e0aed9e09571ba8e0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_156
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 222
+      width: 16
+      height: 16
+    spriteID: c071624be9c91bb30800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_157
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 222
+      width: 16
+      height: 16
+    spriteID: 3cb27e2bdaa0294b0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_158
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 222
+      width: 16
+      height: 16
+    spriteID: 182e3920bdd1437d0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_159
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 222
+      width: 16
+      height: 16
+    spriteID: f525399dc4d73c320800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_160
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 222
+      width: 16
+      height: 16
+    spriteID: e89f6bd3a0b050140800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_161
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 222
+      width: 16
+      height: 16
+    spriteID: 6e8e8741afb484bb0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_162
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 222
+      width: 16
+      height: 16
+    spriteID: 7131971ff753eb240800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_163
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 222
+      width: 16
+      height: 16
+    spriteID: ef7cbc27da7ddfc80800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_164
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 222
+      width: 16
+      height: 16
+    spriteID: 084d5fbc9a0685700800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_165
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 222
+      width: 16
+      height: 16
+    spriteID: 360ee63ff9a604660800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_166
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 222
+      width: 16
+      height: 16
+    spriteID: 37a6363d9b43350d0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_167
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 222
+      width: 16
+      height: 16
+    spriteID: 24f15db5035573a80800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_168
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 368
+      y: 222
+      width: 16
+      height: 16
+    spriteID: ed66840791d5cd910800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_169
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 222
+      width: 16
+      height: 16
+    spriteID: daac2f55446aa94d0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_170
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 400
+      y: 222
+      width: 16
+      height: 16
+    spriteID: a0499b6c0c068aea0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_171
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 222
+      width: 16
+      height: 16
+    spriteID: e8c627d317bd15f10800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_172
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 432
+      y: 222
+      width: 16
+      height: 16
+    spriteID: 2d59d003246f670e0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_173
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 222
+      width: 16
+      height: 16
+    spriteID: ddccf55b4d7fabf70800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_174
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 464
+      y: 222
+      width: 16
+      height: 16
+    spriteID: 3766da14ecdad7090800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_175
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 206
+      width: 16
+      height: 16
+    spriteID: 5c4830dc7552cf8f0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_176
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 206
+      width: 16
+      height: 16
+    spriteID: becac34080c936d50800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_177
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 206
+      width: 16
+      height: 16
+    spriteID: 55f864070f0d01b90800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_178
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 206
+      width: 16
+      height: 16
+    spriteID: 282a034de6f28d2f0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_179
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 206
+      width: 16
+      height: 16
+    spriteID: ed419f8d9215abe60800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_180
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 206
+      width: 16
+      height: 16
+    spriteID: 540f065343071bc80800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_181
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 206
+      width: 16
+      height: 16
+    spriteID: d91cd9d9241d4bbb0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_182
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 206
+      width: 16
+      height: 16
+    spriteID: 8db9cebbe8e6b2dd0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_183
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 206
+      width: 16
+      height: 16
+    spriteID: 39a2c6330f331c910800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_184
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 206
+      width: 16
+      height: 16
+    spriteID: 27ef2120971a178e0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_185
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 206
+      width: 16
+      height: 16
+    spriteID: 0556469738f20f7b0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_186
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 206
+      width: 16
+      height: 16
+    spriteID: e2eab0b3f68ead9f0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_187
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 206
+      width: 16
+      height: 16
+    spriteID: fdae4a6ee7c40b7f0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_188
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 206
+      width: 16
+      height: 16
+    spriteID: 4007cf2290c9752d0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_189
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 206
+      width: 16
+      height: 16
+    spriteID: 92d01806403e04bd0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_190
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 206
+      width: 16
+      height: 16
+    spriteID: 2021fde5115722c50800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_191
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 206
+      width: 16
+      height: 16
+    spriteID: c6d05c4ebafadb0a0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_192
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 206
+      width: 16
+      height: 16
+    spriteID: a06515e7234978f10800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_193
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 368
+      y: 206
+      width: 16
+      height: 16
+    spriteID: b442da36766bf0dc0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_194
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 206
+      width: 16
+      height: 16
+    spriteID: bbd69a844d37aad90800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_195
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 400
+      y: 206
+      width: 16
+      height: 16
+    spriteID: efa3cbfd01f14ff30800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_196
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 206
+      width: 16
+      height: 16
+    spriteID: d030e13b3c84cfe90800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_197
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 432
+      y: 206
+      width: 16
+      height: 16
+    spriteID: f3e69ebee91ff98e0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_198
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 206
+      width: 16
+      height: 16
+    spriteID: 2297ec4a5538a9840800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_199
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 464
+      y: 206
+      width: 16
+      height: 16
+    spriteID: 87c2488b1138236c0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_200
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 190
+      width: 16
+      height: 16
+    spriteID: 5cd186b0d34361820800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_201
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 190
+      width: 16
+      height: 16
+    spriteID: 152e63ba9e09c2cd0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_202
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 190
+      width: 16
+      height: 16
+    spriteID: ff7f9882be37c8eb0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_203
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 190
+      width: 16
+      height: 16
+    spriteID: 9b983710e32e44040800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_204
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 190
+      width: 16
+      height: 16
+    spriteID: 6199b44235f97fd10800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_205
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 190
+      width: 16
+      height: 16
+    spriteID: 51c74b48914b8a750800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_206
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 190
+      width: 16
+      height: 16
+    spriteID: 27b146a857182e5e0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_207
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 190
+      width: 16
+      height: 16
+    spriteID: ec6f7148a65ed8790800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_208
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 190
+      width: 16
+      height: 16
+    spriteID: 63d47e6f6bfaffd50800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_209
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 190
+      width: 16
+      height: 16
+    spriteID: 54f8946f1b4f4a500800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_210
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 190
+      width: 16
+      height: 16
+    spriteID: fecfde03dc7296650800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_211
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 190
+      width: 16
+      height: 16
+    spriteID: 4398657bdfa02bda0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_212
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 190
+      width: 16
+      height: 16
+    spriteID: 12cb76e4371421720800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_213
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 190
+      width: 16
+      height: 16
+    spriteID: 38cb0dee4ae91ec00800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_214
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 190
+      width: 16
+      height: 16
+    spriteID: f4bd7e2afa430df00800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_215
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 400
+      y: 190
+      width: 16
+      height: 16
+    spriteID: a97a19a71b87b2870800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_216
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 190
+      width: 16
+      height: 16
+    spriteID: dd33e7e2d1aa119f0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_217
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 432
+      y: 190
+      width: 16
+      height: 16
+    spriteID: 6603c31dd3fc7e7b0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_218
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 190
+      width: 16
+      height: 16
+    spriteID: ea927f91ab88759e0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_219
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 174
+      width: 16
+      height: 16
+    spriteID: fe2458f0b2d049c70800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_220
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 80
+      y: 174
+      width: 16
+      height: 16
+    spriteID: 32f2d8b17683709b0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_221
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 174
+      width: 16
+      height: 16
+    spriteID: 355ac881476fd67f0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_222
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 174
+      width: 16
+      height: 16
+    spriteID: d5764d691ee36b430800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_223
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 174
+      width: 16
+      height: 16
+    spriteID: af2f5fe038164a0c0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_224
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 174
+      width: 16
+      height: 16
+    spriteID: 0c535e9b7403c55d0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_225
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 174
+      width: 16
+      height: 16
+    spriteID: ccc681f87766560c0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_226
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 174
+      width: 16
+      height: 16
+    spriteID: 1a9c000ef92a0eb10800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_227
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 174
+      width: 16
+      height: 16
+    spriteID: 8b2f6401f70e49610800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_228
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 174
+      width: 16
+      height: 16
+    spriteID: 12c2c95ea99318ac0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_229
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 174
+      width: 16
+      height: 16
+    spriteID: a8bd85941a9d61fc0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_230
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 174
+      width: 16
+      height: 16
+    spriteID: 8acdb0a94e9e0e5b0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_231
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 336
+      y: 174
+      width: 16
+      height: 16
+    spriteID: 51c3f16f6df972b10800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_232
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 368
+      y: 174
+      width: 16
+      height: 16
+    spriteID: 80c063390f86c3e10800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_233
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 416
+      y: 174
+      width: 16
+      height: 16
+    spriteID: 64fb27d34c84bc960800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_234
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 432
+      y: 174
+      width: 16
+      height: 16
+    spriteID: 1dfd5ae727dfd6cb0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_235
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 174
+      width: 16
+      height: 16
+    spriteID: 7d9f24adb51060970800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_236
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 158
+      width: 16
+      height: 16
+    spriteID: cd85576d1d62cf390800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_237
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 158
+      width: 16
+      height: 16
+    spriteID: e42f463b37e66f6d0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_238
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 158
+      width: 16
+      height: 16
+    spriteID: 24cfdde1010b25d60800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_239
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 158
+      width: 16
+      height: 16
+    spriteID: 7ab3e24e2cc4ba6e0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_240
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 336
+      y: 158
+      width: 16
+      height: 16
+    spriteID: a2e5a601ffadd8010800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_241
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 158
+      width: 16
+      height: 16
+    spriteID: 967f4b06e2e8fe1c0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_242
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 368
+      y: 158
+      width: 16
+      height: 16
+    spriteID: 8b37cb496aa57dff0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_243
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 384
+      y: 158
+      width: 16
+      height: 16
+    spriteID: 88c3f32904cccf730800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_244
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 142
+      width: 16
+      height: 16
+    spriteID: ed5635782b4c82660800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_245
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 142
+      width: 16
+      height: 16
+    spriteID: fe12ee0520006e8d0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_246
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 142
+      width: 16
+      height: 16
+    spriteID: 5ad0637de0415e4a0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_247
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 142
+      width: 16
+      height: 16
+    spriteID: 58686a1ca910a2040800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_248
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 142
+      width: 16
+      height: 16
+    spriteID: 2a9ffc85367366640800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_249
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 142
+      width: 16
+      height: 16
+    spriteID: 8626c48741deb5fc0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_250
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 142
+      width: 16
+      height: 16
+    spriteID: 53b22a11436ef06c0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_251
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 142
+      width: 16
+      height: 16
+    spriteID: b485391b356248d60800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_252
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 142
+      width: 16
+      height: 16
+    spriteID: 71256735dabd5c4f0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_253
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 142
+      width: 16
+      height: 16
+    spriteID: d79e1215a2db2cea0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_254
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 142
+      width: 16
+      height: 16
+    spriteID: 652828e23a5255d80800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_255
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 142
+      width: 16
+      height: 16
+    spriteID: 1132ad47564bf86e0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_256
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 142
+      width: 16
+      height: 16
+    spriteID: b93e0a073fadb60f0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_257
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 336
+      y: 142
+      width: 16
+      height: 16
+    spriteID: 5062aefc767c12fb0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_258
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 142
+      width: 16
+      height: 16
+    spriteID: 6fa883f6919f1f420800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_259
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 126
+      width: 16
+      height: 16
+    spriteID: 25425706f44291b40800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_260
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 126
+      width: 16
+      height: 16
+    spriteID: 883c3debcc638a2f0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_261
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 126
+      width: 16
+      height: 16
+    spriteID: 8ef372d6ae45b4140800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_262
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 126
+      width: 16
+      height: 16
+    spriteID: 8086ba2748f4e77e0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_263
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 336
+      y: 126
+      width: 16
+      height: 16
+    spriteID: f0d5af49fc3d64630800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_264
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 126
+      width: 16
+      height: 16
+    spriteID: e6d45239953a39920800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_265
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 110
+      width: 16
+      height: 16
+    spriteID: be50cb0574f3339c0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_266
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 144
+      y: 110
+      width: 16
+      height: 16
+    spriteID: 065768641dae70440800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_267
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 336
+      y: 110
+      width: 16
+      height: 16
+    spriteID: 1988af597ac0204a0800000000000000
+    internalID: 0
+  - name: RoadNight16x16 2.2.1_268
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 352
+      y: 110
+      width: 16
+      height: 16
+    spriteID: 93d17264f53de1af0800000000000000
+    internalID: 0
+  selectedImporter: 1
