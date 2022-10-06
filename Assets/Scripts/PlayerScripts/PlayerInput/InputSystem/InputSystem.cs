@@ -60,7 +60,7 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
                     ""id"": ""e584484b-3ac9-44a4-a0aa-dc71b745bb2a"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Hold"",
+                    ""interactions"": """",
                     ""initialStateCheck"": false
                 }
             ],
@@ -146,7 +146,7 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""95e030c5-30aa-4027-8ef1-7604b414fd9f"",
                     ""path"": ""<Keyboard>/e"",
-                    ""interactions"": ""Press(pressPoint=1.401298E-45)"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse adn Keyboard"",
                     ""action"": ""Use"",

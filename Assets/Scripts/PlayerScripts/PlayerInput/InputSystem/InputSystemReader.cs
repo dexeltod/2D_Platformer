@@ -22,7 +22,7 @@ public class InputSystemReader : MonoBehaviour
         _inputActions.Player.Move.performed += ctx => OnHorizontalMovement(ctx);
         _inputActions.Player.Jump.performed += ctx => OnJump(ctx);
         _inputActions.Player.Attack.performed += ctx => OnAttack(ctx);
-        _inputActions.Player.Use.started += ctx => OnUse(ctx);
+        _inputActions.Player.Use.performed += ctx => OnUse(ctx);
     }
 
     private void OnEnable() => _inputActions.Enable();
@@ -31,16 +31,11 @@ public class InputSystemReader : MonoBehaviour
 
     public void OnUse(InputAction.CallbackContext context)
     {
-        int notUsedButton = 0;
-
         if (context.started)
         {
             _buttonUseValue = context.ReadValue<float>();
             Debug.Log(context);
         }
-
-        else
-            _buttonUseValue = notUsedButton;
     }
 
     private void OnAttack(InputAction.CallbackContext context)
