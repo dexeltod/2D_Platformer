@@ -6,6 +6,8 @@ public class EnterTrigger : MonoBehaviour
     [SerializeField] private Transform _placeTransform;
     [SerializeField] private Transform _playerTransform;
 
+    private int _useButtonValue = 1;
+
     public void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out PlayerEntity player))
@@ -16,13 +18,11 @@ public class EnterTrigger : MonoBehaviour
 
     private void Enter()
     {
-        int useButtonValue = 1;
-
-        if (_inputSystemReader.ButtonUseValue == useButtonValue)
+        if (_inputSystemReader.ButtonUseValue == _useButtonValue)
         {
             _playerTransform.position = _placeTransform.position;
+            _useButtonValue = 0;
         }
 
-        Debug.Log(_inputSystemReader.ButtonUseValue);
     }
 }

@@ -17,37 +17,30 @@ public class InputSystemReader : MonoBehaviour
 
     private void Awake()
     {
-        _inputActions = new InputSystem();        
+        _inputActions = new InputSystem();
 
-        _inputActions.Player.Move.performed += OnHorizontalMovement;
-        _inputActions.Player.Move.canceled += OnHorizontalMovement;
-
-        _inputActions.Player.Jump.started += OnJump;        
-        _inputActions.Player.Jump.canceled += OnJump;
-
-        _inputActions.Player.Attack.started += OnAttack;
-        _inputActions.Player.Attack.canceled += OnAttack;
-
-        _inputActions.Player.Use.started += OnUse;
-        _inputActions.Player.Use.canceled += OnUse;
+        _inputActions.Player.Move.performed += ctx => OnHorizontalMovement(ctx);
+        _inputActions.Player.Jump.performed += ctx => OnJump(ctx);
+        _inputActions.Player.Attack.performed += ctx => OnAttack(ctx);
+        _inputActions.Player.Use.started += ctx => OnUse(ctx);
     }
 
-    private void OnEnable()
-    {
-        _inputActions.Enable();
-    }
+    private void OnEnable() => _inputActions.Enable();
 
-    private void OnDisable()
-    {
-        _inputActions.Disable();
-    }
+    private void OnDisable() => _inputActions.Disable();
 
     public void OnUse(InputAction.CallbackContext context)
     {
+        int notUsedButton = 0;
+
         if (context.started)
         {
             _buttonUseValue = context.ReadValue<float>();
+            Debug.Log(context);
         }
+
+        else
+            _buttonUseValue = notUsedButton;
     }
 
     private void OnAttack(InputAction.CallbackContext context)
@@ -56,7 +49,7 @@ public class InputSystemReader : MonoBehaviour
         {
             _buttonAttackValue = context.ReadValue<float>();
             _playerAttack.SetButtonValue(_buttonAttackValue);
-        }        
+        }
     }
 
     private void OnHorizontalMovement(InputAction.CallbackContext context)
@@ -67,7 +60,7 @@ public class InputSystemReader : MonoBehaviour
 
     private void OnJump(InputAction.CallbackContext context)
     {
-       float dirY = context.ReadValue<float>();
+        float dirY = context.ReadValue<float>();
         _playerMoveContoller.SetJumpDir(dirY);
     }
 }
