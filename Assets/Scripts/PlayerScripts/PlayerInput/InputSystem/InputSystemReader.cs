@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,13 +8,17 @@ public class InputSystemReader : MonoBehaviour
     [SerializeField] private PlayerAttack _playerAttack;
 
     private float _buttonAttackValue;
-    private float _buttonUseValue;
+    private float _buttonJumpValue;
+    private bool _buttonUseValue;
     private InputSystem _inputActions;
     private Vector2 _buttonMoveValue;
 
-    public float ButtonUseValue => _buttonUseValue;
+    public bool ButtonUseValue => _buttonUseValue;
     public float ButtonAttackValue => _buttonAttackValue;
     public float ButtonMoveValue => _buttonMoveValue.x;
+    public float ButtonJumpValue => _buttonJumpValue;
+
+    public event Action ButtonUse;
 
     private void Awake()
     {
@@ -22,7 +27,7 @@ public class InputSystemReader : MonoBehaviour
         _inputActions.Player.Move.performed += ctx => OnHorizontalMovement(ctx);
         _inputActions.Player.Jump.performed += ctx => OnJump(ctx);
         _inputActions.Player.Attack.performed += ctx => OnAttack(ctx);
-        _inputActions.Player.Use.performed += ctx => OnUse(ctx);
+        _inputActions.Player.Use.started += ctx => OnUse(ctx);
     }
 
     private void OnEnable() => _inputActions.Enable();
@@ -33,7 +38,8 @@ public class InputSystemReader : MonoBehaviour
     {
         if (context.started)
         {
-            _buttonUseValue = context.ReadValue<float>();
+            ButtonUse?.Invoke();
+            _buttonUseValue = context.ReadValueAsButton();
             Debug.Log(context);
         }
     }
@@ -43,19 +49,20 @@ public class InputSystemReader : MonoBehaviour
         if (context.performed)
         {
             _buttonAttackValue = context.ReadValue<float>();
-            _playerAttack.SetButtonValue(_buttonAttackValue);
+            _playerAttack.SetButtonValue();
+            Debug.Log(context);
         }
     }
 
     private void OnHorizontalMovement(InputAction.CallbackContext context)
     {
         _buttonMoveValue = context.ReadValue<Vector2>();
-        _playerMoveContoller.SetMoveHorizontalDirection(_buttonMoveValue);
+        _playerMoveContoller.SetMoveHorizontalDirection();
     }
 
     private void OnJump(InputAction.CallbackContext context)
     {
-        float dirY = context.ReadValue<float>();
-        _playerMoveContoller.SetJumpDir(dirY);
+        _buttonJumpValue = context.ReadValue<float>();
+        _playerMoveContoller.SetJumpDir();
     }
 }

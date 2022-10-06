@@ -2,11 +2,7 @@
 using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
-    public float CurrentAttackDelay => _currentAttackDelay;
-    public float AttackDelay => _attackDelay;
-    public bool CurrentAttackState => _isAttack;
-
-    private Rigidbody2D _rb2d;
+    [SerializeField] private InputSystemReader _inputSystemReader;
 
     [Header("Set target and damage")]
     [SerializeField] private int _damage = 10;
@@ -24,6 +20,10 @@ public class PlayerAttack : MonoBehaviour
     private float _currentAttackDelay;
     RaycastHit2D _hitTargetLeft;
     RaycastHit2D _hitTargetRight;
+
+    public float CurrentAttackDelay => _currentAttackDelay;
+    public float AttackDelay => _attackDelay;
+    public bool CurrentAttackState => _isAttack;
 
 
     private void Update()
@@ -46,13 +46,16 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    public void SetButtonValue(float buttonValue)
+    public void SetButtonValue()
     {
-        if (buttonValue == 1)
+        int attackValue = 1;
+
+        if (_inputSystemReader.ButtonAttackValue == attackValue)
         {
             _isAttack = true;
         }
     }
+
     private void TryAttack(float delay)
     {
         if (_currentAttackDelay >= 0f && _currentAttackDelay <= delay)

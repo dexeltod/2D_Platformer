@@ -5,21 +5,22 @@ public class PlayerMoveController : PhysicsMovement
     private Vector2 _moveDirection;
     [SerializeField] private float _jumpTakeOffSpeed = 7;
     [SerializeField] private float _speedModifier = 5;
-    [SerializeField] private float _maxTakeOffHight = 9.2f;
+    [SerializeField] private float _maxJumpHight = 9.2f;
     [SerializeField] private float _jumpSpeedSlowdown;
+    [SerializeField] private InputSystemReader _inputSystemReader;
 
     [Header("Debug")]
 
     [SerializeField] bool _debugGizmos;
 
-    public void SetJumpDir(float jumpDir)
+    public void SetJumpDir( )
     {
-        _moveDirection.y = jumpDir;
+        _moveDirection.y = _inputSystemReader.ButtonMoveValue;
     }
 
-    public void SetMoveHorizontalDirection(Vector2 moveDir)
+    public void SetMoveHorizontalDirection()
     {
-        _moveDirection.x = moveDir.x;
+        _moveDirection.x = _inputSystemReader.ButtonMoveValue;
     }
 
     public void OnValidate()
@@ -63,14 +64,14 @@ public class PlayerMoveController : PhysicsMovement
 
     private void SetJumpState()
     {
-        if (_moveDirection.y == 1 && _isGrounded == true)
+        if (_inputSystemReader.ButtonJumpValue == 1 && _isGrounded == true)
         {
             _isJump = true;
             _velocity.y = _jumpTakeOffSpeed;
         }
-        else if (_velocity.y >= _maxTakeOffHight && _isJump)
+        else if (_velocity.y >= _maxJumpHight && _isJump)
         {
-            _velocity.y = _maxTakeOffHight;
+            _velocity.y = _maxJumpHight;
         }
         else if (!_isGrounded && _moveDirection.y == 0 && _isJump == true)
         {
