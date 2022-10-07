@@ -1,5 +1,5 @@
-using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class InputSystemReader : MonoBehaviour
@@ -13,12 +13,18 @@ public class InputSystemReader : MonoBehaviour
     private InputSystem _inputActions;
     private Vector2 _buttonMoveValue;
 
+    public UnityAction ButtonUse;
+
     public bool ButtonUseValue => _buttonUseValue;
     public float ButtonAttackValue => _buttonAttackValue;
     public float ButtonMoveValue => _buttonMoveValue.x;
     public float ButtonJumpValue => _buttonJumpValue;
 
-    public event Action ButtonUse;
+
+    private void Update()
+    {
+        Debug.Log(ButtonUse.GetInvocationList().Length);
+    }
 
     private void Awake()
     {
@@ -34,13 +40,13 @@ public class InputSystemReader : MonoBehaviour
 
     private void OnDisable() => _inputActions.Disable();
 
+
     public void OnUse(InputAction.CallbackContext context)
     {
         if (context.started)
         {
             ButtonUse?.Invoke();
             _buttonUseValue = context.ReadValueAsButton();
-            Debug.Log(context);
         }
     }
 
@@ -50,7 +56,6 @@ public class InputSystemReader : MonoBehaviour
         {
             _buttonAttackValue = context.ReadValue<float>();
             _playerAttack.SetButtonValue();
-            Debug.Log(context);
         }
     }
 

@@ -1,5 +1,5 @@
-
 using UnityEngine;
+
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private InputSystemReader _inputSystemReader;
