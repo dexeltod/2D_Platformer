@@ -3,8 +3,7 @@ using UnityEngine.Events;
 
 public class BadCupboardBehaviour : ICupboard
 {
-    public UnityAction IsCupboardOpened;
-    private AlarmIncreaser _alarmIncreaser;
+    private readonly AlarmIncreaser _alarmIncreaser;
 
     public BadCupboardBehaviour(AlarmIncreaser alarmIncreaser)
     {

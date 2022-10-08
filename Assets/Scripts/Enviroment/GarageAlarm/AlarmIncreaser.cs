@@ -29,7 +29,7 @@ public class AlarmIncreaser : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D()
     {
         StopMovingAlarmValues();
         _currentCoroutine = StartCoroutine(MoveBar(_pointPerSecond));
@@ -45,7 +45,9 @@ public class AlarmIncreaser : MonoBehaviour
     {
         float maxAlarmValue = 1.1f;
         float minAlarmValue = 0f;
-        float waitingValue = 1f;        
+        float waitingValue = 1f;
+        
+        var waitingTime = new WaitForSeconds(waitingValue);
 
         while (_currentAlarmValue <= maxAlarmValue || _currentAlarmValue >= minAlarmValue)
         {
@@ -53,7 +55,7 @@ public class AlarmIncreaser : MonoBehaviour
 
             _audio.volume = _currentAlarmValue;
             _bar.FillBar(_currentAlarmValue);
-            yield return new WaitForSeconds(waitingValue);
+            yield return waitingTime;
         }
     }
 }
