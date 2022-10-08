@@ -4,16 +4,15 @@ using UnityEngine.Events;
 public class BadCupboardBehaviour : ICupboard
 {
     public UnityAction IsCupboardOpened;
+    private AlarmIncreaser _alarmIncreaser;
 
-    private AlarmBarMover _barMover;
-
-    public BadCupboardBehaviour(AlarmBarMover barMover)
+    public BadCupboardBehaviour(AlarmIncreaser alarmIncreaser)
     {
-        _barMover = barMover;  
+        _alarmIncreaser = alarmIncreaser;
     }
 
     public void Open()
     {
-        _barMover.FillBar(1);
+        _alarmIncreaser.SetMaxAlarmVolume();
     }
 }

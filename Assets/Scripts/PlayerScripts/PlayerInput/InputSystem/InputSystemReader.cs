@@ -20,12 +20,6 @@ public class InputSystemReader : MonoBehaviour
     public float ButtonMoveValue => _buttonMoveValue.x;
     public float ButtonJumpValue => _buttonJumpValue;
 
-
-    private void Update()
-    {
-        Debug.Log(ButtonUse.GetInvocationList().Length);
-    }
-
     private void Awake()
     {
         _inputActions = new InputSystem();
