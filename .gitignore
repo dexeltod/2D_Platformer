@@ -63,9 +63,6 @@ sysinfo.txt
 *.ase
 *.aseprite
 *.psd
-*.png
-*.jpeg
-*.jpg
 
 # Crashlytics generated file
 crashlytics-build.properties

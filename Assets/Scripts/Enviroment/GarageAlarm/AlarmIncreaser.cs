@@ -1,22 +1,37 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AlarmIncreaser : MonoBehaviour
 {
+    [SerializeField] private AudioSource _audio;
     [SerializeField] private AlarmBarMover _bar;
-    [Range(0,1)] float _alarmPointPerSecond;
-    
+    [SerializeField, Range(0, 1)] private float _pointPerSecond;
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        StartCoroutine(MoveBar(_pointPerSecond));
     }
 
-
-    private void IncreaseAlarm()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        
-        _bar.FillBar(_alarmPointPerSecond);
+        StopCoroutine(MoveBar(_pointPerSecond));
+        StartCoroutine(MoveBar(-_pointPerSecond));
+    }
+
+    IEnumerator MoveBar(float point)
+    {
+        float maxAlarmValue = 1.0f;
+        float currentAlarmValue = 0f;
+        float waitingValue = 1f;
+
+        while (currentAlarmValue <= maxAlarmValue)
+        {
+            Debug.Log(currentAlarmValue);
+            currentAlarmValue += point;
+
+            _audio.volume = currentAlarmValue;
+            _bar.FillBar(currentAlarmValue);
+            yield return new WaitForSeconds(waitingValue);
+        }        
     }
 }

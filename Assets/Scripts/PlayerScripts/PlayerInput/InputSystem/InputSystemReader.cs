@@ -40,7 +40,6 @@ public class InputSystemReader : MonoBehaviour
 
     private void OnDisable() => _inputActions.Disable();
 
-
     public void OnUse(InputAction.CallbackContext context)
     {
         if (context.started)

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class AlarmBarMover : MonoBehaviour
@@ -9,9 +8,9 @@ public class AlarmBarMover : MonoBehaviour
 
     public void FillBar(float fillAmount)
     {
-        if(fillAmount > 1 || fillAmount < 0)
+        if(fillAmount >= 1f || fillAmount <= 0f)
             return;
 
-        _bar.fillAmount = 1;
+        _bar.fillAmount = fillAmount;
     }
 }
