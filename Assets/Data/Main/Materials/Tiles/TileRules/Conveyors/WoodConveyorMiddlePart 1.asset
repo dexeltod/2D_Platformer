@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: WoodConveyorMiddlePart 1
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 1062057608, guid: 20cba2fb05450d84c89194d9cca3b3b4, type: 3}
+  - {fileID: 1518809835, guid: 20cba2fb05450d84c89194d9cca3b3b4, type: 3}
+  - {fileID: -1230255628, guid: 20cba2fb05450d84c89194d9cca3b3b4, type: 3}
+  - {fileID: 1086464909, guid: 20cba2fb05450d84c89194d9cca3b3b4, type: 3}
+  - {fileID: -1021959644, guid: 20cba2fb05450d84c89194d9cca3b3b4, type: 3}
+  - {fileID: 375663227, guid: 20cba2fb05450d84c89194d9cca3b3b4, type: 3}
+  - {fileID: 639699439, guid: 20cba2fb05450d84c89194d9cca3b3b4, type: 3}
+  - {fileID: -636226676, guid: 20cba2fb05450d84c89194d9cca3b3b4, type: 3}
+  - {fileID: 200579704, guid: 20cba2fb05450d84c89194d9cca3b3b4, type: 3}
+  - {fileID: 1354753042, guid: 20cba2fb05450d84c89194d9cca3b3b4, type: 3}
+  - {fileID: 1694991502, guid: 20cba2fb05450d84c89194d9cca3b3b4, type: 3}
+  - {fileID: 1340153209, guid: 20cba2fb05450d84c89194d9cca3b3b4, type: 3}
+  - {fileID: -1152638201, guid: 20cba2fb05450d84c89194d9cca3b3b4, type: 3}
+  - {fileID: 620804181, guid: 20cba2fb05450d84c89194d9cca3b3b4, type: 3}
+  - {fileID: 1230335514, guid: 20cba2fb05450d84c89194d9cca3b3b4, type: 3}
+  m_MinSpeed: 7
+  m_MaxSpeed: 7
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 1

@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using TMPro.Examples;
 using UnityEngine;
+
 
 public abstract class PhysicsMovement : MonoBehaviour
 {
@@ -7,6 +9,7 @@ public abstract class PhysicsMovement : MonoBehaviour
     [SerializeField] protected float _gravityModifier = 1f;
     [SerializeField] protected float _minGroundNormalY;
 
+    protected InputSystemReader _inputSystemReader;
     protected const float ShellRadius = 0.01f;
     protected const float MinMoveDistance = 0.001f;
 
@@ -44,7 +47,7 @@ public abstract class PhysicsMovement : MonoBehaviour
     protected void Movement(Vector2 move, bool yMovement)
     {
         float distance = move.magnitude;
-        
+
         if (distance > MinMoveDistance)
         {
             int count = _rb2d.Cast(move, _contactFilter, _hitBuffer, distance + ShellRadius);

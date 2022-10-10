@@ -1,6 +1,3 @@
-using UnityEngine;
-using UnityEngine.Events;
-
 public class BadCupboardBehaviour : ICupboard
 {
     private readonly AlarmIncreaser _alarmIncreaser;

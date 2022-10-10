@@ -1,8 +1,8 @@
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerMoveController))]
 public class PlayerAttack : MonoBehaviour
-{
-    [SerializeField] private InputSystemReader _inputSystemReader;
+{   
 
     [Header("Set target and damage")]
     [SerializeField] private int _damage = 10;
@@ -14,6 +14,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private Transform _handPoint;
     [SerializeField] private float _heightHand;
 
+    private InputSystemReader _inputSystemReader;
     // attack settings
     private bool _canTouch;
     private bool _isAttack;
@@ -25,6 +26,10 @@ public class PlayerAttack : MonoBehaviour
     public float AttackDelay => _attackDelay;
     public bool CurrentAttackState => _isAttack;
 
+    private void Start()
+    {
+        _inputSystemReader = GetComponent<InputSystemReader>();
+    }
 
     private void Update()
     {
@@ -32,7 +37,7 @@ public class PlayerAttack : MonoBehaviour
         TryAttack(_attackDelay);
     }
     private void CheckDistance()
-    {        
+    {
         _hitTargetRight = Physics2D.Raycast(_handPoint.transform.position, _handPoint.transform.right, _maxDistanceToAttack, _layerMask);
         _hitTargetLeft = Physics2D.Raycast(_handPoint.transform.position, -_handPoint.transform.right, _maxDistanceToAttack, _layerMask);
 
@@ -66,7 +71,7 @@ public class PlayerAttack : MonoBehaviour
         else if (_canTouch && _isAttack)
         {
             _hitTargetRight.collider.TryGetComponent(out IEnemy1Level enemy);
-            if(enemy != null)
+            if (enemy != null)
                 enemy.ApplyDamage(_damage);
 
             _currentAttackDelay = 0f;

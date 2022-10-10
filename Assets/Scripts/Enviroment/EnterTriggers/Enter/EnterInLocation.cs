@@ -14,7 +14,7 @@ public class EnterInLocation : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D()
     {
         DisableButton();
     }

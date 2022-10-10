@@ -7,21 +7,11 @@ public class PlayerMoveController : PhysicsMovement
     [SerializeField] private float _speedModifier = 5;
     [SerializeField] private float _maxJumpHight = 9.2f;
     [SerializeField] private float _jumpSpeedSlowdown;
-    [SerializeField] private InputSystemReader _inputSystemReader;
 
     [Header("Debug")]
 
     [SerializeField] bool _debugGizmos;
-
-    public void SetJumpDir( )
-    {
-        _moveDirection.y = _inputSystemReader.ButtonMoveValue;
-    }
-
-    public void SetMoveHorizontalDirection()
-    {
-        _moveDirection.x = _inputSystemReader.ButtonMoveValue;
-    }
+      
 
     public void OnValidate()
     {
@@ -37,8 +27,19 @@ public class PlayerMoveController : PhysicsMovement
             _speedModifier = 0;
     }
 
+    public void SetJumpDir()
+    {
+        _moveDirection.y = _inputSystemReader.ButtonMoveValue;
+    }
+
+    public void SetMoveHorizontalDirection()
+    {
+        _moveDirection.x = _inputSystemReader.ButtonMoveValue;
+    }
+
     private void Start()
     {
+        _inputSystemReader = GetComponent<InputSystemReader>();
         _contactFilter.SetLayerMask(Physics2D.GetLayerCollisionMask(gameObject.layer));
         _contactFilter.useTriggers = false;
         _contactFilter.useLayerMask = true;

@@ -193,8 +193,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
-        width: 96
+        y: 112
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -213,9 +213,9 @@ TextureImporter:
       name: WoodConveyor_1
       rect:
         serializedVersion: 2
-        x: 96
-        y: 16
-        width: 96
+        x: 16
+        y: 112
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -224,7 +224,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6764661ee98f17f0800000000000000
+      spriteID: fa65c1d4d35a0b14ab6f3ef9565f8e51
       internalID: -639640966392420497
       vertices: []
       indices: 
@@ -234,9 +234,9 @@ TextureImporter:
       name: WoodConveyor_2
       rect:
         serializedVersion: 2
-        x: 192
-        y: 16
-        width: 96
+        x: 32
+        y: 112
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -245,7 +245,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f084e5603965dace0800000000000000
+      spriteID: 5288aef5eff22c146986605c21346b8c
       internalID: -1392361520320591857
       vertices: []
       indices: 
@@ -255,9 +255,9 @@ TextureImporter:
       name: WoodConveyor_3
       rect:
         serializedVersion: 2
-        x: 288
-        y: 16
-        width: 96
+        x: 48
+        y: 112
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -266,7 +266,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 242e3c4d3788caf90800000000000000
+      spriteID: e051d41d79542a84d884002ef8d6bb4b
       internalID: -6941022894612553150
       vertices: []
       indices: 
@@ -276,9 +276,9 @@ TextureImporter:
       name: WoodConveyor_4
       rect:
         serializedVersion: 2
-        x: 384
-        y: 16
-        width: 96
+        x: 64
+        y: 112
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -287,7 +287,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ef0a7fbc51a88a00800000000000000
+      spriteID: f50ebbc8dc0b82f4496c914e82e76107
       internalID: 759033956933439463
       vertices: []
       indices: 
@@ -297,9 +297,9 @@ TextureImporter:
       name: WoodConveyor_5
       rect:
         serializedVersion: 2
-        x: 480
-        y: 16
-        width: 96
+        x: 80
+        y: 112
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -308,7 +308,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30defae0d23a46c20800000000000000
+      spriteID: 38d8b0a7e501ca94d8c47516be30094d
       internalID: 3198861049255161091
       vertices: []
       indices: 
@@ -318,9 +318,9 @@ TextureImporter:
       name: WoodConveyor_6
       rect:
         serializedVersion: 2
-        x: 576
-        y: 16
-        width: 96
+        x: 0
+        y: 96
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -329,7 +329,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4ec2034c2182d260800000000000000
+      spriteID: 7ea801ebff3b21e4182aa4cd258c0fed
       internalID: 7120895987928976974
       vertices: []
       indices: 
@@ -339,9 +339,9 @@ TextureImporter:
       name: WoodConveyor_7
       rect:
         serializedVersion: 2
-        x: 672
-        y: 16
-        width: 96
+        x: 16
+        y: 96
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -350,7 +350,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bdc4f0936b45741c0800000000000000
+      spriteID: a81c69dc672ecbe4fab2bcd544078469
       internalID: -4519550559424918309
       vertices: []
       indices: 
@@ -360,9 +360,9 @@ TextureImporter:
       name: WoodConveyor_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 96
+        x: 32
+        y: 96
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -371,7 +371,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4486bf9eff95bd910800000000000000
+      spriteID: 4e2fc26f18b71804c9ac661663ca2815
       internalID: 1863181826524932164
       vertices: []
       indices: 
@@ -381,9 +381,9 @@ TextureImporter:
       name: WoodConveyor_9
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
-        width: 96
+        x: 48
+        y: 96
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -392,7 +392,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d6a8251d390764a0800000000000000
+      spriteID: ae3412b69be835146b9983e713f8ac01
       internalID: -6600296570935531822
       vertices: []
       indices: 
@@ -402,9 +402,9 @@ TextureImporter:
       name: WoodConveyor_10
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 96
+        x: 64
+        y: 96
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -413,7 +413,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a465dc8070a264180800000000000000
+      spriteID: d05a63cb2b8a03a4d8c1033b372534b7
       internalID: -9131564984746289590
       vertices: []
       indices: 
@@ -423,9 +423,9 @@ TextureImporter:
       name: WoodConveyor_11
       rect:
         serializedVersion: 2
-        x: 288
-        y: 0
-        width: 96
+        x: 80
+        y: 96
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -434,7 +434,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a43015b4605f40340800000000000000
+      spriteID: e1965fb561d2eaf42ab3e18ae11c069b
       internalID: 4829254107830223690
       vertices: []
       indices: 
@@ -444,9 +444,9 @@ TextureImporter:
       name: WoodConveyor_12
       rect:
         serializedVersion: 2
-        x: 384
-        y: 0
-        width: 96
+        x: 0
+        y: 80
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -455,7 +455,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a39fcbf30c9da4a50800000000000000
+      spriteID: 70ddab6e297ce3c48b8bd44b93846699
       internalID: 6506252031416400186
       vertices: []
       indices: 
@@ -465,9 +465,9 @@ TextureImporter:
       name: WoodConveyor_13
       rect:
         serializedVersion: 2
-        x: 480
-        y: 0
-        width: 96
+        x: 16
+        y: 80
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -476,7 +476,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92b613799bc22aa30800000000000000
+      spriteID: 56fdf7ab175a00a4da3439b88a5ff049
       internalID: 4224988576044116777
       vertices: []
       indices: 
@@ -486,9 +486,9 @@ TextureImporter:
       name: WoodConveyor_14
       rect:
         serializedVersion: 2
-        x: 576
-        y: 0
-        width: 96
+        x: 32
+        y: 80
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -497,7 +497,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e60ec3a66d377df0800000000000000
+      spriteID: e74ce1fadaf81f74c8b8f7cc9d0ed7c8
       internalID: -182609748841068830
       vertices: []
       indices: 
@@ -507,9 +507,9 @@ TextureImporter:
       name: WoodConveyor_15
       rect:
         serializedVersion: 2
-        x: 672
-        y: 0
-        width: 96
+        x: 48
+        y: 80
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -518,8 +518,680 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f502179c48129e750800000000000000
+      spriteID: cb2062311cfbd154fbecb6b52f50f0a9
       internalID: 6334631205072347231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_16
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8527c11600e6789459c658b7b5fd2652
+      internalID: 432579570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_17
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e579cc49823d25a47a91cd36bf9bd963
+      internalID: -1535573370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdac5b73cac7f2b4bacfa3dbd1e3b9e8
+      internalID: 768461234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_19
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7fa64bdcca5ce548b3221f0cf54c084
+      internalID: 1929362212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_20
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bdc3c86a0928dc428d06c4ed4ffaa84
+      internalID: 1301861027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_21
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3637d0854c801b49976e239960bbf03
+      internalID: 600654552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_22
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65a0aa1933df9d54fb122cbf956770fe
+      internalID: -1724106137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_23
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41dfae64d704c0445acf604845795dd6
+      internalID: -435768236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43a0eecf5869ef9489b0fef367d44cfe
+      internalID: -1383949881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_25
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50c9c2e3d8ee7b24ead666cf1feb4854
+      internalID: -1513166533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_26
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 466e9de088a88ca41bd7866cd38b5ff7
+      internalID: 1068714244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_27
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f4d5efac20200549a1a4153417b448f
+      internalID: -1681815362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_28
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e90fed7309a9557459bd2c3f1542d1e9
+      internalID: 362804574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_29
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a6a3292e3d53a04ba64dbc58a4d90dd
+      internalID: -1290748002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ea4c3fab1d5953498ad8a56b1c1a8d7
+      internalID: 446325699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_31
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b04dd900dad02f42870d7c359983084
+      internalID: 1407331074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_32
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf483461c0484f04997ed144591cce89
+      internalID: 746541968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_33
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2782db72546dc764ebb7589cba1a2b9e
+      internalID: -665679758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_34
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bbcb01742015234abe2459af0fec593
+      internalID: -1479536068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_35
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67b468789c2fecb42b07d84c4100cc33
+      internalID: 607605297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c7fcc9ccc7b7934cbf2fc8ec1af51c9
+      internalID: 775244267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_37
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e39dc7055fdb954594a43d1a515fe81
+      internalID: -1051642371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_38
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee1a42e35c0ec974c9bfa840fd81145c
+      internalID: -617218064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_39
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b77d7d2dc3cb094bb5148517aaed0c6
+      internalID: 1529344050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_40
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e8f2d4110cf2ba49bc4143dc3429a47
+      internalID: 910720504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_41
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce0b8e2af7ca2ea448cefd9ee3ba8471
+      internalID: -2127447047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8677b54d6ea5b449b62093868ab6036
+      internalID: -1168073051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_43
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a675dfe6688968428b3b7e2387cf3a1
+      internalID: 1461593952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_44
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09ff0dec677a9714f85777b813cb497b
+      internalID: -1251942308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_45
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04462a70c6822534a92022fb18b0d55e
+      internalID: -1827071505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_46
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d67e86462ba1dd42912e5f37ddf865e
+      internalID: -1141214714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WoodConveyor_47
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d4b35a401ff76a48b89eedefac8b489
+      internalID: -491165991
       vertices: []
       indices: 
       edges: []
@@ -535,22 +1207,54 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      WoodConveyor_3: -6941022894612553150
+      WoodConveyor_35: 607605297
       WoodConveyor_10: -9131564984746289590
       WoodConveyor_15: 6334631205072347231
       WoodConveyor_8: 1863181826524932164
+      WoodConveyor_46: -1141214714
+      WoodConveyor_21: 600654552
+      WoodConveyor_20: 1301861027
+      WoodConveyor_31: 1407331074
+      WoodConveyor_11: 4829254107830223690
+      WoodConveyor_24: -1383949881
+      WoodConveyor_26: 1068714244
+      WoodConveyor_0: 7348789767792103409
+      WoodConveyor_2: -1392361520320591857
+      WoodConveyor_7: -4519550559424918309
+      WoodConveyor_17: -1535573370
+      WoodConveyor_16: 432579570
+      WoodConveyor_19: 1929362212
+      WoodConveyor_30: 446325699
+      WoodConveyor_42: -1168073051
+      WoodConveyor_22: -1724106137
+      WoodConveyor_38: -617218064
+      WoodConveyor_29: -1290748002
+      WoodConveyor_34: -1479536068
+      WoodConveyor_25: -1513166533
+      WoodConveyor_3: -6941022894612553150
+      WoodConveyor_43: 1461593952
+      WoodConveyor_23: -435768236
+      WoodConveyor_39: 1529344050
       WoodConveyor_6: 7120895987928976974
       WoodConveyor_14: -182609748841068830
       WoodConveyor_1: -639640966392420497
       WoodConveyor_4: 759033956933439463
-      WoodConveyor_11: 4829254107830223690
+      WoodConveyor_27: -1681815362
       WoodConveyor_9: -6600296570935531822
-      WoodConveyor_0: 7348789767792103409
-      WoodConveyor_2: -1392361520320591857
-      WoodConveyor_7: -4519550559424918309
+      WoodConveyor_28: 362804574
+      WoodConveyor_18: 768461234
+      WoodConveyor_32: 746541968
+      WoodConveyor_36: 775244267
+      WoodConveyor_41: -2127447047
       WoodConveyor_5: 3198861049255161091
       WoodConveyor_13: 4224988576044116777
+      WoodConveyor_33: -665679758
+      WoodConveyor_44: -1251942308
+      WoodConveyor_47: -491165991
+      WoodConveyor_45: -1827071505
       WoodConveyor_12: 6506252031416400186
+      WoodConveyor_40: 910720504
+      WoodConveyor_37: -1051642371
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
