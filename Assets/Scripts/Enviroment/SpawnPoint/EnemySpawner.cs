@@ -22,7 +22,8 @@ public class EnemySpawner : MonoBehaviour
 
     private void OnEnable()
     {
-        _points = GetComponentsInChildren<Transform>().Skip(1).ToArray();
+        int firstElement = 1;
+        _points = GetComponentsInChildren<Transform>().Skip(firstElement).ToArray();
         _spawner = StartCoroutine(SpawnEnemies());
     }
 
