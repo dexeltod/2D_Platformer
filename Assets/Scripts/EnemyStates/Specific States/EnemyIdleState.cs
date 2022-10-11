@@ -12,16 +12,16 @@ public class EnemyIdleState : EnemyState
 
     private void OnEnable()
     {
-        _animator.SetBool(_animBoolName, true);
+        SetBoolName(true);
     }
 
     private void OnDisable()
     {
-        _animator.SetBool(_animBoolName, false);
+        SetBoolName(false);
     }
 
-    private void Update()
+    private void SetBoolName(bool workState)
     {
-        
+        _animator.SetBool(_animBoolName, workState);
     }
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
-public class EnemyAttackTransition : Transition
+public class EnemyAttackToIdleTransition : Transition
 {
-    [SerializeField] private EnemyLookAround _enemyLook;
+    [SerializeField] private EnemyObserve _enemyLook;
     [SerializeField] private D_EntityVisibility _entityVisibility;
 
     public override void Enable()

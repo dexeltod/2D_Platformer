@@ -8,7 +8,7 @@ public class EnemyEntity : MonoBehaviour
     public AliveGO AliveGO { get; protected set; }
     public Animator Anim { get; protected set; }
 
-    protected EnemyLookAround EnemyLookAround { get; set; }
+    protected EnemyObserve EnemyLookAround { get; set; }
     protected EnemyPatrolEntity EnemyPatrol { get; set; }
     protected EntityAnimation EntityAnimation { get; set; }
     protected EnemyDetectEntity EnemyDetect { get; set; }
@@ -27,7 +27,7 @@ public class EnemyEntity : MonoBehaviour
         Anim = GetComponentInParent<Animator>();
         EntityAnimation = GetComponentInChildren<EntityAnimation>();
         EnemyPatrol = GetComponentInChildren<EnemyPatrolEntity>();
-        EnemyLookAround = GetComponentInChildren<EnemyLookAround>();
+        EnemyLookAround = GetComponentInChildren<EnemyObserve>();
         EnemyIdle = GetComponentInChildren<EnemyIdleEntity>();
         EnemyDetect = GetComponentInChildren<EnemyDetectEntity>();
         Rb2d = GetComponentInParent<Rigidbody2D>();

@@ -9,7 +9,7 @@ public class IdleState : State
     protected float IdleTime;
 
     public IdleState(EntityAnimation entityAnimation, FiniteStateMachine stateMachine, string animBoolName,
-        D_IdleState idleStateData, EnemyLookAround enemyLookAround, EnemyIdleEntity enemyIdleEntity)
+        D_IdleState idleStateData, EnemyObserve enemyLookAround, EnemyIdleEntity enemyIdleEntity)
         : base(entityAnimation, stateMachine, animBoolName)
     {
         this.IdleStateData = idleStateData;

@@ -1,47 +1,32 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyPatrolState : EnemyState
 {
-    [SerializeField] private EnemyLookAround _enemyLook;
-    [SerializeField] private DataEntity _dataEntity;
+    [SerializeField] private CharacterData _dataEntity;
+    [SerializeField] private EnemyMovement _movement;
 
     private Animator _animator;
-    private Rigidbody2D _rb2d;
     private string _animBoolName = "isWalk";
-    private Vector2 _moveSpeed;
 
     private void Awake()
     {
-        _rb2d = GetComponentInParent<Rigidbody2D>();    
         _animator = GetComponentInParent<Animator>();
     }
 
     private void OnEnable()
     {
-        _moveSpeed = new Vector2(_dataEntity.MoveSpeed, transform.position.y);
-        _animator.SetBool(_animBoolName, true);
+        SetMovementState(true);
     }
 
     private void OnDisable()
     {
-        _animator.SetBool(_animBoolName, false);
+        SetMovementState(false);
     }
 
-    private void FixedUpdate()
+    private void SetMovementState(bool workState)
     {
-        MoveVertical();
-    }
-
-    private void MoveVertical()
-    {
-        if(_enemyLook.CheckLedge() || !_enemyLook.CheckColliderHorizontal())
-        {
-            _rb2d.velocity = new Vector3(_moveSpeed.x * _enemyLook.FacingDirection, _rb2d.velocity.y);
-        }
-    }
-
-    public void StopMoveVertical()
-    {
-        _rb2d.velocity = new Vector3(_rb2d.velocity.x * 0, _rb2d.velocity.y);
+        _movement.enabled = workState;
+        _animator.SetBool(_animBoolName, workState);
     }
 }

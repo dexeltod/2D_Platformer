@@ -1,48 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &358634184868255047
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3388854123508704200}
-  - component: {fileID: 1452717492017049283}
-  m_Layer: 0
-  m_Name: EntityData
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3388854123508704200
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 358634184868255047}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.729763, y: 1.1690855, z: -10.551602}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1848783015209635881}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1452717492017049283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 358634184868255047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a6b2f6b06bc4e849a6867dad893a42c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1011855946293462259
 GameObject:
   m_ObjectHideFlags: 0
@@ -69,6 +26,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.56, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1848783015209635881}
   m_RootOrder: 3
@@ -99,6 +57,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1848783015209635881}
   m_RootOrder: 5
@@ -121,7 +80,6 @@ GameObject:
   - component: {fileID: 7538787012351086003}
   - component: {fileID: 4032145706180166405}
   - component: {fileID: 3750965019207565048}
-  - component: {fileID: 4024562998596831070}
   m_Layer: 8
   m_Name: EntityStates
   m_TagString: Untagged
@@ -139,9 +97,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1848783015209635881}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6790938720574776863
 MonoBehaviour:
@@ -199,8 +158,8 @@ MonoBehaviour:
   _transitions:
   - {fileID: 6588581990295123834}
   - {fileID: 7538787012351086003}
-  _enemyLook: {fileID: 4024562998596831070}
   _dataEntity: {fileID: 11400000, guid: 3cf77fc70159a864681e220c386bde36, type: 2}
+  _movement: {fileID: 5728285811741105012}
 --- !u!114 &6588581990295123834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,35 +173,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyState: {fileID: 3428575754110346765}
-  _ledgeNotLooked:
+  _observer: {fileID: 6424921582603155147}
+  _ledgeNotCollide:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5677714875333465685}
-        m_TargetAssemblyTypeName: EnemyPatrolState, Assembly-CSharp
-        m_MethodName: StopMoveVertical
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4024562998596831070}
-        m_TargetAssemblyTypeName: EnemyLookAround, Assembly-CSharp
-        m_MethodName: Flip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4024562998596831070}
-        m_TargetAssemblyTypeName: EnemyLookAround, Assembly-CSharp
+      - m_Target: {fileID: 6424921582603155147}
+        m_TargetAssemblyTypeName: EnemyObserver, Assembly-CSharp
         m_MethodName: RotateFacingDirection
         m_Mode: 1
         m_Arguments:
@@ -253,8 +189,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _entityVisibility: {fileID: 11400000, guid: d4f5fabc26fc141408b8ea64a01ea706, type: 2}
-  _enemyLook: {fileID: 4024562998596831070}
 --- !u!114 &7706377473296366735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,27 +243,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyState: {fileID: 3428575754110346765}
-  _enemyLook: {fileID: 4024562998596831070}
+  _enemyLook: {fileID: 6424921582603155147}
   _entityVisibility: {fileID: 11400000, guid: d4f5fabc26fc141408b8ea64a01ea706, type: 2}
---- !u!114 &4024562998596831070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1340263989776775138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 710c651c57e4ec240baf2820cbf94ff4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemyPlayer: {fileID: 1764271666515919170, guid: 67d3fbd78417d784ea4efb80027ee718, type: 3}
-  EntityVisibility: {fileID: 11400000, guid: d4f5fabc26fc141408b8ea64a01ea706, type: 2}
-  _wallCheckTransform: {fileID: 6645501397967116688}
-  _ledgeCheckTransform: {fileID: 5204559060345414845}
-  _eyePosition: {fileID: 7557254000837333921}
-  _debugGizmos: 1
-  _isDetectEnemy: 0
 --- !u!1 &1848783015209635893
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,6 +260,8 @@ GameObject:
   - component: {fileID: 7594813020889640396}
   - component: {fileID: 4874932899046573218}
   - component: {fileID: 9218998564139218693}
+  - component: {fileID: 6424921582603155147}
+  - component: {fileID: 5728285811741105012}
   m_Layer: 8
   m_Name: SchoolGuyEnemy
   m_TagString: Untagged
@@ -362,6 +279,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -22.19, y: 5.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3889827699522604833}
   - {fileID: 7557254000837333921}
@@ -369,7 +287,6 @@ Transform:
   - {fileID: 5204559060345414845}
   - {fileID: 6645501397967116688}
   - {fileID: 5414829253021510956}
-  - {fileID: 3388854123508704200}
   - {fileID: 3719085192323914529}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -385,6 +302,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -427,7 +345,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &1848783015209635883
 Animator:
-  serializedVersion: 3
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -440,6 +358,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -507,7 +426,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dataEntity: {fileID: 11400000, guid: 3cf77fc70159a864681e220c386bde36, type: 2}
   _dataEnemyFight: {fileID: 11400000, guid: 8859484e7f2dc5e4680c1448b8a0ab4e, type: 2}
-  _target: {fileID: 1764271666515919170, guid: 67d3fbd78417d784ea4efb80027ee718, type: 3}
+  _target: {fileID: 44621287, guid: de7748fd89fa843468d399acf1ff646f, type: 3}
+--- !u!114 &6424921582603155147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848783015209635893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710c651c57e4ec240baf2820cbf94ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyPlayer: {fileID: 44621287, guid: de7748fd89fa843468d399acf1ff646f, type: 3}
+  EntityVisibility: {fileID: 11400000, guid: d4f5fabc26fc141408b8ea64a01ea706, type: 2}
+  _wallCheckTransform: {fileID: 6645501397967116688}
+  _ledgeCheckTransform: {fileID: 5204559060345414845}
+  _eyePosition: {fileID: 7557254000837333921}
+  _sprite: {fileID: 1848783015209635880}
+  _isEnableGizmos: 1
+  _isDetectEnemy: 0
+--- !u!114 &5728285811741105012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848783015209635893}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23663eb49091b784fa60f890acca049d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _verticalSpeed: {fileID: 11400000, guid: 3cf77fc70159a864681e220c386bde36, type: 2}
 --- !u!1 &2236006073919173763
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,7 +470,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6645501397967116688}
   m_Layer: 8
-  m_Name: HandTouchCheck
+  m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -534,6 +486,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1848783015209635881}
   m_RootOrder: 4
@@ -564,6 +517,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1848783015209635881}
   m_RootOrder: 1
@@ -594,6 +548,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1848783015209635881}
   m_RootOrder: 0
@@ -624,6 +579,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1848783015209635881}
   m_RootOrder: 2

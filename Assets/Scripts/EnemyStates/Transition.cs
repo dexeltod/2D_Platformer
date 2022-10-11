@@ -14,6 +14,7 @@ public abstract class Transition : MonoBehaviour
     {
         Target = target;
     }
+    public abstract void Enable();
 
     private void OnEnable()
     {
@@ -21,5 +22,4 @@ public abstract class Transition : MonoBehaviour
         Enable();
     }
 
-    public abstract void Enable();
 }

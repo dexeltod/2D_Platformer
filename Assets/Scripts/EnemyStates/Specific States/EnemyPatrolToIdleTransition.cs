@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class EnemyPatrolToIdleTransition : Transition
 {
-    [SerializeField] private UnityEvent _ledgeNotLooked;
-    [SerializeField] private D_EntityVisibility _entityVisibility;
-    [SerializeField] private EnemyLookAround _enemyLook;
+    [SerializeField] private EnemyObserve _observer;
+
+    [SerializeField] private UnityEvent _ledgeNotCollide;
 
     public override void Enable(){}
 
@@ -19,18 +17,18 @@ public class EnemyPatrolToIdleTransition : Transition
 
     private void CheckEnemy()
     {
-        if (_enemyLook.IsSeeEnemy())
-        {
+        if (_observer.IsSeeEnemy() == true)
             IsNeedTransition = true;
-        }
     }
 
     private void ChangeStateToIdle()
     {
-        if (!_enemyLook.CheckLedge() || _enemyLook.CheckColliderHorizontal())
+        bool isNoWay = _observer.CheckLedge() == false || _observer.CheckColliderHorizontal() == true;
+
+        if (isNoWay)
         {
             IsNeedTransition = true;
-            _ledgeNotLooked?.Invoke();
+            _ledgeNotCollide?.Invoke();
         }
     }
 }
