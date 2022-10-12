@@ -5,6 +5,7 @@ public class EnemyObserve : MonoBehaviour
 {
     [SerializeField] private PlayerEntity _enemyPlayer;
     [SerializeField] private D_EntityVisibility EntityVisibility;
+
     [SerializeField] private Transform _wallCheckTransform;
     [SerializeField] private Transform _ledgeCheckTransform;
     [SerializeField] private Transform _eyePosition;
@@ -48,7 +49,6 @@ public class EnemyObserve : MonoBehaviour
 
     public void RotateFacingDirection()
     {
-        Debug.Log("huy");
         FacingDirection *= -1;
         _ledgeCheckTransform.localPosition = new Vector2(_ledgeCheckTransform.localPosition.x * -1f, _ledgeCheckTransform.localPosition.y);
 
