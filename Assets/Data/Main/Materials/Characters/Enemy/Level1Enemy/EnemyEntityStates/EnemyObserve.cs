@@ -1,6 +1,6 @@
-using DG.Tweening;
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class EnemyObserve : MonoBehaviour
 {
     [SerializeField] private PlayerEntity _enemyPlayer;
@@ -34,7 +34,7 @@ public class EnemyObserve : MonoBehaviour
 
     public bool IsSeeEnemy()
     {
-        SetPositionByEnemy();
+        SetPositionAboutPlayer();
 
         bool isLookAtEnemy = AngleFacingDirection < EntityVisibility.AngleOfVisibility &&
                              DistanceBetweenEnemy <= EntityVisibility.VisibilityRange;
@@ -58,7 +58,7 @@ public class EnemyObserve : MonoBehaviour
             _sprite.flipX = true;
     }
 
-    private void SetPositionByEnemy()
+    private void SetPositionAboutPlayer()
     {
         Vector2 targetDirection = _enemyPlayer.EyePosition.position - _eyePosition.position;
         Vector2 forward = _eyePosition.right;
