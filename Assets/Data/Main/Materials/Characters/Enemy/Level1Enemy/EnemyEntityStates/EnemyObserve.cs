@@ -80,27 +80,25 @@ public class EnemyObserve : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Vector3 wallCheckDirection = _wallCheckTransform.position + (Vector3)(EntityVisibility.WallCheckDistance
-                * FacingDirection * Vector2.right);
-
-        Vector2 ledgeCheckDirection = _ledgeCheckTransform.position + (Vector3)Vector2.down * EntityVisibility.LedgeCheckDistance;
-
-        Vector3 eyeFirstLineOfAngle = new Vector2(_eyePosition.position.x
-                            + EntityVisibility.VisibilityRange * FacingDirection,
-                              _eyePosition.position.y + EntityVisibility.AngleOfVisibility / 10);
-
-        Vector3 eyeSecondeLineOfAngle = new Vector2(_eyePosition.position.x + EntityVisibility.VisibilityRange * FacingDirection,
-                            _eyePosition.position.y - EntityVisibility.AngleOfVisibility / 10);
-
         if (_isEnableGizmos == true)
         {
+            Vector3 wallCheckDirection = _wallCheckTransform.position + (Vector3)(EntityVisibility.WallCheckDistance
+                * FacingDirection * Vector2.right);
+
+            Vector2 ledgeCheckDirection = _ledgeCheckTransform.position + (Vector3)Vector2.down * EntityVisibility.LedgeCheckDistance;
+
+            Vector3 eyeFirstLineOfAngle = new Vector2(_eyePosition.position.x
+                                + EntityVisibility.VisibilityRange * FacingDirection,
+                                  _eyePosition.position.y + EntityVisibility.AngleOfVisibility / 10);
+
+            Vector3 eyeSecondeLineOfAngle = new Vector2(_eyePosition.position.x + EntityVisibility.VisibilityRange * FacingDirection,
+                                _eyePosition.position.y - EntityVisibility.AngleOfVisibility / 10);
+
             Gizmos.DrawLine(_wallCheckTransform.position, wallCheckDirection);
             Gizmos.DrawLine(_ledgeCheckTransform.position, ledgeCheckDirection);
 
             Gizmos.DrawLine(_eyePosition.position, eyeFirstLineOfAngle);
             Gizmos.DrawLine(_eyePosition.position, eyeSecondeLineOfAngle);
-
-            //Gizmos.DrawCube(transform.position, new Vector2(0.1f, 0.1f));
         }
     }
 }

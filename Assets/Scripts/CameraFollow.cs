@@ -2,9 +2,15 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] private Transform _player;
     [SerializeField] private float _height;
-    [SerializeField] private float _distance = - 10;
+    [SerializeField] private float _distance = -10;
+
+    private Transform _player;
+
+    private void Start()
+    {
+        _player = GetComponentInParent<PlayerEntity>().transform;
+    }
 
     private void FixedUpdate()
     {
