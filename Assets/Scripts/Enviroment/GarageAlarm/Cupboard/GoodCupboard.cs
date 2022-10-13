@@ -11,17 +11,17 @@ public class GoodCupboard : BaseCupboard
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out PlayerEntity player))
+        if (collision.TryGetComponent(out PlayerCharacter player))
         {
-            _inputSystemReader.ButtonUse += Open;            
+            _inputSystemReader.InteractButtonUsed += Open;            
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out PlayerEntity player))
+        if (collision.TryGetComponent(out PlayerCharacter player))
         {
-            _inputSystemReader.ButtonUse -= Open;
+            _inputSystemReader.InteractButtonUsed -= Open;
         }
     }
 }

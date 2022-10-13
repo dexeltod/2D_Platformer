@@ -7,11 +7,10 @@ public class CoinTaker : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.TryGetComponent(out PlayerEntity player))
+        if(collision.TryGetComponent(out PlayerCharacter player))
         {
             Interact();            
-        }
-        
+        }        
     }
 
     private void Interact()
@@ -19,5 +18,4 @@ public class CoinTaker : MonoBehaviour
         CoinTaked.Invoke();
         Destroy(gameObject);
     }
-
 }

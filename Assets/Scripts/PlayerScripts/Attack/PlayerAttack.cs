@@ -2,8 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(PlayerMoveController))]
 public class PlayerAttack : MonoBehaviour
-{   
-
+{
     [Header("Set target and damage")]
     [SerializeField] private int _damage = 10;
     [SerializeField] private float _maxDistanceToAttack;
@@ -15,20 +14,37 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float _heightHand;
 
     private InputSystemReader _inputSystemReader;
-    // attack settings
+    private SpriteRenderer _spriteRenderer;
+
     private bool _canTouch;
     private bool _isAttack;
+    private float _lookDirection;
     private float _currentAttackDelay;
-    RaycastHit2D _hitTargetLeft;
-    RaycastHit2D _hitTargetRight;
 
-    public float CurrentAttackDelay => _currentAttackDelay;
+    private RaycastHit2D _hitTarget;
+
     public float AttackDelay => _attackDelay;
-    public bool CurrentAttackState => _isAttack;
+    public bool IsAttack => _isAttack;
 
-    private void Start()
+    public void SetButtonValue(float value)
     {
+        int attackValue = 1;
+
+        if (value == attackValue)
+        {
+            _isAttack = true;
+        }
+    }
+
+    private void Awake()
+    {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         _inputSystemReader = GetComponent<InputSystemReader>();
+    }
+
+    private void OnEnable()
+    {
+        _inputSystemReader.AttackButtonUsed += value => SetButtonValue(value);
     }
 
     private void Update()
@@ -36,29 +52,20 @@ public class PlayerAttack : MonoBehaviour
         CheckDistance();
         TryAttack(_attackDelay);
     }
+
     private void CheckDistance()
     {
-        _hitTargetRight = Physics2D.Raycast(_handPoint.transform.position, _handPoint.transform.right, _maxDistanceToAttack, _layerMask);
-        _hitTargetLeft = Physics2D.Raycast(_handPoint.transform.position, -_handPoint.transform.right, _maxDistanceToAttack, _layerMask);
+        if (_spriteRenderer.flipX == true)
+            _lookDirection = 1;
+        else if (_spriteRenderer.flipX == false)
+            _lookDirection = -1;
 
-        if (_hitTargetRight || _hitTargetLeft)
-        {
+        _hitTarget = Physics2D.Raycast(_handPoint.transform.position, _handPoint.transform.right * _lookDirection, _maxDistanceToAttack, _layerMask);
+
+        if (_hitTarget)
             _canTouch = true;
-        }
         else
-        {
             _canTouch = false;
-        }
-    }
-
-    public void SetButtonValue()
-    {
-        int attackValue = 1;
-
-        if (_inputSystemReader.ButtonAttackValue == attackValue)
-        {
-            _isAttack = true;
-        }
     }
 
     private void TryAttack(float delay)
@@ -70,7 +77,7 @@ public class PlayerAttack : MonoBehaviour
         }
         else if (_canTouch && _isAttack)
         {
-            _hitTargetRight.collider.TryGetComponent(out IEnemy1Level enemy);
+            _hitTarget.collider.TryGetComponent(out Enemy enemy);
             if (enemy != null)
                 enemy.ApplyDamage(_damage);
 
@@ -93,11 +100,11 @@ public class PlayerAttack : MonoBehaviour
             Gizmos.color = Color.red;
         }
 
-        if (transform.eulerAngles.y == 0)
+        if (_lookDirection == 1)
         {
             Gizmos.DrawLine(_handPoint.position, new Vector3(_handPoint.position.x + _maxDistanceToAttack, _handPoint.position.y));
         }
-        else if (transform.eulerAngles.y == 180)
+        else if (_lookDirection == -1)
         {
             Gizmos.DrawLine(_handPoint.position, new Vector3(_handPoint.position.x - _maxDistanceToAttack, _handPoint.position.y));
         }

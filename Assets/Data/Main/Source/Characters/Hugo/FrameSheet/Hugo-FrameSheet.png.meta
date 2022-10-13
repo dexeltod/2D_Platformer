@@ -1,0 +1,833 @@
+fileFormatVersion: 2
+guid: eede7e075ace957439ee23704e5fc91c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3429742815825216283
+    second: Hugo-FrameSheet_0
+  - first:
+      213: -5555078419896699015
+    second: Hugo-FrameSheet_1
+  - first:
+      213: -4781849522755528584
+    second: Hugo-FrameSheet_2
+  - first:
+      213: -1292315459004852390
+    second: Hugo-FrameSheet_3
+  - first:
+      213: -3673783774927768568
+    second: Hugo-FrameSheet_4
+  - first:
+      213: 490780476372386024
+    second: Hugo-FrameSheet_5
+  - first:
+      213: -5448222700576922680
+    second: Hugo-FrameSheet_6
+  - first:
+      213: -3315209406526946217
+    second: Hugo-FrameSheet_7
+  - first:
+      213: -5578685161449144608
+    second: Hugo-FrameSheet_8
+  - first:
+      213: -2124901699745128805
+    second: Hugo-FrameSheet_9
+  - first:
+      213: -3879162063215764914
+    second: Hugo-FrameSheet_10
+  - first:
+      213: 8832248946130922006
+    second: Hugo-FrameSheet_11
+  - first:
+      213: -4530548112234773028
+    second: Hugo-FrameSheet_12
+  - first:
+      213: 603832787006758042
+    second: Hugo-FrameSheet_13
+  - first:
+      213: -6915022261411646528
+    second: Hugo-FrameSheet_14
+  - first:
+      213: 3775889212430538244
+    second: Hugo-FrameSheet_15
+  - first:
+      213: 1723158909488885220
+    second: Hugo-FrameSheet_16
+  - first:
+      213: -7223163850624471683
+    second: Hugo-FrameSheet_17
+  - first:
+      213: -7900091686139728940
+    second: Hugo-FrameSheet_18
+  - first:
+      213: 8592678077863829813
+    second: Hugo-FrameSheet_19
+  - first:
+      213: -4568218779290065989
+    second: Hugo-FrameSheet_20
+  - first:
+      213: 5739854509609292338
+    second: Hugo-FrameSheet_21
+  - first:
+      213: 3190600509175050094
+    second: Hugo-FrameSheet_22
+  - first:
+      213: -131879747118059675
+    second: Hugo-FrameSheet_23
+  - first:
+      213: -1744478779601862309
+    second: Hugo-FrameSheet_24
+  - first:
+      213: -3627263865234262088
+    second: Hugo-FrameSheet_25
+  - first:
+      213: 766187352519279355
+    second: Hugo-FrameSheet_26
+  - first:
+      213: -3522201006015600171
+    second: Hugo-FrameSheet_27
+  - first:
+      213: -4047238301019347224
+    second: Hugo-FrameSheet_28
+  - first:
+      213: -2162293545281655819
+    second: Hugo-FrameSheet_29
+  - first:
+      213: 5125462179466883319
+    second: Hugo-FrameSheet_30
+  - first:
+      213: -4652183152035253303
+    second: Hugo-FrameSheet_31
+  - first:
+      213: -6889991595874516102
+    second: Hugo-FrameSheet_32
+  - first:
+      213: -1074822392462173106
+    second: Hugo-FrameSheet_33
+  - first:
+      213: 3991893866188753302
+    second: Hugo-FrameSheet_34
+  - first:
+      213: -3712050026229474100
+    second: Hugo-FrameSheet_35
+  - first:
+      213: -6990700525356813663
+    second: Hugo-FrameSheet_36
+  - first:
+      213: -7443591683618422532
+    second: Hugo-FrameSheet_37
+  - first:
+      213: -2935539912629358899
+    second: Hugo-FrameSheet_38
+  - first:
+      213: -8912465173343404245
+    second: Hugo-FrameSheet_39
+  - first:
+      213: 4342044886777825956
+    second: Hugo-FrameSheet_40
+  - first:
+      213: 6412118853909038279
+    second: Hugo-FrameSheet_41
+  - first:
+      213: -6468249045204834363
+    second: Hugo-FrameSheet_42
+  - first:
+      213: 9213501071237822026
+    second: Hugo-FrameSheet_43
+  - first:
+      213: -5017747672631418730
+    second: Hugo-FrameSheet_44
+  - first:
+      213: -9079751757897852494
+    second: Hugo-FrameSheet_45
+  - first:
+      213: -901083968904550369
+    second: Hugo-FrameSheet_46
+  - first:
+      213: 2748307938801632527
+    second: Hugo-FrameSheet_47
+  - first:
+      213: 2479943913468606858
+    second: Hugo-FrameSheet_48
+  - first:
+      213: -4793201107934319086
+    second: Hugo-FrameSheet_49
+  - first:
+      213: -6316000590183087574
+    second: Hugo-FrameSheet_50
+  - first:
+      213: 1131138729576501567
+    second: Hugo-FrameSheet_51
+  - first:
+      213: -3465794368484243316
+    second: Hugo-FrameSheet_52
+  - first:
+      213: -5425710003363357678
+    second: Hugo-FrameSheet_53
+  - first:
+      213: -2941159037807379187
+    second: Hugo-FrameSheet_54
+  - first:
+      213: 3359149778926683609
+    second: Hugo-FrameSheet_55
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ec3acf941b1760d0800000000000000
+      internalID: -3429742815825216283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9777e92fb9568e2b0800000000000000
+      internalID: -5555078419896699015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87819c2c13573adb0800000000000000
+      internalID: -4781849522755528584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a571540efe5c01ee0800000000000000
+      internalID: -1292315459004852390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80436d90f19140dc0800000000000000
+      internalID: -3673783774927768568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e08fd43e3a9fc600800000000000000
+      internalID: 490780476372386024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c3a4ead1560464b0800000000000000
+      internalID: -5448222700576922680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7548de70c920ef1d0800000000000000
+      internalID: -3315209406526946217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_8
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eeb41e17678492b0800000000000000
+      internalID: -5578685161449144608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_9
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9e511c8925d282e0800000000000000
+      internalID: -2124901699745128805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_10
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4a5adbf7a27a2ac0800000000000000
+      internalID: -3879162063215764914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_11
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61aa3f90f93729a70800000000000000
+      internalID: 8832248946130922006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_12
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd50e6cee724021c0800000000000000
+      internalID: -4530548112234773028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9c954578be316800800000000000000
+      internalID: 603832787006758042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_14
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c3f3aef3e7e800a0800000000000000
+      internalID: -6915022261411646528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 406d622bb37a66430800000000000000
+      internalID: 3775889212430538244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_16
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ed62a306e3e9e710800000000000000
+      internalID: 1723158909488885220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_17
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7de5117fba22cb90800000000000000
+      internalID: -7223163850624471683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_18
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dbef9ac77c3d5290800000000000000
+      internalID: -7900091686139728940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_19
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5312c549f235f3770800000000000000
+      internalID: 8592678077863829813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_20
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb3a524493d6a90c0800000000000000
+      internalID: -4568218779290065989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_21
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2329fa3f34f08af40800000000000000
+      internalID: 5739854509609292338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_22
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6f2f81324a474c20800000000000000
+      internalID: 3190600509175050094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Hugo-FrameSheet_4: -3673783774927768568
+      Hugo-FrameSheet_20: -4568218779290065989
+      Hugo-FrameSheet_6: -5448222700576922680
+      Hugo-FrameSheet_0: -3429742815825216283
+      Hugo-FrameSheet_17: -7223163850624471683
+      Hugo-FrameSheet_2: -4781849522755528584
+      Hugo-FrameSheet_8: -5578685161449144608
+      Hugo-FrameSheet_14: -6915022261411646528
+      Hugo-FrameSheet_16: 1723158909488885220
+      Hugo-FrameSheet_1: -5555078419896699015
+      Hugo-FrameSheet_5: 490780476372386024
+      Hugo-FrameSheet_7: -3315209406526946217
+      Hugo-FrameSheet_19: 8592678077863829813
+      Hugo-FrameSheet_18: -7900091686139728940
+      Hugo-FrameSheet_22: 3190600509175050094
+      Hugo-FrameSheet_15: 3775889212430538244
+      Hugo-FrameSheet_21: 5739854509609292338
+      Hugo-FrameSheet_13: 603832787006758042
+      Hugo-FrameSheet_11: 8832248946130922006
+      Hugo-FrameSheet_3: -1292315459004852390
+      Hugo-FrameSheet_9: -2124901699745128805
+      Hugo-FrameSheet_12: -4530548112234773028
+      Hugo-FrameSheet_10: -3879162063215764914
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -4,7 +4,7 @@ public class EnemyStateMachine : MonoBehaviour
 {
     [SerializeField] private EnemyState _firstState;
 
-    private PlayerEntity _target;
+    private PlayerCharacter _target;
     private EnemyState _currentState;
     public EnemyState CurrentState => _currentState;
 

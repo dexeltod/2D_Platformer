@@ -30,7 +30,7 @@ public class EnemyAttackState : EnemyState
         _lastAttackTime -= Time.deltaTime;
     }
 
-    public void Attack(PlayerEntity target)
+    public void Attack(PlayerCharacter target)
     {
         _animator.Play(_attackBoolName);
         target.ApplyDamage(_enemyMeele.Damage);

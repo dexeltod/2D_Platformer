@@ -8,7 +8,7 @@ public class EnterInLocation : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out PlayerEntity player))
+        if (collision.TryGetComponent(out PlayerCharacter player))
         {
             EnableButton();
         }
@@ -21,12 +21,12 @@ public class EnterInLocation : MonoBehaviour
 
     private void EnableButton()
     {
-        _inputSystemReader.ButtonUse += Enter;
+        _inputSystemReader.InteractButtonUsed += Enter;
     }
 
     private void DisableButton()
     {
-        _inputSystemReader.ButtonUse -= Enter;
+        _inputSystemReader.InteractButtonUsed -= Enter;
     }
 
     private void Enter()

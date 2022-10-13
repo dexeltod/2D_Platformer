@@ -2,16 +2,17 @@ using UnityEngine;
 
 public class PlayerMoveController : PhysicsMovement
 {
-    private Vector2 _moveDirection;
+
     [SerializeField] private float _jumpTakeOffSpeed = 7;
     [SerializeField] private float _speedModifier = 5;
     [SerializeField] private float _maxJumpHight = 9.2f;
     [SerializeField] private float _jumpSpeedSlowdown;
 
     [Header("Debug")]
+    [SerializeField] private bool _debugGizmos;
 
-    [SerializeField] bool _debugGizmos;
-      
+    protected InputSystemReader InputSystemReader;
+    private Vector2 _moveDirection;
 
     public void OnValidate()
     {
@@ -27,57 +28,65 @@ public class PlayerMoveController : PhysicsMovement
             _speedModifier = 0;
     }
 
-    public void SetJumpDir()
+    public void SetJumpDir(float direction)
     {
-        _moveDirection.y = _inputSystemReader.ButtonMoveValue;
+        _moveDirection.y = direction;
     }
 
-    public void SetMoveHorizontalDirection()
+    public void SetMoveHorizontalDirection(float direction)
     {
-        _moveDirection.x = _inputSystemReader.ButtonMoveValue;
-    }
-
-    private void Start()
-    {
-        _inputSystemReader = GetComponent<InputSystemReader>();
-        _contactFilter.SetLayerMask(Physics2D.GetLayerCollisionMask(gameObject.layer));
-        _contactFilter.useTriggers = false;
-        _contactFilter.useLayerMask = true;
-    }
-
-    private void OnEnable()
-    {
-        _rb2d = GetComponent<Rigidbody2D>();
-    }
-
-    private void Update()
-    {
-        ComputeVelocity();
+        _moveDirection.x = direction;
     }
 
     protected void ComputeVelocity()
     {
         Vector2 moveNormilized = Vector2.zero;
         moveNormilized.x = _moveDirection.x;
-        SetJumpState();
-        _targetVelocity = moveNormilized * _speedModifier;
+        TargetVelocity = moveNormilized * _speedModifier;
     }
 
-    private void SetJumpState()
+    private void Awake()
     {
-        if (_inputSystemReader.ButtonJumpValue == 1 && _isGrounded == true)
+        InputSystemReader = GetComponent<InputSystemReader>();
+    }
+
+    private void Start()
+    {        
+        ContactFilter.SetLayerMask(Physics2D.GetLayerCollisionMask(gameObject.layer));
+        ContactFilter.useTriggers = false;
+        ContactFilter.useLayerMask = true;
+    }
+
+    private void OnEnable()
+    {
+        InputSystemReader.JumpButtonUsed += (directon) => SetJumpState(directon);
+        InputSystemReader.VerticalMoveButtonUsed += (directon) => SetMoveHorizontalDirection(directon);
+        _rb2d = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        InputSystemReader = GetComponent<InputSystemReader>();
+        ComputeVelocity();
+    }
+
+    
+
+    private void SetJumpState(float direction)
+    {
+        if (direction == 1 && IsGrounded == true)
         {
-            _isJump = true;
-            _velocity.y = _jumpTakeOffSpeed;
+            IsJump = true;
+            Velocity.y = _jumpTakeOffSpeed;
         }
-        else if (_velocity.y >= _maxJumpHight && _isJump)
+        else if (Velocity.y >= _maxJumpHight && IsJump)
         {
-            _velocity.y = _maxJumpHight;
+            Velocity.y = _maxJumpHight;
         }
-        else if (!_isGrounded && _moveDirection.y == 0 && _isJump == true)
+        else if (!IsGrounded && _moveDirection.y == 0 && IsJump == true)
         {
-            _isJump = false;
-            _velocity.y *= 0.5f;
+            IsJump = false;
+            Velocity.y *= 0.5f;
         }
     }
 

@@ -7,12 +7,19 @@ public class AnimationSwitcher : MonoBehaviour
     private InputSystemReader _inputSystemReader;
     private SpriteRenderer _spriteRenderer;
 
+    private float _buttonMoveValue;
+
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _inputSystemReader = GetComponent<InputSystemReader>(); 
         _playerAttack = GetComponent<PlayerAttack>(); 
     }
+
+    private void OnEnable()
+    {
+        _inputSystemReader.VerticalMoveButtonUsed += direction => _buttonMoveValue = direction;
+    }    
 
     private void Start()
     {
@@ -21,11 +28,18 @@ public class AnimationSwitcher : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(_buttonMoveValue);
         SwitchAnimation();
     }
+
+    private void OnDisable()
+    {
+        _inputSystemReader.VerticalMoveButtonUsed -= (direction) => direction = _buttonMoveValue;
+    }
+
     private void SwitchAnimation()
     {
-        if(_playerAttack.CurrentAttackState)
+        if(_playerAttack.IsAttack)
         {
             _animator.SetBool("isAttack", true);
             _animator.SetFloat("attackSpeed", _playerAttack.AttackDelay);
@@ -35,28 +49,26 @@ public class AnimationSwitcher : MonoBehaviour
             _animator.SetBool("isAttack", false);
         }
 
-        if (_inputSystemReader.ButtonMoveValue > 0 || _inputSystemReader.ButtonMoveValue < 0)
+        if (_buttonMoveValue > 0 || _buttonMoveValue < 0)
         {
             _animator.SetBool("isIdle", false);
             _animator.SetBool("isRacing", true);
             _animator.SetBool("isRunning", true);
         }
-        else if(_inputSystemReader.ButtonMoveValue == 0)
+        else if(_buttonMoveValue == 0)
         {
             _animator.SetBool("isIdle", false);
             _animator.SetBool("isRacing", false);
             _animator.SetBool("isRunning", false);
         }
 
-        if (_inputSystemReader.ButtonMoveValue < 0)
+        if (_buttonMoveValue < 0)
         {
             _spriteRenderer.flipX = true;
-            //transform.eulerAngles = new Vector3(0, 180, 0);
         }
-        else if (_inputSystemReader.ButtonMoveValue > 0)
+        else if (_buttonMoveValue > 0)
         {
             _spriteRenderer.flipX = false;
-            //transform.eulerAngles = new Vector3(0, 0, 0);
         }
     }
 }
