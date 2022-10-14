@@ -261,6 +261,7 @@ GameObject:
   - component: {fileID: 9218998564139218693}
   - component: {fileID: 6424921582603155147}
   - component: {fileID: 5728285811741105012}
+  - component: {fileID: 5343798438178607614}
   m_Layer: 8
   m_Name: SchoolGuyEnemy
   m_TagString: Untagged
@@ -330,7 +331,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2971863251808284264, guid: e6abbdf8570a5f943be992d169f07605, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -446,6 +447,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _verticalSpeed: {fileID: 11400000, guid: 3cf77fc70159a864681e220c386bde36, type: 2}
+--- !u!114 &5343798438178607614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848783015209635893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 1
+  m_ApplyToSortingLayers: 000000000b4ae255
+  m_ShapePath:
+  - {x: -0.19616604, y: 0.7838764, z: 0}
+  - {x: -0.102846146, y: 1.7573719, z: 0}
+  - {x: 0.25215626, y: 1.757371, z: 0}
+  - {x: 0.21482944, y: 0.76521206, z: 0}
+  m_ShapePathHash: 446589717
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -200606
 --- !u!1 &2236006073919173763
 GameObject:
   m_ObjectHideFlags: 0

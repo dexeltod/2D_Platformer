@@ -8,7 +8,10 @@ public class AlarmBarMover : MonoBehaviour
 
     public void FillBar(float fillAmount)
     {
-        if(fillAmount >= 1.1f || fillAmount < -0.9f)
+        float maxFillAmount = 1.1f;
+        float minFillAmount = -0.9f;
+
+        if (fillAmount >= maxFillAmount || fillAmount < minFillAmount)
             return;
 
         _bar.fillAmount = fillAmount;

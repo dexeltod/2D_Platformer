@@ -9,7 +9,6 @@ public class EnemyMovement : MonoBehaviour
 
     private Rigidbody2D _rigidbody;
     private EnemyObserve _observer;
-    private Vector2 _velocity;
 
     public void DecreaseVerticalVelocity()
     {
@@ -23,11 +22,6 @@ public class EnemyMovement : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _observer = GetComponent<EnemyObserve>();
-    }
-
-    private void OnEnable()
-    {
-        _velocity = new Vector2(_verticalSpeed.MoveSpeed, transform.position.y);
     }
 
     private void VerticalMovemet()

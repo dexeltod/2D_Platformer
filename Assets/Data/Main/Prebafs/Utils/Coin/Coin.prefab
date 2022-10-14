@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 825016655493602431}
   - component: {fileID: 4875968720905400156}
   - component: {fileID: 1143522752}
+  - component: {fileID: 6230713577572598539}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -114,3 +115,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0dbc218ae1566044beaee7c920cf4f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6230713577572598539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825016655493602428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 0
+  m_CastsShadows: 1
+  m_SelfShadows: 1
+  m_ApplyToSortingLayers: 000000000b4ae255
+  m_ShapePath:
+  - {x: -0.3795166, y: 0.010851085, z: 0}
+  - {x: -0.24690628, y: 0.21799803, z: 0}
+  - {x: -0.09472656, y: 0.27906322, z: 0}
+  - {x: 0.09277344, y: 0.31222582, z: 0}
+  - {x: 0.22485924, y: 0.24106514, z: 0}
+  - {x: 0.31218338, y: 0.11834103, z: 0}
+  - {x: 0.3489418, y: -0.0172624, z: 0}
+  - {x: 0.37221336, y: -0.12543613, z: 0}
+  - {x: 0.27895164, y: -0.30535895, z: 0}
+  - {x: 0.09802818, y: -0.38351142, z: 0}
+  - {x: -0.12952423, y: -0.358894, z: 0}
+  - {x: -0.27762413, y: -0.2433157, z: 0}
+  m_ShapePathHash: 1969120909
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -1026064

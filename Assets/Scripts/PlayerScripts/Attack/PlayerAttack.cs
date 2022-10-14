@@ -1,6 +1,9 @@
 using UnityEngine;
 
+[RequireComponent(typeof(InputSystemReader))]
+[RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(PlayerMoveController))]
+
 public class PlayerAttack : MonoBehaviour
 {
     [Header("Set target and damage")]
@@ -26,16 +29,6 @@ public class PlayerAttack : MonoBehaviour
     public float AttackDelay => _attackDelay;
     public bool IsAttack => _isAttack;
 
-    public void SetButtonValue(float value)
-    {
-        int attackValue = 1;
-
-        if (value == attackValue)
-        {
-            _isAttack = true;
-        }
-    }
-
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -51,6 +44,16 @@ public class PlayerAttack : MonoBehaviour
     {
         CheckDistance();
         TryAttack(_attackDelay);
+    }
+
+    public void SetButtonValue(float value)
+    {
+        int attackValue = 1;
+
+        if (value == attackValue)
+        {
+            _isAttack = true;
+        }
     }
 
     private void CheckDistance()

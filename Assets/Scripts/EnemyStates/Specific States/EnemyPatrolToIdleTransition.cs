@@ -4,7 +4,6 @@ using UnityEngine.Events;
 public class EnemyPatrolToIdleTransition : Transition
 {
     [SerializeField] private EnemyObserve _observer;
-
     [SerializeField] private UnityEvent _ledgeNotCollide;
 
     public override void Enable(){}
