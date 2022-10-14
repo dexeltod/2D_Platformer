@@ -51,9 +51,7 @@ public class AnimationSwitcher : MonoBehaviour
             _animator.SetFloat(_animationHasher.AttackSpeedHash, _playerAttack.AttackDelay);
         }
         else
-        {
             _animator.SetBool(_animationHasher.AttackHash, false);
-        }
 
         if (_buttonMoveValue > 0 || _buttonMoveValue < 0)
         {
@@ -69,12 +67,8 @@ public class AnimationSwitcher : MonoBehaviour
         }
 
         if (_buttonMoveValue < 0)
-        {
             _spriteRenderer.flipX = true;
-        }
         else if (_buttonMoveValue > 0)
-        {
             _spriteRenderer.flipX = false;
-        }
     }
 }
