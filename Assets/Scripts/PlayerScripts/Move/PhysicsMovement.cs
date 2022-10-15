@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public abstract class PhysicsMovement : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public abstract class PhysicsMovement : MonoBehaviour
 
     protected Rigidbody2D _rb2d;   
 
-    protected void Movement(Vector2 move, bool yMovement)
+    protected void Move(Vector2 move, bool yMovement)
     {
         float distance = move.magnitude;
 
@@ -40,33 +41,40 @@ public abstract class PhysicsMovement : MonoBehaviour
 
             for (int i = 0; i < HitBufferList.Count; i++)
             {
-                Vector2 currentNormal = HitBufferList[i].normal;
-
-                if (currentNormal.y > _minGroundNormalY)
-                {
-                    IsGrounded = true;
-
-                    if (yMovement)
-                    {
-                        GroundNormal = currentNormal;
-                        currentNormal.x = 0;
-                    }
-                }
-
-                float projection = Vector2.Dot(Velocity, currentNormal);
-
-                if (projection < 0)
-                {
-                    Velocity -= projection * currentNormal;
-                }
-
-                float modifiedDistance = HitBufferList[i].distance - ShellRadius;
-                distance = modifiedDistance < distance ? modifiedDistance : distance;
+                GetCountedDistance(distance, yMovement, i);
             }
         }
 
         var direction = _rb2d.position += move.normalized * distance;
         Debug.DrawLine(transform.position, direction);
+    }
+
+    private float GetCountedDistance(float distance, bool yMovement, int hitIndex)
+    {
+        Vector2 currentNormal = HitBufferList[hitIndex].normal;
+
+        if (currentNormal.y > _minGroundNormalY)
+        {
+            IsGrounded = true;
+
+            if (yMovement)
+            {
+                GroundNormal = currentNormal;
+                currentNormal.x = 0;
+            }
+        }
+
+        float projection = Vector2.Dot(Velocity, currentNormal);
+
+        if (projection < 0)
+        {
+            Velocity -= projection * currentNormal;
+        }
+
+        float modifiedDistance = HitBufferList[hitIndex].distance - ShellRadius;
+        distance = modifiedDistance < distance ? modifiedDistance : distance;
+
+        return distance;
     }
 
     protected void GroundCheck()
@@ -93,11 +101,11 @@ public abstract class PhysicsMovement : MonoBehaviour
         Vector2 deltaPosition = Velocity * Time.deltaTime;
         Vector2 moveAlongGround = new(GroundNormal.y, -GroundNormal.x);
 
-        Vector2 move = moveAlongGround * deltaPosition.x;
-        Movement(move, false);
-        move = Vector2.up * deltaPosition.y;
+        Vector2 moveDiraction = moveAlongGround * deltaPosition.x;
+        Move(moveDiraction, false);
+        moveDiraction = Vector2.up * deltaPosition.y;
 
-        Movement(move, true);
+        Move(moveDiraction, true);
         GroundCheck();
     }
 }

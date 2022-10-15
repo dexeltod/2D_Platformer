@@ -24,6 +24,13 @@ public class EnemyMovement : MonoBehaviour
         _observer = GetComponent<EnemyObserve>();
     }
 
+    private void FixedUpdate()
+    {
+        VerticalMovemet();
+    }
+
+    private void OnDisable() => DecreaseVerticalVelocity();
+
     private void VerticalMovemet()
     {
         float verticalVelocity = _verticalSpeed.MoveSpeed * _observer.FacingDirection;
@@ -34,11 +41,4 @@ public class EnemyMovement : MonoBehaviour
             _rigidbody.velocity = new Vector2(verticalVelocity, _rigidbody.velocity.y);
         }
     }
-
-    private void FixedUpdate()
-    {
-        VerticalMovemet();
-    }
-
-    private void OnDisable() => DecreaseVerticalVelocity();
 }

@@ -112,7 +112,7 @@ Tilemap:
       - {fileID: -1152638201, guid: 20cba2fb05450d84c89194d9cca3b3b4, type: 3}
       - {fileID: 620804181, guid: 20cba2fb05450d84c89194d9cca3b3b4, type: 3}
       - {fileID: 1230335514, guid: 20cba2fb05450d84c89194d9cca3b3b4, type: 3}
-      m_AnimationSpeed: 7
+      m_AnimationSpeed: 7.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 0, y: 1, z: 0}
@@ -218,7 +218,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

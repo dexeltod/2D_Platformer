@@ -51,24 +51,14 @@ public class PlayerAttack : MonoBehaviour
         int attackValue = 1;
 
         if (value == attackValue)
-        {
             _isAttack = true;
-        }
     }
 
     private void CheckDistance()
     {
-        if (_spriteRenderer.flipX == true)
-            _lookDirection = 1;
-        else if (_spriteRenderer.flipX == false)
-            _lookDirection = -1;
-
-        _hitTarget = Physics2D.Raycast(_handPoint.transform.position, _handPoint.transform.right * _lookDirection, _maxDistanceToAttack, _layerMask);
-
-        if (_hitTarget)
-            _canTouch = true;
-        else
-            _canTouch = false;
+        _lookDirection = _spriteRenderer.flipX ? 1 : -1;
+        _hitTarget = Physics2D.Raycast(_handPoint.transform.position, _handPoint.transform.right * -_lookDirection, _maxDistanceToAttack, _layerMask);
+        _canTouch = _hitTarget ? true : false;
     }
 
     private void TryAttack(float delay)
@@ -87,29 +77,19 @@ public class PlayerAttack : MonoBehaviour
             _currentAttackDelay = 0f;
         }
         else if (_currentAttackDelay >= delay && _isAttack)
-        {
             _currentAttackDelay = 0f;
-        }
     }
 
     private void OnDrawGizmos()
     {
-        if (_canTouch)
-        {
-            Gizmos.color = Color.yellow;
-        }
-        else
-        {
-            Gizmos.color = Color.red;
-        }
+        Vector3 rightDirection = new(_handPoint.position.x + _maxDistanceToAttack, _handPoint.position.y);
+        Vector3 leftDirection = new(_handPoint.position.x - _maxDistanceToAttack, _handPoint.position.y);
 
-        if (_lookDirection == 1)
-        {
-            Gizmos.DrawLine(_handPoint.position, new Vector3(_handPoint.position.x + _maxDistanceToAttack, _handPoint.position.y));
-        }
-        else if (_lookDirection == -1)
-        {
-            Gizmos.DrawLine(_handPoint.position, new Vector3(_handPoint.position.x - _maxDistanceToAttack, _handPoint.position.y));
-        }
+        Gizmos.color = _canTouch ? Color.yellow : Color.red;
+
+        if (_lookDirection == -1)
+            Gizmos.DrawLine(_handPoint.position, rightDirection);
+        else if (_lookDirection == 1)
+            Gizmos.DrawLine(_handPoint.position, leftDirection);
     }
 }

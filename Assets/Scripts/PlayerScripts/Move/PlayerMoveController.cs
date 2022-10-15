@@ -1,6 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(InputSystemReader))]
+[RequireComponent(typeof(Rigidbody))]
 
 public class PlayerMoveController : PhysicsMovement
 {
@@ -29,25 +30,30 @@ public class PlayerMoveController : PhysicsMovement
 
     private void Awake()
     {
+        _rb2d = GetComponent<Rigidbody2D>();
         InputSystemReader = GetComponent<InputSystemReader>();
     }
+
     private void OnEnable()
     {
         InputSystemReader.JumpButtonUsed += (directon) => SetJumpState(directon);
-        InputSystemReader.VerticalMoveButtonUsed += (directon) => SetMoveHorizontalDirection(directon);
-        _rb2d = GetComponent<Rigidbody2D>();
+        InputSystemReader.VerticalMoveButtonUsed += (directon) => SetMoveHorizontalDirection(directon);        
     }
 
     private void Start()
     {
-        ContactFilter.SetLayerMask(Physics2D.GetLayerCollisionMask(gameObject.layer));
-        ContactFilter.useTriggers = false;
         ContactFilter.useLayerMask = true;
     }
 
     private void Update()
     {
         ComputeVelocity();
+    }
+
+    private void OnDisable()
+    {
+        InputSystemReader.JumpButtonUsed -= (directon) => SetJumpState(directon);
+        InputSystemReader.VerticalMoveButtonUsed -= (directon) => SetMoveHorizontalDirection(directon);
     }
 
     public void SetJumpDir(float direction)
