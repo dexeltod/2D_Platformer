@@ -1,15 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public abstract class PhysicsMovement : MonoBehaviour
 {
     protected const float ShellRadius = 0.01f;
     protected const float MinMoveDistance = 0.001f;
 
-    [SerializeField] protected float _groundCheckLineSize = 0.1f;
-    [SerializeField] protected float _gravityModifier = 1f;
-    [SerializeField] protected float _minGroundNormalY;
+    [SerializeField] protected float GroundCheckLineSize = 0.1f;
+    [SerializeField] protected float GravityModifier = 1f;
+    [SerializeField] protected float MinGroundNormalY;
     [SerializeField] protected ContactFilter2D ContactFilter;
 
     protected Vector2 TargetVelocity;
@@ -20,7 +19,7 @@ public abstract class PhysicsMovement : MonoBehaviour
     protected bool IsJump;
 
     protected RaycastHit2D[] HitBuffer = new RaycastHit2D[1];
-    protected List<RaycastHit2D> HitBufferList = new List<RaycastHit2D>(16);
+    protected List<RaycastHit2D> HitBufferList = new(16);
     protected readonly RaycastHit2D[] GroundHits = new RaycastHit2D[16];
 
     protected Rigidbody2D _rb2d;   
@@ -53,7 +52,7 @@ public abstract class PhysicsMovement : MonoBehaviour
     {
         Vector2 currentNormal = HitBufferList[hitIndex].normal;
 
-        if (currentNormal.y > _minGroundNormalY)
+        if (currentNormal.y > MinGroundNormalY)
         {
             IsGrounded = true;
 
@@ -79,7 +78,7 @@ public abstract class PhysicsMovement : MonoBehaviour
 
     protected void GroundCheck()
     {
-        int collisionsCount = _rb2d.Cast(-transform.up, ContactFilter, GroundHits, _groundCheckLineSize);
+        int collisionsCount = _rb2d.Cast(-transform.up, ContactFilter, GroundHits, GroundCheckLineSize);
 
         if (collisionsCount >= 1)
             IsGrounded = true;
@@ -94,7 +93,7 @@ public abstract class PhysicsMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rb2d.gravityScale = _gravityModifier;
+        _rb2d.gravityScale = GravityModifier;
         Velocity += _rb2d.gravityScale * Time.deltaTime * Physics2D.gravity;
         Velocity.x = TargetVelocity.x;
         IsGrounded = false;

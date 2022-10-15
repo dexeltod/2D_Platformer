@@ -18,8 +18,8 @@ public class PlayerMoveController : PhysicsMovement
 
     public void OnValidate()
     {
-        if (_minGroundNormalY <= 0 || _minGroundNormalY >= 1)
-            _minGroundNormalY = 0;
+        if (MinGroundNormalY <= 0 || MinGroundNormalY >= 1)
+            MinGroundNormalY = 0;
 
         if (_jumpSpeedSlowdown > 1 || _jumpSpeedSlowdown < 0)
             _jumpSpeedSlowdown = 0;
