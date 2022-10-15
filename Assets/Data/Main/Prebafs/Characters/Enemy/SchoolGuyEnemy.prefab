@@ -308,7 +308,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 33f156bd8c637a449a813224651bceca, type: 2}
@@ -397,8 +397,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.9600749}
-  m_Size: {x: 1, y: 1.9201584}
+  m_Offset: {x: 0.013188362, y: 0.9600749}
+  m_Size: {x: 0.5779934, y: 1.9201584}
   m_Direction: 0
 --- !u!114 &9218998564139218693
 MonoBehaviour:
@@ -467,11 +467,11 @@ MonoBehaviour:
   m_SelfShadows: 1
   m_ApplyToSortingLayers: 000000000b4ae255
   m_ShapePath:
-  - {x: -0.19616604, y: 0.7838764, z: 0}
-  - {x: -0.102846146, y: 1.7573719, z: 0}
-  - {x: 0.25215626, y: 1.757371, z: 0}
-  - {x: 0.21482944, y: 0.76521206, z: 0}
-  m_ShapePathHash: 446589717
+  - {x: -0.3094368, y: 0.70606613, z: 0}
+  - {x: -0.1240921, y: 1.3863173, z: 0}
+  - {x: 0.097141266, y: 1.3982811, z: 0}
+  - {x: 0.23780632, y: 0.71629906, z: 0}
+  m_ShapePathHash: 686662389
   m_Mesh: {fileID: 0}
   m_InstanceId: -200606
 --- !u!1 &2236006073919173763
