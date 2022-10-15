@@ -30,7 +30,7 @@ public class PlayerMoveController : PhysicsMovement
 
     private void Awake()
     {
-        _rb2d = GetComponent<Rigidbody2D>();
+        Rigidbody2D = GetComponent<Rigidbody2D>();
         InputSystemReader = GetComponent<InputSystemReader>();
     }
 

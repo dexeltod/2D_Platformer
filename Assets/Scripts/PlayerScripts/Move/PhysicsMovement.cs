@@ -22,7 +22,7 @@ public abstract class PhysicsMovement : MonoBehaviour
     protected List<RaycastHit2D> HitBufferList = new(16);
     protected readonly RaycastHit2D[] GroundHits = new RaycastHit2D[16];
 
-    protected Rigidbody2D _rb2d;   
+    protected Rigidbody2D Rigidbody2D;   
 
     protected void Move(Vector2 move, bool yMovement)
     {
@@ -30,7 +30,7 @@ public abstract class PhysicsMovement : MonoBehaviour
 
         if (distance > MinMoveDistance)
         {
-            int count = _rb2d.Cast(move, ContactFilter, HitBuffer, distance + ShellRadius);
+            int count = Rigidbody2D.Cast(move, ContactFilter, HitBuffer, distance + ShellRadius);
             HitBufferList.Clear();
 
             for (int i = 0; i < count; i++)
@@ -44,7 +44,7 @@ public abstract class PhysicsMovement : MonoBehaviour
             }
         }
 
-        var direction = _rb2d.position += move.normalized * distance;
+        var direction = Rigidbody2D.position += move.normalized * distance;
         Debug.DrawLine(transform.position, direction);
     }
 
@@ -78,7 +78,7 @@ public abstract class PhysicsMovement : MonoBehaviour
 
     protected void GroundCheck()
     {
-        int collisionsCount = _rb2d.Cast(-transform.up, ContactFilter, GroundHits, GroundCheckLineSize);
+        int collisionsCount = Rigidbody2D.Cast(-transform.up, ContactFilter, GroundHits, GroundCheckLineSize);
 
         if (collisionsCount >= 1)
             IsGrounded = true;
@@ -88,13 +88,13 @@ public abstract class PhysicsMovement : MonoBehaviour
 
     private void Awake()
     {
-        _rb2d = GetComponent<Rigidbody2D>();
+        Rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
     {
-        _rb2d.gravityScale = GravityModifier;
-        Velocity += _rb2d.gravityScale * Time.deltaTime * Physics2D.gravity;
+        Rigidbody2D.gravityScale = GravityModifier;
+        Velocity += Rigidbody2D.gravityScale * Time.deltaTime * Physics2D.gravity;
         Velocity.x = TargetVelocity.x;
         IsGrounded = false;
         Vector2 deltaPosition = Velocity * Time.deltaTime;
