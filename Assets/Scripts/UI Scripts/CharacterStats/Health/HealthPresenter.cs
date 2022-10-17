@@ -18,9 +18,9 @@ public class HealthPresenter : MonoBehaviour
 
     private void SetHealth()
     {
-        float a =  _slider.maxValue / _playerCharacter.MaxHealth;
-        float b =  _slider.maxValue / _playerCharacter.CurrentHealth;
+        float maxHealthNormalized =  _slider.maxValue / _playerCharacter.MaxHealth;
+        float currentHealthNormalized =  _slider.maxValue / _playerCharacter.CurrentHealth;
 
-        _slider.value = a / b;
+        _slider.value = maxHealthNormalized / currentHealthNormalized;
     }
 }
