@@ -103,9 +103,6 @@ public abstract class PhysicsMovement : MonoBehaviour
     {
         int collisionsCount = Rigidbody2D.Cast(-transform.up, ContactFilter, GroundHits, GroundCheckLineSize);
 
-        if (collisionsCount >= 1)
-            IsGrounded = true;
-        else
-            IsGrounded = false;
+        IsGrounded = collisionsCount >= 1;
     }
 }

@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +7,8 @@ public class HealthPresenter : MonoBehaviour
 {
     [SerializeField] private PlayerCharacter _playerCharacter;
     [SerializeField] private Slider _slider;
+
+    private Coroutine _currentCoroutine;
 
     private void OnEnable()
     {
@@ -25,16 +26,22 @@ public class HealthPresenter : MonoBehaviour
         float currentHealthNormalized = _slider.maxValue / _playerCharacter.CurrentHealth;
         float neededValue = maxHealthNormalized / currentHealthNormalized;
 
-        StartCoroutine(SetValueSmooth(neededValue));
+        if (_currentCoroutine != null)
+        {
+            StopCoroutine(_currentCoroutine);
+        }
+        
+        _currentCoroutine = StartCoroutine(SetValueSmooth(neededValue));
     }
-
+    
     private IEnumerator SetValueSmooth(float neededValue)
     {
-        float smoothValue = 0.01f;
-        
-        while (Math.Abs(_slider.value - neededValue) > 0.01f)
+        float smoothValue = 0.03f;
+        float minError = 0.0001f;
+
+        while (Math.Abs(_slider.value - neededValue) > minError)
         {
-            _slider.value = Mathf.MoveTowards(_slider.value,neededValue, smoothValue);
+            _slider.value = Mathf.MoveTowards(_slider.value, neededValue, smoothValue);
             yield return new WaitForFixedUpdate();
         }
     }
