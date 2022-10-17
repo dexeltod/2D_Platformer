@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1062215993274632596}
   - component: {fileID: 988257837}
   - component: {fileID: 988257838}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: BigBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 146.07
+  m_SurfaceArc: 90
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1

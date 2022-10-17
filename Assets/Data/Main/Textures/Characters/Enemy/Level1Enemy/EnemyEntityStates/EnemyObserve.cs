@@ -1,26 +1,24 @@
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
-
 public class EnemyObserve : MonoBehaviour
 {
     [SerializeField] private PlayerCharacter _enemyPlayer;
-    [SerializeField] private D_EntityVisibility EntityVisibility;
+    [SerializeField] private D_EntityVisibility _entityVisibility;
 
     [SerializeField] private Transform _wallCheckTransform;
     [SerializeField] private Transform _ledgeCheckTransform;
     [SerializeField] private Transform _eyePosition;
 
-    [Header("Debug")]
-    [SerializeField] private bool _isEnableGizmos;
+    [Header("Debug")] [SerializeField] private bool _isEnableGizmos;
     [SerializeField] private bool _isDetectEnemy;
 
     private SpriteRenderer _sprite;
     protected float AngleRight = 90f;
 
-    public int FacingDirection { get; protected set; }
-    public float AngleFacingDirection { get; protected set; }
-    public float DistanceBetweenEnemy { get; protected set; }
+    public int FacingDirection { get; private set; }
+    public float AngleFacingDirection { get; private set; }
+    public float DistanceBetweenEnemy { get; private set; }
 
     private void Start()
     {
@@ -36,21 +34,21 @@ public class EnemyObserve : MonoBehaviour
     public bool CheckColliderHorizontal()
     {
         return Physics2D.Raycast(_wallCheckTransform.position, Vector2.right * FacingDirection,
-                                  EntityVisibility.WallCheckDistance, EntityVisibility.WhatIsTouched);
+            _entityVisibility.WallCheckDistance, _entityVisibility.WhatIsTouched);
     }
 
     public bool CheckLedge()
     {
         return Physics2D.Raycast(_ledgeCheckTransform.position, Vector2.down,
-                                  EntityVisibility.LedgeCheckDistance, EntityVisibility.WhatIsGround);
+            _entityVisibility.LedgeCheckDistance, _entityVisibility.WhatIsGround);
     }
 
     public bool IsSeeEnemy()
     {
         SetPositionAboutPlayer();
 
-        bool isLookAtEnemy = AngleFacingDirection < EntityVisibility.AngleOfVisibility &&
-                             DistanceBetweenEnemy <= EntityVisibility.VisibilityRange;
+        bool isLookAtEnemy = AngleFacingDirection < _entityVisibility.AngleOfVisibility &&
+                             DistanceBetweenEnemy <= _entityVisibility.VisibilityRange;
 
         if (isLookAtEnemy)
             return _isDetectEnemy = true;
@@ -61,45 +59,53 @@ public class EnemyObserve : MonoBehaviour
 
     public void RotateFacingDirection()
     {
-        FacingDirection *= -1;
-        _ledgeCheckTransform.localPosition = new Vector2(_ledgeCheckTransform.localPosition.x * -1f, _ledgeCheckTransform.localPosition.y);
+        const float RotationValue = -1f;
 
-        if (_sprite.flipX == true)
-            _sprite.flipX = false;
-        else
-            _sprite.flipX = true;
+        FacingDirection *= -1;
+
+        var localPosition = _ledgeCheckTransform.localPosition;
+        localPosition = new Vector2(localPosition.x * RotationValue, localPosition.y);
+        _ledgeCheckTransform.localPosition = localPosition;
+
+        _sprite.flipX = _sprite.flipX != true;
     }
 
     private void SetPositionAboutPlayer()
     {
-        Vector2 targetDirection = _enemyPlayer.EyePosition.position - _eyePosition.position;
+        var position = _eyePosition.position;
+        var eyePositionPosition = _enemyPlayer.EyePosition.position;
+        Vector2 targetDirection = eyePositionPosition - position;
         Vector2 forward = _eyePosition.right;
 
-        DistanceBetweenEnemy = Vector2.Distance(_eyePosition.position, _enemyPlayer.EyePosition.position);
+        DistanceBetweenEnemy = Vector2.Distance(position, eyePositionPosition);
         AngleFacingDirection = Vector2.Angle(targetDirection, forward);
-    }    
+    }
 
     private void OnDrawGizmos()
     {
-        if (_isEnableGizmos == true)
-        {
-            Vector3 wallCheckDirection = _wallCheckTransform.position + (Vector3)(EntityVisibility.WallCheckDistance
-                * FacingDirection * Vector2.right);
+        if (_isEnableGizmos != true)
+            return;
 
-            Vector2 ledgeCheckDirection = _ledgeCheckTransform.position + (Vector3)Vector2.down * EntityVisibility.LedgeCheckDistance;
+        Vector3 wallCheckDirection = _wallCheckTransform.position + (Vector3)(_entityVisibility.WallCheckDistance
+                                                                              * FacingDirection * Vector2.right);
 
-            Vector3 eyeFirstLineOfAngle = new Vector2(_eyePosition.position.x
-                                + EntityVisibility.VisibilityRange * FacingDirection,
-                                  _eyePosition.position.y + EntityVisibility.AngleOfVisibility / 10);
+        Vector2 ledgeCheckDirection = _ledgeCheckTransform.position +
+                                      (Vector3)Vector2.down * _entityVisibility.LedgeCheckDistance;
 
-            Vector3 eyeSecondeLineOfAngle = new Vector2(_eyePosition.position.x + EntityVisibility.VisibilityRange * FacingDirection,
-                                _eyePosition.position.y - EntityVisibility.AngleOfVisibility / 10);
+        var eyePosition = _eyePosition.position;
+        
+        Vector3 eyeFirstLineOfAngle = new Vector2(eyePosition.x
+                                                  + _entityVisibility.VisibilityRange * FacingDirection,
+            eyePosition.y + _entityVisibility.AngleOfVisibility / 10);
 
-            Gizmos.DrawLine(_wallCheckTransform.position, wallCheckDirection);
-            Gizmos.DrawLine(_ledgeCheckTransform.position, ledgeCheckDirection);
+        Vector3 eyeSecondLineOfAngle = new Vector2(
+            eyePosition.x + _entityVisibility.VisibilityRange * FacingDirection,
+            eyePosition.y - _entityVisibility.AngleOfVisibility / 10);
 
-            Gizmos.DrawLine(_eyePosition.position, eyeFirstLineOfAngle);
-            Gizmos.DrawLine(_eyePosition.position, eyeSecondeLineOfAngle);
-        }
+        Gizmos.DrawLine(_wallCheckTransform.position, wallCheckDirection);
+        Gizmos.DrawLine(_ledgeCheckTransform.position, ledgeCheckDirection);
+
+        Gizmos.DrawLine(eyePosition, eyeFirstLineOfAngle);
+        Gizmos.DrawLine(eyePosition, eyeSecondLineOfAngle);
     }
 }

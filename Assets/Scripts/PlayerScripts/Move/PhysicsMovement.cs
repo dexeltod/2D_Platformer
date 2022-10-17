@@ -22,7 +22,32 @@ public abstract class PhysicsMovement : MonoBehaviour
     protected List<RaycastHit2D> HitBufferList = new(16);
     protected readonly RaycastHit2D[] GroundHits = new RaycastHit2D[16];
 
-    protected Rigidbody2D Rigidbody2D;   
+    protected Rigidbody2D Rigidbody2D;
+
+    private void Awake()
+    {
+        Rigidbody2D = GetComponent<Rigidbody2D>();
+    }
+
+    private void FixedUpdate()
+    {
+        Rigidbody2D.gravityScale = GravityModifier;
+
+        Velocity += Rigidbody2D.gravityScale * Time.deltaTime * Physics2D.gravity;
+        Velocity.x = TargetVelocity.x;
+
+        IsGrounded = false;
+
+        Vector2 deltaPosition = Velocity * Time.deltaTime;
+        Vector2 moveAlongGround = new(GroundNormal.y, -GroundNormal.x);
+
+        Vector2 moveDiraction = moveAlongGround * deltaPosition.x;
+        Move(moveDiraction, false);
+        moveDiraction = Vector2.up * deltaPosition.y;
+
+        Move(moveDiraction, true);
+        GroundCheck();
+    }
 
     protected void Move(Vector2 move, bool yMovement)
     {
@@ -44,8 +69,7 @@ public abstract class PhysicsMovement : MonoBehaviour
             }
         }
 
-        var direction = Rigidbody2D.position += move.normalized * distance;
-        Debug.DrawLine(transform.position, direction);
+        Vector2 direction = Rigidbody2D.position += move.normalized * distance;
     }
 
     private float GetCountedDistance(float distance, bool yMovement, int hitIndex)
@@ -63,6 +87,7 @@ public abstract class PhysicsMovement : MonoBehaviour
             }
         }
 
+        Debug.DrawLine(transform.position, GroundNormal + (Vector2)transform.position);
         float projection = Vector2.Dot(Velocity, currentNormal);
 
         if (projection < 0)
@@ -86,25 +111,5 @@ public abstract class PhysicsMovement : MonoBehaviour
             IsGrounded = false;
     }
 
-    private void Awake()
-    {
-        Rigidbody2D = GetComponent<Rigidbody2D>();
-    }
-
-    private void FixedUpdate()
-    {
-        Rigidbody2D.gravityScale = GravityModifier;
-        Velocity += Rigidbody2D.gravityScale * Time.deltaTime * Physics2D.gravity;
-        Velocity.x = TargetVelocity.x;
-        IsGrounded = false;
-        Vector2 deltaPosition = Velocity * Time.deltaTime;
-        Vector2 moveAlongGround = new(GroundNormal.y, -GroundNormal.x);
-
-        Vector2 moveDiraction = moveAlongGround * deltaPosition.x;
-        Move(moveDiraction, false);
-        moveDiraction = Vector2.up * deltaPosition.y;
-
-        Move(moveDiraction, true);
-        GroundCheck();
-    }
+   
 }

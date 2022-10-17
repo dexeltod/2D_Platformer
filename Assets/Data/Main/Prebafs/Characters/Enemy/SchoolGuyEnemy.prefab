@@ -428,7 +428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyPlayer: {fileID: 0}
-  EntityVisibility: {fileID: 11400000, guid: d4f5fabc26fc141408b8ea64a01ea706, type: 2}
+  _entityVisibility: {fileID: 11400000, guid: d4f5fabc26fc141408b8ea64a01ea706, type: 2}
   _wallCheckTransform: {fileID: 6645501397967116688}
   _ledgeCheckTransform: {fileID: 5204559060345414845}
   _eyePosition: {fileID: 7557254000837333921}
@@ -473,7 +473,7 @@ MonoBehaviour:
   - {x: 0.23780632, y: 0.71629906, z: 0}
   m_ShapePathHash: 686662389
   m_Mesh: {fileID: 0}
-  m_InstanceId: -200606
+  m_InstanceId: -38280
 --- !u!1 &2236006073919173763
 GameObject:
   m_ObjectHideFlags: 0
