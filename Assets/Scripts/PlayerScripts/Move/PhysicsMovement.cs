@@ -13,7 +13,6 @@ public abstract class PhysicsMovement : MonoBehaviour
 
     protected Vector2 TargetVelocity;
     protected Vector2 Velocity;
-    protected Vector2 GroundNormal;
 
     protected bool IsGrounded;
     protected bool IsJump;
@@ -23,6 +22,7 @@ public abstract class PhysicsMovement : MonoBehaviour
     protected readonly RaycastHit2D[] GroundHits = new RaycastHit2D[16];
 
     protected Rigidbody2D Rigidbody2D;
+    private Vector2 _groundNormal;
 
     private void Awake()
     {
@@ -39,17 +39,17 @@ public abstract class PhysicsMovement : MonoBehaviour
         IsGrounded = false;
 
         Vector2 deltaPosition = Velocity * Time.deltaTime;
-        Vector2 moveAlongGround = new(GroundNormal.y, -GroundNormal.x);
+        Vector2 moveAlongGround = new(_groundNormal.y, -_groundNormal.x);
 
-        Vector2 moveDiraction = moveAlongGround * deltaPosition.x;
-        Move(moveDiraction, false);
-        moveDiraction = Vector2.up * deltaPosition.y;
+        Vector2 moveDirection = moveAlongGround * deltaPosition.x;
+        Move(moveDirection, false);
+        moveDirection = Vector2.up * deltaPosition.y;
 
-        Move(moveDiraction, true);
+        Move(moveDirection, true);
         GroundCheck();
     }
 
-    protected void Move(Vector2 move, bool yMovement)
+    private void Move(Vector2 move, bool yMovement)
     {
         float distance = move.magnitude;
 
@@ -65,14 +65,14 @@ public abstract class PhysicsMovement : MonoBehaviour
 
             for (int i = 0; i < HitBufferList.Count; i++)
             {
-                GetCountedDistance(distance, yMovement, i);
+                SetCountedDistance(distance, yMovement, i);
             }
         }
 
-        Vector2 direction = Rigidbody2D.position += move.normalized * distance;
+        Rigidbody2D.position += move.normalized * distance;
     }
 
-    private float GetCountedDistance(float distance, bool yMovement, int hitIndex)
+    private void SetCountedDistance(float distance, bool yMovement, int hitIndex)
     {
         Vector2 currentNormal = HitBufferList[hitIndex].normal;
 
@@ -82,12 +82,12 @@ public abstract class PhysicsMovement : MonoBehaviour
 
             if (yMovement)
             {
-                GroundNormal = currentNormal;
+                _groundNormal = currentNormal;
                 currentNormal.x = 0;
             }
         }
 
-        Debug.DrawLine(transform.position, GroundNormal + (Vector2)transform.position);
+        Debug.DrawLine(transform.position, _groundNormal + (Vector2)transform.position);
         float projection = Vector2.Dot(Velocity, currentNormal);
 
         if (projection < 0)
@@ -97,11 +97,9 @@ public abstract class PhysicsMovement : MonoBehaviour
 
         float modifiedDistance = HitBufferList[hitIndex].distance - ShellRadius;
         distance = modifiedDistance < distance ? modifiedDistance : distance;
-
-        return distance;
     }
 
-    protected void GroundCheck()
+    private void GroundCheck()
     {
         int collisionsCount = Rigidbody2D.Cast(-transform.up, ContactFilter, GroundHits, GroundCheckLineSize);
 
@@ -110,6 +108,4 @@ public abstract class PhysicsMovement : MonoBehaviour
         else
             IsGrounded = false;
     }
-
-   
 }

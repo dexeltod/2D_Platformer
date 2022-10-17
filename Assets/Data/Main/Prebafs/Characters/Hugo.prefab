@@ -323,6 +323,7 @@ GameObject:
   - component: {fileID: 1717840128}
   - component: {fileID: 1717840136}
   - component: {fileID: 7798860289455352080}
+  - component: {fileID: 6716184748015567100}
   - component: {fileID: 615882016}
   m_Layer: 7
   m_Name: Hugo
@@ -590,8 +591,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b183d99331fc8449ae15b10c8679ae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerMoveContoller: {fileID: 1717840128}
-  _playerAttack: {fileID: 1357539704}
 --- !u!114 &1717840128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -604,9 +603,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8e2f80ad9551e041aa7a4caea949be1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _groundCheckLineSize: 0.65
-  _gravityModifier: 2.5
-  _minGroundNormalY: 0.6
+  GroundCheckLineSize: 0.1
+  GravityModifier: 1
+  MinGroundNormalY: 0
   ContactFilter:
     useTriggers: 0
     useLayerMask: 1
@@ -621,9 +620,10 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  _jumpTakeOffSpeed: 16
   _speedModifier: 6
-  _maxJumpHight: 9.2
+  _jumpTakeOffSpeed: 16
+  _maxJump: 9.2
+  _jumpVelocityDecrease: 0.5
   _jumpSpeedSlowdown: 0.9
   _debugGizmos: 0
 --- !u!114 &1717840136
@@ -650,7 +650,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74e7436be25bf124f871377291cf56f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxHealth: 100
   _eyePosition: {fileID: 1802996485470625537}
+--- !u!114 &6716184748015567100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637528790393893176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 433ea58fff23e624dbd2ee8da2470f96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _canMove: 1
 --- !u!114 &615882016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -677,7 +691,7 @@ MonoBehaviour:
   - {x: 0.22701836, y: 1.4953864, z: 0}
   m_ShapePathHash: 531287853
   m_Mesh: {fileID: 0}
-  m_InstanceId: 68064
+  m_InstanceId: 28846
 --- !u!1 &9092711923238084613
 GameObject:
   m_ObjectHideFlags: 0
