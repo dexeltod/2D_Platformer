@@ -179,7 +179,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.21875
+  orthographic size: 8.4375
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -262,9 +262,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ComponentVersion: 1
-  m_AssetsPPU: 16
-  m_RefResolutionX: 186
-  m_RefResolutionY: 180
+  m_AssetsPPU: 32
+  m_RefResolutionX: 644
+  m_RefResolutionY: 364
   m_CropFrame: 0
   m_GridSnapping: 1
   m_UpscaleRT: 0
@@ -664,7 +664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 433ea58fff23e624dbd2ee8da2470f96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canMove: 1
+  _gravityModifier: 1
 --- !u!114 &615882016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,7 +691,7 @@ MonoBehaviour:
   - {x: 0.22701836, y: 1.4953864, z: 0}
   m_ShapePathHash: 531287853
   m_Mesh: {fileID: 0}
-  m_InstanceId: 28846
+  m_InstanceId: -169838
 --- !u!1 &9092711923238084613
 GameObject:
   m_ObjectHideFlags: 0

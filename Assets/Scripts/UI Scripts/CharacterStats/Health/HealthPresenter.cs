@@ -27,22 +27,20 @@ public class HealthPresenter : MonoBehaviour
         float neededValue = maxHealthNormalized / currentHealthNormalized;
 
         if (_currentCoroutine != null)
-        {
             StopCoroutine(_currentCoroutine);
-        }
         
         _currentCoroutine = StartCoroutine(SetValueSmooth(neededValue));
     }
     
     private IEnumerator SetValueSmooth(float neededValue)
     {
+        var waitingFixedUpdate = new WaitForFixedUpdate();
         float smoothValue = 0.03f;
-        float minError = 0.0001f;
 
-        while (Math.Abs(_slider.value - neededValue) > minError)
+        while (_slider.value != neededValue)
         {
             _slider.value = Mathf.MoveTowards(_slider.value, neededValue, smoothValue);
-            yield return new WaitForFixedUpdate();
+            yield return waitingFixedUpdate;
         }
     }
 }

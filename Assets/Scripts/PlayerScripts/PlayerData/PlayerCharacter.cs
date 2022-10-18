@@ -1,11 +1,10 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class PlayerCharacter : MonoBehaviour
 {
     public event UnityAction HealthChanged;
-    
+
     [SerializeField] private int _maxHealth = 100;
     [SerializeField] private Transform _eyePosition;
 
@@ -23,20 +22,14 @@ public class PlayerCharacter : MonoBehaviour
     public void ApplyDamage(int damage)
     {
         const int MinHealthValue = 0;
-        
-        if(_currentHealth <= MinHealthValue)
-            return;
-        
-        _currentHealth -= damage;
+        _currentHealth -= Mathf.Clamp(damage, MinHealthValue, _maxHealth);
         HealthChanged?.Invoke();
     }
 
     public void Heal(int healCount)
     {
-        if(_currentHealth >= _maxHealth)
-            return;
-        
-        _currentHealth += healCount;
+        const int MinHealthValue = 0;
+        _currentHealth += Mathf.Clamp(healCount, MinHealthValue, _maxHealth);
         HealthChanged?.Invoke();
     }
 }
