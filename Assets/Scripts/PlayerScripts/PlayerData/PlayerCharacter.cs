@@ -21,15 +21,21 @@ public class PlayerCharacter : MonoBehaviour
 
     public void ApplyDamage(int damage)
     {
-        const int MinHealthValue = 0;
-        _currentHealth -= Mathf.Clamp(damage, MinHealthValue, _maxHealth);
+        _currentHealth -= damage;
+        ValidateHealth();
         HealthChanged?.Invoke();
     }
 
     public void Heal(int healCount)
     {
-        const int MinHealthValue = 0;
-        _currentHealth += Mathf.Clamp(healCount, MinHealthValue, _maxHealth);
+        _currentHealth += healCount;
+        ValidateHealth();
         HealthChanged?.Invoke();
+    }
+
+    private void ValidateHealth()
+    {
+        const int MinHealthValue = 0;
+        _currentHealth = Mathf.Clamp(_currentHealth, MinHealthValue, _maxHealth);
     }
 }

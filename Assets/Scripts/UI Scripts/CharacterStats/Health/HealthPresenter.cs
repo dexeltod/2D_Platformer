@@ -35,7 +35,7 @@ public class HealthPresenter : MonoBehaviour
     private IEnumerator SetValueSmooth(float neededValue)
     {
         var waitingFixedUpdate = new WaitForFixedUpdate();
-        float smoothValue = 0.03f;
+        float smoothValue = 0.01f;
 
         while (_slider.value != neededValue)
         {
