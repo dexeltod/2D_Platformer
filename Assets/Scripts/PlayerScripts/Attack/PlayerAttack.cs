@@ -2,19 +2,16 @@ using UnityEngine;
 
 [RequireComponent(typeof(InputSystemReader))]
 [RequireComponent(typeof(SpriteRenderer))]
-[RequireComponent(typeof(PlayerMoveController))]
 
 public class PlayerAttack : MonoBehaviour
 {
-    [Header("Set target and damage")]
-    [SerializeField] private int _damage = 10;
-    [SerializeField] private float _maxDistanceToAttack;
+    [Header("Set target and damage")] [SerializeField]
+    private int _damage = 10;
+    
     [SerializeField] private float _attackDelay;
-    [SerializeField] private LayerMask _layerMask;
 
-    [Header("Set hand point")]
-    [SerializeField] private Transform _handPoint;
-    [SerializeField] private float _heightHand;
+    [Header("Set hand point")] [SerializeField]
+    private Transform _handPoint;
 
     private InputSystemReader _inputSystemReader;
     private SpriteRenderer _spriteRenderer;
@@ -37,7 +34,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnEnable()
     {
-        _inputSystemReader.AttackButtonUsed += value => SetButtonValue(value);
+        _inputSystemReader.AttackButtonUsed += SetButtonValue;
     }
 
     private void Update()
@@ -46,9 +43,9 @@ public class PlayerAttack : MonoBehaviour
         TryAttack(_attackDelay);
     }
 
-    public void SetButtonValue(float value)
+    private void SetButtonValue(float value)
     {
-        int attackValue = 1;
+        float attackValue = 1f;
 
         if (value == attackValue)
             _isAttack = true;
@@ -56,9 +53,8 @@ public class PlayerAttack : MonoBehaviour
 
     private void CheckDistance()
     {
-        _lookDirection = _spriteRenderer.flipX ? 1 : -1;
-        _hitTarget = Physics2D.Raycast(_handPoint.transform.position, _handPoint.transform.right * -_lookDirection, _maxDistanceToAttack, _layerMask);
-        _canTouch = _hitTarget ? true : false;
+        _lookDirection = _spriteRenderer.flipX ? -1 : 1;
+        // _hitTarget = Vector2.Distance(transform.position, _);
     }
 
     private void TryAttack(float delay)
@@ -78,18 +74,5 @@ public class PlayerAttack : MonoBehaviour
         }
         else if (_currentAttackDelay >= delay && _isAttack)
             _currentAttackDelay = 0f;
-    }
-
-    private void OnDrawGizmos()
-    {
-        Vector3 rightDirection = new(_handPoint.position.x + _maxDistanceToAttack, _handPoint.position.y);
-        Vector3 leftDirection = new(_handPoint.position.x - _maxDistanceToAttack, _handPoint.position.y);
-
-        Gizmos.color = _canTouch ? Color.yellow : Color.red;
-
-        if (_lookDirection == -1)
-            Gizmos.DrawLine(_handPoint.position, rightDirection);
-        else if (_lookDirection == 1)
-            Gizmos.DrawLine(_handPoint.position, leftDirection);
     }
 }

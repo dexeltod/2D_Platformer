@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyObserve : MonoBehaviour
 {
     [SerializeField] private PlayerCharacter _enemyPlayer;
-    [SerializeField] private D_EntityVisibility _entityVisibility;
+    [SerializeField] private DataEntityVisibility _entityVisibility;
 
     [SerializeField] private Transform _wallCheckTransform;
     [SerializeField] private Transform _ledgeCheckTransform;

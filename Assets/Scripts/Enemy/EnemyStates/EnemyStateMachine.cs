@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class EnemyStateMachine : MonoBehaviour
 {
-    [SerializeField] private EnemyState _firstState;
+    [SerializeField] private State _firstState;
 
     private PlayerCharacter _target;
-    private EnemyState _currentState;
-    public EnemyState CurrentState => _currentState;
+    private State _currentState;
+    public State CurrentState => _currentState;
 
     private void Start()
     {        
@@ -28,7 +28,7 @@ public class EnemyStateMachine : MonoBehaviour
         }
     }
 
-    private void Reset(EnemyState startState)
+    private void Reset(State startState)
     {
         _currentState = startState;
 
@@ -36,7 +36,7 @@ public class EnemyStateMachine : MonoBehaviour
             _currentState.Enter(_target);
     }
 
-    private void Transit(EnemyState nextState)
+    private void Transit(State nextState)
     {
         if (nextState != null)
             _currentState.Exit();

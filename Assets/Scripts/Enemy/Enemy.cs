@@ -1,32 +1,27 @@
 using UnityEngine;
 
-[RequireComponent(typeof(EnemyObserve))]
-[RequireComponent(typeof(SpriteRenderer))]
-[RequireComponent(typeof(Animator))]
-[RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(CapsuleCollider2D))]
+[RequireComponent(typeof(CapsuleCollider2D), typeof(SpriteRenderer))]
+[RequireComponent(typeof(Animator), typeof(Rigidbody2D))]
 
 public class Enemy : EnemyBase, IEnemy1Level
 {
-    [SerializeField] private CharacterData _dataEntity;
-    [SerializeField] private DataEnemyFight _dataEnemyFight;
     [SerializeField] private PlayerCharacter _target;
+    [SerializeField] private DataEnemy _enemyData;
 
     public PlayerCharacter Target => _target;
-
     public int Health { get; private set; }
+    public int MaxHealth { get; private set; }
     public int Damage { get; private set; }
 
     public Enemy(int health, int damage) : base(health, damage)
     {
-        Health = health;
-        Damage = damage;
+        Health = MaxHealth;
     }
 
     private void Start()
     {
-        Animator = GetComponent<Animator>();
-        EnemyObserver = GetComponent<EnemyObserve>();
+        Damage = _enemyData.Damage;
+        MaxHealth = _enemyData.Health;
         SpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -36,10 +31,12 @@ public class Enemy : EnemyBase, IEnemy1Level
             return;
 
         Health -= damage;
+        ValidateHealth();
     }
 
-    public void Attack()
+    private void ValidateHealth()
     {
-        Debug.Log("Attack");
+        int minHealthValue = 0;
+        Health = Mathf.Clamp(Health, minHealthValue, MaxHealth);
     }
 }

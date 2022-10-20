@@ -3,7 +3,6 @@ using UnityEngine;
 public abstract class EnemyBase : MonoBehaviour
 {
     protected SpriteRenderer SpriteRenderer;
-    protected EnemyObserve EnemyObserver;
     protected Animator Animator;
 
     private int _health = 30;
