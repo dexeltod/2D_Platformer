@@ -5,9 +5,9 @@ public abstract class State : MonoBehaviour
 {
     [SerializeField] private List<Transition> _transitions;
 
-    protected PlayerCharacter Target { get; set; }
+    protected Player Target { get; set; }
 
-    public void Enter(PlayerCharacter target)
+    public void Enter(Player target)
     {
         if (enabled == false)
         {

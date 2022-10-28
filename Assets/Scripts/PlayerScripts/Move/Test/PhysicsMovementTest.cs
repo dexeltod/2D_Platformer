@@ -2,6 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(InputSystemReader))]
 [RequireComponent(typeof(Rigidbody2D))]
+
 public class PhysicsMovementTest : MonoBehaviour
 {
     [SerializeField] private float _gravityModifier = 1f;
@@ -29,15 +30,14 @@ public class PhysicsMovementTest : MonoBehaviour
         _inputSystemReader.JumpButtonUsed -= OnJump;
     }
 
-
     private void OnHorizontalMove(float direction)
     {
         _moveDirection = new(direction, _moveDirection.y);
     }
 
-    private void OnJump(float direction)
+    private void OnJump(Vector2 direction)
     {
-        _moveDirection = new(_moveDirection.x, direction);
+        _moveDirection = new(_moveDirection.x, direction.x);
     }
 
     private void Move()

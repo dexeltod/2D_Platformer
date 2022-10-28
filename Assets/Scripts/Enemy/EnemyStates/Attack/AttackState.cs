@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class AttackState : State
 {
-    [SerializeField] private AttackPlayerBehaviour _attackBehaviour;
+    [SerializeField] private EnemyAttackBehaviour _attackBehaviour;
     
     private void OnEnable()
     {

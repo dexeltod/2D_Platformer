@@ -6,9 +6,9 @@ public abstract class Transition : MonoBehaviour
 
     public State TargetNextState => _nextState;
     public bool IsNeedTransition { get; protected set; }
-    protected PlayerCharacter Target { get; private set; }
+    protected Player Target { get; private set; }
 
-    public void Initialize(PlayerCharacter target)
+    public void Initialize(Player target)
     {
         Target = target;
     }

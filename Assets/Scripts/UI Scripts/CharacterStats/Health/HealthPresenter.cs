@@ -5,25 +5,25 @@ using UnityEngine.UI;
 
 public class HealthPresenter : MonoBehaviour
 {
-    [SerializeField] private PlayerCharacter _playerCharacter;
+    [SerializeField] private PlayerHealth _player;
     [SerializeField] private Slider _slider;
 
     private Coroutine _currentCoroutine;
 
     private void OnEnable()
     {
-        _playerCharacter.HealthChanged += SetHealth;
+        _player.HealthChanged += Set;
     }
 
     private void OnDisable()
     {
-        _playerCharacter.HealthChanged -= SetHealth;
+        _player.HealthChanged -= Set;
     }
 
-    private void SetHealth()
+    private void Set()
     {
-        float maxHealthNormalized = _slider.maxValue / _playerCharacter.MaxHealth;
-        float currentHealthNormalized = _slider.maxValue / _playerCharacter.CurrentHealth;
+        float maxHealthNormalized = _slider.maxValue / _player.MaxHealth;
+        float currentHealthNormalized = _slider.maxValue / _player.CurrentHealth;
         float neededValue = maxHealthNormalized / currentHealthNormalized;
 
         if (_currentCoroutine != null)

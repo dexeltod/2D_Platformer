@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class EnemyObserve : MonoBehaviour
 {
-    [SerializeField] private PlayerCharacter _enemyPlayer;
+    [SerializeField] private PlayerHealth _enemyPlayer;
     [SerializeField] private DataEntityVisibility _entityVisibility;
 
     [SerializeField] private Transform _wallCheckTransform;
@@ -73,7 +73,7 @@ public class EnemyObserve : MonoBehaviour
     private void SetPositionAboutPlayer()
     {
         var position = _eyePosition.position;
-        var eyePositionPosition = _enemyPlayer.EyePosition.position;
+        var eyePositionPosition = _enemyPlayer.transform.position;
         Vector2 targetDirection = eyePositionPosition - position;
         Vector2 forward = _eyePosition.right;
 

@@ -4,7 +4,6 @@ public class BanditEnemy : MonoBehaviour
 {
     [SerializeField] public int Damage { get; private set; }
     
-    [SerializeField] private PlayerParams _player;
     [SerializeField] private float _radius;
 
     [Header("Set params enemy")] [SerializeField]

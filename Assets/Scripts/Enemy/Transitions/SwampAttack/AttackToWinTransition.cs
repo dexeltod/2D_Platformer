@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AttackToWinTransition : Transition
 {
-    [SerializeField] private AttackPlayerBehaviour _attackBehaviour;
+    [SerializeField] private EnemyAttackBehaviour _attackBehaviour;
 
     public override void Enable()
     {

@@ -17,11 +17,6 @@ public class MoveToAttackTransition : Transition
         _moveBehaviour.PlayerReached -= ChangeState;
     }
 
-    private void Update()
-    {
-        Debug.Log(IsNeedTransition);
-    }
-
     private void ChangeState()
     {
         IsNeedTransition = true;

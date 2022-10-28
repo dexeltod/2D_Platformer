@@ -5,23 +5,24 @@ using UnityEngine;
 
 public class Enemy : EnemyBase, IEnemy1Level
 {
-    [SerializeField] private PlayerCharacter _target;
+    [SerializeField] private Player _target;
     [SerializeField] private DataEnemy _enemyData;
 
-    public PlayerCharacter Target => _target;
+    private int _maxHealth;
+    
+    public Player Target => _target;
     public int Health { get; private set; }
-    public int MaxHealth { get; private set; }
     public int Damage { get; private set; }
 
     public Enemy(int health, int damage) : base(health, damage)
     {
-        Health = MaxHealth;
     }
 
     private void Start()
     {
         Damage = _enemyData.Damage;
-        MaxHealth = _enemyData.Health;
+        _maxHealth = _enemyData.Health;
+        Health = _maxHealth;
         SpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -36,7 +37,7 @@ public class Enemy : EnemyBase, IEnemy1Level
 
     private void ValidateHealth()
     {
-        int minHealthValue = 0;
-        Health = Mathf.Clamp(Health, minHealthValue, MaxHealth);
+        const int MinHealthValue = 0;
+        Health = Mathf.Clamp(Health, MinHealthValue, _maxHealth);
     }
 }

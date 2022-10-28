@@ -9,7 +9,7 @@ public class CameraFollow : MonoBehaviour
 
     private void Start()
     {
-        _player = GetComponentInParent<PlayerCharacter>().transform;
+        _player = GetComponentInParent<PlayerHealth>().transform;
     }
 
     private void FixedUpdate()

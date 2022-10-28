@@ -8,7 +8,7 @@ public class EnterInLocation : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out PlayerCharacter player))
+        if (collision.TryGetComponent(out PlayerHealth player))
         {
             EnableButton();
         }

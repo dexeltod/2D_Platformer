@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b5db03dcf4c81d44ad1f1feca36c3a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _state: {fileID: 0}
+  _nextState: {fileID: 5677714875333465685}
   _idleStateData: {fileID: 11400000, guid: 2f5d3b0a41d043545be98158c1adcb75, type: 2}
 --- !u!114 &5677714875333465685
 MonoBehaviour:
@@ -157,7 +157,7 @@ MonoBehaviour:
   _transitions:
   - {fileID: 6588581990295123834}
   _dataEntity: {fileID: 11400000, guid: 3cf77fc70159a864681e220c386bde36, type: 2}
-  _patrolBehaviour: {fileID: 0}
+  _patrolBehaviour: {fileID: 5728285811741105012}
 --- !u!114 &6588581990295123834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae7c6469f0c00654eb4c40e4094e10c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _state: {fileID: 0}
+  _nextState: {fileID: 3428575754110346765}
   _observer: {fileID: 6424921582603155147}
   _ledgeNotCollide:
     m_PersistentCalls:
@@ -215,6 +215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transitions:
   - {fileID: 3750965019207565048}
+  _attackBehaviour: {fileID: 0}
 --- !u!114 &3750965019207565048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16aff88fa1dbb2240b8a1129bc17e943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _state: {fileID: 3428575754110346765}
+  _nextState: {fileID: 0}
   _enemyLook: {fileID: 6424921582603155147}
   _entityVisibility: {fileID: 11400000, guid: d4f5fabc26fc141408b8ea64a01ea706, type: 2}
 --- !u!1 &1848783015209635893
@@ -397,9 +398,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e71e4d9294a49342865283c6c752142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 7798860289455352080, guid: de7748fd89fa843468d399acf1ff646f, type: 3}
-  _currentHealth: 0
-  _maxHealth: 0
+  _target: {fileID: 0}
+  _enemyData: {fileID: 11400000, guid: 8c9005339f19b914e850cf02475fb391, type: 2}
 --- !u!114 &6424921582603155147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,7 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 710c651c57e4ec240baf2820cbf94ff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyPlayer: {fileID: 7798860289455352080, guid: de7748fd89fa843468d399acf1ff646f, type: 3}
+  _enemyPlayer: {fileID: 0}
   _entityVisibility: {fileID: 11400000, guid: d4f5fabc26fc141408b8ea64a01ea706, type: 2}
   _wallCheckTransform: {fileID: 6645501397967116688}
   _ledgeCheckTransform: {fileID: 5204559060345414845}
@@ -458,7 +458,7 @@ MonoBehaviour:
   - {x: 0.23780632, y: 0.71629906, z: 0}
   m_ShapePathHash: 686662389
   m_Mesh: {fileID: 0}
-  m_InstanceId: 30240
+  m_InstanceId: -1498
 --- !u!1 &2236006073919173763
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,14 +5,14 @@ using UnityEngine.InputSystem;
 public class InputSystemReader : MonoBehaviour
 {
     public UnityAction InteractButtonUsed;
+    public UnityAction AttackButtonPerformed;
+
     public UnityAction<float> VerticalMoveButtonUsed;
-    public UnityAction<float> JumpButtonUsed;
-    public UnityAction<float> AttackButtonUsed;
+    public UnityAction<Vector2> JumpButtonUsed;
 
     private float _buttonAttackValue;
-    private float _buttonJumpValue;
+    private Vector2 _buttonJumpValue;
     private InputSystem _inputActions;
-    private Vector2 _buttonMoveValue;
 
     private void Awake()
     {
@@ -27,9 +27,7 @@ public class InputSystemReader : MonoBehaviour
     private void OnUse(InputAction.CallbackContext context)
     {
         if (context.started)
-        {
             InteractButtonUsed?.Invoke();
-        }
     }
 
     private void OnEnable() => _inputActions.Enable();
@@ -40,20 +38,22 @@ public class InputSystemReader : MonoBehaviour
     {
         if (context.performed)
         {
-            _buttonAttackValue = context.ReadValue<float>();
-            AttackButtonUsed?.Invoke(_buttonAttackValue);
+            AttackButtonPerformed?.Invoke();
         }
     }
 
     private void OnHorizontalMovement(InputAction.CallbackContext context)
     {
-        _buttonMoveValue = context.ReadValue<Vector2>();
-        VerticalMoveButtonUsed?.Invoke(_buttonMoveValue.x);
+        if (context.started)
+        {
+            var direction = context.ReadValue<float>();
+            VerticalMoveButtonUsed?.Invoke(direction);
+        }
     }
 
     private void OnJump(InputAction.CallbackContext context)
     {
-        _buttonJumpValue = context.ReadValue<float>();
+        _buttonJumpValue = context.ReadValue<Vector2>();
         JumpButtonUsed?.Invoke(_buttonJumpValue);
     }
 }

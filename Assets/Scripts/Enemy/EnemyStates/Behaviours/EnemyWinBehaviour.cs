@@ -2,16 +2,16 @@
 
 public class EnemyWinBehaviour : MonoBehaviour
 {
-    private Animator _animation;
-    private EnemyAnimationHashes _moveHashes;
+    private Animator _animator;
+    private AnimationHasher _animation;
 
     private void Awake()
     {
-        _animation = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
     }
 
     private void OnEnable()
     {
-        _animation.Play(_moveHashes.MoveHash);
+        _animator.Play(_animation.FunHash);
     }
 }

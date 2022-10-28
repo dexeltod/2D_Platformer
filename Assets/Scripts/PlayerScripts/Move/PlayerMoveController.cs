@@ -1,8 +1,8 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [RequireComponent(typeof(InputSystemReader))]
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(CapsuleCollider2D))]
 
 public class PlayerMoveController : PhysicsMovement
 {
@@ -79,9 +79,9 @@ public class PlayerMoveController : PhysicsMovement
         TargetVelocity = moveNormalized * _speedModifier;
     }
 
-    private void SetJumpState(float direction)
+    private void SetJumpState(Vector2 direction)
     {
-        if (direction == 1f && IsGrounded == true)
+        if (direction.y == 1f && IsGrounded == true)
         {
             IsJump = true;
             Velocity.y = _jumpTakeOffSpeed;
