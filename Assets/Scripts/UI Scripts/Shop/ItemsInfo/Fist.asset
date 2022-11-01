@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114f934f5b514134a0eac06558570fb0, type: 3}
   m_Name: Fist
   m_EditorClassIdentifier: 
-  Image: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 700aae1de60340345abbb8c35c1db9ef, type: 3}
   Price: 0
   Description: "\u0445\u0443\u0439"
