@@ -2,21 +2,30 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(AnimationHasher), typeof(Animator))]
 public class EnemyAttackBehaviour : MonoBehaviour
 {
-    public event UnityAction PlayerDied;
-    public event UnityAction PlayerOutOfRangeAttack;
-
     [SerializeField] private DataEnemy _enemyData;
     [SerializeField] private PlayerHealth _player;
 
+    public event UnityAction PlayerDied;
+    public event UnityAction PlayerOutOfRangeAttack;
+
+    private Animator _animator;
+    private AnimationHasher _animationHasher;
     private Coroutine _currentCoroutine;
     private bool _canAttack = true;
+
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+        _animationHasher = GetComponent<AnimationHasher>();
+    }
 
     private void OnEnable()
     {
         _player.Died += OnPlayerDie;
-        
+
         if (_currentCoroutine != null)
         {
             StopCoroutine(_currentCoroutine);
@@ -28,32 +37,47 @@ public class EnemyAttackBehaviour : MonoBehaviour
 
     private void OnDisable()
     {
+        _animator.StopPlayback();
         _player.Died -= OnPlayerDie;
         StopCoroutine(_currentCoroutine);
     }
 
     private IEnumerator AttackPlayer()
     {
-        var attackDelay = new WaitForSeconds(_enemyData.AttackDelay);
+        SetAnimatorSettings();
+        var waitingTime = new WaitForSeconds(GetAnimationSpeed());
 
         while (_canAttack)
         {
-            if(CantReachPlayer())
+            if (CantReachPlayer())
                 PlayerOutOfRangeAttack?.Invoke();
-                
+
             _player.ApplyDamage(_enemyData.Damage);
-            yield return attackDelay;
+            yield return waitingTime;
         }
     }
 
-    private float GetDistanceBetweenPlayer()
+    private void SetAnimatorSettings()
     {
-        return Vector2.Distance(transform.position, _player.transform.position);
+        float transitionDuration = 0;
+
+        _animator.StopPlayback();
+        _animator.CrossFade(_animationHasher.AttackHash, transitionDuration);
+        _animator.SetFloat(_animationHasher.AttackSpeedHash, _enemyData.AttackSpeed);
     }
 
+    private float GetAnimationSpeed()
+    {
+        int currentLayer = 0;
+        var stateInfo = _animator.GetCurrentAnimatorStateInfo(currentLayer);
+        return stateInfo.length;
+    }
+
+    private float GetDistanceBetweenPlayer() =>
+        Vector2.Distance(transform.position, _player.transform.position);
+
     private bool CantReachPlayer() => GetDistanceBetweenPlayer() > _enemyData.AttackRange;
-        
-    
+
     private void OnPlayerDie()
     {
         PlayerDied?.Invoke();

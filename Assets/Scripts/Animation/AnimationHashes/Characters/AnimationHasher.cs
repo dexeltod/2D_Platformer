@@ -9,6 +9,7 @@ public class AnimationHasher : MonoBehaviour
     public int IdleHash { get; private set; }
     public int RunHash { get; private set; }
     public int FunHash { get; private set; }
+    public int DieHash { get; private set; }
 
     private void Awake()
     {
@@ -19,5 +20,6 @@ public class AnimationHasher : MonoBehaviour
         AttackHash = Animator.StringToHash("isAttack");
         AttackSpeedHash = Animator.StringToHash("attackSpeed");
         FunHash = Animator.StringToHash("isFun");
+        DieHash = Animator.StringToHash("isDie");
     }
 }

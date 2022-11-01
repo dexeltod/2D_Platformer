@@ -8,7 +8,7 @@ public class DataEnemy : ScriptableObject
     public int Health = 50;
     public float MoveSpeed = 1;
     public int CriticalDamageChance = 0;
-    public float AttackDelay= 2;
+    public float AttackSpeed = 2;
     public float AttackRange = 2;
     
     public int CriticalDamage => Damage * 2;

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Fist : Weapon
@@ -20,12 +21,13 @@ public class Fist : Weapon
         _animationHasher = GetComponentInParent<AnimationHasher>();
     }
 
-    public override void Attack(float direction)
+    public override IEnumerator AttackRoutine(float direction)
     {
         _animator.StopPlayback();
         _animator.CrossFade(_animationHasher.AttackHash, 0);
 
         AttackTarget(direction);
+        yield return null;
     }
 
     public override void GiveDamage(Enemy target)

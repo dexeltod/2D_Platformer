@@ -5,10 +5,11 @@ namespace PlayerScripts.States
 {
     public class PlayerAttackState : BaseState
     {
-        private const string LayerName = "Base Layer";
+        private const int LayerIndex = 0;
         private IStateSwitcher _stateSwitcher;
         private readonly Weapon _weapon;
         private Coroutine _currentCoroutine;
+        private bool _canAttack = true;
 
         public PlayerAttackState(Player player, IStateSwitcher stateSwitcher, AnimationHasher animationHasher,
             Animator animator, Weapon weapon) : base(player, stateSwitcher, animationHasher,
@@ -24,18 +25,15 @@ namespace PlayerScripts.States
 
         private IEnumerator Attack()
         {
-            const int LayerIndex = 0;
-
-            _weapon.Attack(Player.LookDirection);
+            Player.StartCoroutine(_weapon.AttackRoutine(Player.LookDirection));
             AnimatorStateInfo animatorInfo = Animator.GetCurrentAnimatorStateInfo(LayerIndex);
+            float motionTime = animatorInfo.length;
 
             while (animatorInfo.shortNameHash != AnimationHasher.AttackHash)
             {
                 animatorInfo = Animator.GetCurrentAnimatorStateInfo(LayerIndex);
                 yield return null;
             }
-
-            float motionTime = animatorInfo.length;
 
             yield return new WaitForSeconds(motionTime);
             StateSwitcher.SwitchState<PlayerIdleState>();

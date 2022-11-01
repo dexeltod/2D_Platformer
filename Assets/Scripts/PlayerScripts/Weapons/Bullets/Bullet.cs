@@ -5,21 +5,27 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Bullet : MonoBehaviour
 {
-    public Action<Enemy> IsTargetReached;
+    public event Action<Enemy> IsTargetReached;
     private Rigidbody2D _rigidbody;
+
+    public Bullet(Action<Enemy> action)
+    {
+        IsTargetReached = action;
+    }
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    public void ShootBullet(IRangedWeapon weapon, Transform bulletTransform, float direction)
+    public Bullet Shoot(IRangedWeapon weapon, Transform bulletTransform, float direction)
     {
         var bullet = Instantiate(this, bulletTransform.position, Quaternion.identity);
-        bullet.SetBulletSpeed(direction * weapon.BulletSpeed);
+        bullet.SetSpeed(direction * weapon.BulletSpeed);
+        return bullet;
     }
 
-    private void SetBulletSpeed(float direction)
+    private void SetSpeed(float direction)
     {
         _rigidbody.velocity = new Vector2(direction, _rigidbody.velocity.y);
     }

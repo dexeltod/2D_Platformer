@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(AnimationHasher), typeof(Animator))]
 public class EnemyWinBehaviour : MonoBehaviour
 {
     private Animator _animator;
@@ -7,11 +8,10 @@ public class EnemyWinBehaviour : MonoBehaviour
 
     private void Awake()
     {
+        _animation = GetComponent<AnimationHasher>();
         _animator = GetComponent<Animator>();
     }
 
-    private void OnEnable()
-    {
+    private void OnEnable() =>
         _animator.Play(_animation.FunHash);
-    }
 }

@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using PlayerScripts.Weapons;
 using UnityEngine;
 
@@ -21,9 +21,10 @@ public class Pistol : Weapon, IRangedWeapon
         _bullet.IsTargetReached -= GiveDamage;
     }
 
-    public override void Attack(float direction)
+    public override IEnumerator AttackRoutine(float direction)
     {
         _bullet = Instantiate(_bullet, _spawnBulletTransform.position, Quaternion.identity);
+        yield return null;
     }
 
     public override void GiveDamage(Enemy target)

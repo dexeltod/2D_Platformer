@@ -17,5 +17,5 @@ MonoBehaviour:
   Health: 100
   MoveSpeed: 0.05
   CriticalDamageChance: 0
-  AttackDelay: 1
+  AttackSpeed: 0.2
   AttackRange: 2
