@@ -16,7 +16,7 @@ MonoBehaviour:
   Damage: 10
   Armor: 0
   Health: 10
-  MoveSpeed: 0.02
+  MoveSpeed: 0.1
   CriticalDamageChance: 0
   AttackSpeed: 0.1
   AttackRange: 2

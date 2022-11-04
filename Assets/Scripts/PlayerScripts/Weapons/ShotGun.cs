@@ -7,14 +7,12 @@ public class ShotGun : Weapon, IRangedWeapon
 {
     [SerializeField] private float _bulletSpeed;
     [SerializeField] private Transform _bulletSpawnTransform;
-    
+
     private BulletPool _bulletPool;
     private Bullet _currentBullet;
-    
-    
+
     public Transform BulletSpawnTransform => _bulletSpawnTransform;
     public float BulletSpeed => _bulletSpeed;
-    
 
     public ShotGun()
     {
@@ -29,7 +27,7 @@ public class ShotGun : Weapon, IRangedWeapon
 
     private void OnDisable()
     {
-        if(_currentBullet != null)
+        if (_currentBullet != null)
             _currentBullet.IsTargetReached -= GiveDamage;
     }
 
@@ -39,9 +37,9 @@ public class ShotGun : Weapon, IRangedWeapon
         CanAttack = false;
         _currentBullet = _bulletPool.Get(_bulletSpawnTransform);
         _currentBullet.SetSpeed(_bulletSpeed, direction);
-        
+
         _currentBullet.IsTargetReached += GiveDamage;
-        
+
         yield return new WaitForSeconds(AttackSpeed);
         CanAttack = true;
     }

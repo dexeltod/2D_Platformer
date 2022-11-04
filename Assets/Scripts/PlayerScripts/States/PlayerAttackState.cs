@@ -33,9 +33,8 @@ namespace PlayerScripts.States
             {
                 yield return null;
             }
-            
+
             AnimatorStateInfo animatorInfo = Animator.GetCurrentAnimatorStateInfo(LayerIndex);
-            float motionTime = animatorInfo.length;
 
             while (animatorInfo.shortNameHash != AnimationHasher.AttackHash)
             {

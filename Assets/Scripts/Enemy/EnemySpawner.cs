@@ -12,6 +12,7 @@ public class EnemySpawner : MonoBehaviour
     private Coroutine _currentSpawnRoutine;
     private EnemyFactory _enemyFactory;
     private Enemy _currentEnemy;
+
     private int _currentSpawnedEnemyCount;
     private int _currentKilledEnemies;
     private int _maxEnemyCount;
@@ -23,27 +24,16 @@ public class EnemySpawner : MonoBehaviour
         _enemyFactory = GetComponent<EnemyFactory>();
     }
 
-    private void Start()
-    {
+    private void Start() =>
         StartCoroutine(StartCooldownBetweenWaves());
-    }
 
-    private void OnDisable()
-    {
+    private void OnDisable() =>
         StopSpawnCoroutine();
-    }
 
     private IEnumerator StartEnemySpawning()
     {
-        _currentKilledEnemies = 0;
-        _currentSpawnedEnemyCount = 0;
-
-        _currentWave = _wave[_currentWaveNumber];
-        _maxEnemyCount = _currentWave.Count;
+        SetNextWaveValues();
         Enemy currentEnemy = _currentWave.Enemy;
-        
-        Debug.Log(_currentWaveNumber);
-        Debug.Log(currentEnemy.name);
         var waitingTime = new WaitForSeconds(_spawnDelay);
 
         while (_currentSpawnedEnemyCount != _maxEnemyCount)
@@ -53,13 +43,21 @@ public class EnemySpawner : MonoBehaviour
             enemy.WasDying += OnAddDiedEnemyCount;
             yield return waitingTime;
         }
-        
+
         _currentWaveNumber++;
+    }
+
+    private void SetNextWaveValues()
+    {
+        _currentKilledEnemies = 0;
+        _currentSpawnedEnemyCount = 0;
+
+        _currentWave = _wave[_currentWaveNumber];
+        _maxEnemyCount = _currentWave.Count;
     }
 
     private IEnumerator StartCooldownBetweenWaves()
     {
-        
         yield return new WaitForSeconds(_cooldownBetweenWaves);
         _currentSpawnRoutine = StartCoroutine(StartEnemySpawning());
     }
@@ -67,12 +65,9 @@ public class EnemySpawner : MonoBehaviour
     private void OnAddDiedEnemyCount(Enemy enemy)
     {
         _currentKilledEnemies++;
-        Debug.Log($"_currentKilledEnemies {_currentKilledEnemies}");
 
         if (_currentKilledEnemies >= _maxEnemyCount)
         {
-            Debug.Log($"_currentKilledEnemies >= _startEnemyCountInWave" +
-                      $" {_currentKilledEnemies >= _maxEnemyCount}");
             StopSpawnCoroutine();
             _currentSpawnRoutine = StartCoroutine(StartCooldownBetweenWaves());
         }
