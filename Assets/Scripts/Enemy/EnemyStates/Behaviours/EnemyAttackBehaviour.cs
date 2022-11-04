@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class EnemyAttackBehaviour : MonoBehaviour
 {
     [SerializeField] private DataEnemy _enemyData;
-    [SerializeField] private PlayerHealth _player;
+    [SerializeField] private PlayerHealth _playerHealth;
 
     public event UnityAction PlayerDied;
     public event UnityAction PlayerOutOfRangeAttack;
@@ -24,7 +24,7 @@ public class EnemyAttackBehaviour : MonoBehaviour
 
     private void OnEnable()
     {
-        _player.Died += OnPlayerDie;
+        _playerHealth.Died += OnPlayerHealthDie;
 
         if (_currentCoroutine != null)
         {
@@ -38,12 +38,17 @@ public class EnemyAttackBehaviour : MonoBehaviour
     private void OnDisable()
     {
         _animator.StopPlayback();
-        _player.Died -= OnPlayerDie;
+        _playerHealth.Died -= OnPlayerHealthDie;
 
         if (_currentCoroutine != null)
             StopCoroutine(_currentCoroutine);
     }
 
+    public void Initialize(PlayerHealth playerHealth)
+    {
+        _playerHealth = playerHealth;
+    }
+    
     private IEnumerator AttackPlayer()
     {
         SetAnimatorSettings();
@@ -54,7 +59,7 @@ public class EnemyAttackBehaviour : MonoBehaviour
             if (CantReachPlayer())
                 PlayerOutOfRangeAttack?.Invoke();
 
-            _player.ApplyDamage(_enemyData.Damage);
+            _playerHealth.ApplyDamage(_enemyData.Damage);
             yield return waitingTime;
         }
     }
@@ -76,11 +81,11 @@ public class EnemyAttackBehaviour : MonoBehaviour
     }
 
     private float GetDistanceBetweenPlayer() =>
-        Vector2.Distance(transform.position, _player.transform.position);
+        Vector2.Distance(transform.position, _playerHealth.transform.position);
 
     private bool CantReachPlayer() => GetDistanceBetweenPlayer() > _enemyData.AttackRange;
 
-    private void OnPlayerDie()
+    private void OnPlayerHealthDie()
     {
         PlayerDied?.Invoke();
         _canAttack = false;

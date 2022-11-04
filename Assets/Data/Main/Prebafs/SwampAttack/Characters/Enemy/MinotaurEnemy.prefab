@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyData: {fileID: 11400000, guid: 8c9005339f19b914e850cf02475fb391, type: 2}
-  _player: {fileID: 7641251931762612186, guid: fd0c1c7bb716a3e418a329b10c898969, type: 3}
+  _playerHealth: {fileID: 7641251931762612186, guid: fd0c1c7bb716a3e418a329b10c898969, type: 3}
 --- !u!114 &589392111238875927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,7 +263,6 @@ GameObject:
   - component: {fileID: 4354184750292285604}
   - component: {fileID: 892440645}
   - component: {fileID: 892440646}
-  - component: {fileID: 7152973884349611638}
   m_Layer: 0
   m_Name: States
   m_TagString: Untagged
@@ -400,7 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59d43f8794f856c44ab1b2a0cd4ab692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nextState: {fileID: 589392111740634376}
+  _nextState: {fileID: 589392111740634487}
   _enemyAttackBehaviour: {fileID: 589392111238875924}
 --- !u!114 &892440646
 MonoBehaviour:
@@ -417,15 +416,3 @@ MonoBehaviour:
   _nextState: {fileID: 4354184750292285604}
   _enemyDieBehaviour: {fileID: 8571552548757677976}
   _enemy: {fileID: 589392111238875922}
---- !u!114 &7152973884349611638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 589392111740634381}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3cb727aea44a0246992e77ab09b4f1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c205e0804ebd045a1ccf108b054494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bullet: {fileID: 0}
-  _spawnBulletTransform: {fileID: 0}
-  _bulletSpeed: 0
+  _bullet: {fileID: 5300153362049665090, guid: b35886ae8c37f3f4a94efad7ec0c7b45, type: 3}
+  _spawnBulletTransform: {fileID: 1361644217081549275, guid: b35886ae8c37f3f4a94efad7ec0c7b45, type: 3}
+  _bulletSpeed: 20

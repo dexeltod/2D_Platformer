@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(MoveToPlayerState), typeof(MoveToAttackTransition))]
-[RequireComponent(typeof(AttackState), typeof(AttackToDieTransition))]
+[RequireComponent(typeof(AttackState))]
 [RequireComponent(typeof(DieTransition), typeof(AttackToMoveTransition))]
 [RequireComponent(typeof(WinTransition), typeof(WinState))]
 [RequireComponent(typeof(DieState))]

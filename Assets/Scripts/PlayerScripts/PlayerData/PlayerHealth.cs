@@ -28,6 +28,7 @@ public class PlayerHealth : MonoBehaviour
             return;
         }
 
+        Debug.Log($"_currentHealth {_currentHealth}");
         _currentHealth -= damage;
         ValidateHealth();
         

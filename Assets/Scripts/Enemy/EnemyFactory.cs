@@ -1,12 +1,11 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyFactory : MonoBehaviour
 {
-    [SerializeField] private List<Enemy> _enemyTypes;
-
-    public Enemy CreateEnemy(Transform point, Enemy enemy)
+    public Enemy CreateEnemy(Transform point, Enemy enemy, PlayerHealth playerHealth)
     {
-        return Instantiate(enemy, point);
+        var currentEnemy = Instantiate(enemy, point);
+        currentEnemy.Initialize(playerHealth);
+        return currentEnemy;
     }
 }

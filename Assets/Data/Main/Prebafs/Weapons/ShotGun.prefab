@@ -78,9 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10122c0f9974e3442b16368b28c8f50b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 7641251931762612160, guid: fd0c1c7bb716a3e418a329b10c898969, type: 3}
-  _animations: {fileID: 7641251931762612184, guid: fd0c1c7bb716a3e418a329b10c898969, type: 3}
-  _bulletSpeed: 20
+  _bulletSpeed: 10
   _bulletSpawnTransform: {fileID: 6682977137104054153}
 --- !u!114 &1896239416227384535
 MonoBehaviour:

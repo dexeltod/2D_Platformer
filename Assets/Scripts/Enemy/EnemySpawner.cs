@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [SerializeField] private PlayerHealth _playerHealth;
     [SerializeField] private int _spawnDelay;
     [SerializeField] private int _cooldownBetweenWaves;
     [SerializeField] private List<Wave> _wave;
@@ -38,7 +39,7 @@ public class EnemySpawner : MonoBehaviour
 
         while (_currentSpawnedEnemyCount != _maxEnemyCount)
         {
-            var enemy = _enemyFactory.CreateEnemy(transform, currentEnemy);
+            var enemy = _enemyFactory.CreateEnemy(transform, currentEnemy, _playerHealth);
             _currentSpawnedEnemyCount++;
             enemy.WasDying += OnAddDiedEnemyCount;
             yield return waitingTime;
