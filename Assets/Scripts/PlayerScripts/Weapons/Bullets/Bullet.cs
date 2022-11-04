@@ -18,16 +18,9 @@ public class Bullet : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    public Bullet Shoot(IRangedWeapon weapon, Transform bulletTransform, float direction)
+    public void SetSpeed(float speed, float direction)
     {
-        var bullet = Instantiate(this, bulletTransform.position, Quaternion.identity);
-        bullet.SetSpeed(direction * weapon.BulletSpeed);
-        return bullet;
-    }
-
-    private void SetSpeed(float direction)
-    {
-        _rigidbody.velocity = new Vector2(direction, _rigidbody.velocity.y);
+        _rigidbody.velocity = new Vector2(speed * direction, _rigidbody.velocity.y);
     }
 
     private void OnTriggerEnter2D(Collider2D targetCollider)
@@ -37,6 +30,6 @@ public class Bullet : MonoBehaviour
             IsTargetReached?.Invoke(enemy);
         }
 
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

@@ -5,13 +5,15 @@ using UnityEngine.UI;
 public class ShopItemView : MonoBehaviour
 {
     [SerializeField] private Image _image;
-    [SerializeField] private TextMeshProUGUI _text;
-    [SerializeField] private int _price;
+    [SerializeField] private TextMeshProUGUI _description;
+    [SerializeField] private TextMeshProUGUI _title;
+    [SerializeField] private TextMeshProUGUI _price;
 
-    public void Init(string description, int price, Sprite image)
+    public void Initialize(string title, string description, int price, Sprite image)
     {
-        _text.text = description;
-        _price = price;
+        _title.text = title;
+        _description.text = description;
+        _price.text = price.ToString();
         _image.sprite = image;
     }
 }

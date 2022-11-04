@@ -9,10 +9,17 @@ public class WeaponList : MonoBehaviour
 
     private void Awake()
     {
-        foreach (var weapon in _weapons)
+        Initialize();
+    }
+
+
+    private void Initialize()
+    {
+        for (var i = 0; i < _weapons.Count; i++)
         {
+            var weapon = _weapons[i];
             var currentWeapon = Instantiate(_weaponPanelPrefab, transform);
-            currentWeapon.Init(weapon.Description, weapon.Price, weapon.Sprite);
+            currentWeapon.Initialize(weapon.Title, weapon.Description, weapon.Price, weapon.Sprite);
         }
     }
 }

@@ -3,6 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EnemyAttackData", menuName = "Data/Enemy/EnemyData")]
 public class DataEnemy : ScriptableObject
 {
+    public Player _Target;
     public int Damage = 10;
     public int Armor= 0 ;
     public int Health = 50;

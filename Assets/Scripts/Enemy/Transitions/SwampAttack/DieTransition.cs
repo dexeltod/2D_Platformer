@@ -14,8 +14,9 @@ public class DieTransition : Transition
         _enemy.WasDying -= ChangeState;
     }
 
-    private void ChangeState()
+    private void ChangeState(Enemy enemy)
     {
+        enemy.WasDying -= ChangeState;
         IsNeedTransition = true;
     }
 }

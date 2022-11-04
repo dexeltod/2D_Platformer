@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 namespace UI_Scripts.Shop
 {
     [CreateAssetMenu(fileName = "Item", menuName = "ShopItemInfo", order = 0)]
     public class ItemInfo : ScriptableObject
     {
-        public Sprite Sprite;
-        public int Price;
+        public string Title;
         public string Description;
+        public int Price;
+        public Sprite Sprite;
     }
 }

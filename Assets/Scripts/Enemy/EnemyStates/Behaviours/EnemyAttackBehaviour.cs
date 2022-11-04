@@ -39,7 +39,9 @@ public class EnemyAttackBehaviour : MonoBehaviour
     {
         _animator.StopPlayback();
         _player.Died -= OnPlayerDie;
-        StopCoroutine(_currentCoroutine);
+
+        if (_currentCoroutine != null)
+            StopCoroutine(_currentCoroutine);
     }
 
     private IEnumerator AttackPlayer()

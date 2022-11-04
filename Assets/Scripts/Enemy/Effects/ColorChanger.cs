@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using TMPro;
+﻿using System.Collections;
 using UnityEngine;
 
 public class ColorChanger : MonoBehaviour
@@ -23,15 +21,15 @@ public class ColorChanger : MonoBehaviour
 
     private void OnEnable()
     {
-        _enemy.WasHit += OnColorChanging;
+        _enemy.WasHit += OnColorChange;
     }
 
     private void OnDisable()
     {
-        _enemy.WasHit -= OnColorChanging;
+        _enemy.WasHit -= OnColorChange;
     }
 
-    private void OnColorChanging()
+    private void OnColorChange()
     {
         if (_currentColorCoroutine != null)
         {

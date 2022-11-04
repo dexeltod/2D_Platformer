@@ -15,7 +15,7 @@ public class Fist : Weapon
         Damage = 5;
     }
 
-    private void Awake()
+    protected override void Awake()
     {
         _animator = GetComponentInParent<Animator>();
         _animationHasher = GetComponentInParent<AnimationHasher>();
@@ -40,7 +40,7 @@ public class Fist : Weapon
         if (Physics.Raycast(transform.position, transform.right * direction, out RaycastHit hit, _attackRange,
                 _enemyLayer))
         {
-            if (hit.collider.TryGetComponent(out Enemy enemy))
+            if (hit.collider.TryGetComponent(out MinotaurEnemy enemy))
             {
                 GiveDamage(enemy);
             }

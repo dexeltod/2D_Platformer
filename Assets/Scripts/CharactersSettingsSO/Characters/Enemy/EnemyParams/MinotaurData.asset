@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03647b49e1ad6494990ce4cc78c342e8, type: 3}
-  m_Name: TestEnemyData
+  m_Name: MinotaurData
   m_EditorClassIdentifier: 
   Damage: 10
   Armor: 0
-  Health: 100
+  Health: 30
   MoveSpeed: 0.05
   CriticalDamageChance: 0
   AttackSpeed: 0.2
