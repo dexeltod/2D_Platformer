@@ -522,6 +522,7 @@ MonoBehaviour:
   _description: {fileID: 2051370771236167520}
   _title: {fileID: 3270975934476382104}
   _price: {fileID: 1875124283109513395}
+  _button: {fileID: 7122540780942198542}
 --- !u!1 &2829369985340638929
 GameObject:
   m_ObjectHideFlags: 0

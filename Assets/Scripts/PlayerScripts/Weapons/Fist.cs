@@ -1,33 +1,17 @@
 using System.Collections;
 using UnityEngine;
 
-public class Fist : Weapon
+public class Fist : WeaponBase
 {
     [SerializeField] private LayerMask _enemyLayer;
-    [SerializeField] private float _attackRange = 2;
-
-    private Animator _animator;
-    private AnimationHasher _animationHasher;
-    
-    public Fist()
-    {
-        AttackSpeed = 1f;
-        Damage = 5;
-    }
-
-    protected override void Awake()
-    {
-        _animator = GetComponentInParent<Animator>();
-        _animationHasher = GetComponentInParent<AnimationHasher>();
-    }
 
     public override IEnumerator AttackRoutine(float direction)
     {
-        _animator.StopPlayback();
-        _animator.CrossFade(_animationHasher.AttackHash, 0);
-
+	    CanAttack = false;
+        SetAttackAnimation();
         AttackTarget(direction);
-        yield return null;
+        yield return new WaitForSeconds(AttackSpeed);
+        CanAttack = true;
     }
 
     public override void GiveDamage(Enemy target)
@@ -37,7 +21,7 @@ public class Fist : Weapon
 
     private void AttackTarget(float direction)
     {
-        if (Physics.Raycast(transform.position, transform.right * direction, out RaycastHit hit, _attackRange,
+        if (Physics.Raycast(transform.position, transform.right * direction, out RaycastHit hit, Range,
                 _enemyLayer))
         {
             if (hit.collider.TryGetComponent(out MinotaurEnemy enemy))

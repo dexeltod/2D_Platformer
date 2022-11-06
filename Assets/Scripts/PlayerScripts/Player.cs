@@ -1,37 +1,38 @@
+using UI_Scripts.Shop;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(InputSystemReader), typeof(PlayerBehaviour))]
 public class Player : MonoBehaviour
 {
-    private InputSystemReader _inputSystemReader;
-    private PlayerBehaviour _playerBehaviour;
-    private Weapon _weapon;
-    private float _lookDirection = -1;
+	public event UnityAction<int, WeaponBase> Bought;
 
-    public float LookDirection => _lookDirection;
-    public Weapon WeaponPrefab => _weapon;
+	private InputSystemReader _inputSystemReader;
+	private PlayerBehaviour _playerBehaviour;
+	private float _lookDirection = -1;
+	public float LookDirection => _lookDirection;
 
-    private void Awake()
-    {
-        
-        _inputSystemReader = GetComponent<InputSystemReader>();
-        _playerBehaviour = GetComponent<PlayerBehaviour>();
-    }
+	private void Awake()
+	{
+		_inputSystemReader = GetComponent<InputSystemReader>();
+		_playerBehaviour = GetComponent<PlayerBehaviour>();
+	}
 
-    private void OnEnable()
-    {
-        _inputSystemReader.VerticalMoveButtonUsed += SetLookDirection;
-        _inputSystemReader.AttackButtonPerformed += _playerBehaviour.SetAttackState;
-    }
+	private void OnEnable()
+	{
+		_inputSystemReader.VerticalMoveButtonUsed += SetLookDirection;
+		_inputSystemReader.AttackButtonPerformed += _playerBehaviour.SetAttackState;
+	}
 
-    private void OnDestroy()
-    {
-        _inputSystemReader.VerticalMoveButtonUsed -= SetLookDirection;
-        _inputSystemReader.AttackButtonPerformed -= _playerBehaviour.SetAttackState;
-    }
-    
-    private void SetLookDirection(float direction)
-    {
-        _lookDirection = direction;
-    }
+	private void OnDisable()
+	{
+		_inputSystemReader.VerticalMoveButtonUsed -= SetLookDirection;
+		_inputSystemReader.AttackButtonPerformed -= _playerBehaviour.SetAttackState;
+	}
+
+	public void TryBuyWeapon(WeaponBase weaponBase, ItemInfo itemInfo) =>
+		Bought?.Invoke(itemInfo.Price, weaponBase);
+
+	private void SetLookDirection(float direction) =>
+		_lookDirection = direction;
 }

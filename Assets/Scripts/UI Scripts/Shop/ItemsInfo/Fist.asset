@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114f934f5b514134a0eac06558570fb0, type: 3}
   m_Name: Fist
   m_EditorClassIdentifier: 
+  WeaponBase: {fileID: 611047416249856806, guid: f9aab4e195a9b65478befe009e66fd90, type: 3}
   Title: "\u041A\u0443\u043B\u0430\u043A"
   Description: "\u041E\u0431\u044B\u0447\u043D\u044B\u0439 \u043A\u0443\u043B\u0430\u043A"
   Price: 0

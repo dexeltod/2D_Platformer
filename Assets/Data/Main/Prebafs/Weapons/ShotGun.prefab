@@ -78,6 +78,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10122c0f9974e3442b16368b28c8f50b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _weaponInfo: {fileID: 11400000, guid: 44ad46105c6888b429d31452cea46209, type: 2}
+  _isBought: 0
   _bulletSpeed: 10
   _bulletSpawnTransform: {fileID: 6682977137104054153}
 --- !u!114 &1896239416227384535

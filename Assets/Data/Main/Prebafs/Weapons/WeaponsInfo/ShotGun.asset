@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 807d087e71ada7f4a868ba0c80a67358, type: 3}
-  m_Name: Patrol
+  m_Script: {fileID: 11500000, guid: 04d34c0037b241f1a68219b07c33aefb, type: 3}
+  m_Name: ShotGun
   m_EditorClassIdentifier: 
-  movementSpeed: 4
+  Damage: 10
+  AttackSpeed: 1
+  Range: 10

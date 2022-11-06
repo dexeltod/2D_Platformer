@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114f934f5b514134a0eac06558570fb0, type: 3}
   m_Name: ShotGun
   m_EditorClassIdentifier: 
+  WeaponBase: {fileID: 6682977137145155082, guid: 7e5cb6eac788425478e134e5c0ba362d, type: 3}
   Title: "\u0414\u0440\u043E\u0431\u043E\u0432\u0438\u043A"
   Description: "\u0412\u044B\u0441\u0442\u0440\u0435\u043B\u0438\u0432\u0430\u0435\u0442
     \u0434\u0440\u043E\u0431\u044C \u043F\u0443\u043B\u044C"

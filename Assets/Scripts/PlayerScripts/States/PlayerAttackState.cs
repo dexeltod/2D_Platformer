@@ -1,59 +1,75 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace PlayerScripts.States
 {
-    public class PlayerAttackState : BaseState
-    {
-        private const int LayerIndex = 0;
-        private readonly Weapon _weapon;
-        private IStateSwitcher _stateSwitcher;
-        private Coroutine _currentCoroutine;
-        private bool _canAttack = true;
-        private Animator _animator;
-        private AnimationHasher _animationHasher;
+	public class PlayerAttackState : BaseState
+	{
+		private WeaponBase _currentWeapon;
 
-        public PlayerAttackState(Player player, IStateSwitcher stateSwitcher, AnimationHasher animationHasher,
-            Animator animator, Weapon weapon) : base(player, stateSwitcher, animationHasher,
-            animator)
-        {
-            _weapon = weapon;
-        }
+		private const int LayerIndex = 0;
 
-        public override void Start()
-        {
-            _currentCoroutine = Player.StartCoroutine(Attack());
-        }
+		private readonly PlayerWeapon _playerWeapon;
+		private IStateSwitcher _stateSwitcher;
+		private Coroutine _currentCoroutine;
+		private Animator _animator;
+		private AnimationHasher _animationHasher;
 
-        private IEnumerator Attack()
-        {
-            Player.StartCoroutine(_weapon.AttackRoutine(Player.LookDirection));
+		public PlayerAttackState(Player player, IStateSwitcher stateSwitcher, AnimationHasher animationHasher,
+			Animator animator, PlayerWeapon playerWeapon) : base(player, stateSwitcher, animationHasher,
+			animator)
+		{
+			_playerWeapon = playerWeapon;
+			_playerWeapon.WeaponChanged += OnWeaponSwitch;
+		}
 
-            while (_weapon.CanAttack == false)
-            {
-                yield return null;
-            }
+		~PlayerAttackState() =>
+			_playerWeapon.WeaponChanged -= OnWeaponSwitch;
 
-            AnimatorStateInfo animatorInfo = Animator.GetCurrentAnimatorStateInfo(LayerIndex);
+		public override void Start()
+		{
+			if (_currentWeapon.CanAttack == false)
+				return;
 
-            while (animatorInfo.shortNameHash != AnimationHasher.AttackHash)
-            {
-                animatorInfo = Animator.GetCurrentAnimatorStateInfo(LayerIndex);
-                yield return null;
-            }
+			_currentCoroutine = Player.StartCoroutine(Attack());
+		}
 
-            var waitForSeconds = new WaitForSeconds(animatorInfo.length);
-            yield return waitForSeconds;
-            StateSwitcher.SwitchState<PlayerIdleState>();
-        }
+		private IEnumerator Attack()
+		{
+			if (_currentWeapon == null)
+				yield break;
 
-        public override void Stop()
-        {
-            if (_currentCoroutine == null)
-                return;
+			Player.StartCoroutine(_currentWeapon.AttackRoutine(Player.LookDirection));
 
-            Player.StopCoroutine(_currentCoroutine);
-            _currentCoroutine = null;
-        }
-    }
+			Debug.Log(_currentWeapon.name);
+
+			AnimatorStateInfo animatorInfo = Animator.GetCurrentAnimatorStateInfo(LayerIndex);
+
+			while (animatorInfo.shortNameHash != AnimationHasher.AttackHash)
+			{
+				animatorInfo = Animator.GetCurrentAnimatorStateInfo(LayerIndex);
+				yield return null;
+			}
+
+			var waitForSeconds = new WaitForSeconds(animatorInfo.length);
+			yield return waitForSeconds;
+			StateSwitcher.SwitchState<PlayerIdleState>();
+		}
+
+		public override void Stop()
+		{
+			if (_currentCoroutine == null)
+				return;
+
+			Player.StopCoroutine(_currentCoroutine);
+			_currentCoroutine = null;
+		}
+
+		private void OnWeaponSwitch(WeaponBase weaponBase)
+		{
+			_currentWeapon = weaponBase;
+			Console.WriteLine($"Current weapon: {_currentWeapon.name}");
+		}
+	}
 }
