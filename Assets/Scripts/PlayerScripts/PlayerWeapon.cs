@@ -7,6 +7,7 @@ namespace PlayerScripts
 {
 	[RequireComponent(typeof(Animator), typeof(WeaponFactory),
 		typeof(PlayerMoney))]
+	[RequireComponent(typeof(PlayerWeapon), typeof(AnimationHasher))]
 	public class PlayerWeapon : MonoBehaviour
 	{
 		[SerializeField] private List<WeaponBase> _weapons;
@@ -37,20 +38,20 @@ namespace PlayerScripts
 
 		private void SetLastBoughtWeapon()
 		{
-			WeaponBase weapon = _weapons.Last();
-			WeaponBase initializedWeapon = GetInitializedWeapon(weapon);
+			WeaponBase lastWeapon = _weapons.Last();
+			WeaponBase initializedWeapon = GetInitializedWeapon(lastWeapon);
 			SetWeapon(initializedWeapon);
 		}
 
 		private void SetStartWeapon()
 		{
 			if (_weapons.Count <= 0)
-				return;
+				throw new NullReferenceException();
 
-			WeaponBase firstWeaponBase = _weapons.FirstOrDefault();
+			WeaponBase firstWeapon = _weapons.FirstOrDefault();
 
-			WeaponBase weaponBase = GetInitializedWeapon(firstWeaponBase);
-			WeaponChanged?.Invoke(weaponBase);
+			WeaponBase initializedWeapon = GetInitializedWeapon(firstWeapon);
+			WeaponChanged?.Invoke(initializedWeapon);
 		}
 
 		private WeaponBase GetInitializedWeapon(WeaponBase firstWeaponBase)

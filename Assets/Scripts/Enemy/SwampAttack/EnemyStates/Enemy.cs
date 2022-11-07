@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -19,10 +18,8 @@ public abstract class Enemy : MonoBehaviour, IEnemy1Level
     public event UnityAction<Enemy> WasDying;
     public event UnityAction WasHit;
 
-    private void Awake()
-    {
-        _attackBehaviour = GetComponent<EnemyAttackBehaviour>();
-    }
+    private void Awake() =>
+	    _attackBehaviour = GetComponent<EnemyAttackBehaviour>();
 
     private void Start()
     {
@@ -31,11 +28,9 @@ public abstract class Enemy : MonoBehaviour, IEnemy1Level
         Health = _maxHealth;
     }
 
-    public void Initialize(PlayerHealth playerHealth)
-    {
-        _attackBehaviour.Initialize(playerHealth);
-    }
-    
+    public void Initialize(PlayerHealth playerHealth) =>
+	    _attackBehaviour.Initialize(playerHealth);
+
     public void ApplyDamage(int damage)
     {
         if (Health <= 0)

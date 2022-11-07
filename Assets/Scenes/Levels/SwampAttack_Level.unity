@@ -1251,6 +1251,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fdcf2503aa2c5d408806f6601c80b11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1393219692 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7641251931762612185, guid: fd0c1c7bb716a3e418a329b10c898969, type: 3}
+  m_PrefabInstance: {fileID: 7641251932516945804}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b183d99331fc8449ae15b10c8679ae0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1457019200
 GameObject:
   m_ObjectHideFlags: 0
@@ -30423,6 +30434,10 @@ PrefabInstance:
       propertyPath: _playerMoney
       value: 
       objectReference: {fileID: 1393219686}
+    - target: {fileID: 2035685326, guid: ac279c92c9078534b8fd68642fc06557, type: 3}
+      propertyPath: _inputSystemReader
+      value: 
+      objectReference: {fileID: 1393219692}
     - target: {fileID: 599933139436684134, guid: ac279c92c9078534b8fd68642fc06557, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
