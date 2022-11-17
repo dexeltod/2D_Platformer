@@ -191,7 +191,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2165752079247829862}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -205,7 +205,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 102.32495, y: -12.164978}
-  m_SizeDelta: {x: 204.6499, y: 24.33}
+  m_SizeDelta: {x: 204.65, y: 24.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2165752079247829861
 CanvasRenderer:
@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cddb80ae43e7b4a43b498a74ea03b81f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerCharacter: {fileID: 7798860289455352080, guid: de7748fd89fa843468d399acf1ff646f, type: 3}
+  _player: {fileID: 0}
   _slider: {fileID: 2165752078903924088}
 --- !u!1 &2165752079970513575
 GameObject:

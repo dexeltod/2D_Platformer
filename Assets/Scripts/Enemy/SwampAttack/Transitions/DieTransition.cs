@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class DieTransition : Transition
 {
-    [SerializeField] private EnemyDieBehaviour _enemyDieBehaviour;
     [SerializeField] private Enemy _enemy;
     public override void Enable()
     {

@@ -5,24 +5,22 @@ using PlayerScripts.States;
 using UnityEngine;
 
 [RequireComponent(typeof(InputSystemReader), typeof(Animator),
-				  typeof(AnimationHasher))]
-[RequireComponent(typeof(Player))]
+	typeof(AnimationHasher))]
+[RequireComponent(typeof(Player), typeof(WeaponFactory), typeof(WeaponFactory))]
 public class PlayerBehaviour : MonoBehaviour, IStateSwitcher
 {
 	private Player _player;
 	private PlayerWeapon _playerWeapon;
-	private WeaponFactory _weaponFactory;
-	
+
 	private AnimationHasher _animationHasher;
 	private Animator _animator;
-	
+
 	private BaseState _currentState;
 	private List<BaseState> _states = new();
 
 	private void Awake()
 	{
 		_playerWeapon = GetComponent<PlayerWeapon>();
-		_weaponFactory = GetComponent<WeaponFactory>();
 		_player = GetComponent<Player>();
 		_animationHasher = GetComponent<AnimationHasher>();
 		_animator = GetComponent<Animator>();

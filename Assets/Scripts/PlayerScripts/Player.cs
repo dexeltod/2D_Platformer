@@ -24,14 +24,14 @@ public class Player : MonoBehaviour
 		_inputSystemReader.AttackButtonPerformed += _playerBehaviour.SetAttackState;
 	}
 
+	public void TryBuyWeapon(WeaponBase weaponBase, ItemInfo itemInfo) =>
+		Bought?.Invoke(itemInfo.Price, weaponBase);
+
 	private void OnDisable()
 	{
 		_inputSystemReader.VerticalMoveButtonUsed -= SetLookDirection;
 		_inputSystemReader.AttackButtonPerformed -= _playerBehaviour.SetAttackState;
 	}
-
-	public void TryBuyWeapon(WeaponBase weaponBase, ItemInfo itemInfo) =>
-		Bought?.Invoke(itemInfo.Price, weaponBase);
 
 	private void SetLookDirection(float direction) =>
 		_lookDirection = direction;

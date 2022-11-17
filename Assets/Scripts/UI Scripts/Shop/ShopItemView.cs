@@ -17,11 +17,9 @@ public class ShopItemView : MonoBehaviour
 
 	public event UnityAction<WeaponBase, ItemInfo, ShopItemView> BuyButtonClicked;
 
-	~ShopItemView()
-	{
+	~ShopItemView() =>
 		_button.onClick.RemoveListener(OnBuy);
-	}
-	
+
 	public void Render(WeaponBase weaponBase, ItemInfo itemInfo, Sprite image)
 	{
 		_weaponBase = weaponBase;

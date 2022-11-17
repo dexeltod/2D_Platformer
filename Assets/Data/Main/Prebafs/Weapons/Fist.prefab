@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1209b058972672641994b521144c1366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weaponInfo: {fileID: 11400000, guid: 79d08274926274c4dab39d28f0f95fd8, type: 2}
+  _weaponInfo: {fileID: 11400000, guid: f1364210e09e2b14586dce2f4b4395bc, type: 2}
   _isBought: 0
   _enemyLayer:
     serializedVersion: 2

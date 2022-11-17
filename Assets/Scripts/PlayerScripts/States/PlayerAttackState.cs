@@ -42,13 +42,11 @@ namespace PlayerScripts.States
 
 			Player.StartCoroutine(_currentWeapon.AttackRoutine(Player.LookDirection));
 
-			Debug.Log(_currentWeapon.name);
-
-			AnimatorStateInfo animatorInfo = Animator.GetCurrentAnimatorStateInfo(LayerIndex);
+			AnimatorStateInfo animatorInfo = GetAnimatorInfo();
 
 			while (animatorInfo.shortNameHash != AnimationHasher.AttackHash)
 			{
-				animatorInfo = Animator.GetCurrentAnimatorStateInfo(LayerIndex);
+				animatorInfo = GetAnimatorInfo();
 				yield return null;
 			}
 
@@ -66,10 +64,10 @@ namespace PlayerScripts.States
 			_currentCoroutine = null;
 		}
 
-		private void OnWeaponSwitch(WeaponBase weaponBase)
-		{
+		private AnimatorStateInfo GetAnimatorInfo() =>
+			Animator.GetCurrentAnimatorStateInfo(LayerIndex);
+
+		private void OnWeaponSwitch(WeaponBase weaponBase) =>
 			_currentWeapon = weaponBase;
-			Console.WriteLine($"Current weapon: {_currentWeapon.name}");
-		}
 	}
 }
