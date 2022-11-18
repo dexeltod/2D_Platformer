@@ -8,13 +8,13 @@ public class PhysicsMovement : MonoBehaviour
 {
 	private const float ShellRadius = 0.01f;
 
-	[SerializeField] private AnimationCurve _jumpCurve;
 	[SerializeField] private LayerMask _groundLayer;
 	[SerializeField] private Vector2 _groundCheckPosition;
 	[SerializeField] private Vector2 _groundCheckSize;
 	[SerializeField] private float _moveSpeed;
 	[SerializeField] private float _jumpForce = 3f;
 	[SerializeField] private float _gravityModifier = 1f;
+	[SerializeField] private float _maxFallSpeed = -5f;
 
 	private SurfaceInformant _surfaceInformant;
 	private Rigidbody2D _rigidbody2D;
@@ -36,6 +36,7 @@ public class PhysicsMovement : MonoBehaviour
 		_inputSystemReader.VerticalMoveButtonCanceled += OnCancelHorizontalMove;
 		_inputSystemReader.VerticalMoveButtonUsed += OnHorizontalMove;
 		_inputSystemReader.JumpButtonUsed += OnJump;
+		_inputSystemReader.JumpButtonCanceled += OnStopJump;
 	}
 
 	private void OnDisable()
@@ -43,6 +44,7 @@ public class PhysicsMovement : MonoBehaviour
 		_inputSystemReader.VerticalMoveButtonCanceled -= OnCancelHorizontalMove;
 		_inputSystemReader.VerticalMoveButtonUsed -= OnHorizontalMove;
 		_inputSystemReader.JumpButtonUsed -= OnJump;
+		_inputSystemReader.JumpButtonCanceled -= OnStopJump;
 	}
 
 	private void Start() =>
@@ -63,34 +65,43 @@ public class PhysicsMovement : MonoBehaviour
 	private void OnHorizontalMove(float direction) =>
 		_movementDirection = new Vector2(direction, _movementDirection.y);
 
-	private void OnJump(float direction) =>
-		Jump();
-
 	private void Move()
 	{
-		Vector2 direction = _surfaceInformant.GetProjection(_movementDirection);
-		
-		_offset = _inertiaDirection + (direction * _moveSpeed);
+		Vector2 normalizedDirection = _surfaceInformant.GetProjection(_movementDirection);
+
+		_offset = _inertiaDirection + (normalizedDirection * _moveSpeed);
+
 		CheckGround();
-		_rigidbody2D.velocity = _offset;
+		
+		if (_offset.y <= _maxFallSpeed)
+			_offset.y = _maxFallSpeed;
+
+		_rigidbody2D.position += _offset * Time.deltaTime;
 	}
 
-	private void Jump()
+	private void OnJump()
 	{
 		if (_isGrounded == false)
 			return;
 
 		var velocity = _rigidbody2D.velocity;
 
-		Vector2 jumpDirection = new Vector2(velocity.x, _jumpCurve.Evaluate(_jumpCurve.length));
+		Vector2 jumpDirection = new Vector2(velocity.x, _jumpForce);
 		velocity = jumpDirection;
 		_inertiaDirection = velocity;
+	}
+
+	private void OnStopJump()
+	{
+		const float ZeroVerticalVelocity = 0;
+		_inertiaDirection = new Vector2(_rigidbody2D.velocity.x, ZeroVerticalVelocity);
 	}
 
 	private IEnumerator FallRoutine()
 	{
 		while (_isGrounded == false)
 		{
+			Debug.Log("fall");
 			_inertiaDirection.y -= _gravityModifier * _rigidbody2D.gravityScale * -Physics2D.gravity.y * Time.deltaTime;
 			_inertiaDirection.x = _movementDirection.x;
 			yield return null;
@@ -102,7 +113,7 @@ public class PhysicsMovement : MonoBehaviour
 	private void CheckGround()
 	{
 		float groundCheckAngle = 0;
-		
+
 		_isGrounded = Physics2D.OverlapBox(_rigidbody2D.position + _groundCheckPosition,
 			_groundCheckSize, groundCheckAngle, _groundLayer);
 

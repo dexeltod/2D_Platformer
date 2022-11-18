@@ -40,7 +40,6 @@ public class PlayerMoveController : PhysicsMovementOld
 
 	private void OnEnable()
 	{
-		_inputSystemReader.JumpButtonUsed += SetJumpState;
 		_inputSystemReader.VerticalMoveButtonUsed += SetMoveHorizontalDirection;
 	}
 
@@ -56,7 +55,6 @@ public class PlayerMoveController : PhysicsMovementOld
 
 	private void OnDisable()
 	{
-		_inputSystemReader.JumpButtonUsed -= SetJumpState;
 		_inputSystemReader.VerticalMoveButtonUsed -= SetMoveHorizontalDirection;
 	}
 
@@ -75,25 +73,6 @@ public class PlayerMoveController : PhysicsMovementOld
 		TargetVelocity = moveNormalized * _speedModifier;
 	}
 
-	private void SetJumpState(float direction)
-	{
-		if (direction == 1f && IsGrounded == true)
-		{
-			IsJump = true;
-			Velocity.y = _jumpTakeOffSpeed;
-		}
-		else if (Velocity.y >= _maxJump && IsJump)
-		{
-			Velocity.y = _maxJump;
-		}
-		else if (IsGrounded == false && _moveDirection.y == 0 && IsJump == true)
-		{
-			float velocityDecrease = 0.5f;
-
-			IsJump = false;
-			Velocity.y *= velocityDecrease;
-		}
-	}
 
 	private void OnDrawGizmos()
 	{

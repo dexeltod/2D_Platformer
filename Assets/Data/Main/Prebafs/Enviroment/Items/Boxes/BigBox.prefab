@@ -113,7 +113,7 @@ MonoBehaviour:
   - {x: 1, y: -1, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1602
+  m_InstanceId: -1592
 --- !u!61 &988257837
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -155,7 +155,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 90
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 0

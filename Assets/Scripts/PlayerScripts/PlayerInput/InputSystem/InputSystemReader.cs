@@ -6,10 +6,11 @@ public class InputSystemReader : MonoBehaviour
 {
 	public UnityAction InteractButtonUsed;
 	public UnityAction AttackButtonPerformed;
+	public UnityAction VerticalMoveButtonCanceled;
+	public UnityAction JumpButtonUsed;
+	public UnityAction JumpButtonCanceled;
 
 	public UnityAction<float> VerticalMoveButtonUsed;
-	public UnityAction<float> JumpButtonUsed;
-	public UnityAction VerticalMoveButtonCanceled;
 
 	private float _buttonAttackValue;
 	private float _buttonJumpValue;
@@ -55,10 +56,10 @@ public class InputSystemReader : MonoBehaviour
 
 	private void OnJump(InputAction.CallbackContext context)
 	{
-		if (context.started)
-		{
-			_buttonJumpValue = context.ReadValue<float>();
-			JumpButtonUsed?.Invoke(_buttonJumpValue);
-		}
+		if (context.started) 
+			JumpButtonUsed?.Invoke();
+		
+		if (context.canceled) 
+			JumpButtonCanceled?.Invoke();
 	}
 }
