@@ -10,10 +10,8 @@ public class RangeWeapon : WeaponBase
 	private BulletPool _bulletPool;
 	private Bullet _currentBullet;
 
-	protected override void OnAwake()
-	{
+	protected override void OnAwake() =>
 		_bulletPool = GetComponent<BulletPool>();
-	}
 
 	private void OnDisable()
 	{

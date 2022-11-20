@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(InputSystemReader), typeof(SurfaceInformant))]
 [RequireComponent(typeof(Rigidbody2D))]
@@ -22,6 +23,8 @@ public class PhysicsMovement : MonoBehaviour
 
 	private bool _isGrounded;
 	private bool _isGlide;
+
+	public event UnityAction Glided;
 
 	private void Awake()
 	{
@@ -85,6 +88,7 @@ public class PhysicsMovement : MonoBehaviour
 
 	private void OnGlide(bool isGlide)
 	{
+		Glided?.Invoke();
 		_isGlide = isGlide;
 		StartFallCoroutine();
 	}

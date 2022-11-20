@@ -5,9 +5,9 @@ namespace PlayerScripts
 	public abstract class BaseState
 	{
 		protected readonly Player Player;
-		protected IStateSwitcher StateSwitcher;
-		protected AnimationHasher AnimationHasher;
-		protected Animator Animator;
+		protected readonly IStateSwitcher StateSwitcher;
+		protected readonly AnimationHasher AnimationHasher;
+		protected readonly Animator Animator;
 
 		protected BaseState(Player player, IStateSwitcher stateSwitcher, AnimationHasher animationHasher,
 			Animator animator)

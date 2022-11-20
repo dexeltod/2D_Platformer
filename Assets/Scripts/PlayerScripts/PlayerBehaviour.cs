@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using PlayerScripts;
 using PlayerScripts.States;
@@ -10,6 +11,7 @@ using UnityEngine;
 public class PlayerBehaviour : MonoBehaviour, IStateSwitcher
 {
 	private Player _player;
+	
 	private PlayerWeapon _playerWeapon;
 
 	private AnimationHasher _animationHasher;
@@ -27,11 +29,26 @@ public class PlayerBehaviour : MonoBehaviour, IStateSwitcher
 		InitializeStates();
 	}
 
+	
+	private void SetFallState() =>
+		SwitchState<PlayerFallState>();
+	
 	public void SetIdleState() =>
 		SwitchState<PlayerIdleState>();
 
+	public void SetRunState(float direction) =>
+		SwitchState<PlayerRunState>();
+
 	public void SetAttackState() =>
 		SwitchState<PlayerAttackState>();
+
+	public void SetGlideState() =>
+		SwitchState<PlayerGlideState>();
+
+	public void SetJumpState()
+	{
+		SwitchState<PlayerJumpState>();
+	}
 
 	public void SwitchState<T>() where T : BaseState
 	{
@@ -47,6 +64,10 @@ public class PlayerBehaviour : MonoBehaviour, IStateSwitcher
 		{
 			new PlayerIdleState(_player, this, _animationHasher, _animator),
 			new PlayerAttackState(_player, this, _animationHasher, _animator, _playerWeapon),
+			new PlayerRunState(_player, this, _animationHasher, _animator),
+			new PlayerJumpState(_player, this, _animationHasher, _animator),
+			new PlayerFallState(_player, this, _animationHasher, _animator),
+			new PlayerGlideState(_player, this, _animationHasher, _animator),
 		};
 
 		_currentState = _states[0];

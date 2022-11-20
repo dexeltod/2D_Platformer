@@ -44,14 +44,18 @@ namespace PlayerScripts.States
 
 			AnimatorStateInfo animatorInfo = GetAnimatorInfo();
 
-			while (animatorInfo.shortNameHash != AnimationHasher.AttackHash)
-			{
-				animatorInfo = GetAnimatorInfo();
-				yield return null;
-			}
+			// while (animatorInfo.shortNameHash != AnimationHasher.AttackHash)
+			// {
+			// 	animatorInfo = GetAnimatorInfo();
+			// 	Debug.Log("while not this name");
+			// 	yield return null;
+			// }
 
-			var waitForSeconds = new WaitForSeconds(animatorInfo.length);
-			yield return waitForSeconds;
+			Debug.Log("attack");
+			
+			var waitingTime = new WaitForSeconds(animatorInfo.length);
+			yield return waitingTime;
+			Console.WriteLine("пиздец");
 			StateSwitcher.SwitchState<PlayerIdleState>();
 		}
 
@@ -59,7 +63,7 @@ namespace PlayerScripts.States
 		{
 			if (_currentCoroutine == null)
 				return;
-
+			
 			Player.StopCoroutine(_currentCoroutine);
 			_currentCoroutine = null;
 		}

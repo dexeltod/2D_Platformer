@@ -34,7 +34,6 @@ public class GroundChecker : MonoBehaviour
 		if (_lastGroundedBool == _isGrounded)
 			return;
 
-		Debug.Log("huy");
 		_lastGroundedBool = _isGrounded;
 		GroundedStateSwitched?.Invoke(_lastGroundedBool);
 	}

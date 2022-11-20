@@ -22,7 +22,6 @@ public class SurfaceInformant : MonoBehaviour
 		float scalar = Vector2.Dot(enterDirection, _normal);
 		ClampNormal();
 
-		Debug.Log(_normal);
 		Vector2 scalarNormal = scalar * _normal;
 
 		if (enterDirection == scalarNormal)
