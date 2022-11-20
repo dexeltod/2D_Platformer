@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerRunState : BaseState
 {
-    private PlayerMoveController _moveController;
+    private PlayerInputListener _inputListener;
     private float _moveDirection;
 
     public PlayerRunState(Player player, IStateSwitcher stateSwitcher, AnimationHasher animationHasher, Animator animator) : base(player, stateSwitcher, animationHasher, animator)

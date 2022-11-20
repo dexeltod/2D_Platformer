@@ -1,31 +1,31 @@
 using System.Collections;
-using UnityEditor.UIElements;
 using UnityEngine;
 
 [RequireComponent(typeof(InputSystemReader), typeof(SurfaceInformant))]
 [RequireComponent(typeof(Rigidbody2D))]
 public class PhysicsMovement : MonoBehaviour
 {
-	private const float ShellRadius = 0.01f;
-
-	[SerializeField] private LayerMask _groundLayer;
-	[SerializeField] private Vector2 _groundCheckPosition;
-	[SerializeField] private Vector2 _groundCheckSize;
 	[SerializeField] private float _moveSpeed;
 	[SerializeField] private float _jumpForce = 3f;
 	[SerializeField] private float _gravityModifier = 1f;
-	[SerializeField] private float _maxFallSpeed = -5f;
+	[SerializeField] private float _verticalVelocityLimit = -5f;
 
+	private GroundChecker _groundChecker;
 	private SurfaceInformant _surfaceInformant;
-	private Rigidbody2D _rigidbody2D;
 	private InputSystemReader _inputSystemReader;
+	private Rigidbody2D _rigidbody2D;
+	private Coroutine _currentFallCoroutine;
+
 	private Vector2 _movementDirection;
 	private Vector2 _inertiaDirection;
 	private Vector2 _offset;
+
 	private bool _isGrounded;
+	private bool _isGlide;
 
 	private void Awake()
 	{
+		_groundChecker = GetComponent<GroundChecker>();
 		_surfaceInformant = GetComponent<SurfaceInformant>();
 		_inputSystemReader = GetComponent<InputSystemReader>();
 		_rigidbody2D = GetComponent<Rigidbody2D>();
@@ -37,6 +37,8 @@ public class PhysicsMovement : MonoBehaviour
 		_inputSystemReader.VerticalMoveButtonUsed += OnHorizontalMove;
 		_inputSystemReader.JumpButtonUsed += OnJump;
 		_inputSystemReader.JumpButtonCanceled += OnStopJump;
+		_groundChecker.GroundedStateSwitched += OnSwitchFallState;
+		_surfaceInformant.Glides += OnGlide;
 	}
 
 	private void OnDisable()
@@ -45,6 +47,8 @@ public class PhysicsMovement : MonoBehaviour
 		_inputSystemReader.VerticalMoveButtonUsed -= OnHorizontalMove;
 		_inputSystemReader.JumpButtonUsed -= OnJump;
 		_inputSystemReader.JumpButtonCanceled -= OnStopJump;
+		_groundChecker.GroundedStateSwitched -= OnSwitchFallState;
+		_surfaceInformant.Glides -= OnGlide;
 	}
 
 	private void Start() =>
@@ -53,10 +57,12 @@ public class PhysicsMovement : MonoBehaviour
 	private void FixedUpdate() =>
 		Move();
 
-	private void Fall()
+	private void OnSwitchFallState(bool isFall)
 	{
-		_isGrounded = false;
-		StartCoroutine(FallRoutine());
+		_isGrounded = isFall;
+
+		if (_isGrounded == false)
+			StartFallCoroutine();
 	}
 
 	private void OnCancelHorizontalMove() =>
@@ -64,20 +70,6 @@ public class PhysicsMovement : MonoBehaviour
 
 	private void OnHorizontalMove(float direction) =>
 		_movementDirection = new Vector2(direction, _movementDirection.y);
-
-	private void Move()
-	{
-		Vector2 normalizedDirection = _surfaceInformant.GetProjection(_movementDirection);
-
-		_offset = _inertiaDirection + (normalizedDirection * _moveSpeed);
-
-		CheckGround();
-		
-		if (_offset.y <= _maxFallSpeed)
-			_offset.y = _maxFallSpeed;
-
-		_rigidbody2D.position += _offset * Time.deltaTime;
-	}
 
 	private void OnJump()
 	{
@@ -91,6 +83,23 @@ public class PhysicsMovement : MonoBehaviour
 		_inertiaDirection = velocity;
 	}
 
+	private void OnGlide(bool isGlide)
+	{
+		_isGlide = isGlide;
+		StartFallCoroutine();
+	}
+
+	private void StartFallCoroutine()
+	{
+		if (_currentFallCoroutine != null)
+		{
+			StopCoroutine(_currentFallCoroutine);
+			_currentFallCoroutine = null;
+		}
+
+		_currentFallCoroutine = StartCoroutine(FallRoutine());
+	}
+
 	private void OnStopJump()
 	{
 		const float ZeroVerticalVelocity = 0;
@@ -99,10 +108,9 @@ public class PhysicsMovement : MonoBehaviour
 
 	private IEnumerator FallRoutine()
 	{
-		while (_isGrounded == false)
+		while (_isGrounded == false || _isGlide == true)
 		{
-			Debug.Log("fall");
-			_inertiaDirection.y -= _gravityModifier * _rigidbody2D.gravityScale * -Physics2D.gravity.y * Time.deltaTime;
+			_inertiaDirection.y -= _gravityModifier * -Physics2D.gravity.y * Time.deltaTime;
 			_inertiaDirection.x = _movementDirection.x;
 			yield return null;
 		}
@@ -110,20 +118,19 @@ public class PhysicsMovement : MonoBehaviour
 		_inertiaDirection = Vector2.zero;
 	}
 
-	private void CheckGround()
+	private void Move()
 	{
-		float groundCheckAngle = 0;
+		Vector2 normalizedDirection = _surfaceInformant.GetProjection(_movementDirection);
 
-		_isGrounded = Physics2D.OverlapBox(_rigidbody2D.position + _groundCheckPosition,
-			_groundCheckSize, groundCheckAngle, _groundLayer);
+		_offset = _inertiaDirection + (normalizedDirection * _moveSpeed);
+		_offset.y = Mathf.Clamp(_offset.y, -_verticalVelocityLimit, int.MaxValue);
 
-		if (_isGrounded == false) Fall();
+		_rigidbody2D.position += _offset * Time.deltaTime;
 	}
 
 	private void OnDrawGizmos()
 	{
 		Gizmos.color = Color.yellow;
 		Gizmos.DrawLine(transform.position, (Vector2)transform.position + _offset);
-		Gizmos.DrawCube(transform.position + (Vector3)_groundCheckPosition, _groundCheckSize);
 	}
 }

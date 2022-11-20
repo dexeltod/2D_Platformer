@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CapsuleCollider2D))]
 
-public class PlayerMoveController : PhysicsMovementOld
+public class PlayerInputListener : PhysicsMovementOld
 {
 	[SerializeField] private float _speedModifier = 5;
 	[SerializeField] private float _jumpTakeOffSpeed = 7;
