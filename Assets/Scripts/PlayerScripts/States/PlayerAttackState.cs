@@ -6,20 +6,23 @@ namespace PlayerScripts.States
 {
 	public class PlayerAttackState : BaseState
 	{
-		private WeaponBase _currentWeapon;
-
 		private const int LayerIndex = 0;
 
+		private WeaponBase _currentWeapon;
+
 		private readonly PlayerWeapon _playerWeapon;
-		private IStateSwitcher _stateSwitcher;
-		private Coroutine _currentCoroutine;
+		private readonly PhysicsMovement _physicsMovement;
+
 		private Animator _animator;
 		private AnimationHasher _animationHasher;
+		private IStateSwitcher _stateSwitcher;
 
 		public PlayerAttackState(Player player, IStateSwitcher stateSwitcher, AnimationHasher animationHasher,
-			Animator animator, PlayerWeapon playerWeapon) : base(player, stateSwitcher, animationHasher,
+			Animator animator, PlayerWeapon playerWeapon, PhysicsMovement physicsMovement) : base(player, stateSwitcher,
+			animationHasher,
 			animator)
 		{
+			_physicsMovement = physicsMovement;
 			_playerWeapon = playerWeapon;
 			_playerWeapon.WeaponChanged += OnWeaponSwitch;
 		}
@@ -32,7 +35,7 @@ namespace PlayerScripts.States
 			if (_currentWeapon.CanAttack == false)
 				return;
 
-			_currentCoroutine = Player.StartCoroutine(Attack());
+			Player.StartCoroutine(Attack());
 		}
 
 		private IEnumerator Attack()
@@ -44,28 +47,24 @@ namespace PlayerScripts.States
 
 			AnimatorStateInfo animatorInfo = GetAnimatorInfo();
 
-			// while (animatorInfo.shortNameHash != AnimationHasher.AttackHash)
-			// {
-			// 	animatorInfo = GetAnimatorInfo();
-			// 	Debug.Log("while not this name");
-			// 	yield return null;
-			// }
-
-			Debug.Log("attack");
-			
 			var waitingTime = new WaitForSeconds(animatorInfo.length);
 			yield return waitingTime;
-			Console.WriteLine("пиздец");
-			StateSwitcher.SwitchState<PlayerIdleState>();
+			ChooseTransition();
+		}
+
+		private void ChooseTransition()
+		{
+			const float MinVerticalOffset = 1;
+
+			if (_physicsMovement.Offset.x > MinVerticalOffset)
+				StateSwitcher.SwitchState<PlayerRunState>();
+			else
+				StateSwitcher.SwitchState<PlayerIdleState>();
 		}
 
 		public override void Stop()
 		{
-			if (_currentCoroutine == null)
-				return;
 			
-			Player.StopCoroutine(_currentCoroutine);
-			_currentCoroutine = null;
 		}
 
 		private AnimatorStateInfo GetAnimatorInfo() =>

@@ -1,22 +1,38 @@
 using PlayerScripts;
+using PlayerScripts.States;
 using UnityEngine;
 
 public class PlayerIdleState : BaseState
 {
-	private IStateSwitcher _stateSwitcher;
-	
-    public PlayerIdleState(Player player, IStateSwitcher stateSwitcher, AnimationHasher animationHasher,
-        Animator animator) : base(player, stateSwitcher, animationHasher, animator)
-    {
-	    _stateSwitcher = stateSwitcher;
-    }
+	private readonly IStateSwitcher _stateSwitcher;
+	private readonly PhysicsMovement _physicsMovement;
+	private readonly InputSystemReader _inputSystemReader;
 
-    public override void Start()
-    {
-        Animator.Play(AnimationHasher.IdleHash);
-    }
+	public PlayerIdleState(Player player, IStateSwitcher stateSwitcher, AnimationHasher animationHasher,
+		Animator animator, PhysicsMovement physicsMovement, InputSystemReader inputSystemReader) : base(player,
+		stateSwitcher, animationHasher, animator)
+	{
+		_inputSystemReader = inputSystemReader;
+		_physicsMovement = physicsMovement;
+		_stateSwitcher = stateSwitcher;
+	}
 
-    public override void Stop()
-    {
-    }
+	public override void Start()
+	{
+		_inputSystemReader.VerticalMoveButtonUsed += SetRunState;
+		_physicsMovement.Jumped += SetJumpState;
+		Animator.Play(AnimationHasher.IdleHash);
+	}
+
+	private void SetRunState(float direction) =>
+		_stateSwitcher.SwitchState<PlayerRunState>();
+
+	private void SetJumpState() =>
+		_stateSwitcher.SwitchState<PlayerJumpState>();
+
+	public override void Stop()
+	{
+		_inputSystemReader.VerticalMoveButtonUsed -= SetRunState;
+		_physicsMovement.Jumped -= SetJumpState;
+	}
 }

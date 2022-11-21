@@ -18,9 +18,9 @@ public class SurfaceInformant : MonoBehaviour
 
 	public Vector2 GetProjection(Vector2 enterDirection)
 	{
-		CheckAngleSurface();
 		float scalar = Vector2.Dot(enterDirection, _normal);
 		ClampNormal();
+		CheckAngleSurface();
 
 		Vector2 scalarNormal = scalar * _normal;
 

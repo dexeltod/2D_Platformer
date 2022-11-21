@@ -6,8 +6,8 @@ using UnityEngine.Events;
 public class Player : MonoBehaviour
 {
 	private PhysicsMovement _physicsMovement;
-	private InputSystemReader _inputSystemReader;
-	private PlayerBehaviour _playerBehaviour;
+	private SpriteRenderer _spriteRenderer;
+
 	private float _lookDirection = -1;
 	public float LookDirection => _lookDirection;
 
@@ -15,18 +15,13 @@ public class Player : MonoBehaviour
 
 	private void Awake()
 	{
-		_inputSystemReader = GetComponent<InputSystemReader>();
-		_playerBehaviour = GetComponent<PlayerBehaviour>();
+		_spriteRenderer = GetComponent<SpriteRenderer>();
 		_physicsMovement = GetComponent<PhysicsMovement>();
 	}
 
 	private void OnEnable()
 	{
-		_inputSystemReader.VerticalMoveButtonUsed += SetLookDirection;
-		_physicsMovement.Glided += _playerBehaviour.SetGlideState;
-		_inputSystemReader.AttackButtonPerformed += _playerBehaviour.SetAttackState;
-		_inputSystemReader.VerticalMoveButtonUsed += _playerBehaviour.SetRunState;
-		_inputSystemReader.JumpButtonUsed += _playerBehaviour.SetJumpState;
+		_physicsMovement.Rotated += SetLookDirection;
 	}
 
 	public void TryBuyWeapon(WeaponBase weaponBase, ItemInfo itemInfo) =>
@@ -34,13 +29,12 @@ public class Player : MonoBehaviour
 
 	private void OnDisable()
 	{
-		_inputSystemReader.VerticalMoveButtonUsed -= SetLookDirection;
-		_physicsMovement.Glided -= _playerBehaviour.SetGlideState;
-		_inputSystemReader.AttackButtonPerformed -= _playerBehaviour.SetAttackState;
-		_inputSystemReader.VerticalMoveButtonUsed -= _playerBehaviour.SetRunState;
-		_inputSystemReader.JumpButtonUsed -= _playerBehaviour.SetJumpState;
+		_physicsMovement.Rotated -= SetLookDirection;
 	}
 
-	private void SetLookDirection(float direction) =>
-		_lookDirection = direction;
+	private void SetLookDirection(float direction)
+	{
+		bool isRotated = direction == -1;
+		_spriteRenderer.flipX = isRotated;
+	}
 }
