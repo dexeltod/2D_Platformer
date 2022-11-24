@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Fist
   m_EditorClassIdentifier: 
   Damage: 3
-  AttackSpeed: 0.2
+  AttackSpeed: 0.5
   Range: 3

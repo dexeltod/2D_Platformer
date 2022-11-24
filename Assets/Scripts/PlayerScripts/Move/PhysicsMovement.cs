@@ -23,19 +23,22 @@ public class PhysicsMovement : MonoBehaviour
 	private Vector2 _inertiaDirection;
 	private Vector2 _offset;
 
-	private bool _isGrounded;
-	private float _normalizeVelocityXDirection;
+	private bool _isGlide = false;
+	private bool _lastIsRotate = false;
+	private bool _isRotate = true;
 
+	public bool IsGrounded { get; private set; }
 	public Vector2 MovementDirection => _movementDirection;
 	public Vector2 Offset => _offset;
-	
-	private bool _isGlide;
+
+	private int _currentJumpStopCount = 0;
+	private int _maxJumpStopCount;
 
 	public event UnityAction Glided;
 	public event UnityAction Fallen;
 	public event UnityAction Grounded;
 	public event UnityAction Jumped;
-	public event UnityAction<float> Rotated;
+	public event UnityAction<bool> Rotated;
 
 	private void Awake()
 	{
@@ -51,7 +54,7 @@ public class PhysicsMovement : MonoBehaviour
 		_inputSystemReader.VerticalMoveButtonUsed += OnHorizontalMove;
 		_inputSystemReader.JumpButtonUsed += OnJump;
 		_inputSystemReader.JumpButtonCanceled += OnStopJump;
-		_groundChecker.GroundedStateSwitched += OnGroundStateSwitch;
+		_groundChecker.GroundedStateSwitched += OnSwitchGroundState;
 		_surfaceInformant.Glides += OnGlide;
 	}
 
@@ -61,7 +64,7 @@ public class PhysicsMovement : MonoBehaviour
 		_inputSystemReader.VerticalMoveButtonUsed -= OnHorizontalMove;
 		_inputSystemReader.JumpButtonUsed -= OnJump;
 		_inputSystemReader.JumpButtonCanceled -= OnStopJump;
-		_groundChecker.GroundedStateSwitched -= OnGroundStateSwitch;
+		_groundChecker.GroundedStateSwitched -= OnSwitchGroundState;
 		_surfaceInformant.Glides -= OnGlide;
 	}
 
@@ -71,15 +74,15 @@ public class PhysicsMovement : MonoBehaviour
 	private void FixedUpdate() =>
 		Move();
 
-	private void OnGroundStateSwitch(bool isFall)
+	private void Move()
 	{
-		_isGrounded = isFall;
+		Vector2 normalizedDirection = _surfaceInformant.GetProjection(_movementDirection);
 
-		if (_isGrounded == false)
-		{
-			Fallen?.Invoke();
-			StartFallCoroutine();
-		}
+		_offset = _inertiaDirection + (normalizedDirection * _moveSpeed);
+		_offset.y = Mathf.Clamp(_offset.y, -_verticalVelocityLimit, int.MaxValue);
+
+		CheckDirection();
+		_rigidbody2D.position += _offset * Time.deltaTime;
 	}
 
 	private void OnCancelHorizontalMove() =>
@@ -90,15 +93,23 @@ public class PhysicsMovement : MonoBehaviour
 
 	private void OnJump()
 	{
-		if (_isGrounded == false)
+		if (IsGrounded == false)
 			return;
 
 		var velocity = _rigidbody2D.velocity;
-
 		Vector2 jumpDirection = new Vector2(velocity.x, _jumpForce);
 		velocity = jumpDirection;
 		_inertiaDirection = velocity;
+
+		_maxJumpStopCount++;
 		StartCoroutine(JumpRoutine());
+	}
+
+	private void OnSwitchGroundState(bool isFall)
+	{
+		IsGrounded = isFall;
+
+		if (IsGrounded == false || _offset.y < 0) StartFallCoroutine();
 	}
 
 	private void OnGlide(bool isGlide)
@@ -110,24 +121,16 @@ public class PhysicsMovement : MonoBehaviour
 
 	private void CheckDirection()
 	{
-		float lastDirection = 0;
+		if (_offset.x > 0.01f)
+			_isRotate = false;
+		else if (_offset.x < -0.01f)
+			_isRotate = true;
 
-		if (_offset.x > 0)
-		{
-			_normalizeVelocityXDirection = 1;
-			lastDirection = _normalizeVelocityXDirection;
-		}
-		else if (_offset.x < 0)
-		{
-			_normalizeVelocityXDirection = -1;
-			lastDirection = _normalizeVelocityXDirection;
-		}
-
-		if (lastDirection == _normalizeVelocityXDirection)
+		if (_lastIsRotate == _isRotate)
 			return;
 
-		lastDirection = _normalizeVelocityXDirection;
-		Rotated?.Invoke(lastDirection);
+		_lastIsRotate = _isRotate;
+		Rotated?.Invoke(_lastIsRotate);
 	}
 
 	private void StartFallCoroutine()
@@ -138,25 +141,36 @@ public class PhysicsMovement : MonoBehaviour
 			_currentFallCoroutine = null;
 		}
 
+		if (_isGlide == false)
+			Fallen?.Invoke();
+
 		_currentFallCoroutine = StartCoroutine(FallRoutine());
 	}
 
 	private void OnStopJump()
 	{
 		const float VerticalVelocityZero = 0;
+
+		if (_currentJumpStopCount >= _maxJumpStopCount)
+			return;
+
 		_inertiaDirection = new Vector2(_rigidbody2D.velocity.x, VerticalVelocityZero);
+		_currentJumpStopCount++;
 	}
 
 	private IEnumerator FallRoutine()
 	{
-		while (_isGrounded == false || _isGlide == true)
+		while (IsGrounded == false || _isGlide == true)
 		{
 			_inertiaDirection.y -= _gravityModifier * -Physics2D.gravity.y * Time.deltaTime;
 			_inertiaDirection.x = _movementDirection.x;
 			yield return null;
 		}
 
+		IsGrounded = true;
 		Grounded?.Invoke();
+		_currentJumpStopCount = 0;
+		_maxJumpStopCount = 0;
 		_inertiaDirection = Vector2.zero;
 	}
 
@@ -164,19 +178,8 @@ public class PhysicsMovement : MonoBehaviour
 	{
 		Jumped?.Invoke();
 
-		while (_offset.y > 0)
+		while (IsGrounded == false)
 			yield return null;
-	}
-
-	private void Move()
-	{
-		Vector2 normalizedDirection = _surfaceInformant.GetProjection(_movementDirection);
-
-		_offset = _inertiaDirection + (normalizedDirection * _moveSpeed);
-		_offset.y = Mathf.Clamp(_offset.y, -_verticalVelocityLimit, int.MaxValue);
-
-		_rigidbody2D.position += _offset * Time.deltaTime;
-		CheckDirection();
 	}
 
 	private void OnDrawGizmos()

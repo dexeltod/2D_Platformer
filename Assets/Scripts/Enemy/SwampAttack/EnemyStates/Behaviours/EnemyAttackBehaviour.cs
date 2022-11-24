@@ -69,7 +69,7 @@ public class EnemyAttackBehaviour : MonoBehaviour
         float transitionDuration = 0;
 
         _animator.StopPlayback();
-        _animator.CrossFade(_animationHasher.AttackHash, transitionDuration);
+        _animator.CrossFade(_animationHasher.HandAttackHash, transitionDuration);
         _animator.SetFloat(_animationHasher.AttackSpeedHash, _enemyData.AttackSpeed);
     }
 

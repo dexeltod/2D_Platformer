@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using PlayerScripts.Weapons;
+using UnityEngine;
 
 namespace UI_Scripts.Shop
 {

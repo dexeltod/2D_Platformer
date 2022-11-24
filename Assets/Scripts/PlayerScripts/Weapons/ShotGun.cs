@@ -1,3 +1,6 @@
-public class ShotGun : RangeWeapon
+namespace PlayerScripts.Weapons
 {
+	public class ShotGun : RangeWeapon
+	{
+	}
 }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using PlayerScripts.Weapons;
 using UI_Scripts.Shop;
 using UnityEngine;
 

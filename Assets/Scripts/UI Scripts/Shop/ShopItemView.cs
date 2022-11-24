@@ -1,3 +1,4 @@
+using PlayerScripts.Weapons;
 using TMPro;
 using UI_Scripts.Shop;
 using UnityEngine;

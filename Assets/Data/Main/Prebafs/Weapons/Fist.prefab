@@ -44,8 +44,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1209b058972672641994b521144c1366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 320
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
   _weaponInfo: {fileID: 11400000, guid: f1364210e09e2b14586dce2f4b4395bc, type: 2}
   _isBought: 0
-  _enemyLayer:
-    serializedVersion: 2
-    m_Bits: 0
+  _meleeInformant: {fileID: 3631336140040749123, guid: f41f50040d42b954cbdf348384ff7de6, type: 3}
+  _maxCombo: 0

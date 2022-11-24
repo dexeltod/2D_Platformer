@@ -1,3 +1,4 @@
+using PlayerScripts.Weapons;
 using UnityEngine;
 using UnityEngine.Events;
 

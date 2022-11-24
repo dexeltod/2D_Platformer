@@ -17,7 +17,7 @@ public class GroundChecker : MonoBehaviour
 
 	private void Awake() => _rigidbody2D = GetComponent<Rigidbody2D>();
 
-	private void Update() => CheckGround();
+	private void FixedUpdate() => CheckGround();
 
 	private void CheckGround()
 	{

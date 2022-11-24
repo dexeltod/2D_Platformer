@@ -20,15 +20,15 @@ namespace PlayerScripts.States
 
 		public override void Start()
 		{
-			_physicsMovement.Grounded += SetNextState;
 			_animator.Play(_animationHasher.FallHash);
+			_physicsMovement.Grounded += SetNextState;
 		}
 
 		private void SetNextState()
 		{
-			float minOffset = 0;
+			const float MinVerticalOffset = 0;
 
-			if (_physicsMovement.MovementDirection.x != minOffset)
+			if (_physicsMovement.Offset.x != MinVerticalOffset)
 				_stateSwitcher.SwitchState<PlayerRunState>();
 			else if (_physicsMovement.MovementDirection == Vector2.zero)
 				_stateSwitcher.SwitchState<PlayerIdleState>();

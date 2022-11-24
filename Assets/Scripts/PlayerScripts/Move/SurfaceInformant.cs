@@ -12,21 +12,19 @@ public class SurfaceInformant : MonoBehaviour
 	private bool _isGlide;
 
 	public event UnityAction<bool> Glides;
-
 	private void OnCollisionStay2D(Collision2D collision) =>
-		_normal = collision.contacts[^1].normal;
+		_normal = collision.contacts[0].normal;
 
 	public Vector2 GetProjection(Vector2 enterDirection)
 	{
-		float scalar = Vector2.Dot(enterDirection, _normal);
 		ClampNormal();
 		CheckAngleSurface();
+		float scalar = Vector2.Dot(enterDirection, _normal);
 
 		Vector2 scalarNormal = scalar * _normal;
 
 		if (enterDirection == scalarNormal)
 			return scalarNormal;
-
 
 		Vector2 directionAlongSurface = enterDirection - scalarNormal;
 		return directionAlongSurface;
@@ -34,7 +32,7 @@ public class SurfaceInformant : MonoBehaviour
 
 	private void CheckAngleSurface()
 	{
-		_isGlide = _normal.y < _minGroundNormal;
+		_isGlide = _normal.y < _minGroundNormal && _normal.y > 0;
 
 		if (_isGlideLast == _isGlide)
 			return;
@@ -53,9 +51,9 @@ public class SurfaceInformant : MonoBehaviour
 
 	private void OnDrawGizmos()
 	{
-		if (_isDebug)
+		if (_isDebug == true)
 		{
-			Gizmos.color = Color.green;
+			Gizmos.color = new Color(0.2f, 0.2f, 1f);
 			Gizmos.DrawLine(transform.position, transform.position + (Vector3)_normal);
 		}
 	}

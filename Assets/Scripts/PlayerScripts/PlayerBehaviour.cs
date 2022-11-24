@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using PlayerScripts;
 using PlayerScripts.States;
 using UnityEngine;
 
-[RequireComponent(typeof(InputSystemReader), typeof(Animator),
-	typeof(AnimationHasher))]
-[RequireComponent(typeof(Player), typeof(WeaponFactory), typeof(WeaponFactory))]
+[RequireComponent(typeof(InputSystemReader), typeof(Animator), typeof(AnimationHasher))]
+[RequireComponent(typeof(Player), typeof(WeaponFactory))]
+[RequireComponent(typeof(PlayerWeapon))]
 public class PlayerBehaviour : MonoBehaviour, IStateSwitcher
 {
 	private Player _player;
@@ -18,8 +17,8 @@ public class PlayerBehaviour : MonoBehaviour, IStateSwitcher
 	private Animator _animator;
 	private InputSystemReader _inputSystemReader;
 
-	private BaseState _currentState;
 	private List<BaseState> _states = new();
+	private BaseState _currentState;
 
 	private void Awake()
 	{
@@ -34,7 +33,6 @@ public class PlayerBehaviour : MonoBehaviour, IStateSwitcher
 
 	private void OnEnable()
 	{
-		_physicsMovement.Fallen += SetFallState;
 		_physicsMovement.Glided += SetGlideState;
 		_inputSystemReader.AttackButtonPerformed += SetAttackState;
 		_inputSystemReader.JumpButtonUsed += SetJumpState;
@@ -42,16 +40,9 @@ public class PlayerBehaviour : MonoBehaviour, IStateSwitcher
 
 	private void OnDisable()
 	{
-		_physicsMovement.Fallen -= SetFallState;
 		_physicsMovement.Glided -= SetGlideState;
 		_inputSystemReader.AttackButtonPerformed -= SetAttackState;
 		_inputSystemReader.JumpButtonUsed -= SetJumpState;
-	}
-
-	public void SetFallState()
-	{
-		if (_physicsMovement.MovementDirection.y < 0)
-			SwitchState<PlayerFallState>();
 	}
 
 	public void SetIdleState()
@@ -63,15 +54,17 @@ public class PlayerBehaviour : MonoBehaviour, IStateSwitcher
 	public void SetRunState(float direction) =>
 		SwitchState<PlayerRunState>();
 
-	public void SetAttackState() =>
+	private void SetAttackState()
+	{
 		SwitchState<PlayerAttackState>();
+	}
 
-	public void SetGlideState()
+	private void SetGlideState()
 	{
 		SwitchState<PlayerGlideState>();
 	}
 
-	public void SetJumpState()
+	private void SetJumpState()
 	{
 		SwitchState<PlayerJumpState>();
 	}
@@ -89,11 +82,11 @@ public class PlayerBehaviour : MonoBehaviour, IStateSwitcher
 		_states = new List<BaseState>()
 		{
 			new PlayerIdleState(_player, this, _animationHasher, _animator, _physicsMovement, _inputSystemReader),
-			new PlayerAttackState(_player, this, _animationHasher, _animator, _playerWeapon, _physicsMovement),
-			new PlayerRunState(_player, this, _animationHasher, _animator),
+			new PlayerRunState(_player, this, _animationHasher, _animator, _inputSystemReader, _physicsMovement),
 			new PlayerJumpState(_player, this, _animationHasher, _animator, _physicsMovement),
 			new PlayerFallState(_player, this, _animationHasher, _animator, _physicsMovement),
 			new PlayerGlideState(_player, this, _animationHasher, _animator, _physicsMovement),
+			new PlayerAttackState(_player, this, _animationHasher, _animator, _playerWeapon, _physicsMovement),
 		};
 
 		_currentState = _states[0];

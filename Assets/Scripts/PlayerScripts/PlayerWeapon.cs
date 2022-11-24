@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using PlayerScripts.Weapons;
 using UnityEngine;
 
 namespace PlayerScripts
 {
-	[RequireComponent(typeof(Animator), typeof(WeaponFactory),
-		typeof(PlayerMoney))]
+	[RequireComponent(typeof(Animator), typeof(WeaponFactory), typeof(PlayerMoney))]
 	[RequireComponent(typeof(PlayerWeapon), typeof(AnimationHasher))]
 	public class PlayerWeapon : MonoBehaviour
 	{

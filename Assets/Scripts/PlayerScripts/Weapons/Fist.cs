@@ -1,29 +1,23 @@
 using System.Collections;
+using PlayerScripts.Weapons;
 using UnityEngine;
 
-public class Fist : WeaponBase
+public class Fist : MeleeWeapon
 {
-	[SerializeField] private LayerMask _enemyLayer;
-
 	public override IEnumerator AttackRoutine(float direction)
 	{
 		CanAttack = false;
-		SetAttackAnimation();
-		AttackTarget(direction);
+		ChooseAnimation();
+		PlayAttackAnimation(CurrentAnimationHash);
+		
 		yield return new WaitForSeconds(AttackSpeed);
 		CanAttack = true;
 	}
 
-	public override void GiveDamage(Enemy target) =>
-		target.ApplyDamage(Damage);
-
-	private void AttackTarget(float direction)
+	private void ChooseAnimation()
 	{
-		if (Physics.Raycast(transform.position, transform.right * direction, out RaycastHit hit, Range,
-			    _enemyLayer))
-		{
-			if (hit.collider.TryGetComponent(out Enemy enemy))
-				GiveDamage(enemy);
-		}
+		CurrentAnimationHash = _isRun == false
+			? AnimationHasher.HandAttackHash
+			: AnimationHasher.HandAttackRunHash;
 	}
 }

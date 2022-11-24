@@ -1,13 +1,12 @@
+using PlayerScripts.Weapons;
 using UI_Scripts.Shop;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(InputSystemReader), typeof(PlayerBehaviour))]
+[RequireComponent( typeof(PlayerBehaviour), typeof( PhysicsMovement))]
 public class Player : MonoBehaviour
 {
 	private PhysicsMovement _physicsMovement;
-	private SpriteRenderer _spriteRenderer;
-
 	private float _lookDirection = -1;
 	public float LookDirection => _lookDirection;
 
@@ -15,7 +14,6 @@ public class Player : MonoBehaviour
 
 	private void Awake()
 	{
-		_spriteRenderer = GetComponent<SpriteRenderer>();
 		_physicsMovement = GetComponent<PhysicsMovement>();
 	}
 
@@ -32,9 +30,9 @@ public class Player : MonoBehaviour
 		_physicsMovement.Rotated -= SetLookDirection;
 	}
 
-	private void SetLookDirection(float direction)
+	private void SetLookDirection(bool direction)
 	{
-		bool isRotated = direction == -1;
-		_spriteRenderer.flipX = isRotated;
+		int rotateDirection = direction ? 0 : 180;
+		transform.rotation = Quaternion.Euler(0, rotateDirection, 0);
 	}
 }

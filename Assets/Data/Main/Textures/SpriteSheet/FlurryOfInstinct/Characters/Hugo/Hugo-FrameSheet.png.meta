@@ -313,7 +313,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 144
+        y: 336
         width: 48
         height: 48
       alignment: 9
@@ -334,7 +334,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 144
+        y: 336
         width: 48
         height: 48
       alignment: 9
@@ -355,7 +355,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 144
+        y: 336
         width: 48
         height: 48
       alignment: 9
@@ -376,7 +376,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 144
-        y: 144
+        y: 336
         width: 48
         height: 48
       alignment: 9
@@ -397,7 +397,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 144
+        y: 336
         width: 48
         height: 48
       alignment: 9
@@ -418,7 +418,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 240
-        y: 144
+        y: 336
         width: 48
         height: 48
       alignment: 9
@@ -438,8 +438,8 @@ TextureImporter:
       name: Hugo-FrameSheet_6
       rect:
         serializedVersion: 2
-        x: 288
-        y: 144
+        x: 0
+        y: 288
         width: 48
         height: 48
       alignment: 9
@@ -459,8 +459,8 @@ TextureImporter:
       name: Hugo-FrameSheet_7
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
+        x: 48
+        y: 288
         width: 48
         height: 48
       alignment: 9
@@ -480,8 +480,8 @@ TextureImporter:
       name: Hugo-FrameSheet_8
       rect:
         serializedVersion: 2
-        x: 48
-        y: 96
+        x: 96
+        y: 288
         width: 48
         height: 48
       alignment: 9
@@ -501,8 +501,8 @@ TextureImporter:
       name: Hugo-FrameSheet_9
       rect:
         serializedVersion: 2
-        x: 96
-        y: 96
+        x: 144
+        y: 288
         width: 48
         height: 48
       alignment: 9
@@ -522,8 +522,8 @@ TextureImporter:
       name: Hugo-FrameSheet_10
       rect:
         serializedVersion: 2
-        x: 144
-        y: 96
+        x: 192
+        y: 288
         width: 48
         height: 48
       alignment: 9
@@ -543,8 +543,8 @@ TextureImporter:
       name: Hugo-FrameSheet_11
       rect:
         serializedVersion: 2
-        x: 192
-        y: 96
+        x: 240
+        y: 288
         width: 48
         height: 48
       alignment: 9
@@ -564,8 +564,8 @@ TextureImporter:
       name: Hugo-FrameSheet_12
       rect:
         serializedVersion: 2
-        x: 240
-        y: 96
+        x: 0
+        y: 240
         width: 48
         height: 48
       alignment: 9
@@ -585,8 +585,8 @@ TextureImporter:
       name: Hugo-FrameSheet_13
       rect:
         serializedVersion: 2
-        x: 0
-        y: 48
+        x: 48
+        y: 240
         width: 48
         height: 48
       alignment: 9
@@ -606,8 +606,8 @@ TextureImporter:
       name: Hugo-FrameSheet_14
       rect:
         serializedVersion: 2
-        x: 48
-        y: 48
+        x: 0
+        y: 192
         width: 48
         height: 48
       alignment: 9
@@ -627,8 +627,8 @@ TextureImporter:
       name: Hugo-FrameSheet_15
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 48
+        y: 192
         width: 48
         height: 48
       alignment: 9
@@ -648,8 +648,8 @@ TextureImporter:
       name: Hugo-FrameSheet_16
       rect:
         serializedVersion: 2
-        x: 48
-        y: 0
+        x: 96
+        y: 192
         width: 48
         height: 48
       alignment: 9
@@ -669,8 +669,8 @@ TextureImporter:
       name: Hugo-FrameSheet_17
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
+        x: 144
+        y: 192
         width: 48
         height: 48
       alignment: 9
@@ -690,8 +690,8 @@ TextureImporter:
       name: Hugo-FrameSheet_18
       rect:
         serializedVersion: 2
-        x: 144
-        y: 0
+        x: 192
+        y: 192
         width: 48
         height: 48
       alignment: 9
@@ -711,8 +711,8 @@ TextureImporter:
       name: Hugo-FrameSheet_19
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
+        x: 240
+        y: 192
         width: 48
         height: 48
       alignment: 9
@@ -732,8 +732,8 @@ TextureImporter:
       name: Hugo-FrameSheet_20
       rect:
         serializedVersion: 2
-        x: 240
-        y: 0
+        x: 288
+        y: 192
         width: 48
         height: 48
       alignment: 9
@@ -753,8 +753,8 @@ TextureImporter:
       name: Hugo-FrameSheet_21
       rect:
         serializedVersion: 2
-        x: 288
-        y: 0
+        x: 336
+        y: 192
         width: 48
         height: 48
       alignment: 9
@@ -774,8 +774,8 @@ TextureImporter:
       name: Hugo-FrameSheet_22
       rect:
         serializedVersion: 2
-        x: 336
-        y: 0
+        x: 0
+        y: 144
         width: 48
         height: 48
       alignment: 9
@@ -791,6 +791,363 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_23
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5f25047d5a96dd40bad5bd03687dd03
+      internalID: -901692854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_24
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44cf9ac9406266841b06945ad438ae4e
+      internalID: -1941637440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_25
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdc0d6d2332c93341b172b1f1bfaedf6
+      internalID: -749543016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd6a023beb3e6fb44ac1f681d451fe4a
+      internalID: -36797384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_27
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b51761bc95e32a42a43b86db0f48c49
+      internalID: -719354361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_28
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e11d46423ec2424395b6a895245a949
+      internalID: 835880406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 047f13a06e215d6408c6cc3792cea82e
+      internalID: 1913418303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_30
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5147cfd0a908d144b105d5ed134e1f3
+      internalID: 1175147590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_31
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 718e2013bb2ca274f882169fd85b29f8
+      internalID: 562258398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_32
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ca8573af26051343acf5071021bea25
+      internalID: 660742523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_33
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33f87d6bce9bc134a8c86de15f59cd75
+      internalID: 240936260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24dddc1325a1e864b896d199216dbf08
+      internalID: -584818155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_35
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 774be3df9cdc673478c3ca0d119306df
+      internalID: -1787957080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_36
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 934808d76cca4a348aaed691eaf8b9a4
+      internalID: 895395213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_37
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb7d6d7386a2f99428fabda4516c78bc
+      internalID: -686378485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_38
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeda218fe2944bc44834723f3ed22b69
+      internalID: 779356495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hugo-FrameSheet_39
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2250319ad4b42774492180f68b8d7538
+      internalID: 686135595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -802,25 +1159,42 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Hugo-FrameSheet_34: -584818155
       Hugo-FrameSheet_4: -3673783774927768568
       Hugo-FrameSheet_20: -4568218779290065989
       Hugo-FrameSheet_6: -5448222700576922680
       Hugo-FrameSheet_0: -3429742815825216283
       Hugo-FrameSheet_17: -7223163850624471683
+      Hugo-FrameSheet_33: 240936260
+      Hugo-FrameSheet_32: 660742523
       Hugo-FrameSheet_2: -4781849522755528584
       Hugo-FrameSheet_8: -5578685161449144608
       Hugo-FrameSheet_14: -6915022261411646528
       Hugo-FrameSheet_16: 1723158909488885220
+      Hugo-FrameSheet_37: -686378485
       Hugo-FrameSheet_1: -5555078419896699015
+      Hugo-FrameSheet_27: -719354361
       Hugo-FrameSheet_5: 490780476372386024
       Hugo-FrameSheet_7: -3315209406526946217
+      Hugo-FrameSheet_24: -1941637440
+      Hugo-FrameSheet_25: -749543016
+      Hugo-FrameSheet_35: -1787957080
       Hugo-FrameSheet_19: 8592678077863829813
       Hugo-FrameSheet_18: -7900091686139728940
+      Hugo-FrameSheet_26: -36797384
+      Hugo-FrameSheet_39: 686135595
       Hugo-FrameSheet_22: 3190600509175050094
       Hugo-FrameSheet_15: 3775889212430538244
+      Hugo-FrameSheet_28: 835880406
       Hugo-FrameSheet_21: 5739854509609292338
+      Hugo-FrameSheet_36: 895395213
+      Hugo-FrameSheet_29: 1913418303
       Hugo-FrameSheet_13: 603832787006758042
       Hugo-FrameSheet_11: 8832248946130922006
+      Hugo-FrameSheet_38: 779356495
+      Hugo-FrameSheet_23: -901692854
+      Hugo-FrameSheet_31: 562258398
+      Hugo-FrameSheet_30: 1175147590
       Hugo-FrameSheet_3: -1292315459004852390
       Hugo-FrameSheet_9: -2124901699745128805
       Hugo-FrameSheet_12: -4530548112234773028

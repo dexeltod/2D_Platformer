@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
+using PlayerScripts.Weapons;
 using UnityEngine;
 
 namespace PlayerScripts.States
@@ -15,7 +15,6 @@ namespace PlayerScripts.States
 
 		private Animator _animator;
 		private AnimationHasher _animationHasher;
-		private IStateSwitcher _stateSwitcher;
 
 		public PlayerAttackState(Player player, IStateSwitcher stateSwitcher, AnimationHasher animationHasher,
 			Animator animator, PlayerWeapon playerWeapon, PhysicsMovement physicsMovement) : base(player, stateSwitcher,
@@ -40,33 +39,36 @@ namespace PlayerScripts.States
 
 		private IEnumerator Attack()
 		{
-			if (_currentWeapon == null)
+			if (_currentWeapon == null || _currentWeapon.CanAttack == false)
 				yield break;
-
+			
+			AnimatorStateInfo animatorInfo = GetAnimatorInfo();
+			_currentWeapon.SetGroundedBool(_physicsMovement.IsGrounded);
+			_currentWeapon.SetRunBool(_physicsMovement.Offset);
 			Player.StartCoroutine(_currentWeapon.AttackRoutine(Player.LookDirection));
 
-			AnimatorStateInfo animatorInfo = GetAnimatorInfo();
 
-			var waitingTime = new WaitForSeconds(animatorInfo.length);
+			var waitingTime = new WaitForSeconds(animatorInfo.length * animatorInfo.speedMultiplier);
 			yield return waitingTime;
 			ChooseTransition();
 		}
 
 		private void ChooseTransition()
 		{
-			const float MinVerticalOffset = 1;
+			const float MinVerticalOffset = 0;
 
-			if (_physicsMovement.Offset.x > MinVerticalOffset)
+			if (_physicsMovement.Offset.x != MinVerticalOffset)
 				StateSwitcher.SwitchState<PlayerRunState>();
+			else if (_physicsMovement.Offset.y < 0)
+				StateSwitcher.SwitchState<PlayerFallState>();
 			else
 				StateSwitcher.SwitchState<PlayerIdleState>();
 		}
 
 		public override void Stop()
 		{
-			
 		}
-
+		
 		private AnimatorStateInfo GetAnimatorInfo() =>
 			Animator.GetCurrentAnimatorStateInfo(LayerIndex);
 

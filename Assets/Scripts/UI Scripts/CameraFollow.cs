@@ -3,19 +3,11 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     [SerializeField] private float _height;
-    [SerializeField] private float _closeness = -30;
+    [SerializeField] private float _closeness = -23;
+    [SerializeField] private Transform _player;
 
-    private Transform _player;
-
-    private void Start()
-    {
-        _player = GetComponentInParent<PlayerHealth>().transform;
-    }
-
-    private void FixedUpdate()
-    {
-        UpdateCameraPosition();
-    }
+    private void FixedUpdate() =>
+	    UpdateCameraPosition();
 
     void UpdateCameraPosition()
     {
