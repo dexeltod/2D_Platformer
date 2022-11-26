@@ -9,8 +9,12 @@ public class Fist : MeleeWeapon
 		CanAttack = false;
 		ChooseAnimation();
 		PlayAttackAnimation(CurrentAnimationHash);
+
+		var animation = Animator.GetCurrentAnimatorStateInfo(0);
 		
-		yield return new WaitForSeconds(AttackSpeed);
+		yield return new WaitForSeconds(animation.speed * animation.speedMultiplier);
+		
+		OnAnimationEnded();
 		CanAttack = true;
 	}
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -22,6 +23,8 @@ namespace PlayerScripts.Weapons
 		public float AttackSpeed { get; protected set; }
 		public float Range { get; protected set; }
 
+		public event Action AttackAnimationEnded;
+		
 		public abstract IEnumerator AttackRoutine(float direction);
 		public abstract void GiveDamage(Enemy target);
 
@@ -50,6 +53,8 @@ namespace PlayerScripts.Weapons
 		protected virtual void OnAwake()
 		{
 		}
+
+		protected void OnAnimationEnded() => AttackAnimationEnded.Invoke();
 
 		protected virtual void PlayAttackAnimation(int hash)
 		{

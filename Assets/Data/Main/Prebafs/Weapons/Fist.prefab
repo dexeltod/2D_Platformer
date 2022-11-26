@@ -60,5 +60,5 @@ MonoBehaviour:
     maxNormalAngle: 0
   _weaponInfo: {fileID: 11400000, guid: f1364210e09e2b14586dce2f4b4395bc, type: 2}
   _isBought: 0
-  _meleeInformant: {fileID: 3631336140040749123, guid: f41f50040d42b954cbdf348384ff7de6, type: 3}
-  _maxCombo: 0
+  _meleeInformant: {fileID: 7070434445561939043, guid: 370d97115cedbbf4d97416ee00b33f8c, type: 3}
+  _maxCombo: 3

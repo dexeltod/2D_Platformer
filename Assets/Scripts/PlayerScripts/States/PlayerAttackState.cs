@@ -26,31 +26,30 @@ namespace PlayerScripts.States
 			_playerWeapon.WeaponChanged += OnWeaponSwitch;
 		}
 
-		~PlayerAttackState() =>
+		~PlayerAttackState()
+		{
 			_playerWeapon.WeaponChanged -= OnWeaponSwitch;
+			_currentWeapon.AttackAnimationEnded -= ChooseTransition;
+		}
 
 		public override void Start()
 		{
 			if (_currentWeapon.CanAttack == false)
 				return;
-
-			Player.StartCoroutine(Attack());
+			
+			_currentWeapon.AttackAnimationEnded += ChooseTransition;
+			Attack();
 		}
 
-		private IEnumerator Attack()
+		private void Attack()
 		{
 			if (_currentWeapon == null || _currentWeapon.CanAttack == false)
-				yield break;
-			
+				return;
+
 			AnimatorStateInfo animatorInfo = GetAnimatorInfo();
 			_currentWeapon.SetGroundedBool(_physicsMovement.IsGrounded);
 			_currentWeapon.SetRunBool(_physicsMovement.Offset);
 			Player.StartCoroutine(_currentWeapon.AttackRoutine(Player.LookDirection));
-
-
-			var waitingTime = new WaitForSeconds(animatorInfo.length * animatorInfo.speedMultiplier);
-			yield return waitingTime;
-			ChooseTransition();
 		}
 
 		private void ChooseTransition()
@@ -68,7 +67,7 @@ namespace PlayerScripts.States
 		public override void Stop()
 		{
 		}
-		
+
 		private AnimatorStateInfo GetAnimatorInfo() =>
 			Animator.GetCurrentAnimatorStateInfo(LayerIndex);
 
