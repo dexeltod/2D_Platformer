@@ -5,48 +5,92 @@ using UnityEngine.Events;
 public class SurfaceInformant : MonoBehaviour
 {
 	[SerializeField] private bool _isDebug;
-	[SerializeField, Range(0, 1)] private float _minGroundNormal = 1;
+	[SerializeField] private Transform _center;
+	[SerializeField, Range(0, 180)] private float _maxSlopeAngle;
+
+	[SerializeField] private LayerMask _groundLayer;
+	[SerializeField] private float _slopeCheckDistance;
 
 	private Vector2 _normal;
+	private Vector2 _capsuleColliderSize;
+	private Vector2 _slopeNormalPerp;
+
+	private float _slopeSideAngle;
+	private float _slopeDownAngle;
+	private float _lastSlopeAngle;
+	private float _moveDirectionX;
+
 	private bool _isGlideLast;
 	private bool _isGlide;
+	private bool _isOnSlope;
+	private bool _canWalkOnSlope;
+	private bool _canWalkOnSlopeLast;
 
-	public event UnityAction<bool> Glides;
-	private void OnCollisionStay2D(Collision2D collision) =>
-		_normal = collision.contacts[0].normal;
+	public event UnityAction<bool> GlideStateSwitched;
+	public event UnityAction<bool> Moves;
 
-	public Vector2 GetProjection(Vector2 enterDirection)
+	public Vector2 GetProjectionAlongNormal(Vector2 enterDirection)
 	{
-		ClampNormal();
 		CheckAngleSurface();
-		float scalar = Vector2.Dot(enterDirection, _normal);
+		SlopeCheckVertical();
 
-		Vector2 scalarNormal = scalar * _normal;
+		RaycastHit2D hit = Physics2D.Raycast(
+			transform.position,
+			Vector2.down,
+			_slopeCheckDistance,
+			_groundLayer);
 
-		if (enterDirection == scalarNormal)
-			return scalarNormal;
+		Vector2 directionAlongSurface = enterDirection;
 
-		Vector2 directionAlongSurface = enterDirection - scalarNormal;
+		if (hit)
+		{
+			_normal = hit.normal;
+			_slopeNormalPerp = Vector2.Perpendicular(hit.normal).normalized;
+			directionAlongSurface.Set(-enterDirection.x * _slopeNormalPerp.x, -enterDirection.x * _slopeNormalPerp.y);
+		}
+		
+		Debug.Log($"_lastSlopeAngle {_lastSlopeAngle}");
+		Debug.DrawLine(transform.position, (Vector2)transform.position + _slopeNormalPerp * enterDirection);
+		
 		return directionAlongSurface;
 	}
 
 	private void CheckAngleSurface()
 	{
-		_isGlide = _normal.y < _minGroundNormal && _normal.y > 0;
+		_isGlide = _lastSlopeAngle > _maxSlopeAngle;
 
 		if (_isGlideLast == _isGlide)
 			return;
 
 		_isGlideLast = _isGlide;
-		Glides?.Invoke(_isGlideLast);
+		GlideStateSwitched?.Invoke(_isGlide);
 	}
 
-	private void ClampNormal()
+	private void SlopeCheckVertical()
 	{
-		const float UpNormalDirection = 1;
-		const float MinUpNormalDirection = 0;
+		RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, _slopeCheckDistance, _groundLayer);
 
-		_normal.y = Mathf.Clamp(_normal.y, MinUpNormalDirection, UpNormalDirection);
+		if (hit)
+		{
+			_slopeNormalPerp = Vector2.Perpendicular(hit.normal).normalized;
+
+			_slopeDownAngle = Vector2.Angle(hit.normal, Vector2.up);
+			_lastSlopeAngle = _slopeDownAngle;
+			
+			Debug.DrawRay(hit.point, _slopeNormalPerp, Color.blue);
+		}
+
+		if (_slopeDownAngle > _maxSlopeAngle || _slopeSideAngle > _maxSlopeAngle)
+			_canWalkOnSlope = false;
+		else
+			_canWalkOnSlope = true;
+
+		if (_canWalkOnSlope == _canWalkOnSlopeLast)
+			return;
+
+		_canWalkOnSlopeLast = _canWalkOnSlope;
+		Moves.Invoke(_canWalkOnSlope);
+		
 	}
 
 	private void OnDrawGizmos()

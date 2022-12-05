@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using PlayerScripts.Weapons;
+﻿using PlayerScripts.Weapons;
 using UnityEngine;
 
 namespace PlayerScripts.States

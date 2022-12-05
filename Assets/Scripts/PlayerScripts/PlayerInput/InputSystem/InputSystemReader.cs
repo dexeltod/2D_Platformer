@@ -50,16 +50,16 @@ public class InputSystemReader : MonoBehaviour
 			VerticalMoveButtonUsed?.Invoke(direction);
 		}
 
-		if (context.canceled)
+		if (context.canceled) 
 			VerticalMoveButtonCanceled?.Invoke();
 	}
 
 	private void OnJump(InputAction.CallbackContext context)
 	{
-		if (context.started) 
+		if (context.started)
 			JumpButtonUsed?.Invoke();
-		
-		if (context.canceled) 
+
+		if (context.canceled)
 			JumpButtonCanceled?.Invoke();
 	}
 }

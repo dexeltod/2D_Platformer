@@ -23,15 +23,11 @@ public class PlayerRunState : BaseState
 
 	}
 
-	private void SetIdleState()
-	{
+	private void SetIdleState() => 
 		StateSwitcher.SwitchState<PlayerIdleState>();
-	}
 
-	private void SetFallState()
-	{
+	private void SetFallState() => 
 		StateSwitcher.SwitchState<PlayerFallState>();
-	}
 
 	public override void Stop()
 	{

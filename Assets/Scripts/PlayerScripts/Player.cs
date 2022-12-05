@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
 
 	private void OnEnable()
 	{
-		_physicsMovement.Rotated += SetLookDirection;
+		_physicsMovement.Rotating += SetLookDirection;
 	}
 
 	public void TryBuyWeapon(WeaponBase weaponBase, ItemInfo itemInfo) =>
@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
 
 	private void OnDisable()
 	{
-		_physicsMovement.Rotated -= SetLookDirection;
+		_physicsMovement.Rotating -= SetLookDirection;
 	}
 
 	private void SetLookDirection(bool direction)
