@@ -3,6 +3,7 @@
 public class AnimationHasher : MonoBehaviour
 {
 	public int AttackSpeedHash { get; private set; }
+	public int AttackHash { get; private set; }
 	public int HandAttackRunHash { get; private set; }
 	public int RacingHash { get; private set; }
 	public int HandAttackHash { get; private set; }
@@ -18,6 +19,7 @@ public class AnimationHasher : MonoBehaviour
 	private void Awake()
 	{
 		WalkHash = Animator.StringToHash("isWalk");
+		AttackHash = Animator.StringToHash("isAttack");
 		IdleHash = Animator.StringToHash("isIdle");
 		RunHash = Animator.StringToHash("isRun");
 		RacingHash = Animator.StringToHash("isRacing");

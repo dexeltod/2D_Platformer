@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 337683874}
-  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
+  m_LocalRotation: {x: 0.99999905, y: 0.0013961602, z: -0, w: 0}
   m_LocalPosition: {x: 0.98, y: 2.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -54,10 +54,10 @@ MonoBehaviour:
   m_Intensity: 0.32
   m_LightVolumeIntensity: 1.85
   m_LightVolumeIntensityEnabled: 1
-  m_ApplyToSortingLayers: 000000000b4ae255
+  m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
-  m_LightOrder: 100
+  m_LightOrder: 310
   m_AlphaBlendOnOverlap: 0
   m_OverlapOperation: 0
   m_NormalMapDistance: 3
@@ -99,10 +99,10 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 18.947369
-  m_PointLightOuterAngle: 91.14368
+  m_PointLightInnerAngle: 18.39
+  m_PointLightOuterAngle: 78.47
   m_PointLightInnerRadius: 2.4947443
-  m_PointLightOuterRadius: 6.24
+  m_PointLightOuterRadius: 6.7429214
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -139,12 +139,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 337683874}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1151bd4dcbe4a1b419e4b9d0f01caecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isWork: 1
+  _isWork: 0
 --- !u!1 &2421676756599559084
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +196,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 4294967295
+  m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 33f156bd8c637a449a813224651bceca, type: 2}
@@ -219,7 +219,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 729556377, guid: 5245abc8a8adeae40801b8b5f66b932d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

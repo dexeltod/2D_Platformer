@@ -49,9 +49,6 @@ public class SurfaceInformant : MonoBehaviour
 			directionAlongSurface.Set(-enterDirection.x * _slopeNormalPerp.x, -enterDirection.x * _slopeNormalPerp.y);
 		}
 		
-		Debug.Log($"_lastSlopeAngle {_lastSlopeAngle}");
-		Debug.DrawLine(transform.position, (Vector2)transform.position + _slopeNormalPerp * enterDirection);
-		
 		return directionAlongSurface;
 	}
 
@@ -76,8 +73,6 @@ public class SurfaceInformant : MonoBehaviour
 
 			_slopeDownAngle = Vector2.Angle(hit.normal, Vector2.up);
 			_lastSlopeAngle = _slopeDownAngle;
-			
-			Debug.DrawRay(hit.point, _slopeNormalPerp, Color.blue);
 		}
 
 		if (_slopeDownAngle > _maxSlopeAngle || _slopeSideAngle > _maxSlopeAngle)
@@ -90,7 +85,6 @@ public class SurfaceInformant : MonoBehaviour
 
 		_canWalkOnSlopeLast = _canWalkOnSlope;
 		Moves.Invoke(_canWalkOnSlope);
-		
 	}
 
 	private void OnDrawGizmos()

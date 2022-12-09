@@ -23,9 +23,9 @@ public class FeetDustEnabler : MonoBehaviour
 		if (isWork == false)
 			return;
 		
-		var position = _feetPosition.position;
 
-		_visualEffect.transform.position = new Vector3(position.x, position.y, 0);
+		_visualEffect.transform.position = new Vector3(_feetPosition.transform.position.x, _feetPosition.transform.position.y, 0);
+		_visualEffect.transform.rotation = _feetPosition.rotation;
 		_visualEffect.Play();
 	}
 }
