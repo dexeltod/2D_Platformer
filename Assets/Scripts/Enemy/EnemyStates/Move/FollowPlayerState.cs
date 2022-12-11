@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class FollowPlayerState : State
 {
-	[SerializeField] private FollowPlayerBehaviour _followPlayerBehaviour;
+	[SerializeField] private EnemyFollowForPlayerBehaviour _enemyFollowForPlayerBehaviour;
 
 	private void OnEnable() =>
-		_followPlayerBehaviour.enabled = true;
+		_enemyFollowForPlayerBehaviour.enabled = true;
 
 	private void OnDisable() =>
-		_followPlayerBehaviour.enabled = false;
+		_enemyFollowForPlayerBehaviour.enabled = false;
 }

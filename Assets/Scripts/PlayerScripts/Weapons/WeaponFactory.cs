@@ -3,13 +3,20 @@ using UnityEngine;
 
 public class WeaponFactory : MonoBehaviour
 {
-	private Animator _animator;
-	private AnimationHasher _animationHasher;
+	[SerializeField] private MeleeWeaponTriggerInformant _meleeWeaponTrigger;
+	[SerializeField] private Animator _animator;
+	[SerializeField] private AnimationHasher _animationHasher;
 
-	public WeaponBase CreateWeapon(WeaponBase weaponBase, Transform parent, Animator animator, AnimationHasher animationHasher)
+	public WeaponBase CreateWeapon(WeaponBase weaponBase, Transform parent)
 	{
-		var instantiatedWeapon = Instantiate(weaponBase, parent);
-		weaponBase.Initialize(animator, animationHasher);
+		weaponBase.gameObject.SetActive(false);
+		weaponBase.enabled = false;
+		
+		WeaponBase instantiatedWeapon = Instantiate(weaponBase, parent);
+		instantiatedWeapon.Initialize(_animator, _animationHasher, _meleeWeaponTrigger);
+		
+		instantiatedWeapon.gameObject.SetActive(true);
+		instantiatedWeapon.enabled = true;
 		return instantiatedWeapon;
 	}
 }

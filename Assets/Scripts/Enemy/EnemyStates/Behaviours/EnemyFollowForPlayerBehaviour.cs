@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(AnimationHasher), typeof(Animator), typeof(Rigidbody2D))]
-public class FollowPlayerBehaviour : MonoBehaviour
+public class EnemyFollowForPlayerBehaviour : MonoBehaviour
 {
 	[SerializeField] private Player _player;
 	[SerializeField] private DataEnemy _dataEnemy;

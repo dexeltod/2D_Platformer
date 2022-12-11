@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2890166793100713729
 Transform:
   m_ObjectHideFlags: 0
@@ -39,7 +39,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4175024203974808750}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1209b058972672641994b521144c1366, type: 3}
   m_Name: 
@@ -60,5 +60,5 @@ MonoBehaviour:
     maxNormalAngle: 0
   _weaponInfo: {fileID: 11400000, guid: f1364210e09e2b14586dce2f4b4395bc, type: 2}
   _isBought: 0
-  _meleeInformant: {fileID: 7070434445561939043, guid: 370d97115cedbbf4d97416ee00b33f8c, type: 3}
+  MeleeInformant: {fileID: 7070434445561939043, guid: 370d97115cedbbf4d97416ee00b33f8c, type: 3}
   _maxCombo: 3

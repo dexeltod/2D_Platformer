@@ -138,7 +138,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.81203604, y: 1.4866171}
+  m_Offset: {x: 0.5991125, y: 1.1922808}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -149,7 +149,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.0924177, y: 0.91991234}
+  m_Size: {x: 0.6896267, y: 0.29781723}
   m_EdgeRadius: 0
 --- !u!114 &5546332005136996458
 MonoBehaviour:
@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 8089243284562272864}
   - component: {fileID: 675970594}
   - component: {fileID: 542699962738353814}
+  - component: {fileID: 892681413}
   m_Layer: 0
   m_Name: EntityStates
   m_TagString: Untagged
@@ -356,7 +357,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transitions:
   - {fileID: 2542941139278248081}
-  _followPlayerBehaviour: {fileID: 2035812067634715392}
+  - {fileID: 892681413}
+  _enemyFollowForPlayerBehaviour: {fileID: 2035812067634715392}
 --- !u!114 &2542941139278248081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -441,6 +443,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nextState: {fileID: 3665264955736864823}
   _enemyPlayerChecker: {fileID: 6424921582603155147}
+--- !u!114 &892681413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340263989776775138}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d23433f56eeb4b5ea992f5dd883dc5ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nextState: {fileID: 3428575754110346765}
+  _enemyFollowForPlayer: {fileID: 2035812067634715392}
 --- !u!1 &1848783015209635893
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,7 +641,7 @@ MonoBehaviour:
   - {x: 0.12706184, y: 0.7423568, z: 0}
   m_ShapePathHash: -801796281
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1624
+  m_InstanceId: -1626
 --- !u!114 &6424921582603155147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -642,7 +658,6 @@ MonoBehaviour:
   _enemyPlayerChecker: {fileID: 8269904224873463698}
   _wallCheckTransform: {fileID: 6645501397967116688}
   _ledgeCheckTransform: {fileID: 5204559060345414845}
-  _eyePosition: {fileID: 7557254000837333921}
   _isEnableGizmos: 1
 --- !u!114 &5728285811741105012
 MonoBehaviour:

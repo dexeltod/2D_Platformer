@@ -41,11 +41,6 @@ public class EnemyAttackBehaviour : MonoBehaviour
 			StopCoroutine(_currentCoroutine);
 	}
 
-	private void Update()
-	{
-		Debug.Log($"can attack is {_canAttack}");
-	}
-
 	public void Initialize(PlayerHealth playerHealth) =>
 		_playerHealth = playerHealth;
 
@@ -58,8 +53,6 @@ public class EnemyAttackBehaviour : MonoBehaviour
 			StopCoroutine(_currentCoroutine);
 			_currentCoroutine = null;
 		}
-
-		Debug.Log($"can attack is {_canAttack}");
 
 		if (_canAttack == true)
 			_currentCoroutine = StartCoroutine(AttackPlayer());

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FollowToAttackTransition : Transition
 {
-	[SerializeField] private FollowPlayerBehaviour _moveBehaviour;
+	[SerializeField] private EnemyFollowForPlayerBehaviour _moveBehaviour;
 
 	public override void Enable() =>
 		_moveBehaviour.PlayerReached += ChangeState;

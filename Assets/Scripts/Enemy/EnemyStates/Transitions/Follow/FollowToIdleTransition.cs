@@ -1,7 +1,16 @@
-﻿public class FollowToIdleTransition : Transition
+﻿using UnityEngine;
+
+public class FollowToIdleTransition : Transition
 {
+	[SerializeField] private EnemyFollowForPlayerBehaviour _enemyFollowForPlayer;
+	
 	public override void Enable()
 	{
-		throw new System.NotImplementedException();
+		_enemyFollowForPlayer.PlayerReached += SwitchState;
+	}
+
+	private void SwitchState(bool canReachPlayer)
+	{
+		
 	}
 }

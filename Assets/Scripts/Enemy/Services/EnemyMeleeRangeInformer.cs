@@ -7,19 +7,13 @@ public class EnemyMeleeRangeInformer : MonoBehaviour
 	
 	private void OnTriggerEnter2D(Collider2D col)
 	{
-		if (col.TryGetComponent(out Player _))
-		{
-			Debug.Log("can attack");
+		if (col.TryGetComponent(out Player _)) 
 			TouchedPlayer.Invoke(true);
-		}
 	}
 
 	private void OnTriggerExit2D(Collider2D col)
 	{
-		if (col.TryGetComponent(out Player _))
-		{
-			Debug.Log("cant attack");
+		if (col.TryGetComponent(out Player _)) 
 			TouchedPlayer.Invoke(false);
-		}
 	}
 }

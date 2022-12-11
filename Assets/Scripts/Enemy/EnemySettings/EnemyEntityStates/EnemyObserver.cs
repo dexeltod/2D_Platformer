@@ -9,10 +9,9 @@ public class EnemyObserver : MonoBehaviour
 
 	[SerializeField] private Transform _wallCheckTransform;
 	[SerializeField] private Transform _ledgeCheckTransform;
-	[SerializeField] private Transform _eyePosition;
 
 	[Header("Debug")] [SerializeField] private bool _isEnableGizmos;
-	public event Action SeenEnemy;
+	public event Action<bool> SeenEnemy;
 
 	public int FacingDirection { get; private set; }
 
@@ -41,7 +40,7 @@ public class EnemyObserver : MonoBehaviour
 	private void OnSeeEnemy(bool isSeeEnemy)
 	{
 		if (isSeeEnemy == true)
-			SeenEnemy.Invoke();
+			SeenEnemy.Invoke(isSeeEnemy);
 	}
 
 	public void RotateFacingDirection()
@@ -66,8 +65,6 @@ public class EnemyObserver : MonoBehaviour
 
 		Vector2 ledgeCheckDirection = (Vector2)_ledgeCheckTransform.position +
 		                              Vector2.down * _entityVisibility.LedgeCheckDistance;
-
-		var eyePosition = _eyePosition.position;
 
 		Gizmos.DrawLine(_wallCheckTransform.position, wallCheckDirection);
 		Gizmos.DrawLine(_ledgeCheckTransform.position, ledgeCheckDirection);

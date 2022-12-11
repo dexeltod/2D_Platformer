@@ -20,7 +20,7 @@ public class Fist : MeleeWeapon
 
 	private void ChooseAnimation()
 	{
-		CurrentAnimationHash = _isRun == false
+		CurrentAnimationHash = IsRun == false
 			? AnimationHasher.HandAttackHash
 			: AnimationHasher.HandAttackRunHash;
 	}

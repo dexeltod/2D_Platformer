@@ -10,6 +10,9 @@ public class FollowTransition : Transition
 	private void OnDisable() =>
 		_enemyPlayerChecker.SeenEnemy -= SwitchState;
 
-	private void SwitchState() => 
-		IsNeedTransition = true;
+	private void SwitchState(bool canSeePlayer)
+	{
+		if (canSeePlayer)
+			IsNeedTransition = true;
+	}
 }

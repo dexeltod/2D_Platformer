@@ -24,8 +24,8 @@ public class PhysicsMovement : MonoBehaviour
 	private Vector2 _offset;
 
 	private bool _isCanMove;
-	private bool _isGlide = false;
-	private bool _lastIsRotate = false;
+	private bool _isGlide;
+	private bool _lastIsRotate;
 	private bool _isRotate = true;
 	private bool _isRunning;
 	private bool _isRunningLast;
@@ -35,7 +35,7 @@ public class PhysicsMovement : MonoBehaviour
 	public Vector2 MovementDirection => _movementDirection;
 	public Vector2 Offset => _offset;
 
-	private int _currentJumpStopCount = 0;
+	private int _currentJumpStopCount;
 	private int _maxJumpStopCount;
 
 	public event UnityAction Glided;
@@ -98,7 +98,7 @@ public class PhysicsMovement : MonoBehaviour
 		_inertiaDirection = velocity;
 
 		_maxJumpStopCount++;
-		StartCoroutine(JumpRoutine());
+		Jumped?.Invoke();
 	}
 
 	private void OnSwitchGroundState(bool isFall)
@@ -199,14 +199,6 @@ public class PhysicsMovement : MonoBehaviour
 		_currentJumpStopCount = 0;
 		_maxJumpStopCount = 0;
 		_inertiaDirection = Vector2.zero;
-	}
-
-	private IEnumerator JumpRoutine()
-	{
-		Jumped?.Invoke();
-
-		while (IsGrounded == false)
-			yield return null;
 	}
 
 	private void OnDrawGizmos()

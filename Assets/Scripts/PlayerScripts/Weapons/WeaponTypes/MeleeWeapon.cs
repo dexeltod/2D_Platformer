@@ -5,24 +5,16 @@ namespace PlayerScripts.Weapons
 {
 	public class MeleeWeapon : WeaponBase
 	{
-		[SerializeField] private MeleeWeaponTriggerInformant _meleeInformant;
 		[SerializeField] private int _maxCombo;
 
-		protected override void Awake()
-		{
-			base.Awake();
-			_meleeInformant.Touched += GiveDamage;
-		}
+		private void OnEnable() => 
+			MeleeWeaponTriggerInformant.Touched += GiveDamage;
 
-		protected sealed override void PlayAttackAnimation(int animationHash)
-		{
+		private void OnDisable() => 
+			MeleeWeaponTriggerInformant.Touched -= GiveDamage;
+		
+		protected sealed override void PlayAttackAnimation(int animationHash) => 
 			Animator.Play(animationHash);
-		}
-
-		private void OnDisable()
-		{
-			_meleeInformant.Touched -= GiveDamage;
-		}
 
 		public override IEnumerator AttackRoutine(float direction)
 		{

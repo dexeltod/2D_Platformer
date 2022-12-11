@@ -9,11 +9,12 @@ namespace PlayerScripts.Weapons
 		[SerializeField] private ContactFilter2D _enemyFilter;
 		[SerializeField] private WeaponInfo _weaponInfo;
 		[SerializeField] private bool _isBought = false;
-
+		
+		protected MeleeWeaponTriggerInformant MeleeWeaponTriggerInformant;
 		protected Animator Animator;
 		protected AnimationHasher AnimationHasher;
 		protected bool _isGrounded;
-		protected bool _isRun;
+		protected bool IsRun;
 
 		public ContactFilter2D EnemyFilter => _enemyFilter;
 		public int CurrentAnimationHash { get; protected set; }
@@ -28,8 +29,9 @@ namespace PlayerScripts.Weapons
 		public abstract IEnumerator AttackRoutine(float direction);
 		public abstract void GiveDamage(Enemy target);
 
-		public void Initialize(Animator animator, AnimationHasher hasher)
+		public void Initialize(Animator animator, AnimationHasher hasher, MeleeWeaponTriggerInformant meleeWeaponTrigger)
 		{
+			MeleeWeaponTriggerInformant = meleeWeaponTrigger;
 			Animator = animator;
 			AnimationHasher = hasher;
 
@@ -44,7 +46,7 @@ namespace PlayerScripts.Weapons
 		public void SetGroundedBool(bool isGrounded) => _isGrounded = isGrounded;
 
 		public void SetRunBool(Vector2 direction) =>
-			_isRun = direction.x != 0 || direction.y != 0;
+			IsRun = direction.x != 0 || direction.y != 0;
 
 		public void SetBoughtStateTrue() => _isBought = false;
 

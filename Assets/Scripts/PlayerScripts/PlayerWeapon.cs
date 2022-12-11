@@ -56,8 +56,7 @@ namespace PlayerScripts
 
 		private WeaponBase GetInitializedWeapon(WeaponBase firstWeaponBase)
 		{
-			WeaponBase weapon = _weaponFactory.CreateWeapon(firstWeaponBase, transform, _animator, _animationHasher);
-			weapon.Initialize(_animator, _animationHasher);
+			WeaponBase weapon = _weaponFactory.CreateWeapon(firstWeaponBase, transform);
 			return weapon;
 		}
 
