@@ -12,7 +12,7 @@ public class Fist : MeleeWeapon
 
 		var animation = Animator.GetCurrentAnimatorStateInfo(0);
 		
-		yield return new WaitForSeconds(animation.speed * animation.speedMultiplier);
+		yield return new WaitForSeconds(animation.length);
 		
 		OnAnimationEnded();
 		CanAttack = true;

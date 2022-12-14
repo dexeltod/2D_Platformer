@@ -2,12 +2,12 @@ using PlayerScripts;
 using PlayerScripts.States;
 using UnityEngine;
 
-public class PlayerRunState : BaseState
+public class PlayerRunState : PlayerStateMachine
 {
 	private readonly InputSystemReader _inputSystemReader;
 	private readonly PhysicsMovement _physicsMovement;
 
-	public PlayerRunState(Player player, IStateSwitcher stateSwitcher, AnimationHasher animationHasher,
+	public PlayerRunState(Player player, IPlayerStateSwitcher stateSwitcher, AnimationHasher animationHasher,
 		Animator animator, InputSystemReader inputSystemReader, PhysicsMovement physicsMovement)
 		: base(player, stateSwitcher, animationHasher, animator)
 	{

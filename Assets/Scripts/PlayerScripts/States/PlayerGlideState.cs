@@ -2,14 +2,14 @@
 
 namespace PlayerScripts.States
 {
-	public class PlayerGlideState : BaseState
+	public class PlayerGlideState : PlayerStateMachine
 	{
 		private readonly Animator _animator;
 		private readonly AnimationHasher _animationHasher;
-		private readonly IStateSwitcher _stateSwitcher;
+		private readonly IPlayerStateSwitcher _stateSwitcher;
 		private readonly PhysicsMovement _physicsMovement;
 
-		public PlayerGlideState(Player player, IStateSwitcher stateSwitcher, AnimationHasher animationHasher,
+		public PlayerGlideState(Player player, IPlayerStateSwitcher stateSwitcher, AnimationHasher animationHasher,
 			Animator animator, PhysicsMovement physicsMovement) : base(player, stateSwitcher, animationHasher, animator)
 		{
 			_stateSwitcher = stateSwitcher;

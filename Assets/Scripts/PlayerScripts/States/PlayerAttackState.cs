@@ -3,10 +3,8 @@ using UnityEngine;
 
 namespace PlayerScripts.States
 {
-	public class PlayerAttackState : BaseState
+	public class PlayerAttackState : PlayerStateMachine
 	{
-		private const int LayerIndex = 0;
-
 		private WeaponBase _currentWeapon;
 
 		private readonly PlayerWeapon _playerWeapon;
@@ -15,7 +13,7 @@ namespace PlayerScripts.States
 		private Animator _animator;
 		private AnimationHasher _animationHasher;
 
-		public PlayerAttackState(Player player, IStateSwitcher stateSwitcher, AnimationHasher animationHasher,
+		public PlayerAttackState(Player player, IPlayerStateSwitcher stateSwitcher, AnimationHasher animationHasher,
 			Animator animator, PlayerWeapon playerWeapon, PhysicsMovement physicsMovement) : base(player, stateSwitcher,
 			animationHasher,
 			animator)
@@ -44,8 +42,7 @@ namespace PlayerScripts.States
 		{
 			if (_currentWeapon == null || _currentWeapon.CanAttack == false)
 				return;
-
-			AnimatorStateInfo animatorInfo = GetAnimatorInfo();
+			
 			_currentWeapon.SetGroundedBool(_physicsMovement.IsGrounded);
 			_currentWeapon.SetRunBool(_physicsMovement.Offset);
 			Player.StartCoroutine(_currentWeapon.AttackRoutine(Player.LookDirection));
@@ -66,9 +63,6 @@ namespace PlayerScripts.States
 		public override void Stop()
 		{
 		}
-
-		private AnimatorStateInfo GetAnimatorInfo() =>
-			Animator.GetCurrentAnimatorStateInfo(LayerIndex);
 
 		private void OnWeaponSwitch(WeaponBase weaponBase) =>
 			_currentWeapon = weaponBase;

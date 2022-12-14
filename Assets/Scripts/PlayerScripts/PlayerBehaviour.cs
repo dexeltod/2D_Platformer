@@ -7,7 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(InputSystemReader), typeof(Animator), typeof(AnimationHasher))]
 [RequireComponent(typeof(Player), typeof(WeaponFactory))]
 [RequireComponent(typeof(PlayerWeapon))]
-public class PlayerBehaviour : MonoBehaviour, IStateSwitcher
+public class PlayerBehaviour : MonoBehaviour, IPlayerStateSwitcher
 {
 	private Player _player;
 
@@ -17,8 +17,8 @@ public class PlayerBehaviour : MonoBehaviour, IStateSwitcher
 	private Animator _animator;
 	private InputSystemReader _inputSystemReader;
 
-	private List<BaseState> _states = new();
-	private BaseState _currentState;
+	private List<PlayerStateMachine> _states = new();
+	private PlayerStateMachine _currentState;
 
 	private void Awake()
 	{
@@ -69,7 +69,7 @@ public class PlayerBehaviour : MonoBehaviour, IStateSwitcher
 		SwitchState<PlayerJumpState>();
 	}
 
-	public void SwitchState<T>() where T : BaseState
+	public void SwitchState<T>() where T : PlayerStateMachine
 	{
 		var state = _states.FirstOrDefault(state => state is T);
 		_currentState?.Stop();
@@ -79,7 +79,7 @@ public class PlayerBehaviour : MonoBehaviour, IStateSwitcher
 
 	private void InitializeStates()
 	{
-		_states = new List<BaseState>()
+		_states = new List<PlayerStateMachine>
 		{
 			new PlayerIdleState(_player, this, _animationHasher, _animator, _physicsMovement, _inputSystemReader),
 			new PlayerRunState(_player, this, _animationHasher, _animator, _inputSystemReader, _physicsMovement),

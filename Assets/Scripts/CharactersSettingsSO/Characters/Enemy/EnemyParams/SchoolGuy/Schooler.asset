@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 10
   Armor: 0
-  Health: 50
+  Health: 10
   WalkSpeed: 1
   CriticalDamageChance: 0
   AttackSpeed: 1

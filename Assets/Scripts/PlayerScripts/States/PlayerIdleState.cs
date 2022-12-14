@@ -2,13 +2,13 @@ using PlayerScripts;
 using PlayerScripts.States;
 using UnityEngine;
 
-public class PlayerIdleState : BaseState
+public class PlayerIdleState : PlayerStateMachine
 {
-	private readonly IStateSwitcher _stateSwitcher;
+	private readonly IPlayerStateSwitcher _stateSwitcher;
 	private readonly PhysicsMovement _physicsMovement;
 	private readonly InputSystemReader _inputSystemReader;
 
-	public PlayerIdleState(Player player, IStateSwitcher stateSwitcher, AnimationHasher animationHasher,
+	public PlayerIdleState(Player player, IPlayerStateSwitcher stateSwitcher, AnimationHasher animationHasher,
 		Animator animator, PhysicsMovement physicsMovement, InputSystemReader inputSystemReader) : base(player,
 		stateSwitcher, animationHasher, animator)
 	{
