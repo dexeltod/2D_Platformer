@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,15 +9,11 @@ public class HealthPresenter : MonoBehaviour
 
     private Coroutine _currentCoroutine;
 
-    private void OnEnable()
-    {
-        _player.HealthChanged += Set;
-    }
+    private void OnEnable() => 
+	    _player.HealthChanged += Set;
 
-    private void OnDisable()
-    {
-        _player.HealthChanged -= Set;
-    }
+    private void OnDisable() => 
+	    _player.HealthChanged -= Set;
 
     private void Set()
     {
