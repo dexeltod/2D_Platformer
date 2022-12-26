@@ -50,8 +50,6 @@ public class EnemyPlayerChecker : MonoBehaviour
 	private void Update() =>
 		CheckTargetVisibility();
 
-	
-
 	private void CheckTargetVisibility()
 	{
 		Collider2D[] range = Physics2D.OverlapCircleAll(_eyeTransform.position, _viewDistance, _playerLayer);
@@ -95,15 +93,14 @@ public class EnemyPlayerChecker : MonoBehaviour
 
 	private void CastRayToTarget(float distanceToTarget)
 	{
-		_isSawPlayer = Physics2D.Raycast(_eyeTransform.position, _directionToTarget,
-			distanceToTarget,
-			_playerLayer);
-
 		RaycastHit2D hit = Physics2D.Raycast(_eyeTransform.position, _directionToTarget,
 			distanceToTarget,
 			_playerLayer);
 
-		Debug.Log($"hit.collider.name {hit.collider.name}");
+		if (hit.collider == null)
+			return;
+
+		_isSawPlayer = hit.collider.name == _playerTransform.name;
 	}
 
 	private Transform CountDirectionAndAngle(Collider2D[] range)

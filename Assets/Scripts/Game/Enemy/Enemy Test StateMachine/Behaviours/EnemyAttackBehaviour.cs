@@ -17,8 +17,6 @@ public class EnemyAttackBehaviour : MonoBehaviour
 	private bool _canAttack;
 	private IGameFactory _gameFactory;
 
-	public event UnityAction PlayerDied;
-
 	private void Awake()
 	{
 		_gameFactory = ServiceLocator.Container.Single<IGameFactory>();
@@ -38,14 +36,12 @@ public class EnemyAttackBehaviour : MonoBehaviour
 		_canAttack = true;
 		OnAttack(_canAttack);
 		_enemyMeleePlayerChecker.TouchedPlayer += OnAttack;
-		_playerHealth.Died += OnPlayerHealthDie;
 	}
 
 	private void OnDisable()
 	{
 		_enemyMeleePlayerChecker.TouchedPlayer -= OnAttack;
 		_animator.StopPlayback();
-		_playerHealth.Died -= OnPlayerHealthDie;
 
 		if (_currentCoroutine != null)
 			StopCoroutine(_currentCoroutine);
@@ -92,7 +88,4 @@ public class EnemyAttackBehaviour : MonoBehaviour
 		var stateInfo = _animator.GetCurrentAnimatorStateInfo(currentLayer);
 		return stateInfo.length;
 	}
-
-	private void OnPlayerHealthDie() =>
-		PlayerDied?.Invoke();
 }
