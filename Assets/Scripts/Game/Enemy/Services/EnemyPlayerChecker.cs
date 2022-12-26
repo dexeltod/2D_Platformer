@@ -7,6 +7,7 @@ public class EnemyPlayerChecker : MonoBehaviour
 {
 	[SerializeField] private Transform _eyeTransform;
 	[SerializeField] private LayerMask _playerLayer;
+	[SerializeField] private LayerMask _groundLayer;
 	[SerializeField] private float _viewDistance;
 
 	[SerializeField] private float _minAngleView = 68;
@@ -43,7 +44,7 @@ public class EnemyPlayerChecker : MonoBehaviour
 
 	private void OnLevelLoaded()
 	{
-		_playerTransform = _factory.MainCharacter.transform;
+		_playerTransform = _factory.MainCharacter.GetComponentInChildren<PlayerEyePoint>().transform;
 		_factory.MainCharacterCreated -= OnLevelLoaded;
 	}
 
@@ -58,8 +59,7 @@ public class EnemyPlayerChecker : MonoBehaviour
 
 		if (isInRange == true)
 		{
-			Transform target = CountDirectionAndAngle(range);
-
+			Transform target = GetTargetFromRange(range);
 			CountTargetVisibility(target);
 		}
 		else
@@ -91,27 +91,21 @@ public class EnemyPlayerChecker : MonoBehaviour
 		SeenPlayer?.Invoke(isSeeTarget);
 	}
 
-	private void CastRayToTarget(float distanceToTarget)
-	{
-		RaycastHit2D hit = Physics2D.Raycast(_eyeTransform.position, _directionToTarget,
-			distanceToTarget,
-			_playerLayer);
+	private void CastRayToTarget(float distance) =>
+		_isSawPlayer = Physics2D.Raycast(_eyeTransform.position, _directionToTarget, distance, _groundLayer) == false;
 
-		if (hit.collider == null)
-			return;
-
-		_isSawPlayer = hit.collider.name == _playerTransform.name;
-	}
-
-	private Transform CountDirectionAndAngle(Collider2D[] range)
+	private Transform GetTargetFromRange(Collider2D[] range)
 	{
 		const int FirstCollidedObject = 0;
 
 		Transform target = range[FirstCollidedObject].transform;
+		CountTargetPosition(target);
+		return target;
+	}
+
+	private void CountTargetPosition(Transform target)
+	{
 		_directionToTarget = (target.position - _eyeTransform.position).normalized;
 		_currentAngle = Vector2.Angle(_eyeTransform.right, _directionToTarget);
-
-		Debug.Log($"currentAngle {_currentAngle}");
-		return target;
 	}
 }
