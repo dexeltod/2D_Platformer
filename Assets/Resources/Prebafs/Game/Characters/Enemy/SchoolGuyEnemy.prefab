@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 359793597}
-  - component: {fileID: 359793598}
   - component: {fileID: 8269904224873463698}
   m_Layer: 0
   m_Name: PlayerChecker
@@ -27,45 +26,12 @@ Transform:
   m_GameObject: {fileID: 359793596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1848783015209635881}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &359793598
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 359793596}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 2, y: 3}
-      - {x: 0.21, y: 1.7418232}
-      - {x: 2, y: 0}
-      - {x: 9, y: 0}
-      - {x: 9, y: 3}
-      - {x: 2, y: 3}
-      - {x: 2, y: 3}
-      - {x: 2, y: 3}
 --- !u!114 &8269904224873463698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,39 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c218054e4d4265245a459a5c66b32162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _eyePosition: {fileID: 7557254000837333921}
+  _eyeTransform: {fileID: 7557254000837333921}
   _playerLayer:
-    useTriggers: 0
-    useLayerMask: 1
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 128
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  _bigColliderPoints:
-  - {x: -12, y: 6}
-  - {x: -12, y: 1.7418232}
-  - {x: -12, y: 0}
-  - {x: 12, y: 0}
-  - {x: 12, y: 6}
-  - {x: 2, y: 6}
-  - {x: 2, y: 6}
-  - {x: 2, y: 6}
-  _smallColliderPoints:
-  - {x: 2, y: 3}
-  - {x: 0.21, y: 1.7418232}
-  - {x: 2, y: 0}
-  - {x: 9, y: 0}
-  - {x: 9, y: 3}
-  - {x: 2, y: 3}
-  - {x: 2, y: 3}
-  - {x: 2, y: 3}
+    serializedVersion: 2
+    m_Bits: 128
+  _viewDistance: 8.1
+  _angleView: 33.42
 --- !u!1 &1302770318
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,7 +76,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302770318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -397,7 +336,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 282aa8ce5bffae64887578b13d49be03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 0}
   _enemyData: {fileID: 11400000, guid: 3aae1380c49acf04d89b0148be7ad258, type: 2}
 --- !u!114 &5343798438178607614
 MonoBehaviour:
@@ -424,7 +362,7 @@ MonoBehaviour:
   - {x: 0.12706184, y: 0.7423568, z: 0}
   m_ShapePathHash: -801796281
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1540
+  m_InstanceId: -1560
 --- !u!114 &6424921582603155147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -482,7 +420,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyData: {fileID: 11400000, guid: 3aae1380c49acf04d89b0148be7ad258, type: 2}
   _enemyMeleePlayerChecker: {fileID: 1083062508278228268}
-  _playerHealth: {fileID: 0}
 --- !u!114 &3537422105895224484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,7 +445,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6992cd0ad39752347a2ffa8c88138943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 0}
   _enemyData: {fileID: 11400000, guid: 3aae1380c49acf04d89b0148be7ad258, type: 2}
 --- !u!1 &2236006073919173763
 GameObject:
@@ -565,7 +501,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4161490243778442859}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.518, y: 1.712, z: 0}
+  m_LocalPosition: {x: 0.2, y: 1.712, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

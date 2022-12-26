@@ -24,16 +24,13 @@ public class EnemyAttackBehaviour : MonoBehaviour
 		_gameFactory = ServiceLocator.Container.Single<IGameFactory>();
 		_animator = GetComponent<Animator>();
 		_animationHasher = GetComponent<AnimationHasher>();
-	}
-
-	private void Start()
-	{
 		_gameFactory.MainCharacterCreated += OnLevelLoaded;
 	}
 
 	private void OnLevelLoaded()
 	{
 		_playerHealth = _gameFactory.MainCharacter.GetComponent<PlayerHealth>();
+		_gameFactory.MainCharacterCreated -= OnLevelLoaded;
 	}
 	
 	private void OnEnable()

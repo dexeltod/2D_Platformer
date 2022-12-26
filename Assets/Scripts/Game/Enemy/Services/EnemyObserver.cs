@@ -16,18 +16,25 @@ public class EnemyObserver : MonoBehaviour
 
 	[Header("Debug")] [SerializeField] private bool _isEnableGizmos;
 
+	private SpriteRenderer _spriteRenderer;
+	
 	public event Action<bool> TouchedPlayer;
 	public event Action<bool> SeenPlayer;
+	public event Action PlayerIsAbove;
 
 	public int FacingDirection { get; private set; }
 
+	private void Awake() => 
+		_spriteRenderer = GetComponent<SpriteRenderer>();
+
 	private void Start() =>
-		FacingDirection = 1;
+		FacingDirection = _spriteRenderer.flipX ? -1 : 1;
 
 	private void OnEnable()
 	{
 		_enemyMeleeChecker.enabled = true;
 		_enemyPlayerChecker.enabled = true;
+		// _enemyPlayerChecker.PlayerIsAbove += OnPlayerAbove;
 		_enemyMeleeChecker.TouchedPlayer += OnTouchPlayer;
 		_enemyPlayerChecker.SeenPlayer += OnSeeEnemy;
 	}
@@ -36,6 +43,7 @@ public class EnemyObserver : MonoBehaviour
 	{
 		_enemyMeleeChecker.TouchedPlayer -= OnTouchPlayer;
 		_enemyPlayerChecker.SeenPlayer -= OnSeeEnemy;
+		// _enemyPlayerChecker.PlayerIsAbove -= OnPlayerAbove;
 		_enemyMeleeChecker.enabled = false;
 		_enemyPlayerChecker.enabled = false;
 	}
@@ -45,6 +53,9 @@ public class EnemyObserver : MonoBehaviour
 		int rotation = direction > 0 ? Right : Left;
 		transform.rotation = Quaternion.Euler(transform.rotation.x, rotation, 0);
 	}
+
+	private void OnPlayerAbove() => 
+		PlayerIsAbove.Invoke();
 
 	private void OnTouchPlayer(bool isSeeEnemy) =>
 		TouchedPlayer?.Invoke(isSeeEnemy);
@@ -66,14 +77,12 @@ public class EnemyObserver : MonoBehaviour
 		transform.rotation = Quaternion.Euler(transform.rotation.x, rotation, 0);
 	}
 
-	
-	
 	private void OnSeeEnemy(bool isSeeEnemy) =>
 		SeenPlayer.Invoke(isSeeEnemy);
 
 	private void OnDrawGizmos()
 	{
-		if (_isEnableGizmos != true)
+		if (_isEnableGizmos == false)
 			return;
 
 		Vector3 wallCheckDirection = (Vector2)_wallCheckTransform.position

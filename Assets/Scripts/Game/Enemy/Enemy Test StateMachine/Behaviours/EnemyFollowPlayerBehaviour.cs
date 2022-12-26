@@ -23,7 +23,7 @@ public class EnemyFollowPlayerBehaviour : MonoBehaviour
 	private float _lastFollowDirection;
 	private IGameFactory _gameFactory;
 
-	public event Action PlayerAbove;
+	public event Action PlayerIsAbove;
 
 	private void Awake()
 	{
@@ -32,10 +32,6 @@ public class EnemyFollowPlayerBehaviour : MonoBehaviour
 		_animator = GetComponent<Animator>();
 		_animationHasher = GetComponent<AnimationHasher>();
 		_rigidbody2D = GetComponent<Rigidbody2D>();
-	}
-
-	private void Start()
-	{
 		_gameFactory.MainCharacterCreated += OnLevelLoaded;
 	}
 
@@ -47,30 +43,30 @@ public class EnemyFollowPlayerBehaviour : MonoBehaviour
 
 	private void OnEnable()
 	{
+		_enemyObserver.PlayerIsAbove += OnPlayerAbove;
 		_animator.StopPlayback();
 		_animator.CrossFade(_animationHasher.RunHash, 0);
 	}
 
-	private void OnDisable() =>
+	private void OnDisable()
+	{
+		_enemyObserver.PlayerIsAbove -= OnPlayerAbove;
 		_animator.StopPlayback();
+	}
 
 	private void FixedUpdate()
 	{
 		_targetDirection = _player.transform.position - transform.position;
 		_rigidbody2D.position += _followDirection * (_enemyData.RunSpeed * Time.deltaTime);
 		CheckDirectionToRotate();
-		OnTargetUpper();
 	}
 
-	private void OnTargetUpper()
-	{
-		if (_targetDirection.normalized == Vector2.up)
-			PlayerAbove.Invoke();
-	}
+	private void OnPlayerAbove() => 
+		PlayerIsAbove.Invoke();
 
 	private void CheckDirectionToRotate()
 	{
-		_followDirection.x = _player.transform.position.x < transform.position.x ? -1 : 1;
+		_followDirection.x = _targetDirection.x > 0 ? 1 : -1;
 
 		if (_lastFollowDirection == _followDirection.x)
 			return;

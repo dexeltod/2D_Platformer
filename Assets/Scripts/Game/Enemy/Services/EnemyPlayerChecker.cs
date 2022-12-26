@@ -9,27 +9,34 @@ public class EnemyPlayerChecker : MonoBehaviour
 	[SerializeField] private LayerMask _playerLayer;
 	[SerializeField] private float _viewDistance;
 
-	[SerializeField] private float _angleView;
+	[SerializeField] private float _minAngleView = 68;
+	[SerializeField] private float _maxAngleView = 230;
+
+	private float _angleView;
 
 	private IGameFactory _factory;
 	private Transform _playerTransform;
 	private List<RaycastHit2D> _hits;
+	private Vector2 _directionToTarget;
 
-	private bool _inRange;
 	private bool _lastSawPlayer;
-	private bool _sawPlayer;
+	private bool _isSawPlayer;
+	private float _distanceToTarget;
+	private float _currentAngle;
 
 	public bool CanSeePlayer { get; private set; }
 
 	public float ViewDistance => _viewDistance;
 	public Transform EyeTransform => _eyeTransform;
-	public Transform PlayerTransform => _playerTransform;
 	public float AngleView => _angleView;
+	public Transform PlayerTransform => _playerTransform;
 
+	public event Action PlayerAbove;
 	public event Action<bool> SeenPlayer;
 
 	private void Start()
 	{
+		_angleView = _minAngleView;
 		_factory = ServiceLocator.Container.Single<IGameFactory>();
 		_factory.MainCharacterCreated += OnLevelLoaded;
 	}
@@ -40,39 +47,74 @@ public class EnemyPlayerChecker : MonoBehaviour
 		_factory.MainCharacterCreated -= OnLevelLoaded;
 	}
 
-	private void Update()
-	{
-		if (_inRange == true)
-			IsInView();
-	}
+	private void Update() =>
+		CheckTargetVisibility();
 
-	private void IsInView()
+	
+
+	private void CheckTargetVisibility()
 	{
 		Collider2D[] range = Physics2D.OverlapCircleAll(_eyeTransform.position, _viewDistance, _playerLayer);
 
-		if (range.Length > 0)
+		bool isInRange = range.Length > 0;
+
+		if (isInRange == true)
 		{
-			const int FirstCollidedObject = 0;
+			Transform target = CountDirectionAndAngle(range);
 
-			Transform target = range[FirstCollidedObject].transform;
-
-			Vector2 directionToTarget = (target.position - _eyeTransform.position).normalized;
-
-			if (Vector2.Angle(_eyeTransform.right, directionToTarget) < _angleView / 2)
-			{
-				float distanceToTarget = Vector2.Distance(_eyeTransform.position, target.position);
-
-				_sawPlayer = Physics2D.Raycast(_eyeTransform.position, directionToTarget, distanceToTarget,
-					_playerLayer);
-
-				CanSeePlayer = _sawPlayer;
-
-				if (_sawPlayer == _lastSawPlayer)
-					return;
-
-				_lastSawPlayer = _sawPlayer;
-				SeenPlayer?.Invoke(_lastSawPlayer);
-			}
+			CountTargetVisibility(target);
 		}
+		else
+			SetTargetVisibility(false);
+	}
+
+	private void CountTargetVisibility(Transform target)
+	{
+		const float HalfOfAngle = 2;
+
+		if (_currentAngle < _angleView / HalfOfAngle)
+		{
+			_distanceToTarget = Vector2.Distance(_eyeTransform.position, target.position);
+
+			CastRayToTarget(_distanceToTarget);
+
+			if (_isSawPlayer == _lastSawPlayer)
+				return;
+
+			SetTargetVisibility(_isSawPlayer);
+		}
+	}
+
+	private void SetTargetVisibility(bool isSeeTarget)
+	{
+		_lastSawPlayer = isSeeTarget;
+		_angleView = isSeeTarget ? _maxAngleView : _minAngleView;
+		CanSeePlayer = isSeeTarget;
+		SeenPlayer?.Invoke(isSeeTarget);
+	}
+
+	private void CastRayToTarget(float distanceToTarget)
+	{
+		_isSawPlayer = Physics2D.Raycast(_eyeTransform.position, _directionToTarget,
+			distanceToTarget,
+			_playerLayer);
+
+		RaycastHit2D hit = Physics2D.Raycast(_eyeTransform.position, _directionToTarget,
+			distanceToTarget,
+			_playerLayer);
+
+		Debug.Log($"hit.collider.name {hit.collider.name}");
+	}
+
+	private Transform CountDirectionAndAngle(Collider2D[] range)
+	{
+		const int FirstCollidedObject = 0;
+
+		Transform target = range[FirstCollidedObject].transform;
+		_directionToTarget = (target.position - _eyeTransform.position).normalized;
+		_currentAngle = Vector2.Angle(_eyeTransform.right, _directionToTarget);
+
+		Debug.Log($"currentAngle {_currentAngle}");
+		return target;
 	}
 }
