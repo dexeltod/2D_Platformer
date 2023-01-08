@@ -19,6 +19,7 @@ public class PlayerRunState : PlayerStateMachine
 	public override void Start()
 	{
 		Animator.Play(AnimationHasher.RunHash);
+		Debug.Log("runState");
 		_inputSystemReaderService.VerticalButtonCanceled += SetIdleState;
 		_physicsMovement.Fallen += SetFallState;
 

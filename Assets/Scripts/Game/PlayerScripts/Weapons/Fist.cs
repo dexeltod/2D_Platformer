@@ -1,3 +1,4 @@
+
 using System.Collections;
 using PlayerScripts.Weapons;
 using UnityEngine;
@@ -12,7 +13,7 @@ public class Fist : MeleeWeapon
 
 		var animation = Animator.GetCurrentAnimatorStateInfo(0);
 		
-		yield return new WaitForSeconds(animation.length);
+		yield return new WaitForSeconds(animation.speed);
 		
 		OnAnimationEnded();
 		CanAttack = true;

@@ -5,6 +5,7 @@ public class CameraFollow : MonoBehaviour
 {
 	[SerializeField] private float _height;
 	[SerializeField] private float _closeness = -23;
+
 	private Transform _player;
 
 	private IGameFactory _gameFactory;
@@ -26,9 +27,9 @@ public class CameraFollow : MonoBehaviour
 
 	private void UpdateCameraPosition()
 	{
-		if(_player == null)
+		if (_player == null)
 			return;
-		
+
 		Vector3 position = new Vector3(_player.position.x, _player.position.y + _height, _closeness);
 		transform.position = position;
 	}

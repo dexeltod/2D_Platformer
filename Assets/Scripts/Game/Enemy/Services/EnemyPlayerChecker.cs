@@ -31,8 +31,7 @@ public class EnemyPlayerChecker : MonoBehaviour
 	public Transform EyeTransform => _eyeTransform;
 	public float AngleView => _angleView;
 	public Transform PlayerTransform => _playerTransform;
-
-	public event Action PlayerAbove;
+	
 	public event Action<bool> SeenPlayer;
 
 	private void Start()
@@ -44,7 +43,7 @@ public class EnemyPlayerChecker : MonoBehaviour
 
 	private void OnLevelLoaded()
 	{
-		_playerTransform = _factory.MainCharacter.GetComponentInChildren<PlayerEyePoint>().transform;
+		_playerTransform = _factory.EyeCharacterTransform;
 		_factory.MainCharacterCreated -= OnLevelLoaded;
 	}
 

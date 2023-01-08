@@ -1,19 +1,18 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace Infrastructure.Services
 {
 	public class InputService : IInputService
 	{
-		public event Action<float> VerticalButtonUsed;
-		public event Action VerticalButtonCanceled;
-		public event Action AttackButtonUsed;
-		public event Action InteractButtonUsed;
-		public event Action JumpButtonUsed;
-		public event Action JumpButtonCanceled;
-
 		private readonly InputSystem _inputActions;
+		
+		public event UnityAction<float> VerticalButtonUsed;
+		public event UnityAction VerticalButtonCanceled;
+		public event UnityAction AttackButtonUsed;
+		public event UnityAction InteractButtonUsed;
+		public event UnityAction JumpButtonUsed;
+		public event UnityAction JumpButtonCanceled;
 
 		public InputService()
 		{
@@ -24,26 +23,26 @@ namespace Infrastructure.Services
 		public void EnableInputs()
 		{
 			_inputActions.Enable();
-			_inputActions.Player.Move.performed += OnHorizontalMovement;
+			_inputActions.Player.Move.started += OnHorizontalMovement;
 			_inputActions.Player.Move.canceled += OnHorizontalMovement;
 			_inputActions.Player.Jump.performed += OnJump;
 			_inputActions.Player.Jump.canceled += OnJump;
 			_inputActions.Player.Attack.performed += OnAttack;
-			_inputActions.Player.Use.started += OnUse;
+			_inputActions.Player.Use.started += OnInteract;
 		}
 
 		public void DisableInputs()
 		{
 			_inputActions.Disable();
-			_inputActions.Player.Move.performed -= OnHorizontalMovement;
+			_inputActions.Player.Move.started -= OnHorizontalMovement;
 			_inputActions.Player.Move.canceled -= OnHorizontalMovement;
 			_inputActions.Player.Jump.performed -= OnJump;
 			_inputActions.Player.Jump.canceled -= OnJump;
 			_inputActions.Player.Attack.performed -= OnAttack;
-			_inputActions.Player.Use.started -= OnUse;
+			_inputActions.Player.Use.started -= OnInteract;
 		}
 
-		private void OnUse(InputAction.CallbackContext context)
+		private void OnInteract(InputAction.CallbackContext context)
 		{
 			if (context.started)
 				InteractButtonUsed?.Invoke();
@@ -57,7 +56,7 @@ namespace Infrastructure.Services
 
 		private void OnHorizontalMovement(InputAction.CallbackContext context)
 		{
-			if (context.performed)
+			if (context.started)
 			{
 				var direction = context.ReadValue<float>();
 				VerticalButtonUsed?.Invoke(direction);
@@ -75,7 +74,5 @@ namespace Infrastructure.Services
 			if (context.canceled)
 				JumpButtonCanceled?.Invoke();
 		}
-
-		
 	}
 }

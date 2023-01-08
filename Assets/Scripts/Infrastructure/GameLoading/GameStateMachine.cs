@@ -4,7 +4,13 @@ using UI_Scripts.Curtain;
 
 namespace Infrastructure
 {
-	public class GameStateMachine
+	public interface IGameStateMachine : IService
+	{
+		void Enter<TState>() where TState : class, IState;
+		void Enter<TState, TPayload>(TPayload payload) where TState : class, IPayloadState<TPayload>;
+	}
+
+	public class GameStateMachine : IGameStateMachine
 	{
 		private readonly Dictionary<Type, IExitState> _states;
 		private IExitState _activeState;

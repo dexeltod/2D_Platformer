@@ -1,19 +1,19 @@
 using UnityEngine;
 
-[RequireComponent(typeof(CoinsPackage))]
+[RequireComponent(typeof(CoinsPackageObject))]
 [RequireComponent(typeof(AudioSource))]
 
 public class CoinSoundEnabler : MonoBehaviour
 {
-    private CoinsPackage _coinsPackage;
+    private CoinsPackageObject _coinsPackageObject;
     private CoinTaker[] _coins;
     private AudioSource _audio;
 
     private void Awake()
     {
-        _coinsPackage = GetComponent<CoinsPackage>();
+        _coinsPackageObject = GetComponent<CoinsPackageObject>();
         _audio = GetComponent<AudioSource>();
-        _coins = _coinsPackage.GetComponentsInChildren<CoinTaker>();
+        _coins = _coinsPackageObject.GetComponentsInChildren<CoinTaker>();
     }
 
     private void OnEnable()

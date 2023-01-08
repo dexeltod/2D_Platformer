@@ -12,13 +12,15 @@ namespace Infrastructure
 			_assetProvider = assetProvider;
 
 		public GameObject MainCharacter { get; private set; }
-		
+		public Transform EyeCharacterTransform { get; private set;}
+
 		public event Action MainCharacterCreated;
 
 		public GameObject CreateHero(GameObject initialPoint)
 		{
 			MainCharacter = _assetProvider.Instantiate(NameConstants.PlayerPrefabPath, initialPoint.transform.position);
-			MainCharacterCreated.Invoke();
+			EyeCharacterTransform = MainCharacter.GetComponentInChildren<PlayerEyePoint>().transform;
+			MainCharacterCreated?.Invoke();
 			return MainCharacter;
 		}
 	}
