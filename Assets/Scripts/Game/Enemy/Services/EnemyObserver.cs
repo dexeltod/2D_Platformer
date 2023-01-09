@@ -20,6 +20,7 @@ public class EnemyObserver : MonoBehaviour
 	
 	public event Action<bool> TouchedPlayer;
 	public event Action<bool> SeenPlayer;
+	public event Action PlayerIsAbove;
 
 	public int FacingDirection { get; private set; }
 
@@ -33,6 +34,7 @@ public class EnemyObserver : MonoBehaviour
 	{
 		_enemyMeleeChecker.enabled = true;
 		_enemyPlayerChecker.enabled = true;
+		// _enemyPlayerChecker.PlayerIsAbove += OnPlayerAbove;
 		_enemyMeleeChecker.TouchedPlayer += OnTouchPlayer;
 		_enemyPlayerChecker.SeenPlayer += OnSeeEnemy;
 	}
@@ -41,6 +43,7 @@ public class EnemyObserver : MonoBehaviour
 	{
 		_enemyMeleeChecker.TouchedPlayer -= OnTouchPlayer;
 		_enemyPlayerChecker.SeenPlayer -= OnSeeEnemy;
+		// _enemyPlayerChecker.PlayerIsAbove -= OnPlayerAbove;
 		_enemyMeleeChecker.enabled = false;
 		_enemyPlayerChecker.enabled = false;
 	}
@@ -49,8 +52,10 @@ public class EnemyObserver : MonoBehaviour
 	{
 		int rotation = direction > 0 ? Right : Left;
 		transform.rotation = Quaternion.Euler(transform.rotation.x, rotation, 0);
-		FacingDirection = (int)direction;
 	}
+
+	private void OnPlayerAbove() => 
+		PlayerIsAbove.Invoke();
 
 	private void OnTouchPlayer(bool isSeeEnemy) =>
 		TouchedPlayer?.Invoke(isSeeEnemy);

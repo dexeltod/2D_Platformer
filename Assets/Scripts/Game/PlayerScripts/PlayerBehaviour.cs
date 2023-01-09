@@ -19,17 +19,13 @@ public class PlayerBehaviour : MonoBehaviour, IPlayerStateSwitcher
 	private Animator _animator;
 	private IInputService _inputService;
 
-	private List<PlayerStateMachine> _states;
+	private List<PlayerStateMachine> _states = new();
 	private PlayerStateMachine _currentState;
 
 	private void Awake()
 	{
 		_inputService = ServiceLocator.Container.Single<IInputService>();
 		_physicsMovement = GetComponent<PhysicsMovement>();
-	}
-
-	private void Start()
-	{
 		_playerWeapon = GetComponent<PlayerWeapon>();
 		_player = GetComponent<Player>();
 		_animationHasher = GetComponent<AnimationHasher>();
@@ -51,8 +47,17 @@ public class PlayerBehaviour : MonoBehaviour, IPlayerStateSwitcher
 		_inputService.JumpButtonUsed -= SetJumpState;
 	}
 
-	private void OnDestroy() => 
+	private void OnDestroy() =>
 		_states.Clear();
+
+	public void SetIdleState()
+	{
+		if (_physicsMovement.MovementDirection == Vector2.zero)
+			SwitchState<PlayerIdleState>();
+	}
+
+	public void SetRunState(float direction) =>
+		SwitchState<PlayerRunState>();
 
 	private void SetAttackState()
 	{
@@ -79,9 +84,6 @@ public class PlayerBehaviour : MonoBehaviour, IPlayerStateSwitcher
 
 	private void InitializeStates()
 	{
-		if (_states != null)
-			return;
-
 		_states = new List<PlayerStateMachine>
 		{
 			new PlayerIdleState(_player, this, _animationHasher, _animator, _physicsMovement, _inputService),
@@ -93,6 +95,5 @@ public class PlayerBehaviour : MonoBehaviour, IPlayerStateSwitcher
 		};
 
 		_currentState = _states[0];
-		SwitchState<PlayerIdleState>();
 	}
 }

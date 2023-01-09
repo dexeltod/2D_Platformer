@@ -24,7 +24,6 @@ namespace Infrastructure
 
 		private void RegisterServices()
 		{
-			_serviceLocator.RegisterAsSingle<IGameStateMachine>(_gameStateMachine);
 			_serviceLocator.RegisterAsSingle<IAssetProvider>(new AssetProvider());
 			_serviceLocator.RegisterAsSingle<IGameFactory>(new GameFactory(_serviceLocator.Single<IAssetProvider>()));
 			_serviceLocator.RegisterAsSingle<IInputService>(new InputService());

@@ -56,8 +56,7 @@ namespace PlayerScripts.Weapons
 		{
 		}
 
-		protected void OnAnimationEnded() =>
-			AttackAnimationEnded.Invoke();
+		protected void OnAnimationEnded() => AttackAnimationEnded.Invoke();
 
 		protected virtual void PlayAttackAnimation(int hash)
 		{

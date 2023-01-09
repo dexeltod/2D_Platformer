@@ -1,18 +1,17 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class CoinsPresenter : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _coinsText;
-    [FormerlySerializedAs("_coinsPackage")] [SerializeField] private CoinsPackageObject _coinsPackageObject;
+    [SerializeField] private CoinsPackage _coinsPackage;
     private CoinTaker[] _coins;
 
     private int _coinsCount = 0;
 
     private void Awake()
     {
-        _coins = _coinsPackageObject.GetComponentsInChildren<CoinTaker>();
+        _coins = _coinsPackage.GetComponentsInChildren<CoinTaker>();
     }
 
     private void OnEnable()
