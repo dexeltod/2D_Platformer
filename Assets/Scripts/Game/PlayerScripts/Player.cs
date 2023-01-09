@@ -7,8 +7,7 @@ using UnityEngine.Events;
 public class Player : MonoBehaviour
 {
 	private PhysicsMovement _physicsMovement;
-	private float _lookDirection = -1;
-	public float LookDirection => _lookDirection;
+	public float LookDirection { get; } = -1;
 
 	public event UnityAction<int, WeaponBase> Bought;
 

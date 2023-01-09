@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Infrastructure;
 using Infrastructure.Services;
@@ -81,6 +82,11 @@ public class PhysicsMovement : MonoBehaviour
 	private void Start()
 	{
 		StartCoroutine(FallRoutine());
+	}
+
+	private void Update()
+	{
+		Debug.Log(_movementDirection.x);
 	}
 
 	private void FixedUpdate() =>

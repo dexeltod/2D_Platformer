@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PlayerIdleState : PlayerStateMachine
 {
-	private readonly IPlayerStateSwitcher _stateSwitcher;
 	private readonly PhysicsMovement _physicsMovement;
 	private readonly IInputService _inputSystemReaderService;
 
@@ -15,7 +14,6 @@ public class PlayerIdleState : PlayerStateMachine
 	{
 		_inputSystemReaderService = inputSystemReaderService;
 		_physicsMovement = physicsMovement;
-		_stateSwitcher = stateSwitcher;
 	}
 
 	public override void Start()
@@ -23,17 +21,22 @@ public class PlayerIdleState : PlayerStateMachine
 		_inputSystemReaderService.VerticalButtonUsed += SetRunState;
 		_physicsMovement.Jumped += SetJumpState;
 		Animator.Play(AnimationHasher.IdleHash);
-		Debug.Log("idleState");
+
+		Debug.Log(AnimationHasher.IdleHash);
 	}
 
-	private void SetRunState(float direction) =>
-		_stateSwitcher.SwitchState<PlayerRunState>();
+	private void SetRunState(float direction)
+	{
+		Animator.Play(AnimationHasher.RunHash);
+		StateSwitcher.SwitchState<PlayerRunState>();
+	}
 
 	private void SetJumpState() =>
-		_stateSwitcher.SwitchState<PlayerJumpState>();
+		StateSwitcher.SwitchState<PlayerJumpState>();
 
 	public override void Stop()
 	{
+		Animator.StopPlayback();
 		_inputSystemReaderService.VerticalButtonUsed -= SetRunState;
 		_physicsMovement.Jumped -= SetJumpState;
 	}

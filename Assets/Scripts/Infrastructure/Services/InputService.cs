@@ -20,6 +20,9 @@ namespace Infrastructure.Services
 			EnableInputs();
 		}
 
+		~InputService() => 
+			DisableInputs();
+
 		public void EnableInputs()
 		{
 			_inputActions.Enable();

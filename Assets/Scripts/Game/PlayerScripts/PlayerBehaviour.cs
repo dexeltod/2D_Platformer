@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Infrastructure;
 using Infrastructure.Services;
@@ -52,19 +51,8 @@ public class PlayerBehaviour : MonoBehaviour, IPlayerStateSwitcher
 		_inputService.JumpButtonUsed -= SetJumpState;
 	}
 
-	private void OnDestroy()
-	{
+	private void OnDestroy() => 
 		_states.Clear();
-	}
-
-	public void SetIdleState()
-	{
-		if (_physicsMovement.MovementDirection == Vector2.zero)
-			SwitchState<PlayerIdleState>();
-	}
-
-	public void SetRunState(float direction) =>
-		SwitchState<PlayerRunState>();
 
 	private void SetAttackState()
 	{
