@@ -85,14 +85,14 @@
  </tile>
  <tile id="35">
   <objectgroup draworder="index" id="2">
-   <object id="1" template="ColliderTemplates/triangle.tx" gid="0" x="35.8246" y="36.1822" rotation="0">
+   <object id="1" template="ColliderTemplates/triangle.tx" x="35.8246" y="36.1822" rotation="0">
     <polygon points="0.163468,-0.186335 -35.667,-35.9507 0.17939,-35.9549"/>
    </object>
   </objectgroup>
  </tile>
  <tile id="36">
   <objectgroup draworder="index" id="2">
-   <object id="1" template="ColliderTemplates/triangle.tx" gid="0" x="0.204726" y="35.9667" rotation="0">
+   <object id="1" template="ColliderTemplates/triangle.tx" x="0.204726" y="35.9667" rotation="0">
     <polygon points="-0.163468,-0.186335 35.667,-35.9507 -0.17939,-35.9549"/>
    </object>
   </objectgroup>
@@ -103,6 +103,16 @@
   </objectgroup>
  </tile>
  <tile id="38">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="36" height="36"/>
+  </objectgroup>
+ </tile>
+ <tile id="39">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="36" height="36"/>
+  </objectgroup>
+ </tile>
+ <tile id="40">
   <objectgroup draworder="index" id="2">
    <object id="1" x="0" y="0" width="36" height="36"/>
   </objectgroup>
