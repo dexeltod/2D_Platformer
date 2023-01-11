@@ -19,24 +19,20 @@ public class PlayerRunState : PlayerStateMachine
 	public override void Start()
 	{
 		Animator.Play(AnimationHasher.RunHash);
-		Debug.Log(AnimationHasher.RunHash);
-
+		Debug.Log("runState");
 		_inputSystemReaderService.VerticalButtonCanceled += SetIdleState;
 		_physicsMovement.Fallen += SetFallState;
+
 	}
 
-	private void SetIdleState()
-	{
-		Animator.Play(AnimationHasher.IdleHash);
+	private void SetIdleState() => 
 		StateSwitcher.SwitchState<PlayerIdleState>();
-	}
 
-	private void SetFallState() =>
+	private void SetFallState() => 
 		StateSwitcher.SwitchState<PlayerFallState>();
 
 	public override void Stop()
 	{
-		Animator.StopPlayback();
 		_inputSystemReaderService.VerticalButtonCanceled -= SetIdleState;
 		_physicsMovement.Fallen -= SetFallState;
 	}

@@ -1,11 +1,21 @@
+using Infrastructure;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class LevelChanger : MonoBehaviour
 {
-    public void LoadLevel(int levelIndex)
-    {
-        SceneManager.LoadScene(levelIndex);
-    }
+	[SerializeField] private string _levelName;
+
+	private IGameStateMachine _gameStateMachine;
+
+	private void Start()
+	{
+		_gameStateMachine = ServiceLocator.Container.Single<IGameStateMachine>();
+	}
+
+	private void OnTriggerEnter2D(Collider2D col)
+	{
+		if (col.TryGetComponent(out Player _)) 
+			_gameStateMachine.Enter<SceneLoadState, string>(_levelName);
+	}
 }
 

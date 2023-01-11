@@ -50,14 +50,14 @@ namespace PlayerScripts.States
 
 		private void ChooseTransition()
 		{
-			if (_physicsMovement.Offset.x != 0)
+			const float MinVerticalOffset = 0;
+
+			if (_physicsMovement.Offset.x != MinVerticalOffset)
 				StateSwitcher.SwitchState<PlayerRunState>();
 			else if (_physicsMovement.Offset.y < 0)
 				StateSwitcher.SwitchState<PlayerFallState>();
 			else
 				StateSwitcher.SwitchState<PlayerIdleState>();
-
-			_currentWeapon.AttackAnimationEnded -= ChooseTransition;
 		}
 
 		public override void Stop()

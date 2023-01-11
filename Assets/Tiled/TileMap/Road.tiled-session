@@ -1,0 +1,62 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "automapping.whileDrawing": true,
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        ":/automap-tiles.tsx": {
+            "scaleInEditor": 1
+        },
+        "Road.tsx": {
+            "scaleInEditor": 1
+        },
+        "Rules/autotile rules.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1162,
+                "y": -40
+            }
+        },
+        "Rules/rules.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 310,
+                "y": 72
+            }
+        },
+        "TileMap.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 596.6666666666666,
+                "y": 398.6666666666667
+            }
+        }
+    },
+    "last.imagePath": "F:/_projects/Unity/FlurryOfInstict/Assets/Data/Source/TestTilemap",
+    "map.lastUsedFormat": "tmx",
+    "map.layerDataFormat": null,
+    "map.tileHeight": 36,
+    "map.tileWidth": 36,
+    "openFiles": [
+    ],
+    "project": "Road.tiled-project",
+    "property.type": "bool",
+    "recentFiles": [
+        "Road.tsx",
+        ":/automap-tiles.tsx",
+        "TileMap.tmx",
+        "Rules/rules.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 36,
+        "width": 36
+    }
+}

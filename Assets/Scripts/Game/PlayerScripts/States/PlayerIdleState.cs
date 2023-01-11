@@ -21,6 +21,7 @@ public class PlayerIdleState : PlayerStateMachine
 		_inputSystemReaderService.VerticalButtonUsed += SetRunState;
 		_physicsMovement.Jumped += SetJumpState;
 		Animator.Play(AnimationHasher.IdleHash);
+
 		Debug.Log(AnimationHasher.IdleHash);
 	}
 

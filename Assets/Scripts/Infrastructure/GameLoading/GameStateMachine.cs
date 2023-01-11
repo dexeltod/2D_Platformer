@@ -4,7 +4,7 @@ using UI_Scripts.Curtain;
 
 namespace Infrastructure
 {
-	public class GameStateMachine
+	public class GameStateMachine : IGameStateMachine
 	{
 		private readonly Dictionary<Type, IExitState> _states;
 		private IExitState _activeState;

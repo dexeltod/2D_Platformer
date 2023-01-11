@@ -9,7 +9,7 @@ public class CameraPlayerGetter : MonoBehaviour
 
 	private IGameFactory _gameFactory;
 
-	private void Start()
+	private void Awake()
 	{
 		_cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
 		_gameFactory = ServiceLocator.Container.Single<IGameFactory>();
