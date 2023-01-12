@@ -12,11 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff72ddc2da234e244a8e96eb44e4c03d, type: 3}
   m_Name: ST2U Settings
   m_EditorClassIdentifier: 
-  m_PixelsPerUnit: 100
+  m_PixelsPerUnit: 36
   m_EdgesPerEllipse: 32
   m_AnimationFramerate: 20
-  m_DefaultMaterial: {fileID: 0}
-  m_MaterialMatchings: []
+  m_DefaultMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_MaterialMatchings:
+  - m_LayerName: road
+    m_Material: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - m_LayerName: wall
+    m_Material: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_ObjectTypesXml: {fileID: 0}
   m_ParseXmlError: 
   m_CollisionGeometryType: 1
