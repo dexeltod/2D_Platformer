@@ -6,11 +6,16 @@ using UnityEngine;
 public class Bootstrapper : MonoBehaviour, ICoroutineRunner
 {
 	[SerializeField] private LoadingCurtain _loadingCurtain;
+	[Header("Game resolution")]
+	[SerializeField] private int _height;
+	[SerializeField] private int _width;
+	[SerializeField] private bool _isFullscreen;
 	
 	private Game _game;
 	
 	private void Awake()
 	{
+		Screen.SetResolution(_width, _height, _isFullscreen);
 		_game = new Game(this, Instantiate(_loadingCurtain));
 		_game.StateMachine.Enter<BootstrapState>();
 

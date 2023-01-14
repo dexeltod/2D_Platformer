@@ -52,10 +52,10 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 33f156bd8c637a449a813224651bceca, type: 2}
+  - {fileID: 2100000, guid: d0e4859a009190940bc34311257696d9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1626570576, guid: 5245abc8a8adeae40801b8b5f66b932d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -105,15 +105,15 @@ MonoBehaviour:
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
   m_SelfShadows: 1
-  m_ApplyToSortingLayers: 000000000b4ae255
+  m_ApplyToSortingLayers: 0b4ae25500000000
   m_ShapePath:
-  - {x: -1, y: -1, z: 0}
-  - {x: -1, y: 1, z: 0}
-  - {x: 1, y: 1, z: 0}
-  - {x: 1, y: -1, z: 0}
-  m_ShapePathHash: 0
+  - {x: -0.43230057, y: -0.4362564, z: 0}
+  - {x: -0.43584824, y: 0.43005943, z: 0}
+  - {x: 0.4295349, y: 0.44227028, z: 0}
+  - {x: 0.43756104, y: -0.42899513, z: 0}
+  m_ShapePathHash: -1168037099
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1702
+  m_InstanceId: -1364
 --- !u!61 &8267087216483706448
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -127,18 +127,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.99807775}
+  m_Offset: {x: -0.0037517548, y: 0.41847706}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 0.8888889, y: 0.8888889}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 0.0038444996}
+  m_Size: {x: 0.8631859, y: 0.04960823}
   m_EdgeRadius: 0
 --- !u!251 &3988713748890712569
 PlatformEffector2D:
@@ -148,7 +148,7 @@ PlatformEffector2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 362831070883724969}
   m_Enabled: 1
-  m_UseColliderMask: 1
+  m_UseColliderMask: 0
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295

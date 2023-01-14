@@ -8,17 +8,15 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 1fa25d03934ea624a82bf2fcee6f0873, type: 3}
-  missingFiles:
-  - :/automap-tiles.tsx
-  errors:
-  - 'Missing tileset asset: :/automap-tiles.tsx'
+  missingFiles: []
+  errors: []
   warnings: []
   missingSortingLayers: []
   missingLayers: []
   missingTags: []
   importerVersion: 26
   pixelsPerUnit: 36
-  edgesPerEllipse: 32
+  edgesPerEllipse: 36
   numberOfObjectsImported: 2
   tilesAsObjects: 0
   sortingMode: 0

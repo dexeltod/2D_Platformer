@@ -48,8 +48,12 @@ MonoBehaviour:
   _playerLayer:
     serializedVersion: 2
     m_Bits: 128
-  _viewDistance: 8.1
-  _angleView: 33.42
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  _viewDistance: 8
+  _minAngleView: 68
+  _maxAngleView: 230
 --- !u!1 &1302770318
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +226,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 33f156bd8c637a449a813224651bceca, type: 2}
+  - {fileID: 2100000, guid: 61f4b980f23605b40a9ea1225418133d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -362,7 +366,7 @@ MonoBehaviour:
   - {x: 0.12706184, y: 0.7423568, z: 0}
   m_ShapePathHash: -801796281
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1560
+  m_InstanceId: -1620
 --- !u!114 &6424921582603155147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,7 +384,7 @@ MonoBehaviour:
   _enemyMeleeChecker: {fileID: 1083062508278228268}
   _wallCheckTransform: {fileID: 6645501397967116688}
   _ledgeCheckTransform: {fileID: 5204559060345414845}
-  _isEnableGizmos: 1
+  _isEnableGizmos: 0
 --- !u!114 &5728285811741105012
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -45,3 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _loadingCurtain: {fileID: 8465162467581015515, guid: 25538534094149143a472e3ef05e9df0, type: 3}
+  _height: 1080
+  _width: 1920
+  _isFullscreen: 1

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143431069}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -86,7 +86,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 620601074}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.005, z: 0}
+  m_LocalPosition: {x: 0, y: -0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -210,7 +210,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 33f156bd8c637a449a813224651bceca, type: 2}
+  - {fileID: 2100000, guid: 61f4b980f23605b40a9ea1225418133d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -419,7 +419,7 @@ MonoBehaviour:
   - {x: 0.03767395, y: 1.3683634, z: 0}
   m_ShapePathHash: -26323151
   m_Mesh: {fileID: 0}
-  m_InstanceId: 180482
+  m_InstanceId: 145918
 --- !u!114 &3334711396594127323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,7 +517,7 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  _slopeCheckDistance: 0.5
+  _slopeCheckDistance: 1
 --- !u!114 &6716184748015567100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,9 +532,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isDebug: 1
   _feetPosition: {fileID: 187862530}
-  _moveSpeed: 5
-  _jumpForce: 20
-  _gravityModifier: 9
+  _moveSpeed: 4
+  _jumpForce: 7
+  _gravityModifier: 4
   _verticalVelocityLimit: 7
 --- !u!114 &1359097841
 MonoBehaviour:
@@ -553,7 +553,7 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  _groundCheckSize: {x: 0.2, y: 0.005}
+  _groundCheckSize: {x: 0.2, y: 0.03}
 --- !u!1 &9092711923238084613
 GameObject:
   m_ObjectHideFlags: 0

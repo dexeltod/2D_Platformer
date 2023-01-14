@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 261618151710906796}
   - component: {fileID: 261618151710906797}
   - component: {fileID: 261618151710906802}
-  - component: {fileID: 261618151710906803}
   - component: {fileID: 261618151710906800}
   - component: {fileID: 261618151710906801}
   - component: {fileID: 957324883}
@@ -60,11 +59,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: -30
+  far clip plane: 991.4
   field of view: 60
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 5.0555553
   m_Depth: 2
   m_CullingMask:
     serializedVersion: 2
@@ -88,20 +87,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 261618151710906806}
   m_Enabled: 1
---- !u!114 &261618151710906803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 261618151710906806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fff2be4f6cdc424a837c67018f8e395, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _height: 2
-  _closeness: -30
 --- !u!114 &261618151710906800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,10 +133,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ComponentVersion: 1
-  m_AssetsPPU: 90
-  m_RefResolutionX: 1920
-  m_RefResolutionY: 1080
-  m_CropFrame: 0
+  m_AssetsPPU: 36
+  m_RefResolutionX: 644
+  m_RefResolutionY: 364
+  m_CropFrame: 4
   m_GridSnapping: 0
   m_UpscaleRT: 0
   m_PixelSnapping: 0
@@ -174,8 +159,8 @@ MonoBehaviour:
   m_ShowCameraFrustum: 1
   m_IgnoreTimeScale: 0
   m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
-  m_BlendUpdateMethod: 1
+  m_UpdateMethod: 1
+  m_BlendUpdateMethod: 0
   m_DefaultBlend:
     m_Style: 1
     m_Time: 2
