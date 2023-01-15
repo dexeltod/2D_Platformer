@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 36
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -1120,8 +1120,8 @@ TextureImporter:
       SchoolGuy_40: -1119269974
       SchoolGuy_17: -326334058
       SchoolGuy_1: -1994859808
-      SchoolGuy_32: 436727929
       SchoolGuy_14: 242020803
+      SchoolGuy_32: 436727929
       SchoolGuy_3: -1488521966
       SchoolGuy_35: -205294662
       SchoolGuy_22: -875619082

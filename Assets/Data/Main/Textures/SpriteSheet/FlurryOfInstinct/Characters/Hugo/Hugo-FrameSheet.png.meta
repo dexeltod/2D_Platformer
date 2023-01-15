@@ -215,7 +215,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 36
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -1159,11 +1159,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Hugo-FrameSheet_34: -584818155
       Hugo-FrameSheet_4: -3673783774927768568
       Hugo-FrameSheet_20: -4568218779290065989
       Hugo-FrameSheet_6: -5448222700576922680
       Hugo-FrameSheet_0: -3429742815825216283
-      Hugo-FrameSheet_9: -2124901699745128805
       Hugo-FrameSheet_17: -7223163850624471683
       Hugo-FrameSheet_33: 240936260
       Hugo-FrameSheet_32: 660742523
@@ -1195,8 +1195,8 @@ TextureImporter:
       Hugo-FrameSheet_23: -901692854
       Hugo-FrameSheet_31: 562258398
       Hugo-FrameSheet_30: 1175147590
+      Hugo-FrameSheet_9: -2124901699745128805
       Hugo-FrameSheet_3: -1292315459004852390
-      Hugo-FrameSheet_34: -584818155
       Hugo-FrameSheet_12: -4530548112234773028
       Hugo-FrameSheet_10: -3879162063215764914
   spritePackingTag: 

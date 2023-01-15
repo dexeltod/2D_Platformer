@@ -48,3 +48,4 @@ MonoBehaviour:
   _height: 1080
   _width: 1920
   _isFullscreen: 1
+  _isEnableChangingResolution: 0

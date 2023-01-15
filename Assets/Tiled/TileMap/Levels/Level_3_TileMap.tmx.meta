@@ -15,8 +15,8 @@ ScriptedImporter:
   missingLayers: []
   missingTags: []
   importerVersion: 26
-  pixelsPerUnit: 36
-  edgesPerEllipse: 36
+  pixelsPerUnit: 32
+  edgesPerEllipse: 32
   numberOfObjectsImported: 2
   tilesAsObjects: 0
   sortingMode: 0

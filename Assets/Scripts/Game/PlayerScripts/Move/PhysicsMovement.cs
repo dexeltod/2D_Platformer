@@ -13,7 +13,6 @@ public class PhysicsMovement : MonoBehaviour
 	[SerializeField] private Transform _feetPosition;
 	[SerializeField] private float _moveSpeed;
 	[SerializeField] private float _jumpForce = 3f;
-	[SerializeField] private float _gravityModifier = 1f;
 	[SerializeField] private float _verticalVelocityLimit = -5f;
 
 	private GroundChecker _groundChecker;
@@ -131,6 +130,7 @@ public class PhysicsMovement : MonoBehaviour
 
 		_offset.y = Mathf.Clamp(_offset.y, -_verticalVelocityLimit, int.MaxValue);
 
+
 		CheckDirection();
 		CheckRunning();
 		_rigidbody2D.position += _offset * Time.deltaTime;
@@ -194,7 +194,7 @@ public class PhysicsMovement : MonoBehaviour
 	{
 		while (IsGrounded == false || _isGlide == true)
 		{
-			_inertiaDirection.y -= _gravityModifier * -Physics2D.gravity.y * Time.deltaTime;
+			_inertiaDirection.y -= _rigidbody2D.gravityScale * -Physics2D.gravity.y * Time.deltaTime;
 			_inertiaDirection.x = _movementDirection.x;
 			yield return null;
 		}

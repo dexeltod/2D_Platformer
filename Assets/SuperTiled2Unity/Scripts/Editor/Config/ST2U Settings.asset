@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ST2U Settings
   m_EditorClassIdentifier: 
   m_PixelsPerUnit: 36
-  m_EdgesPerEllipse: 32
+  m_EdgesPerEllipse: 36
   m_AnimationFramerate: 20
   m_DefaultMaterial: {fileID: 2100000, guid: d0e4859a009190940bc34311257696d9, type: 2}
   m_MaterialMatchings:

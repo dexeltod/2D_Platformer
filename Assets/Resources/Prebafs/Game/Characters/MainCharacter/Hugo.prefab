@@ -357,8 +357,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1}
-  m_Size: {x: 0.5, y: 2}
+  m_Offset: {x: 0, y: 0.45671368}
+  m_Size: {x: 0.5, y: 0.91342735}
   m_Direction: 0
 --- !u!50 &1357539709
 Rigidbody2D:
@@ -375,7 +375,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 0.1
+  m_GravityScale: 4
   m_Material: {fileID: 6200000, guid: 0bc7b968859d54b46bd5434612a696c1, type: 2}
   m_Interpolate: 2
   m_SleepingMode: 0
@@ -419,7 +419,7 @@ MonoBehaviour:
   - {x: 0.03767395, y: 1.3683634, z: 0}
   m_ShapePathHash: -26323151
   m_Mesh: {fileID: 0}
-  m_InstanceId: 145918
+  m_InstanceId: 239146
 --- !u!114 &3334711396594127323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,8 +533,7 @@ MonoBehaviour:
   _isDebug: 1
   _feetPosition: {fileID: 187862530}
   _moveSpeed: 4
-  _jumpForce: 7
-  _gravityModifier: 4
+  _jumpForce: 15
   _verticalVelocityLimit: 7
 --- !u!114 &1359097841
 MonoBehaviour:
@@ -578,7 +577,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9092711923238084613}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.76, y: 1.24, z: 0}
+  m_LocalPosition: {x: -0.3, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -598,11 +597,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 203862188148392364, guid: 370d97115cedbbf4d97416ee00b33f8c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 203862188148392364, guid: 370d97115cedbbf4d97416ee00b33f8c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 203862188148392364, guid: 370d97115cedbbf4d97416ee00b33f8c, type: 3}
       propertyPath: m_LocalPosition.z
