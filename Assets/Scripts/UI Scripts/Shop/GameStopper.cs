@@ -1,8 +1,9 @@
+using Infrastructure.Services;
 using UnityEngine;
 
 public class GameStopper : MonoBehaviour
 {
-	private InputSystemReaderService _inputSystemReaderService;
+	private InputService _inputSystemReaderService;
 
 	private void OnEnable()
 	{

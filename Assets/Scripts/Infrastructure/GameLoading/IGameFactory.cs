@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Infrastructure
 {
-	public interface IGameFactory : IService
+	public interface IPlayerFactory : IService
 	{
 		GameObject MainCharacter { get; }
 		event Action MainCharacterCreated;

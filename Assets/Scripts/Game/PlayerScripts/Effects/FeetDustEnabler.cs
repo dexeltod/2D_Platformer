@@ -8,13 +8,13 @@ public class FeetDustEnabler : MonoBehaviour
 	private PhysicsMovement _physicsMovement;
 	private Transform _feetPosition;
 
-	private IGameFactory _factory;
+	private IPlayerFactory _factory;
 	private VisualEffect _visualEffect;
 
 	private void Start()
 	{
 		_visualEffect = GetComponent<VisualEffect>();
-		_factory = ServiceLocator.Container.Single<IGameFactory>();
+		_factory = ServiceLocator.Container.Single<IPlayerFactory>();
 
 		if (_factory.MainCharacter != null)
 			Initialize();

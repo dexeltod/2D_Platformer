@@ -1,14 +1,17 @@
+using PlayerScripts.TestStateMachine;
 using PlayerScripts.Weapons;
 using UI_Scripts.Shop;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent( typeof(PlayerBehaviour), typeof( PhysicsMovement))]
+[RequireComponent(typeof(PlayerBehaviour), typeof(PhysicsMovement))]
 public class Player : MonoBehaviour
 {
 	private PhysicsMovement _physicsMovement;
 	private float _lookDirection = -1;
 	public float LookDirection => _lookDirection;
+
+	private StateService _stateService;
 
 	public event UnityAction<int, WeaponBase> Bought;
 

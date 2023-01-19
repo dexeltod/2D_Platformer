@@ -7,7 +7,7 @@ public class BackgroundParallax : MonoBehaviour
 	[SerializeField] private CinemachineVirtualCamera _camera;
 	private Transform _followedTarget;
 
-	private IGameFactory _gameFactory;
+	private IPlayerFactory _playerFactory;
 	private Vector2 _startPosition;
 	private float _startZ;
 
@@ -16,18 +16,21 @@ public class BackgroundParallax : MonoBehaviour
 
 	private void Start()
 	{
+		_playerFactory = ServiceLocator.Container.Single<IPlayerFactory>();
 		_startPosition = transform.position;
 		_startZ = transform.position.z;
 
-		_gameFactory = ServiceLocator.Container.Single<IGameFactory>();
-		_gameFactory.MainCharacterCreated += OnSceneLoaded;
+		_playerFactory.MainCharacterCreated += OnSceneLoaded;
 	}
 
-	private void OnSceneLoaded() => 
-		_followedTarget = _gameFactory.MainCharacter.transform;
+	private void OnSceneLoaded() =>
+		_followedTarget = _playerFactory.MainCharacter.transform;
 
 	private void FixedUpdate()
 	{
+		if (_followedTarget == null)
+			return;
+
 		Vector2 currentPosition = _startPosition + _travel * _distanceFromTarget;
 
 		transform.position = new Vector3(currentPosition.x, _camera.transform.position.y, _startZ);

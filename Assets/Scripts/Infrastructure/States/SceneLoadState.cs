@@ -8,11 +8,11 @@ namespace Infrastructure
 		private readonly GameStateMachine _gameStateMachine;
 		private readonly SceneLoader _sceneLoader;
 		private readonly LoadingCurtain _loadingCurtain;
-		private readonly IGameFactory _gameFactory;
+		private readonly IPlayerFactory _playerFactory;
 
-		public SceneLoadState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain, IGameFactory gameFactory)
+		public SceneLoadState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain, IPlayerFactory playerFactory)
 		{
-			_gameFactory = gameFactory;
+			_playerFactory = playerFactory;
 			_gameStateMachine = gameStateMachine;
 			_sceneLoader = sceneLoader;
 			_loadingCurtain = loadingCurtain;
@@ -26,11 +26,13 @@ namespace Infrastructure
 
 		private void OnLoaded()
 		{
-			_gameFactory.CreateHero(CreateInitialPoint());
+			GameObject hero = _playerFactory.CreateHero(CreateInitialPoint());
+			
+			
 			_gameStateMachine.Enter<GameLoopState>();
 		}
 
-		private GameObject CreateInitialPoint() => GameObject.FindWithTag(NameConstants.PlayerSpawnPointTag);
+		private GameObject CreateInitialPoint() => GameObject.FindWithTag(ConstantNames.PlayerSpawnPointTag);
 
 		public void Exit() => 
 			_loadingCurtain.Hide();

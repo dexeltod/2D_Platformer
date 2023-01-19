@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6236769771742044720}
   - component: {fileID: 835158783862073680}
   - component: {fileID: 1062215993274632596}
-  - component: {fileID: 8267087216483706448}
-  - component: {fileID: 3988713748890712569}
+  - component: {fileID: -2227941967744162546}
+  - component: {fileID: -364212944356500670}
   m_Layer: 3
   m_Name: BigBox
   m_TagString: Untagged
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 1626570576, guid: 5245abc8a8adeae40801b8b5f66b932d, type: 3}
+  m_Sprite: {fileID: 1036807826, guid: 946ec22a56944f84dab1e63633960312, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,8 +103,8 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
-  m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_CastsShadows: 0
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 0b4ae25500000000
   m_ShapePath:
   - {x: -0.43230057, y: -0.4362564, z: 0}
@@ -113,8 +113,27 @@ MonoBehaviour:
   - {x: 0.43756104, y: -0.42899513, z: 0}
   m_ShapePathHash: -1168037099
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1364
---- !u!61 &8267087216483706448
+  m_InstanceId: 156530
+--- !u!251 &-2227941967744162546
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362831070883724969}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
+--- !u!61 &-364212944356500670
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,35 +146,16 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0037517548, y: 0.41847706}
+  m_Offset: {x: 0, y: 0.4871037}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8888889, y: 0.8888889}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8631859, y: 0.04960823}
+  m_Size: {x: 1, y: 0.025792599}
   m_EdgeRadius: 0
---- !u!251 &3988713748890712569
-PlatformEffector2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 362831070883724969}
-  m_Enabled: 1
-  m_UseColliderMask: 0
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RotationalOffset: 0
-  m_UseOneWay: 1
-  m_UseOneWayGrouping: 0
-  m_SurfaceArc: 90
-  m_UseSideFriction: 0
-  m_UseSideBounce: 0
-  m_SideArc: 1

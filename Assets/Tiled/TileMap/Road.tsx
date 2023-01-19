@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.9" tiledversion="1.9.2" name="Road" tilewidth="32" tileheight="32" tilecount="486" columns="33">
+<tileset version="1.9" tiledversion="1.9.2" name="Road" tilewidth="32" tileheight="32" tilecount="429" columns="33">
  <image source="TileMaps/StreetTiles.png" width="1062" height="442"/>
+ <tile id="6" probability="1e+09"/>
  <tile id="8">
   <objectgroup draworder="index" id="2">
    <object id="2" x="31.9943" y="0.00142045">
@@ -58,7 +59,7 @@
  </tile>
  <tile id="41">
   <objectgroup draworder="index" id="2">
-   <object id="1" x="0" y="0" width="36" height="36"/>
+   <object id="2" x="0" y="0" width="32" height="32"/>
   </objectgroup>
  </tile>
  <tile id="42">
@@ -117,9 +118,29 @@
    <object id="3" x="0" y="0" width="32" height="32"/>
   </objectgroup>
  </tile>
+ <tile id="53" probability="0.2">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="32" height="32"/>
+  </objectgroup>
+ </tile>
+ <tile id="54" probability="0.2">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="32" height="32"/>
+  </objectgroup>
+ </tile>
+ <tile id="55" probability="0.2">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="32" height="32"/>
+  </objectgroup>
+ </tile>
  <tile id="66">
   <objectgroup draworder="index" id="2">
    <object id="3" x="0" y="0" width="32" height="32"/>
+  </objectgroup>
+ </tile>
+ <tile id="67">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="32" height="32"/>
   </objectgroup>
  </tile>
  <tile id="68">
@@ -144,12 +165,12 @@
  </tile>
  <tile id="73">
   <objectgroup draworder="index" id="2">
-   <object id="1" x="0" y="0" width="36" height="36"/>
+   <object id="2" x="0" y="0" width="32" height="32"/>
   </objectgroup>
  </tile>
  <tile id="74">
   <objectgroup draworder="index" id="2">
-   <object id="1" x="0" y="0" width="36" height="36"/>
+   <object id="2" x="0" y="0" width="32" height="32"/>
   </objectgroup>
  </tile>
  <tile id="75">
@@ -177,6 +198,7 @@
    <object id="2" x="0" y="0" width="32" height="32"/>
   </objectgroup>
  </tile>
+ <tile id="83" probability="-6.999"/>
  <tile id="99">
   <objectgroup draworder="index" id="2">
    <object id="2" x="0" y="0" width="32" height="32"/>
@@ -222,6 +244,7 @@
    <object id="2" x="0" y="0" width="32" height="32"/>
   </objectgroup>
  </tile>
+ <tile id="116" probability="-6.999"/>
  <tile id="132">
   <objectgroup draworder="index" id="2">
    <object id="2" x="0" y="0" width="32" height="32"/>
@@ -242,6 +265,8 @@
    <object id="1" x="0" y="0" width="36" height="36"/>
   </objectgroup>
  </tile>
+ <tile id="149" probability="-6.999"/>
+ <tile id="150" probability="-6.999"/>
  <tile id="165">
   <objectgroup draworder="index" id="2">
    <object id="2" x="0" y="0" width="32" height="32"/>
@@ -295,26 +320,19 @@
  <tile id="237">
   <objectgroup draworder="index" id="2">
    <object id="2" x="0" y="0" width="32" height="32"/>
+   <object id="3" x="0" y="0" width="32" height="32"/>
   </objectgroup>
  </tile>
  <tile id="238">
   <objectgroup draworder="index" id="2">
    <object id="2" x="0" y="0" width="32" height="32"/>
+   <object id="3" x="0" y="0" width="32" height="32"/>
   </objectgroup>
  </tile>
  <tile id="239">
   <objectgroup draworder="index" id="2">
    <object id="2" x="0" y="0" width="32" height="32"/>
-  </objectgroup>
- </tile>
- <tile id="240">
-  <objectgroup draworder="index" id="2">
-   <object id="2" x="0" y="0" width="32" height="32"/>
-  </objectgroup>
- </tile>
- <tile id="241">
-  <objectgroup draworder="index" id="2">
-   <object id="2" x="0" y="0" width="32" height="32"/>
+   <object id="3" x="0" y="0" width="32" height="32"/>
   </objectgroup>
  </tile>
  <tile id="270">
@@ -332,16 +350,6 @@
    <object id="2" x="0" y="0" width="32" height="32"/>
   </objectgroup>
  </tile>
- <tile id="273">
-  <objectgroup draworder="index" id="2">
-   <object id="2" x="0" y="0" width="32" height="32"/>
-  </objectgroup>
- </tile>
- <tile id="274">
-  <objectgroup draworder="index" id="2">
-   <object id="2" x="0" y="0" width="32" height="32"/>
-  </objectgroup>
- </tile>
  <tile id="303">
   <objectgroup draworder="index" id="2">
    <object id="2" x="-0.0909091" y="0.818182" width="32" height="32"/>
@@ -353,16 +361,6 @@
   </objectgroup>
  </tile>
  <tile id="305">
-  <objectgroup draworder="index" id="2">
-   <object id="2" x="0" y="0" width="32" height="32"/>
-  </objectgroup>
- </tile>
- <tile id="306">
-  <objectgroup draworder="index" id="2">
-   <object id="2" x="0" y="0" width="32" height="32"/>
-  </objectgroup>
- </tile>
- <tile id="307">
   <objectgroup draworder="index" id="2">
    <object id="2" x="0" y="0" width="32" height="32"/>
   </objectgroup>

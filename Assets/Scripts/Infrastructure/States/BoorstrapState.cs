@@ -19,19 +19,19 @@ namespace Infrastructure
 
 		public void Enter()
 		{
-			_sceneLoader.Load(NameConstants.InitialScene, EnterLoadLevel);
+			_sceneLoader.Load(ConstantNames.InitialScene, EnterLoadLevel);
 		}
 
 		private void RegisterServices()
 		{
 			_serviceLocator.RegisterAsSingle<IGameStateMachine>(_gameStateMachine);
 			_serviceLocator.RegisterAsSingle<IAssetProvider>(new AssetProvider());
-			_serviceLocator.RegisterAsSingle<IGameFactory>(new GameFactory(_serviceLocator.Single<IAssetProvider>()));
 			_serviceLocator.RegisterAsSingle<IInputService>(new InputService());
+			_serviceLocator.RegisterAsSingle<IPlayerFactory>(new PlayerFactory(_serviceLocator.Single<IAssetProvider>()));
 		}
 
 		private void EnterLoadLevel() =>
-			_gameStateMachine.Enter<SceneLoadState, string>(NameConstants.FirstLevel);
+			_gameStateMachine.Enter<SceneLoadState, string>(ConstantNames.FirstLevel);
 
 		public void Exit()
 		{

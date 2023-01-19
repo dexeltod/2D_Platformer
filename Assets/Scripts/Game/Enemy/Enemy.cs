@@ -13,7 +13,7 @@ public abstract class Enemy : MonoBehaviour
 	private EnemyObserver _enemyObserver;
 
 	private int _maxHealth;
-	private IGameFactory _factory;
+	private IPlayerFactory _factory;
 
 	public Player Target => _target;
 	public int Health { get; private set; }
@@ -29,7 +29,7 @@ public abstract class Enemy : MonoBehaviour
 
 	private void Start()
 	{
-		_factory = ServiceLocator.Container.Single<IGameFactory>();
+		_factory = ServiceLocator.Container.Single<IPlayerFactory>();
 		_factory.MainCharacterCreated += OnLevelLoaded;
 		Damage = _enemyData.Damage;
 		_maxHealth = _enemyData.Health;

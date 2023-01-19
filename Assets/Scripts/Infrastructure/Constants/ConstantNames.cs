@@ -1,4 +1,4 @@
-﻿public static class NameConstants
+﻿public static class ConstantNames
 {
 	public const string PlayerSpawnPointTag = "InitialPoint";
 	public const string FirstLevel = "Level_1";

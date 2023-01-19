@@ -15,20 +15,20 @@ public class EnemyAttackBehaviour : MonoBehaviour
 	private AnimationHasher _animationHasher;
 	private Coroutine _currentCoroutine;
 	private bool _canAttack;
-	private IGameFactory _gameFactory;
+	private IPlayerFactory _playerFactory;
 
 	private void Awake()
 	{
-		_gameFactory = ServiceLocator.Container.Single<IGameFactory>();
+		_playerFactory = ServiceLocator.Container.Single<IPlayerFactory>();
 		_animator = GetComponent<Animator>();
 		_animationHasher = GetComponent<AnimationHasher>();
-		_gameFactory.MainCharacterCreated += OnLevelLoaded;
+		_playerFactory.MainCharacterCreated += OnLevelLoaded;
 	}
 
 	private void OnLevelLoaded()
 	{
-		_playerHealth = _gameFactory.MainCharacter.GetComponent<PlayerHealth>();
-		_gameFactory.MainCharacterCreated -= OnLevelLoaded;
+		_playerHealth = _playerFactory.MainCharacter.GetComponent<PlayerHealth>();
+		_playerFactory.MainCharacterCreated -= OnLevelLoaded;
 	}
 	
 	private void OnEnable()

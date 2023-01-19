@@ -13,34 +13,34 @@ namespace Infrastructure.Services
 		public event Action JumpButtonUsed;
 		public event Action JumpButtonCanceled;
 
-		private readonly InputSystem _inputActions;
+		private readonly InputSystem _inputSystem;
 
 		public InputService()
 		{
-			_inputActions = new InputSystem();
+			_inputSystem = new InputSystem();
 			EnableInputs();
 		}
 
 		public void EnableInputs()
 		{
-			_inputActions.Enable();
-			_inputActions.Player.Move.performed += OnHorizontalMovement;
-			_inputActions.Player.Move.canceled += OnHorizontalMovement;
-			_inputActions.Player.Jump.performed += OnJump;
-			_inputActions.Player.Jump.canceled += OnJump;
-			_inputActions.Player.Attack.performed += OnAttack;
-			_inputActions.Player.Use.started += OnUse;
+			_inputSystem.Enable();
+			_inputSystem.Player.Move.performed += OnHorizontalMovement;
+			_inputSystem.Player.Move.canceled += OnHorizontalMovement;
+			_inputSystem.Player.Jump.performed += OnJump;
+			_inputSystem.Player.Jump.canceled += OnJump;
+			_inputSystem.Player.Attack.performed += OnAttack;
+			_inputSystem.Player.Use.started += OnUse;
 		}
 
 		public void DisableInputs()
 		{
-			_inputActions.Disable();
-			_inputActions.Player.Move.performed -= OnHorizontalMovement;
-			_inputActions.Player.Move.canceled -= OnHorizontalMovement;
-			_inputActions.Player.Jump.performed -= OnJump;
-			_inputActions.Player.Jump.canceled -= OnJump;
-			_inputActions.Player.Attack.performed -= OnAttack;
-			_inputActions.Player.Use.started -= OnUse;
+			_inputSystem.Disable();
+			_inputSystem.Player.Move.performed -= OnHorizontalMovement;
+			_inputSystem.Player.Move.canceled -= OnHorizontalMovement;
+			_inputSystem.Player.Jump.performed -= OnJump;
+			_inputSystem.Player.Jump.canceled -= OnJump;
+			_inputSystem.Player.Attack.performed -= OnAttack;
+			_inputSystem.Player.Use.started -= OnUse;
 		}
 
 		private void OnUse(InputAction.CallbackContext context)

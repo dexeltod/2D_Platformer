@@ -21,24 +21,24 @@ public class EnemyFollowPlayerBehaviour : MonoBehaviour
 	private Vector2 _targetDirection;
 
 	private float _lastFollowDirection;
-	private IGameFactory _gameFactory;
+	private IPlayerFactory _playerFactory;
 
 	public event Action PlayerIsAbove;
 
 	private void Awake()
 	{
-		_gameFactory = ServiceLocator.Container.Single<IGameFactory>();
+		_playerFactory = ServiceLocator.Container.Single<IPlayerFactory>();
 		_enemyObserver = GetComponent<EnemyObserver>();
 		_animator = GetComponent<Animator>();
 		_animationHasher = GetComponent<AnimationHasher>();
 		_rigidbody2D = GetComponent<Rigidbody2D>();
-		_gameFactory.MainCharacterCreated += OnLevelLoaded;
+		_playerFactory.MainCharacterCreated += OnLevelLoaded;
 	}
 
 	private void OnLevelLoaded()
 	{
-		_player = _gameFactory.MainCharacter.GetComponent<Player>();
-		_gameFactory.MainCharacterCreated -= OnLevelLoaded;
+		_player = _playerFactory.MainCharacter.GetComponent<Player>();
+		_playerFactory.MainCharacterCreated -= OnLevelLoaded;
 	}
 
 	private void OnEnable()

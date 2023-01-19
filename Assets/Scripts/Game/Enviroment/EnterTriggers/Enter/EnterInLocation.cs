@@ -8,12 +8,12 @@ public class EnterInLocation : MonoBehaviour
 	
 	private Transform _playerTransform;
 	private IInputService _inputService;
-	private IGameFactory _factory;
+	private IPlayerFactory _factory;
 
 	private void Awake()
 	{
 		_inputService = ServiceLocator.Container.Single<IInputService>();
-		_factory = ServiceLocator.Container.Single<IGameFactory>();
+		_factory = ServiceLocator.Container.Single<IPlayerFactory>();
 		_factory.MainCharacterCreated += OnLevelLoaded;
 	}
 

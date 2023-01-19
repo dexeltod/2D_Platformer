@@ -7,20 +7,20 @@ public class CameraPlayerGetter : MonoBehaviour
 	private Transform _player;
 	private CinemachineVirtualCamera _cinemachineVirtualCamera;
 
-	private IGameFactory _gameFactory;
+	private IPlayerFactory _playerFactory;
 
 	private void Awake()
 	{
 		_cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
-		_gameFactory = ServiceLocator.Container.Single<IGameFactory>();
-		_gameFactory.MainCharacterCreated += Initialize;
+		_playerFactory = ServiceLocator.Container.Single<IPlayerFactory>();
+		_playerFactory.MainCharacterCreated += Initialize;
 	}
 
 	private void Initialize()
 	{
-		_gameFactory.MainCharacterCreated -= Initialize;
-		_player = _gameFactory.MainCharacter.transform;
-		_cinemachineVirtualCamera.Follow = _player.transform;
-		_cinemachineVirtualCamera.LookAt = _player.transform;
+		_playerFactory.MainCharacterCreated -= Initialize;
+		_player = _playerFactory.MainCharacter.transform;
+		_cinemachineVirtualCamera.Follow = _player;
+		_cinemachineVirtualCamera.LookAt = _player;
 	}
 }

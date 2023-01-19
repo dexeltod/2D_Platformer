@@ -15,7 +15,7 @@ public class EnemyPlayerChecker : MonoBehaviour
 
 	private float _angleView;
 
-	private IGameFactory _factory;
+	private IPlayerFactory _factory;
 	private Transform _playerTransform;
 	private List<RaycastHit2D> _hits;
 	private Vector2 _directionToTarget;
@@ -38,7 +38,7 @@ public class EnemyPlayerChecker : MonoBehaviour
 	private void Start()
 	{
 		_angleView = _minAngleView;
-		_factory = ServiceLocator.Container.Single<IGameFactory>();
+		_factory = ServiceLocator.Container.Single<IPlayerFactory>();
 		_factory.MainCharacterCreated += OnLevelLoaded;
 	}
 

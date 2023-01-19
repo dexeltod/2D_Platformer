@@ -15,7 +15,7 @@ namespace Infrastructure
 			_states = new Dictionary<Type, IExitState>
 			{
 				[typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, serviceLocator),
-				[typeof(SceneLoadState)] = new SceneLoadState(this, sceneLoader, loadingCurtain, serviceLocator.Single<IGameFactory>()),
+				[typeof(SceneLoadState)] = new SceneLoadState(this, sceneLoader, loadingCurtain, serviceLocator.Single<IPlayerFactory>()),
 				[typeof(GameLoopState)] = new GameLoopState(this),
 			};
 		}

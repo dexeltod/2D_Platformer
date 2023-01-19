@@ -7,12 +7,12 @@ public class CameraFollow : MonoBehaviour
 	[SerializeField] private float _closeness = -23;
 	private Transform _player;
 
-	private IGameFactory _gameFactory;
+	private IPlayerFactory _playerFactory;
 
 	private void Start()
 	{
-		_gameFactory = ServiceLocator.Container.Single<IGameFactory>();
-		_gameFactory.MainCharacterCreated += Initialize;
+		_playerFactory = ServiceLocator.Container.Single<IPlayerFactory>();
+		_playerFactory.MainCharacterCreated += Initialize;
 	}
 
 	private void FixedUpdate() =>
@@ -20,8 +20,8 @@ public class CameraFollow : MonoBehaviour
 
 	private void Initialize()
 	{
-		_gameFactory.MainCharacterCreated -= Initialize;
-		_player = _gameFactory.MainCharacter.transform;
+		_playerFactory.MainCharacterCreated -= Initialize;
+		_player = _playerFactory.MainCharacter.transform;
 	}
 
 	private void UpdateCameraPosition()
