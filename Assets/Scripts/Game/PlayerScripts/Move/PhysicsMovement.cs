@@ -1,5 +1,4 @@
 using System.Collections;
-using Infrastructure;
 using Infrastructure.Services;
 using UnityEngine;
 using UnityEngine.Events;
@@ -25,31 +24,30 @@ public class PhysicsMovement : MonoBehaviour
 	private Vector2 _inertiaDirection;
 	private Vector2 _offset;
 
+	private bool _isRotate = true;
+	private bool _lastIsRotate;
 	private bool _isCanMove;
 	private bool _isGlide;
-	private bool _lastIsRotate;
-	private bool _isRotate = true;
 	private bool _isRunning;
 	private bool _isRunningLast;
+	private bool _isFall;
+	private bool _lastIsFall;
+
+	private int _currentJumpStopCount;
+	private int _maxJumpStopCount;
 
 	public Transform FeetPosition => _feetPosition;
 	public bool IsGrounded { get; private set; }
 	public Vector2 MovementDirection => _movementDirection;
 	public Vector2 Offset => _offset;
 
-	private int _currentJumpStopCount;
-	private int _maxJumpStopCount;
-
 	public event UnityAction Glided;
-	public event UnityAction Fallen;
-	public event UnityAction Grounded;
-	public event UnityAction Jumped;
+	public event UnityAction<bool> Fallen;
 	public event UnityAction<bool> Running;
 	public event UnityAction<bool> Rotating;
 
 	private void Awake()
 	{
-		_inputService = ServiceLocator.Container.Single<IInputService>();
 		_groundChecker = GetComponent<GroundChecker>();
 		_surfaceInformant = GetComponent<SurfaceInformant>();
 		_rigidbody2D = GetComponent<Rigidbody2D>();
@@ -57,10 +55,6 @@ public class PhysicsMovement : MonoBehaviour
 
 	private void OnEnable()
 	{
-		_inputService.VerticalButtonCanceled += OnCancelHorizontalMove;
-		_inputService.VerticalButtonUsed += OnHorizontalMove;
-		_inputService.JumpButtonUsed += OnJump;
-		_inputService.JumpButtonCanceled += OnStopJump;
 		_groundChecker.GroundedStateSwitched += OnSwitchGroundState;
 		_surfaceInformant.GlideStateSwitched += OnGlideStateSwitched;
 		_surfaceInformant.Moves += OnCanMoveChange;
@@ -68,49 +62,31 @@ public class PhysicsMovement : MonoBehaviour
 
 	private void OnDisable()
 	{
-		_inputService.VerticalButtonCanceled -= OnCancelHorizontalMove;
-		_inputService.VerticalButtonUsed -= OnHorizontalMove;
-		_inputService.JumpButtonUsed -= OnJump;
-		_inputService.JumpButtonCanceled -= OnStopJump;
 		_groundChecker.GroundedStateSwitched -= OnSwitchGroundState;
 		_surfaceInformant.GlideStateSwitched -= OnGlideStateSwitched;
 		_surfaceInformant.Moves -= OnCanMoveChange;
 	}
 
-	private void Start()
-	{
-		StartCoroutine(FallRoutine());
-	}
-
 	private void FixedUpdate() =>
 		Move();
 
-	private void OnCancelHorizontalMove() =>
-		_movementDirection = new Vector2(0, _movementDirection.y);
+	public void SetMoveDirection(float direction)
+	{
+		_movementDirection = new Vector2(direction, 0);
+	}
 
-	private void OnHorizontalMove(float direction) =>
-		_movementDirection = new Vector2(direction, _movementDirection.y);
-
-	private void OnJump()
+	public void Jump()
 	{
 		if (IsGrounded == false)
 			return;
 
-		var velocity = _rigidbody2D.velocity;
-		Vector2 jumpDirection = new Vector2(velocity.x, _jumpForce);
-		velocity = jumpDirection;
-		_inertiaDirection = velocity;
-
+		_rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, _jumpForce);
 		_maxJumpStopCount++;
-		Jumped?.Invoke();
 	}
 
-	private void OnSwitchGroundState(bool isFall)
+	private void OnSwitchGroundState(bool isGrounded)
 	{
-		IsGrounded = isFall;
-
-		if (IsGrounded == false || _offset.y < 0)
-			StartFallCoroutine();
+		IsGrounded = isGrounded;
 	}
 
 	private void OnCanMoveChange(bool canMove) => _isCanMove = canMove;
@@ -119,21 +95,38 @@ public class PhysicsMovement : MonoBehaviour
 	{
 		Glided.Invoke();
 		_isGlide = isGlide;
-		StartFallCoroutine();
 	}
 
 	private void Move()
 	{
 		Vector2 normalizedDirection = _surfaceInformant.GetProjectionAlongNormal(_movementDirection);
 
-		_offset = _inertiaDirection + normalizedDirection * _moveSpeed;
+		_offset = normalizedDirection * _moveSpeed;
 
+		if (IsGrounded == false)
+			_offset.y += -_rigidbody2D.gravityScale;
+		
 		_offset.y = Mathf.Clamp(_offset.y, -_verticalVelocityLimit, int.MaxValue);
 
-
+		CheckFalling();
 		CheckDirection();
 		CheckRunning();
-		_rigidbody2D.position += _offset * Time.deltaTime;
+		_rigidbody2D.velocity = _offset;
+	}
+
+	private void CheckFalling()
+	{
+		if (IsGrounded == false && _rigidbody2D.velocity.y < 0)
+		{
+			
+			if(_lastIsFall == _isFall)
+				return;
+
+			_lastIsFall = _isFall;
+			Debug.Log("isFall");
+			_isFall = true;
+			Fallen?.Invoke(_isFall);
+		}
 	}
 
 	private void CheckRunning()
@@ -163,47 +156,6 @@ public class PhysicsMovement : MonoBehaviour
 
 		_lastIsRotate = _isRotate;
 		Rotating?.Invoke(_lastIsRotate);
-	}
-
-	private void StartFallCoroutine()
-	{
-		if (_currentFallCoroutine != null)
-		{
-			StopCoroutine(_currentFallCoroutine);
-			_currentFallCoroutine = null;
-		}
-
-		if (_isGlide == false)
-			Fallen?.Invoke();
-
-		_currentFallCoroutine = StartCoroutine(FallRoutine());
-	}
-
-	private void OnStopJump()
-	{
-		const float VerticalVelocityZero = 0;
-
-		if (_currentJumpStopCount >= _maxJumpStopCount)
-			return;
-
-		_inertiaDirection.Set(_rigidbody2D.velocity.x, VerticalVelocityZero);
-		_currentJumpStopCount++;
-	}
-
-	private IEnumerator FallRoutine()
-	{
-		while (IsGrounded == false || _isGlide == true)
-		{
-			_inertiaDirection.y -= _rigidbody2D.gravityScale * -Physics2D.gravity.y * Time.deltaTime;
-			_inertiaDirection.x = _movementDirection.x;
-			yield return null;
-		}
-
-		IsGrounded = true;
-		Grounded?.Invoke();
-		_currentJumpStopCount = 0;
-		_maxJumpStopCount = 0;
-		_inertiaDirection = Vector2.zero;
 	}
 
 	private void OnDrawGizmos()

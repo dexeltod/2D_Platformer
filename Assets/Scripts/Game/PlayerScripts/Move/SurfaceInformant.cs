@@ -29,7 +29,7 @@ public class SurfaceInformant : MonoBehaviour
 	public event UnityAction<bool> GlideStateSwitched;
 	public event UnityAction<bool> Moves;
 
-	public Vector2 GetProjectionAlongNormal(Vector2 enterDirection)
+	public Vector2 GetProjectionAlongNormal(Vector2 direction)
 	{
 		CheckAngleSurface();
 		SlopeCheckVertical();
@@ -39,16 +39,17 @@ public class SurfaceInformant : MonoBehaviour
 			Vector2.down,
 			_slopeCheckDistance,
 			_groundLayer);
-
-		Vector2 directionAlongSurface = enterDirection;
+		Debug.Log($"direction {direction}");
+		Vector2 directionAlongSurface = direction;
+		Debug.Log($"directionAlongSurface {directionAlongSurface}");
 
 		if (hit)
 		{
 			_normal = hit.normal;
 			_slopeNormalPerp = Vector2.Perpendicular(hit.normal).normalized;
-			directionAlongSurface.Set(-enterDirection.x * _slopeNormalPerp.x, -enterDirection.x * _slopeNormalPerp.y);
+			directionAlongSurface.Set(-direction.x * _slopeNormalPerp.x, -direction.x * _slopeNormalPerp.y);
 		}
-		
+
 		return directionAlongSurface;
 	}
 

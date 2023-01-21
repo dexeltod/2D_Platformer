@@ -26,9 +26,9 @@ namespace Infrastructure.Services
 			_inputSystem.Enable();
 			_inputSystem.Player.Move.performed += OnHorizontalMovement;
 			_inputSystem.Player.Move.canceled += OnHorizontalMovement;
-			_inputSystem.Player.Jump.performed += OnJump;
+			_inputSystem.Player.Jump.started += OnJump;
 			_inputSystem.Player.Jump.canceled += OnJump;
-			_inputSystem.Player.Attack.performed += OnAttack;
+			_inputSystem.Player.Attack.started += OnAttack;
 			_inputSystem.Player.Use.started += OnUse;
 		}
 
@@ -37,9 +37,9 @@ namespace Infrastructure.Services
 			_inputSystem.Disable();
 			_inputSystem.Player.Move.performed -= OnHorizontalMovement;
 			_inputSystem.Player.Move.canceled -= OnHorizontalMovement;
-			_inputSystem.Player.Jump.performed -= OnJump;
+			_inputSystem.Player.Jump.started -= OnJump;
 			_inputSystem.Player.Jump.canceled -= OnJump;
-			_inputSystem.Player.Attack.performed -= OnAttack;
+			_inputSystem.Player.Attack.started -= OnAttack;
 			_inputSystem.Player.Use.started -= OnUse;
 		}
 
@@ -51,31 +51,33 @@ namespace Infrastructure.Services
 
 		private void OnAttack(InputAction.CallbackContext context)
 		{
-			if (context.performed)
+			if (context.started)
 				AttackButtonUsed?.Invoke();
 		}
 
 		private void OnHorizontalMovement(InputAction.CallbackContext context)
 		{
+			var direction = context.ReadValue<float>();
+
+			Debug.Log($"on horizontal move direction {direction}");
+			
 			if (context.performed)
 			{
-				var direction = context.ReadValue<float>();
 				VerticalButtonUsed?.Invoke(direction);
 			}
-
-			if (context.canceled)
+			else if (context.canceled)
+			{
 				VerticalButtonCanceled?.Invoke();
+			}
 		}
 
 		private void OnJump(InputAction.CallbackContext context)
 		{
-			if (context.performed)
+			if (context.started)
 				JumpButtonUsed?.Invoke();
 
 			if (context.canceled)
 				JumpButtonCanceled?.Invoke();
 		}
-
-		
 	}
 }

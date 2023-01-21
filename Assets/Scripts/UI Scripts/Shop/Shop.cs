@@ -17,12 +17,12 @@ public class Shop : MonoBehaviour
 		foreach (var itemInfo in _items)
 		{
 			var currentItem = Instantiate(_weaponPanelPrefab, transform);
-			currentItem.Render(itemInfo.WeaponBase, itemInfo, itemInfo.Sprite);
+			currentItem.Render(itemInfo._abstractWeapon, itemInfo, itemInfo.Sprite);
 			currentItem.BuyButtonClicked += OnBuyButtonClick;
 		}
 	}
 
-	private void OnBuyButtonClick(WeaponBase weaponBase, ItemInfo itemInfo, ShopItemView shopItemView)
+	private void OnBuyButtonClick(AbstractWeapon weaponBase, ItemInfo itemInfo, ShopItemView shopItemView)
 	{
 		_player.TryBuyWeapon(weaponBase, itemInfo);
 		shopItemView.BuyButtonClicked -= OnBuyButtonClick;

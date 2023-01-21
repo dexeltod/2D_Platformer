@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class GroundChecker : MonoBehaviour
@@ -13,11 +14,16 @@ public class GroundChecker : MonoBehaviour
 
 	public event UnityAction<bool> GroundedStateSwitched;
 
+	private void Start()
+	{
+		GroundedStateSwitched?.Invoke(false);
+	}
+
 	private void FixedUpdate() => CheckGround();
 
 	private void CheckGround()
 	{
-		_isGrounded = Physics2D.OverlapBox(_groundCheckPosition.position, _groundCheckSize, 0, _groundLayer);
+		_isGrounded = Physics2D.OverlapBox(_groundCheckPosition.position, _groundCheckSize, angle:0, _groundLayer);
 
 		TrySwitchGroundedBool();
 	}

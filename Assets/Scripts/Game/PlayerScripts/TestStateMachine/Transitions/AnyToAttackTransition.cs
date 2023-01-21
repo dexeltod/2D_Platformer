@@ -1,11 +1,11 @@
 ﻿using Infrastructure.Services;
 
 namespace PlayerScripts.TestStateMachine{
-	public class AnyToAttackTransition : TestTransition<AttackState>
+	public class AnyToAttackTransition : StateTransition<AttackState>
 	{
 		private readonly IInputService _inputService;
 
-		public AnyToAttackTransition(StateService stateService, IInputService inputService) : base(stateService)
+		public AnyToAttackTransition(StateService stateService, IInputService inputService, GroundChecker groundChecker) : base(stateService)
 		{
 			_inputService = inputService;
 		}

@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace PlayerScripts.TestStateMachine
 {
-	public class SlideState : TestState
+	public class SlideState : State
 	{
-		public SlideState(IInputService inputService, Animator animator, AnimationHasher hasher, ITestTransition[] transitions) : base(inputService, animator, hasher, transitions)
+		public SlideState(IInputService inputService, Animator animator, AnimationHasher hasher, IStateTransition[] transitions) : base(inputService, animator, hasher, transitions)
 		{
 		}
 	}

@@ -2,12 +2,12 @@
 {
 	public class TestStateMachine
 	{
-		private ITestState _currentState;
+		private IState _currentState;
 
-		public TestStateMachine(ITestState state) => 
+		public TestStateMachine(IState state) => 
 			ChangeState(state);
 
-		private void ChangeState(ITestState state)
+		private void ChangeState(IState state)
 		{
 			if (_currentState != null)
 			{

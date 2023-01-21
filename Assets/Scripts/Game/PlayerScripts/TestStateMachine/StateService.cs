@@ -5,9 +5,9 @@ namespace PlayerScripts.TestStateMachine
 {
 	public class StateService
 	{
-		private readonly Dictionary<Type, ITestState> _states = new();
+		private readonly Dictionary<Type, IState> _states = new();
 
-		public void Register<T>(T instance) where T : class, ITestState
+		public void Register<T>(T instance) where T : class, IState
 		{
 			if (_states.ContainsKey(typeof(T)))
 				throw new InvalidOperationException();
@@ -15,7 +15,7 @@ namespace PlayerScripts.TestStateMachine
 			_states.Add(typeof(T), instance);
 		}
 
-		public T Get<T>() where T : class, ITestState
+		public T Get<T>() where T : class, IState
 		{
 			if (_states.ContainsKey(typeof(T)) == false)
 				throw new InvalidOperationException();

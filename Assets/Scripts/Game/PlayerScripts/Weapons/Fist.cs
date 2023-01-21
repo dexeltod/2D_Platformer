@@ -2,7 +2,7 @@ using System.Collections;
 using PlayerScripts.Weapons;
 using UnityEngine;
 
-public class Fist : MeleeWeapon
+public class Fist : MeleeAbstractWeapon
 {
 	public override IEnumerator AttackRoutine(float direction)
 	{

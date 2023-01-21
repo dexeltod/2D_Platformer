@@ -1,12 +1,13 @@
 ﻿using PlayerScripts.Weapons;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace UI_Scripts.Shop
 {
 	[CreateAssetMenu(fileName = "Item", menuName = "ShopItemInfo", order = 0)]
 	public class ItemInfo : ScriptableObject
 	{
-		public WeaponBase WeaponBase;
+		[FormerlySerializedAs("WeaponBase")] public AbstractWeapon _abstractWeapon;
 		public string Title;
 		public string Description;
 		public int Price;

@@ -13,17 +13,17 @@ public class ShopItemView : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI _price;
 	[SerializeField] private Button _button;
 
-	private WeaponBase _weaponBase;
+	private AbstractWeapon _abstractWeapon;
 	private ItemInfo _itemInfo;
 
-	public event UnityAction<WeaponBase, ItemInfo, ShopItemView> BuyButtonClicked;
+	public event UnityAction<AbstractWeapon, ItemInfo, ShopItemView> BuyButtonClicked;
 
 	~ShopItemView() =>
 		_button.onClick.RemoveListener(OnBuy);
 
-	public void Render(WeaponBase weaponBase, ItemInfo itemInfo, Sprite image)
+	public void Render(AbstractWeapon weaponBase, ItemInfo itemInfo, Sprite image)
 	{
-		_weaponBase = weaponBase;
+		_abstractWeapon = weaponBase;
 		_itemInfo = itemInfo;
 		_title.text = itemInfo.Title;
 		_description.text = itemInfo.Description;
@@ -35,16 +35,16 @@ public class ShopItemView : MonoBehaviour
 
 	private void TryLockItem()
 	{
-		if (_weaponBase.IsBought == false)
+		if (_abstractWeapon.IsBought == false)
 		{
 			_button.interactable = false;
-			_weaponBase.SetBoughtStateTrue();
+			_abstractWeapon.SetBoughtStateTrue();
 		}
 	}
 
 	private void OnBuy()
 	{
-		BuyButtonClicked?.Invoke(_weaponBase, _itemInfo, this);
+		BuyButtonClicked?.Invoke(_abstractWeapon, _itemInfo, this);
 		TryLockItem();
 		_button.onClick.RemoveListener(OnBuy);
 	}

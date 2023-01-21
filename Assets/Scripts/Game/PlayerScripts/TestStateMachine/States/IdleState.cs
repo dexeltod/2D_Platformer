@@ -3,17 +3,32 @@ using UnityEngine;
 
 namespace PlayerScripts.TestStateMachine
 {
-	public class IdleState : TestState
+	public class IdleState : State
 	{
-		public IdleState(IInputService inputService, Animator animator, AnimationHasher hasher,
-			ITestTransition[] transitions) : base(inputService, animator, hasher, transitions)
+		private readonly PhysicsMovement _physicsMovement;
+
+		public IdleState(IInputService inputService, PhysicsMovement physicsMovement, Animator animator,
+			AnimationHasher hasher,
+			IStateTransition[] transitions) : base(inputService, animator, hasher, transitions)
 		{
+			_physicsMovement = physicsMovement;
 		}
 
 		protected override void OnEnter()
 		{
-			base.OnEnter();
+			Animator.enabled = true;
 			Animator.Play(AnimationHasher.IdleHash);
+
+			_physicsMovement.SetMoveDirection(0);
+
+			Debug.Log("idle animation");
+		}
+
+		protected override void OnExit()
+		{
+			base.OnExit();
+			Animator.StopPlayback();
+			Animator.enabled = false;
 		}
 	}
 }

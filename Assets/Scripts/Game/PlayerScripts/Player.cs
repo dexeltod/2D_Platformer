@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
 
 	private StateService _stateService;
 
-	public event UnityAction<int, WeaponBase> Bought;
+	public event UnityAction<int, AbstractWeapon> Bought;
 
 	private void Awake()
 	{
@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
 		_physicsMovement.Rotating += SetLookDirection;
 	}
 
-	public void TryBuyWeapon(WeaponBase weaponBase, ItemInfo itemInfo) =>
+	public void TryBuyWeapon(AbstractWeapon weaponBase, ItemInfo itemInfo) =>
 		Bought?.Invoke(itemInfo.Price, weaponBase);
 
 	private void OnDisable()

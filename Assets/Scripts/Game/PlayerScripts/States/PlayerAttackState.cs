@@ -5,7 +5,7 @@ namespace PlayerScripts.States
 {
 	public class PlayerAttackState : PlayerStateMachine
 	{
-		private WeaponBase _currentWeapon;
+		private AbstractWeapon _currentAbstractWeapon;
 
 		private readonly PlayerWeapon _playerWeapon;
 		private readonly PhysicsMovement _physicsMovement;
@@ -26,45 +26,31 @@ namespace PlayerScripts.States
 		~PlayerAttackState()
 		{
 			_playerWeapon.WeaponChanged -= OnWeaponSwitch;
-			_currentWeapon.AttackAnimationEnded -= ChooseTransition;
 		}
 
 		public override void Start()
 		{
-			if (_currentWeapon.CanAttack == false)
+			if (_currentAbstractWeapon.CanAttack == false)
 				return;
 			
-			_currentWeapon.AttackAnimationEnded += ChooseTransition;
 			Attack();
-		}
-
-		private void Attack()
-		{
-			if (_currentWeapon == null || _currentWeapon.CanAttack == false)
-				return;
-			
-			_currentWeapon.SetGroundedBool(_physicsMovement.IsGrounded);
-			_currentWeapon.SetRunBool(_physicsMovement.Offset);
-			Player.StartCoroutine(_currentWeapon.AttackRoutine(Player.LookDirection));
-		}
-
-		private void ChooseTransition()
-		{
-			const float MinVerticalOffset = 0;
-
-			if (_physicsMovement.Offset.x != MinVerticalOffset)
-				StateSwitcher.SwitchState<PlayerRunState>();
-			else if (_physicsMovement.Offset.y < 0)
-				StateSwitcher.SwitchState<PlayerFallState>();
-			else
-				StateSwitcher.SwitchState<PlayerIdleState>();
 		}
 
 		public override void Stop()
 		{
 		}
 
-		private void OnWeaponSwitch(WeaponBase weaponBase) =>
-			_currentWeapon = weaponBase;
+		private void Attack()
+		{
+			if (_currentAbstractWeapon == null || _currentAbstractWeapon.CanAttack == false)
+				return;
+			
+			_currentAbstractWeapon.SetGroundedBool(_physicsMovement.IsGrounded);
+			_currentAbstractWeapon.SetRunBool(_physicsMovement.Offset);
+			Player.StartCoroutine(_currentAbstractWeapon.AttackRoutine(Player.LookDirection));
+		}
+
+		private void OnWeaponSwitch(AbstractWeapon weaponBase) =>
+			_currentAbstractWeapon = weaponBase;
 	}
 }

@@ -1,42 +1,38 @@
-﻿using UnityEngine;
+﻿using Infrastructure.Services;
+using PlayerScripts.TestStateMachine;
+using UnityEngine;
 
 namespace PlayerScripts.States
 {
-	public class PlayerGlideState : PlayerStateMachine
+	public class PlayerGlideState : State
 	{
 		private readonly Animator _animator;
 		private readonly AnimationHasher _animationHasher;
-		private readonly IPlayerStateSwitcher _stateSwitcher;
 		private readonly PhysicsMovement _physicsMovement;
+		private readonly GroundChecker _groundChecker;
 
-		public PlayerGlideState(Player player, IPlayerStateSwitcher stateSwitcher, AnimationHasher animationHasher,
-			Animator animator, PhysicsMovement physicsMovement) : base(player, stateSwitcher, animationHasher, animator)
+		public PlayerGlideState(IInputService inputService, Animator animator, AnimationHasher hasher,
+			IStateTransition[] transitions, PhysicsMovement physicsMovement, GroundChecker groundChecker) : base(inputService, animator, hasher,
+			transitions)
 		{
-			_stateSwitcher = stateSwitcher;
 			_physicsMovement = physicsMovement;
-			_animationHasher = animationHasher;
-			_animator = animator;
+			_groundChecker = groundChecker;
 		}
 
-		public override void Start()
+		protected override void OnEnter()
 		{
-			_physicsMovement.Grounded += SetNextState;
+			_groundChecker.GroundedStateSwitched += SetNextState;
 			_animator.Play(_animationHasher.GlideHash);
 		}
 
-		private void SetNextState()
+		protected override void OnExit()
 		{
-			const float MinVerticalOffset = 0;
-
-			if (_physicsMovement.Offset.x != MinVerticalOffset)
-				_stateSwitcher.SwitchState<PlayerRunState>();
-			else if (_physicsMovement.MovementDirection == Vector2.zero)
-				_stateSwitcher.SwitchState<PlayerIdleState>();
+			_groundChecker.GroundedStateSwitched -= SetNextState;
 		}
 
-		public override void Stop()
+		private void SetNextState(bool isGrounded)
 		{
-			_physicsMovement.Grounded -= SetNextState;
+			const float MinVerticalOffset = 0;
 		}
 	}
 }

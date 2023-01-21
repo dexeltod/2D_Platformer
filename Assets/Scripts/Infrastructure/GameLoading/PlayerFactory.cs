@@ -1,7 +1,9 @@
 ﻿using System;
 using Infrastructure.AssetProvide;
 using Infrastructure.Services;
+using PlayerScripts;
 using PlayerScripts.TestStateMachine;
+using PlayerScripts.Weapons;
 using UnityEngine;
 
 namespace Infrastructure
@@ -16,6 +18,9 @@ namespace Infrastructure
 		private PhysicsMovement _physicsMovement;
 		private Animator _animator;
 		private AnimationHasher _animationHasher;
+		private PlayerWeapon _playerWeapon;
+		private AbstractWeapon _abstractWeapon;
+		private GroundChecker _groundChecker;
 
 		public GameObject MainCharacter { get; private set; }
 
@@ -39,20 +44,23 @@ namespace Infrastructure
 			return MainCharacter;
 		}
 
-		private void CreatePlayerStateMachine()
-		{
-			PlayerStatesFactory playerStatesFactory =
-				new PlayerStatesFactory(_inputService, _animator, _animationHasher, _stateService, _physicsMovement);
-			playerStatesFactory.CreateTransitions();
-			playerStatesFactory.CreateStates();
-			TestStateMachine stateMachine = new TestStateMachine(_stateService.Get<IdleState>());
-		}
-
 		private void GetComponents()
 		{
 			_physicsMovement = MainCharacter.GetComponent<PhysicsMovement>();
 			_animator = MainCharacter.GetComponent<Animator>();
 			_animationHasher = MainCharacter.GetComponent<AnimationHasher>();
+			_playerWeapon = MainCharacter.GetComponent<PlayerWeapon>();
+			_abstractWeapon = MainCharacter.GetComponent<AbstractWeapon>();
+			_groundChecker = MainCharacter.GetComponent<GroundChecker>();
+		}
+
+		private void CreatePlayerStateMachine()
+		{
+			PlayerStatesFactory playerStatesFactory =
+				new PlayerStatesFactory(_groundChecker, _inputService, _animator, _animationHasher, _stateService, _physicsMovement, _playerWeapon, _abstractWeapon);
+			playerStatesFactory.CreateTransitions();
+			playerStatesFactory.CreateStates();
+			TestStateMachine stateMachine = new TestStateMachine(_stateService.Get<IdleState>());
 		}
 	}
 }

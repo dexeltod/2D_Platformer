@@ -8,7 +8,7 @@ public class PlayerMoney : MonoBehaviour
 
 	private Player _player;
 
-	public event UnityAction<WeaponBase> PurchaseCompleted;
+	public event UnityAction<AbstractWeapon> PurchaseCompleted;
 	public event UnityAction<int> MoneyCountChanged;
 
 	private void Awake() =>
@@ -23,7 +23,7 @@ public class PlayerMoney : MonoBehaviour
 	private void Start() =>
 		Initialize();
 
-	private void OnTrySpendMoney(int price, WeaponBase weaponBase)
+	private void OnTrySpendMoney(int price, AbstractWeapon weaponBase)
 	{
 		const int MinMoneyValue = 0;
 

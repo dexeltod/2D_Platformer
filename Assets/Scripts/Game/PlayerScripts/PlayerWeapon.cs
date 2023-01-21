@@ -10,9 +10,9 @@ namespace PlayerScripts
 	[RequireComponent(typeof(PlayerWeapon), typeof(AnimationHasher))]
 	public class PlayerWeapon : MonoBehaviour
 	{
-		[SerializeField] private List<WeaponBase> _weapons;
+		[SerializeField] private List<AbstractWeapon> _weapons;
 
-		public event Action<WeaponBase> WeaponChanged;
+		public event Action<AbstractWeapon> WeaponChanged;
 
 		private WeaponFactory _weaponFactory;
 		private PlayerMoney _playerMoney;
@@ -38,9 +38,9 @@ namespace PlayerScripts
 
 		private void SetLastBoughtWeapon()
 		{
-			WeaponBase lastWeapon = _weapons.Last();
-			WeaponBase initializedWeapon = GetInitializedWeapon(lastWeapon);
-			SetWeapon(initializedWeapon);
+			AbstractWeapon lastAbstractWeapon = _weapons.Last();
+			AbstractWeapon initializedAbstractWeapon = GetInitializedWeapon(lastAbstractWeapon);
+			SetWeapon(initializedAbstractWeapon);
 		}
 
 		private void SetStartWeapon()
@@ -48,26 +48,26 @@ namespace PlayerScripts
 			if (_weapons.Count <= 0)
 				throw new NullReferenceException();
 
-			WeaponBase firstWeapon = _weapons.FirstOrDefault();
+			AbstractWeapon firstAbstractWeapon = _weapons.FirstOrDefault();
 
-			WeaponBase initializedWeapon = GetInitializedWeapon(firstWeapon);
-			WeaponChanged?.Invoke(initializedWeapon);
+			AbstractWeapon initializedAbstractWeapon = GetInitializedWeapon(firstAbstractWeapon);
+			WeaponChanged?.Invoke(initializedAbstractWeapon);
 		}
 
-		private WeaponBase GetInitializedWeapon(WeaponBase firstWeaponBase)
+		private AbstractWeapon GetInitializedWeapon(AbstractWeapon firstAbstractWeapon)
 		{
-			WeaponBase weapon = _weaponFactory.CreateWeapon(firstWeaponBase, transform);
-			return weapon;
+			AbstractWeapon abstractWeapon = _weaponFactory.CreateWeapon(firstAbstractWeapon, transform);
+			return abstractWeapon;
 		}
 
-		private void AddBoughtWeapon(WeaponBase weaponBase)
+		private void AddBoughtWeapon(AbstractWeapon weaponBase)
 		{
 			weaponBase.SetBoughtStateTrue();
 			_weapons.Add(weaponBase);
 			SetLastBoughtWeapon();
 		}
 
-		private void SetWeapon(WeaponBase weaponBase) =>
+		private void SetWeapon(AbstractWeapon weaponBase) =>
 			WeaponChanged?.Invoke(weaponBase);
 	}
 }

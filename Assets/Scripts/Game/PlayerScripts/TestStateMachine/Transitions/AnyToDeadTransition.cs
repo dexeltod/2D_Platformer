@@ -1,6 +1,6 @@
 ﻿namespace PlayerScripts.TestStateMachine
 {
-	public class AnyToDeadTransition : TestTransition<DeadState>
+	public class AnyToDeadTransition : StateTransition<DeadState>
 	{
 		public AnyToDeadTransition(StateService stateService) : base(stateService)
 		{
