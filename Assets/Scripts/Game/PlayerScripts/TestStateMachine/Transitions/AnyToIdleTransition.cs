@@ -15,18 +15,23 @@ namespace PlayerScripts.TestStateMachine
 			_inputService = inputService;
 			_physicsMovement = physicsMovement;
 			_groundChecker = groundChecker;
+			_groundChecker.GroundedStateSwitched += OnGrounded;
+		}
+
+		~AnyToIdleTransition()
+		{
+			_groundChecker.GroundedStateSwitched -= OnGrounded;
 		}
 
 		public override void Enable()
 		{
 			_inputService.VerticalButtonCanceled += OnStay;
-			_groundChecker.GroundedStateSwitched += OnGrounded;
 		}
 
 		public override void Disable()
 		{
 			_inputService.VerticalButtonCanceled -= OnStay;
-			_groundChecker.GroundedStateSwitched -= OnGrounded;
+			
 		}
 
 		private void OnStay() => 

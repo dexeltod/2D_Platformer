@@ -5,15 +5,18 @@ using UnityEngine.Events;
 public class SurfaceInformant : MonoBehaviour
 {
 	[SerializeField] private bool _isDebug;
-	[SerializeField] private Transform _center;
 	[SerializeField, Range(0, 180)] private float _maxSlopeAngle;
 
 	[SerializeField] private LayerMask _groundLayer;
 	[SerializeField] private float _slopeCheckDistance;
 
+	private CapsuleCollider2D _capsuleCollider;
+	private RaycastHit2D _hit;
+	
 	private Vector2 _normal;
 	private Vector2 _capsuleColliderSize;
 	private Vector2 _slopeNormalPerp;
+	private Vector2 _centerPosition;
 
 	private float _slopeSideAngle;
 	private float _slopeDownAngle;
@@ -29,24 +32,31 @@ public class SurfaceInformant : MonoBehaviour
 	public event UnityAction<bool> GlideStateSwitched;
 	public event UnityAction<bool> Moves;
 
+	private void Start()
+	{
+		_capsuleCollider = GetComponent<CapsuleCollider2D>();
+		_capsuleColliderSize = _capsuleCollider.size;
+	}
+
 	public Vector2 GetProjectionAlongNormal(Vector2 direction)
 	{
 		CheckAngleSurface();
 		SlopeCheckVertical();
 
-		RaycastHit2D hit = Physics2D.Raycast(
-			transform.position,
+		_centerPosition = (Vector2)transform.position + new Vector2(0.0f, _capsuleColliderSize.y / 2);
+
+		_hit = Physics2D.Raycast(
+			_centerPosition,
 			Vector2.down,
 			_slopeCheckDistance,
 			_groundLayer);
-		Debug.Log($"direction {direction}");
-		Vector2 directionAlongSurface = direction;
-		Debug.Log($"directionAlongSurface {directionAlongSurface}");
 
-		if (hit)
+		Vector2 directionAlongSurface = direction;
+
+		if (_hit)
 		{
-			_normal = hit.normal;
-			_slopeNormalPerp = Vector2.Perpendicular(hit.normal).normalized;
+			_normal = _hit.normal;
+			_slopeNormalPerp = Vector2.Perpendicular(_hit.normal).normalized;
 			directionAlongSurface.Set(-direction.x * _slopeNormalPerp.x, -direction.x * _slopeNormalPerp.y);
 		}
 
@@ -66,12 +76,10 @@ public class SurfaceInformant : MonoBehaviour
 
 	private void SlopeCheckVertical()
 	{
-		RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, _slopeCheckDistance, _groundLayer);
+		RaycastHit2D hit = Physics2D.Raycast(_centerPosition, Vector2.down, _slopeCheckDistance, _groundLayer);
 
 		if (hit)
 		{
-			_slopeNormalPerp = Vector2.Perpendicular(hit.normal).normalized;
-
 			_slopeDownAngle = Vector2.Angle(hit.normal, Vector2.up);
 			_lastSlopeAngle = _slopeDownAngle;
 		}
@@ -94,6 +102,12 @@ public class SurfaceInformant : MonoBehaviour
 		{
 			Gizmos.color = new Color(0.2f, 0.2f, 1f);
 			Gizmos.DrawLine(transform.position, transform.position + (Vector3)_normal);
+			Gizmos.color = new Color(1f, 0f, 0.6f);
+			Gizmos.DrawLine(_hit.point, _hit.point + _slopeNormalPerp);
+			Gizmos.color = new Color(0f, 1f, 0.99f);
+			Gizmos.DrawLine(_centerPosition, _centerPosition + Vector2.down * _slopeCheckDistance);
+			Gizmos.color = new Color(1f, 0.99f, 0f);
+			Gizmos.DrawWireSphere(_centerPosition, 0.01f);
 		}
 	}
 }

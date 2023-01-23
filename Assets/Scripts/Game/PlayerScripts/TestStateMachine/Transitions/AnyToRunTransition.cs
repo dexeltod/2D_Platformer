@@ -37,7 +37,7 @@ public class AnyToRunTransition : StateTransition<RunState>
 
 	private void OnVerticalButtonUsed(float direction)
 	{
-		if (_physicsMovement.IsGrounded)
+		if (_physicsMovement.IsGrounded == true)
 			MoveNextState();
 	}
 }

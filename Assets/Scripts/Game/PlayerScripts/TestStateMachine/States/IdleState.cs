@@ -21,7 +21,6 @@ namespace PlayerScripts.TestStateMachine
 
 			_physicsMovement.SetMoveDirection(0);
 
-			Debug.Log("idle animation");
 		}
 
 		protected override void OnExit()
