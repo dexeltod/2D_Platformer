@@ -1,5 +1,4 @@
-﻿
-using Infrastructure.Services;
+﻿using Infrastructure.Services;
 using UnityEngine;
 
 namespace PlayerScripts.TestStateMachine
@@ -10,7 +9,8 @@ namespace PlayerScripts.TestStateMachine
 		private readonly PhysicsMovement _physicsMovement;
 		private readonly GroundChecker _groundChecker;
 
-		public AnyToIdleTransition(StateService stateService, IInputService inputService, PhysicsMovement physicsMovement, GroundChecker groundChecker) : base(stateService)
+		public AnyToIdleTransition(StateService stateService, IInputService inputService,
+			PhysicsMovement physicsMovement, GroundChecker groundChecker) : base(stateService)
 		{
 			_inputService = inputService;
 			_physicsMovement = physicsMovement;
@@ -31,15 +31,14 @@ namespace PlayerScripts.TestStateMachine
 		public override void Disable()
 		{
 			_inputService.VerticalButtonCanceled -= OnStay;
-			
 		}
 
-		private void OnStay() => 
+		private void OnStay() =>
 			MoveNextState();
 
 		private void OnGrounded(bool isGrounded)
 		{
-			if (isGrounded == true && _physicsMovement.MovementDirection == Vector2.zero) 
+			if (isGrounded == true && _physicsMovement.MovementDirection == Vector2.zero)
 				MoveNextState();
 		}
 	}

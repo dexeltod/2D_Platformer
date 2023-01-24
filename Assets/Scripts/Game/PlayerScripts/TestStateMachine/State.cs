@@ -48,12 +48,10 @@ namespace PlayerScripts.TestStateMachine
 
 		protected virtual void OnEnter()
 		{
-			Animator.enabled = true;
 		}
 
 		protected virtual void OnExit()
 		{
-			Animator.enabled = false;
 		}
 
 		private void OnStateChanging(IState state) =>

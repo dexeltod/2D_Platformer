@@ -9,8 +9,8 @@ public class GroundChecker : MonoBehaviour
 	[SerializeField] private LayerMask _groundLayer;
 	[SerializeField] private Vector2 _groundCheckSize;
 
-	private bool _isGrounded;
 	private bool _lastGroundedBool;
+	public bool IsGrounded { get; private set; }
 
 	public event UnityAction<bool> GroundedStateSwitched;
 
@@ -23,17 +23,17 @@ public class GroundChecker : MonoBehaviour
 
 	private void CheckGround()
 	{
-		_isGrounded = Physics2D.OverlapBox(_groundCheckPosition.position, _groundCheckSize, angle:0, _groundLayer);
+		IsGrounded = Physics2D.OverlapBox(_groundCheckPosition.position, _groundCheckSize, angle: 0, _groundLayer);
 
 		TrySwitchGroundedBool();
 	}
 
 	private void TrySwitchGroundedBool()
 	{
-		if (_lastGroundedBool == _isGrounded)
+		if (_lastGroundedBool == IsGrounded)
 			return;
 
-		_lastGroundedBool = _isGrounded;
+		_lastGroundedBool = IsGrounded;
 		GroundedStateSwitched?.Invoke(_lastGroundedBool);
 	}
 

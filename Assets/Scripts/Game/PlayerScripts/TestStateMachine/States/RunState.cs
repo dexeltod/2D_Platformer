@@ -23,18 +23,17 @@ namespace PlayerScripts.TestStateMachine
 		protected override void OnEnter()
 		{
 			base.OnEnter();
-			Animator.Play(AnimationHasher.RunHash);
-			Debug.Log("run animation");
+			Animator.SetBool(AnimationHasher.RunHash, true);
 		}
 
 		protected override void OnExit()
 		{
 			base.OnExit();
+			Animator.SetBool(AnimationHasher.RunHash, false);
 		}
 
 		private void SetMoveDirection(float direction)
 		{
-			Debug.Log($"set move direction {direction}");
 			_physicsMovement.SetMoveDirection(direction);
 		}
 	}

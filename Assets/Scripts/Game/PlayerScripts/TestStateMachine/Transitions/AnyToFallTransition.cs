@@ -12,26 +12,30 @@
 			_physicsMovement = physicsMovement;
 			_groundChecker = groundChecker;
 			_physicsMovement.Fallen += OnFall;
+			_groundChecker.GroundedStateSwitched += OnGroundedChanged;
 		}
 
 		~AnyToFallTransition()
 		{
+			_groundChecker.GroundedStateSwitched -= OnGroundedChanged;
 			_physicsMovement.Fallen -= OnFall;
 		}
 
 		public override void Enable()
 		{
 			base.Enable();
-			_groundChecker.GroundedStateSwitched += OnFall;
 		}
 
 		public override void Disable()
 		{
 			base.Disable();
-
-			_groundChecker.GroundedStateSwitched -= OnFall;
 		}
 
+		private void OnGroundedChanged(bool isGrounded)
+		{
+			_isGrounded = isGrounded;
+		}
+		
 		private void OnFall(bool isFall)
 		{
 			if (isFall == true && _isGrounded == false)

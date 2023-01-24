@@ -18,7 +18,13 @@ namespace PlayerScripts.TestStateMachine
 		{
 			base.OnEnter();
 			_physicsMovement.Jump();
-			Animator.Play(AnimationHasher.JumpHash);
+			Animator.SetBool(AnimationHasher.JumpHash, true);
+		}
+
+		protected override void OnExit()
+		{
+			base.OnExit();
+			Animator.SetBool(AnimationHasher.JumpHash, false);
 		}
 	}
 }

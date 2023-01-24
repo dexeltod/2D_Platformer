@@ -16,8 +16,7 @@ namespace PlayerScripts.TestStateMachine
 
 		protected override void OnEnter()
 		{
-			Animator.enabled = true;
-			Animator.Play(AnimationHasher.IdleHash);
+			Animator.SetBool(AnimationHasher.IdleHash, true);
 
 			_physicsMovement.SetMoveDirection(0);
 
@@ -26,8 +25,7 @@ namespace PlayerScripts.TestStateMachine
 		protected override void OnExit()
 		{
 			base.OnExit();
-			Animator.StopPlayback();
-			Animator.enabled = false;
+			Animator.SetBool(AnimationHasher.IdleHash, false);
 		}
 	}
 }

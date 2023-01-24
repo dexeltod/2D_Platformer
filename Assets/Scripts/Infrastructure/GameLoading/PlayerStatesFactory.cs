@@ -97,7 +97,8 @@ public class PlayerStatesFactory
 			{
 				_anyToIdleTransition,
 				_anyToRunTransition,
-			}));
+			}, 
+			_physicsMovement));
 	}
 
 	private void CreateJumpState()

@@ -59,8 +59,6 @@ namespace Infrastructure.Services
 		{
 			var direction = context.ReadValue<float>();
 
-			Debug.Log($"on horizontal move direction {direction}");
-			
 			if (context.performed)
 			{
 				VerticalButtonUsed?.Invoke(direction);

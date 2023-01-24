@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using Infrastructure.Services;
 using UnityEngine;
 using UnityEngine.Events;
@@ -51,6 +52,7 @@ public class PhysicsMovement : MonoBehaviour
 		_groundChecker = GetComponent<GroundChecker>();
 		_surfaceInformant = GetComponent<SurfaceInformant>();
 		_rigidbody2D = GetComponent<Rigidbody2D>();
+		_lastIsFall = !_isFall;
 	}
 
 	private void OnEnable()
@@ -80,14 +82,14 @@ public class PhysicsMovement : MonoBehaviour
 		if (IsGrounded == false)
 			return;
 
-		_rigidbody2D.AddForce(new Vector2(_rigidbody2D.velocity.x, _jumpForce));;
+		_inertiaDirection = new Vector2(_offset.x, _jumpForce);
 		_maxJumpStopCount++;
 	}
 
-	private void OnSwitchGroundState(bool isGrounded) => 
+	private void OnSwitchGroundState(bool isGrounded) =>
 		IsGrounded = isGrounded;
 
-	private void OnCanMoveChange(bool canMove) => 
+	private void OnCanMoveChange(bool canMove) =>
 		_isCanMove = canMove;
 
 	private void OnGlideStateSwitched(bool isGlide)
@@ -103,31 +105,27 @@ public class PhysicsMovement : MonoBehaviour
 		_offset = normalizedDirection * _moveSpeed;
 
 		if (IsGrounded == false)
-			_offset.y += Physics2D.gravity.y;
-		
+			_inertiaDirection.y += -_rigidbody2D.gravityScale * Time.deltaTime;
+		else
+			_inertiaDirection.y = 0;
+
 		_offset.y = Mathf.Clamp(_offset.y, -_verticalVelocityLimit, int.MaxValue);
 
 		CheckFalling();
 		CheckDirection();
 		CheckRunning();
-		_rigidbody2D.position += _offset * Time.deltaTime;
+		_rigidbody2D.position += _inertiaDirection + _offset * Time.deltaTime;
 	}
 
 	private void CheckFalling()
 	{
-		if (IsGrounded == false && _rigidbody2D.velocity.y < 0)
-		{
-			_isFall = true;
-			if(_lastIsFall == _isFall)
-				return;
+		_isFall = _inertiaDirection.y < -0.1f;
 
-			_lastIsFall = _isFall;
-			Debug.Log("isFall");
-			Fallen?.Invoke(_isFall);
-		}
-		else
+		if (_isFall != _lastIsFall)
 		{
-			_isFall = false;
+			_lastIsFall = _isFall;
+			Fallen?.Invoke(_lastIsFall);
+			Debug.Log($"_isFall {_isFall}");
 		}
 	}
 

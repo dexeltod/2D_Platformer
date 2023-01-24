@@ -8,25 +8,29 @@ public class AnyToRunTransition : StateTransition<RunState>
 	private readonly GroundChecker _groundChecker;
 	private float _direction;
 
-	public AnyToRunTransition(StateService stateService, IInputService inputService, PhysicsMovement physicsMovement, GroundChecker groundChecker) :
+	public AnyToRunTransition(StateService stateService, IInputService inputService, PhysicsMovement physicsMovement,
+		GroundChecker groundChecker) :
 		base(stateService)
 	{
 		_inputService = inputService;
 		_physicsMovement = physicsMovement;
 		_groundChecker = groundChecker;
-	}
-
-	public override void Enable()
-	{
-		
 		_groundChecker.GroundedStateSwitched += OnGroundedAndRun;
 		_inputService.VerticalButtonUsed += OnVerticalButtonUsed;
 	}
 
-	public override void Disable()
+	~AnyToRunTransition()
 	{
 		_groundChecker.GroundedStateSwitched -= OnGroundedAndRun;
 		_inputService.VerticalButtonUsed -= OnVerticalButtonUsed;
+	}
+
+	public override void Enable()
+	{
+	}
+
+	public override void Disable()
+	{
 	}
 
 	private void OnGroundedAndRun(bool isGrounded)
