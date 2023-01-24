@@ -499,8 +499,10 @@ MonoBehaviour:
   _isDebug: 1
   _feetPosition: {fileID: 187862530}
   _moveSpeed: 4
-  _jumpForce: 30
+  _jumpForce: 5
   _verticalVelocityLimit: 7
+  _racingSpeed: 0.05
+  _maxMoveSpeed: 4
 --- !u!114 &1359097841
 MonoBehaviour:
   m_ObjectHideFlags: 0

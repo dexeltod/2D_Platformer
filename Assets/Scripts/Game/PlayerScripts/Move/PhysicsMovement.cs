@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using Infrastructure.Services;
 using UnityEngine;
 using UnityEngine.Events;
@@ -8,17 +7,19 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PhysicsMovement : MonoBehaviour
 {
-	[SerializeField] private bool _isDebug;
-
 	[SerializeField] private Transform _feetPosition;
+
+	[SerializeField] private bool _isDebug;
 	[SerializeField] private float _moveSpeed;
 	[SerializeField] private float _jumpForce = 3f;
 	[SerializeField] private float _verticalVelocityLimit = -5f;
+	[SerializeField] private float _racingSpeed;
+	[SerializeField] private float _maxMoveSpeed;
 
 	private GroundChecker _groundChecker;
 	private SurfaceInformant _surfaceInformant;
 	private Rigidbody2D _rigidbody2D;
-	private Coroutine _currentFallCoroutine;
+	private Coroutine _currentRunCoroutine;
 	private IInputService _inputService;
 
 	private Vector2 _movementDirection;
@@ -74,7 +75,18 @@ public class PhysicsMovement : MonoBehaviour
 
 	public void SetMoveDirection(float direction)
 	{
-		_movementDirection = new Vector2(direction, 0);
+		const int ZeroVerticalDirection = 0;
+
+		if (_currentRunCoroutine != null)
+		{
+			StopCoroutine(_currentRunCoroutine);
+			_currentRunCoroutine = null;
+		}
+
+		if (direction != 0) 
+			_currentRunCoroutine = StartCoroutine(StartRunRoutine());
+
+		_movementDirection = new Vector2(direction, ZeroVerticalDirection);
 	}
 
 	public void Jump()
@@ -82,7 +94,7 @@ public class PhysicsMovement : MonoBehaviour
 		if (IsGrounded == false)
 			return;
 
-		_inertiaDirection = new Vector2(_offset.x, _jumpForce);
+		_rigidbody2D.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
 		_maxJumpStopCount++;
 	}
 
@@ -100,33 +112,41 @@ public class PhysicsMovement : MonoBehaviour
 
 	private void Move()
 	{
-		Vector2 normalizedDirection = _surfaceInformant.GetProjectionAlongNormal(_movementDirection);
+		Vector2 normalizedDirection = _surfaceInformant.GetProjectionAlongNormal(_movementDirection.normalized);
 
 		_offset = normalizedDirection * _moveSpeed;
-
-		if (IsGrounded == false)
-			_inertiaDirection.y += -_rigidbody2D.gravityScale * Time.deltaTime;
-		else
-			_inertiaDirection.y = 0;
 
 		_offset.y = Mathf.Clamp(_offset.y, -_verticalVelocityLimit, int.MaxValue);
 
 		CheckFalling();
 		CheckDirection();
 		CheckRunning();
-		_rigidbody2D.position += _inertiaDirection + _offset * Time.deltaTime;
+		_rigidbody2D.position += _offset * Time.deltaTime;
+	}
+
+	private IEnumerator StartRunRoutine()
+	{
+		const int ZeroSpeed = 0;
+
+		_moveSpeed = ZeroSpeed;
+
+		while (_moveSpeed < _maxMoveSpeed)
+		{
+			_moveSpeed = Mathf.MoveTowards(_moveSpeed, _maxMoveSpeed, _racingSpeed);
+			yield return new WaitForFixedUpdate();
+		}
 	}
 
 	private void CheckFalling()
 	{
-		_isFall = _inertiaDirection.y < -0.1f;
+		_isFall = _rigidbody2D.velocity.y < -0.1f;
 
-		if (_isFall != _lastIsFall)
-		{
-			_lastIsFall = _isFall;
-			Fallen?.Invoke(_lastIsFall);
-			Debug.Log($"_isFall {_isFall}");
-		}
+		if (_isFall == _lastIsFall)
+			return;
+
+		_lastIsFall = _isFall;
+		Fallen?.Invoke(_lastIsFall);
+		Debug.Log($"_isFall {_isFall}");
 	}
 
 	private void CheckRunning()

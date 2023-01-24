@@ -12,6 +12,12 @@ namespace PlayerScripts.TestStateMachine
 			transitions)
 		{
 			_physicsMovement = physicsMovement;
+			InputService.VerticalButtonCanceled += OnButtonCanceled;
+		}
+
+		~FallState()
+		{
+			InputService.VerticalButtonCanceled -= OnButtonCanceled;
 		}
 
 		protected override void OnEnter()
@@ -24,7 +30,18 @@ namespace PlayerScripts.TestStateMachine
 		protected override void OnExit()
 		{
 			base.OnExit();
+
 			Animator.SetBool(AnimationHasher.FallHash, false);
+		}
+
+		private void OnButtonUsed(float direction)
+		{
+			_physicsMovement.SetMoveDirection(direction);
+		}
+
+		private void OnButtonCanceled()
+		{
+			_physicsMovement.SetMoveDirection(0);
 		}
 	}
 }

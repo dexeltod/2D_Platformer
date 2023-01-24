@@ -6,7 +6,6 @@ public class AnyToRunTransition : StateTransition<RunState>
 	private readonly IInputService _inputService;
 	private readonly PhysicsMovement _physicsMovement;
 	private readonly GroundChecker _groundChecker;
-	private float _direction;
 
 	public AnyToRunTransition(StateService stateService, IInputService inputService, PhysicsMovement physicsMovement,
 		GroundChecker groundChecker) :
@@ -35,7 +34,7 @@ public class AnyToRunTransition : StateTransition<RunState>
 
 	private void OnGroundedAndRun(bool isGrounded)
 	{
-		if (isGrounded && _direction != 0)
+		if (isGrounded && _physicsMovement.MovementDirection.x != 0)
 			MoveNextState();
 	}
 

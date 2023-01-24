@@ -34,7 +34,8 @@ namespace PlayerScripts.TestStateMachine
 
 		private void SetMoveDirection(float direction)
 		{
-			_physicsMovement.SetMoveDirection(direction);
+			if (direction != 0)
+				_physicsMovement.SetMoveDirection(direction);
 		}
 	}
 }

@@ -29,11 +29,11 @@
             }
         },
         "Levels/Level_1_TileMap.tmx": {
-            "scale": 0.33,
+            "scale": 2,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 4606.060606060606,
-                "y": 16125.757575757576
+                "x": -1058.5,
+                "y": -421
             }
         },
         "Levels/Level_3_TileMap.tmx": {
@@ -50,11 +50,11 @@
             "scaleInEditor": 1
         },
         "Levels/Rules/Road-random-rules.tmx": {
-            "scale": 3,
+            "scale": 0.75,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": -6656,
-                "y": -255.83333333333331
+                "x": -6742.666666666666,
+                "y": -528
             }
         },
         "Levels/Rules/autotile_rules.tmx": {
