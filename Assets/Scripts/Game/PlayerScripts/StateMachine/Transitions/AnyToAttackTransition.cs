@@ -1,12 +1,12 @@
 ﻿using Infrastructure.Services;
 
-namespace Game.PlayerScripts.TestStateMachine.Transitions
+namespace Game.PlayerScripts.StateMachine.Transitions
 {
 	public class AnyToAttackTransition : StateTransition<States.AttackState>
 	{
 		private readonly IInputService _inputService;
 
-		public AnyToAttackTransition(StateService stateService, IInputService inputService, GroundChecker groundChecker)
+		public AnyToAttackTransition(StateService stateService, IInputService inputService, Move.GroundChecker groundChecker)
 			: base(stateService)
 		{
 			_inputService = inputService;

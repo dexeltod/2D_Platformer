@@ -1,16 +1,16 @@
 using System;
-using System.Collections;
+using Game.Animation.AnimationHashes.Characters;
 using UnityEngine;
 
-namespace PlayerScripts.Weapons
+namespace Game.PlayerScripts.Weapons
 {
 	public abstract class AbstractWeapon : MonoBehaviour
 	{
 		[SerializeField] private ContactFilter2D _enemyFilter;
 		[SerializeField] private WeaponInfo _weaponInfo;
 		[SerializeField] private bool _isBought = false;
-		
-		protected MeleeWeaponTriggerInformant MeleeWeaponTriggerInformant;
+
+		protected MeleeTrigger.MeleeWeaponTriggerInformant MeleeWeaponTriggerInformant;
 		protected Animator Animator;
 		protected AnimationHasher AnimationHasher;
 		protected bool _isGrounded;
@@ -25,11 +25,12 @@ namespace PlayerScripts.Weapons
 		public float Range { get; protected set; }
 
 		public event Action AttackAnimationEnded;
-		
-		public abstract IEnumerator AttackRoutine(float direction);
-		public abstract void GiveDamage(Enemy target);
 
-		public void Initialize(Animator animator, AnimationHasher hasher, MeleeWeaponTriggerInformant meleeWeaponTrigger)
+		protected virtual void Awake() =>
+			OnAwake();
+
+		public void Initialize(Animator animator, AnimationHasher hasher,
+			MeleeTrigger.MeleeWeaponTriggerInformant meleeWeaponTrigger)
 		{
 			MeleeWeaponTriggerInformant = meleeWeaponTrigger;
 			Animator = animator;
@@ -39,19 +40,30 @@ namespace PlayerScripts.Weapons
 			Damage = _weaponInfo.Damage;
 			AttackSpeed = _weaponInfo.AttackSpeed;
 			Range = _weaponInfo.Range;
-			
+
 			Animator.SetFloat(AnimationHasher.AttackSpeedHash, AttackSpeed);
 		}
 
+		public virtual void Use()
+		{
+			Attack();
+		}
+
+		public abstract void GiveDamage(Enemy.Enemy target);
+
 		public void SetGroundedBool(bool isGrounded) => _isGrounded = isGrounded;
 
-		public void SetRunBool(Vector2 direction) =>
-			IsRun = direction.x != 0 || direction.y != 0;
+		public void SetRunBool(bool isRun) =>
+			IsRun = isRun;
 
-		public void SetBoughtStateTrue() => _isBought = false;
+		public void SetBoughtStateTrue() =>
+			_isBought = false;
 
-		protected virtual void Awake() => OnAwake();
-
+		protected virtual void Attack()
+		{
+			
+		}
+		
 		protected virtual void OnAwake()
 		{
 		}

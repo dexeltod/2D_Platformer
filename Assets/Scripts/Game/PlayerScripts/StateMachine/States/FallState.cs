@@ -1,14 +1,15 @@
-﻿using Infrastructure.Services;
+﻿using Game.Animation.AnimationHashes.Characters;
+using Infrastructure.Services;
 using UnityEngine;
 
-namespace Game.PlayerScripts.TestStateMachine.States
+namespace Game.PlayerScripts.StateMachine.States
 {
 	public class FallState : State
 	{
-		private readonly PhysicsMovement _physicsMovement;
+		private readonly Move.PhysicsMovement _physicsMovement;
 
 		public FallState(IInputService inputService, Animator animator, AnimationHasher hasher,
-			IStateTransition[] transitions, PhysicsMovement physicsMovement) : base(inputService, animator, hasher,
+			IStateTransition[] transitions, Move.PhysicsMovement physicsMovement) : base(inputService, animator, hasher,
 			transitions)
 		{
 			_physicsMovement = physicsMovement;

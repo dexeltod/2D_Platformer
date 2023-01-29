@@ -1,13 +1,13 @@
 ﻿using Infrastructure.Services;
 
-namespace Game.PlayerScripts.TestStateMachine.Transitions
+namespace Game.PlayerScripts.StateMachine.Transitions
 {
 	public class AnyToJumpTransition : StateTransition<States.JumpState>
 	{
 		private readonly IInputService _inputService;
-		private readonly GroundChecker _groundChecker;
+		private readonly Move.GroundChecker _groundChecker;
 
-		public AnyToJumpTransition(StateService stateService, IInputService inputService, GroundChecker groundChecker) :
+		public AnyToJumpTransition(StateService stateService, IInputService inputService, Move.GroundChecker groundChecker) :
 			base(stateService)
 		{
 			_inputService = inputService;

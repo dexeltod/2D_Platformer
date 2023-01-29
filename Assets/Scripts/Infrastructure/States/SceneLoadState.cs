@@ -1,7 +1,9 @@
-﻿using UI_Scripts.Curtain;
+﻿using Infrastructure.Constants;
+using Infrastructure.GameLoading;
+using UI_Scripts.Curtain;
 using UnityEngine;
 
-namespace Infrastructure
+namespace Infrastructure.States
 {
 	public class SceneLoadState : IPayloadState<string>
 	{

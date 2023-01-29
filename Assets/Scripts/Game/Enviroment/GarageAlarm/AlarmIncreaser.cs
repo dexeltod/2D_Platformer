@@ -1,60 +1,64 @@
 using System.Collections;
+using UI_Scripts.GarageSignalBar;
 using UnityEngine;
 
-public class AlarmIncreaser : MonoBehaviour
+namespace Game.Enviroment.GarageAlarm
 {
-    [SerializeField] private AudioSource _audio;
-    [SerializeField] private AlarmBarMover _bar;
-    [SerializeField, Range(0, 1)] private float _pointPerSecond;
-
-    private float _currentAlarmValue = 0;
-    private Coroutine _currentCoroutine;
-
-    public void SetMaxAlarmVolume()
+    public class AlarmIncreaser : MonoBehaviour
     {
-        float maxVolume = 1;
+        [SerializeField] private AudioSource _audio;
+        [SerializeField] private AlarmBarMover _bar;
+        [SerializeField, Range(0, 1)] private float _pointPerSecond;
 
-        _currentAlarmValue = maxVolume;
-        _audio.volume = maxVolume;
-        _bar.FillBar(maxVolume);
-    }
+        private float _currentAlarmValue = 0;
+        private Coroutine _currentCoroutine;
 
-    public void StopMovingAlarmValues()
-    {
-        if (_currentCoroutine != null)
+        public void SetMaxAlarmVolume()
         {
-            StopCoroutine(_currentCoroutine);
-            _currentCoroutine = null;
+            float maxVolume = 1;
+
+            _currentAlarmValue = maxVolume;
+            _audio.volume = maxVolume;
+            _bar.FillBar(maxVolume);
         }
-    }
 
-    private void OnTriggerEnter2D()
-    {
-        StopMovingAlarmValues();
-        _currentCoroutine = StartCoroutine(MoveBar(_pointPerSecond));
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        StopMovingAlarmValues();
-        _currentCoroutine = StartCoroutine(MoveBar(-_pointPerSecond));
-    }    
-
-    private IEnumerator MoveBar(float point)
-    {
-        float maxAlarmValue = 1.1f;
-        float minAlarmValue = 0f;
-        float waitingValue = 1f;
-        
-        var waitingTime = new WaitForSeconds(waitingValue);
-
-        while (_currentAlarmValue <= maxAlarmValue || _currentAlarmValue >= minAlarmValue)
+        public void StopMovingAlarmValues()
         {
-            _currentAlarmValue += point;
+            if (_currentCoroutine != null)
+            {
+                StopCoroutine(_currentCoroutine);
+                _currentCoroutine = null;
+            }
+        }
 
-            _audio.volume = _currentAlarmValue;
-            _bar.FillBar(_currentAlarmValue);
-            yield return waitingTime;
+        private void OnTriggerEnter2D()
+        {
+            StopMovingAlarmValues();
+            _currentCoroutine = StartCoroutine(MoveBar(_pointPerSecond));
+        }
+
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            StopMovingAlarmValues();
+            _currentCoroutine = StartCoroutine(MoveBar(-_pointPerSecond));
+        }    
+
+        private IEnumerator MoveBar(float point)
+        {
+            float maxAlarmValue = 1.1f;
+            float minAlarmValue = 0f;
+            float waitingValue = 1f;
+        
+            var waitingTime = new WaitForSeconds(waitingValue);
+
+            while (_currentAlarmValue <= maxAlarmValue || _currentAlarmValue >= minAlarmValue)
+            {
+                _currentAlarmValue += point;
+
+                _audio.volume = _currentAlarmValue;
+                _bar.FillBar(_currentAlarmValue);
+                yield return waitingTime;
+            }
         }
     }
 }

@@ -1,45 +1,51 @@
-﻿using UnityEngine;
+﻿using Game.Animation.AnimationHashes.Characters;
+using Game.Enemy.Services;
+using Game.Enemy.StateMachine.Behaviours;
+using UnityEngine;
 
-public class EnemyPatrolState : EnemyStateMachine
+namespace Game.Enemy.StateMachine.States
 {
-	private readonly EnemyPatrolBehaviour _enemyPatrolBehaviour;
+    public class EnemyPatrolState : EnemyStateMachine
+    {
+        private readonly EnemyPatrolBehaviour _enemyPatrolBehaviour;
 
-	public EnemyPatrolState(EnemyBehaviour enemyBehaviour, IEnemyStateSwitcher stateSwitcher, Animator animator,
-		AnimationHasher animationHasher, EnemyObserver enemyObserver, EnemyPatrolBehaviour enemyPatrolBehaviour) : base(
-		enemyBehaviour, stateSwitcher, animator, animationHasher, enemyObserver)
-	{
-		_enemyPatrolBehaviour = enemyPatrolBehaviour;
-	}
+        public EnemyPatrolState(EnemyBehaviour enemyBehaviour, IEnemyStateSwitcher stateSwitcher, Animator animator,
+            AnimationHasher animationHasher, EnemyObserver enemyObserver, EnemyPatrolBehaviour enemyPatrolBehaviour) : base(
+            enemyBehaviour, stateSwitcher, animator, animationHasher, enemyObserver)
+        {
+            _enemyPatrolBehaviour = enemyPatrolBehaviour;
+        }
 
-	public override void Start()
-	{
-		Animator.Play(AnimationHasher.WalkHash);
-		_enemyPatrolBehaviour.enabled = true;
-		_enemyPatrolBehaviour.NoWay += SetIdleState;
-		EnemyObserver.TouchedPlayer += SetAttackState;
-		EnemyObserver.SeenPlayer += SetFollowState;
-	}
+        public override void Start()
+        {
+            Animator.Play(AnimationHasher.WalkHash);
+            _enemyPatrolBehaviour.enabled = true;
+            _enemyPatrolBehaviour.NoWay += SetIdleState;
+            EnemyObserver.TouchedPlayer += SetAttackState;
+            EnemyObserver.SeenPlayer += SetFollowState;
+        }
 
-	private void SetIdleState() => 
-		StateSwitcher.SwitchState<EnemyIdleState>();
+        private void SetIdleState() => 
+            StateSwitcher.SwitchState<EnemyIdleState>();
 
-	private void SetAttackState(bool canSeePlayer)
-	{
-		if (canSeePlayer == true) 
-			StateSwitcher.SwitchState<EnemyAttackState>();
-	}
+        private void SetAttackState(bool canSeePlayer)
+        {
+            if (canSeePlayer == true) 
+                StateSwitcher.SwitchState<EnemyAttackState>();
+        }
 
-	private void SetFollowState(bool canSeePlayer)
-	{
-		if (canSeePlayer == true) 
-			StateSwitcher.SwitchState<EnemyFollowState>();
-	}
+        private void SetFollowState(bool canSeePlayer)
+        {
+            if (canSeePlayer == true) 
+                StateSwitcher.SwitchState<EnemyFollowState>();
+        }
 
-	public override void Stop()
-	{
-		_enemyPatrolBehaviour.NoWay -= SetIdleState;
-		EnemyObserver.TouchedPlayer -= SetAttackState;
-		EnemyObserver.SeenPlayer -= SetFollowState;
-		_enemyPatrolBehaviour.enabled = false;
-	}
+        public override void Stop()
+        {
+            _enemyPatrolBehaviour.NoWay -= SetIdleState;
+            EnemyObserver.TouchedPlayer -= SetAttackState;
+            EnemyObserver.SeenPlayer -= SetFollowState;
+            _enemyPatrolBehaviour.enabled = false;
+        }
+    }
 }

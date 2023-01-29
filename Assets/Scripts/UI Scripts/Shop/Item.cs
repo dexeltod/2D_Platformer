@@ -1,15 +1,26 @@
-﻿using PlayerScripts.Weapons;
+﻿using Game.PlayerScripts.Weapons;
 using UnityEngine;
 
 namespace UI_Scripts.Shop
 {
     [CreateAssetMenu(fileName = "Item", menuName = "ShopItemInfo", order = 0)]
-    public class ItemInfo : ScriptableObject
+    public class Item : ScriptableObject
     {
-        public AbstractWeapon Prefab;
-        public string Title;
-        public string Description;
-        public int Price;
-        public Sprite Sprite;
+        [SerializeField] private AbstractWeapon _prefab;
+        [SerializeField] private string _title;
+        [SerializeField] private string _description;
+        [SerializeField] private int _price;
+        [SerializeField] private Sprite _sprite;
+        [SerializeField] private bool _isBought;
+        
+        public AbstractWeapon Prefab => _prefab;
+        public string Title => _title;
+        public string Description => _description;
+        public int Price => _price;
+        public Sprite Sprite => _sprite;
+        public bool IsBought => _isBought;
+
+        public void SetBought(bool isBought) => 
+            _isBought = isBought;
     }
 }

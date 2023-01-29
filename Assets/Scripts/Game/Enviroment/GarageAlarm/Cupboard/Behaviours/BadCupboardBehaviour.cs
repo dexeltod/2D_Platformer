@@ -1,14 +1,19 @@
-public class BadCupboardBehaviour : ICupboard
+using Game.Enviroment.GarageAlarm.Cupboard.Interfaces;
+
+namespace Game.Enviroment.GarageAlarm.Cupboard.Behaviours
 {
-    private readonly AlarmIncreaser _alarmIncreaser;
-
-    public BadCupboardBehaviour(AlarmIncreaser alarmIncreaser)
+    public class BadCupboardBehaviour : ICupboard
     {
-        _alarmIncreaser = alarmIncreaser;
-    }
+        private readonly AlarmIncreaser _alarmIncreaser;
 
-    public void Open()
-    {
-        _alarmIncreaser.SetMaxAlarmVolume();
+        public BadCupboardBehaviour(AlarmIncreaser alarmIncreaser)
+        {
+            _alarmIncreaser = alarmIncreaser;
+        }
+
+        public void Open()
+        {
+            _alarmIncreaser.SetMaxAlarmVolume();
+        }
     }
 }

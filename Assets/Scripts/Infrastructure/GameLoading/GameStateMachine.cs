@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using Infrastructure.Data.PersistentProgress;
+using Infrastructure.Services.SaveLoadService;
+using Infrastructure.States;
 using UI_Scripts.Curtain;
 
-namespace Infrastructure
+namespace Infrastructure.GameLoading
 {
 	public class GameStateMachine : IGameStateMachine
 	{
@@ -15,7 +18,8 @@ namespace Infrastructure
 			_states = new Dictionary<Type, IExitState>
 			{
 				[typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, serviceLocator),
-				[typeof(SceneLoadState)] = new SceneLoadState(this, sceneLoader, loadingCurtain, serviceLocator.Single<IPlayerFactory>()),
+				[typeof(SceneLoadState)] = new SceneLoadState(this, sceneLoader, loadingCurtain, serviceLocator.GetSingle<IPlayerFactory>()),
+				[typeof(LoadProgressState)] = new LoadProgressState(this, serviceLocator.GetSingle<IPersistentProgressService>(), serviceLocator.GetSingle<ISaveLoadService>()),
 				[typeof(GameLoopState)] = new GameLoopState(this),
 			};
 		}

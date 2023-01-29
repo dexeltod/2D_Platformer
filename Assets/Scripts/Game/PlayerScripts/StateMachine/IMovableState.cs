@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Game.PlayerScripts.TestStateMachine
+namespace Game.PlayerScripts.StateMachine
 {
 	public interface IMovableState
 	{

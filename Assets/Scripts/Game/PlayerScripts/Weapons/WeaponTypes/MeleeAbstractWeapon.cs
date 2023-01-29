@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace PlayerScripts.Weapons
+namespace Game.PlayerScripts.Weapons.WeaponTypes
 {
 	public class MeleeAbstractWeapon : AbstractWeapon
 	{
@@ -16,15 +15,15 @@ namespace PlayerScripts.Weapons
 		protected sealed override void PlayAttackAnimation(int animationHash) => 
 			Animator.Play(animationHash);
 
-		public override IEnumerator AttackRoutine(float direction)
+		protected override void Attack()
 		{
 			CanAttack = false;
 			PlayAttackAnimation(CurrentAnimationHash);
-			yield return new WaitForSeconds(AttackSpeed);
+			// yield return new WaitForSeconds(AttackSpeed);
 			CanAttack = true;
 		}
 
-		public override void GiveDamage(Enemy target) =>
+		public override void GiveDamage(Enemy.Enemy target) =>
 			target.ApplyDamage(Damage);
 	}
 }

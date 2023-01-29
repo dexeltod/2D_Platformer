@@ -1,5 +1,8 @@
-public class SchoolGuyEnemy : Enemy
+namespace Game.Enemy.Types
 {
-	private void Start() => 
-		StartFirstState();
+    public class SchoolGuyEnemy : Enemy
+    {
+        private void Start() => 
+            StartFirstState();
+    }
 }

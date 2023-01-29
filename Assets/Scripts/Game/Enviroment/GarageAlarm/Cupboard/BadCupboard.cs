@@ -1,7 +1,11 @@
+using Game.Enviroment.GarageAlarm.Cupboard.Based;
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider2D))]
-public class BadCupboard : BaseCupboard
+namespace Game.Enviroment.GarageAlarm.Cupboard
 {
-    [SerializeField] private AlarmIncreaser _alarm;
+    [RequireComponent(typeof(BoxCollider2D))]
+    public class BadCupboard : BaseCupboard
+    {
+        [SerializeField] private AlarmIncreaser _alarm;
+    }
 }

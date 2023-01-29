@@ -1,13 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-public class MeleeWeaponTriggerInformant : MonoBehaviour
+namespace Game.PlayerScripts.Weapons.MeleeTrigger
 {
-	public event Action<Enemy> Touched;
+    public class MeleeWeaponTriggerInformant : MonoBehaviour
+    {
+        public event Action<Enemy.Enemy> Touched;
 
-	private void OnTriggerEnter2D(Collider2D collider)
-	{
-		if (collider.TryGetComponent(out Enemy enemy)) 
-			Touched.Invoke(enemy);
-	}
+        private void OnTriggerEnter2D(Collider2D collider)
+        {
+            if (collider.TryGetComponent(out Enemy.Enemy enemy)) 
+                Touched.Invoke(enemy);
+        }
+    }
 }

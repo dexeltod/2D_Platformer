@@ -1,17 +1,21 @@
-﻿using UnityEngine;
+﻿using Game.Animation.AnimationHashes.Characters;
+using UnityEngine;
 
-[RequireComponent(typeof(AnimationHasher), typeof(Animator))]
-public class EnemyWinBehaviour : MonoBehaviour
+namespace Game.Enemy.StateMachine.Behaviours
 {
-    private Animator _animator;
-    private AnimationHasher _animation;
-
-    private void Awake()
+    [RequireComponent(typeof(AnimationHasher), typeof(Animator))]
+    public class EnemyWinBehaviour : MonoBehaviour
     {
-        _animation = GetComponent<AnimationHasher>();
-        _animator = GetComponent<Animator>();
-    }
+        private Animator _animator;
+        private AnimationHasher _animation;
 
-    private void OnEnable() =>
-        _animator.Play(_animation.FunHash);
+        private void Awake()
+        {
+            _animation = GetComponent<AnimationHasher>();
+            _animator = GetComponent<Animator>();
+        }
+
+        private void OnEnable() =>
+            _animator.Play(_animation.FunHash);
+    }
 }

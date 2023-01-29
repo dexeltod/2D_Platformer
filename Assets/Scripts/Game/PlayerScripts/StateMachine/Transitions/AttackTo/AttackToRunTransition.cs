@@ -1,13 +1,11 @@
-﻿using PlayerScripts.Weapons;
-
-namespace Game.PlayerScripts.TestStateMachine.Transitions.AttackTo
+﻿namespace Game.PlayerScripts.StateMachine.Transitions.AttackTo
 {
 	public class AttackToRunTransition : StateTransition<States.RunState>
 	{
-		private readonly AbstractWeapon _abstractWeapon;
-		private readonly PhysicsMovement _physicsMovement;
+		private readonly Weapons.AbstractWeapon _abstractWeapon;
+		private readonly Move.PhysicsMovement _physicsMovement;
 
-		public AttackToRunTransition(StateService stateService, AbstractWeapon abstractWeapon, PhysicsMovement physicsMovement) : base(stateService)
+		public AttackToRunTransition(StateService stateService, Weapons.AbstractWeapon abstractWeapon, Move.PhysicsMovement physicsMovement) : base(stateService)
 		{
 			_abstractWeapon = abstractWeapon;
 			_physicsMovement = physicsMovement;

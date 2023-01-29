@@ -1,4 +1,6 @@
-﻿namespace Infrastructure
+﻿using Infrastructure.States;
+
+namespace Infrastructure.GameLoading
 {
 	public interface IGameStateMachine : IService
 	{

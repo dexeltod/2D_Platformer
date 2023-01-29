@@ -1,18 +1,21 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "newEntityData", menuName = "Data/Entity Data Data/Base Data")]
-public class DataEntityVisibility : ScriptableObject
+namespace Game.Enemy.EnemySettings.ScriptableObjectsScripts
 {
-    [Header("Settings for detect enemy")]
-    public float VisibilityRange = 4f;
-    public float AngleOfVisibility = 20f;
+    [CreateAssetMenu(fileName = "newEntityData", menuName = "Data/Entity Data Data/Base Data")]
+    public class DataEntityVisibility : ScriptableObject
+    {
+        [Header("Settings for detect enemy")]
+        public float VisibilityRange = 4f;
+        public float AngleOfVisibility = 20f;
 
-    [Header("Detect ground")]
-    public float WallCheckDistance = 0.2f;
-    public float LedgeCheckDistance = 0.4f;
-    public LayerMask WhatIsTouched;
-    public LayerMask WhatIsGround;
-    public LayerMask WhatIsEnemy;
+        [Header("Detect ground")]
+        public float WallCheckDistance = 0.2f;
+        public float LedgeCheckDistance = 0.4f;
+        public LayerMask WhatIsTouched;
+        public LayerMask WhatIsGround;
+        public LayerMask WhatIsEnemy;
+    }
 }
 
 

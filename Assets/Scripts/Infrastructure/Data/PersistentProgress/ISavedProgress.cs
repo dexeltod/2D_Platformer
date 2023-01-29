@@ -1,7 +1,7 @@
-﻿using Infrastructure.Data;
-
-public interface ISavedProgress
+﻿namespace Infrastructure.Data.PersistentProgress
 {
-	void Save(PlayerProgress progress);
-	void Load(PlayerProgress progress);
+    public interface ISavedProgress : IProgressReader
+    {
+        void Load(GameProgress progress);
+    }
 }

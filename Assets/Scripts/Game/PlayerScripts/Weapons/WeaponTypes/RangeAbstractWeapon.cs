@@ -1,19 +1,18 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace PlayerScripts.Weapons
+namespace Game.PlayerScripts.Weapons.WeaponTypes
 {
-	[RequireComponent(typeof(BulletPool))]
+	[RequireComponent(typeof(Bullets.BulletPool))]
 	public class RangeAbstractWeapon : AbstractWeapon
 	{
 		[SerializeField] private float _bulletSpeed;
 		[SerializeField] private Transform _bulletSpawnTransform;
 
-		private BulletPool _bulletPool;
-		private Bullet _currentBullet;
+		private Bullets.BulletPool _bulletPool;
+		private Bullets.Bullet _currentBullet;
 
 		protected override void OnAwake() =>
-			_bulletPool = GetComponent<BulletPool>();
+			_bulletPool = GetComponent<Bullets.BulletPool>();
 
 		private void OnDisable()
 		{
@@ -21,20 +20,20 @@ namespace PlayerScripts.Weapons
 				_currentBullet.IsTargetReached -= GiveDamage;
 		}
 
-		public override IEnumerator AttackRoutine(float direction)
+		protected  override void Attack()
 		{
 			PlayAttackAnimation(CurrentAnimationHash);
 			CanAttack = false;
 			_currentBullet = _bulletPool.Get(_bulletSpawnTransform);
-			_currentBullet.SetSpeed(_bulletSpeed, direction);
+			// _currentBullet.SetSpeed(_bulletSpeed, direction);
 
 			_currentBullet.IsTargetReached += GiveDamage;
 
-			yield return new WaitForSeconds(AttackSpeed);
+			// yield return new WaitForSeconds(AttackSpeed);
 			CanAttack = true;
 		}
 
-		public sealed override void GiveDamage(Enemy target)
+		public sealed override void GiveDamage(Enemy.Enemy target)
 		{
 			target.ApplyDamage(Damage);
 			_currentBullet.IsTargetReached -= GiveDamage;

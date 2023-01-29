@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Game.PlayerScripts.TestStateMachine
+namespace Game.PlayerScripts.StateMachine
 {
 	public class StateTransition<T> : IStateTransition where T : class, IState
 	{

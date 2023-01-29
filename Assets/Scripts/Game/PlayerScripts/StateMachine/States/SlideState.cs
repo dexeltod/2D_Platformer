@@ -1,7 +1,8 @@
-﻿using Infrastructure.Services;
+﻿using Game.Animation.AnimationHashes.Characters;
+using Infrastructure.Services;
 using UnityEngine;
 
-namespace Game.PlayerScripts.TestStateMachine.States
+namespace Game.PlayerScripts.StateMachine.States
 {
 	public class SlideState : State
 	{

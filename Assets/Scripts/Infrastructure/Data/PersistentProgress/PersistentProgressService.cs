@@ -1,7 +1,8 @@
-﻿namespace Infrastructure.Data
+﻿namespace Infrastructure.Data.PersistentProgress
 {
 	public class PersistentProgressService : IPersistentProgressService
 	{
-		public PlayerProgress PlayerProgress { get; set; }
+		public GameProgress GameProgress { get; set; }
+		
 	}
 }

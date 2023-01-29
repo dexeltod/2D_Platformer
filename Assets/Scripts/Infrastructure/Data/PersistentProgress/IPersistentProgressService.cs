@@ -1,9 +1,9 @@
-﻿using Infrastructure.Data;
+﻿using Infrastructure.GameLoading;
 
-namespace Infrastructure
+namespace Infrastructure.Data.PersistentProgress
 {
 	public interface IPersistentProgressService : IService
 	{
-		PlayerProgress PlayerProgress { get; set; }
+		GameProgress GameProgress { get; set; }
 	}
-} 
+}

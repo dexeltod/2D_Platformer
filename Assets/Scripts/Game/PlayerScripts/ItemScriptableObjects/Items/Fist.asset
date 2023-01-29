@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da8010ac483499b8153b365bfbb42ae, type: 3}
   m_Name: Fist
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 0}
-  _description: 
+  _icon: {fileID: 0}
+  _prefab: {fileID: 4175024203974808750, guid: f9aab4e195a9b65478befe009e66fd90, type: 3}
+  _description: Simple fist
   _price: 0
+  _damage: 10

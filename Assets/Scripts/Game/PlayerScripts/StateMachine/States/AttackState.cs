@@ -1,19 +1,18 @@
-﻿using Infrastructure.Services;
-using PlayerScripts;
-using PlayerScripts.Weapons;
+﻿using Game.Animation.AnimationHashes.Characters;
+using Infrastructure.Services;
 using UnityEngine;
 
-namespace Game.PlayerScripts.TestStateMachine.States
+namespace Game.PlayerScripts.StateMachine.States
 {
 	public class AttackState : State
 	{
-		private readonly PhysicsMovement _physicsMovement;
+		private readonly Move.PhysicsMovement _physicsMovement;
 
-		private AbstractWeapon _currentWeapon;
+		private Weapons.AbstractWeapon _currentWeapon;
 
-		public AttackState(IInputService inputService, PlayerWeaponList playerWeaponList, AbstractWeapon weaponBase,
+		public AttackState(IInputService inputService, PlayerWeaponList playerWeaponList, Weapons.AbstractWeapon weaponBase,
 			Animator animator, AnimationHasher hasher,
-			PhysicsMovement physicsMovement, IStateTransition[] transitions) : base(inputService, animator, hasher,
+			Move.PhysicsMovement physicsMovement, IStateTransition[] transitions) : base(inputService, animator, hasher,
 			transitions)
 		{
 			playerWeaponList.EquippedWeaponChanged += SetEquippedWeapon;
@@ -30,7 +29,7 @@ namespace Game.PlayerScripts.TestStateMachine.States
 		{
 		}
 
-		private void SetEquippedWeapon(AbstractWeapon weapon)
+		private void SetEquippedWeapon(Weapons.AbstractWeapon weapon)
 		{
 			_currentWeapon = weapon;
 		}

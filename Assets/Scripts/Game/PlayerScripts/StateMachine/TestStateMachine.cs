@@ -1,4 +1,4 @@
-﻿namespace Game.PlayerScripts.TestStateMachine
+﻿namespace Game.PlayerScripts.StateMachine
 {
 	public class TestStateMachine
 	{

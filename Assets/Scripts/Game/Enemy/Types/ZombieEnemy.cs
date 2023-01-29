@@ -1,3 +1,6 @@
-﻿public class ZombieEnemy : Enemy
+﻿namespace Game.Enemy.Types
 {
+    public class ZombieEnemy : Enemy
+    {
+    }
 }

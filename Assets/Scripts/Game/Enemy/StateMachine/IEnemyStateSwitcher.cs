@@ -1,4 +1,7 @@
-﻿public interface IEnemyStateSwitcher
+﻿namespace Game.Enemy.StateMachine
 {
-	public void SwitchState<T>() where T : EnemyStateMachine;
+    public interface IEnemyStateSwitcher
+    {
+        public void SwitchState<T>() where T : EnemyStateMachine;
+    }
 }

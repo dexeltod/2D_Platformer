@@ -1,51 +1,53 @@
-using PlayerScripts.Weapons;
+using Game.PlayerScripts.Weapons;
 using TMPro;
-using UI_Scripts.Shop;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class ShopItemView : MonoBehaviour
+namespace UI_Scripts.Shop
 {
-	[SerializeField] private Image _image;
-	[SerializeField] private TextMeshProUGUI _description;
-	[SerializeField] private TextMeshProUGUI _title;
-	[SerializeField] private TextMeshProUGUI _price;
-	[SerializeField] private Button _button;
+    public class ShopItemCellView : MonoBehaviour
+    {
+        [SerializeField] private Image _image;
+        [SerializeField] private TextMeshProUGUI _description;
+        [SerializeField] private TextMeshProUGUI _title;
+        [SerializeField] private TextMeshProUGUI _price;
+        [SerializeField] private Button _button;
 
-	private AbstractWeapon _abstractWeapon;
-	private ItemInfo _itemInfo;
+        private AbstractWeapon _abstractWeapon;
+        private Item _item;
 
-	public event UnityAction<AbstractWeapon, ItemInfo, ShopItemView> BuyButtonClicked;
+        public event UnityAction<Item, ShopItemCellView> BuyButtonClicked;
 
-	~ShopItemView() =>
-		_button.onClick.RemoveListener(OnBuy);
+        ~ShopItemCellView() =>
+            _button.onClick.RemoveListener(OnBuy);
 
-	public void Render(AbstractWeapon weaponBase, ItemInfo itemInfo, Sprite image)
-	{
-		_abstractWeapon = weaponBase;
-		_itemInfo = itemInfo;
-		_title.text = itemInfo.Title;
-		_description.text = itemInfo.Description;
-		_price.text = itemInfo.Price.ToString();
-		_image.sprite = image;
+        public void Render(AbstractWeapon weaponBase, Item item, Sprite image)
+        {
+            _abstractWeapon = weaponBase;
+            _item = item;
+            _title.text = item.Title;
+            _description.text = item.Description;
+            _price.text = item.Price.ToString();
+            _image.sprite = image;
 
-		_button.onClick.AddListener(OnBuy);
-	}
+            _button.onClick.AddListener(OnBuy);
+        }
 
-	private void TryLockItem()
-	{
-		if (_abstractWeapon.IsBought == false)
-		{
-			_button.interactable = false;
-			_abstractWeapon.SetBoughtStateTrue();
-		}
-	}
+        private void TryLockItem()
+        {
+            if (_abstractWeapon.IsBought == false)
+            {
+                _button.interactable = false;
+                _abstractWeapon.SetBoughtStateTrue();
+            }
+        }
 
-	private void OnBuy()
-	{
-		BuyButtonClicked?.Invoke(_abstractWeapon, _itemInfo, this);
-		TryLockItem();
-		_button.onClick.RemoveListener(OnBuy);
-	}
+        private void OnBuy()
+        {
+            BuyButtonClicked?.Invoke(_item, this);
+            TryLockItem();
+            _button.onClick.RemoveListener(OnBuy);
+        }
+    }
 }

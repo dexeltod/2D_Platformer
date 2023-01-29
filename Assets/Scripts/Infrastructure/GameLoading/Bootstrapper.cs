@@ -1,18 +1,21 @@
-using Infrastructure;
+using Infrastructure.States;
 using UI_Scripts.Curtain;
 using UnityEngine;
 
-public class Bootstrapper : MonoBehaviour, ICoroutineRunner
+namespace Infrastructure.GameLoading
 {
-	[SerializeField] private LoadingCurtain _loadingCurtain;
-
-	private Game _game;
-
-	private void Awake()
+	public class Bootstrapper : MonoBehaviour, ICoroutineRunner
 	{
-		_game = new Game(this, Instantiate(_loadingCurtain));
-		_game.StateMachine.Enter<BootstrapState>();
+		[SerializeField] private LoadingCurtain _loadingCurtain;
 
-		DontDestroyOnLoad(this);
+		private Game _game;
+
+		private void Awake()
+		{
+			_game = new Game(this, Instantiate(_loadingCurtain));
+			_game.StateMachine.Enter<BootstrapState>();
+
+			DontDestroyOnLoad(this);
+		}
 	}
 }

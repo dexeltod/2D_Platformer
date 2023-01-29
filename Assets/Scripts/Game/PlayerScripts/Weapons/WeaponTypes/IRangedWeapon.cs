@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace PlayerScripts.Weapons
+namespace Game.PlayerScripts.Weapons.WeaponTypes
 {
     public interface IRangedWeapon
     {

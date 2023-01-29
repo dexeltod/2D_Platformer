@@ -1,13 +1,13 @@
-﻿namespace Game.PlayerScripts.TestStateMachine.Transitions
+﻿namespace Game.PlayerScripts.StateMachine.Transitions
 {
 	public class AnyToFallTransition : StateTransition<States.FallState>
 	{
-		private readonly PhysicsMovement _physicsMovement;
-		private readonly GroundChecker _groundChecker;
+		private readonly Move.PhysicsMovement _physicsMovement;
+		private readonly Move.GroundChecker _groundChecker;
 		private bool _isGrounded;
 
-		public AnyToFallTransition(StateService stateService, PhysicsMovement physicsMovement,
-			GroundChecker groundChecker) : base(stateService)
+		public AnyToFallTransition(StateService stateService, Move.PhysicsMovement physicsMovement,
+			Move.GroundChecker groundChecker) : base(stateService)
 		{
 			_physicsMovement = physicsMovement;
 			_groundChecker = groundChecker;

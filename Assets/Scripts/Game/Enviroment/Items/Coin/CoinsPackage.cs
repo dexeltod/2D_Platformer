@@ -1,5 +1,8 @@
 using UnityEngine;
 
-public class CoinsPackage : MonoBehaviour
-{    
+namespace Game.Enviroment.Items.Coin
+{
+    public class CoinsPackage : MonoBehaviour
+    {    
+    }
 }

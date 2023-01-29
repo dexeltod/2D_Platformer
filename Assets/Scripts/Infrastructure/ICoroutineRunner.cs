@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public interface ICoroutineRunner
+namespace Infrastructure
 {
-	Coroutine StartCoroutine(IEnumerator routine);
+    public interface ICoroutineRunner
+    {
+        Coroutine StartCoroutine(IEnumerator routine);
+    }
 }

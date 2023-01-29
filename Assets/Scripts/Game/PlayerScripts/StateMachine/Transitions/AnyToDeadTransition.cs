@@ -1,4 +1,4 @@
-﻿namespace Game.PlayerScripts.TestStateMachine.Transitions
+﻿namespace Game.PlayerScripts.StateMachine.Transitions
 {
 	public class AnyToDeadTransition : StateTransition<States.DeadState>
 	{

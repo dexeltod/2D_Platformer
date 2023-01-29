@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace PlayerScripts.TestStateMachine
+namespace Game.PlayerScripts.StateMachine
 {
 	public class StateService
 	{

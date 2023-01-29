@@ -124,10 +124,8 @@ GameObject:
   - component: {fileID: 615882016}
   - component: {fileID: 3334711396594127323}
   - component: {fileID: 7798860289455352080}
-  - component: {fileID: 2575078105621751581}
   - component: {fileID: 5636615607356423499}
   - component: {fileID: 8056791013226973877}
-  - component: {fileID: 3340132946698424423}
   - component: {fileID: 9010355836656664239}
   - component: {fileID: 6716184748015567100}
   - component: {fileID: 1359097841}
@@ -386,7 +384,7 @@ MonoBehaviour:
   - {x: 0.030651003, y: 0.6976721, z: 0}
   m_ShapePathHash: -1063575435
   m_Mesh: {fileID: 0}
-  m_InstanceId: 979662
+  m_InstanceId: 55684
 --- !u!114 &3334711396594127323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,18 +410,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
---- !u!114 &2575078105621751581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7637528790393893176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b4dbb4676d94f07acde0f0bd3ff7211, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5636615607356423499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,20 +438,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _money: 4000
---- !u!114 &3340132946698424423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7637528790393893176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02ccb16a46624063b33317555dc3a903, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _weapons:
-  - {fileID: 611047416249856806, guid: f9aab4e195a9b65478befe009e66fd90, type: 3}
 --- !u!114 &9010355836656664239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,8 +468,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 433ea58fff23e624dbd2ee8da2470f96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isDebug: 1
   _feetPosition: {fileID: 187862530}
+  _isDebug: 1
   _moveSpeed: 4
   _jumpForce: 5
   _verticalVelocityLimit: 7

@@ -3,29 +3,32 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoader
+namespace Infrastructure.GameLoading
 {
-	private readonly ICoroutineRunner _coroutineRunner;
-
-	public SceneLoader(ICoroutineRunner coroutineRunner) =>
-		_coroutineRunner = coroutineRunner;
-
-	public void Load(string name, Action onLoaded = null) =>
-		_coroutineRunner.StartCoroutine(LoadScene(name, onLoaded));
-
-	private IEnumerator LoadScene(string nextScene, Action onLoaded = null)
+	public class SceneLoader
 	{
-		if (SceneManager.GetActiveScene().name == nextScene)
+		private readonly ICoroutineRunner _coroutineRunner;
+
+		public SceneLoader(ICoroutineRunner coroutineRunner) =>
+			_coroutineRunner = coroutineRunner;
+
+		public void Load(string name, Action onLoaded = null) =>
+			_coroutineRunner.StartCoroutine(LoadScene(name, onLoaded));
+
+		private IEnumerator LoadScene(string nextScene, Action onLoaded = null)
 		{
-			onLoaded?.Invoke();
-			yield break;
-		}
+			if (SceneManager.GetActiveScene().name == nextScene)
+			{
+				onLoaded?.Invoke();
+				yield break;
+			}
 		
-		AsyncOperation waitNextTime = SceneManager.LoadSceneAsync(nextScene);
+			AsyncOperation waitNextTime = SceneManager.LoadSceneAsync(nextScene);
 
-		while (waitNextTime.isDone == false)
-			yield return null;
+			while (waitNextTime.isDone == false)
+				yield return null;
 
-		onLoaded?.Invoke();
+			onLoaded?.Invoke();
+		}
 	}
 }

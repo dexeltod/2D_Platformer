@@ -3,18 +3,12 @@
 namespace Infrastructure.Data
 {
     [Serializable]
-	public class PlayerProgress
+    public class GameProgress
     {
-        private WeaponData _weaponData;
+        public readonly ItemsData ItemsData;
 
-        public PlayerProgress(string initialLevel)
+        public GameProgress(string initialLevel)
         {
-            
-        }
-
-        public void UpdateWeaponData()
-        {
-            _weaponData.UpdateWeaponData();
         }
     }
 }

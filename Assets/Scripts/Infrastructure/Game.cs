@@ -1,12 +1,15 @@
-﻿using Infrastructure;
+﻿using Infrastructure.GameLoading;
 using UI_Scripts.Curtain;
 
-public class Game
+namespace Infrastructure
 {
-	public readonly GameStateMachine StateMachine;
+    public class Game
+    {
+        public readonly GameStateMachine StateMachine;
 
-	public Game(ICoroutineRunner coroutineRunner, LoadingCurtain loadingCurtain)
-	{
-		StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), loadingCurtain, ServiceLocator.Container);
-	}
+        public Game(ICoroutineRunner coroutineRunner, LoadingCurtain loadingCurtain)
+        {
+            StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), loadingCurtain, ServiceLocator.Container);
+        }
+    }
 }

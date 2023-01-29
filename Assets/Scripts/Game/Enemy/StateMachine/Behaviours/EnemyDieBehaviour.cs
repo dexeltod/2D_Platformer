@@ -1,37 +1,40 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
+using Game.Animation.AnimationHashes.Characters;
 using UnityEngine;
 
-[RequireComponent(typeof(AnimationHasher), typeof(Animator))]
-
-public class EnemyDieBehaviour : MonoBehaviour
+namespace Game.Enemy.StateMachine.Behaviours
 {
-    [SerializeField] private float _destroyTime;
+    [RequireComponent(typeof(AnimationHasher), typeof(Animator))]
 
-    private CapsuleCollider2D _collider;
-    private Animator _animator;
-    private AnimationHasher _animationHasher;
-
-    private void Awake()
+    public class EnemyDieBehaviour : MonoBehaviour
     {
-        _collider = GetComponent<CapsuleCollider2D>();
-        _animator = GetComponent<Animator>();
-        _animationHasher = GetComponent<AnimationHasher>();
-    }
+        [SerializeField] private float _destroyTime;
 
-    private void OnEnable()
-    {
-        _collider.enabled = false;
-        float transitionDuration = 0;
-        _animator.StopPlayback();
-        _animator.CrossFade(_animationHasher.DieHash, transitionDuration);
+        private CapsuleCollider2D _collider;
+        private Animator _animator;
+        private AnimationHasher _animationHasher;
+
+        private void Awake()
+        {
+            _collider = GetComponent<CapsuleCollider2D>();
+            _animator = GetComponent<Animator>();
+            _animationHasher = GetComponent<AnimationHasher>();
+        }
+
+        private void OnEnable()
+        {
+            _collider.enabled = false;
+            float transitionDuration = 0;
+            _animator.StopPlayback();
+            _animator.CrossFade(_animationHasher.DieHash, transitionDuration);
         
-        StartCoroutine(StartTimerToDestroy());
-    }
+            StartCoroutine(StartTimerToDestroy());
+        }
 
-    private IEnumerator StartTimerToDestroy()
-    {
-        yield return new WaitForSeconds(_destroyTime);
-        Destroy(gameObject);
+        private IEnumerator StartTimerToDestroy()
+        {
+            yield return new WaitForSeconds(_destroyTime);
+            Destroy(gameObject);
+        }
     }
 }

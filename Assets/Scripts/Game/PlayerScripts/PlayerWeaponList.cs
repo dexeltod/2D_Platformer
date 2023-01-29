@@ -1,73 +1,77 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using PlayerScripts.Weapons;
+using Game.Animation.AnimationHashes.Characters;
+using Infrastructure.Data;
+using Infrastructure.Data.PersistentProgress;
+using Infrastructure.GameLoading;
+using UI_Scripts.Shop;
 using UnityEngine;
 
-namespace PlayerScripts
+namespace Game.PlayerScripts
 {
-	[RequireComponent(typeof(Animator), typeof(WeaponFactory), typeof(PlayerMoney))]
-	[RequireComponent(typeof(PlayerWeaponInventory), typeof(AnimationHasher))]
-	public class PlayerWeaponInventory : MonoBehaviour
-	{
-		[SerializeField] private List<AbstractWeapon> _weapons;
+    public class PlayerWeaponList
+    {
+        private readonly Transform _transform;
+        private readonly Weapons.WeaponFactory _weaponFactory;
+        private readonly PlayerMoney _playerMoney;
 
-		public event Action<AbstractWeapon> WeaponChanged;
+        private List<Item> _items;
+        private Weapons.AbstractWeapon _equippedWeapon;
+        private AnimationHasher _animationHasher;
 
-		private WeaponFactory _weaponFactory;
-		private PlayerMoney _playerMoney;
-		private Animator _animator;
-		private AnimationHasher _animationHasher;
+        public event Action<Weapons.AbstractWeapon> EquippedWeaponChanged;
 
-		private void Awake()
-		{
-			_animator = GetComponent<Animator>();
-			_animationHasher = GetComponent<AnimationHasher>();
-			_weaponFactory = GetComponent<WeaponFactory>();
-			_playerMoney = GetComponent<PlayerMoney>();
-		}
+        public PlayerWeaponList(Weapons.WeaponFactory weaponFactory,
+            PlayerMoney playerMoney, Transform transform)
+        {
+            GameProgress gameProgress = ServiceLocator
+                .Container
+                .GetSingle<IPersistentProgressService>()
+                .GameProgress;
+            
+            _items = gameProgress.ItemsData.GetBoughtItems();
+            
+            _weaponFactory = weaponFactory;
+            _playerMoney = playerMoney;
+            _transform = transform;
+            _playerMoney.PurchaseCompleted += OnAddBoughtWeapon;
+            SetStartWeapon();
+        }
 
-		private void OnEnable() =>
-			_playerMoney.PurchaseCompleted += AddBoughtWeapon;
+        ~PlayerWeaponList() =>
+            _playerMoney.PurchaseCompleted -= OnAddBoughtWeapon;
 
-		private void Start() =>
-			SetStartWeapon();
+        public Weapons.AbstractWeapon GetEquippedWeapon() =>
+            _equippedWeapon;
 
-		private void OnDisable() =>
-			_playerMoney.PurchaseCompleted -= AddBoughtWeapon;
+        private void OnAddBoughtWeapon(Item weaponBase)
+        {
+            weaponBase.SetBought(true);
+            _items.Add(weaponBase);
+        }
 
-		private void SetLastBoughtWeapon()
-		{
-			AbstractWeapon lastAbstractWeapon = _weapons.Last();
-			AbstractWeapon initializedAbstractWeapon = GetInitializedWeapon(lastAbstractWeapon);
-			SetWeapon(initializedAbstractWeapon);
-		}
+        private void SetStartWeapon()
+        {
+            if (_items.Count <= 0)
+                return;
 
-		private void SetStartWeapon()
-		{
-			if (_weapons.Count <= 0)
-				throw new NullReferenceException();
+            Item item = _items.FirstOrDefault();
 
-			AbstractWeapon firstAbstractWeapon = _weapons.FirstOrDefault();
+            Weapons.AbstractWeapon initializedAbstractWeapon = GetInitializedWeapon(item.Prefab);
+            EquippedWeaponChanged?.Invoke(initializedAbstractWeapon);
+        }
 
-			AbstractWeapon initializedAbstractWeapon = GetInitializedWeapon(firstAbstractWeapon);
-			WeaponChanged?.Invoke(initializedAbstractWeapon);
-		}
+        private Weapons.AbstractWeapon GetInitializedWeapon(Weapons.AbstractWeapon firstAbstractWeapon)
+        {
+            Weapons.AbstractWeapon abstractWeapon = _weaponFactory.CreateWeapon(firstAbstractWeapon, _transform);
+            return abstractWeapon;
+        }
 
-		private AbstractWeapon GetInitializedWeapon(AbstractWeapon firstAbstractWeapon)
-		{
-			AbstractWeapon abstractWeapon = _weaponFactory.CreateWeapon(firstAbstractWeapon, transform);
-			return abstractWeapon;
-		}
-
-		private void AddBoughtWeapon(AbstractWeapon weaponBase)
-		{
-			weaponBase.SetBoughtStateTrue();
-			_weapons.Add(weaponBase);
-			SetLastBoughtWeapon();
-		}
-
-		private void SetWeapon(AbstractWeapon weaponBase) =>
-			WeaponChanged?.Invoke(weaponBase);
-	}
+        private void SetWeapon(Weapons.AbstractWeapon weaponBase)
+        {
+            _equippedWeapon = weaponBase;
+            EquippedWeaponChanged?.Invoke(_equippedWeapon);
+        }
+    }
 }

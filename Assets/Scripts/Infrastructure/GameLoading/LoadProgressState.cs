@@ -1,17 +1,40 @@
-﻿using System;
+﻿using Infrastructure.Constants;
+using Infrastructure.Data;
+using Infrastructure.Data.PersistentProgress;
+using Infrastructure.Services.SaveLoadService;
+using Infrastructure.States;
 
-namespace Infrastructure
+namespace Infrastructure.GameLoading
 {
 	public class LoadProgressState : IState
 	{
-		public void Exit()
+		private readonly GameStateMachine _gameStateMachine;
+		private readonly IPersistentProgressService _progressService;
+        private readonly ISaveLoadService _saveLoadService;
+
+        public LoadProgressState(GameStateMachine gameStateMachine, IPersistentProgressService progressService, ISaveLoadService saveLoadService)
 		{
-			throw new NotImplementedException();
-		}
+			_gameStateMachine = gameStateMachine;
+			_progressService = progressService;
+            _saveLoadService = saveLoadService;
+        }
 
 		public void Enter()
+        {
+            LoadProgressOrInitNew();
+            _gameStateMachine.Enter<SceneLoadState, string>(ConstantNames.FirstLevel);
+        }
+
+		public void Exit()
 		{
-			throw new NotImplementedException();
 		}
-	}
+
+		private void LoadProgressOrInitNew()
+        {
+            _progressService.GameProgress = _saveLoadService.LoadProgress() ?? CreateNewProgress();
+        }
+
+        private GameProgress CreateNewProgress() => 
+            new GameProgress(ConstantNames.FirstLevel);
+    }
 }

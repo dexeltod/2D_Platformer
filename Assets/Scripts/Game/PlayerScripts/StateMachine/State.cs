@@ -1,8 +1,9 @@
 ﻿using System;
+using Game.Animation.AnimationHashes.Characters;
 using Infrastructure.Services;
 using UnityEngine;
 
-namespace Game.PlayerScripts.TestStateMachine
+namespace Game.PlayerScripts.StateMachine
 {
 	public abstract class State : IState
 	{

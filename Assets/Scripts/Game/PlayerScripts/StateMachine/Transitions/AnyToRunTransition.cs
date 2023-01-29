@@ -1,15 +1,15 @@
 ﻿using Infrastructure.Services;
 
-namespace Game.PlayerScripts.TestStateMachine.Transitions
+namespace Game.PlayerScripts.StateMachine.Transitions
 {
     public class AnyToRunTransition : StateTransition<States.RunState>
     {
         private readonly IInputService _inputService;
-        private readonly PhysicsMovement _physicsMovement;
-        private readonly GroundChecker _groundChecker;
+        private readonly Move.PhysicsMovement _physicsMovement;
+        private readonly Move.GroundChecker _groundChecker;
 
-        public AnyToRunTransition(StateService stateService, IInputService inputService, PhysicsMovement physicsMovement,
-            GroundChecker groundChecker) :
+        public AnyToRunTransition(StateService stateService, IInputService inputService, Move.PhysicsMovement physicsMovement,
+            Move.GroundChecker groundChecker) :
             base(stateService)
         {
             _inputService = inputService;

@@ -1,10 +1,11 @@
 ﻿using Infrastructure.Data;
+using Infrastructure.GameLoading;
 
-namespace Infrastructure.GameLoading
+namespace Infrastructure.Services.SaveLoadService
 {
-    public interface ISaveLoadService
+    public interface ISaveLoadService : IService
     {
         void SaveProgress();
-        PlayerProgress LoadProgress();
+        GameProgress LoadProgress();
     }
 }
