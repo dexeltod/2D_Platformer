@@ -4,11 +4,10 @@ using UnityEngine;
 
 namespace Game.PlayerScripts.Weapons
 {
-	public abstract class AbstractWeapon : MonoBehaviour
+	public abstract class AbstractWeapon : Item
 	{
 		[SerializeField] private ContactFilter2D _enemyFilter;
 		[SerializeField] private WeaponInfo _weaponInfo;
-		[SerializeField] private bool _isBought = false;
 
 		protected MeleeTrigger.MeleeWeaponTriggerInformant MeleeWeaponTriggerInformant;
 		protected Animator Animator;
@@ -18,7 +17,6 @@ namespace Game.PlayerScripts.Weapons
 
 		public ContactFilter2D EnemyFilter => _enemyFilter;
 		public int CurrentAnimationHash { get; protected set; }
-		public bool IsBought => _isBought;
 		public bool CanAttack { get; protected set; }
 		public int Damage { get; protected set; }
 		public float AttackSpeed { get; protected set; }
@@ -55,9 +53,6 @@ namespace Game.PlayerScripts.Weapons
 
 		public void SetRunBool(bool isRun) =>
 			IsRun = isRun;
-
-		public void SetBoughtStateTrue() =>
-			_isBought = false;
 
 		protected virtual void Attack()
 		{

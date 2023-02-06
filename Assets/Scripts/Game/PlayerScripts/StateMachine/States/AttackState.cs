@@ -1,4 +1,6 @@
 ﻿using Game.Animation.AnimationHashes.Characters;
+using Game.PlayerScripts.Move;
+using Game.PlayerScripts.Weapons;
 using Infrastructure.Services;
 using UnityEngine;
 
@@ -6,13 +8,13 @@ namespace Game.PlayerScripts.StateMachine.States
 {
 	public class AttackState : State
 	{
-		private readonly Move.PhysicsMovement _physicsMovement;
+		private readonly PhysicsMovement _physicsMovement;
 
-		private Weapons.AbstractWeapon _currentWeapon;
+		private AbstractWeapon _currentWeapon;
 
-		public AttackState(IInputService inputService, PlayerWeaponList playerWeaponList, Weapons.AbstractWeapon weaponBase,
+		public AttackState(IInputService inputService, PlayerWeaponList playerWeaponList, AbstractWeapon weaponBase,
 			Animator animator, AnimationHasher hasher,
-			Move.PhysicsMovement physicsMovement, IStateTransition[] transitions) : base(inputService, animator, hasher,
+			PhysicsMovement physicsMovement, IStateTransition[] transitions) : base(inputService, animator, hasher,
 			transitions)
 		{
 			playerWeaponList.EquippedWeaponChanged += SetEquippedWeapon;
@@ -29,7 +31,7 @@ namespace Game.PlayerScripts.StateMachine.States
 		{
 		}
 
-		private void SetEquippedWeapon(Weapons.AbstractWeapon weapon)
+		private void SetEquippedWeapon(AbstractWeapon weapon)
 		{
 			_currentWeapon = weapon;
 		}

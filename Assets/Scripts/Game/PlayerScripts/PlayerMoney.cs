@@ -10,7 +10,7 @@ namespace Game.PlayerScripts
 
         private Player _player;
 
-        public event UnityAction<Item> PurchaseCompleted;
+        public event UnityAction<ItemScriptableObject> PurchaseCompleted;
         public event UnityAction<int> MoneyCountChanged;
 
         private void Awake() =>
@@ -25,7 +25,7 @@ namespace Game.PlayerScripts
         private void Start() =>
             Initialize();
 
-        private void OnTrySpendMoney(int price, Item weaponBase)
+        private void OnTrySpendMoney(int price, ItemScriptableObject weaponBase)
         {
             const int MinMoneyValue = 0;
 

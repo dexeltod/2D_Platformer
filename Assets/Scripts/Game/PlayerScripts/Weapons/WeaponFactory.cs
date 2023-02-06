@@ -1,11 +1,12 @@
 ﻿using Game.Animation.AnimationHashes.Characters;
+using Game.PlayerScripts.Weapons.MeleeTrigger;
 using UnityEngine;
 
 namespace Game.PlayerScripts.Weapons
 {
     public class WeaponFactory : MonoBehaviour
     {
-        [SerializeField] private MeleeTrigger.MeleeWeaponTriggerInformant _meleeWeaponTrigger;
+        [SerializeField] private MeleeWeaponTriggerInformant _meleeWeaponTrigger;
         [SerializeField] private Animator _animator;
         [SerializeField] private AnimationHasher _animationHasher;
 

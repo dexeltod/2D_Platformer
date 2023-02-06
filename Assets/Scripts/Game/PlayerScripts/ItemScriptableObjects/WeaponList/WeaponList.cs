@@ -10,14 +10,14 @@ namespace Game.PlayerScripts.ItemScriptableObjects.WeaponList
 {
     public class WeaponList : ScriptableObject, ISavedProgress
     {
-        [SerializeField] private List<Item> _weapon;
+        [SerializeField] private List<ItemScriptableObject> _weapon;
 
-        public void GetWeapon(Item weapon)
+        public void GetWeapon(ItemScriptableObject weapon)
         {
             //TODO: Need to get weapon;
         }
 	
-        public void AddWeapon(Item weapon)
+        public void AddWeapon(ItemScriptableObject weapon)
         {
             _weapon.Add(weapon);
         }

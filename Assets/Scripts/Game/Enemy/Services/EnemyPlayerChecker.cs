@@ -34,8 +34,7 @@ namespace Game.Enemy.Services
         public Transform EyeTransform => _eyeTransform;
         public float AngleView => _angleView;
         public Transform PlayerTransform => _playerTransform;
-
-        public event Action PlayerAbove;
+        
         public event Action<bool> SeenPlayer;
 
         private void Start()

@@ -13,7 +13,7 @@ namespace Game.PlayerScripts
 
         private StateMachine.StateService _stateService;
 
-        public event UnityAction<int, Item> Bought;
+        public event UnityAction<int, ItemScriptableObject> Bought;
 
         private void Awake()
         {
@@ -25,8 +25,8 @@ namespace Game.PlayerScripts
             _physicsMovement.Rotating += SetLookDirection;
         }
 
-        public void TryBuyWeapon(Item item) =>
-            Bought?.Invoke(item.Price, item);
+        public void TryBuyWeapon(ItemScriptableObject itemScriptableObject) =>
+            Bought?.Invoke(itemScriptableObject.Price, itemScriptableObject);
 
         private void OnDisable()
         {

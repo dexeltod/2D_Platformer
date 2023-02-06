@@ -1,6 +1,8 @@
+using Game.PlayerScripts.Weapons.WeaponTypes;
+
 namespace Game.PlayerScripts.Weapons
 {
-    public sealed class Fist : WeaponTypes.MeleeAbstractWeapon
+    public sealed class Fist : MeleeAbstractWeapon
     {
         protected  override void Attack()
         {

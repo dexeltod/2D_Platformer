@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Infrastructure.GameLoading
@@ -7,6 +8,6 @@ namespace Infrastructure.GameLoading
 	{
 		GameObject MainCharacter { get; }
 		event Action MainCharacterCreated;
-		GameObject CreateHero(GameObject initialPoint);
+		Task<GameObject> CreateHero(GameObject initialPoint);
 	}
 }

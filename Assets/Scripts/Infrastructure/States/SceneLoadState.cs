@@ -1,4 +1,5 @@
-﻿using Infrastructure.Constants;
+﻿using System.Threading.Tasks;
+using Infrastructure.Constants;
 using Infrastructure.GameLoading;
 using UI_Scripts.Curtain;
 using UnityEngine;
@@ -26,11 +27,9 @@ namespace Infrastructure.States
 			_sceneLoader.Load(levelName, OnLoaded);
 		}
 
-		private void OnLoaded()
+		private async void OnLoaded()
 		{
-			GameObject hero = _playerFactory.CreateHero(CreateInitialPoint());
-			
-			
+			await _playerFactory.CreateHero(CreateInitialPoint());
 			_gameStateMachine.Enter<GameLoopState>();
 		}
 

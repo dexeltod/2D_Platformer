@@ -11,7 +11,7 @@ namespace UI_Scripts.Shop
     public class Shop : MonoBehaviour, ISavedProgress
     {
         [SerializeField] private ShopItemCellView _weaponPanelPrefab;
-        [SerializeField] private List<Item> _items;
+        [SerializeField] private List<ItemScriptableObject> _items;
         [SerializeField] private Player _player;
 
         private GameProgress _gameProgress;
@@ -26,24 +26,27 @@ namespace UI_Scripts.Shop
 
         private void Initialize()
         {
-            foreach (var itemInfo in _items)
+	        if (_items == null)
+		        throw new NullReferenceException("Shop does not have items");
+
+	        foreach (var itemInfo in _items)
             {
                 var currentItem = Instantiate(_weaponPanelPrefab, transform);
-                currentItem.Render(itemInfo.Prefab, itemInfo, itemInfo.Sprite);
+                currentItem.Render(itemInfo, itemInfo.Sprite);
                 currentItem.BuyButtonClicked += OnBuyButtonClick;
             }
         }
 
-        private void OnBuyButtonClick(Item item, ShopItemCellView shopItemView)
+        private void OnBuyButtonClick(ItemScriptableObject itemScriptableObject, ShopItemCellView shopItemView)
         {
-            _player.TryBuyWeapon(item);
+            _player.TryBuyWeapon(itemScriptableObject);
             shopItemView.BuyButtonClicked -= OnBuyButtonClick;
             Update(_gameProgress);
         }
 
         public void Update(GameProgress progress)
         {
-            progress.ItemsData.UpdateWeaponData(new Item());
+            progress.PlayerItemsData.UpdateWeaponData(new ItemScriptableObject());
         }
 
         public void Load(GameProgress progress)

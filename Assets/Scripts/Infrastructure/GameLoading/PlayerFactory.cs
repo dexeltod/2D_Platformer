@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Game.Animation.AnimationHashes.Characters;
 using Game.PlayerScripts;
 using Game.PlayerScripts.Move;
@@ -39,15 +40,14 @@ namespace Infrastructure.GameLoading
             _assetProvider = assetProvider;
         }
 
-        public GameObject CreateHero(GameObject initialPoint)
+        public async Task<GameObject> CreateHero(GameObject initialPoint)
         {
-            MainCharacter = _assetProvider.Instantiate(ConstantNames.PlayerPrefabPath, initialPoint.transform.position);
+            MainCharacter = await _assetProvider.Instantiate(ConstantNames.PlayerPrefabPath, initialPoint.transform.position);
             MainCharacterCreated.Invoke();
 
+            _playerWeaponList = new PlayerWeaponList(_weaponFactory, _playerMoney, MainCharacter.transform);
             GetComponents();
             
-            _playerWeaponList =
-                new PlayerWeaponList(_weaponFactory, _playerMoney, MainCharacter.transform);
             
             CreatePlayerStateMachine();
 

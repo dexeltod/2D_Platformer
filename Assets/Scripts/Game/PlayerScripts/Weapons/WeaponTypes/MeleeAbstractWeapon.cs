@@ -19,7 +19,6 @@ namespace Game.PlayerScripts.Weapons.WeaponTypes
 		{
 			CanAttack = false;
 			PlayAttackAnimation(CurrentAnimationHash);
-			// yield return new WaitForSeconds(AttackSpeed);
 			CanAttack = true;
 		}
 

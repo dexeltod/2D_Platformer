@@ -15,20 +15,19 @@ namespace UI_Scripts.Shop
         [SerializeField] private Button _button;
 
         private AbstractWeapon _abstractWeapon;
-        private Item _item;
+        private ItemScriptableObject _itemScriptableObject;
 
-        public event UnityAction<Item, ShopItemCellView> BuyButtonClicked;
+        public event UnityAction<ItemScriptableObject, ShopItemCellView> BuyButtonClicked;
 
         ~ShopItemCellView() =>
             _button.onClick.RemoveListener(OnBuy);
 
-        public void Render(AbstractWeapon weaponBase, Item item, Sprite image)
+        public void Render(ItemScriptableObject itemScriptableObject, Sprite image)
         {
-            _abstractWeapon = weaponBase;
-            _item = item;
-            _title.text = item.Title;
-            _description.text = item.Description;
-            _price.text = item.Price.ToString();
+            _itemScriptableObject = itemScriptableObject;
+            _title.text = itemScriptableObject.Title;
+            _description.text = itemScriptableObject.Description;
+            _price.text = itemScriptableObject.Price.ToString();
             _image.sprite = image;
 
             _button.onClick.AddListener(OnBuy);
@@ -36,16 +35,16 @@ namespace UI_Scripts.Shop
 
         private void TryLockItem()
         {
-            if (_abstractWeapon.IsBought == false)
+            if (_itemScriptableObject.IsBought == false)
             {
                 _button.interactable = false;
-                _abstractWeapon.SetBoughtStateTrue();
+                _itemScriptableObject.SetBought(true);
             }
         }
 
         private void OnBuy()
         {
-            BuyButtonClicked?.Invoke(_item, this);
+            BuyButtonClicked?.Invoke(_itemScriptableObject, this);
             TryLockItem();
             _button.onClick.RemoveListener(OnBuy);
         }
