@@ -1,4 +1,5 @@
 ﻿using Game.Animation.AnimationHashes.Characters;
+using Game.PlayerScripts.Move;
 using Infrastructure.Services;
 using UnityEngine;
 
@@ -6,9 +7,9 @@ namespace Game.PlayerScripts.StateMachine.States
 {
 	public class RunState : State
 	{
-		private readonly Move.PhysicsMovement _physicsMovement;
+		private readonly PhysicsMovement _physicsMovement;
 
-		public RunState(IInputService inputService, Move.PhysicsMovement physicsMovement, Animator animator,
+		public RunState(IInputService inputService, PhysicsMovement physicsMovement, Animator animator,
 			AnimationHasher hasher, IStateTransition[] transitions) : base(inputService, animator, hasher, transitions)
 		{
 			_physicsMovement = physicsMovement;
@@ -24,7 +25,6 @@ namespace Game.PlayerScripts.StateMachine.States
 
 		protected override void OnEnter()
 		{
-			base.OnEnter();
 			Animator.SetBool(AnimationHasher.RunHash, true);
 		}
 

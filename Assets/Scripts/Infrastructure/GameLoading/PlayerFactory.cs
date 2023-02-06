@@ -36,6 +36,7 @@ namespace Infrastructure.GameLoading
         public PlayerFactory(IAssetProvider assetProvider)
         {
             _inputService = ServiceLocator.Container.GetSingle<IInputService>();
+            
             _stateService = new StateService();
             _assetProvider = assetProvider;
         }
@@ -45,10 +46,9 @@ namespace Infrastructure.GameLoading
             MainCharacter = await _assetProvider.Instantiate(ConstantNames.PlayerPrefabPath, initialPoint.transform.position);
             MainCharacterCreated.Invoke();
 
-            _playerWeaponList = new PlayerWeaponList(_weaponFactory, _playerMoney, MainCharacter.transform);
             GetComponents();
             
-            
+            _playerWeaponList = new PlayerWeaponList(_weaponFactory, _playerMoney, MainCharacter.transform);
             CreatePlayerStateMachine();
 
             return MainCharacter;

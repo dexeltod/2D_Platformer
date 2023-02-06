@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Game.Enemy.EnemySettings
@@ -60,7 +61,7 @@ namespace Game.Enemy.EnemySettings
 
         public void Attack()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

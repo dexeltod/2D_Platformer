@@ -1,11 +1,15 @@
-﻿namespace Game.PlayerScripts.StateMachine.Transitions.AttackTo
-{
-	public class AttackToFallTransition : StateTransition<States.RunState>
-	{
-		private readonly Weapons.AbstractWeapon _abstractWeapon;
-		private readonly Move.PhysicsMovement _physicsMovement;
+﻿using Game.PlayerScripts.Move;
+using Game.PlayerScripts.StateMachine.States;
+using Game.PlayerScripts.Weapons;
 
-		public AttackToFallTransition(StateService stateService, Weapons.AbstractWeapon abstractWeapon, Move.PhysicsMovement physicsMovement) : base(stateService)
+namespace Game.PlayerScripts.StateMachine.Transitions.AttackTo
+{
+	public class AttackToFallTransition : StateTransition<RunState>
+	{
+		private readonly AbstractWeapon _abstractWeapon;
+		private readonly PhysicsMovement _physicsMovement;
+
+		public AttackToFallTransition(StateService stateService, AbstractWeapon abstractWeapon, PhysicsMovement physicsMovement) : base(stateService)
 		{
 			_abstractWeapon = abstractWeapon;
 			_physicsMovement = physicsMovement;
@@ -28,10 +32,8 @@
 
 		private void ChangeState()
 		{
-			if (_physicsMovement.IsGrounded == false)
-			{
+			if (_physicsMovement.IsGrounded == false) 
 				MoveNextState();
-			}
 		}
 	}
 }

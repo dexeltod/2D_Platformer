@@ -148,7 +148,6 @@ namespace Game.PlayerScripts.Move
 
             _lastIsFall = _isFall;
             Fallen?.Invoke(_lastIsFall);
-            Debug.Log($"_isFall {_isFall}");
         }
 
         private void CheckRunning()

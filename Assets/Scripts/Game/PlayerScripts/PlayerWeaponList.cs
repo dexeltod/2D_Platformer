@@ -32,7 +32,6 @@ namespace Game.PlayerScripts
                 .GameProgress;
             
             _items = gameProgress.PlayerItemsData.GetBoughtItems();
-            
             _weaponFactory = weaponFactory;
             _playerMoney = playerMoney;
             _transform = transform;
@@ -60,7 +59,7 @@ namespace Game.PlayerScripts
             ItemScriptableObject itemScriptableObject = _items.FirstOrDefault();
 
             AbstractWeapon initializedAbstractWeapon = GetInitializedWeapon(itemScriptableObject.Prefab.GetComponent<AbstractWeapon>());
-            EquippedWeaponChanged?.Invoke(initializedAbstractWeapon);
+            SetWeapon(initializedAbstractWeapon);
         }
 
         private AbstractWeapon GetInitializedWeapon(AbstractWeapon firstAbstractWeapon)

@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using Infrastructure.Constants;
+﻿using Infrastructure.Constants;
 using Infrastructure.GameLoading;
 using UI_Scripts.Curtain;
 using UnityEngine;

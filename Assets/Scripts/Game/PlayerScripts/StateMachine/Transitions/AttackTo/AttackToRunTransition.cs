@@ -1,6 +1,8 @@
-﻿namespace Game.PlayerScripts.StateMachine.Transitions.AttackTo
+﻿using Game.PlayerScripts.StateMachine.States;
+
+namespace Game.PlayerScripts.StateMachine.Transitions.AttackTo
 {
-	public class AttackToRunTransition : StateTransition<States.RunState>
+	public class AttackToRunTransition : StateTransition<RunState>
 	{
 		private readonly Weapons.AbstractWeapon _abstractWeapon;
 		private readonly Move.PhysicsMovement _physicsMovement;

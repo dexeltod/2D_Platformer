@@ -18,7 +18,6 @@ namespace Game.PlayerScripts.StateMachine.States
 		protected override void OnEnter()
 		{
 			Animator.SetBool(AnimationHasher.IdleHash, true);
-
 			_physicsMovement.SetMoveDirection(0);
 		}
 
