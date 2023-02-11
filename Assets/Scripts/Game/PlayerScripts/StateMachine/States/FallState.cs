@@ -24,7 +24,7 @@ namespace Game.PlayerScripts.StateMachine.States
 		protected override void OnEnter()
 		{
 			base.OnEnter();
-
+			Debug.Log("FallState");
 			Animator.SetBool(AnimationHasher.FallHash, true);
 		}
 

@@ -1,16 +1,18 @@
-﻿using Infrastructure.Services;
+﻿using Game.PlayerScripts.Move;
+using Game.PlayerScripts.StateMachine.States;
+using Infrastructure.Services;
 using UnityEngine;
 
 namespace Game.PlayerScripts.StateMachine.Transitions
 {
-	public class AnyToIdleTransition : StateTransition<States.IdleState>
+	public class AnyToIdleTransition : StateTransition<IdleState>
 	{
 		private readonly IInputService _inputService;
-		private readonly Move.PhysicsMovement _physicsMovement;
-		private readonly Move.GroundChecker _groundChecker;
+		private readonly PhysicsMovement _physicsMovement;
+		private readonly GroundChecker _groundChecker;
 
 		public AnyToIdleTransition(StateService stateService, IInputService inputService,
-			Move.PhysicsMovement physicsMovement, Move.GroundChecker groundChecker) : base(stateService)
+			PhysicsMovement physicsMovement, GroundChecker groundChecker) : base(stateService)
 		{
 			_inputService = inputService;
 			_physicsMovement = physicsMovement;

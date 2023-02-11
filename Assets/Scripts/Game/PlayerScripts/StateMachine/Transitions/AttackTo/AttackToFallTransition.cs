@@ -4,7 +4,7 @@ using Game.PlayerScripts.Weapons;
 
 namespace Game.PlayerScripts.StateMachine.Transitions.AttackTo
 {
-	public class AttackToFallTransition : StateTransition<RunState>
+	public class AttackToFallTransition : StateTransition<FallState>
 	{
 		private readonly AbstractWeapon _abstractWeapon;
 		private readonly PhysicsMovement _physicsMovement;

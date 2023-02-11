@@ -24,6 +24,7 @@ namespace Game.PlayerScripts.StateMachine.States
 
 		protected override void OnEnter()
 		{
+			Debug.Log("attack state");
 			Attack();
 		}
 
@@ -38,11 +39,8 @@ namespace Game.PlayerScripts.StateMachine.States
 
 		private void Attack()
 		{
-			bool isRun = _physicsMovement.MovementDirection.x != 0;
-			
+			bool isRun = _physicsMovement.MovementDirection.x != 0;			
 			_currentWeapon.SetRunBool(isRun);
-			_currentWeapon.SetGroundedBool(_physicsMovement.IsGrounded);
-			
 			_currentWeapon.Use();
 		}
 	}

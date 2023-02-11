@@ -25,6 +25,7 @@ namespace Game.PlayerScripts.StateMachine.States
 
 		protected override void OnEnter()
 		{
+			Debug.Log("RunState");
 			Animator.SetBool(AnimationHasher.RunHash, true);
 		}
 

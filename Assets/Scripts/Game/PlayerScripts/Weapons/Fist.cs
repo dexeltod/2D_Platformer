@@ -1,26 +1,30 @@
-using Game.PlayerScripts.Weapons.WeaponTypes;
+using System;
 
 namespace Game.PlayerScripts.Weapons
 {
-    public sealed class Fist : MeleeAbstractWeapon
+    public sealed class Fist : AbstractWeapon, IMeleeWeapon
     {
-        protected  override void Attack()
-        {
-            CanAttack = false;
-            ChooseAnimation();
-            PlayAttackAnimation(CurrentAnimationHash);
+	    public override void GiveDamage(Enemy.Enemy target)
+	    {
+		    throw new NotImplementedException();
+	    }
 
+	    protected  override void Attack()
+	    {
+		    if(CanAttack == false)
+			    return;
+		    
+            CanAttack = false;
             var animation = Animator.GetCurrentAnimatorStateInfo(0);
 
-            // yield return new WaitForSeconds(animation.speed);
-
-            OnAnimationEnded();
+            ChooseAnimation();
+            StartCoroutine(PlayAnimationRoutine(CurrentAnimationHash));
             CanAttack = true;
         }
 
         private void ChooseAnimation()
         {
-            CurrentAnimationHash = IsRun == false
+            CurrentAnimationHash = (IsRun == false)
                 ? AnimationHasher.HandAttackHash
                 : AnimationHasher.HandAttackRunHash;
         }

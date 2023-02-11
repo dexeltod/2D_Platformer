@@ -17,14 +17,12 @@ namespace Game.PlayerScripts.StateMachine.States
 
 		protected override void OnEnter()
 		{
-			base.OnEnter();
 			_physicsMovement.Jump();
 			Animator.SetBool(AnimationHasher.JumpHash, true);
 		}
 
 		protected override void OnExit()
 		{
-			base.OnExit();
 			Animator.SetBool(AnimationHasher.JumpHash, false);
 		}
 	}

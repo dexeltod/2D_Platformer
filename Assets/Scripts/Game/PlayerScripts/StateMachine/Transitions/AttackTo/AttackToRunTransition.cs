@@ -1,31 +1,38 @@
-﻿using Game.PlayerScripts.StateMachine.States;
+﻿using Game.PlayerScripts.Move;
+using Game.PlayerScripts.StateMachine.States;
+using Game.PlayerScripts.Weapons;
 
 namespace Game.PlayerScripts.StateMachine.Transitions.AttackTo
 {
 	public class AttackToRunTransition : StateTransition<RunState>
 	{
-		private readonly Weapons.AbstractWeapon _abstractWeapon;
-		private readonly Move.PhysicsMovement _physicsMovement;
+		private readonly AbstractWeapon _abstractWeapon;
+		private readonly PhysicsMovement _physicsMovement;
 
-		public AttackToRunTransition(StateService stateService, Weapons.AbstractWeapon abstractWeapon, Move.PhysicsMovement physicsMovement) : base(stateService)
+		public AttackToRunTransition(StateService stateService, AbstractWeapon abstractWeapon, PhysicsMovement physicsMovement) : base(stateService)
 		{
 			_abstractWeapon = abstractWeapon;
 			_physicsMovement = physicsMovement;
-		}
-
-		public override void Enable()
-		{
 			_abstractWeapon.AttackAnimationEnded += ChangeState;
 		}
 
-		public override void Disable()
+		~AttackToRunTransition()
 		{
 			_abstractWeapon.AttackAnimationEnded -= ChangeState;
 		}
 		
+		public override void Enable()
+		{
+		}
+
+		public override void Disable()
+		{
+			
+		}
+		
 		private void ChangeState()
 		{
-			if (_physicsMovement.MovementDirection.x != 0 && _physicsMovement.IsGrounded)
+			if (_physicsMovement.MovementDirection.x != 0 && _physicsMovement.IsGrounded == true)
 			{
 				MoveNextState();
 			}

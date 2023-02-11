@@ -1,15 +1,17 @@
-﻿using Infrastructure.Services;
+﻿using Game.PlayerScripts.Move;
+using Game.PlayerScripts.StateMachine.States;
+using Infrastructure.Services;
 
 namespace Game.PlayerScripts.StateMachine.Transitions
 {
-    public class AnyToRunTransition : StateTransition<States.RunState>
+    public class AnyToRunTransition : StateTransition<RunState>
     {
         private readonly IInputService _inputService;
-        private readonly Move.PhysicsMovement _physicsMovement;
-        private readonly Move.GroundChecker _groundChecker;
+        private readonly PhysicsMovement _physicsMovement;
+        private readonly GroundChecker _groundChecker;
 
-        public AnyToRunTransition(StateService stateService, IInputService inputService, Move.PhysicsMovement physicsMovement,
-            Move.GroundChecker groundChecker) :
+        public AnyToRunTransition(StateService stateService, IInputService inputService, PhysicsMovement physicsMovement,
+            GroundChecker groundChecker) :
             base(stateService)
         {
             _inputService = inputService;
@@ -27,7 +29,7 @@ namespace Game.PlayerScripts.StateMachine.Transitions
 
         public override void Enable()
         {
-            OnGroundedAndRun(_groundChecker.IsGrounded);
+            OnGroundedAndRun(_physicsMovement.IsGrounded);
         }
 
         public override void Disable()
@@ -36,7 +38,7 @@ namespace Game.PlayerScripts.StateMachine.Transitions
 
         private void OnGroundedAndRun(bool isGrounded)
         {
-            if (isGrounded && _physicsMovement.MovementDirection.x != 0)
+            if (isGrounded == true && _physicsMovement.MovementDirection.x != 0)
                 MoveNextState();
         }
 

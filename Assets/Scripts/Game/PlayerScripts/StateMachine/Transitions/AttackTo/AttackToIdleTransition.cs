@@ -1,27 +1,35 @@
-﻿namespace Game.PlayerScripts.StateMachine.Transitions.AttackTo
+﻿using Game.PlayerScripts.Move;
+using Game.PlayerScripts.StateMachine.States;
+using Game.PlayerScripts.Weapons;
+
+namespace Game.PlayerScripts.StateMachine.Transitions.AttackTo
 {
-	public class AttackToIdleTransition : StateTransition<States.RunState>
+	public class AttackToIdleTransition : StateTransition<IdleState>
 	{
-		private readonly Weapons.AbstractWeapon _abstractWeapon;
-		private readonly Move.PhysicsMovement _physicsMovement;
+		private readonly AbstractWeapon _abstractWeapon;
+		private readonly PhysicsMovement _physicsMovement;
 
-		private States.AttackState _attackState;
+		private AttackState _attackState;
 
-		public AttackToIdleTransition(StateService stateService, Weapons.AbstractWeapon abstractWeapon,
-			Move.PhysicsMovement physicsMovement) : base(stateService)
+		public AttackToIdleTransition(StateService stateService, AbstractWeapon abstractWeapon,
+			PhysicsMovement physicsMovement) : base(stateService)
 		{
 			_abstractWeapon = abstractWeapon;
 			_physicsMovement = physicsMovement;
+			_abstractWeapon.AttackAnimationEnded += ChangeState;
+		}
+
+		~AttackToIdleTransition()
+		{
+			_abstractWeapon.AttackAnimationEnded -= ChangeState;
 		}
 
 		public override void Enable()
 		{
-			_abstractWeapon.AttackAnimationEnded += ChangeState;
 		}
 
 		public override void Disable()
 		{
-			_abstractWeapon.AttackAnimationEnded -= ChangeState;
 		}
 
 		private void ChangeState()

@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using Game.Animation.AnimationHashes.Characters;
+using Game.PlayerScripts.Weapons.MeleeTrigger;
 using UnityEngine;
 
 namespace Game.PlayerScripts.Weapons
@@ -9,11 +11,11 @@ namespace Game.PlayerScripts.Weapons
 		[SerializeField] private ContactFilter2D _enemyFilter;
 		[SerializeField] private WeaponInfo _weaponInfo;
 
-		protected MeleeTrigger.MeleeWeaponTriggerInformant MeleeWeaponTriggerInformant;
+		protected MeleeWeaponTriggerInformant MeleeWeaponTriggerInformant;
 		protected Animator Animator;
 		protected AnimationHasher AnimationHasher;
-		protected bool _isGrounded;
 		protected bool IsRun;
+		protected Coroutine AttackRoutine;
 
 		public ContactFilter2D EnemyFilter => _enemyFilter;
 		public int CurrentAnimationHash { get; protected set; }
@@ -28,7 +30,7 @@ namespace Game.PlayerScripts.Weapons
 			OnAwake();
 
 		public void Initialize(Animator animator, AnimationHasher hasher,
-			MeleeTrigger.MeleeWeaponTriggerInformant meleeWeaponTrigger)
+			MeleeWeaponTriggerInformant meleeWeaponTrigger)
 		{
 			MeleeWeaponTriggerInformant = meleeWeaponTrigger;
 			Animator = animator;
@@ -42,28 +44,35 @@ namespace Game.PlayerScripts.Weapons
 			Animator.SetFloat(AnimationHasher.AttackSpeedHash, AttackSpeed);
 		}
 
-		public virtual void Use()
-		{
+		public void Use() => 
 			Attack();
-		}
 
 		public abstract void GiveDamage(Enemy.Enemy target);
 
-		public void SetGroundedBool(bool isGrounded) => _isGrounded = isGrounded;
 
 		public void SetRunBool(bool isRun) =>
 			IsRun = isRun;
 
 		protected virtual void Attack()
 		{
-			
 		}
-		
+
 		protected virtual void OnAwake()
 		{
 		}
 
-		protected void OnAnimationEnded() => AttackAnimationEnded.Invoke();
+		protected IEnumerator PlayAnimationRoutine(int hash)
+		{
+			Animator.SetBool(hash, true);
+			AnimatorStateInfo info = Animator.GetCurrentAnimatorStateInfo(0);
+			float speed = info.speed;
+			WaitForSeconds animationTime = new(speed);
+
+			yield return animationTime;
+			
+			Animator.SetBool(hash, false);
+			AttackAnimationEnded.Invoke();
+		}
 
 		protected virtual void PlayAttackAnimation(int hash)
 		{

@@ -1,4 +1,5 @@
-﻿using Infrastructure.Services;
+﻿using Game.PlayerScripts.Move;
+using Infrastructure.Services;
 
 namespace Game.PlayerScripts.StateMachine.Transitions
 {
@@ -6,7 +7,7 @@ namespace Game.PlayerScripts.StateMachine.Transitions
 	{
 		private readonly IInputService _inputService;
 
-		public AnyToAttackTransition(StateService stateService, IInputService inputService, Move.GroundChecker groundChecker)
+		public AnyToAttackTransition(StateService stateService, IInputService inputService, GroundChecker groundChecker)
 			: base(stateService)
 		{
 			_inputService = inputService;
