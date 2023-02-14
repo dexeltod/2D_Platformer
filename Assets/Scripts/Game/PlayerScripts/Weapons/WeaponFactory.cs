@@ -8,6 +8,7 @@ namespace Game.PlayerScripts.Weapons
     {
         [SerializeField] private MeleeWeaponTriggerInformant _meleeWeaponTrigger;
         [SerializeField] private Animator _animator;
+        [SerializeField] private AnimatorFacade _animatorFacade;
         [SerializeField] private AnimationHasher _animationHasher;
 
         public AbstractWeapon CreateWeapon(AbstractWeapon weaponBase, Transform parent)
@@ -16,7 +17,7 @@ namespace Game.PlayerScripts.Weapons
             weaponBase.enabled = false;
 		
             AbstractWeapon instantiatedAbstractWeapon = Instantiate(weaponBase, parent);
-            instantiatedAbstractWeapon.Initialize(_animator, _animationHasher, _meleeWeaponTrigger);
+            instantiatedAbstractWeapon.Initialize(_animator, _animatorFacade, _animationHasher, _meleeWeaponTrigger);
 		
             instantiatedAbstractWeapon.gameObject.SetActive(true);
             instantiatedAbstractWeapon.enabled = true;

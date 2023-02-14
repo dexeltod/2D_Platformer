@@ -1,4 +1,5 @@
 ﻿using Game.Animation.AnimationHashes.Characters;
+using Game.PlayerScripts.Move;
 using Infrastructure.Services;
 using UnityEngine;
 
@@ -6,12 +7,15 @@ namespace Game.PlayerScripts.StateMachine.States
 {
 	public class FallState : State
 	{
-		private readonly Move.PhysicsMovement _physicsMovement;
+		private readonly AnimatorFacade _animatorFacade;
+		private readonly PhysicsMovement _physicsMovement;
 
 		public FallState(IInputService inputService, Animator animator, AnimationHasher hasher,
-			IStateTransition[] transitions, Move.PhysicsMovement physicsMovement) : base(inputService, animator, hasher,
+			AnimatorFacade animatorFacade,
+			IStateTransition[] transitions, PhysicsMovement physicsMovement) : base(inputService, animator, hasher,
 			transitions)
 		{
+			_animatorFacade = animatorFacade;
 			_physicsMovement = physicsMovement;
 			InputService.VerticalButtonCanceled += OnButtonCanceled;
 		}
@@ -23,16 +27,7 @@ namespace Game.PlayerScripts.StateMachine.States
 
 		protected override void OnEnter()
 		{
-			base.OnEnter();
-			Debug.Log("FallState");
-			Animator.SetBool(AnimationHasher.FallHash, true);
-		}
-
-		protected override void OnExit()
-		{
-			base.OnExit();
-
-			Animator.SetBool(AnimationHasher.FallHash, false);
+			_animatorFacade.Play(AnimationHasher.FallHash);
 		}
 
 		private void OnButtonCanceled()

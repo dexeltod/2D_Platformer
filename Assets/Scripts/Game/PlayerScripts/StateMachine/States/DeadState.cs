@@ -15,10 +15,5 @@ namespace Game.PlayerScripts.StateMachine.States
 			base.OnEnter();
 			Animator.Play(AnimationHasher.DieHash);
 		}
-
-		protected override void OnExit()
-		{
-			base.OnExit();
-		}
 	}
 }

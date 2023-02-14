@@ -28,6 +28,7 @@ namespace Infrastructure.GameLoading
         private Animator _animator;
         private AnimationHasher _animationHasher;
         private GroundChecker _groundChecker;
+        private AnimatorFacade _animatorFacade;
 
         public GameObject MainCharacter { get; private set; }
 
@@ -62,12 +63,13 @@ namespace Infrastructure.GameLoading
             _animationHasher = MainCharacter.GetComponent<AnimationHasher>();
             _groundChecker = MainCharacter.GetComponent<GroundChecker>();
             _playerMoney = MainCharacter.GetComponent<PlayerMoney>();
+            _animatorFacade = MainCharacter.GetComponent<AnimatorFacade>();
         }
 
         private void CreatePlayerStateMachine()
         {
             PlayerStatesFactory playerStatesFactory =
-                new PlayerStatesFactory(_groundChecker, _inputService, _animator, _animationHasher, _stateService,
+                new PlayerStatesFactory(_groundChecker, _inputService, _animator, _animationHasher, _stateService, _animatorFacade,
                     _physicsMovement, _playerWeaponList);
 
             playerStatesFactory.CreateTransitions();

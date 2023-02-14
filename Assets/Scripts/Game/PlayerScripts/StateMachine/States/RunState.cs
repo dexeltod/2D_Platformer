@@ -8,11 +8,13 @@ namespace Game.PlayerScripts.StateMachine.States
 	public class RunState : State
 	{
 		private readonly PhysicsMovement _physicsMovement;
+		private readonly AnimatorFacade _animatorFacade;
 
-		public RunState(IInputService inputService, PhysicsMovement physicsMovement, Animator animator,
-			AnimationHasher hasher, IStateTransition[] transitions) : base(inputService, animator, hasher, transitions)
+		public RunState(IInputService inputService, Animator animator, PhysicsMovement physicsMovement,
+			AnimationHasher hasher, AnimatorFacade animatorFacade, IStateTransition[] transitions) : base(inputService, animator, hasher, transitions)
 		{
 			_physicsMovement = physicsMovement;
+			_animatorFacade = animatorFacade;
 			InputService.VerticalButtonUsed += SetMoveDirection;
 			InputService.VerticalButtonCanceled += SetFalseRunBool;
 		}
@@ -25,13 +27,11 @@ namespace Game.PlayerScripts.StateMachine.States
 
 		protected override void OnEnter()
 		{
-			Debug.Log("RunState");
-			Animator.SetBool(AnimationHasher.RunHash, true);
+			_animatorFacade.Play(AnimationHasher.RacingHash);
 		}
 
 		private void SetFalseRunBool()
 		{
-			Animator.SetBool(AnimationHasher.RunHash, false);
 		}
 		
 		private void SetMoveDirection(float direction)

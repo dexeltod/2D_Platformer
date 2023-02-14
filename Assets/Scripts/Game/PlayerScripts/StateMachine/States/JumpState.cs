@@ -1,4 +1,5 @@
 ﻿using Game.Animation.AnimationHashes.Characters;
+using Game.PlayerScripts.Move;
 using Infrastructure.Services;
 using UnityEngine;
 
@@ -6,24 +7,21 @@ namespace Game.PlayerScripts.StateMachine.States
 {
 	public class JumpState : State
 	{
-		private readonly Move.PhysicsMovement _physicsMovement;
+		private readonly PhysicsMovement _physicsMovement;
+		private readonly AnimatorFacade _animatorFacade;
 
-		public JumpState(Move.PhysicsMovement physicsMovement, IInputService inputService, Animator animator,
-			AnimationHasher hasher, IStateTransition[] transitions)
+		public JumpState(PhysicsMovement physicsMovement, IInputService inputService, Animator animator,
+			AnimationHasher hasher, AnimatorFacade animatorFacade, IStateTransition[] transitions)
 			: base(inputService, animator, hasher, transitions)
 		{
 			_physicsMovement = physicsMovement;
+			_animatorFacade = animatorFacade;
 		}
 
 		protected override void OnEnter()
 		{
 			_physicsMovement.Jump();
-			Animator.SetBool(AnimationHasher.JumpHash, true);
-		}
-
-		protected override void OnExit()
-		{
-			Animator.SetBool(AnimationHasher.JumpHash, false);
+			_animatorFacade.Play(AnimationHasher.JumpHash);
 		}
 	}
 }

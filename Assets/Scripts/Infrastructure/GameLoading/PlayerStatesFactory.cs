@@ -17,6 +17,7 @@ namespace Infrastructure.GameLoading
 		private readonly IInputService _inputService;
 		private readonly Animator _animator;
 		private readonly StateService _stateService;
+		private readonly AnimatorFacade _animatorFacade;
 		private readonly PhysicsMovement _physicsMovement;
 		private readonly PlayerWeaponList _playerWeaponList;
 		private readonly AbstractWeapon _abstractWeapon;
@@ -34,13 +35,15 @@ namespace Infrastructure.GameLoading
 
 		public PlayerStatesFactory(GroundChecker groundChecker, IInputService inputService, Animator animator,
 			AnimationHasher hasher,
-			StateService stateService, PhysicsMovement physicsMovement, PlayerWeaponList playerWeaponList)
+			StateService stateService, AnimatorFacade animatorFacade, PhysicsMovement physicsMovement,
+			PlayerWeaponList playerWeaponList)
 		{
 			_groundChecker = groundChecker;
 			_inputService = inputService;
 			_animator = animator;
 			_animationHasher = hasher;
 			_stateService = stateService;
+			_animatorFacade = animatorFacade;
 			_physicsMovement = physicsMovement;
 			_playerWeaponList = playerWeaponList;
 
@@ -74,7 +77,7 @@ namespace Infrastructure.GameLoading
 		private void CreateIdleState() =>
 			_stateService.Register(
 				new IdleState(
-					_inputService, _physicsMovement, _animator, _animationHasher,
+					_inputService, _physicsMovement, _animator, _animationHasher, _animatorFacade,
 					new[]
 					{
 						_anyToDeadTransition,
@@ -87,7 +90,7 @@ namespace Infrastructure.GameLoading
 		private void CreateRunState() =>
 			_stateService.Register(
 				new RunState(
-					_inputService, _physicsMovement, _animator, _animationHasher,
+					_inputService, _animator, _physicsMovement, _animationHasher, _animatorFacade,
 					transitions: new[]
 					{
 						_anyToDeadTransition,
@@ -99,7 +102,7 @@ namespace Infrastructure.GameLoading
 
 		private void CreateFallState()
 		{
-			_stateService.Register(new FallState(_inputService, _animator, _animationHasher,
+			_stateService.Register(new FallState(_inputService, _animator, _animationHasher, _animatorFacade,
 				transitions: new[]
 				{
 					_anyToIdleTransition,
@@ -110,7 +113,7 @@ namespace Infrastructure.GameLoading
 
 		private void CreateJumpState()
 		{
-			_stateService.Register(new JumpState(_physicsMovement, _inputService, _animator, _animationHasher,
+			_stateService.Register(new JumpState(_physicsMovement, _inputService, _animator, _animationHasher, _animatorFacade,
 				transitions: new[]
 				{
 					_anyToFallTransition,
@@ -120,7 +123,7 @@ namespace Infrastructure.GameLoading
 		private void CreateAttackState() =>
 			_stateService.Register(
 				new AttackState(
-					_inputService, _playerWeaponList, _abstractWeapon, _animator, _animationHasher, _physicsMovement,
+					_inputService, _playerWeaponList, _abstractWeapon, _animator, _animationHasher, _physicsMovement, _animatorFacade,
 					transitions: new[]
 					{
 						_anyToDeadTransition,

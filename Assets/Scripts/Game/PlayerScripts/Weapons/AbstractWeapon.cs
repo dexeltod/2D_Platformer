@@ -8,6 +8,8 @@ namespace Game.PlayerScripts.Weapons
 {
 	public abstract class AbstractWeapon : Item
 	{
+		private const string BaseLayer = "Base Layer";
+
 		[SerializeField] private ContactFilter2D _enemyFilter;
 		[SerializeField] private WeaponInfo _weaponInfo;
 
@@ -16,6 +18,7 @@ namespace Game.PlayerScripts.Weapons
 		protected AnimationHasher AnimationHasher;
 		protected bool IsRun;
 		protected Coroutine AttackRoutine;
+		private AnimatorFacade _animatorFacade;
 
 		public ContactFilter2D EnemyFilter => _enemyFilter;
 		public int CurrentAnimationHash { get; protected set; }
@@ -29,9 +32,10 @@ namespace Game.PlayerScripts.Weapons
 		protected virtual void Awake() =>
 			OnAwake();
 
-		public void Initialize(Animator animator, AnimationHasher hasher,
+		public void Initialize(Animator animator, AnimatorFacade animatorFacade, AnimationHasher hasher,
 			MeleeWeaponTriggerInformant meleeWeaponTrigger)
 		{
+			_animatorFacade = animatorFacade;
 			MeleeWeaponTriggerInformant = meleeWeaponTrigger;
 			Animator = animator;
 			AnimationHasher = hasher;
@@ -44,11 +48,10 @@ namespace Game.PlayerScripts.Weapons
 			Animator.SetFloat(AnimationHasher.AttackSpeedHash, AttackSpeed);
 		}
 
-		public void Use() => 
+		public void Use() =>
 			Attack();
 
 		public abstract void GiveDamage(Enemy.Enemy target);
-
 
 		public void SetRunBool(bool isRun) =>
 			IsRun = isRun;
@@ -63,18 +66,21 @@ namespace Game.PlayerScripts.Weapons
 
 		protected IEnumerator PlayAnimationRoutine(int hash)
 		{
-			Animator.SetBool(hash, true);
-			AnimatorStateInfo info = Animator.GetCurrentAnimatorStateInfo(0);
-			float speed = info.speed;
+			_animatorFacade.Play(hash);
+			AnimatorStateInfo info = Animator.GetCurrentAnimatorStateInfo(Animator.GetLayerIndex(BaseLayer));
+			float speed = info.length;
 			WaitForSeconds animationTime = new(speed);
 
 			yield return animationTime;
-			
-			Animator.SetBool(hash, false);
+
 			AttackAnimationEnded.Invoke();
 		}
 
 		protected virtual void PlayAttackAnimation(int hash)
+		{
+		}
+
+		private void OnWeaponAnimationEnded()
 		{
 		}
 	}
