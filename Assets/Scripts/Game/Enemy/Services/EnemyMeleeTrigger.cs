@@ -4,22 +4,22 @@ using UnityEngine;
 
 namespace Game.Enemy.Services
 {
-    public class EnemyMeleePlayerChecker : MonoBehaviour
+    public class EnemyMeleeTrigger : MonoBehaviour
     {
-        private BoxCollider2D _boxCollider2D;
+        private Collider2D _collider;
 	
         public event Action<bool> TouchedPlayer;
 
         private void Awake()
         {
-            _boxCollider2D = GetComponent<BoxCollider2D>();
+            _collider = GetComponent<BoxCollider2D>();
         }
 
         private void OnEnable() => 
-            _boxCollider2D.enabled = true;
+            _collider.enabled = true;
 
         private void OnDisable() => 
-            _boxCollider2D.enabled = false;
+            _collider.enabled = false;
 
         private void OnTriggerEnter2D(Collider2D col)
         {

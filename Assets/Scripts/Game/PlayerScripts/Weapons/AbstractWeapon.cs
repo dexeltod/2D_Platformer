@@ -3,6 +3,7 @@ using System.Collections;
 using Game.Animation.AnimationHashes.Characters;
 using Game.PlayerScripts.Weapons.MeleeTrigger;
 using UnityEngine;
+using UnityEngine.U2D.IK;
 
 namespace Game.PlayerScripts.Weapons
 {
@@ -12,13 +13,14 @@ namespace Game.PlayerScripts.Weapons
 
 		[SerializeField] private ContactFilter2D _enemyFilter;
 		[SerializeField] private WeaponInfo _weaponInfo;
-
-		protected MeleeWeaponTriggerInformant MeleeWeaponTriggerInformant;
+		
 		protected Animator Animator;
 		protected AnimationHasher AnimationHasher;
 		protected bool IsRun;
 		protected Coroutine AttackRoutine;
+		
 		private AnimatorFacade _animatorFacade;
+		private MeleeWeaponTrigger _meleeWeaponTrigger;
 
 		public ContactFilter2D EnemyFilter => _enemyFilter;
 		public int CurrentAnimationHash { get; protected set; }
@@ -29,14 +31,21 @@ namespace Game.PlayerScripts.Weapons
 
 		public event Action AttackAnimationEnded;
 
-		protected virtual void Awake() =>
+		protected virtual void Awake()
+		{
 			OnAwake();
+		}
+
+		private void OnEnable() => _meleeWeaponTrigger.Touched += GiveDamage;
+
+		private void OnDisable() => 
+			_meleeWeaponTrigger.Touched -= GiveDamage;
 
 		public void Initialize(Animator animator, AnimatorFacade animatorFacade, AnimationHasher hasher,
-			MeleeWeaponTriggerInformant meleeWeaponTrigger)
+			MeleeWeaponTrigger meleeWeaponTrigger)
 		{
+			_meleeWeaponTrigger = meleeWeaponTrigger;
 			_animatorFacade = animatorFacade;
-			MeleeWeaponTriggerInformant = meleeWeaponTrigger;
 			Animator = animator;
 			AnimationHasher = hasher;
 
@@ -66,22 +75,16 @@ namespace Game.PlayerScripts.Weapons
 
 		protected IEnumerator PlayAnimationRoutine(int hash)
 		{
+			_meleeWeaponTrigger.gameObject.SetActive(true);
 			_animatorFacade.Play(hash);
 			AnimatorStateInfo info = Animator.GetCurrentAnimatorStateInfo(Animator.GetLayerIndex(BaseLayer));
 			float speed = info.length;
 			WaitForSeconds animationTime = new(speed);
 
 			yield return animationTime;
-
+			
+			_meleeWeaponTrigger.gameObject.SetActive(false);
 			AttackAnimationEnded.Invoke();
-		}
-
-		protected virtual void PlayAttackAnimation(int hash)
-		{
-		}
-
-		private void OnWeaponAnimationEnded()
-		{
 		}
 	}
 }

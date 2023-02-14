@@ -12,7 +12,7 @@ namespace Game.Enemy.Services
 
         [SerializeField] private DataEntityVisibility _entityVisibility;
         [SerializeField] private EnemyPlayerChecker _enemyPlayerChecker;
-        [SerializeField] private EnemyMeleePlayerChecker _enemyMeleeChecker;
+        [SerializeField] private EnemyMeleeTrigger _enemyMeleeChecker;
 
         [SerializeField] private Transform _wallCheckTransform;
         [SerializeField] private Transform _ledgeCheckTransform;

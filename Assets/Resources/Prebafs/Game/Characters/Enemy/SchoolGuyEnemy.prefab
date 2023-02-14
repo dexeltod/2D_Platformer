@@ -100,7 +100,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5991125, y: 1.1922808}
+  m_Offset: {x: 0.25816345, y: 0.5730095}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -111,7 +111,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6896267, y: 0.29781723}
+  m_Size: {x: 0.24430847, y: 0.13082123}
   m_EdgeRadius: 0
 --- !u!114 &1083062508278228268
 MonoBehaviour:
@@ -226,7 +226,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 61f4b980f23605b40a9ea1225418133d, type: 2}
+  - {fileID: 2100000, guid: 86c2b0d7aef007241b9703108e34b304, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -247,7 +247,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: -2971863251808284264, guid: e6abbdf8570a5f943be992d169f07605, type: 3}
+  m_Sprite: {fileID: -476032833, guid: 4321963f6bd52704c83a6e1e54b2f30a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -312,8 +312,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.013188362, y: 0.9600749}
-  m_Size: {x: 0.5779934, y: 1.9201584}
+  m_Offset: {x: 0.013188362, y: 0.50083995}
+  m_Size: {x: 0.22328238, y: 1.0016885}
   m_Direction: 0
 --- !u!114 &2354059669385734343
 MonoBehaviour:
@@ -361,12 +361,12 @@ MonoBehaviour:
   m_SelfShadows: 1
   m_ApplyToSortingLayers: 000000000b4ae255
   m_ShapePath:
-  - {x: -0.21823692, y: 0.7451525, z: 0}
-  - {x: -0.03417778, y: 1.3724217, z: 0}
-  - {x: 0.12706184, y: 0.7423568, z: 0}
-  m_ShapePathHash: -801796281
+  - {x: -0.07872391, y: 0.39149475, z: 0}
+  - {x: 0.0015106201, y: 0.6488857, z: 0}
+  - {x: 0.071899414, y: 0.385458, z: 0}
+  m_ShapePathHash: -1856394697
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1620
+  m_InstanceId: -1390
 --- !u!114 &6424921582603155147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,7 +505,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4161490243778442859}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2, y: 1.712, z: 0}
+  m_LocalPosition: {x: -0.006, y: 0.862, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

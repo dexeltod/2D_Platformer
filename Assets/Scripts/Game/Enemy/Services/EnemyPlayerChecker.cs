@@ -28,14 +28,16 @@ namespace Game.Enemy.Services
         private float _distanceToTarget;
         private float _currentAngle;
 
-        public bool CanSeePlayer { get; private set; }
-
+        private bool _сanSeePlayer;
+        
         public float ViewDistance => _viewDistance;
-        public Transform EyeTransform => _eyeTransform;
-        public float AngleView => _angleView;
-        public Transform PlayerTransform => _playerTransform;
         
         public event Action<bool> SeenPlayer;
+
+        private void OnValidate()
+        {
+	        _angleView = _minAngleView;
+        }
 
         private void Start()
         {
@@ -88,8 +90,10 @@ namespace Game.Enemy.Services
         private void SetTargetVisibility(bool isSeeTarget)
         {
             _lastSawPlayer = isSeeTarget;
+            
             _angleView = isSeeTarget ? _maxAngleView : _minAngleView;
-            CanSeePlayer = isSeeTarget;
+            
+            _сanSeePlayer = isSeeTarget;
             SeenPlayer?.Invoke(isSeeTarget);
         }
 
@@ -101,11 +105,11 @@ namespace Game.Enemy.Services
             const int FirstCollidedObject = 0;
 
             Transform target = range[FirstCollidedObject].transform;
-            CountTargetPosition(target);
+            CountTargetsAngle(target);
             return target;
         }
 
-        private void CountTargetPosition(Transform target)
+        private void CountTargetsAngle(Transform target)
         {
             _directionToTarget = (target.position - _eyeTransform.position).normalized;
             _currentAngle = Vector2.Angle(_eyeTransform.right, _directionToTarget);

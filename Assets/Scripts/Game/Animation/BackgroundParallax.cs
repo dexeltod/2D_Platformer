@@ -6,6 +6,7 @@ namespace Game.Animation
     public class BackgroundParallax : MonoBehaviour
     {
         [SerializeField] private Camera _camera;
+        
         private Transform _followedTarget;
 
         private IPlayerFactory _playerFactory;

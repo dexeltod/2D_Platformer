@@ -5,6 +5,7 @@ using Game.Enemy.Services;
 using Game.PlayerScripts.PlayerData;
 using Infrastructure.GameLoading;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Game.Enemy.StateMachine.Behaviours
 {
@@ -12,7 +13,7 @@ namespace Game.Enemy.StateMachine.Behaviours
     public class EnemyAttackBehaviour : MonoBehaviour
     {
         [SerializeField] private EnemyData _enemyData;
-        [SerializeField] private EnemyMeleePlayerChecker _enemyMeleePlayerChecker;
+        [FormerlySerializedAs("_enemyMeleePlayerChecker")] [SerializeField] private EnemyMeleeTrigger _enemyMeleeTrigger;
 
         private PlayerHealth _playerHealth;
         private Animator _animator;
@@ -39,12 +40,12 @@ namespace Game.Enemy.StateMachine.Behaviours
         {
             _canAttack = true;
             OnAttack(_canAttack);
-            _enemyMeleePlayerChecker.TouchedPlayer += OnAttack;
+            _enemyMeleeTrigger.TouchedPlayer += OnAttack;
         }
 
         private void OnDisable()
         {
-            _enemyMeleePlayerChecker.TouchedPlayer -= OnAttack;
+            _enemyMeleeTrigger.TouchedPlayer -= OnAttack;
             _animator.StopPlayback();
 
             if (_currentCoroutine != null)

@@ -1,12 +1,10 @@
-using System;
-
 namespace Game.PlayerScripts.Weapons
 {
     public sealed class Fist : AbstractWeapon, IMeleeWeapon
     {
 	    public override void GiveDamage(Enemy.Enemy target)
 	    {
-		    throw new NotImplementedException();
+		    target.ApplyDamage(Damage);
 	    }
 
 	    protected  override void Attack()

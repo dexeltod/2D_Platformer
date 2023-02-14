@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4321963f6bd52704c83a6e1e54b2f30a
+guid: c968bc76c23777e468964e172acda82b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -44,12 +44,12 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  spriteMeshType: 0
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
   spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -68,7 +68,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -141,7 +141,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SchoolGuy_0
+      name: SchoolGuy-sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -149,20 +149,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27ba5239cea5ad6419da0247c42f2fd5
-      internalID: -476032833
+      spriteID: 875c899e9506b8c4f8599ba2157c1117
+      internalID: 135807755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_1
+      name: SchoolGuy-sheet_1
       rect:
         serializedVersion: 2
         x: 64
@@ -170,20 +170,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f05adac4a1bab194891d845a999988b6
-      internalID: -1994859808
+      spriteID: d1cd8c81336e360498f8aa03553b1196
+      internalID: -1404438118
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_2
+      name: SchoolGuy-sheet_2
       rect:
         serializedVersion: 2
         x: 128
@@ -191,20 +191,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfe403c4ffff9644a829711d9c11df44
-      internalID: 802380893
+      spriteID: 0a06ac2f3139a2b4d9edc6f26b6e5d75
+      internalID: -624627532
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_3
+      name: SchoolGuy-sheet_3
       rect:
         serializedVersion: 2
         x: 192
@@ -212,20 +212,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d83b2b8deb54aa9459248ba543456fc9
-      internalID: -1488521966
+      spriteID: 3944d0f1827a21d4ebe8d1fc1e0d1123
+      internalID: -1198566168
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_4
+      name: SchoolGuy-sheet_4
       rect:
         serializedVersion: 2
         x: 256
@@ -233,20 +233,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51e033a5dcb853f498a3553a9722bda5
-      internalID: -1655459816
+      spriteID: 670a87c95edf998439c7dfd8b61b9f18
+      internalID: -1539737417
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_5
+      name: SchoolGuy-sheet_5
       rect:
         serializedVersion: 2
         x: 320
@@ -254,20 +254,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf4dad388b61f4742aedea1694dfdf55
-      internalID: -1969501844
+      spriteID: 6494084fa99a30740a8252250f25615e
+      internalID: -1200540764
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_6
+      name: SchoolGuy-sheet_6
       rect:
         serializedVersion: 2
         x: 384
@@ -275,20 +275,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c2afbf328eef1744b409025db5c7c53
-      internalID: -536871627
+      spriteID: 2f80291d4b9d67c43be6e4a26edc2331
+      internalID: 1217832247
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_7
+      name: SchoolGuy-sheet_7
       rect:
         serializedVersion: 2
         x: 0
@@ -296,20 +296,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c6fa5e14c67604498ad2c59706bf1b8
-      internalID: -1280164587
+      spriteID: 3eff6fd2dc4066e419ab9b504a993345
+      internalID: -575318893
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_8
+      name: SchoolGuy-sheet_8
       rect:
         serializedVersion: 2
         x: 64
@@ -317,20 +317,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f500223512cf4a149a844ec5ea599df0
-      internalID: -99128023
+      spriteID: fc682a05a48af054d8beadb584c885d0
+      internalID: 637793296
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_9
+      name: SchoolGuy-sheet_9
       rect:
         serializedVersion: 2
         x: 0
@@ -338,20 +338,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95d8eb0eeae10ec49a916036fe443566
-      internalID: 29350433
+      spriteID: 869d7bb1207767b44a8b461bdd264558
+      internalID: -1769731085
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_10
+      name: SchoolGuy-sheet_10
       rect:
         serializedVersion: 2
         x: 64
@@ -359,20 +359,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1e27b50ab1bce74a855936578b280a6
-      internalID: -286702263
+      spriteID: 6fd437e36dd5a9742a1edf4ccaa3135c
+      internalID: -2090696306
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_11
+      name: SchoolGuy-sheet_11
       rect:
         serializedVersion: 2
         x: 128
@@ -380,20 +380,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9678e016c079f45489cca48793e7ff42
-      internalID: -85857088
+      spriteID: 4d56dcae3eb93224cafa873290828ff1
+      internalID: -284079518
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_12
+      name: SchoolGuy-sheet_12
       rect:
         serializedVersion: 2
         x: 192
@@ -401,20 +401,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80d4d4964669e144c94166ead458b369
-      internalID: -57693107
+      spriteID: ec5d72ccbd625d44097019ea3778558b
+      internalID: 306855670
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_13
+      name: SchoolGuy-sheet_13
       rect:
         serializedVersion: 2
         x: 256
@@ -422,20 +422,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc754477dbce07d42a4bc4cfba3f8c65
-      internalID: -1092170491
+      spriteID: 5d1ea7fcae50e9244aca5b89c19e90c4
+      internalID: -1082031869
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_14
+      name: SchoolGuy-sheet_14
       rect:
         serializedVersion: 2
         x: 320
@@ -443,20 +443,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65aa896675aad3849b9d0342f196f3e3
-      internalID: 242020803
+      spriteID: 5630a39938f6c5d44929f3b8475f82f9
+      internalID: -653118430
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_15
+      name: SchoolGuy-sheet_15
       rect:
         serializedVersion: 2
         x: 384
@@ -464,20 +464,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbf284633b478f24c8e8bdd6b4f3a617
-      internalID: 1604484600
+      spriteID: 04731fb2dc343a94f98582a3f32b9bd3
+      internalID: -547004287
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_16
+      name: SchoolGuy-sheet_16
       rect:
         serializedVersion: 2
         x: 448
@@ -485,20 +485,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9198484bea9b8a14384a1ce16b8eadce
-      internalID: 1062407882
+      spriteID: b02b5c24d0a84b14aa4107de3a28d1f0
+      internalID: -62261677
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_17
+      name: SchoolGuy-sheet_17
       rect:
         serializedVersion: 2
         x: 512
@@ -506,20 +506,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d185cb6d8a7c2d41bfcff5c5867cc52
-      internalID: -326334058
+      spriteID: 3a0f5063e65e789428fa1c464f76e454
+      internalID: 944605663
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_18
+      name: SchoolGuy-sheet_18
       rect:
         serializedVersion: 2
         x: 576
@@ -527,20 +527,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b401a6cd27d4dcf48a0a393fb7042ecd
-      internalID: -38903162
+      spriteID: 0eaa97f3e3103664d940a0a4f78c3ec6
+      internalID: 2121685600
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_19
+      name: SchoolGuy-sheet_19
       rect:
         serializedVersion: 2
         x: 0
@@ -548,20 +548,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1d6827bc5fd4a146b9bd27b8e4f5942
-      internalID: 105946856
+      spriteID: 5e3d8b6d2aef87646a8ba8ef620703d9
+      internalID: 1196815147
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_20
+      name: SchoolGuy-sheet_20
       rect:
         serializedVersion: 2
         x: 64
@@ -569,20 +569,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07e3814c26098554281344b362a076af
-      internalID: -934200018
+      spriteID: 985e0b7d61e4b874c894608981811d0f
+      internalID: -832489961
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_21
+      name: SchoolGuy-sheet_21
       rect:
         serializedVersion: 2
         x: 128
@@ -590,20 +590,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 194718354513f5b4b819a024bd896c35
-      internalID: -1733470915
+      spriteID: 6180629068f11f242a5849bfb6bd4714
+      internalID: -993978823
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_22
+      name: SchoolGuy-sheet_22
       rect:
         serializedVersion: 2
         x: 192
@@ -611,20 +611,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b343dc45bc2e3a7479207890163e8bdb
-      internalID: -875619082
+      spriteID: 4489771bfcb3bfc4ab5b11d312b8058f
+      internalID: -1188564448
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_23
+      name: SchoolGuy-sheet_23
       rect:
         serializedVersion: 2
         x: 256
@@ -632,20 +632,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6704929154a2fb47acaee863e0b9ad5
-      internalID: -867045522
+      spriteID: ec57042df1c94a147801e35fd2da0cc8
+      internalID: -544253945
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_24
+      name: SchoolGuy-sheet_24
       rect:
         serializedVersion: 2
         x: 320
@@ -653,20 +653,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a28e69f3530f664aba3182cb004d062
-      internalID: -1024040830
+      spriteID: 84073c43aa1848d48ac6267bde279e3a
+      internalID: -2107324441
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_25
+      name: SchoolGuy-sheet_25
       rect:
         serializedVersion: 2
         x: 384
@@ -674,20 +674,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d4ee2e137c42384186569e3cac7d808
-      internalID: 21986180
+      spriteID: d2ebcd9913a840b46821a6fc6ed2be71
+      internalID: 502631520
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_26
+      name: SchoolGuy-sheet_26
       rect:
         serializedVersion: 2
         x: 448
@@ -695,209 +695,209 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ec8b09e91c0fdb42a504f9c3bf2656d
-      internalID: -1332777600
+      spriteID: 406802929c374c844a149fb3dac1c178
+      internalID: 1064074996
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_27
+      name: SchoolGuy-sheet_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.65, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a0c3f47986f4c246b4a20c829fa11ab
+      internalID: 666477312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolGuy-sheet_28
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.65, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ada1c8a5c46d7874fb71a6ec83578800
+      internalID: 1491853981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolGuy-sheet_29
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.65, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7df80fd43663824eb5bcff7ef028c10
+      internalID: 1030302645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolGuy-sheet_30
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.65, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f0b1dde1c22e9941bb86d173c7d7e02
+      internalID: -343134881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolGuy-sheet_31
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.65, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1dc8fc877d108a43bf33bcb5d1fa780
+      internalID: 104956586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolGuy-sheet_32
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.65, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c4efa3b4b6d96e4688d21d190e2de9c
+      internalID: 1164932461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolGuy-sheet_33
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.65, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 274558ec8f01baf45904faca6d6ef8b8
+      internalID: -2000143419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolGuy-sheet_34
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 64
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.65, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fce7fedc1fe7bf146865abb3e566c99c
+      internalID: -184567806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolGuy-sheet_35
       rect:
         serializedVersion: 2
         x: 512
-        y: 128
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.67, y: 0.25}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d8cd1252ce892cf4f8cb7ef0bb0dbced
-      internalID: -1940646515
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SchoolGuy_28
-      rect:
-        serializedVersion: 2
-        x: 0
         y: 64
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 516a2ab4989f2154681b6207a967fd63
-      internalID: 1160693052
+      spriteID: 25ed1bbb36d33f44ca388ca59bacd310
+      internalID: -1024711172
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_29
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.67, y: 0.25}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 653a7eea566aa634a908b1f51c7fa67b
-      internalID: 1966509024
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SchoolGuy_30
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 64
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.67, y: 0.25}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 07ab0ee2219276e45aa6841133dd9058
-      internalID: -1862012768
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SchoolGuy_31
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 64
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.67, y: 0.25}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 32288523e6ab2a6448563e026a46848a
-      internalID: 1703963387
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SchoolGuy_32
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 64
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.67, y: 0.25}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cc9003f64fe00ca48868081397d0bd09
-      internalID: 436727929
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SchoolGuy_33
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 64
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.67, y: 0.25}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5581a73b09d7bc741a086c9bda782c89
-      internalID: 272529105
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SchoolGuy_34
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 64
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.67, y: 0.25}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6cddbf93eb8602842861b4f850a8ffc6
-      internalID: 24760527
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SchoolGuy_35
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 64
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.67, y: 0.25}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: abb5eab05e5f1074eb9f8bf0bab4119c
-      internalID: -205294662
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SchoolGuy_36
+      name: SchoolGuy-sheet_36
       rect:
         serializedVersion: 2
         x: 0
@@ -905,20 +905,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf55cc492f9d4424c8d16c11fcd7e8de
-      internalID: 1979050094
+      spriteID: 28a678f32dfefae428e1374de3316500
+      internalID: 1802766620
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_37
+      name: SchoolGuy-sheet_37
       rect:
         serializedVersion: 2
         x: 64
@@ -926,20 +926,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6dcf3ed7b798be54cbb56ac40c2c528f
-      internalID: -1972660999
+      spriteID: 859874acae02885499a9d2c33d7e46f8
+      internalID: -1194139132
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_38
+      name: SchoolGuy-sheet_38
       rect:
         serializedVersion: 2
         x: 128
@@ -947,20 +947,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c34581d673df86d4bb971b4bcfe07dd6
-      internalID: 360422152
+      spriteID: 9937a5878529ed749a5d43d6de3494f8
+      internalID: -2019291907
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_39
+      name: SchoolGuy-sheet_39
       rect:
         serializedVersion: 2
         x: 192
@@ -968,20 +968,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dbbba05467d118645b96b1d3f1a9c747
-      internalID: -1375364479
+      spriteID: 23e8e6f9d69d6584aa10fd80545814d7
+      internalID: 855081112
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_40
+      name: SchoolGuy-sheet_40
       rect:
         serializedVersion: 2
         x: 256
@@ -989,20 +989,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88b4d563f9b878c4e98bf040b31d1841
-      internalID: -1119269974
+      spriteID: d66aa0ee8678bb84eb41536576cf3ef0
+      internalID: -711955120
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_41
+      name: SchoolGuy-sheet_41
       rect:
         serializedVersion: 2
         x: 320
@@ -1010,20 +1010,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51e3eeadd0dac5b4387b2826031be481
-      internalID: 1698276883
+      spriteID: 0e724cb17b81f944fb461e4183fb3c81
+      internalID: 1523383548
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_42
+      name: SchoolGuy-sheet_42
       rect:
         serializedVersion: 2
         x: 384
@@ -1031,20 +1031,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 395d11a0898b3254a8330d0fe39ba2a9
-      internalID: 620035115
+      spriteID: 650766a7de32fd845973da58eeb28eb8
+      internalID: -1893131020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SchoolGuy_43
+      name: SchoolGuy-sheet_43
       rect:
         serializedVersion: 2
         x: 448
@@ -1052,35 +1052,14 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.67, y: 0.25}
+      pivot: {x: 0.65, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88ffc2c7b96243a4a9d33703ed8e924f
-      internalID: -894330569
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SchoolGuy_44
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.67, y: 0.25}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2749afa34ec3dfd429b766efa651aa8f
-      internalID: -1515002210
+      spriteID: 7bb2e6babfe5841448d0a7f2583afcf3
+      internalID: 1665680097
       vertices: []
       indices: 
       edges: []
@@ -1096,51 +1075,50 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SchoolGuy_42: 620035115
-      SchoolGuy_37: -1972660999
-      SchoolGuy_43: -894330569
-      SchoolGuy_33: 272529105
-      SchoolGuy_0: -476032833
-      SchoolGuy_4: -1655459816
-      SchoolGuy_20: -934200018
-      SchoolGuy_16: 1062407882
-      SchoolGuy_34: 24760527
-      SchoolGuy_41: 1698276883
-      SchoolGuy_36: 1979050094
-      SchoolGuy_38: 360422152
-      SchoolGuy_18: -38903162
-      SchoolGuy_2: 802380893
-      SchoolGuy_15: 1604484600
-      SchoolGuy_29: 1966509024
-      SchoolGuy_44: -1515002210
-      SchoolGuy_13: -1092170491
-      SchoolGuy_25: 21986180
-      SchoolGuy_19: 105946856
-      SchoolGuy_31: 1703963387
-      SchoolGuy_40: -1119269974
-      SchoolGuy_17: -326334058
-      SchoolGuy_1: -1994859808
-      SchoolGuy_14: 242020803
-      SchoolGuy_32: 436727929
-      SchoolGuy_3: -1488521966
-      SchoolGuy_35: -205294662
-      SchoolGuy_22: -875619082
-      SchoolGuy_26: -1332777600
-      SchoolGuy_9: 29350433
-      SchoolGuy_10: -286702263
-      SchoolGuy_30: -1862012768
-      SchoolGuy_27: -1940646515
-      SchoolGuy_23: -867045522
-      SchoolGuy_28: 1160693052
-      SchoolGuy_7: -1280164587
-      SchoolGuy_6: -536871627
-      SchoolGuy_8: -99128023
-      SchoolGuy_11: -85857088
-      SchoolGuy_12: -57693107
-      SchoolGuy_24: -1024040830
-      SchoolGuy_21: -1733470915
-      SchoolGuy_5: -1969501844
-      SchoolGuy_39: -1375364479
+      SchoolGuy-sheet_23: -544253945
+      SchoolGuy-sheet_27: 666477312
+      SchoolGuy-sheet_0: 135807755
+      SchoolGuy-sheet_41: 1523383548
+      SchoolGuy-sheet_1: -1404438118
+      SchoolGuy-sheet_33: -2000143419
+      SchoolGuy-sheet_19: 1196815147
+      SchoolGuy-sheet_2: -624627532
+      SchoolGuy-sheet_14: -653118430
+      SchoolGuy-sheet_8: 637793296
+      SchoolGuy-sheet_30: -343134881
+      SchoolGuy-sheet_20: -832489961
+      SchoolGuy-sheet_32: 1164932461
+      SchoolGuy-sheet_38: -2019291907
+      SchoolGuy-sheet_10: -2090696306
+      SchoolGuy-sheet_43: 1665680097
+      SchoolGuy-sheet_28: 1491853981
+      SchoolGuy-sheet_21: -993978823
+      SchoolGuy-sheet_22: -1188564448
+      SchoolGuy-sheet_5: -1200540764
+      SchoolGuy-sheet_9: -1769731085
+      SchoolGuy-sheet_31: 104956586
+      SchoolGuy-sheet_11: -284079518
+      SchoolGuy-sheet_37: -1194139132
+      SchoolGuy-sheet_15: -547004287
+      SchoolGuy-sheet_7: -575318893
+      SchoolGuy-sheet_17: 944605663
+      SchoolGuy-sheet_36: 1802766620
+      SchoolGuy-sheet_16: -62261677
+      SchoolGuy-sheet_34: -184567806
+      SchoolGuy-sheet_29: 1030302645
+      SchoolGuy-sheet_35: -1024711172
+      SchoolGuy-sheet_13: -1082031869
+      SchoolGuy-sheet_18: 2121685600
+      SchoolGuy-sheet_40: -711955120
+      SchoolGuy-sheet_24: -2107324441
+      SchoolGuy-sheet_3: -1198566168
+      SchoolGuy-sheet_4: -1539737417
+      SchoolGuy-sheet_12: 306855670
+      SchoolGuy-sheet_6: 1217832247
+      SchoolGuy-sheet_26: 1064074996
+      SchoolGuy-sheet_39: 855081112
+      SchoolGuy-sheet_25: 502631520
+      SchoolGuy-sheet_42: -1893131020
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

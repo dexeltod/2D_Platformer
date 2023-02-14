@@ -6,10 +6,10 @@ namespace Game.PlayerScripts.Weapons
 {
     public class WeaponFactory : MonoBehaviour
     {
-        [SerializeField] private MeleeWeaponTriggerInformant _meleeWeaponTrigger;
         [SerializeField] private Animator _animator;
         [SerializeField] private AnimatorFacade _animatorFacade;
         [SerializeField] private AnimationHasher _animationHasher;
+        [SerializeField] private MeleeWeaponTrigger _meleeWeaponTrigger;
 
         public AbstractWeapon CreateWeapon(AbstractWeapon weaponBase, Transform parent)
         {
