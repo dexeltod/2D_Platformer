@@ -1,19 +1,23 @@
+using Game.PlayerScripts.PlayerData;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class CoinTaker : MonoBehaviour
+namespace Game.Enviroment.Items.Coin
 {
-    public event UnityAction CoinTaked;
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public class CoinTaker : MonoBehaviour
     {
-        if (collision.TryGetComponent(out PlayerHealth player))
-            Interact();
-    }
+        public event UnityAction CoinTaked;
 
-    private void Interact()
-    {
-        CoinTaked.Invoke();
-        Destroy(gameObject);
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.TryGetComponent(out PlayerHealth player))
+                Interact();
+        }
+
+        private void Interact()
+        {
+            CoinTaked.Invoke();
+            Destroy(gameObject);
+        }
     }
 }

@@ -1,11 +1,16 @@
-﻿using UnityEngine;
+﻿using Game.Enemy.StateMachine.Behaviours;
+using Game.PlayerScripts.PlayerData;
+using UnityEngine;
 
-public class EnemyFactory : MonoBehaviour
+namespace Game.Enemy.Services
 {
-    public EnemyAttackBehaviour CreateEnemy(Transform point, EnemyAttackBehaviour enemy, PlayerHealth playerHealth)
+    public class EnemyFactory : MonoBehaviour
     {
-        var currentEnemy = Instantiate(enemy, point);
-        currentEnemy.Initialize(playerHealth);
-        return currentEnemy;
+        public EnemyAttackBehaviour CreateEnemy(Transform point, EnemyAttackBehaviour enemy, PlayerHealth playerHealth)
+        {
+            var currentEnemy = Instantiate(enemy, point);
+            currentEnemy.Initialize(playerHealth);
+            return currentEnemy;
+        }
     }
 }

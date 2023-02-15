@@ -1,35 +1,37 @@
 using System;
-using PlayerScripts.Weapons;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-public class Bullet : MonoBehaviour
+namespace Game.PlayerScripts.Weapons.Bullets
 {
-    public event Action<Enemy> IsTargetReached;
-    private Rigidbody2D _rigidbody;
-
-    public Bullet(Action<Enemy> action)
+    [RequireComponent(typeof(Rigidbody2D))]
+    public class Bullet : MonoBehaviour
     {
-        IsTargetReached = action;
-    }
+        public event Action<Enemy.Enemy> IsTargetReached;
+        private Rigidbody2D _rigidbody;
 
-    private void Awake()
-    {
-        _rigidbody = GetComponent<Rigidbody2D>();
-    }
-
-    public void SetSpeed(float speed, float direction)
-    {
-        _rigidbody.velocity = new Vector2(speed * direction, _rigidbody.velocity.y);
-    }
-
-    private void OnTriggerEnter2D(Collider2D targetCollider)
-    {
-        if (targetCollider.TryGetComponent(out Enemy enemy) == true)
+        public Bullet(Action<Enemy.Enemy> action)
         {
-            IsTargetReached?.Invoke(enemy);
+            IsTargetReached = action;
         }
 
-        gameObject.SetActive(false);
+        private void Awake()
+        {
+            _rigidbody = GetComponent<Rigidbody2D>();
+        }
+
+        public void SetSpeed(float speed, float direction)
+        {
+            _rigidbody.velocity = new Vector2(speed * direction, _rigidbody.velocity.y);
+        }
+
+        private void OnTriggerEnter2D(Collider2D targetCollider)
+        {
+            if (targetCollider.TryGetComponent(out Enemy.Enemy enemy) == true)
+            {
+                IsTargetReached?.Invoke(enemy);
+            }
+
+            gameObject.SetActive(false);
+        }
     }
 }

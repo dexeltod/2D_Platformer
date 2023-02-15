@@ -1,21 +1,26 @@
-using Infrastructure;
+using Game.PlayerScripts;
+using Infrastructure.GameLoading;
+using Infrastructure.States;
 using UnityEngine;
 
-public class LevelChanger : MonoBehaviour
+namespace Infrastructure.LevelChanger
 {
-	[SerializeField] private string _levelName;
-
-	private IGameStateMachine _gameStateMachine;
-
-	private void Start()
+	public class LevelChanger : MonoBehaviour
 	{
-		_gameStateMachine = ServiceLocator.Container.Single<IGameStateMachine>();
-	}
+		[SerializeField] private string _levelName;
 
-	private void OnTriggerEnter2D(Collider2D col)
-	{
-		if (col.TryGetComponent(out Player _)) 
-			_gameStateMachine.Enter<SceneLoadState, string>(_levelName);
+		private IGameStateMachine _gameStateMachine;
+
+		private void Start()
+		{
+			_gameStateMachine = ServiceLocator.Container.GetSingle<IGameStateMachine>();
+		}
+
+		private void OnTriggerEnter2D(Collider2D col)
+		{
+			if (col.TryGetComponent(out Player _)) 
+				_gameStateMachine.Enter<SceneLoadState, string>(_levelName);
+		}
 	}
 }
 

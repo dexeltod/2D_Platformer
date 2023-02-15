@@ -1,5 +1,8 @@
-using UnityEngine;
+using Game.Enviroment.GarageAlarm.Cupboard.Based;
 
-public class GoodCupboard : BaseCupboard
+namespace Game.Enviroment.GarageAlarm.Cupboard
 {
+    public class GoodCupboard : BaseCupboard
+    {
+    }
 }

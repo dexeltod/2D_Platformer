@@ -1,35 +1,39 @@
-using Infrastructure;
+using Infrastructure.GameLoading;
+using Infrastructure.GameLoading.Factory;
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+namespace UI_Scripts
 {
-	[SerializeField] private float _height;
-	[SerializeField] private float _closeness = -23;
-	private Transform _player;
+    public class CameraFollow : MonoBehaviour
+    {
+        [SerializeField] private float _height;
+        [SerializeField] private float _closeness = -23;
+        private Transform _player;
 
-	private IPlayerFactory _playerFactory;
+        private IPlayerFactory _playerFactory;
 
-	private void Start()
-	{
-		_playerFactory = ServiceLocator.Container.Single<IPlayerFactory>();
-		_playerFactory.MainCharacterCreated += Initialize;
-	}
+        private void Start()
+        {
+            _playerFactory = ServiceLocator.Container.GetSingle<IPlayerFactory>();
+            _playerFactory.MainCharacterCreated += Initialize;
+        }
 
-	private void FixedUpdate() =>
-		UpdateCameraPosition();
+        private void FixedUpdate() =>
+            UpdateCameraPosition();
 
-	private void Initialize()
-	{
-		_playerFactory.MainCharacterCreated -= Initialize;
-		_player = _playerFactory.MainCharacter.transform;
-	}
+        private void Initialize()
+        {
+            _playerFactory.MainCharacterCreated -= Initialize;
+            _player = _playerFactory.MainCharacter.transform;
+        }
 
-	private void UpdateCameraPosition()
-	{
-		if(_player == null)
-			return;
+        private void UpdateCameraPosition()
+        {
+            if(_player == null)
+                return;
 		
-		Vector3 position = new Vector3(_player.position.x, _player.position.y + _height, _closeness);
-		transform.position = position;
-	}
+            Vector3 position = new Vector3(_player.position.x, _player.position.y + _height, _closeness);
+            transform.position = position;
+        }
+    }
 }

@@ -1,12 +1,15 @@
-using UnityEngine;
+using Game.Enviroment.GarageAlarm.Cupboard.Interfaces;
 using UnityEngine.Events;
 
-public class GoodCuboardBehavior : ICupboard
+namespace Game.Enviroment.GarageAlarm.Cupboard.Behaviours
 {
-    public UnityAction IsCupboardOpened;
-
-    public void Open()
+    public class GoodCuboardBehavior : ICupboard
     {
-       IsCupboardOpened?.Invoke();
+        public UnityAction IsCupboardOpened;
+
+        public void Open()
+        {
+            IsCupboardOpened?.Invoke();
+        }
     }
 }

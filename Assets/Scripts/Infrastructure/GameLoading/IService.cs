@@ -1,4 +1,4 @@
-﻿namespace Infrastructure
+﻿namespace Infrastructure.GameLoading
 {
 	public interface IService
 	{

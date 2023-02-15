@@ -1,21 +1,24 @@
 using Infrastructure.Services;
 using UnityEngine;
 
-public class GameStopper : MonoBehaviour
+namespace UI_Scripts.Shop
 {
-	private InputService _inputSystemReaderService;
+    public class GameStopper : MonoBehaviour
+    {
+        private InputService _inputSystemReaderService;
 
-	private void OnEnable()
-	{
-		_inputSystemReaderService.DisableInputs();
-		const int PauseTime = 0;
-		Time.timeScale = PauseTime;
-	}
+        private void OnEnable()
+        {
+            _inputSystemReaderService.DisableInputs();
+            const int PauseTime = 0;
+            Time.timeScale = PauseTime;
+        }
 
-	private void OnDisable()
-	{
-		_inputSystemReaderService.EnableInputs();
-		const int NormalTime = 1;
-		Time.timeScale = NormalTime;
-	}
+        private void OnDisable()
+        {
+            _inputSystemReaderService.EnableInputs();
+            const int NormalTime = 1;
+            Time.timeScale = NormalTime;
+        }
+    }
 }

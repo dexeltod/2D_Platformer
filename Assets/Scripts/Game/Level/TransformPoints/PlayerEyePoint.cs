@@ -1,5 +1,8 @@
 using UnityEngine;
 
-public class PlayerEyePoint : MonoBehaviour
+namespace Game.Level.TransformPoints
 {
+    public class PlayerEyePoint : MonoBehaviour
+    {
+    }
 }

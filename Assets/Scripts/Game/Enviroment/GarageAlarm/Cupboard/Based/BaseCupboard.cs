@@ -1,17 +1,21 @@
 
+using Game.Enviroment.GarageAlarm.Cupboard.Interfaces;
 using UnityEngine;
 
-public abstract class BaseCupboard : MonoBehaviour
+namespace Game.Enviroment.GarageAlarm.Cupboard.Based
 {
-    protected ICupboard Cupboard;
-
-    public void SetCupboard(ICupboard cupboard)
+    public abstract class BaseCupboard : MonoBehaviour
     {
-        Cupboard = cupboard;
-    }
+        protected ICupboard Cupboard;
 
-    protected void Open()
-    {
-        Cupboard.Open();
+        public void SetCupboard(ICupboard cupboard)
+        {
+            Cupboard = cupboard;
+        }
+
+        protected void Open()
+        {
+            Cupboard.Open();
+        }
     }
 }

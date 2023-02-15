@@ -1,22 +1,27 @@
-﻿using PlayerScripts.Weapons;
+﻿using Game.Animation.AnimationHashes.Characters;
+using Game.PlayerScripts.Weapons.MeleeTrigger;
 using UnityEngine;
 
-public class WeaponFactory : MonoBehaviour
+namespace Game.PlayerScripts.Weapons
 {
-	[SerializeField] private MeleeWeaponTriggerInformant _meleeWeaponTrigger;
-	[SerializeField] private Animator _animator;
-	[SerializeField] private AnimationHasher _animationHasher;
+    public class WeaponFactory : MonoBehaviour
+    {
+        [SerializeField] private Animator _animator;
+        [SerializeField] private AnimatorFacade _animatorFacade;
+        [SerializeField] private AnimationHasher _animationHasher;
+        [SerializeField] private MeleeWeaponTrigger _meleeWeaponTrigger;
 
-	public AbstractWeapon CreateWeapon(AbstractWeapon weaponBase, Transform parent)
-	{
-		weaponBase.gameObject.SetActive(false);
-		weaponBase.enabled = false;
+        public AbstractWeapon CreateWeapon(AbstractWeapon weaponBase, Transform parent)
+        {
+            weaponBase.gameObject.SetActive(false);
+            weaponBase.enabled = false;
 		
-		AbstractWeapon instantiatedAbstractWeapon = Instantiate(weaponBase, parent);
-		instantiatedAbstractWeapon.Initialize(_animator, _animationHasher, _meleeWeaponTrigger);
+            AbstractWeapon instantiatedAbstractWeapon = Instantiate(weaponBase, parent);
+            instantiatedAbstractWeapon.Initialize(_animator, _animatorFacade, _animationHasher, _meleeWeaponTrigger);
 		
-		instantiatedAbstractWeapon.gameObject.SetActive(true);
-		instantiatedAbstractWeapon.enabled = true;
-		return instantiatedAbstractWeapon;
-	}
+            instantiatedAbstractWeapon.gameObject.SetActive(true);
+            instantiatedAbstractWeapon.enabled = true;
+            return instantiatedAbstractWeapon;
+        }
+    }
 }

@@ -1,27 +1,30 @@
-using System.Collections;
-using PlayerScripts.Weapons;
-using UnityEngine;
-
-public class Fist : MeleeAbstractWeapon
+namespace Game.PlayerScripts.Weapons
 {
-	public override IEnumerator AttackRoutine(float direction)
-	{
-		CanAttack = false;
-		ChooseAnimation();
-		PlayAttackAnimation(CurrentAnimationHash);
+    public sealed class Fist : AbstractWeapon, IMeleeWeapon
+    {
+	    public override void GiveDamage(Enemy.Enemy target)
+	    {
+		    target.ApplyDamage(Damage);
+	    }
 
-		var animation = Animator.GetCurrentAnimatorStateInfo(0);
-		
-		yield return new WaitForSeconds(animation.speed);
-		
-		OnAnimationEnded();
-		CanAttack = true;
-	}
+	    protected  override void Attack()
+	    {
+		    if(CanAttack == false)
+			    return;
+		    
+            CanAttack = false;
+            var animation = Animator.GetCurrentAnimatorStateInfo(0);
 
-	private void ChooseAnimation()
-	{
-		CurrentAnimationHash = IsRun == false
-			? AnimationHasher.HandAttackHash
-			: AnimationHasher.HandAttackRunHash;
-	}
+            ChooseAnimation();
+            StartCoroutine(PlayAnimationRoutine(CurrentAnimationHash));
+            CanAttack = true;
+        }
+
+        private void ChooseAnimation()
+        {
+            CurrentAnimationHash = (IsRun == false)
+                ? AnimationHasher.HandAttackHash
+                : AnimationHasher.HandAttackRunHash;
+        }
+    }
 }

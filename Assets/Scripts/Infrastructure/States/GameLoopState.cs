@@ -1,4 +1,6 @@
-﻿namespace Infrastructure
+﻿using Infrastructure.GameLoading;
+
+namespace Infrastructure.States
 {
 	public class GameLoopState : IState
 	{

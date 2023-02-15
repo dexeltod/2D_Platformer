@@ -1,19 +1,23 @@
+using Game.Enviroment.GarageAlarm.Cupboard.Behaviours;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AlarmBarMover : MonoBehaviour
+namespace UI_Scripts.GarageSignalBar
 {
-    [SerializeField] private BadCupboardBehaviour _cupboard;
-    [SerializeField] private Image _bar;
-
-    public void FillBar(float fillAmount)
+    public class AlarmBarMover : MonoBehaviour
     {
-        float maxFillAmount = 1.1f;
-        float minFillAmount = -0.9f;
+        [SerializeField] private BadCupboardBehaviour _cupboard;
+        [SerializeField] private Image _bar;
 
-        if (fillAmount >= maxFillAmount || fillAmount < minFillAmount)
-            return;
+        public void FillBar(float fillAmount)
+        {
+            float maxFillAmount = 1.1f;
+            float minFillAmount = -0.9f;
 
-        _bar.fillAmount = fillAmount;
+            if (fillAmount >= maxFillAmount || fillAmount < minFillAmount)
+                return;
+
+            _bar.fillAmount = fillAmount;
+        }
     }
 }

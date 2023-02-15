@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 
-[System.Serializable]
-public class EnemyWave
+namespace Game.Enemy.Services
 {
-    [SerializeField] private Enemy _enemy;
-    [SerializeField] private int _count;
+    [System.Serializable]
+    public class EnemyWave
+    {
+        [SerializeField] private Enemy _enemy;
+        [SerializeField] private int _count;
 
-    public Enemy Enemy => _enemy;
-    public int Count => _count;
+        public Enemy Enemy => _enemy;
+        public int Count => _count;
+    }
 }

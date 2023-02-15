@@ -1,35 +1,39 @@
+using Game.Enviroment.Items.Coin;
 using UnityEngine;
 
-[RequireComponent(typeof(CoinsPackage))]
-[RequireComponent(typeof(AudioSource))]
-
-public class CoinSoundEnabler : MonoBehaviour
+namespace Game.Sound.Coin
 {
-    private CoinsPackage _coinsPackage;
-    private CoinTaker[] _coins;
-    private AudioSource _audio;
+    [RequireComponent(typeof(CoinsPackage))]
+    [RequireComponent(typeof(AudioSource))]
 
-    private void Awake()
+    public class CoinSoundEnabler : MonoBehaviour
     {
-        _coinsPackage = GetComponent<CoinsPackage>();
-        _audio = GetComponent<AudioSource>();
-        _coins = _coinsPackage.GetComponentsInChildren<CoinTaker>();
-    }
+        private CoinsPackage _coinsPackage;
+        private CoinTaker[] _coins;
+        private AudioSource _audio;
 
-    private void OnEnable()
-    {
-        foreach (CoinTaker coinTaker in _coins)
-            coinTaker.CoinTaked += PlaySound;
-    }
+        private void Awake()
+        {
+            _coinsPackage = GetComponent<CoinsPackage>();
+            _audio = GetComponent<AudioSource>();
+            _coins = _coinsPackage.GetComponentsInChildren<CoinTaker>();
+        }
 
-    private void OnDisable()
-    {
-        foreach (CoinTaker coinTaker in _coins)
-            coinTaker.CoinTaked -= PlaySound;
-    }
+        private void OnEnable()
+        {
+            foreach (CoinTaker coinTaker in _coins)
+                coinTaker.CoinTaked += PlaySound;
+        }
 
-    private void PlaySound()
-    {
-        _audio.Play();
+        private void OnDisable()
+        {
+            foreach (CoinTaker coinTaker in _coins)
+                coinTaker.CoinTaked -= PlaySound;
+        }
+
+        private void PlaySound()
+        {
+            _audio.Play();
+        }
     }
 }

@@ -29,19 +29,19 @@
             }
         },
         "Levels/Level_1_TileMap.tmx": {
-            "scale": 0.33,
+            "scale": 2,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": -496.969696969697,
-                "y": -166.66666666666674
+                "x": 0,
+                "y": 2303.75
             }
         },
         "Levels/Level_3_TileMap.tmx": {
             "scale": 1.5,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 339.33333333333337,
-                "y": 150.66666666666663
+                "x": 256,
+                "y": 511.66666666666663
             }
         },
         "Levels/Road.tsx": {
@@ -50,19 +50,19 @@
             "scaleInEditor": 1
         },
         "Levels/Rules/Road-random-rules.tmx": {
-            "scale": 3,
+            "scale": 0.75,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": -6656,
-                "y": -255.66666666666666
+                "x": -6742.666666666666,
+                "y": -528
             }
         },
         "Levels/Rules/autotile_rules.tmx": {
-            "scale": 3,
+            "scale": 1,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 1024,
-                "y": 767.6666666666666
+                "x": 348,
+                "y": 797
             }
         },
         "Levels/Rules/autotile_rules.tmx#Road": {

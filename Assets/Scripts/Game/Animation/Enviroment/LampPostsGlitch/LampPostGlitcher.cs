@@ -1,34 +1,37 @@
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(Animator))]
-
-public class LampPostGlitcher : MonoBehaviour
+namespace Game.Animation.Enviroment.LampPostsGlitch
 {
-    [SerializeField] private bool _isWork = true;
+    [RequireComponent(typeof(Animator))]
 
-    private Animator _animator;
-
-    private void Start()
+    public class LampPostGlitcher : MonoBehaviour
     {
-        _animator = GetComponent<Animator>();
-        StartCoroutine(EnableLight());
-    }
+        [SerializeField] private bool _isWork = true;
 
-    private IEnumerator EnableLight()
-    {
-        float startDelay = Random.Range(10, 20f);
-        WaitForSeconds workTime = new(startDelay);
+        private Animator _animator;
 
-        float glitchDelay = Random.Range(0, 1f);
-        WaitForSeconds glitchTime = new(glitchDelay);
-
-        while (_isWork)
+        private void Start()
         {
-            yield return workTime;
-            _animator.enabled = true;
-            yield return glitchTime;
-            _animator.enabled = false;
+            _animator = GetComponent<Animator>();
+            StartCoroutine(EnableLight());
+        }
+
+        private IEnumerator EnableLight()
+        {
+            float startDelay = Random.Range(10, 20f);
+            WaitForSeconds workTime = new(startDelay);
+
+            float glitchDelay = Random.Range(0, 1f);
+            WaitForSeconds glitchTime = new(glitchDelay);
+
+            while (_isWork)
+            {
+                yield return workTime;
+                _animator.enabled = true;
+                yield return glitchTime;
+                _animator.enabled = false;
+            }
         }
     }
 }

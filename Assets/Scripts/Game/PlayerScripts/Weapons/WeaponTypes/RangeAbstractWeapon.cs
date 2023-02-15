@@ -1,7 +1,7 @@
-﻿using System.Collections;
+﻿using Game.PlayerScripts.Weapons.Bullets;
 using UnityEngine;
 
-namespace PlayerScripts.Weapons
+namespace Game.PlayerScripts.Weapons.WeaponTypes
 {
 	[RequireComponent(typeof(BulletPool))]
 	public class RangeAbstractWeapon : AbstractWeapon
@@ -21,20 +21,20 @@ namespace PlayerScripts.Weapons
 				_currentBullet.IsTargetReached -= GiveDamage;
 		}
 
-		public override IEnumerator AttackRoutine(float direction)
+		protected  override void Attack()
 		{
-			PlayAttackAnimation(CurrentAnimationHash);
+			PlayAnimationRoutine(CurrentAnimationHash);
 			CanAttack = false;
 			_currentBullet = _bulletPool.Get(_bulletSpawnTransform);
-			_currentBullet.SetSpeed(_bulletSpeed, direction);
+			// _currentBullet.SetSpeed(_bulletSpeed, direction);
 
 			_currentBullet.IsTargetReached += GiveDamage;
 
-			yield return new WaitForSeconds(AttackSpeed);
+			// yield return new WaitForSeconds(AttackSpeed);
 			CanAttack = true;
 		}
 
-		public sealed override void GiveDamage(Enemy target)
+		public sealed override void GiveDamage(Enemy.Enemy target)
 		{
 			target.ApplyDamage(Damage);
 			_currentBullet.IsTargetReached -= GiveDamage;

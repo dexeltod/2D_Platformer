@@ -1,30 +1,57 @@
+using System;
 using System.Collections.Generic;
-using PlayerScripts.Weapons;
-using UI_Scripts.Shop;
+using Game.PlayerScripts;
+using Infrastructure.Data;
+using Infrastructure.Data.PersistentProgress;
+using Infrastructure.GameLoading;
 using UnityEngine;
 
-public class Shop : MonoBehaviour
+namespace UI_Scripts.Shop
 {
-	[SerializeField] private ShopItemView _weaponPanelPrefab;
-	[SerializeField] private List<ItemInfo> _items;
-	[SerializeField] private Player _player;
+    public class Shop : MonoBehaviour, ISavedProgress
+    {
+        [SerializeField] private ShopItemCellView _weaponPanelPrefab;
+        [SerializeField] private List<ItemScriptableObject> _items;
+        [SerializeField] private Player _player;
 
-	private void Awake() =>
-		Initialize();
+        private GameProgress _gameProgress;
 
-	private void Initialize()
-	{
-		foreach (var itemInfo in _items)
-		{
-			var currentItem = Instantiate(_weaponPanelPrefab, transform);
-			currentItem.Render(itemInfo._abstractWeapon, itemInfo, itemInfo.Sprite);
-			currentItem.BuyButtonClicked += OnBuyButtonClick;
-		}
-	}
+        private void Awake()
+        {
+            IPersistentProgressService persistentProgressService = ServiceLocator.Container.GetSingle<IPersistentProgressService>();
+            _gameProgress = persistentProgressService.GameProgress;
+        
+            Initialize();
+        }
 
-	private void OnBuyButtonClick(AbstractWeapon weaponBase, ItemInfo itemInfo, ShopItemView shopItemView)
-	{
-		_player.TryBuyWeapon(weaponBase, itemInfo);
-		shopItemView.BuyButtonClicked -= OnBuyButtonClick;
-	}
+        private void Initialize()
+        {
+	        if (_items == null)
+		        throw new NullReferenceException("Shop does not have items");
+
+	        foreach (var itemInfo in _items)
+            {
+                var currentItem = Instantiate(_weaponPanelPrefab, transform);
+                currentItem.Render(itemInfo, itemInfo.Sprite);
+                currentItem.BuyButtonClicked += OnBuyButtonClick;
+            }
+        }
+
+        private void OnBuyButtonClick(ItemScriptableObject itemScriptableObject, ShopItemCellView shopItemView)
+        {
+            _player.TryBuyWeapon(itemScriptableObject);
+            shopItemView.BuyButtonClicked -= OnBuyButtonClick;
+            Update(_gameProgress);
+        }
+
+        public void Update(GameProgress progress)
+        {
+            progress.PlayerItemsData.UpdateWeaponData(new ItemScriptableObject());
+        }
+
+        public void Load(GameProgress progress)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

@@ -1,5 +1,8 @@
 
-public interface ICupboard
+namespace Game.Enviroment.GarageAlarm.Cupboard.Interfaces
 {
-    void Open( );
+    public interface ICupboard
+    {
+        void Open( );
+    }
 }

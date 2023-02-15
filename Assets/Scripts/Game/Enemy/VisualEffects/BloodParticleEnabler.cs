@@ -1,21 +1,24 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Enemy))]
-
-public class BloodParticleEnabler : MonoBehaviour
+namespace Game.Enemy.VisualEffects
 {
-	[SerializeField] private ParticleSystem _particleSystem;
-	private Enemy _enemy;
+    [RequireComponent(typeof(Enemy))]
 
-	private void Awake() =>
-		_enemy = GetComponent<Enemy>();
+    public class BloodParticleEnabler : MonoBehaviour
+    {
+        [SerializeField] private ParticleSystem _particleSystem;
+        private Enemy _enemy;
 
-	private void OnEnable() =>
-		_enemy.WasHit += PlayBoolParticle;
+        private void Awake() =>
+            _enemy = GetComponent<Enemy>();
 
-	private void OnDisable() =>
-		_enemy.WasHit -= PlayBoolParticle;
+        private void OnEnable() =>
+            _enemy.WasHit += PlayBoolParticle;
 
-	private void PlayBoolParticle() =>
-		_particleSystem.Play();
+        private void OnDisable() =>
+            _enemy.WasHit -= PlayBoolParticle;
+
+        private void PlayBoolParticle() =>
+            _particleSystem.Play();
+    }
 }

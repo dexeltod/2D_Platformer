@@ -1,6 +1,6 @@
-namespace PlayerScripts.Weapons
+namespace Game.PlayerScripts.Weapons
 {
-	public class Pistol : RangeAbstractWeapon
+	public class Pistol : WeaponTypes.RangeAbstractWeapon
 	{
 	}
 }

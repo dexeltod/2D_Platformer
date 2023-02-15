@@ -1,83 +1,80 @@
 ﻿using System;
-using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Infrastructure.Services
 {
-	public class InputService : IInputService
-	{
-		public event Action<float> VerticalButtonUsed;
-		public event Action VerticalButtonCanceled;
-		public event Action AttackButtonUsed;
-		public event Action InteractButtonUsed;
-		public event Action JumpButtonUsed;
-		public event Action JumpButtonCanceled;
+    public class InputService : IInputService
+    {
+        public event Action<float> VerticalButtonUsed;
+        public event Action VerticalButtonCanceled;
+        public event Action AttackButtonUsed;
+        public event Action InteractButtonUsed;
+        public event Action JumpButtonUsed;
+        public event Action JumpButtonCanceled;
 
-		private readonly InputSystem _inputSystem;
+        private readonly InputSystem _inputSystem;
 
-		public InputService()
-		{
-			_inputSystem = new InputSystem();
-			EnableInputs();
-		}
+        public InputService()
+        {
+            _inputSystem = new InputSystem();
+            EnableInputs();
+        }
 
-		public void EnableInputs()
-		{
-			_inputSystem.Enable();
-			_inputSystem.Player.Move.performed += OnHorizontalMovement;
-			_inputSystem.Player.Move.canceled += OnHorizontalMovement;
-			_inputSystem.Player.Jump.started += OnJump;
-			_inputSystem.Player.Jump.canceled += OnJump;
-			_inputSystem.Player.Attack.started += OnAttack;
-			_inputSystem.Player.Use.started += OnUse;
-		}
+        public void EnableInputs()
+        {
+            _inputSystem.Enable();
+            _inputSystem.Player.Move.performed += OnHorizontalMovement;
+            _inputSystem.Player.Move.canceled += OnHorizontalMovement;
+            _inputSystem.Player.Jump.started += OnJump;
+            _inputSystem.Player.Jump.canceled += OnJump;
+            _inputSystem.Player.Attack.started += OnAttack;
+            _inputSystem.Player.Use.started += OnUse;
+        }
 
-		public void DisableInputs()
-		{
-			_inputSystem.Disable();
-			_inputSystem.Player.Move.performed -= OnHorizontalMovement;
-			_inputSystem.Player.Move.canceled -= OnHorizontalMovement;
-			_inputSystem.Player.Jump.started -= OnJump;
-			_inputSystem.Player.Jump.canceled -= OnJump;
-			_inputSystem.Player.Attack.started -= OnAttack;
-			_inputSystem.Player.Use.started -= OnUse;
-		}
+        public void DisableInputs()
+        {
+            _inputSystem.Disable();
+            _inputSystem.Player.Move.performed -= OnHorizontalMovement;
+            _inputSystem.Player.Move.canceled -= OnHorizontalMovement;
+            _inputSystem.Player.Jump.started -= OnJump;
+            _inputSystem.Player.Jump.canceled -= OnJump;
+            _inputSystem.Player.Attack.started -= OnAttack;
+            _inputSystem.Player.Use.started -= OnUse;
+        }
 
-		private void OnUse(InputAction.CallbackContext context)
-		{
-			if (context.started)
-				InteractButtonUsed?.Invoke();
-		}
+        private void OnUse(InputAction.CallbackContext context)
+        {
+            if (context.started)
+                InteractButtonUsed?.Invoke();
+        }
 
-		private void OnAttack(InputAction.CallbackContext context)
-		{
-			if (context.started)
-				AttackButtonUsed?.Invoke();
-		}
+        private void OnAttack(InputAction.CallbackContext context)
+        {
+            if (context.started)
+                AttackButtonUsed?.Invoke();
+        }
 
-		private void OnHorizontalMovement(InputAction.CallbackContext context)
-		{
-			var direction = context.ReadValue<float>();
+        private void OnHorizontalMovement(InputAction.CallbackContext context)
+        {
+            var direction = context.ReadValue<float>();
 
-			Debug.Log($"on horizontal move direction {direction}");
-			
-			if (context.performed)
-			{
-				VerticalButtonUsed?.Invoke(direction);
-			}
-			else if (context.canceled)
-			{
-				VerticalButtonCanceled?.Invoke();
-			}
-		}
+            if (context.performed)
+            {
+                VerticalButtonUsed?.Invoke(direction);
+            }
+            else if (context.canceled)
+            {
+                VerticalButtonCanceled?.Invoke();
+            }
+        }
 
-		private void OnJump(InputAction.CallbackContext context)
-		{
-			if (context.started)
-				JumpButtonUsed?.Invoke();
+        private void OnJump(InputAction.CallbackContext context)
+        {
+            if (context.started)
+                JumpButtonUsed?.Invoke();
 
-			if (context.canceled)
-				JumpButtonCanceled?.Invoke();
-		}
-	}
+            if (context.canceled)
+                JumpButtonCanceled?.Invoke();
+        }
+    }
 }

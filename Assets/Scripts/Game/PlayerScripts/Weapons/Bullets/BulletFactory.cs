@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 
-public class BulletFactory : MonoBehaviour
+namespace Game.PlayerScripts.Weapons.Bullets
 {
-    [SerializeField] private Bullet _bulletPrefab;
-
-    public Bullet Create(Transform parent = null)
+    public class BulletFactory : MonoBehaviour
     {
-        return Instantiate(_bulletPrefab, parent);
+        [SerializeField] private Bullet _bulletPrefab;
+
+        public Bullet Create(Transform parent = null)
+        {
+            return Instantiate(_bulletPrefab, parent);
+        }
     }
 }
