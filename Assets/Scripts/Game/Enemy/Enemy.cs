@@ -4,6 +4,7 @@ using Game.Enemy.StateMachine;
 using Game.Enemy.StateMachine.States;
 using Game.PlayerScripts;
 using Infrastructure.GameLoading;
+using Infrastructure.GameLoading.Factory;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -21,8 +22,6 @@ namespace Game.Enemy
 
         private int _maxHealth;
         private IPlayerFactory _factory;
-
-        public Player Target => _target;
         public int Health { get; private set; }
         public int Damage { get; private set; }
 

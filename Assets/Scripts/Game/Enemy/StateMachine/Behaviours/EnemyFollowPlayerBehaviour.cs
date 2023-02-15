@@ -4,6 +4,7 @@ using Game.Enemy.EnemySettings.TestEnemy.Data.ScriptableObjects;
 using Game.Enemy.Services;
 using Game.PlayerScripts;
 using Infrastructure.GameLoading;
+using Infrastructure.GameLoading.Factory;
 using UnityEngine;
 
 namespace Game.Enemy.StateMachine.Behaviours

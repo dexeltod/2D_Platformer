@@ -1,5 +1,6 @@
 using Game.PlayerScripts.PlayerData;
 using Infrastructure.GameLoading;
+using Infrastructure.GameLoading.Factory;
 using Infrastructure.Services;
 using UnityEngine;
 

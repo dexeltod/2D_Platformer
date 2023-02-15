@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Infrastructure.GameLoading
+namespace Infrastructure.GameLoading.Factory
 {
 	public interface IPlayerFactory : IService
 	{

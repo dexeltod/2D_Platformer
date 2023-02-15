@@ -37,7 +37,7 @@ namespace Game.Enemy.Services
         {
             _enemyMeleeChecker.enabled = true;
             _enemyPlayerChecker.enabled = true;
-            // _enemyPlayerChecker.PlayerIsAbove += OnPlayerAbove;
+            
             _enemyMeleeChecker.TouchedPlayer += OnTouchPlayer;
             _enemyPlayerChecker.SeenPlayer += OnSeeEnemy;
         }
@@ -46,7 +46,6 @@ namespace Game.Enemy.Services
         {
             _enemyMeleeChecker.TouchedPlayer -= OnTouchPlayer;
             _enemyPlayerChecker.SeenPlayer -= OnSeeEnemy;
-            // _enemyPlayerChecker.PlayerIsAbove -= OnPlayerAbove;
             _enemyMeleeChecker.enabled = false;
             _enemyPlayerChecker.enabled = false;
         }
@@ -56,9 +55,6 @@ namespace Game.Enemy.Services
             int rotation = direction > 0 ? Right : Left;
             transform.rotation = Quaternion.Euler(transform.rotation.x, rotation, 0);
         }
-
-        private void OnPlayerAbove() => 
-            PlayerIsAbove.Invoke();
 
         private void OnTouchPlayer(bool isSeeEnemy) =>
             TouchedPlayer?.Invoke(isSeeEnemy);

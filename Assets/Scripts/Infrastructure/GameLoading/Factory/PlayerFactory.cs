@@ -11,7 +11,7 @@ using Infrastructure.GameLoading.AssetManagement;
 using Infrastructure.Services;
 using UnityEngine;
 
-namespace Infrastructure.GameLoading
+namespace Infrastructure.GameLoading.Factory
 {
     public class PlayerFactory : IPlayerFactory
     {
@@ -75,7 +75,7 @@ namespace Infrastructure.GameLoading
             playerStatesFactory.CreateTransitions();
             playerStatesFactory.CreateStates();
 
-            TestStateMachine stateMachine = new TestStateMachine(_stateService.Get<IdleState>());
+            StateMachine stateMachine = new StateMachine(_stateService.Get<IdleState>());
         }
     }
 }

@@ -1,10 +1,10 @@
 ﻿namespace Game.PlayerScripts.StateMachine
 {
-	public class TestStateMachine
+	public class StateMachine
 	{
 		private IState _currentState;
 
-		public TestStateMachine(IState state) => 
+		public StateMachine(IState state) => 
 			ChangeState(state);
 
 		private void ChangeState(IState state)

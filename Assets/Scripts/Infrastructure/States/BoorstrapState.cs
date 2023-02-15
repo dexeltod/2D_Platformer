@@ -2,6 +2,7 @@
 using Infrastructure.Data.PersistentProgress;
 using Infrastructure.GameLoading;
 using Infrastructure.GameLoading.AssetManagement;
+using Infrastructure.GameLoading.Factory;
 using Infrastructure.Services;
 using Infrastructure.Services.SaveLoadService;
 
@@ -40,6 +41,8 @@ namespace Infrastructure.States
 			_serviceLocator.RegisterAsSingle<IPersistentProgressService>(new PersistentProgressService());
 			_serviceLocator.RegisterAsSingle<ISaveLoadService>(new SaveLoadService());
 			_serviceLocator.RegisterAsSingle<IInputService>(new InputService());
+			_serviceLocator.RegisterAsSingle<IUIFactory>(new UIFactory());
+			_serviceLocator.RegisterAsSingle<ISceneLoadInformer>(new SceneLoadInformer());
 
 			_serviceLocator.RegisterAsSingle<IPlayerFactory>(
 				new PlayerFactory(_serviceLocator.GetSingle<IAssetProvider>()));

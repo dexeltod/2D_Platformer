@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
 using Game.PlayerScripts.PlayerData;
+using Infrastructure.GameLoading;
+using Infrastructure.GameLoading.Factory;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,21 +10,46 @@ namespace UI_Scripts.CharacterStats.Health
 {
     public class HealthPresenter : MonoBehaviour
     {
-        [SerializeField] private PlayerHealth _player;
         [SerializeField] private Slider _slider;
+        
+        private PlayerHealth _playerHealth;
 
         private Coroutine _currentCoroutine;
+        private IPlayerFactory _playerFactory;
+        private IUIFactory _uiFactory;
+        private ISceneLoadInformer _sceneLoadInformer;
 
-        private void OnEnable() => 
-            _player.HealthChanged += Set;
-
-        private void OnDisable() => 
-            _player.HealthChanged -= Set;
-
-        private void Set()
+        private void Awake()
         {
-            float maxHealthNormalized = _slider.maxValue / _player.MaxHealth;
-            float currentHealthNormalized = _slider.maxValue / _player.CurrentHealth;
+	        _sceneLoadInformer = ServiceLocator.Container.GetSingle<ISceneLoadInformer>();
+
+	        _sceneLoadInformer.SceneLoaded += OnSceneLoaded;
+        }
+
+        private void OnSceneLoaded()
+        {
+	        _sceneLoadInformer.SceneLoaded -= OnSceneLoaded;
+	        
+	        _playerFactory = ServiceLocator.Container.GetSingle<IPlayerFactory>();
+	        _playerHealth = _playerFactory.MainCharacter.GetComponent<PlayerHealth>();
+	        _playerHealth.HealthChanged += OnSetHealth;
+        }
+
+        ~HealthPresenter()
+        {
+	        _playerHealth.HealthChanged -= OnSetHealth;
+        }
+
+        private void OnDisable()
+        {
+	        if(_playerHealth != null)
+		        _playerHealth.HealthChanged -= OnSetHealth;
+        }
+
+        private void OnSetHealth()
+        {
+            float maxHealthNormalized = _slider.maxValue / _playerHealth.MaxHealth;
+            float currentHealthNormalized = _slider.maxValue / _playerHealth.CurrentHealth;
             float neededValue = maxHealthNormalized / currentHealthNormalized;
 
             if (_currentCoroutine != null)
