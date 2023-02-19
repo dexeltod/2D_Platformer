@@ -14,7 +14,7 @@ namespace Game.PlayerScripts.StateMachine.States
 
 		public AttackState(IInputService inputService, PlayerWeaponList playerWeaponList, AbstractWeapon weaponBase,
 			Animator animator, AnimationHasher hasher,
-			PhysicsMovement physicsMovement, AnimatorFacade animatorFacade, IStateTransition[] transitions) : base(inputService, animator, hasher,
+			PhysicsMovement physicsMovement, IStateTransition[] transitions) : base(inputService, animator, hasher,
 			transitions)
 		{
 			playerWeaponList.EquippedWeaponChanged += SetEquippedWeapon;
@@ -24,7 +24,6 @@ namespace Game.PlayerScripts.StateMachine.States
 
 		protected override void OnEnter()
 		{
-			Debug.Log("attack state");
 			Attack();
 		}
 

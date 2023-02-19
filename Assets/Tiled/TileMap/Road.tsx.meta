@@ -8,8 +8,14 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: cc34d0f3dc257a442819830b408c5322, type: 3}
-  missingFiles: []
-  errors: []
+  missingFiles:
+  - ColliderTemplates/triangle.tx
+  - ColliderTemplates/triangle.tx
+  - ColliderTemplates/triangle.tx
+  errors:
+  - 'Missing template file: ColliderTemplates/triangle.tx'
+  - 'Missing template file: ColliderTemplates/triangle.tx'
+  - 'Missing template file: ColliderTemplates/triangle.tx'
   warnings: []
   missingSortingLayers: []
   missingLayers: []

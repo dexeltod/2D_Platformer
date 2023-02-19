@@ -123,7 +123,7 @@ namespace Infrastructure.GameLoading
 		private void CreateAttackState() =>
 			_stateService.Register(
 				new AttackState(
-					_inputService, _playerWeaponList, _abstractWeapon, _animator, _animationHasher, _physicsMovement, _animatorFacade,
+					_inputService, _playerWeaponList, _abstractWeapon, _animator, _animationHasher, _physicsMovement,
 					transitions: new[]
 					{
 						_anyToDeadTransition,

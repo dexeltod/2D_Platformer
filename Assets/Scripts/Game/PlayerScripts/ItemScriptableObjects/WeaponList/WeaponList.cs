@@ -24,17 +24,17 @@ namespace Game.PlayerScripts.ItemScriptableObjects.WeaponList
 
         private void FormatToBinary()
         {
-            BinaryFormatter formetter;
+            BinaryFormatter formatter;
         }
 
         public void Update(GameProgress progress)
         {
-            throw new NotImplementedException();
+            //TODO: Need to update weapon;
         }
 
         public void Load(GameProgress progress)
         {
-            throw new NotImplementedException();
+	        //TODO: Need to load weapon;
         }
     }
 }

@@ -19,5 +19,5 @@ MonoBehaviour:
   CriticalDamageChance: 0
   AttackSpeed: 1
   AttackRange: 2
-  RunSpeed: 4
+  RunSpeed: 3
   IdleTime: 3

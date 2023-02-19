@@ -34,7 +34,7 @@ namespace Game.Enemy.StateMachine.Behaviours
 
         private void FixedUpdate()
         {
-            ChangeStateToIdle();
+            CheckWay();
             CheckAround();
             Patrol();
         }
@@ -53,7 +53,7 @@ namespace Game.Enemy.StateMachine.Behaviours
                 _rigidbody.velocity = new Vector2(verticalVelocity, _rigidbody.velocity.y);
         }
 
-        private void ChangeStateToIdle()
+        private void CheckWay()
         {
             bool isNoWay = _observer.IsNearLedge() == false || _observer.IsTouchWall() == true;
 

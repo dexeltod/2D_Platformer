@@ -50,15 +50,13 @@ namespace Game.Enemy.StateMachine.Behaviours
 
         private void OnEnable()
         {
-            _enemyObserver.PlayerIsAbove += OnPlayerAbove;
-            _animator.StopPlayback();
+	        _animator.StopPlayback();
             _animator.CrossFade(_animationHasher.RunHash, 0);
         }
 
         private void OnDisable()
         {
-            _enemyObserver.PlayerIsAbove -= OnPlayerAbove;
-            _animator.StopPlayback();
+	        _animator.StopPlayback();
         }
 
         private void FixedUpdate()

@@ -1,3 +1,4 @@
+using Game.PlayerScripts.Move;
 using Infrastructure.GameLoading;
 using Infrastructure.GameLoading.Factory;
 using UnityEngine;
@@ -8,7 +9,7 @@ namespace Game.PlayerScripts.Effects
     [RequireComponent(typeof(VisualEffect))]
     public class FeetDustEnabler : MonoBehaviour
     {
-        private Move.PhysicsMovement _physicsMovement;
+        private PhysicsMovement _physicsMovement;
         private Transform _feetPosition;
 
         private IPlayerFactory _factory;
@@ -31,7 +32,7 @@ namespace Game.PlayerScripts.Effects
         private void Initialize()
         {
             _factory.MainCharacterCreated -= OnHeroCreated;
-            _physicsMovement = _factory.MainCharacter.GetComponent<Move.PhysicsMovement>();
+            _physicsMovement = _factory.MainCharacter.GetComponent<PhysicsMovement>();
             _feetPosition = _physicsMovement.FeetPosition;
             _physicsMovement.Running += ChangeEffectEnabling;
         }

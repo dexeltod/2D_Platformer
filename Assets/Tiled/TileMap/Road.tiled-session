@@ -29,19 +29,19 @@
             }
         },
         "Levels/Level_1_TileMap.tmx": {
-            "scale": 2,
-            "selectedLayer": 1,
+            "scale": 0.5,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 0,
-                "y": 2303.75
+                "x": -230,
+                "y": 526
             }
         },
         "Levels/Level_3_TileMap.tmx": {
-            "scale": 1.5,
+            "scale": 0.75,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 256,
-                "y": 511.66666666666663
+                "x": 435.99999999999994,
+                "y": 546.6666666666667
             }
         },
         "Levels/Road.tsx": {
@@ -50,11 +50,11 @@
             "scaleInEditor": 1
         },
         "Levels/Rules/Road-random-rules.tmx": {
-            "scale": 0.75,
+            "scale": 0.25,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": -6742.666666666666,
-                "y": -528
+                "x": -6032,
+                "y": -1044
             }
         },
         "Levels/Rules/autotile_rules.tmx": {
@@ -129,12 +129,12 @@
         "Road.tsx"
     ],
     "project": "Road.tiled-project",
-    "property.type": "bool",
+    "property.type": "string",
     "recentFiles": [
+        "Levels/Rules/Road-random-rules.tmx",
         "Levels/Level_3_TileMap.tmx",
         "Levels/Level_1_TileMap.tmx",
         "Levels/Rules/autotile_rules.tmx",
-        "Levels/Rules/Road-random-rules.tmx",
         "Road.tsx",
         "Road-random.tsx",
         "Levels/Road.tsx",

@@ -23,7 +23,6 @@ namespace Game.Enemy.Services
 	
         public event Action<bool> TouchedPlayer;
         public event Action<bool> SeenPlayer;
-        public event Action PlayerIsAbove;
 
         public int FacingDirection { get; private set; }
 
@@ -73,7 +72,7 @@ namespace Game.Enemy.Services
             FacingDirection *= -1;
             int rotation = FacingDirection == 1 ? Right : Left;
 
-            transform.rotation = Quaternion.Euler(transform.rotation.x, rotation, 0);
+            transform.rotation = Quaternion.Euler(transform.rotation.x, rotation, transform.rotation.z);
         }
 
         private void OnSeeEnemy(bool isSeeEnemy) =>
