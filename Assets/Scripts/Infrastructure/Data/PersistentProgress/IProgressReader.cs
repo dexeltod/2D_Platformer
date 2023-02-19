@@ -2,6 +2,6 @@
 {
     public interface IProgressReader
     {
-        void Update(GameProgress progress);
+        void Reload(GameProgress progress);
     }
 }

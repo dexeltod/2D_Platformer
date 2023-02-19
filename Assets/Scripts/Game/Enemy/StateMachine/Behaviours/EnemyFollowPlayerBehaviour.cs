@@ -1,4 +1,3 @@
-using System;
 using Game.Animation.AnimationHashes.Characters;
 using Game.Enemy.EnemySettings.TestEnemy.Data.ScriptableObjects;
 using Game.Enemy.Services;
@@ -14,8 +13,10 @@ namespace Game.Enemy.StateMachine.Behaviours
     {
         [SerializeField] private EnemyData _enemyData;
 
+        private IPlayerFactory _playerFactory;
         private Player _player;
         private EnemyObserver _enemyObserver;
+        
         private Rigidbody2D _rigidbody2D;
         private Vector2 _direction;
         private Animator _animator;
@@ -28,9 +29,6 @@ namespace Game.Enemy.StateMachine.Behaviours
         private Vector2 _targetDirection;
 
         private float _lastFollowDirection;
-        private IPlayerFactory _playerFactory;
-
-        public event Action PlayerIsAbove;
 
         private void Awake()
         {
@@ -39,13 +37,13 @@ namespace Game.Enemy.StateMachine.Behaviours
             _animator = GetComponent<Animator>();
             _animationHasher = GetComponent<AnimationHasher>();
             _rigidbody2D = GetComponent<Rigidbody2D>();
-            _playerFactory.MainCharacterCreated += OnLevelLoaded;
+            _playerFactory.MainCharacterCreated += OnCharacterCreated;
         }
 
-        private void OnLevelLoaded()
+        private void OnCharacterCreated()
         {
             _player = _playerFactory.MainCharacter.GetComponent<Player>();
-            _playerFactory.MainCharacterCreated -= OnLevelLoaded;
+            _playerFactory.MainCharacterCreated -= OnCharacterCreated;
         }
 
         private void OnEnable()
@@ -54,10 +52,7 @@ namespace Game.Enemy.StateMachine.Behaviours
             _animator.CrossFade(_animationHasher.RunHash, 0);
         }
 
-        private void OnDisable()
-        {
-	        _animator.StopPlayback();
-        }
+        private void OnDisable() => _animator.StopPlayback();
 
         private void FixedUpdate()
         {
@@ -65,9 +60,6 @@ namespace Game.Enemy.StateMachine.Behaviours
             _rigidbody2D.position += _followDirection * (_enemyData.RunSpeed * Time.deltaTime);
             CheckDirectionToRotate();
         }
-
-        private void OnPlayerAbove() => 
-            PlayerIsAbove.Invoke();
 
         private void CheckDirectionToRotate()
         {

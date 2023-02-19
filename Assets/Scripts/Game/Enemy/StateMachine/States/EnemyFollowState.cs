@@ -19,7 +19,6 @@ namespace Game.Enemy.StateMachine.States
         public override void Start()
         {
             _enemyFollow.enabled = true;
-            _enemyFollow.PlayerIsAbove += OnSetIdleState;
             EnemyObserver.SeenPlayer += SetIdleIfSeePlayer;
             EnemyObserver.TouchedPlayer += TrySetAttackState;
             Animator.Play(AnimationHasher.RunHash);
@@ -43,7 +42,6 @@ namespace Game.Enemy.StateMachine.States
         public override void Stop()
         {
             _enemyFollow.enabled = false;
-            _enemyFollow.PlayerIsAbove -= OnSetIdleState;
             EnemyObserver.SeenPlayer -= SetIdleIfSeePlayer;
             EnemyObserver.TouchedPlayer -= TrySetAttackState;
         }

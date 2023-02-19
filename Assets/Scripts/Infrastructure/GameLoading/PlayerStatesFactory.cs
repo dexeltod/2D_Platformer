@@ -116,6 +116,8 @@ namespace Infrastructure.GameLoading
 			_stateService.Register(new JumpState(_physicsMovement, _inputService, _animator, _animationHasher, _animatorFacade,
 				transitions: new[]
 				{
+					_anyToIdleTransition,
+					_anyToRunTransition,
 					_anyToFallTransition,
 				}));
 		}

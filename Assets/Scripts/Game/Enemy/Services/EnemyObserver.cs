@@ -4,94 +4,89 @@ using UnityEngine;
 
 namespace Game.Enemy.Services
 {
-    [RequireComponent(typeof(SpriteRenderer))]
-    public class EnemyObserver : MonoBehaviour
-    {
-        private const int Right = 1;
-        private const int Left = -180;
+	public class EnemyObserver : MonoBehaviour
+	{
+		private const int RightRotation = 0;
+		private const int LeftRotation = 180;
+		
+		[SerializeField] private DataEntityVisibility _entityVisibility;
+		[SerializeField] private EnemyPlayerChecker _enemyPlayerChecker;
+		[SerializeField] private EnemyMeleeTrigger _enemyMeleeChecker;
 
-        [SerializeField] private DataEntityVisibility _entityVisibility;
-        [SerializeField] private EnemyPlayerChecker _enemyPlayerChecker;
-        [SerializeField] private EnemyMeleeTrigger _enemyMeleeChecker;
+		[SerializeField] private Transform _wallCheckTransform;
+		[SerializeField] private Transform _ledgeCheckTransform;
 
-        [SerializeField] private Transform _wallCheckTransform;
-        [SerializeField] private Transform _ledgeCheckTransform;
+		[Header("Debug")] [SerializeField] private bool _isEnableGizmos;
+		
+		public event Action<bool> TouchedPlayer;
+		public event Action<bool> SeenPlayer;
 
-        [Header("Debug")] [SerializeField] private bool _isEnableGizmos;
+		public int FacingDirection { get; private set; }
 
-        private SpriteRenderer _spriteRenderer;
-	
-        public event Action<bool> TouchedPlayer;
-        public event Action<bool> SeenPlayer;
+		private void Start() =>
+			FacingDirection = transform.rotation.x == 0 ? 1 : -1;
 
-        public int FacingDirection { get; private set; }
+		private void OnEnable()
+		{
+			_enemyMeleeChecker.enabled = true;
+			_enemyPlayerChecker.enabled = true;
 
-        private void Awake() => 
-            _spriteRenderer = GetComponent<SpriteRenderer>();
+			_enemyMeleeChecker.TouchedPlayer += OnTouchPlayer;
+			_enemyPlayerChecker.SeenPlayer += OnSeeEnemy;
+		}
 
-        private void Start() =>
-            FacingDirection = _spriteRenderer.flipX ? -1 : 1;
+		private void OnDisable()
+		{
+			_enemyMeleeChecker.TouchedPlayer -= OnTouchPlayer;
+			_enemyPlayerChecker.SeenPlayer -= OnSeeEnemy;
+			_enemyMeleeChecker.enabled = false;
+			_enemyPlayerChecker.enabled = false;
+		}
 
-        private void OnEnable()
-        {
-            _enemyMeleeChecker.enabled = true;
-            _enemyPlayerChecker.enabled = true;
-            
-            _enemyMeleeChecker.TouchedPlayer += OnTouchPlayer;
-            _enemyPlayerChecker.SeenPlayer += OnSeeEnemy;
-        }
+		public void SetFacingDirection(float normalizedDirection)
+		{
+			if (normalizedDirection != FacingDirection)
+				RotateFacingDirection();
+			
+			int rotation = normalizedDirection > 0 ? RightRotation : LeftRotation;
+			transform.rotation = Quaternion.Euler(transform.rotation.x, rotation, 0);
+		}
 
-        private void OnDisable()
-        {
-            _enemyMeleeChecker.TouchedPlayer -= OnTouchPlayer;
-            _enemyPlayerChecker.SeenPlayer -= OnSeeEnemy;
-            _enemyMeleeChecker.enabled = false;
-            _enemyPlayerChecker.enabled = false;
-        }
+		private void OnTouchPlayer(bool isSeeEnemy) =>
+			TouchedPlayer?.Invoke(isSeeEnemy);
 
-        public void SetFacingDirection(float direction)
-        {
-            int rotation = direction > 0 ? Right : Left;
-            transform.rotation = Quaternion.Euler(transform.rotation.x, rotation, 0);
-        }
+		public bool IsTouchWall() =>
+			Physics2D.Raycast(_wallCheckTransform.position, Vector2.right * FacingDirection,
+				_entityVisibility.WallCheckDistance, _entityVisibility.WhatIsTouched);
 
-        private void OnTouchPlayer(bool isSeeEnemy) =>
-            TouchedPlayer?.Invoke(isSeeEnemy);
+		public bool IsNearLedge() =>
+			Physics2D.Raycast(_ledgeCheckTransform.position,
+				Vector2.down,
+				_entityVisibility.LedgeCheckDistance, _entityVisibility.WhatIsGround);
 
-        public bool IsTouchWall() =>
-            Physics2D.Raycast(_wallCheckTransform.position, Vector2.right * FacingDirection,
-                _entityVisibility.WallCheckDistance, _entityVisibility.WhatIsTouched);
+		public void RotateFacingDirection()
+		{
+			FacingDirection *= -1;
+			float rotation = transform.rotation.x == RightRotation ? RightRotation : LeftRotation;
 
-        public bool IsNearLedge() =>
-            Physics2D.Raycast(_ledgeCheckTransform.position,
-                Vector2.down,
-                _entityVisibility.LedgeCheckDistance, _entityVisibility.WhatIsGround);
+			transform.rotation = Quaternion.Euler(transform.rotation.x, rotation, transform.rotation.z);
+		}
 
-        public void RotateFacingDirection()
-        {
-            FacingDirection *= -1;
-            int rotation = FacingDirection == 1 ? Right : Left;
+		private void OnSeeEnemy(bool isSeeEnemy) =>
+			SeenPlayer.Invoke(isSeeEnemy);
 
-            transform.rotation = Quaternion.Euler(transform.rotation.x, rotation, transform.rotation.z);
-        }
+		private void OnDrawGizmos()
+		{
+			if (_isEnableGizmos == false)
+				return;
 
-        private void OnSeeEnemy(bool isSeeEnemy) =>
-            SeenPlayer.Invoke(isSeeEnemy);
+			Vector3 wallCheckDirection = (Vector2)_wallCheckTransform.position + _entityVisibility.WallCheckDistance *(Vector2.right * FacingDirection);
 
-        private void OnDrawGizmos()
-        {
-            if (_isEnableGizmos == false)
-                return;
+			Vector2 ledgeCheckDirection = (Vector2)_ledgeCheckTransform.position +
+			                              Vector2.down * _entityVisibility.LedgeCheckDistance;
 
-            Vector3 wallCheckDirection = (Vector2)_wallCheckTransform.position
-                                         + _entityVisibility.WallCheckDistance
-                                         * FacingDirection * Vector2.right;
-
-            Vector2 ledgeCheckDirection = (Vector2)_ledgeCheckTransform.position +
-                                          Vector2.down * _entityVisibility.LedgeCheckDistance;
-
-            Gizmos.DrawLine(_wallCheckTransform.position, wallCheckDirection);
-            Gizmos.DrawLine(_ledgeCheckTransform.position, ledgeCheckDirection);
-        }
-    }
+			Gizmos.DrawLine(_wallCheckTransform.position, wallCheckDirection);
+			Gizmos.DrawLine(_ledgeCheckTransform.position, ledgeCheckDirection);
+		}
+	}
 }

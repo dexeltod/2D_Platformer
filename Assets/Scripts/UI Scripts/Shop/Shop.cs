@@ -41,10 +41,10 @@ namespace UI_Scripts.Shop
         {
             _player.TryBuyWeapon(itemScriptableObject);
             shopItemView.BuyButtonClicked -= OnBuyButtonClick;
-            Update(_gameProgress);
+            Reload(_gameProgress);
         }
 
-        public void Update(GameProgress progress)
+        public void Reload(GameProgress progress)
         {
             progress.PlayerItemsData.UpdateWeaponData(new ItemScriptableObject());
         }

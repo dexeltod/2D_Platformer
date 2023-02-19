@@ -27,7 +27,7 @@ namespace Game.PlayerScripts.ItemScriptableObjects.WeaponList
             BinaryFormatter formatter;
         }
 
-        public void Update(GameProgress progress)
+        public void Reload(GameProgress progress)
         {
             //TODO: Need to update weapon;
         }
