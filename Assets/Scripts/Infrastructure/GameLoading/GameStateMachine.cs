@@ -23,8 +23,7 @@ namespace Infrastructure.GameLoading
 				[typeof(SceneLoadState)] = new SceneLoadState(this, sceneLoader, loadingCurtain,
 					serviceLocator.GetSingle<IPlayerFactory>(),
 					serviceLocator.GetSingle<IUIFactory>(),
-					serviceLocator.GetSingle<ISceneLoadInformer>()
-					),
+					serviceLocator.GetSingle<ISceneLoad>(), serviceLocator.GetSingle<ICameraFactory>()),
 				
 				[typeof(LoadProgressState)] = new LoadProgressState(this,
 					serviceLocator.GetSingle<IPersistentProgressService>(),

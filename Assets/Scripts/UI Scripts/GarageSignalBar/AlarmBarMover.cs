@@ -1,4 +1,4 @@
-using Game.Enviroment.GarageAlarm.Cupboard.Behaviours;
+using Game.Environment.GarageAlarm.Cupboard.Behaviours;
 using UnityEngine;
 using UnityEngine.UI;
 

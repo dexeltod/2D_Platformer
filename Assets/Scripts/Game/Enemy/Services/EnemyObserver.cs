@@ -67,7 +67,7 @@ namespace Game.Enemy.Services
 		public void RotateFacingDirection()
 		{
 			FacingDirection *= -1;
-			float rotation = transform.rotation.x == RightRotation ? RightRotation : LeftRotation;
+			float rotation = FacingDirection == 1 ? RightRotation : LeftRotation;
 
 			transform.rotation = Quaternion.Euler(transform.rotation.x, rotation, transform.rotation.z);
 		}

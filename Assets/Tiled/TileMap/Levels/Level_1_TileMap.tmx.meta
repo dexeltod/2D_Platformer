@@ -11,9 +11,7 @@ ScriptedImporter:
   missingFiles: []
   errors: []
   warnings: []
-  missingSortingLayers:
-  - Wall
-  - Buildings
+  missingSortingLayers: []
   missingLayers: []
   missingTags: []
   importerVersion: 26

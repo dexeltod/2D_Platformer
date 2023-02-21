@@ -1,10 +1,9 @@
 ﻿using System;
 
-namespace Infrastructure.GameLoading.Factory
+namespace Infrastructure.GameLoading
 {
 	public interface ISceneLoadInformer : IService
 	{
 		event Action SceneLoaded;
-		void OnSceneLoaded();
 	}
 }

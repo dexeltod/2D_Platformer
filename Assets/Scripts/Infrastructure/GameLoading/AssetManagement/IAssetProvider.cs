@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace Infrastructure.GameLoading.AssetManagement
 {

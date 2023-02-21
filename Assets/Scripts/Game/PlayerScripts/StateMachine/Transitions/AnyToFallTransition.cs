@@ -26,12 +26,12 @@ namespace Game.PlayerScripts.StateMachine.Transitions
 
 		public override void Enable()
 		{
-			base.Enable();
+			
 		}
 
 		public override void Disable()
 		{
-			base.Disable();
+			
 		}
 
 		private void OnGroundedChanged(bool isGrounded)

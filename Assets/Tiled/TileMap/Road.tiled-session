@@ -4,7 +4,7 @@
         "width": 2
     },
     "activeFile": "Road.tsx",
-    "automapping.whileDrawing": false,
+    "automapping.whileDrawing": true,
     "expandedProjectPaths": [
         ".",
         "Levels/Rules",
@@ -32,16 +32,24 @@
             "scale": 0.5,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": -230,
-                "y": 526
+                "x": 826,
+                "y": 54
+            }
+        },
+        "Levels/Level_2_TileMap.tmx": {
+            "scale": 2,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 783,
+                "y": 565.5
             }
         },
         "Levels/Level_3_TileMap.tmx": {
-            "scale": 0.75,
-            "selectedLayer": 0,
+            "scale": 0.33,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 435.99999999999994,
-                "y": 546.6666666666667
+                "x": 772.7272727272725,
+                "y": 827.2727272727271
             }
         },
         "Levels/Road.tsx": {
@@ -50,19 +58,19 @@
             "scaleInEditor": 1
         },
         "Levels/Rules/Road-random-rules.tmx": {
-            "scale": 0.25,
-            "selectedLayer": 0,
+            "scale": 0.33,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": -6032,
-                "y": -1044
+                "x": 1433.3333333333333,
+                "y": 3757.5757575757575
             }
         },
         "Levels/Rules/autotile_rules.tmx": {
-            "scale": 1,
-            "selectedLayer": 0,
+            "scale": 2,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 348,
-                "y": 797
+                "x": 164.5,
+                "y": 1583
             }
         },
         "Levels/Rules/autotile_rules.tmx#Road": {
@@ -82,7 +90,7 @@
         "Road.tsx": {
             "dynamicWrapping": false,
             "scaleInDock": 1,
-            "scaleInEditor": 2
+            "scaleInEditor": 1
         },
         "Rules/autotile rules.tmx": {
             "scale": 0.75,
@@ -104,17 +112,17 @@
             "scaleInDock": 1
         },
         "TileMap.tmx": {
-            "scale": 0.33,
-            "selectedLayer": 0,
+            "scale": 0.5,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 942.4242424242425,
-                "y": 772.7272727272727
+                "x": 578,
+                "y": 488
             }
         }
     },
     "last.externalTilesetPath": "F:/_projects/Unity/FlurryOfInstict/Assets/Tiled/TileMap",
     "last.imagePath": "F:/_projects/Unity/FlurryOfInstict/Assets/Tiled/TileMap/TileMaps",
-    "map.fixedSize": false,
+    "map.fixedSize": true,
     "map.height": 50,
     "map.lastUsedFormat": "tmx",
     "map.layerDataFormat": null,
@@ -131,16 +139,16 @@
     "project": "Road.tiled-project",
     "property.type": "string",
     "recentFiles": [
+        "Road.tsx",
         "Levels/Rules/Road-random-rules.tmx",
+        "TileMap.tmx",
+        "Levels/Rules/autotile_rules.tmx",
         "Levels/Level_3_TileMap.tmx",
         "Levels/Level_1_TileMap.tmx",
-        "Levels/Rules/autotile_rules.tmx",
-        "Road.tsx",
         "Road-random.tsx",
         "Levels/Road.tsx",
         "Levels/Street.tsx",
         "Level_3_TileMap.tmx",
-        "TileMap.tmx",
         ":/automap-tiles.tsx",
         "Rules/rules.tmx"
     ],

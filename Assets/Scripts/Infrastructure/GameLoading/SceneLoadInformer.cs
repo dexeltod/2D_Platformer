@@ -1,14 +1,12 @@
 ﻿using System;
 
-namespace Infrastructure.GameLoading.Factory
+namespace Infrastructure.GameLoading
 {
-	public class SceneLoadInformer: ISceneLoadInformer
+	public class SceneLoadInformer : ISceneLoad
 	{
 		public event Action SceneLoaded;
 
-		public void OnSceneLoaded()
-		{
+		public void InvokeSceneLoaded() =>
 			SceneLoaded?.Invoke();
-		}
 	}
 }

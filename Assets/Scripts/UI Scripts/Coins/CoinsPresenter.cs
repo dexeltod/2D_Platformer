@@ -1,4 +1,4 @@
-using Game.Enviroment.Items.Coin;
+using Game.Environment.Items.Coin;
 using TMPro;
 using UnityEngine;
 

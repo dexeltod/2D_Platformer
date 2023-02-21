@@ -35,14 +35,25 @@ namespace Infrastructure.States
             _gameStateMachine.Enter<LoadProgressState>();
 
         private void RegisterServices()
-		{
+        {
 			_serviceLocator.RegisterAsSingle<IGameStateMachine>(_gameStateMachine);
 			_serviceLocator.RegisterAsSingle<IAssetProvider>(new AssetProvider());
+			
+	        SceneLoadInformer sceneLoadInformer = new SceneLoadInformer();
+	        CameraFactory cameraFactory = new CameraFactory();
+			
 			_serviceLocator.RegisterAsSingle<IPersistentProgressService>(new PersistentProgressService());
+			
 			_serviceLocator.RegisterAsSingle<ISaveLoadService>(new SaveLoadService());
 			_serviceLocator.RegisterAsSingle<IInputService>(new InputService());
+			
+			_serviceLocator.RegisterAsSingle<ISceneLoadInformer>(sceneLoadInformer);
+			_serviceLocator.RegisterAsSingle<ISceneLoad>(sceneLoadInformer);
+			
 			_serviceLocator.RegisterAsSingle<IUIFactory>(new UIFactory());
-			_serviceLocator.RegisterAsSingle<ISceneLoadInformer>(new SceneLoadInformer());
+			
+			_serviceLocator.RegisterAsSingle<ICameraFactory>(cameraFactory);
+			_serviceLocator.RegisterAsSingle<ICamera>(cameraFactory);
 
 			_serviceLocator.RegisterAsSingle<IPlayerFactory>(
 				new PlayerFactory(_serviceLocator.GetSingle<IAssetProvider>()));

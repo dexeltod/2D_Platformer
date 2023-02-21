@@ -30,9 +30,7 @@ namespace Game.PlayerScripts.StateMachine.States
 			_animatorFacade.Play(AnimationHasher.FallHash);
 		}
 
-		private void OnButtonCanceled()
-		{
+		private void OnButtonCanceled() => 
 			_physicsMovement.SetMoveDirection(0);
-		}
 	}
 }
