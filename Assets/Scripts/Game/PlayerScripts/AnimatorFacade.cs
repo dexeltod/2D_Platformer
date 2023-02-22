@@ -10,22 +10,15 @@ namespace Game.PlayerScripts
 		private Coroutine _currentAnimationRoutine;
 		private int _currentAnimationHash;
 
-		private void Awake() =>
+		private void Start() =>
 			_animator = GetComponent<Animator>();
-
-		private void FixedUpdate()
-		{
-			// _animator.Play(_currentAnimationHash);
-		}
 
 		public void Play(int hash)
 		{
 			StopAnimationRoutine();
 			_currentAnimationRoutine = StartCoroutine(StartAnimationRoutine(hash));
-			// _currentAnimationHash = hash;
 		}
-		
-		
+
 		private void StopAnimationRoutine()
 		{
 			if (_currentAnimationRoutine != null)

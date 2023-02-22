@@ -10,8 +10,9 @@ namespace Game.Cameras
 		private Canvas _canvas;
 		private ISceneLoadInformer _sceneLoadInformer;
 
-		private void Awake()
+		private void Start()
 		{
+			_canvas = GetComponent<Canvas>();
 			ISceneLoadInformer sceneLoadInformer = ServiceLocator.Container.GetSingle<ISceneLoadInformer>();
 			_sceneLoadInformer = sceneLoadInformer;
 		
@@ -20,7 +21,6 @@ namespace Game.Cameras
 
 		private void OnSceneLoaded()
 		{
-			_canvas = GetComponent<Canvas>();
 			_canvas.worldCamera = ServiceLocator.Container.GetSingle<ICamera>().Camera;
 			_sceneLoadInformer.SceneLoaded -= OnSceneLoaded;
 		}

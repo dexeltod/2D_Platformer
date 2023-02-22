@@ -6,7 +6,6 @@ using Game.PlayerScripts.Move;
 using Game.PlayerScripts.StateMachine;
 using Game.PlayerScripts.StateMachine.States;
 using Game.PlayerScripts.Weapons;
-using Infrastructure.Constants;
 using Infrastructure.GameLoading.AssetManagement;
 using Infrastructure.Services;
 using UnityEngine;
@@ -15,7 +14,9 @@ namespace Infrastructure.GameLoading.Factory
 {
     public class PlayerFactory : IPlayerFactory
     {
-        private readonly AnimationHasher _hasher;
+	    private const string Player = "Player";
+	    
+	    private readonly AnimationHasher _hasher;
         private readonly StateService _stateService;
         private readonly IAssetProvider _assetProvider;
         private readonly IInputService _inputService;
@@ -29,6 +30,7 @@ namespace Infrastructure.GameLoading.Factory
         private AnimationHasher _animationHasher;
         private GroundChecker _groundChecker;
         private AnimatorFacade _animatorFacade;
+        private PlayerStatesFactory _playerStatesFactory;
 
         public GameObject MainCharacter { get; private set; }
 
@@ -44,10 +46,13 @@ namespace Infrastructure.GameLoading.Factory
 
         public async Task<GameObject> CreateHero(GameObject initialPoint)
         {
-            MainCharacter = await _assetProvider.Instantiate(ConstantNames.PlayerPrefabPath, initialPoint.transform.position);
-            MainCharacterCreated.Invoke();
-
+	        if (MainCharacter != null)
+		        return MainCharacter;
+	        
+            MainCharacter = await _assetProvider.Instantiate(Player, initialPoint.transform.position);
             GetComponents();
+            MainCharacterCreated?.Invoke();
+
             
             _playerWeaponList = new PlayerWeaponList(_weaponFactory, _playerMoney, MainCharacter.transform);
             CreatePlayerStateMachine();
@@ -68,12 +73,11 @@ namespace Infrastructure.GameLoading.Factory
 
         private void CreatePlayerStateMachine()
         {
-            PlayerStatesFactory playerStatesFactory =
-                new PlayerStatesFactory(_groundChecker, _inputService, _animator, _animationHasher, _stateService, _animatorFacade,
-                    _physicsMovement, _playerWeaponList);
+	        _playerStatesFactory = new PlayerStatesFactory(_groundChecker, _inputService, _animator, _animationHasher, _stateService, _animatorFacade,
+	            _physicsMovement, _playerWeaponList);
 
-            playerStatesFactory.CreateTransitions();
-            playerStatesFactory.CreateStates();
+            _playerStatesFactory.CreateTransitions();
+            _playerStatesFactory.CreateStates();
 
             StateMachine stateMachine = new StateMachine(_stateService.Get<IdleState>());
         }

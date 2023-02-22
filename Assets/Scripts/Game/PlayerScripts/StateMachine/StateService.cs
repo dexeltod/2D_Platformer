@@ -10,7 +10,7 @@ namespace Game.PlayerScripts.StateMachine
 		public void Register<T>(T instance) where T : class, IState
 		{
 			if (_states.ContainsKey(typeof(T)))
-				throw new InvalidOperationException();
+				return;
 			
 			_states.Add(typeof(T), instance);
 		}

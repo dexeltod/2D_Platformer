@@ -5,7 +5,7 @@
  <tile id="8">
   <objectgroup draworder="index" id="2">
    <object id="2" x="31.9943" y="0.00142045">
-    <polygon points="0,0 -0.00390625,32 -32.0039,32"/>
+    <polygon points="0.0057,-0.00142045 0.0057,31.9986 -31.9943,31.9986"/>
    </object>
   </objectgroup>
  </tile>
@@ -22,21 +22,21 @@
  <tile id="11">
   <objectgroup draworder="index" id="2">
    <object id="6" x="0.00443333" y="0">
-    <polygon points="0,0 0.00390625,32 32.0039,32"/>
+    <polygon points="-0.00443333,0 -0.00443333,32 31.9956,32"/>
    </object>
   </objectgroup>
  </tile>
  <tile id="13">
   <objectgroup draworder="index" id="2">
    <object id="2" template="ColliderTemplates/triangle.tx" x="31.8287" y="-0.0845122">
-    <polygon points="0.164939,0.0919698 -31.8163,32.0793 0.15957,32.0675"/>
+    <polygon points="0.1713,0.0845122 -31.8287,32.0845 0.1713,32.0845"/>
    </object>
   </objectgroup>
  </tile>
  <tile id="14">
   <objectgroup draworder="index" id="2">
    <object id="1" x="0" y="0">
-    <polygon points="0,0.00390625 31.9993,31.9955 -0.00776177,32.0039"/>
+    <polygon points="0,0 32,32 -0.00776177,32.0039"/>
    </object>
   </objectgroup>
  </tile>
@@ -53,7 +53,7 @@
  <tile id="40">
   <objectgroup draworder="index" id="2">
    <object id="5" x="32.0039" y="0">
-    <polygon points="0,0 -0.00390625,32 -32.0039,32"/>
+    <polygon points="-0.0039,0 -0.0039,32 -32.0039,32"/>
    </object>
   </objectgroup>
  </tile>
@@ -80,21 +80,21 @@
  <tile id="45">
   <objectgroup draworder="index" id="2">
    <object id="2" x="0.0127841" y="0.0170455">
-    <polygon points="0,0 0.00390625,32 32.0039,32"/>
+    <polygon points="-0.0127841,-0.0170455 0.00390625,32 31.9872,31.983"/>
    </object>
   </objectgroup>
  </tile>
  <tile id="46">
   <objectgroup draworder="index" id="2">
-   <object id="1" template="ColliderTemplates/triangle.tx" x="31.8446" y="32.1177" rotation="0">
-    <polygon points="0.145227,-0.118396 -31.837,-32.1033 0.159372,-31.8904"/>
+   <object id="1" template="ColliderTemplates/triangle.tx" x="31.8406" y="32.1184" rotation="0">
+    <polygon points="0.159352,-0.118399 -31.8406,-32.1184 0.159352,-32.1184"/>
    </object>
   </objectgroup>
  </tile>
  <tile id="47">
   <objectgroup draworder="index" id="2">
    <object id="1" template="ColliderTemplates/triangle.tx" x="0.185364" y="32.1679" rotation="0">
-    <polygon points="-0.145825,-0.166648 31.8174,-32.1523 -0.160028,-32.1561"/>
+    <polygon points="-0.185364,-0.1679 31.8146,-32.1679 -0.160028,-32.1561"/>
    </object>
   </objectgroup>
  </tile>

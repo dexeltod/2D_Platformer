@@ -1,67 +1,73 @@
 using Game.Enemy.EnemySettings.TestEnemy.Data.ScriptableObjects;
 using Game.Enemy.Services;
+using Game.PlayerScripts.Move;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace Game.Enemy.StateMachine.Behaviours
 {
-    [RequireComponent(typeof(Rigidbody2D))]
-    [RequireComponent(typeof(EnemyObserver))]
-    public class EnemyPatrolBehaviour : MonoBehaviour
-    {
-        [SerializeField] private EnemyData _verticalSpeed;
+	[RequireComponent(typeof(Rigidbody2D))]
+	[RequireComponent(typeof(EnemyObserver))]
+	public class EnemyPatrolBehaviour : MonoBehaviour
+	{
+		[SerializeField] private EnemyData _verticalSpeed;
 
-        private Rigidbody2D _rigidbody;
-        private EnemyObserver _observer;
+		private SurfaceInformant _surfaceInformant;
+		private Rigidbody2D _rigidbody;
+		private EnemyObserver _observer;
 
-        private bool _canMove;
+		private bool _canMove;
 
-        public event UnityAction NoWay;
+		public event UnityAction NoWay;
 
-        private void NullifyHorizontalVelocity()
-        {
-            float minVelocity = 0;
-            float minRigidbodyVelocity = _rigidbody.velocity.x * minVelocity;
+		private void Awake()
+		{
+			_surfaceInformant = GetComponent<SurfaceInformant>();
+			_rigidbody = GetComponent<Rigidbody2D>();
+			_observer = GetComponent<EnemyObserver>();
+		}
 
-            _rigidbody.velocity = new Vector2(minRigidbodyVelocity, _rigidbody.velocity.y);
-        }
+		private void FixedUpdate()
+		{
+			CheckWay();
+			CheckAround();
+			Move();
+		}
 
-        private void Awake()
-        {
-            _rigidbody = GetComponent<Rigidbody2D>();
-            _observer = GetComponent<EnemyObserver>();
-        }
+		private void OnDisable() =>
+			NullifyHorizontalVelocity();
 
-        private void FixedUpdate()
-        {
-            CheckWay();
-            CheckAround();
-            Patrol();
-        }
+		private void NullifyHorizontalVelocity()
+		{
+			float minVelocity = 0;
+			float minRigidbodyVelocity = _rigidbody.velocity.x * minVelocity;
 
-        private void OnDisable() => 
-            NullifyHorizontalVelocity();
+			_rigidbody.position += new Vector2(minRigidbodyVelocity, _rigidbody.velocity.y);
+		}
 
-        private void CheckAround() =>
-            _canMove = _observer.IsNearLedge() || !_observer.IsTouchWall();
+		private void CheckAround() =>
+			_canMove = _observer.IsNearLedge() || !_observer.IsTouchWall();
 
-        private void Patrol()
-        {
-            float verticalVelocity = _verticalSpeed.WalkSpeed * _observer.FacingDirection;
+		private void Move()
+		{
+			float verticalVelocity = _verticalSpeed.WalkSpeed * _observer.FacingDirection;
 
-            if (_canMove)
-                _rigidbody.velocity = new Vector2(verticalVelocity, _rigidbody.velocity.y);
-        }
+			Vector2 direction = new Vector2(verticalVelocity, _rigidbody.velocity.y);
+			Vector2 directionAlongSlope = _surfaceInformant.GetProjectionAlongNormal(direction);
 
-        private void CheckWay()
-        {
-            bool isNoWay = _observer.IsNearLedge() == false || _observer.IsTouchWall() == true;
+			if (_canMove)
+				_rigidbody.position += directionAlongSlope * (verticalVelocity * Time.deltaTime);
+		}
 
-            if (isNoWay)
-            {
-                NoWay.Invoke();
-                _observer.RotateFacingDirection();
-            }
-        }
-    }
+		private void CheckWay()
+		{
+			bool isNoWay = _observer.IsNearLedge() == false || _observer.IsTouchWall() == true;
+
+			if (isNoWay)
+			{
+				NoWay.Invoke();
+				_observer.RotateFacingDirection();
+			}
+		}
+	}
 }

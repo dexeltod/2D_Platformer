@@ -6,10 +6,10 @@ namespace Game.PlayerScripts.Move
     public class SurfaceInformant : MonoBehaviour
     {
         [SerializeField] private bool _isDebug;
-        [SerializeField, Range(0, 180)] private float _maxSlopeAngle;
+        [SerializeField, Range(0, 180)] private float _maxSlopeAngle = 57;
 
         [SerializeField] private LayerMask _groundLayer;
-        [SerializeField] private float _slopeCheckDistance;
+        [SerializeField] private float _slopeCheckDistance = 1;
 
         private CapsuleCollider2D _capsuleCollider;
         private RaycastHit2D _hit;
@@ -94,7 +94,7 @@ namespace Game.PlayerScripts.Move
                 return;
 
             _canWalkOnSlopeLast = _canWalkOnSlope;
-            Moves.Invoke(_canWalkOnSlope);
+            Moves?.Invoke(_canWalkOnSlope);
         }
 
         private void OnDrawGizmos()

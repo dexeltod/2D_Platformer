@@ -29,6 +29,10 @@ MonoBehaviour:
     m_Address: VirtualCamera
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: de7748fd89fa843468d399acf1ff646f
+    m_Address: Player
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 16ca753ccb6322f4eac684e464af1aad, type: 2}
   m_SchemaSet:

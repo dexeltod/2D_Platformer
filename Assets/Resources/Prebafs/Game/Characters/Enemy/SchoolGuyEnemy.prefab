@@ -80,7 +80,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302770318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.368, y: 0.597, z: 0.6}
+  m_LocalPosition: {x: 0.482, y: 0.59, z: 0.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 3816065600502105117}
   - component: {fileID: 3537422105895224484}
   - component: {fileID: 2035812067634715392}
+  - component: {fileID: 944415669}
   m_Layer: 8
   m_Name: SchoolGuyEnemy
   m_TagString: Untagged
@@ -295,7 +296,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8db1d5a08ce4cd446b554c13d44a0cd1, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -367,7 +368,7 @@ MonoBehaviour:
   - {x: 0.071899414, y: 0.385458, z: 0}
   m_ShapePathHash: -1856394697
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1390
+  m_InstanceId: -1388
 --- !u!114 &6424921582603155147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,7 +386,7 @@ MonoBehaviour:
   _enemyMeleeChecker: {fileID: 1083062508278228268}
   _wallCheckTransform: {fileID: 6645501397967116688}
   _ledgeCheckTransform: {fileID: 5204559060345414845}
-  _isEnableGizmos: 0
+  _isEnableGizmos: 1
 --- !u!114 &5728285811741105012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,6 +426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyData: {fileID: 11400000, guid: 3aae1380c49acf04d89b0148be7ad258, type: 2}
   _enemyAttackTrigger: {fileID: 1665817545794999726}
+  _enemyAttackGameObject: {fileID: 5821571714116354892}
   _enemyMeleeTrigger: {fileID: 1083062508278228268}
 --- !u!114 &3537422105895224484
 MonoBehaviour:
@@ -452,6 +454,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyData: {fileID: 11400000, guid: 3aae1380c49acf04d89b0148be7ad258, type: 2}
+--- !u!114 &944415669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848783015209635893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a51be7d467734513a8762b93aff05620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _maxSlopeAngle: 57
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  _slopeCheckDistance: 1
 --- !u!1 &2236006073919173763
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,7 +496,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2236006073919173763}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.43, y: 0.646, z: 0}
+  m_LocalPosition: {x: 0, y: 0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
