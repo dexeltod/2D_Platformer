@@ -1,5 +1,6 @@
 ﻿using Infrastructure.Constants;
 using Infrastructure.GameLoading;
+using Infrastructure.GameLoading.AssetManagement;
 using Infrastructure.GameLoading.Factory;
 using UI_Scripts.Curtain;
 using UnityEngine;
@@ -33,20 +34,29 @@ namespace Infrastructure.States
 
 		public void Enter(string levelName)
 		{
+			var a = ServiceLocator.Container.GetSingle<IAssetProvider>();
+			a.CleanUp();
+			
 			_loadingCurtain.Show();
 			_sceneLoader.Load(levelName, OnLoaded);
 		}
 
 		private async void OnLoaded()
 		{
-			await _cameraFactory.CreateCamera();
 			await _playerFactory.CreateHero(CreateInitialPoint());
 			await _uiFactory.CreateUI();
 
+			_sceneLoad.SceneLoaded += OnSceneLoaded;
 			_sceneLoad.InvokeSceneLoaded();
-			_gameStateMachine.Enter<GameLoopState>();
+			
 		}
 
+		private void OnSceneLoaded()
+		{
+			_gameStateMachine.Enter<GameLoopState>();
+			_sceneLoad.SceneLoaded -= OnSceneLoaded;
+		}
+		
 		private GameObject CreateInitialPoint() => GameObject.FindWithTag(ConstantNames.PlayerSpawnPointTag);
 
 		public void Exit() =>

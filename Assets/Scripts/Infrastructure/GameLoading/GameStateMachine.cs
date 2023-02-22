@@ -15,20 +15,20 @@ namespace Infrastructure.GameLoading
 
 		public GameStateMachine(SceneLoader sceneLoader, LoadingCurtain loadingCurtain, ServiceLocator serviceLocator)
 		{
-
 			_states = new Dictionary<Type, IExitState>
 			{
 				[typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, serviceLocator),
-				
+
+				[typeof(LoadProgressState)] = new LoadProgressState(this,
+					serviceLocator.GetSingle<IPersistentProgressService>(),
+					serviceLocator.GetSingle<ISaveLoadService>()),
+
 				[typeof(SceneLoadState)] = new SceneLoadState(this, sceneLoader, loadingCurtain,
 					serviceLocator.GetSingle<IPlayerFactory>(),
 					serviceLocator.GetSingle<IUIFactory>(),
 					serviceLocator.GetSingle<ISceneLoad>(), serviceLocator.GetSingle<ICameraFactory>()),
-				
-				[typeof(LoadProgressState)] = new LoadProgressState(this,
-					serviceLocator.GetSingle<IPersistentProgressService>(),
-					serviceLocator.GetSingle<ISaveLoadService>()),
-				
+
+
 				[typeof(GameLoopState)] = new GameLoopState(this),
 			};
 		}

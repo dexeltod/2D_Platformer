@@ -7,21 +7,19 @@ namespace Game.Animation
 {
     public class BackgroundParallax : MonoBehaviour
     {
-        private ICamera _cameraInstance;
+        [SerializeField] private Camera _camera;
         
         private Transform _followedTarget;
-
         private IPlayerFactory _playerFactory;
-        private Vector2 _startPosition;
         private ISceneLoadInformer _levelLoadInformer;
 
+        private Vector2 _startPosition;
         private Vector2 _direction;
 
         private float _startZ;
         private float _distanceFromTarget;
         private float _clippingPlane;
         private float _parallaxFactor;
-        private Camera _camera;
 
         private void Awake() 
         {
@@ -35,7 +33,6 @@ namespace Game.Animation
 
         private void OnSceneLoaded()
         {
-	        _camera = ServiceLocator.Container.GetSingle<ICamera>().Camera;
 	        _followedTarget = _playerFactory.MainCharacter.transform;
 	        _levelLoadInformer.SceneLoaded -= OnSceneLoaded;
         }

@@ -28,15 +28,19 @@ namespace Infrastructure.Services.SaveLoadService
 
         public GameProgress LoadProgress()
         {
-            if (File.Exists(_filePath) == false)
-                return null;
+	        return null;
 
-            using FileStream file = File.Open(_filePath, FileMode.Open);
-            {
-                object loadedData = new BinaryFormatter().Deserialize(file);
-                GameProgress gameProgress = (GameProgress)loadedData;
-                return gameProgress;
-            }
+	        //TODO Need create progress
+	        
+	        // if (File.Exists(_filePath) == false)
+	        //     return null;
+	        //
+	        // using FileStream file = File.Open(_filePath, FileMode.Open);
+	        // {
+	        //     object loadedData = new BinaryFormatter().Deserialize(file);
+	        //     GameProgress gameProgress = (GameProgress)loadedData;
+	        //     return gameProgress;
+	        // }
         }
     }
 }

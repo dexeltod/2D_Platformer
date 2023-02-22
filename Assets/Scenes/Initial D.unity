@@ -239,26 +239,22 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &8944485633977606384
+--- !u!1001 &1242516243
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3180414674244678746, guid: 01b35e26a4e4e514c8ea3678582e832a, type: 3}
-      propertyPath: _bootstrapperPrefab
-      value: 
-      objectReference: {fileID: 3882402455940129700, guid: 18851e3623d794344b398bae8690f3f0, type: 3}
     - target: {fileID: 4120837535558143946, guid: 01b35e26a4e4e514c8ea3678582e832a, type: 3}
       propertyPath: m_Name
       value: GameRunner
       objectReference: {fileID: 0}
     - target: {fileID: 8963224047006779441, guid: 01b35e26a4e4e514c8ea3678582e832a, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8963224047006779441, guid: 01b35e26a4e4e514c8ea3678582e832a, type: 3}
       propertyPath: m_LocalPosition.x

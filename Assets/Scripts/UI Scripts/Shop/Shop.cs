@@ -46,7 +46,7 @@ namespace UI_Scripts.Shop
 
         public void Reload(GameProgress progress)
         {
-            progress.PlayerItemsData.UpdateWeaponData(new ItemScriptableObject());
+            progress.PlayerItemsData.AddWeaponInData(new ItemScriptableObject());
         }
 
         public void Load(GameProgress progress)

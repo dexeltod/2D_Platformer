@@ -18,7 +18,6 @@ namespace Infrastructure.States
 
 		public void Enter()
 		{
-			
 		}
 	}
 }

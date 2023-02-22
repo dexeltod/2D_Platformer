@@ -72,6 +72,8 @@ namespace Infrastructure.GameLoading
 			_attackToRunTransition = new AttackToRunTransition(_stateService, _abstractWeapon, _physicsMovement);
 			_attackToIdleTransition = new AttackToIdleTransition(_stateService, _abstractWeapon, _physicsMovement);
 			_attackToFallTransition = new AttackToFallTransition(_stateService, _abstractWeapon, _physicsMovement);
+
+			Debug.Log("transitions created");
 		}
 
 		private void CreateIdleState() =>

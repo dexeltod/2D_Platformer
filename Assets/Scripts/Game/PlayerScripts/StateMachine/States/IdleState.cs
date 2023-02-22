@@ -21,7 +21,9 @@ namespace Game.PlayerScripts.StateMachine.States
 
 		protected override void OnEnter()
 		{
-			_animatorFacade.Play(AnimationHasher.IdleHash);
+			if (_animatorFacade != null)
+				_animatorFacade.Play(AnimationHasher.IdleHash);
+			
 			_physicsMovement.SetMoveDirection(0);
 		}
 	}

@@ -24,27 +24,26 @@ namespace Infrastructure.States
 
 		public void Enter()
 		{
-			_sceneLoader.Load(ConstantNames.InitialScene, EnterLoadLevel);
+			_sceneLoader.Load(ConstantNames.InitialScene, OnSceneLoaded);
 		}
 
 		public void Exit()
 		{
 		}
 
-        private void EnterLoadLevel() =>
+        private void OnSceneLoaded() =>
             _gameStateMachine.Enter<LoadProgressState>();
 
         private void RegisterServices()
         {
 			_serviceLocator.RegisterAsSingle<IGameStateMachine>(_gameStateMachine);
+			_serviceLocator.RegisterAsSingle<IPersistentProgressService>(new PersistentProgressService());
 			_serviceLocator.RegisterAsSingle<IAssetProvider>(new AssetProvider());
 			
 	        SceneLoadInformer sceneLoadInformer = new SceneLoadInformer();
 	        CameraFactory cameraFactory = new CameraFactory();
-			
-			_serviceLocator.RegisterAsSingle<IPersistentProgressService>(new PersistentProgressService());
-			
-			_serviceLocator.RegisterAsSingle<ISaveLoadService>(new SaveLoadService());
+
+	        _serviceLocator.RegisterAsSingle<ISaveLoadService>(new SaveLoadService());
 			_serviceLocator.RegisterAsSingle<IInputService>(new InputService());
 			
 			_serviceLocator.RegisterAsSingle<ISceneLoadInformer>(sceneLoadInformer);

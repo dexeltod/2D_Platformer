@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -17,8 +18,13 @@ namespace Infrastructure.GameLoading.AssetManagement
 		public void CleanUp()
 		{
 			foreach (List<AsyncOperationHandle> resourceHandles in _handles.Values)
-			foreach (var handle in resourceHandles)
-				Addressables.Release(handle);
+			{
+				foreach (var handle in resourceHandles)
+					Addressables.Release(handle);
+			}
+			
+			_completedCache.Clear();
+			_handles.Clear();
 		}
 
 		public async Task<T> LoadAsync<T>(string address) where T : class
@@ -37,10 +43,10 @@ namespace Infrastructure.GameLoading.AssetManagement
 			return await RunWithCacheOnComplete(reference.AssetGUID, Addressables.LoadAssetAsync<T>(reference));
 		}
 
-		public Task<GameObject> Instantiate(string path) => 
+		public Task<GameObject> Instantiate(string path) =>
 			Addressables.InstantiateAsync(path).Task;
 
-		public Task<GameObject> Instantiate(string path, Vector3 position) => 
+		public Task<GameObject> Instantiate(string path, Vector3 position) =>
 			Addressables.InstantiateAsync(path, position, Quaternion.identity).Task;
 
 		private async Task<T> RunWithCacheOnComplete<T>(string cacheKey, AsyncOperationHandle<T> handle) where T : class

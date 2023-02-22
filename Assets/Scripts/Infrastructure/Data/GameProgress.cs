@@ -2,15 +2,15 @@
 
 namespace Infrastructure.Data
 {
-    [Serializable]
-    public class GameProgress
-    {
-        public readonly PlayerItemsData PlayerItemsData;
+	[Serializable]
+	public class GameProgress
+	{
+		public readonly PlayerItemsData PlayerItemsData;
 
-        public GameProgress(string initialLevel)
-        {
-	        if (PlayerItemsData == null) 
-		        PlayerItemsData = new PlayerItemsData();
-        }
-    }
+		public GameProgress(string initialLevel)
+		{
+			if (PlayerItemsData == null)
+				PlayerItemsData = new PlayerItemsData();
+		}
+	}
 }
