@@ -1,6 +1,5 @@
+using Cinemachine;
 using Infrastructure.GameLoading;
-using Infrastructure.GameLoading.Factory;
-using Infrastructure.Services;
 using UnityEngine;
 
 namespace Game.Animation
@@ -8,9 +7,9 @@ namespace Game.Animation
     public class BackgroundParallax : MonoBehaviour
     {
         [SerializeField] private Camera _camera;
+        [SerializeField] private CinemachineVirtualCamera _virtualCamera;
         
         private Transform _followedTarget;
-        private IPlayerFactory _playerFactory;
         private ISceneLoadInformer _levelLoadInformer;
 
         private Vector2 _startPosition;
@@ -20,12 +19,12 @@ namespace Game.Animation
         private float _distanceFromTarget;
         private float _clippingPlane;
         private float _parallaxFactor;
+        private Vector3 _cameraCenter;
 
         private void Awake() 
         {
             _levelLoadInformer = ServiceLocator.Container.GetSingle<ISceneLoadInformer>();
             _levelLoadInformer.SceneLoaded += OnSceneLoaded;
-	        _playerFactory = ServiceLocator.Container.GetSingle<IPlayerFactory>();
 	        
             _startPosition = transform.position;
             _startZ = transform.position.z;
@@ -33,17 +32,13 @@ namespace Game.Animation
 
         private void OnSceneLoaded()
         {
-	        _followedTarget = _playerFactory.MainCharacter.transform;
 	        _levelLoadInformer.SceneLoaded -= OnSceneLoaded;
         }
 
         private void Update()
         {
-            if (_followedTarget == null)
-                return;
-
-            var parallaxPosition = GetParallaxPosition();
-            transform.position = new Vector3(parallaxPosition.x, _followedTarget.position.y, _startZ);
+	        var parallaxPosition = GetParallaxPosition();
+            transform.position = new Vector3(parallaxPosition.x, _virtualCamera.transform.position.y, _startZ);
         }
 
         private Vector2 GetParallaxPosition()
@@ -62,7 +57,7 @@ namespace Game.Animation
 	                          (_distanceFromTarget > 0 ? _camera.farClipPlane : _camera.nearClipPlane));
 
         private float GetDistanceFromTarget() => 
-	        transform.position.z - _followedTarget.transform.position.z;
+	        transform.position.z - _virtualCamera.transform.position.z;
 
         private Vector2 GetDirection() => 
 	        (Vector2)_camera.transform.position - _startPosition;

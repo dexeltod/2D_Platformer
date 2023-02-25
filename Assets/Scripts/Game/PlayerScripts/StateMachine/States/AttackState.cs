@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Game.PlayerScripts.StateMachine.States
 {
-	public class AttackState : State
+	public sealed class AttackState : State
 	{
 		private readonly PhysicsMovement _physicsMovement;
 
@@ -38,9 +38,12 @@ namespace Game.PlayerScripts.StateMachine.States
 
 		private void Attack()
 		{
-			bool isRun = _physicsMovement.MovementDirection.x != 0;			
-			_currentWeapon.SetRunBool(isRun);
-			_currentWeapon.Use();
+			if (_currentWeapon != null)
+			{
+				bool isRun = _physicsMovement.MovementDirection.x != 0;
+				_currentWeapon.SetRunBool(isRun);
+				_currentWeapon.Use();
+			}
 		}
 	}
 }

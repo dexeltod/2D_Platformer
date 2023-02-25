@@ -1,4 +1,5 @@
-﻿using Game.PlayerScripts.Move;
+﻿using System;
+using Game.PlayerScripts.Move;
 using Game.PlayerScripts.StateMachine.States;
 using Infrastructure.Services;
 using UnityEngine;
@@ -23,6 +24,7 @@ namespace Game.PlayerScripts.StateMachine.Transitions
 
 		~AnyToIdleTransition()
 		{
+			
 			_groundChecker.GroundedStateSwitched -= OnGrounded;
 			_inputService.VerticalButtonCanceled -= OnStay;
 		}

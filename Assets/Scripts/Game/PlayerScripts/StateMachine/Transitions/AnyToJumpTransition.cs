@@ -14,22 +14,22 @@ namespace Game.PlayerScripts.StateMachine.Transitions
 		{
 			_inputService = inputService;
 			_groundChecker = groundChecker;
-			_inputService.JumpButtonUsed += TryJump;
+			
 		}
 
 		~AnyToJumpTransition()
 		{
-			_inputService.JumpButtonUsed -= TryJump;
+			
 		}
 
 		public override void Enable()
 		{
-			base.Enable();
+			_inputService.JumpButtonUsed += TryJump;
 		}
 
 		public override void Disable()
 		{
-			base.Disable();
+			_inputService.JumpButtonUsed -= TryJump;
 		}
 
 		private void TryJump()

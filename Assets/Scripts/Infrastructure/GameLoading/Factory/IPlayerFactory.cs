@@ -8,6 +8,6 @@ namespace Infrastructure.GameLoading.Factory
 	{
 		GameObject MainCharacter { get; }
 		event Action MainCharacterCreated;
-		Task<GameObject> CreateHero(GameObject initialPoint);
+		Task InstantiateHero(GameObject initialPoint);
 	}
 }

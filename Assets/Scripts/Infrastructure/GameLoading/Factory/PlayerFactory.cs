@@ -3,8 +3,6 @@ using System.Threading.Tasks;
 using Game.Animation.AnimationHashes.Characters;
 using Game.PlayerScripts;
 using Game.PlayerScripts.Move;
-using Game.PlayerScripts.StateMachine;
-using Game.PlayerScripts.StateMachine.States;
 using Game.PlayerScripts.Weapons;
 using Infrastructure.GameLoading.AssetManagement;
 using Infrastructure.Services;
@@ -17,7 +15,6 @@ namespace Infrastructure.GameLoading.Factory
 		private const string Player = "Player";
 
 		private readonly AnimationHasher _hasher;
-		private readonly StateService _stateService;
 		private readonly IAssetProvider _assetProvider;
 		private readonly IInputService _inputService;
 
@@ -31,6 +28,7 @@ namespace Infrastructure.GameLoading.Factory
 		private GroundChecker _groundChecker;
 		private AnimatorFacade _animatorFacade;
 		private PlayerStatesFactory _playerStatesFactory;
+		private PlayerSceneSwitcher _playerSceneSwitcher;
 
 		public GameObject MainCharacter { get; private set; }
 
@@ -39,24 +37,33 @@ namespace Infrastructure.GameLoading.Factory
 		public PlayerFactory(IAssetProvider assetProvider)
 		{
 			_inputService = ServiceLocator.Container.GetSingle<IInputService>();
-
-			_stateService = new StateService();
 			_assetProvider = assetProvider;
 		}
 
-		public async Task<GameObject> CreateHero(GameObject initialPoint)
+		public async Task InstantiateHero(GameObject initialPoint) =>
+			await CreateHeroGameObject(CreateDependencies, initialPoint);
+
+		private async Task CreateHeroGameObject(Action onHeroInstantiated, GameObject initialPoint)
 		{
 			MainCharacter = await _assetProvider.Instantiate(Player, initialPoint.transform.position);
+			onHeroInstantiated.Invoke();
+		}
 
+		private void CreateDependencies()
+		{
+			NullifyComponents();
+			
 			GetComponents();
 
-			if (_playerWeaponList == null)
-				_playerWeaponList = new PlayerWeaponList(_weaponFactory, _playerMoney, MainCharacter.transform);
+			if (_playerWeaponList != null)
+			{
+				_playerWeaponList = null;
+				GC.Collect();
+			}
 
+			_playerWeaponList = new PlayerWeaponList(_weaponFactory, _playerMoney, MainCharacter.transform);
 			CreatePlayerStateMachine();
-
 			MainCharacterCreated?.Invoke();
-			return MainCharacter;
 		}
 
 		private void GetComponents()
@@ -68,18 +75,38 @@ namespace Infrastructure.GameLoading.Factory
 			_groundChecker = MainCharacter.GetComponent<GroundChecker>();
 			_playerMoney = MainCharacter.GetComponent<PlayerMoney>();
 			_animatorFacade = MainCharacter.GetComponent<AnimatorFacade>();
+			_playerSceneSwitcher = MainCharacter.GetComponent<PlayerSceneSwitcher>();
+		}
+
+		private void NullifyComponents()
+		{
+			_weaponFactory = null;
+			_physicsMovement = null;
+			_animator = null;
+			_animationHasher = null;
+			_groundChecker = null;
+			_playerMoney = null;
+			_animatorFacade = null;
+			_playerSceneSwitcher = null;
+			
+			GC.Collect();
 		}
 
 		private void CreatePlayerStateMachine()
 		{
+			if (_playerStatesFactory != null)
+			{
+				_playerStatesFactory = null;
+				GC.Collect();
+			}
+
 			_playerStatesFactory = new PlayerStatesFactory(_groundChecker, _inputService, _animator, _animationHasher,
-				_stateService, _animatorFacade,
-				_physicsMovement, _playerWeaponList);
+				_animatorFacade,
+				_physicsMovement, _playerWeaponList, _playerSceneSwitcher);
 
 			_playerStatesFactory.CreateTransitions();
 			_playerStatesFactory.CreateStates();
-
-			StateMachine stateMachine = new StateMachine(_stateService.Get<IdleState>());
+			_playerStatesFactory.CreateStateMachineAndSetState();
 		}
 	}
 }

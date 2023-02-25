@@ -19,6 +19,7 @@ namespace Infrastructure.States
 		
 		private readonly ISceneLoad _sceneLoad;
 		
+		private GameObject InitialPoint => GameObject.FindWithTag(ConstantNames.PlayerSpawnPointTag);
 
 		public SceneLoadState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain,
 			IPlayerFactory playerFactory, IUIFactory uiFactory, ISceneLoad sceneLoad, ICameraFactory cameraFactory)
@@ -34,8 +35,8 @@ namespace Infrastructure.States
 
 		public void Enter(string levelName)
 		{
-			var a = ServiceLocator.Container.GetSingle<IAssetProvider>();
-			a.CleanUp();
+			var provider = ServiceLocator.Container.GetSingle<IAssetProvider>();
+			provider.CleanUp();
 			
 			_loadingCurtain.Show();
 			_sceneLoader.Load(levelName, OnLoaded);
@@ -43,7 +44,7 @@ namespace Infrastructure.States
 
 		private async void OnLoaded()
 		{
-			await _playerFactory.CreateHero(CreateInitialPoint());
+			await _playerFactory.InstantiateHero(InitialPoint);
 			await _uiFactory.CreateUI();
 
 			_sceneLoad.SceneLoaded += OnSceneLoaded;
@@ -57,7 +58,6 @@ namespace Infrastructure.States
 			_sceneLoad.SceneLoaded -= OnSceneLoaded;
 		}
 		
-		private GameObject CreateInitialPoint() => GameObject.FindWithTag(ConstantNames.PlayerSpawnPointTag);
 
 		public void Exit() =>
 			_loadingCurtain.Hide();

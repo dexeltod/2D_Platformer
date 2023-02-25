@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Infrastructure.Services;
 using UnityEngine;
@@ -9,7 +10,8 @@ namespace Game.PlayerScripts.Move
     [RequireComponent(typeof(Rigidbody2D))]
     public class PhysicsMovement : MonoBehaviour
     {
-        [SerializeField] private Transform _feetPosition;
+	    private const float MinFallVelocity = -0.5f;
+	    [SerializeField] private Transform _feetPosition;
 
         [SerializeField] private bool _isDebug;
         [SerializeField] private float _moveSpeed;
@@ -65,11 +67,17 @@ namespace Game.PlayerScripts.Move
             _surfaceInformant.Moves += OnCanMoveChange;
         }
 
-        private void OnDisable()
+        private void OnDisable() =>
+	        Unsubscribe();
+
+        private void OnDestroy() => 
+	        Unsubscribe();
+
+        private void Unsubscribe()
         {
-            _groundChecker.GroundedStateSwitched -= OnSwitchGroundState;
-            _surfaceInformant.GlideStateSwitched -= OnGlideStateSwitched;
-            _surfaceInformant.Moves -= OnCanMoveChange;
+	        _groundChecker.GroundedStateSwitched -= OnSwitchGroundState;
+	        _surfaceInformant.GlideStateSwitched -= OnGlideStateSwitched;
+	        _surfaceInformant.Moves -= OnCanMoveChange;
         }
 
         private void FixedUpdate() =>
@@ -141,7 +149,7 @@ namespace Game.PlayerScripts.Move
 
         private void CheckFalling()
         {
-            _isFall = _rigidbody2D.velocity.y < -0.1f;
+            _isFall = _rigidbody2D.velocity.y < MinFallVelocity;
 
             if (_isFall == _lastIsFall)
                 return;

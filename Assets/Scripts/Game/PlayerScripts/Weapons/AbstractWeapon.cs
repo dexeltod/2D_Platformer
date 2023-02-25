@@ -3,7 +3,6 @@ using System.Collections;
 using Game.Animation.AnimationHashes.Characters;
 using Game.PlayerScripts.Weapons.MeleeTrigger;
 using UnityEngine;
-using UnityEngine.U2D.IK;
 
 namespace Game.PlayerScripts.Weapons
 {
@@ -11,7 +10,6 @@ namespace Game.PlayerScripts.Weapons
 	{
 		private const string BaseLayer = "Base Layer";
 
-		[SerializeField] private ContactFilter2D _enemyFilter;
 		[SerializeField] private WeaponInfo _weaponInfo;
 		
 		protected Animator Animator;
@@ -21,8 +19,6 @@ namespace Game.PlayerScripts.Weapons
 		
 		private AnimatorFacade _animatorFacade;
 		private MeleeWeaponTrigger _meleeWeaponTrigger;
-
-		public ContactFilter2D EnemyFilter => _enemyFilter;
 		public int CurrentAnimationHash { get; protected set; }
 		public bool CanAttack { get; protected set; }
 		public int Damage { get; protected set; }
@@ -36,7 +32,8 @@ namespace Game.PlayerScripts.Weapons
 			OnAwake();
 		}
 
-		private void OnEnable() => _meleeWeaponTrigger.Touched += GiveDamage;
+		private void OnEnable() => 
+			_meleeWeaponTrigger.Touched += GiveDamage;
 
 		private void OnDisable() => 
 			_meleeWeaponTrigger.Touched -= GiveDamage;

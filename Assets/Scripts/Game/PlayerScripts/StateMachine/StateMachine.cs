@@ -7,6 +7,15 @@
 		public StateMachine(IState state) => 
 			ChangeState(state);
 
+		~StateMachine()
+		{
+			if (_currentState != null)
+			{
+				_currentState.StateChanged -= ChangeState;
+				_currentState.Exit();
+			}
+		}
+
 		private void ChangeState(IState state)
 		{
 			if (_currentState != null)

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Game.PlayerScripts.StateMachine.States
 {
-	public class JumpState : State
+	public sealed class JumpState : State
 	{
 		private readonly PhysicsMovement _physicsMovement;
 		private readonly AnimatorFacade _animatorFacade;

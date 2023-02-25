@@ -15,6 +15,7 @@ namespace Game.Environment.EnterTriggers.Enter
 
 		private IGameStateMachine _gameStateMachine;
 		private IInputService _inputService;
+		private PlayerSceneSwitcher _playerSceneSwitcher;
 
 		private void Awake()
 		{
@@ -24,22 +25,28 @@ namespace Game.Environment.EnterTriggers.Enter
 
 		private void OnTriggerEnter2D(Collider2D collision)
 		{
-			if (collision.TryGetComponent(out Player _))
+			if (collision.TryGetComponent(out PlayerSceneSwitcher sceneSwitcher))
 			{
+				if (_playerSceneSwitcher == null)
+					_playerSceneSwitcher = sceneSwitcher.GetComponent<PlayerSceneSwitcher>();
+
 				InTriggerEntered?.Invoke(true);
-				_inputService.InteractButtonUsed += ChangeLevel;
+				_inputService.InteractButtonUsed += OnChangeLevel;
 			}
 		}
 
-		private void ChangeLevel() => 
+		private void OnChangeLevel()
+		{
+			_playerSceneSwitcher.SwitchState();
 			_gameStateMachine.Enter<SceneLoadState, string>(_levelName);
+		}
 
 		private void OnTriggerExit2D(Collider2D collision)
 		{
-			if (collision.TryGetComponent(out Player _))
+			if (collision.TryGetComponent(out PlayerSceneSwitcher _))
 			{
 				InTriggerEntered?.Invoke(false);
-				_inputService.InteractButtonUsed -= ChangeLevel;
+				_inputService.InteractButtonUsed -= OnChangeLevel;
 			}
 		}
 	}

@@ -14,7 +14,7 @@ namespace Game.PlayerScripts.StateMachine
 		private readonly IStateTransition[] _transitions;
 		private int _currentAnimationHash;
 
-		public State(IInputService inputService, Animator animator, AnimationHasher hasher,
+		protected State(IInputService inputService, Animator animator, AnimationHasher hasher,
 			IStateTransition[] transitions)
 		{
 			InputService = inputService;
@@ -57,5 +57,10 @@ namespace Game.PlayerScripts.StateMachine
 
 		private void OnStateChanging(IState state) =>
 			StateChanged?.Invoke(state);
+
+		public void Dispose()
+		{
+			GC.Collect();
+		}
 	}
 }

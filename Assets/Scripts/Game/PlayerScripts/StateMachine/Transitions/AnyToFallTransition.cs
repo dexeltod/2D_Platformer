@@ -6,42 +6,26 @@ namespace Game.PlayerScripts.StateMachine.Transitions
 	public class AnyToFallTransition : StateTransition<FallState>
 	{
 		private readonly PhysicsMovement _physicsMovement;
-		private readonly GroundChecker _groundChecker;
 		private bool _isGrounded;
 
-		public AnyToFallTransition(StateService stateService, PhysicsMovement physicsMovement,
-			GroundChecker groundChecker) : base(stateService)
+		public AnyToFallTransition(StateService stateService, PhysicsMovement physicsMovement) : base(stateService)
 		{
 			_physicsMovement = physicsMovement;
-			_groundChecker = groundChecker;
-			_physicsMovement.Fallen += OnFall;
-			_groundChecker.GroundedStateSwitched += OnGroundedChanged;
-		}
-
-		~AnyToFallTransition()
-		{
-			_groundChecker.GroundedStateSwitched -= OnGroundedChanged;
-			_physicsMovement.Fallen -= OnFall;
 		}
 
 		public override void Enable()
 		{
-			
+			_physicsMovement.Fallen += OnFall;
 		}
 
 		public override void Disable()
 		{
-			
-		}
-
-		private void OnGroundedChanged(bool isGrounded)
-		{
-			_isGrounded = isGrounded;
+			_physicsMovement.Fallen -= OnFall;
 		}
 		
 		private void OnFall(bool isFall)
 		{
-			if (isFall == true && _isGrounded == false)
+			if (isFall == true && _physicsMovement.IsGrounded == false)
 				MoveNextState();
 		}
 	}

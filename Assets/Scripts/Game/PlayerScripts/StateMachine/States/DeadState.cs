@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game.PlayerScripts.StateMachine.States
 {
-	public class DeadState : State
+	public sealed class DeadState : State
 	{
 		public DeadState(IInputService inputService, Animator animator, AnimationHasher hasher,IStateTransition[] transitions = null) : base(inputService, animator, hasher, transitions)
 		{

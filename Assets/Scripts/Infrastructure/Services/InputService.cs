@@ -20,6 +20,17 @@ namespace Infrastructure.Services
             EnableInputs();
         }
 
+        ~InputService()
+        {
+	        _inputSystem.Disable();
+	        _inputSystem.Player.Move.performed -= OnHorizontalMovement;
+	        _inputSystem.Player.Move.canceled -= OnHorizontalMovement;
+	        _inputSystem.Player.Jump.started -= OnJump;
+	        _inputSystem.Player.Jump.canceled -= OnJump;
+	        _inputSystem.Player.Attack.started -= OnAttack;
+	        _inputSystem.Player.Use.started -= OnUse;
+        }
+        
         public void EnableInputs()
         {
             _inputSystem.Enable();

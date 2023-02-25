@@ -54,8 +54,7 @@ namespace Infrastructure.States
 			_serviceLocator.RegisterAsSingle<ICameraFactory>(cameraFactory);
 			_serviceLocator.RegisterAsSingle<ICamera>(cameraFactory);
 
-			_serviceLocator.RegisterAsSingle<IPlayerFactory>(
-				new PlayerFactory(_serviceLocator.GetSingle<IAssetProvider>()));
+			_serviceLocator.RegisterAsSingle<IPlayerFactory>(new PlayerFactory(_serviceLocator.GetSingle<IAssetProvider>()));
 		}
     }
 }

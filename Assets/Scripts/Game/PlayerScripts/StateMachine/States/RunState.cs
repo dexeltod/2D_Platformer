@@ -5,14 +5,16 @@ using UnityEngine;
 
 namespace Game.PlayerScripts.StateMachine.States
 {
-	public class RunState : State
+	public sealed class RunState : State
 	{
 		private readonly PhysicsMovement _physicsMovement;
 		private readonly AnimatorFacade _animatorFacade;
 
 		public RunState(IInputService inputService, Animator animator, PhysicsMovement physicsMovement,
-			AnimationHasher hasher, AnimatorFacade animatorFacade, IStateTransition[] transitions) : base(inputService, animator, hasher, transitions)
+			AnimationHasher hasher, AnimatorFacade animatorFacade, IStateTransition[] transitions) : base(inputService,
+			animator, hasher, transitions)
 		{
+			Debug.Log($"_animatorFacade {animatorFacade.name}");
 			_physicsMovement = physicsMovement;
 			_animatorFacade = animatorFacade;
 			InputService.VerticalButtonUsed += SetMoveDirection;
@@ -33,10 +35,10 @@ namespace Game.PlayerScripts.StateMachine.States
 		private void SetFalseRunBool()
 		{
 		}
-		
+
 		private void SetMoveDirection(float direction)
 		{
-			if (direction != 0)
+			if (direction != 0 && _physicsMovement != null)
 				_physicsMovement.SetMoveDirection(direction);
 		}
 	}
