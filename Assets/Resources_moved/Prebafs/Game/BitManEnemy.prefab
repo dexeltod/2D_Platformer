@@ -147,9 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyData: {fileID: 11400000, guid: b584a2ef59a2c2542b3a63db742adf1e, type: 2}
-  _enemyAttackTrigger: {fileID: 6149968123854042509}
-  _enemyAttackGameObject: {fileID: 4144668291706517176}
-  _enemyMeleeTrigger: {fileID: 3928016588949479706}
+  _enemyMeleeAreaTrigger: {fileID: 3928016588949479706}
+  _enemyMeleeDamageTrigger: {fileID: 6149968123854042509}
 --- !u!50 &6749755669480632287
 Rigidbody2D:
   serializedVersion: 4
@@ -198,7 +197,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyVisibility: {fileID: 11400000, guid: 467b0463fccc0144180e7031ced7bd59, type: 2}
   _enemyPlayerChecker: {fileID: 2333844682667464792}
-  _enemyMeleeChecker: {fileID: 3928016588949479706}
+  _enemyMeleeDamageChecker: {fileID: 6149968123854042509}
+  _enemyMeleeAreaTrigger: {fileID: 3928016588949479706}
   _ledgeCheckTransform: {fileID: 6749755669950916808}
   _isEnableGizmos: 0
 --- !u!114 &6749755669480632274
@@ -470,11 +470,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2350770390477771031, guid: 9c7a78656119d714ca53cede5d6425c8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.261
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2350770390477771031, guid: 9c7a78656119d714ca53cede5d6425c8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.253
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2350770390477771031, guid: 9c7a78656119d714ca53cede5d6425c8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -510,7 +510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5703436141359745145, guid: 9c7a78656119d714ca53cede5d6425c8, type: 3}
       propertyPath: m_Name
-      value: WeaponTrigger
+      value: MeleeDamageTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 5703436141359745145, guid: 9c7a78656119d714ca53cede5d6425c8, type: 3}
       propertyPath: m_Layer
@@ -541,22 +541,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6749755669480632273}
     m_Modifications:
-    - target: {fileID: 7219027070875027009, guid: 698e6bf3c1652c540827e2c183899c6c, type: 3}
-      propertyPath: m_Size.x
-      value: 0.3576889
-      objectReference: {fileID: 0}
-    - target: {fileID: 7219027070875027009, guid: 698e6bf3c1652c540827e2c183899c6c, type: 3}
-      propertyPath: m_Size.y
-      value: 0.8866687
-      objectReference: {fileID: 0}
-    - target: {fileID: 7219027070875027009, guid: 698e6bf3c1652c540827e2c183899c6c, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.056690216
-      objectReference: {fileID: 0}
-    - target: {fileID: 7219027070875027009, guid: 698e6bf3c1652c540827e2c183899c6c, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.11337733
-      objectReference: {fileID: 0}
     - target: {fileID: 7219027070875027038, guid: 698e6bf3c1652c540827e2c183899c6c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -603,11 +587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7219027070875027039, guid: 698e6bf3c1652c540827e2c183899c6c, type: 3}
       propertyPath: m_Name
-      value: MeleeTrigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 7219027070875027039, guid: 698e6bf3c1652c540827e2c183899c6c, type: 3}
-      propertyPath: m_Layer
-      value: 8
+      value: MeleeAreaTrigger
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 698e6bf3c1652c540827e2c183899c6c, type: 3}
@@ -616,17 +596,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7721682436664218109, guid: 698e6bf3c1652c540827e2c183899c6c, type: 3}
   m_PrefabInstance: {fileID: 6749755670982209767}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4144668291706517176}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3dc3a60ea0418e41bde7c965b7cc97c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &4144668291706517176 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7219027070875027039, guid: 698e6bf3c1652c540827e2c183899c6c, type: 3}
-  m_PrefabInstance: {fileID: 6749755670982209767}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4144668291706517177 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7219027070875027038, guid: 698e6bf3c1652c540827e2c183899c6c, type: 3}

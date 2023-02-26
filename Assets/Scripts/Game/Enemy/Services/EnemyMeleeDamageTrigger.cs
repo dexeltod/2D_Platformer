@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game.Enemy.Services
 {
-	public class EnemyAttackTrigger : MonoBehaviour
+	public class EnemyMeleeDamageTrigger : MonoBehaviour
 	{
 		private Collider2D _collider;
 	

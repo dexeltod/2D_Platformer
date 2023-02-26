@@ -13,9 +13,9 @@ namespace Game.Enemy.StateMachine.Behaviours
 	public class EnemyAttackBehaviour : MonoBehaviour
 	{
 		[SerializeField] private EnemyData _enemyData;
-		[SerializeField] private EnemyAttackTrigger _enemyAttackTrigger;
-		[SerializeField] private GameObject _enemyAttackGameObject;
-		[SerializeField] private EnemyMeleeTrigger _enemyMeleeTrigger;
+		[SerializeField] private EnemyMeleeAreaTrigger _enemyMeleeAreaTrigger;
+		
+		[SerializeField] private EnemyMeleeDamageTrigger _enemyMeleeDamageTrigger;
 
 		private bool _canAttack;
 		private PlayerHealth _playerHealth;
@@ -41,9 +41,9 @@ namespace Game.Enemy.StateMachine.Behaviours
 
 		private void OnEnable()
 		{
-			_enemyAttackGameObject.SetActive(true);
-			_enemyAttackTrigger.enabled = true;
-			_enemyAttackTrigger.TouchedPlayer += OnGiveDamage;
+			_enemyMeleeAreaTrigger.TouchedPlayer += OnAttack;
+		
+			_enemyMeleeDamageTrigger.TouchedPlayer += OnGiveDamage;
 
 			PlayAttackAnimation();
 
@@ -52,11 +52,10 @@ namespace Game.Enemy.StateMachine.Behaviours
 
 		private void OnDisable()
 		{
-			_enemyAttackGameObject.SetActive(false);
-			_enemyAttackTrigger.TouchedPlayer -= OnGiveDamage;
+			_enemyMeleeDamageTrigger.gameObject.SetActive(false);
+			_enemyMeleeDamageTrigger.TouchedPlayer -= OnGiveDamage;
 
-			_enemyMeleeTrigger.TouchedPlayer -= OnAttack;
-			_enemyAttackTrigger.enabled = false;
+			_enemyMeleeAreaTrigger.TouchedPlayer -= OnAttack;
 
 			_animator.StopPlayback();
 		}
@@ -80,6 +79,7 @@ namespace Game.Enemy.StateMachine.Behaviours
 
 		private void PlayAttackAnimation()
 		{
+			_enemyMeleeDamageTrigger.gameObject.SetActive(true);
 			_animator.Play(_animationHasher.AttackHash);
 			_animator.SetFloat(_animationHasher.AttackSpeedHash, _enemyData.AttackSpeed);
 		}

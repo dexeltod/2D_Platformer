@@ -14,7 +14,8 @@ namespace Game.Enemy.Services
 		private DataEnemyVisibility _enemyVisibility;
 
 		[SerializeField] private EnemyPlayerChecker _enemyPlayerChecker;
-		[SerializeField] private EnemyMeleeTrigger _enemyMeleeChecker;
+		[SerializeField] private EnemyMeleeDamageTrigger _enemyMeleeDamageChecker;
+		[SerializeField] private EnemyMeleeAreaTrigger _enemyMeleeAreaTrigger;
 		[SerializeField] private Transform _ledgeCheckTransform;
 
 		[Header("Debug")] [SerializeField] private bool _isEnableGizmos;
@@ -33,18 +34,20 @@ namespace Game.Enemy.Services
 
 		private void OnEnable()
 		{
-			_enemyMeleeChecker.enabled = true;
+			_enemyMeleeDamageChecker.enabled = true;
 			_enemyPlayerChecker.enabled = true;
 
-			_enemyMeleeChecker.TouchedPlayer += OnTouchPlayer;
+			_enemyMeleeAreaTrigger.TouchedPlayer += OnTouchPlayer;
+			_enemyMeleeDamageChecker.TouchedPlayer += OnTouchPlayer;
 			_enemyPlayerChecker.SeenPlayer += OnSeeEnemy;
 		}
 
 		private void OnDisable()
 		{
-			_enemyMeleeChecker.TouchedPlayer -= OnTouchPlayer;
+			_enemyMeleeAreaTrigger.TouchedPlayer -= OnTouchPlayer;
+			_enemyMeleeDamageChecker.TouchedPlayer -= OnTouchPlayer;
 			_enemyPlayerChecker.SeenPlayer -= OnSeeEnemy;
-			_enemyMeleeChecker.enabled = false;
+			_enemyMeleeDamageChecker.enabled = false;
 			_enemyPlayerChecker.enabled = false;
 		}
 
