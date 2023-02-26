@@ -8,6 +8,7 @@ namespace Game.Enemy.StateMachine.Behaviours
 {
 	[RequireComponent(typeof(Rigidbody2D))]
 	[RequireComponent(typeof(EnemyObserver))]
+	[RequireComponent(typeof(SurfaceInformant))]
 	public class EnemyPatrolBehaviour : MonoBehaviour
 	{
 		[SerializeField] private EnemyData _verticalSpeed;

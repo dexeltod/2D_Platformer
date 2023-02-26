@@ -14,6 +14,7 @@ namespace Game.Enemy.StateMachine
     [RequireComponent(typeof(Enemy), typeof(Animator), typeof(AnimationHasher))]
     [RequireComponent(typeof(EnemyObserver), typeof(EnemyFollowPlayerBehaviour), typeof(EnemyPatrolBehaviour))]
     [RequireComponent(typeof(EnemyAttackBehaviour))]
+    
     public class EnemyBehaviour : MonoBehaviour, IEnemyStateSwitcher
     {
         [SerializeField] private EnemyData _enemyData;

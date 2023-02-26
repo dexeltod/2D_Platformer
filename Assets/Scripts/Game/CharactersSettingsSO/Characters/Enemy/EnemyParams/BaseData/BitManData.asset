@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03647b49e1ad6494990ce4cc78c342e8, type: 3}
-  m_Name: Schooler
+  m_Name: BitManData
   m_EditorClassIdentifier: 
-  Damage: 10
-  Armor: 0
-  Health: 10
-  WalkSpeed: 1
-  CriticalDamageChance: 0
-  AttackSpeed: 1
-  AttackRange: 2
-  RunSpeed: 3
-  IdleTime: 3
+  _walkSpeed: 1
+  _attackSpeed: 1
+  _runSpeed: 2
+  _damage: 30
+  _armor: 0
+  _health: 30
+  _criticalDamageChance: 0
+  _idleTime: 3

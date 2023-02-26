@@ -2,8 +2,8 @@ using UnityEngine;
 
 namespace Game.Enemy.EnemySettings.ScriptableObjectsScripts
 {
-    [CreateAssetMenu(fileName = "newEntityData", menuName = "Data/Entity Data Data/Base Data")]
-    public class DataEntityVisibility : ScriptableObject
+    [CreateAssetMenu(fileName = "newEntityData", menuName = "Enemy/DataEnemyVisibility")]
+    public class DataEnemyVisibility : ScriptableObject
     {
         [Header("Settings for detect enemy")]
         public float VisibilityRange = 4f;

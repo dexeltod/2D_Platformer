@@ -10,24 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Weapons
+  m_Name: Enemy
   m_EditorClassIdentifier: 
-  m_GroupName: Weapons
+  m_GroupName: Enemy
   m_Data:
     m_SerializedData: []
-  m_GUID: fcec4c7100de11b43b8892d44be6476f
+  m_GUID: e43ef0a9d8c9d3a4092c86d18ff9ee58
   m_SerializeEntries:
-  - m_GUID: f9aab4e195a9b65478befe009e66fd90
-    m_Address: Fist
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 48992e0a910f65c4889c7dd22440f301
-    m_Address: FistInfo
+  - m_GUID: 569e0632af3ed0b4f97b4c7fc54f69c5
+    m_Address: BitMan
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 16ca753ccb6322f4eac684e464af1aad, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 8111f7ffa4d66a64d97c46bc97779c2b, type: 2}
-    - {fileID: 11400000, guid: cfab7855674c3194590d4aef227f08a1, type: 2}
+    - {fileID: 11400000, guid: 9f1329d2404f32549ac91cfb20649100, type: 2}
+    - {fileID: 11400000, guid: 038ae1ec3950e984a9f96d98d4029c0b, type: 2}

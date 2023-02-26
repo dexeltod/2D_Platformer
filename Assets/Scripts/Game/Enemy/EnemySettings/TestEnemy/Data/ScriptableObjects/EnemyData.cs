@@ -5,15 +5,21 @@ namespace Game.Enemy.EnemySettings.TestEnemy.Data.ScriptableObjects
     [CreateAssetMenu(fileName = "EnemyAttackData", menuName = "Data/Enemy/EnemyData")]
     public class EnemyData : ScriptableObject
     {
-        public int Damage = 10;
-        public int Armor = 0;
-        public int Health = 50;
-        public float WalkSpeed = 1;
-        public int CriticalDamageChance = 0;
-        public float AttackSpeed = 2;
-        public float AttackRange = 2;
-        public float RunSpeed = 2;
-        public float IdleTime = 3;
+	    [SerializeField] private float _walkSpeed;
+	    [SerializeField] private float _attackSpeed;
+	    [SerializeField] private float _runSpeed;
+	    [SerializeField] private int _damage;
+	    [SerializeField] private int _armor;
+	    [SerializeField] private int _health;
+	    [SerializeField] private int _criticalDamageChance;
+	    [SerializeField] private float _idleTime;
+    
+        public int Damage => _damage;
+        public int Health => _health;
+        public float WalkSpeed => _walkSpeed;
+        public float AttackSpeed => _attackSpeed;
+        public float RunSpeed => _runSpeed;
+        public float IdleTime => _idleTime;
 
         public int CriticalDamage => Damage * 2;
     }
