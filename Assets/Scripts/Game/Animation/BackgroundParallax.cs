@@ -38,7 +38,7 @@ namespace Game.Animation
         private void Update()
         {
 	        var parallaxPosition = GetParallaxPosition();
-            transform.position = new Vector3(parallaxPosition.x, _virtualCamera.transform.position.y, _startZ);
+            transform.position = new Vector3(parallaxPosition.x, _camera.transform.position.y, _startZ);
         }
 
         private Vector2 GetParallaxPosition()

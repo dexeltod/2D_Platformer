@@ -51,13 +51,14 @@ namespace Game.Enemy.StateMachine.Behaviours
 
 		private void Move()
 		{
+			
 			float verticalVelocity = _verticalSpeed.WalkSpeed * _observer.FacingDirection;
 
 			Vector2 direction = new Vector2(verticalVelocity, _rigidbody.velocity.y);
 			Vector2 directionAlongSlope = _surfaceInformant.GetProjectionAlongNormal(direction);
 
 			if (_canMove)
-				_rigidbody.position += directionAlongSlope * (verticalVelocity * Time.deltaTime);
+				_rigidbody.position += directionAlongSlope * (_verticalSpeed.WalkSpeed * Time.deltaTime);
 		}
 
 		private void CheckWay()

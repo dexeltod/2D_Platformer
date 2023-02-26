@@ -12,16 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a6463b442ff2f34f9aa7ce04c913d11, type: 3}
   m_Name: BitManVisibility
   m_EditorClassIdentifier: 
-  VisibilityRange: 4
-  AngleOfVisibility: 40
   WallCheckDistance: 0.3
   LedgeCheckDistance: 0.19
-  WhatIsTouched:
+  GroundLayer:
     serializedVersion: 2
     m_Bits: 8
-  WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 8
-  WhatIsEnemy:
-    serializedVersion: 2
-    m_Bits: 128

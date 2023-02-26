@@ -11,7 +11,7 @@ using UnityEngine.Rendering.Universal;
 namespace Game.Enemy.StateMachine
 {
     [RequireComponent(typeof(ShadowCaster2D), typeof(CapsuleCollider2D), typeof(Rigidbody2D))]
-    [RequireComponent(typeof(Enemy), typeof(Animator), typeof(AnimationHasher))]
+    [RequireComponent( typeof(Animator), typeof(AnimationHasher))]
     [RequireComponent(typeof(EnemyObserver), typeof(EnemyFollowPlayerBehaviour), typeof(EnemyPatrolBehaviour))]
     [RequireComponent(typeof(EnemyAttackBehaviour))]
     

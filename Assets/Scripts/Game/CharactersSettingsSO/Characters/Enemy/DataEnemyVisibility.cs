@@ -5,16 +5,10 @@ namespace Game.Enemy.EnemySettings.ScriptableObjectsScripts
     [CreateAssetMenu(fileName = "newEntityData", menuName = "Enemy/DataEnemyVisibility")]
     public class DataEnemyVisibility : ScriptableObject
     {
-        [Header("Settings for detect enemy")]
-        public float VisibilityRange = 4f;
-        public float AngleOfVisibility = 20f;
-
-        [Header("Detect ground")]
+	    [Header("Detect ground")]
         public float WallCheckDistance = 0.2f;
         public float LedgeCheckDistance = 0.4f;
-        public LayerMask WhatIsTouched;
-        public LayerMask WhatIsGround;
-        public LayerMask WhatIsEnemy;
+        public LayerMask GroundLayer;
     }
 }
 

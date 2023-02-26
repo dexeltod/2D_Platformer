@@ -2,9 +2,7 @@
 {
 	public class BitManEnemy : Enemy
 	{
-		private void Start()
-		{
+		private void Start() =>
 			StartFirstState();
-		}
 	}
 }

@@ -30,9 +30,6 @@ namespace Game.Enemy.StateMachine.States
                 EnemyBehaviour.SetIdleState();
         }
 
-        private void OnSetIdleState() => 
-            StateSwitcher.SwitchState<EnemyIdleState>();
-
         private void TrySetAttackState(bool isTouched)
         {
             if (isTouched)

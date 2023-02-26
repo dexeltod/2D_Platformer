@@ -10,10 +10,11 @@ namespace Game.Enemy.Services
 		private const int RightRotation = 0;
 		private const int LeftRotation = 180;
 
-		[FormerlySerializedAs("_entityVisibility")] [SerializeField] private DataEnemyVisibility _enemyVisibility;
+		[FormerlySerializedAs("_entityVisibility")] [SerializeField]
+		private DataEnemyVisibility _enemyVisibility;
+
 		[SerializeField] private EnemyPlayerChecker _enemyPlayerChecker;
 		[SerializeField] private EnemyMeleeTrigger _enemyMeleeChecker;
-
 		[SerializeField] private Transform _ledgeCheckTransform;
 
 		[Header("Debug")] [SerializeField] private bool _isEnableGizmos;
@@ -61,12 +62,12 @@ namespace Game.Enemy.Services
 
 		public bool IsTouchWall() =>
 			Physics2D.Raycast(_collider2D.bounds.center, Vector2.right * FacingDirection,
-				_enemyVisibility.WallCheckDistance, _enemyVisibility.WhatIsTouched);
+				_enemyVisibility.WallCheckDistance, _enemyVisibility.GroundLayer);
 
 		public bool IsNearLedge() =>
 			Physics2D.Raycast(_ledgeCheckTransform.position,
 				Vector2.down,
-				_enemyVisibility.LedgeCheckDistance, _enemyVisibility.WhatIsGround);
+				_enemyVisibility.LedgeCheckDistance, _enemyVisibility.GroundLayer);
 
 		public void RotateFacingDirection()
 		{
@@ -88,7 +89,7 @@ namespace Game.Enemy.Services
 			{
 				Vector3 wallCheckDirection = (Vector2)_collider2D.bounds.center +
 				                             _enemyVisibility.WallCheckDistance * (Vector2.right * FacingDirection);
-			Gizmos.DrawLine(_collider2D.bounds.center, wallCheckDirection);
+				Gizmos.DrawLine(_collider2D.bounds.center, wallCheckDirection);
 			}
 
 			Vector2 ledgeCheckDirection = (Vector2)_ledgeCheckTransform.position +

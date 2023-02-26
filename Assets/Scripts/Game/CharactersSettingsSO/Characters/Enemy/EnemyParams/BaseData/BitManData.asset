@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BitManData
   m_EditorClassIdentifier: 
   _walkSpeed: 1
-  _attackSpeed: 1
+  _attackSpeed: 0.3
   _runSpeed: 2
   _damage: 30
   _armor: 0

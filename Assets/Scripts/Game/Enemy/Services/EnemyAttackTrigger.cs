@@ -18,8 +18,11 @@ namespace Game.Enemy.Services
 		private void OnEnable() => 
 			_collider.enabled = true;
 
-		private void OnDisable() => 
+		private void OnDisable()
+		{
+			_collider.transform.position = Vector2.zero;
 			_collider.enabled = false;
+		}
 
 		private void OnTriggerEnter2D(Collider2D touchedCollider)
 		{

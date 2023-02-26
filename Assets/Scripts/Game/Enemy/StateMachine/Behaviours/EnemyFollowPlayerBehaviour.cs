@@ -49,7 +49,7 @@ namespace Game.Enemy.StateMachine.Behaviours
         private void OnEnable()
         {
 	        _animator.StopPlayback();
-            _animator.CrossFade(_animationHasher.RunHash, 0);
+            _animator.Play(_animationHasher.RunHash);
         }
 
         private void OnDisable() => _animator.StopPlayback();
