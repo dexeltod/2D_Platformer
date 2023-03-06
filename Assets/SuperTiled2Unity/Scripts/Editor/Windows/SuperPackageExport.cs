@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Windows
 {
     internal class SuperPackageExport : EditorWindow
     {
@@ -45,11 +45,11 @@ namespace SuperTiled2Unity.Editor
             Rect r = GUILayoutUtility.GetRect(position.width, totalTopHeight);
 
             // Background
-            GUI.Label(r, GUIContent.none, Styles.TopBarBg);
+            UnityEngine.GUI.Label(r, GUIContent.none, Styles.TopBarBg);
 
             // Header
             Rect titleRect = new Rect(r.x + 5f, r.yMin, r.width, r.height);
-            GUI.Label(titleRect, Styles.Header, Styles.Title);
+            UnityEngine.GUI.Label(titleRect, Styles.Header, Styles.Title);
         }
 
         void BottomArea()

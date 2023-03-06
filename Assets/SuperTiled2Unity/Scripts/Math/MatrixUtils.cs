@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace SuperTiled2Unity
+namespace SuperTiled2Unity.Scripts.Math
 {
     public static class MatrixUtils
     {

@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using SuperTiled2Unity.Scripts.Editor.Extensions;
+using SuperTiled2Unity.Scripts.Editor.Importers;
 using UnityEngine;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Math
 {
     public static class PolygonUtils
     {

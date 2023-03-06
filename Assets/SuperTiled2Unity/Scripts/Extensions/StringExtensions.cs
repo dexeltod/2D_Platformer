@@ -2,7 +2,7 @@
 using System.Globalization;
 using UnityEngine;
 
-namespace SuperTiled2Unity
+namespace SuperTiled2Unity.Scripts.Extensions
 {
     public static class StringExtensions
     {

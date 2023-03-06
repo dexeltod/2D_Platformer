@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using SuperTiled2Unity.Scripts.Editor.Importers;
+using SuperTiled2Unity.Scripts.Extensions;
+using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Extensions
 {
     public static class SuperTileExtensions
     {

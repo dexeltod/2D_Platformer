@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using SuperTiled2Unity.Scripts.Math;
 using UnityEngine;
 
-namespace SuperTiled2Unity
+namespace SuperTiled2Unity.Scripts
 {
     [Serializable]
     public class CollisionObject
@@ -66,7 +67,7 @@ namespace SuperTiled2Unity
             m_IsClosed = true;
 
             // Estimate the ellipse with a polygon
-            float theta = ((float)Math.PI * 2.0f) / numEdges;
+            float theta = ((float)System.Math.PI * 2.0f) / numEdges;
             float half_x = m_Size.x * 0.5f;
             float half_y = m_Size.y * 0.5f;
 

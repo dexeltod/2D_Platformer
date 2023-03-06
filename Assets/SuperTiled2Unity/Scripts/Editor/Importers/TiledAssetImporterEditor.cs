@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Importers
 {
     public abstract class TiledAssetImporterEditor<T> : SuperImporterEditor<T> where T : SuperImporter
     {

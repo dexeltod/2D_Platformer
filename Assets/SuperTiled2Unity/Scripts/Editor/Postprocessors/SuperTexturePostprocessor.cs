@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Postprocessors
 {
     public class SuperTexturePostprocessor : AssetPostprocessor
     {

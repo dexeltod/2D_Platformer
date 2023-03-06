@@ -1,4 +1,4 @@
-﻿namespace SuperTiled2Unity.Editor
+﻿namespace SuperTiled2Unity.Scripts.Editor
 {
     // Helper struct to deal with Tile Id values having burned-in flip flags
     public struct TileIdMath

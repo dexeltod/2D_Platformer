@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using SuperTiled2Unity.Scripts.Editor.AssetTypes;
 using UnityEditor;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Windows
 {
     public class RecursiveAssetDependencyTracker
     {

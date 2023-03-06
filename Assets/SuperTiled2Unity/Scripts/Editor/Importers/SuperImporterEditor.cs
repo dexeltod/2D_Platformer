@@ -1,16 +1,18 @@
 ﻿using System.IO;
 using System.Linq;
 using System.Text;
+using SuperTiled2Unity.Scripts.Editor.Extensions;
+using SuperTiled2Unity.Scripts.Editor.GUI;
+using SuperTiled2Unity.Scripts.Editor.Postprocessors;
 using UnityEditor;
 using UnityEngine;
-
 #if UNITY_2020_2_OR_NEWER
 using ScriptedImporterEditor = UnityEditor.AssetImporters.ScriptedImporterEditor;
 #else
 using ScriptedImporterEditor = UnityEditor.Experimental.AssetImporters.ScriptedImporterEditor;
 #endif
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Importers
 {
     public abstract class SuperImporterEditor<T> : ScriptedImporterEditor where T : SuperImporter
     {
@@ -192,7 +194,7 @@ namespace SuperTiled2Unity.Editor
                 return;
             }
 
-            EditorGUILayout.TextArea("", GUI.skin.horizontalSlider);
+            EditorGUILayout.TextArea("", UnityEngine.GUI.skin.horizontalSlider);
 
             using (new GuiScopedBackgroundColor(Color.yellow))
             {
@@ -268,7 +270,7 @@ namespace SuperTiled2Unity.Editor
                 }
             }
 
-            EditorGUILayout.TextArea("", GUI.skin.horizontalSlider);
+            EditorGUILayout.TextArea("", UnityEngine.GUI.skin.horizontalSlider);
         }
 
         private void DisplayDependencies()
@@ -285,7 +287,7 @@ namespace SuperTiled2Unity.Editor
                 return;
             }
 
-            EditorGUILayout.TextArea("", GUI.skin.horizontalSlider);
+            EditorGUILayout.TextArea("", UnityEngine.GUI.skin.horizontalSlider);
             EditorGUILayout.Space();
             EditorGUILayout.LabelField("Additional Tiled Asset Information", EditorStyles.boldLabel);
 

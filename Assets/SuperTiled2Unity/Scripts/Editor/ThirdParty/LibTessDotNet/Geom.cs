@@ -36,13 +36,12 @@
 
 using System;
 using System.Diagnostics;
-
 //#if DOUBLE
 //using Real = System.Double;
 //namespace LibTessDotNet.Double
 //#else
 using Real = System.Single;
-namespace SuperTiled2Unity.Editor.LibTessDotNet
+namespace SuperTiled2Unity.Scripts.Editor.ThirdParty.LibTessDotNet
 //#endif
 {
     internal static class Geom
@@ -185,7 +184,7 @@ namespace SuperTiled2Unity.Editor.LibTessDotNet
 
         public static Real VertL1dist(MeshUtils.Vertex u, MeshUtils.Vertex v)
         {
-            return Math.Abs(u._s - v._s) + Math.Abs(u._t - v._t);
+            return System.Math.Abs(u._s - v._s) + System.Math.Abs(u._t - v._t);
         }
 
         public static void AddWinding(MeshUtils.Edge eDst, MeshUtils.Edge eSrc)

@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Xml.Linq;
+using SuperTiled2Unity.Scripts.Extensions;
 using UnityEngine;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Extensions
 {
     public static class XmlExtensions
     {

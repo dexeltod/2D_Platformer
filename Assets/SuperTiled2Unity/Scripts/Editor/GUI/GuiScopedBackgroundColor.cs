@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.GUI
 {
     public class GuiScopedBackgroundColor : IDisposable
     {
@@ -9,13 +9,13 @@ namespace SuperTiled2Unity.Editor
 
         public GuiScopedBackgroundColor(Color color)
         {
-            m_DefaultColor = GUI.backgroundColor;
-            GUI.backgroundColor = color;
+            m_DefaultColor = UnityEngine.GUI.backgroundColor;
+            UnityEngine.GUI.backgroundColor = color;
         }
 
         public void Dispose()
         {
-            GUI.backgroundColor = m_DefaultColor;
+            UnityEngine.GUI.backgroundColor = m_DefaultColor;
         }
     }
 }

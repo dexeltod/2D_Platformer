@@ -1,5 +1,5 @@
 ﻿using Game.Animation.AnimationHashes.Characters;
-using Game.Enemy.EnemySettings.TestEnemy.Data.ScriptableObjects;
+using Game.CharactersSettingsSO.Characters.Enemy;
 using Game.Enemy.Services;
 using Game.PlayerScripts.PlayerData;
 using Infrastructure.GameLoading;

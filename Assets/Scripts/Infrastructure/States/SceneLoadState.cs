@@ -37,8 +37,8 @@ namespace Infrastructure.States
 		{
 			var provider = ServiceLocator.Container.GetSingle<IAssetProvider>();
 			provider.CleanUp();
-			
 			_loadingCurtain.Show();
+		
 			_sceneLoader.Load(levelName, OnLoaded);
 		}
 
@@ -49,7 +49,7 @@ namespace Infrastructure.States
 
 			_sceneLoad.SceneLoaded += OnSceneLoaded;
 			_sceneLoad.InvokeSceneLoaded();
-			
+			_loadingCurtain.Hide();
 		}
 
 		private void OnSceneLoaded()

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Settings
 {
     // Collection of icons to be used with SuperTiled2Unity assets
     public static class SuperIcons

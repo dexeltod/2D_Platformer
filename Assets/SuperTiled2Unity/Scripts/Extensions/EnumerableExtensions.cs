@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace SuperTiled2Unity
+namespace SuperTiled2Unity.Scripts.Extensions
 {
     public static class EnumerableExtensions
     {

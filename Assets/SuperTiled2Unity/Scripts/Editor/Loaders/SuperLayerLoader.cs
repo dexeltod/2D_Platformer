@@ -1,7 +1,8 @@
 ﻿using System.Xml.Linq;
+using SuperTiled2Unity.Scripts.Editor.Extensions;
 using UnityEngine;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Loaders
 {
     // Helps us create SuperLayer objects from XML
     public abstract class SuperLayerLoader

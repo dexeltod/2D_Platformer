@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
+using SuperTiled2Unity.Scripts.Editor.Config;
+using SuperTiled2Unity.Scripts.Editor.Extensions;
+using SuperTiled2Unity.Scripts.Editor.Helpers;
+using SuperTiled2Unity.Scripts.Editor.Loaders;
+using SuperTiled2Unity.Scripts.Editor.Properties;
 using UnityEngine;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Settings
 {
     public class ST2USettings : ScriptableObject
     {

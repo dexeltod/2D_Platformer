@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Exceptions
 {
     public class CustomImporterException : Exception
     {

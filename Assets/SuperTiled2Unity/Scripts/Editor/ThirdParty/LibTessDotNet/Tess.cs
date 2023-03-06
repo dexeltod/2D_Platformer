@@ -36,13 +36,12 @@
 
 using System;
 using System.Diagnostics;
-
 //#if DOUBLE
 //using Real = System.Double;
 //namespace LibTessDotNet.Double
 //#else
 using Real = System.Single;
-namespace SuperTiled2Unity.Editor.LibTessDotNet
+namespace SuperTiled2Unity.Scripts.Editor.ThirdParty.LibTessDotNet
 //#endif
 {
     public enum WindingRule
@@ -491,7 +490,7 @@ namespace SuperTiled2Unity.Editor.LibTessDotNet
                 if (NoEmptyPolygons)
                 {
                     var area = MeshUtils.FaceArea(f);
-                    if (Math.Abs(area) < Real.Epsilon)
+                    if (System.Math.Abs(area) < Real.Epsilon)
                     {
                         continue;
                     }
@@ -545,7 +544,7 @@ namespace SuperTiled2Unity.Editor.LibTessDotNet
                 if (NoEmptyPolygons)
                 {
                     var area = MeshUtils.FaceArea(f);
-                    if (Math.Abs(area) < Real.Epsilon)
+                    if (System.Math.Abs(area) < Real.Epsilon)
                     {
                         continue;
                     }

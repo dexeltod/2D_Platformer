@@ -1,7 +1,7 @@
 ﻿using System.Xml.Linq;
 using UnityEngine;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Loaders
 {
     public class SuperTileLayerLoader : SuperLayerLoader
     {

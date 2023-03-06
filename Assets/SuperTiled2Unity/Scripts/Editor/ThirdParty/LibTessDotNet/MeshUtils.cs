@@ -41,13 +41,12 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-
 //#if DOUBLE
 //using Real = System.Double;
 //namespace LibTessDotNet.Double
 //#else
 using Real = System.Single;
-namespace SuperTiled2Unity.Editor.LibTessDotNet
+namespace SuperTiled2Unity.Scripts.Editor.ThirdParty.LibTessDotNet
 //#endif
 {
     public struct Vec3
@@ -97,7 +96,7 @@ namespace SuperTiled2Unity.Editor.LibTessDotNet
         {
             var len = v.X * v.X + v.Y * v.Y + v.Z * v.Z;
             Debug.Assert(len >= 0.0f);
-            len = 1.0f / (Real)Math.Sqrt(len);
+            len = 1.0f / (Real)System.Math.Sqrt(len);
             v.X *= len;
             v.Y *= len;
             v.Z *= len;
@@ -106,8 +105,8 @@ namespace SuperTiled2Unity.Editor.LibTessDotNet
         public static int LongAxis(ref Vec3 v)
         {
             int i = 0;
-            if (Math.Abs(v.Y) > Math.Abs(v.X)) i = 1;
-            if (Math.Abs(v.Z) > Math.Abs(i == 0 ? v.X : v.Y)) i = 2;
+            if (System.Math.Abs(v.Y) > System.Math.Abs(v.X)) i = 1;
+            if (System.Math.Abs(v.Z) > System.Math.Abs(i == 0 ? v.X : v.Y)) i = 2;
             return i;
         }
 

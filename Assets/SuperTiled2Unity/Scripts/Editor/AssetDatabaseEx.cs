@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEditor;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor
 {
     public static class AssetDatabaseEx
     {

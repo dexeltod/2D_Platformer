@@ -32,7 +32,7 @@ namespace Infrastructure.GameLoading
 
 		private void OnProgressLoaded()
 		{
-			_gameStateMachine.Enter<SceneLoadState, string>(ConstantNames.FirstLevel);
+			_gameStateMachine.Enter<MenuState>();
 		}
 		
 		private void LoadProgressOrInitNew()

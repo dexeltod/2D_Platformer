@@ -28,7 +28,6 @@ namespace Infrastructure.GameLoading.Factory
 		private GroundChecker _groundChecker;
 		private AnimatorFacade _animatorFacade;
 		private PlayerStatesFactory _playerStatesFactory;
-		private PlayerSceneSwitcher _playerSceneSwitcher;
 
 		public GameObject MainCharacter { get; private set; }
 
@@ -75,7 +74,6 @@ namespace Infrastructure.GameLoading.Factory
 			_groundChecker = MainCharacter.GetComponent<GroundChecker>();
 			_playerMoney = MainCharacter.GetComponent<PlayerMoney>();
 			_animatorFacade = MainCharacter.GetComponent<AnimatorFacade>();
-			_playerSceneSwitcher = MainCharacter.GetComponent<PlayerSceneSwitcher>();
 		}
 
 		private void NullifyComponents()
@@ -87,7 +85,6 @@ namespace Infrastructure.GameLoading.Factory
 			_groundChecker = null;
 			_playerMoney = null;
 			_animatorFacade = null;
-			_playerSceneSwitcher = null;
 			
 			GC.Collect();
 		}
@@ -102,7 +99,7 @@ namespace Infrastructure.GameLoading.Factory
 
 			_playerStatesFactory = new PlayerStatesFactory(_groundChecker, _inputService, _animator, _animationHasher,
 				_animatorFacade,
-				_physicsMovement, _playerWeaponList, _playerSceneSwitcher);
+				_physicsMovement, _playerWeaponList);
 
 			_playerStatesFactory.CreateTransitions();
 			_playerStatesFactory.CreateStates();

@@ -1,6 +1,7 @@
-﻿using UnityEditor;
+﻿using SuperTiled2Unity.Scripts.Editor.Settings;
+using UnityEditor;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.CustomEditors
 {
     [CustomEditor(typeof(SuperColliderComponent))]
     class SuperColliderComponentEditor : UnityEditor.Editor

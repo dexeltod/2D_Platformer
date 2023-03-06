@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using SuperTiled2Unity.Scripts.Editor.AssetTypes;
 using UnityEditor;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Postprocessors
 {
     public class TiledAssetDependencies
     {

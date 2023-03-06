@@ -2,7 +2,7 @@
 using System.IO;
 using System.IO.Compression;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Extensions
 {
     public static class ByteExtensions
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor
 {
     public class GlobalTileDatabase
     {

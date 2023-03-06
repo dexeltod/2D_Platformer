@@ -18,6 +18,8 @@ namespace Infrastructure.GameLoading
 			_states = new Dictionary<Type, IExitState>
 			{
 				[typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, serviceLocator),
+				
+				[typeof(MenuState)] = new MenuState(this, sceneLoader, loadingCurtain),
 
 				[typeof(LoadProgressState)] = new LoadProgressState(this,
 					serviceLocator.GetSingle<IPersistentProgressService>(),

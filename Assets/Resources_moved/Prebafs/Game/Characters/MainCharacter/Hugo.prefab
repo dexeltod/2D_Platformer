@@ -129,7 +129,6 @@ GameObject:
   - component: {fileID: 9010355836656664239}
   - component: {fileID: 6716184748015567100}
   - component: {fileID: 1359097841}
-  - component: {fileID: 3192150646212265385}
   - component: {fileID: 5229234808615958028}
   m_Layer: 7
   m_Name: Hugo
@@ -386,7 +385,7 @@ MonoBehaviour:
   - {x: 0.030651003, y: 0.6976721, z: 0}
   m_ShapePathHash: -1063575435
   m_Mesh: {fileID: 0}
-  m_InstanceId: 58314
+  m_InstanceId: 79814
 --- !u!114 &3334711396594127323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,18 +495,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   _groundCheckSize: {x: 0.1, y: 0.01}
---- !u!114 &3192150646212265385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7637528790393893176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25827fe3f17f8a24ba57ac91b9597913, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5229234808615958028
 MonoBehaviour:
   m_ObjectHideFlags: 0

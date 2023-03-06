@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Collision
 {
     public struct CollisionClipperKey : IEquatable<CollisionClipperKey>
     {

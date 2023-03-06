@@ -1,8 +1,10 @@
 ﻿using System.Linq;
+using SuperTiled2Unity.Scripts.Editor.GUI;
+using SuperTiled2Unity.Scripts.Editor.Properties;
 using UnityEditor;
 using UnityEngine;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Settings
 {
     public class CustomPropertiesWindow : EditorWindow
     {
@@ -44,9 +46,9 @@ namespace SuperTiled2Unity.Editor
             using (new GUILayout.VerticalScope(EditorStyles.helpBox))
             {
                 EditorGUILayout.LabelField(obj.m_Name);
-                GUI.enabled = false;
+                UnityEngine.GUI.enabled = false;
                 EditorGUILayout_ColorFieldNoEdit(GUIContent.none, obj.m_Color);
-                GUI.enabled = true;
+                UnityEngine.GUI.enabled = true;
 
                 EditorGUILayout.Space();
 

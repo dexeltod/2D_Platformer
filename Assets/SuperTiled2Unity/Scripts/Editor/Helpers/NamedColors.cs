@@ -1,7 +1,8 @@
 ﻿// This file was code generated. Do not modify by hand.
+
 using UnityEngine;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Helpers
 {
     public static class NamedColors
     {

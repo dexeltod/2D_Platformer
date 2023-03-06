@@ -1,12 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using SuperTiled2Unity.Scripts.Editor.Extensions;
+using SuperTiled2Unity.Scripts.Editor.Helpers;
+using SuperTiled2Unity.Scripts.Editor.Importers;
+using SuperTiled2Unity.Scripts.Editor.Settings;
 using UnityEngine;
 using UnityEngine.Assertions;
+using Packer = SuperTiled2Unity.Scripts.Editor.ThirdParty.MaxRectsBinPack;
 
-using Packer = SuperTiled2Unity.Editor.ThirdParty.MaxRectsBinPack;
 
-
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor
 {
     // Creates a group of texture atlases for tiles
     // This is our best defense against visual artifacts for maps built on tiles

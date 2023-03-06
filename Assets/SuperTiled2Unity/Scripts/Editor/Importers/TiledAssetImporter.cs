@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Linq;
 using System.Xml.Linq;
+using SuperTiled2Unity.Scripts.Editor.Extensions;
+using SuperTiled2Unity.Scripts.Editor.Loaders;
+using SuperTiled2Unity.Scripts.Editor.Settings;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-
 #if UNITY_2020_2_OR_NEWER
 using AssetImportContext = UnityEditor.AssetImporters.AssetImportContext;
 #else
@@ -12,7 +14,7 @@ using AssetImportContext = UnityEditor.Experimental.AssetImporters.AssetImportCo
 #endif
 
 // All tiled assets we want imported should use this class
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Importers
 {
     public abstract class TiledAssetImporter : SuperImporter
     {

@@ -1,9 +1,11 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
+using SuperTiled2Unity.Scripts.Editor.Helpers;
+using SuperTiled2Unity.Scripts.Editor.Properties;
+using SuperTiled2Unity.Scripts.Editor.Settings;
 using UnityEditor;
 using UnityEngine;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.CustomEditors
 {
     public static class ColliderGizmos
     {
@@ -94,7 +96,7 @@ namespace SuperTiled2Unity.Editor
         {
             CheckHelpers();
             const int count = 50;
-            float theta = ((float)Math.PI * 2.0f) / count;
+            float theta = ((float)System.Math.PI * 2.0f) / count;
 
             var radius = circle.radius;
             var offset = (Vector3)circle.offset;
@@ -102,8 +104,8 @@ namespace SuperTiled2Unity.Editor
             Vector3[] points = new Vector3[count];
             for (int i = 0; i < count; i++)
             {
-                points[i].x = offset.x + radius * (float)Math.Cos(theta * i);
-                points[i].y = offset.y + radius * (float)Math.Sin(theta * i);
+                points[i].x = offset.x + radius * (float)System.Math.Cos(theta * i);
+                points[i].y = offset.y + radius * (float)System.Math.Sin(theta * i);
             }
 
             points = points.Select(pt => circle.transform.TransformPoint(pt)).ToArray();

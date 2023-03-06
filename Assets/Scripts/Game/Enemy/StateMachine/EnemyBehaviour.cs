@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Game.Animation.AnimationHashes.Characters;
-using Game.Enemy.EnemySettings.TestEnemy.Data.ScriptableObjects;
+using Game.CharactersSettingsSO.Characters.Enemy;
 using Game.Enemy.Services;
 using Game.Enemy.StateMachine.Behaviours;
 using Game.Enemy.StateMachine.States;

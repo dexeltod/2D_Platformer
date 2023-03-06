@@ -1,0 +1,17 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/USS/LevelBox.uss?fileID=7433441132597879392&amp;guid=d13e5e363675f2e40832d22d78b0efad&amp;type=3#LevelBox" />
+    <ui:Label text="Label" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); height: 98px;" />
+    <ui:GroupBox class="levelBox" style="height: 238px; flex-direction: row;">
+        <ui:VisualElement class="level" />
+        <ui:VisualElement class="level" />
+        <ui:VisualElement class="level" />
+        <ui:VisualElement class="level" />
+        <ui:VisualElement class="level" />
+        <ui:VisualElement class="level" />
+        <ui:VisualElement class="level" />
+        <ui:VisualElement class="level" />
+        <ui:VisualElement class="level" />
+        <ui:VisualElement class="level" />
+        <ui:VisualElement class="level" />
+    </ui:GroupBox>
+</ui:UXML>

@@ -145,7 +145,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 192
+        y: 256
         width: 96
         height: 64
       alignment: 9
@@ -166,7 +166,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 192
+        y: 256
         width: 96
         height: 64
       alignment: 9
@@ -187,7 +187,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 192
+        y: 256
         width: 96
         height: 64
       alignment: 9
@@ -208,7 +208,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 288
-        y: 192
+        y: 256
         width: 96
         height: 64
       alignment: 9
@@ -229,7 +229,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 192
+        y: 256
         width: 96
         height: 64
       alignment: 9
@@ -250,7 +250,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 480
-        y: 192
+        y: 256
         width: 96
         height: 64
       alignment: 9
@@ -271,7 +271,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 576
-        y: 192
+        y: 256
         width: 96
         height: 64
       alignment: 9
@@ -292,7 +292,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 672
-        y: 192
+        y: 256
         width: 96
         height: 64
       alignment: 9
@@ -313,7 +313,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 768
-        y: 192
+        y: 256
         width: 96
         height: 64
       alignment: 9
@@ -334,7 +334,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 864
-        y: 192
+        y: 256
         width: 96
         height: 64
       alignment: 9
@@ -355,7 +355,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 960
-        y: 192
+        y: 256
         width: 96
         height: 64
       alignment: 9
@@ -376,7 +376,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1056
-        y: 192
+        y: 256
         width: 96
         height: 64
       alignment: 9
@@ -397,7 +397,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1152
-        y: 192
+        y: 256
         width: 96
         height: 64
       alignment: 9
@@ -417,7 +417,7 @@ TextureImporter:
       name: bit-man_13
       rect:
         serializedVersion: 2
-        x: 1248
+        x: 0
         y: 192
         width: 96
         height: 64
@@ -438,7 +438,7 @@ TextureImporter:
       name: bit-man_14
       rect:
         serializedVersion: 2
-        x: 1344
+        x: 96
         y: 192
         width: 96
         height: 64
@@ -459,7 +459,7 @@ TextureImporter:
       name: bit-man_15
       rect:
         serializedVersion: 2
-        x: 1440
+        x: 192
         y: 192
         width: 96
         height: 64
@@ -480,7 +480,7 @@ TextureImporter:
       name: bit-man_16
       rect:
         serializedVersion: 2
-        x: 1536
+        x: 288
         y: 192
         width: 96
         height: 64
@@ -501,7 +501,7 @@ TextureImporter:
       name: bit-man_17
       rect:
         serializedVersion: 2
-        x: 1632
+        x: 384
         y: 192
         width: 96
         height: 64
@@ -522,8 +522,8 @@ TextureImporter:
       name: bit-man_18
       rect:
         serializedVersion: 2
-        x: 1728
-        y: 192
+        x: 0
+        y: 128
         width: 96
         height: 64
       alignment: 9
@@ -543,8 +543,8 @@ TextureImporter:
       name: bit-man_19
       rect:
         serializedVersion: 2
-        x: 1824
-        y: 192
+        x: 96
+        y: 128
         width: 96
         height: 64
       alignment: 9
@@ -564,8 +564,8 @@ TextureImporter:
       name: bit-man_20
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 192
+        x: 192
+        y: 128
         width: 96
         height: 64
       alignment: 9
@@ -585,8 +585,8 @@ TextureImporter:
       name: bit-man_21
       rect:
         serializedVersion: 2
-        x: 2016
-        y: 192
+        x: 288
+        y: 128
         width: 96
         height: 64
       alignment: 9
@@ -606,8 +606,8 @@ TextureImporter:
       name: bit-man_22
       rect:
         serializedVersion: 2
-        x: 2112
-        y: 192
+        x: 384
+        y: 128
         width: 96
         height: 64
       alignment: 9
@@ -627,7 +627,7 @@ TextureImporter:
       name: bit-man_23
       rect:
         serializedVersion: 2
-        x: 0
+        x: 480
         y: 128
         width: 96
         height: 64
@@ -648,7 +648,7 @@ TextureImporter:
       name: bit-man_24
       rect:
         serializedVersion: 2
-        x: 96
+        x: 576
         y: 128
         width: 96
         height: 64
@@ -669,7 +669,7 @@ TextureImporter:
       name: bit-man_25
       rect:
         serializedVersion: 2
-        x: 192
+        x: 672
         y: 128
         width: 96
         height: 64
@@ -690,7 +690,7 @@ TextureImporter:
       name: bit-man_26
       rect:
         serializedVersion: 2
-        x: 288
+        x: 768
         y: 128
         width: 96
         height: 64
@@ -711,7 +711,7 @@ TextureImporter:
       name: bit-man_27
       rect:
         serializedVersion: 2
-        x: 384
+        x: 864
         y: 128
         width: 96
         height: 64
@@ -837,8 +837,8 @@ TextureImporter:
       name: bit-man_33
       rect:
         serializedVersion: 2
-        x: 480
-        y: 64
+        x: 0
+        y: 0
         width: 96
         height: 64
       alignment: 9
@@ -858,8 +858,8 @@ TextureImporter:
       name: bit-man_34
       rect:
         serializedVersion: 2
-        x: 576
-        y: 64
+        x: 96
+        y: 0
         width: 96
         height: 64
       alignment: 9
@@ -879,8 +879,8 @@ TextureImporter:
       name: bit-man_35
       rect:
         serializedVersion: 2
-        x: 672
-        y: 64
+        x: 192
+        y: 0
         width: 96
         height: 64
       alignment: 9
@@ -900,8 +900,8 @@ TextureImporter:
       name: bit-man_36
       rect:
         serializedVersion: 2
-        x: 768
-        y: 64
+        x: 288
+        y: 0
         width: 96
         height: 64
       alignment: 9
@@ -921,8 +921,8 @@ TextureImporter:
       name: bit-man_37
       rect:
         serializedVersion: 2
-        x: 864
-        y: 64
+        x: 384
+        y: 0
         width: 96
         height: 64
       alignment: 9
@@ -942,7 +942,7 @@ TextureImporter:
       name: bit-man_38
       rect:
         serializedVersion: 2
-        x: 0
+        x: 480
         y: 0
         width: 96
         height: 64
@@ -963,7 +963,7 @@ TextureImporter:
       name: bit-man_39
       rect:
         serializedVersion: 2
-        x: 96
+        x: 576
         y: 0
         width: 96
         height: 64
@@ -984,7 +984,7 @@ TextureImporter:
       name: bit-man_40
       rect:
         serializedVersion: 2
-        x: 192
+        x: 672
         y: 0
         width: 96
         height: 64
@@ -1001,48 +1001,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: bit-man_41
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 96
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fd8f34d7beae53a4da4f80043b357399
-      internalID: 1714180546
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bit-man_42
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 96
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eddc704a908ea7d448aebc2b81a85c0a
-      internalID: -492822077
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1054,48 +1012,46 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      bit-man_13: -1983175454
       bit-man_23: 1099266184
       bit-man_5: 942008235
+      bit-man_32: 1970173455
       bit-man_6: -1166120653
+      bit-man_8: 1921805714
+      bit-man_25: 1856916224
       bit-man_24: 1913154885
       bit-man_26: 51368495
-      bit-man_2: -102688557
-      bit-man_7: -1111004986
-      bit-man_18: 1351762638
-      bit-man_19: -359950928
-      bit-man_27: 1528266084
-      bit-man_30: -1327735168
-      bit-man_11: 1889386628
-      bit-man_38: -370646246
-      bit-man_37: 102758199
-      bit-man_39: 1140626096
-      bit-man_36: 610404048
-      bit-man_22: 1435199799
-      bit-man_12: 827299177
-      bit-man_20: -362537203
-      bit-man_33: -5884647
-      bit-man_28: 500448165
-      bit-man_41: 1714180546
-      bit-man_13: -1983175454
-      bit-man_32: 1970173455
-      bit-man_8: 1921805714
-      bit-man_35: 2013148252
-      bit-man_25: 1856916224
       bit-man_10: -71679560
+      bit-man_35: 2013148252
+      bit-man_2: -102688557
       bit-man_16: -794502173
       bit-man_0: 1823045732
       bit-man_4: 1466232218
+      bit-man_18: 1351762638
+      bit-man_7: -1111004986
+      bit-man_19: -359950928
       bit-man_40: 722937558
+      bit-man_27: 1528266084
+      bit-man_30: -1327735168
       bit-man_14: 1419350751
-      bit-man_42: -492822077
+      bit-man_11: 1889386628
       bit-man_21: -59517830
+      bit-man_38: -370646246
       bit-man_31: -968776703
       bit-man_1: -1722741556
       bit-man_17: 703789271
+      bit-man_37: 102758199
+      bit-man_39: 1140626096
       bit-man_3: 301736234
+      bit-man_22: 1435199799
+      bit-man_36: 610404048
       bit-man_15: 2047210335
       bit-man_34: -728491730
+      bit-man_12: 827299177
+      bit-man_20: -362537203
       bit-man_29: -1001194490
+      bit-man_28: 500448165
+      bit-man_33: -5884647
       bit-man_9: 547189316
   spritePackingTag: 
   pSDRemoveMatte: 0

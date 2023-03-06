@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using SuperTiled2Unity.Scripts.Editor.Importers;
+using UnityEngine;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Math
 {
     // Create concrete collider types based on inheritence and geometry input
     public abstract class ColliderFactory

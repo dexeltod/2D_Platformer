@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Settings
 {
     [CustomEditor(typeof(ST2USettings))]
     public class ST2USettingsEditor : UnityEditor.Editor

@@ -13,6 +13,7 @@ namespace Game.PlayerScripts.StateMachine
 
 		private readonly IStateTransition[] _transitions;
 		private int _currentAnimationHash;
+		public event Action<IState> StateChanged;
 
 		protected State(IInputService inputService, Animator animator, AnimationHasher hasher,
 			IStateTransition[] transitions)
@@ -23,7 +24,6 @@ namespace Game.PlayerScripts.StateMachine
 			_transitions = transitions;
 		}
 
-		public event Action<IState> StateChanged;
 
 		public void Enter()
 		{

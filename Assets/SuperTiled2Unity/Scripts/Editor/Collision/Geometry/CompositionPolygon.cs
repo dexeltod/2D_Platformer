@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace SuperTiled2Unity.Editor.Geometry
+namespace SuperTiled2Unity.Scripts.Editor.Collision.Geometry
 {
     // For compositional considerations, a Polygon is a group of points and edges
     // This allows us to merge polygons along edges

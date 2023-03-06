@@ -1,5 +1,4 @@
-﻿using System;
-using Game.Animation.AnimationHashes.Characters;
+﻿using Game.Animation.AnimationHashes.Characters;
 using Game.PlayerScripts;
 using Game.PlayerScripts.Move;
 using Game.PlayerScripts.StateMachine;
@@ -21,7 +20,6 @@ namespace Infrastructure.GameLoading
 		private readonly AnimatorFacade _animatorFacade;
 		private readonly PhysicsMovement _physicsMovement;
 		private readonly PlayerWeaponList _playerWeaponList;
-		private readonly PlayerSceneSwitcher _playerSceneSwitcher;
 		private readonly AbstractWeapon _abstractWeapon;
 		private readonly AnimationHasher _animationHasher;
 
@@ -35,12 +33,10 @@ namespace Infrastructure.GameLoading
 		private IStateTransition _attackToRunTransition;
 		private IStateTransition _attackToIdleTransition;
 		private IStateTransition _attackToFallTransition;
-		
-		private IStateTransition _anyToChangeSceneTransitions;
 
 		public PlayerStatesFactory(GroundChecker groundChecker, IInputService inputService, Animator animator,
 			AnimationHasher hasher, AnimatorFacade animatorFacade, PhysicsMovement physicsMovement,
-			PlayerWeaponList playerWeaponList, PlayerSceneSwitcher playerSceneSwitcher)
+			PlayerWeaponList playerWeaponList)
 		{
 			_groundChecker = groundChecker;
 			_inputService = inputService;
@@ -49,7 +45,6 @@ namespace Infrastructure.GameLoading
 			_animatorFacade = animatorFacade;
 			_physicsMovement = physicsMovement;
 			_playerWeaponList = playerWeaponList;
-			_playerSceneSwitcher = playerSceneSwitcher;
 
 			_stateService = new StateService();
 			_abstractWeapon = _playerWeaponList.GetEquippedWeapon();
@@ -75,7 +70,6 @@ namespace Infrastructure.GameLoading
 			_attackToRunTransition = new AttackToRunTransition(_stateService, _abstractWeapon, _physicsMovement);
 			_attackToIdleTransition = new AttackToIdleTransition(_stateService, _abstractWeapon, _physicsMovement);
 			_attackToFallTransition = new AttackToFallTransition(_stateService, _abstractWeapon, _physicsMovement);
-			_anyToChangeSceneTransitions = new AnyToChangeSceneTransition(_stateService, _playerSceneSwitcher);
 		}
 
 		public void CreateStates()
@@ -86,15 +80,8 @@ namespace Infrastructure.GameLoading
 			CreateJumpState();
 			CreateAttackState();
 			CreateDeadState();
-			CreateChangeSceneState();
 		}
 
-		private void CreateChangeSceneState()
-		{
-			_stateService.Register(new ChangeSceneState(
-				_inputService, _animator, _animationHasher, transitions: new IStateTransition[] { }
-			));
-		}
 
 		private void CreateIdleState()
 		{
@@ -108,7 +95,6 @@ namespace Infrastructure.GameLoading
 						_anyToAttackTransition,
 						_anyToJumpTransition,
 						_anyToFallTransition,
-						_anyToChangeSceneTransitions
 					}
 				)
 			);
@@ -120,7 +106,6 @@ namespace Infrastructure.GameLoading
 					_animatorFacade,
 					transitions: new[]
 					{
-						_anyToChangeSceneTransitions,
 						_anyToDeadTransition,
 						_anyToAttackTransition,
 						_anyToIdleTransition,
@@ -136,7 +121,6 @@ namespace Infrastructure.GameLoading
 			_stateService.Register(new FallState(_inputService, _animator, _animationHasher, _animatorFacade,
 				transitions: new[]
 				{
-					_anyToChangeSceneTransitions,
 					_anyToIdleTransition,
 					_anyToRunTransition,
 				},
@@ -149,7 +133,6 @@ namespace Infrastructure.GameLoading
 				_animatorFacade,
 				transitions: new[]
 				{
-					_anyToChangeSceneTransitions,
 					_anyToIdleTransition,
 					_anyToRunTransition,
 					_anyToFallTransition,
@@ -163,7 +146,6 @@ namespace Infrastructure.GameLoading
 					_inputService, _playerWeaponList, _abstractWeapon, _animator, _animationHasher, _physicsMovement,
 					transitions: new[]
 					{
-						_anyToChangeSceneTransitions,
 						_anyToDeadTransition,
 						_attackToFallTransition,
 						_attackToIdleTransition,

@@ -1,4 +1,4 @@
-using Game.Enemy.EnemySettings.TestEnemy.Data.ScriptableObjects;
+using Game.CharactersSettingsSO.Characters.Enemy;
 using Game.Enemy.Services;
 using Game.Enemy.StateMachine;
 using Game.Enemy.StateMachine.States;

@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using SuperTiled2Unity.Scripts.Editor.Attributes;
+using SuperTiled2Unity.Scripts.Editor.CustomImporters;
+using SuperTiled2Unity.Scripts.Editor.Extensions;
+using SuperTiled2Unity.Scripts.Editor.GUI;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Importers
 {
     [CanEditMultipleObjects]
     [CustomEditor(typeof(TmxAssetImporter))]

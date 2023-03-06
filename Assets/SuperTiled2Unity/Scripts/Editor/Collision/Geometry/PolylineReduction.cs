@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using SuperTiled2Unity.Editor.ClipperLib;
+using SuperTiled2Unity.Scripts.Editor.ThirdParty;
 
-namespace SuperTiled2Unity.Editor.Geometry
+namespace SuperTiled2Unity.Scripts.Editor.Collision.Geometry
 {
     // Join line segments into polylines
     class PolylineReduction
@@ -18,9 +17,9 @@ namespace SuperTiled2Unity.Editor.Geometry
         }
 
         // Hash polylines by their endpoints so we can combine them
-        SD.Tools.Algorithmia.GeneralDataStructures.MultiValueDictionary<IntPoint, InternalPolyline> m_TablePolyline = new SD.Tools.Algorithmia.GeneralDataStructures.MultiValueDictionary<ClipperLib.IntPoint, InternalPolyline>();
+        MultiValueDictionary<IntPoint, InternalPolyline> m_TablePolyline = new MultiValueDictionary<IntPoint, InternalPolyline>();
 
-        public void AddLine(List<ClipperLib.IntPoint> points)
+        public void AddLine(List<IntPoint> points)
         {
             PolylineReduction.CurrentPolylineId++;
 
@@ -47,21 +46,21 @@ namespace SuperTiled2Unity.Editor.Geometry
             }
         }
 
-        private bool AreNormalsEquivalent(ClipperLib.DoublePoint n0, ClipperLib.DoublePoint n1)
+        private bool AreNormalsEquivalent(DoublePoint n0, DoublePoint n1)
         {
             const double epsilon = 1.0f / 1024.0f;
-            double ax = Math.Abs(n0.X - n1.X);
-            double ay = Math.Abs(n0.Y - n1.Y);
+            double ax = System.Math.Abs(n0.X - n1.X);
+            double ay = System.Math.Abs(n0.Y - n1.Y);
             return (ax < epsilon) && (ay < epsilon);
         }
 
-        private List<ClipperLib.IntPoint> RemovePointsOnLine(List<ClipperLib.IntPoint> points)
+        private List<IntPoint> RemovePointsOnLine(List<IntPoint> points)
         {
             int index = 0;
             while (index < points.Count - 2)
             {
-                ClipperLib.DoublePoint normal0 = ClipperLib.ClipperOffset.GetUnitNormal(points[index], points[index + 1]);
-                ClipperLib.DoublePoint normal1 = ClipperLib.ClipperOffset.GetUnitNormal(points[index], points[index + 2]);
+                DoublePoint normal0 = ClipperOffset.GetUnitNormal(points[index], points[index + 1]);
+                DoublePoint normal1 = ClipperOffset.GetUnitNormal(points[index], points[index + 2]);
 
                 if (AreNormalsEquivalent(normal0, normal1))
                 {
@@ -80,7 +79,7 @@ namespace SuperTiled2Unity.Editor.Geometry
         {
             // Assumes Line0 and Line1 have the same end-points
             // We reverse Line1 and remove its first end-point
-            List<ClipperLib.IntPoint> combined = new List<ClipperLib.IntPoint>();
+            List<IntPoint> combined = new List<IntPoint>();
             combined.AddRange(line0.Points);
 
             line1.Points.Reverse();
@@ -105,7 +104,7 @@ namespace SuperTiled2Unity.Editor.Geometry
         }
 
         // Returns a list of polylines (each polyine is itself a list of points)
-        public List<List<ClipperLib.IntPoint>> Reduce()
+        public List<List<IntPoint>> Reduce()
         {
             // Combine all the polylines together
             // We should end up with a table of polylines where each key has only one entry

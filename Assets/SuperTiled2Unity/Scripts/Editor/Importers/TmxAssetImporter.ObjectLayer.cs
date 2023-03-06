@@ -1,7 +1,10 @@
 ﻿using System.Xml.Linq;
+using SuperTiled2Unity.Scripts.Editor.Extensions;
+using SuperTiled2Unity.Scripts.Editor.Loaders;
+using SuperTiled2Unity.Scripts.Editor.Math;
 using UnityEngine;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Importers
 {
     partial class TmxAssetImporter
     {

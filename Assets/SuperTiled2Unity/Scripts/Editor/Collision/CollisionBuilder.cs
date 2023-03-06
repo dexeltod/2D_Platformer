@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using SuperTiled2Unity.Scripts.Editor.Extensions;
+using SuperTiled2Unity.Scripts.Editor.Importers;
+using SuperTiled2Unity.Scripts.Extensions;
 using UnityEngine;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Collision
 {
     // Tile Layer importer uses CollisionBuilder to combine all like-minded collision objects together
     public class CollisionBuilder

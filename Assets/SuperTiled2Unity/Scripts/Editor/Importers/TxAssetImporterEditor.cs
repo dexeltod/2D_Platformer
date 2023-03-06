@@ -1,8 +1,8 @@
 ﻿using System.Xml.Linq;
+using SuperTiled2Unity.Scripts.Editor.GUI;
 using UnityEditor;
-using UnityEngine;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Importers
 {
     [CanEditMultipleObjects]
     [CustomEditor(typeof(TxAssetImporter))]
@@ -47,12 +47,12 @@ namespace SuperTiled2Unity.Editor
 
             using (new GuiScopedIndent())
             {
-                GUI.enabled = false;
+                UnityEngine.GUI.enabled = false;
                 foreach (var a in xml.Attributes())
                 {
                     EditorGUILayout.TextField(a.Name.LocalName, a.Value);
                 }
-                GUI.enabled = true;
+                UnityEngine.GUI.enabled = true;
 
                 foreach (XElement x in xml.Elements())
                 {

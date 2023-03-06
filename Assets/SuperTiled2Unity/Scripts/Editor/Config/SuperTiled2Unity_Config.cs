@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using SuperTiled2Unity.Scripts.Editor.AssetTypes;
+using SuperTiled2Unity.Scripts.Editor.Extensions;
+using SuperTiled2Unity.Scripts.Editor.Importers;
+using SuperTiled2Unity.Scripts.Editor.Settings;
+using SuperTiled2Unity.Scripts.Editor.Windows;
 using UnityEditor;
 using UnityEngine;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Config
 {
     internal class SuperTiled2Unity_Config
     {

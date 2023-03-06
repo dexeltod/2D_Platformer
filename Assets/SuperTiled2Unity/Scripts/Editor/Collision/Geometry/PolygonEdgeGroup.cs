@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace SuperTiled2Unity.Editor.Geometry
+namespace SuperTiled2Unity.Scripts.Editor.Collision.Geometry
 {
     // Keeps a collection of polygon edges that are shared bewteen two polygons
     // Assumes that all polygons have CCW winding to them

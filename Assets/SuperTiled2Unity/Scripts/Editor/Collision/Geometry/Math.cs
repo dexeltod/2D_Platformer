@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace SuperTiled2Unity.Editor.Geometry
+namespace SuperTiled2Unity.Scripts.Editor.Collision.Geometry
 {
     public static class GeoMath
     {

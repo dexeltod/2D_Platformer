@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Xml.Linq;
+using SuperTiled2Unity.Scripts.Editor.Extensions;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Loaders
 {
     public static class CustomPropertyLoader
     {

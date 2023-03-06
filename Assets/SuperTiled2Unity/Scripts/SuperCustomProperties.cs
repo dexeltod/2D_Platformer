@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace SuperTiled2Unity
+namespace SuperTiled2Unity.Scripts
 {
     // A simple component for storing custom properites
     // Ideally, custom import scripts should use these in the import process and then strip them from the final prefab

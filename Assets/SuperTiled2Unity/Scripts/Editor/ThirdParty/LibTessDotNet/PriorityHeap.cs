@@ -40,7 +40,7 @@ using System.Diagnostics;
 //#if DOUBLE
 //namespace LibTessDotNet.Double
 //#else
-namespace SuperTiled2Unity.Editor.LibTessDotNet
+namespace SuperTiled2Unity.Scripts.Editor.ThirdParty.LibTessDotNet
 //#endif
 {
     internal struct PQHandle

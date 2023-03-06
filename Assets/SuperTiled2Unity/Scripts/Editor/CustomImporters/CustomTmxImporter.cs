@@ -1,4 +1,6 @@
-﻿namespace SuperTiled2Unity.Editor
+﻿using SuperTiled2Unity.Scripts.Editor.Importers;
+
+namespace SuperTiled2Unity.Scripts.Editor.CustomImporters
 {
     public class TmxAssetImportedArgs
     {

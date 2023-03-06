@@ -1,7 +1,9 @@
 ﻿using System.Xml.Linq;
+using SuperTiled2Unity.Scripts.Editor.AssetTypes;
+using SuperTiled2Unity.Scripts.Editor.Extensions;
+using SuperTiled2Unity.Scripts.Editor.Loaders;
 using UnityEngine;
 using UnityEngine.Assertions;
-
 #if UNITY_2020_2_OR_NEWER
 using ScriptedImporterAttribute = UnityEditor.AssetImporters.ScriptedImporterAttribute;
 #else
@@ -9,7 +11,7 @@ using ScriptedImporterAttribute = UnityEditor.Experimental.AssetImporters.Script
 #endif
 
 // Importer for Tiled TX (template) files
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Importers
 {
     [ScriptedImporter(ImporterConstants.TemplateVersion, ImporterConstants.TemplateExtension, ImporterConstants.TemplateImportOrder)]
     public class TxAssetImporter : SuperImporter

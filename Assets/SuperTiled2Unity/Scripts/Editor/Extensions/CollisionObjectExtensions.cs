@@ -1,7 +1,9 @@
-﻿using UnityEngine;
-using SuperTiled2Unity.Editor.Geometry;
+﻿using SuperTiled2Unity.Scripts.Editor.Collision.Geometry;
+using SuperTiled2Unity.Scripts.Editor.Importers;
+using SuperTiled2Unity.Scripts.Editor.Math;
+using UnityEngine;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Extensions
 {
     public static class CollisionObjectExtensions
     {

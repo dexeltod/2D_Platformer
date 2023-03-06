@@ -12,10 +12,16 @@ namespace Infrastructure.GameLoading
 
 		private void Awake()
 		{
-			_game = new Game(this, Instantiate(_loadingCurtain));
+			var loadingCurtain = GetLoadingCurtain();
+			loadingCurtain.gameObject.SetActive(false);
+			
+			_game = new Game(this, loadingCurtain);
 			_game.StateMachine.Enter<BootstrapState>();
 
 			DontDestroyOnLoad(this);
 		}
+
+		private LoadingCurtain GetLoadingCurtain() => 
+			Instantiate(_loadingCurtain);
 	}
 }

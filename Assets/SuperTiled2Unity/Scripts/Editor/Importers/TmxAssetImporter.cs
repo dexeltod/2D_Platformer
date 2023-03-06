@@ -3,18 +3,26 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
+using SuperTiled2Unity.Scripts.Editor.AssetTypes;
+using SuperTiled2Unity.Scripts.Editor.Attributes;
+using SuperTiled2Unity.Scripts.Editor.Collision;
+using SuperTiled2Unity.Scripts.Editor.CustomImporters;
+using SuperTiled2Unity.Scripts.Editor.Exceptions;
+using SuperTiled2Unity.Scripts.Editor.Extensions;
+using SuperTiled2Unity.Scripts.Editor.Helpers;
+using SuperTiled2Unity.Scripts.Editor.Loaders;
+using SuperTiled2Unity.Scripts.Editor.Settings;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Tilemaps;
-
 #if UNITY_2020_2_OR_NEWER
 using ScriptedImporterAttribute = UnityEditor.AssetImporters.ScriptedImporterAttribute;
 #else
 using ScriptedImporterAttribute = UnityEditor.Experimental.AssetImporters.ScriptedImporterAttribute;
 #endif
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Importers
 {
     [ScriptedImporter(ImporterConstants.MapVersion, ImporterConstants.MapExtension, ImporterConstants.MapImportOrder)]
     public partial class TmxAssetImporter : TiledAssetImporter

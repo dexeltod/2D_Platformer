@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using SuperTiled2Unity.Editor.ClipperLib;
-using SuperTiled2Unity.Editor.Geometry;
+using SuperTiled2Unity.Scripts.Editor.Collision.Geometry;
+using SuperTiled2Unity.Scripts.Editor.ThirdParty;
 using UnityEngine;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Collision
 {
     public class CollisionClipper
     {

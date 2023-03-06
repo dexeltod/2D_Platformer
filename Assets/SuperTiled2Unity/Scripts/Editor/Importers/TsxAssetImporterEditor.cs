@@ -1,9 +1,10 @@
-﻿using UnityEditor;
+﻿using SuperTiled2Unity.Scripts.Editor.GUI;
+using UnityEditor;
 using UnityEditor.AnimatedValues;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Importers
 {
     [CanEditMultipleObjects]
     [CustomEditor(typeof(TsxAssetImporter))]

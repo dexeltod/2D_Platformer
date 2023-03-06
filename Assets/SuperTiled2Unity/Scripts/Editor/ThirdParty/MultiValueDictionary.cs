@@ -34,9 +34,10 @@
 
 using System.Collections.Generic;
 using System.Diagnostics;
+
 //using SD.Tools.Algorithmia.UtilityClasses;
 
-namespace SuperTiled2Unity.Editor.SD.Tools.Algorithmia.GeneralDataStructures
+namespace SuperTiled2Unity.Scripts.Editor.ThirdParty
 {
     /// <summary>
     /// Extension to the normal Dictionary. This class can store more than one value for every key. It keeps a HashSet for every Key value.

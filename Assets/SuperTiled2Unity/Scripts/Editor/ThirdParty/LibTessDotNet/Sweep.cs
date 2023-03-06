@@ -36,13 +36,12 @@
 
 using System;
 using System.Diagnostics;
-
 //#if DOUBLE
 //using Real = System.Double;
 //namespace LibTessDotNet.Double
 //#else
 using Real = System.Single;
-namespace SuperTiled2Unity.Editor.LibTessDotNet
+namespace SuperTiled2Unity.Scripts.Editor.ThirdParty.LibTessDotNet
 //#endif
 {
     public partial class Tess
@@ -553,8 +552,8 @@ namespace SuperTiled2Unity.Editor.LibTessDotNet
                 return false;
             }
 
-            var tMinUp = Math.Min(orgUp._t, dstUp._t);
-            var tMaxLo = Math.Max(orgLo._t, dstLo._t);
+            var tMinUp = System.Math.Min(orgUp._t, dstUp._t);
+            var tMaxLo = System.Math.Max(orgLo._t, dstLo._t);
             if( tMinUp > tMaxLo )
             {
                 // t ranges do not overlap
@@ -581,10 +580,10 @@ namespace SuperTiled2Unity.Editor.LibTessDotNet
             var isect = _pool.Get<MeshUtils.Vertex>();
             Geom.EdgeIntersect(dstUp, orgUp, dstLo, orgLo, isect);
             // The following properties are guaranteed:
-            Debug.Assert(Math.Min(orgUp._t, dstUp._t) <= isect._t);
-            Debug.Assert(isect._t <= Math.Max(orgLo._t, dstLo._t));
-            Debug.Assert(Math.Min(dstLo._s, dstUp._s) <= isect._s);
-            Debug.Assert(isect._s <= Math.Max(orgLo._s, orgUp._s));
+            Debug.Assert(System.Math.Min(orgUp._t, dstUp._t) <= isect._t);
+            Debug.Assert(isect._t <= System.Math.Max(orgLo._t, dstLo._t));
+            Debug.Assert(System.Math.Min(dstLo._s, dstUp._s) <= isect._s);
+            Debug.Assert(isect._s <= System.Math.Max(orgLo._s, orgUp._s));
 
             if (Geom.VertLeq(isect, _event))
             {

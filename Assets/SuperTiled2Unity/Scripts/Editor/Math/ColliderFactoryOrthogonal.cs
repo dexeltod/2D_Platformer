@@ -1,7 +1,7 @@
-﻿using System;
+﻿using SuperTiled2Unity.Scripts.Editor.Importers;
 using UnityEngine;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Math
 {
     public class ColliderFactoryOrthogonal : ColliderFactory
     {
@@ -64,13 +64,13 @@ namespace SuperTiled2Unity.Editor
             {
                 // Estimate an ellipse through a polygon collider
                 int count = ImportContext.Settings.EdgesPerEllipse;
-                float theta = ((float)Math.PI * 2.0f) / count;
+                float theta = ((float)System.Math.PI * 2.0f) / count;
 
                 Vector2[] points = new Vector2[count];
                 for (int i = 0; i < count; i++)
                 {
-                    points[i].x = width * 0.5f * (float)Math.Cos(theta * i);
-                    points[i].y = height * 0.5f * (float)Math.Sin(theta * i);
+                    points[i].x = width * 0.5f * (float)System.Math.Cos(theta * i);
+                    points[i].y = height * 0.5f * (float)System.Math.Sin(theta * i);
                 }
 
                 var collider = go.AddComponent<PolygonCollider2D>();

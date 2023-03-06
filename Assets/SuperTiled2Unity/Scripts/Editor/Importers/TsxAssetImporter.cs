@@ -1,14 +1,16 @@
 ﻿using System.Xml.Linq;
+using SuperTiled2Unity.Scripts.Editor.AssetTypes;
+using SuperTiled2Unity.Scripts.Editor.Loaders;
+using SuperTiled2Unity.Scripts.Editor.Settings;
 using UnityEngine;
 using UnityEngine.Assertions;
-
 #if UNITY_2020_2_OR_NEWER
 using ScriptedImporterAttribute = UnityEditor.AssetImporters.ScriptedImporterAttribute;
 #else
 using ScriptedImporterAttribute = UnityEditor.Experimental.AssetImporters.ScriptedImporterAttribute;
 #endif
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Importers
 {
     [ScriptedImporter(ImporterConstants.TilesetVersion, ImporterConstants.TilesetExtension, ImporterConstants.TilesetImportOrder)]
     public class TsxAssetImporter : TiledAssetImporter

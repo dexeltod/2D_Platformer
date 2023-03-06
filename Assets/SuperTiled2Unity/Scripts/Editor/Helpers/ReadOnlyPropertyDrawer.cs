@@ -1,17 +1,16 @@
-﻿using UnityEngine;
-using UnityEditor;
+﻿using UnityEditor;
+using UnityEngine;
 
-
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Helpers
 {
     [CustomPropertyDrawer(typeof(ReadOnlyAttribute))]
     public class ReadOnlyPropertyDrawer : PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            GUI.enabled = false;
+            UnityEngine.GUI.enabled = false;
             EditorGUI.PropertyField(position, property, label);
-            GUI.enabled = true;
+            UnityEngine.GUI.enabled = true;
         }
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)

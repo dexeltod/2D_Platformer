@@ -1,20 +1,21 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using SuperTiled2Unity.Editor.LibTessDotNet;
+using SuperTiled2Unity.Scripts.Editor.ThirdParty;
+using SuperTiled2Unity.Scripts.Editor.ThirdParty.LibTessDotNet;
 using UnityEngine;
 
-namespace SuperTiled2Unity.Editor.Geometry
+namespace SuperTiled2Unity.Scripts.Editor.Collision.Geometry
 {
     // Input is a ClipperLib solution and output is a collection of triangles
     public class Triangulator
     {
-        public List<Vector2[]> TriangulateClipperSolution(ClipperLib.PolyTree solution)
+        public List<Vector2[]> TriangulateClipperSolution(PolyTree solution)
         {
             var tess = new Tess();
             tess.NoEmptyPolygons = true;
 
             // Add a contour for each part of the solution tree
-            ClipperLib.PolyNode node = solution.GetFirst();
+            PolyNode node = solution.GetFirst();
             while (node != null)
             {
                 // Only interested in closed paths

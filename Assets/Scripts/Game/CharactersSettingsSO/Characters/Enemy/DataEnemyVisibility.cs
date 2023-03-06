@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Enemy.EnemySettings.ScriptableObjectsScripts
+namespace Game.CharactersSettingsSO.Characters.Enemy
 {
     [CreateAssetMenu(fileName = "newEntityData", menuName = "Enemy/DataEnemyVisibility")]
     public class DataEnemyVisibility : ScriptableObject

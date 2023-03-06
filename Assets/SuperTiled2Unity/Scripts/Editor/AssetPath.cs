@@ -1,8 +1,9 @@
 ﻿using System;
 using System.IO;
+using SuperTiled2Unity.Scripts.Editor.Extensions;
 using UnityEngine;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor
 {
     public static class AssetPath
     {

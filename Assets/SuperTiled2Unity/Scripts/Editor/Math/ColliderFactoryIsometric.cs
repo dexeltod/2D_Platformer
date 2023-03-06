@@ -1,8 +1,8 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
+using SuperTiled2Unity.Scripts.Editor.Importers;
 using UnityEngine;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Math
 {
     public class ColliderFactoryIsometric : ColliderFactory
     {
@@ -53,13 +53,13 @@ namespace SuperTiled2Unity.Editor
         {
             // Ellipses are always approximated with polygons in isometric maps
             int count = ImportContext.Settings.EdgesPerEllipse;
-            float theta = ((float)Math.PI * 2.0f) / count;
+            float theta = ((float)System.Math.PI * 2.0f) / count;
 
             Vector2[] points = new Vector2[count];
             for (int i = 0; i < count; i++)
             {
-                points[i].x = width * 0.5f * (float)Math.Cos(theta * i);
-                points[i].y = height * 0.5f * (float)Math.Sin(theta * i);
+                points[i].x = width * 0.5f * (float)System.Math.Cos(theta * i);
+                points[i].y = height * 0.5f * (float)System.Math.Sin(theta * i);
                 points[i] = TransformPoint(points[i]);
             }
 

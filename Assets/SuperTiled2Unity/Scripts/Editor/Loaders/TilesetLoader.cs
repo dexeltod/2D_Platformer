@@ -2,11 +2,15 @@
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
-using SuperTiled2Unity.Editor.Diablo404;
+using SuperTiled2Unity.Scripts.Editor.Extensions;
+using SuperTiled2Unity.Scripts.Editor.Importers;
+using SuperTiled2Unity.Scripts.Editor.Math;
+using SuperTiled2Unity.Scripts.Editor.ThirdParty;
+using SuperTiled2Unity.Scripts.Extensions;
 using UnityEditor;
 using UnityEngine;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Loaders
 {
     // Tilesets can be stand-alone TSX files (preferred) or embedded in Tiled Map Editor files (TMX)
     // This helper loader class gives us the flexibility we need to load tileset data

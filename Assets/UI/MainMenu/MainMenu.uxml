@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/MainMenu/button.uss?fileID=7433441132597879392&amp;guid=57e4bf2ea90b2ef49b404766989c4ea1&amp;type=3#button" />
+    <ui:VisualElement name="Logo" style="flex-basis: 30%; align-items: auto; width: 100%; height: 30%; background-image: url(&apos;project://database/Assets/Data/Main/Textures/logo-words.png?fileID=2800000&amp;guid=71f30088870d61342951e16179561842&amp;type=3#logo-words&apos;); background-color: rgb(0, 0, 0); -unity-background-scale-mode: scale-to-fit; min-width: 100%;" />
+    <ui:VisualElement name="Container" style="height: 70%; justify-content: center; align-items: center; flex-wrap: nowrap; flex-basis: 70%; font-size: 52px; -unity-background-scale-mode: scale-to-fit; background-color: rgb(0, 0, 0);">
+        <ui:VisualElement class="buttonRow" style="height: 23%; flex-basis: auto;">
+            <ui:Button display-tooltip-when-elided="true" enable-rich-text="true" class="button" style="border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; height: 100%; align-items: center; flex-direction: column; max-width: none; max-height: none; -unity-background-scale-mode: stretch-to-fill; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; font-size: initial;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

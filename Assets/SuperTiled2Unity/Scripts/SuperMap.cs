@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace SuperTiled2Unity
+namespace SuperTiled2Unity.Scripts
 {
     public class SuperMap : MonoBehaviour
     {

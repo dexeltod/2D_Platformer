@@ -1,4 +1,4 @@
-﻿namespace SuperTiled2Unity.Editor
+﻿namespace SuperTiled2Unity.Scripts.Editor
 {
     // Only allow certain sizes (and always power-of-two) for atlases used for tiles
     public enum AtlasSize

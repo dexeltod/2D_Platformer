@@ -1,10 +1,14 @@
 ﻿using System.Linq;
 using System.Xml.Linq;
-using SuperTiled2Unity.Editor.Geometry;
+using SuperTiled2Unity.Scripts.Editor.Collision.Geometry;
+using SuperTiled2Unity.Scripts.Editor.Extensions;
+using SuperTiled2Unity.Scripts.Editor.Importers;
+using SuperTiled2Unity.Scripts.Editor.Math;
+using SuperTiled2Unity.Scripts.Extensions;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Loaders
 {
     public class SuperObjectLayerLoader : SuperLayerLoader
     {

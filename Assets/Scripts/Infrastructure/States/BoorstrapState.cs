@@ -5,6 +5,8 @@ using Infrastructure.GameLoading.AssetManagement;
 using Infrastructure.GameLoading.Factory;
 using Infrastructure.Services;
 using Infrastructure.Services.SaveLoadService;
+using UI_Scripts.Curtain;
+using UI_Scripts.ViewModel;
 
 namespace Infrastructure.States
 {
@@ -24,15 +26,15 @@ namespace Infrastructure.States
 
 		public void Enter()
 		{
-			_sceneLoader.Load(ConstantNames.InitialScene, OnSceneLoaded);
+			_sceneLoader.Load(ConstantNames.MenuScene, OnSceneLoaded);
 		}
 
 		public void Exit()
 		{
 		}
 
-        private void OnSceneLoaded() =>
-            _gameStateMachine.Enter<LoadProgressState>();
+		private void OnSceneLoaded() =>
+			_gameStateMachine.Enter<LoadProgressState>();
 
         private void RegisterServices()
         {
@@ -55,6 +57,6 @@ namespace Infrastructure.States
 			_serviceLocator.RegisterAsSingle<ICamera>(cameraFactory);
 
 			_serviceLocator.RegisterAsSingle<IPlayerFactory>(new PlayerFactory(_serviceLocator.GetSingle<IAssetProvider>()));
-		}
+        }
     }
 }

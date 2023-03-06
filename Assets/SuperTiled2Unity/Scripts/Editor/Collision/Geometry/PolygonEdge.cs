@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace SuperTiled2Unity.Editor.Geometry
+namespace SuperTiled2Unity.Scripts.Editor.Collision.Geometry
 {
     // A polygon edge that may be shared with another polygon
     public class PolygonEdge

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Settings
 {
     [Serializable]
     public class LayerMaterialMatch

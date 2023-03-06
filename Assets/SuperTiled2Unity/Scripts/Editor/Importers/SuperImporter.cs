@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml;
+using SuperTiled2Unity.Scripts.Editor.AssetTypes;
+using SuperTiled2Unity.Scripts.Editor.Config;
+using SuperTiled2Unity.Scripts.Editor.Exceptions;
+using SuperTiled2Unity.Scripts.Editor.Extensions;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Assertions;
-
 #if UNITY_2020_2_OR_NEWER
 using AssetImportContext = UnityEditor.AssetImporters.AssetImportContext;
 using ScriptedImporter = UnityEditor.AssetImporters.ScriptedImporter;
@@ -15,7 +18,7 @@ using AssetImportContext = UnityEditor.Experimental.AssetImporters.AssetImportCo
 using ScriptedImporter = UnityEditor.Experimental.AssetImporters.ScriptedImporter;
 #endif
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Importers
 {
     public abstract class SuperImporter : ScriptedImporter
     {

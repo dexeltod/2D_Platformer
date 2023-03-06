@@ -1,23 +1,27 @@
 using Game.Environment.EnterTriggers.Enter;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class OnTriggerCanvasEnabler : MonoBehaviour
+namespace Game.Environment.EnterTriggers
 {
-	[SerializeField] private EnterInLocationByButtonTrigger _buttonTrigger;
-	[SerializeField] private GameObject _button;
-
-	private void OnEnable()
+	public class OnTriggerCanvasEnabler : MonoBehaviour
 	{
-		_buttonTrigger.InTriggerEntered += OnTriggerEntered;
-	}
+		[SerializeField] private EnterInLocationByButtonTrigger _buttonTrigger;
+		[SerializeField] private Image _buttonImage;
 
-	private void OnDisable()
-	{
-		_buttonTrigger.InTriggerEntered -= OnTriggerEntered;
-	}
+		private void OnEnable()
+		{
+			_buttonTrigger.InTriggerEntered += OnTriggerEntered;
+		}
 
-	private void OnTriggerEntered(bool isInTrigger)
-	{
-		_button.SetActive(isInTrigger);
+		private void OnDisable()
+		{
+			_buttonTrigger.InTriggerEntered -= OnTriggerEntered;
+		}
+
+		private void OnTriggerEntered(bool isInTrigger)
+		{
+			_buttonImage.gameObject.SetActive(isInTrigger);
+		}
 	}
 }

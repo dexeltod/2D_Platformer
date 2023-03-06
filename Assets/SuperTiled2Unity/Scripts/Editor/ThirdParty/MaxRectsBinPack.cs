@@ -8,10 +8,10 @@
 
 // Seanba change: Put into namespace so we don't collide with other usage of this popular utility
 
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
-namespace SuperTiled2Unity.Editor.ThirdParty
+namespace SuperTiled2Unity.Scripts.Editor.ThirdParty
 {
     public class MaxRectsBinPack
     {

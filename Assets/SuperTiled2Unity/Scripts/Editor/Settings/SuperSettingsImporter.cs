@@ -8,7 +8,7 @@ using ScriptedImporter = UnityEditor.Experimental.AssetImporters.ScriptedImporte
 using ScriptedImporterAttribute = UnityEditor.Experimental.AssetImporters.ScriptedImporterAttribute;
 #endif
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Settings
 {
     // Note: Our settings is set to be imported first
     [ScriptedImporter(101, "st2u")]

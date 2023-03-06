@@ -1,8 +1,9 @@
 ﻿using System;
+using SuperTiled2Unity.Scripts.Extensions;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Importers
 {
     // Helper class for sorting all our TilemapRenderer and SpriteRenderer instances
     public class RendererSorter

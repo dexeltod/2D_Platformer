@@ -1,4 +1,5 @@
 using System;
+using Game.CharactersSettingsSO.Characters.Enemy;
 using Game.Enemy.EnemySettings.ScriptableObjectsScripts;
 using UnityEngine;
 using UnityEngine.Serialization;

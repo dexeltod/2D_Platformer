@@ -1,8 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using SuperTiled2Unity.Scripts.Editor.Importers;
+using SuperTiled2Unity.Scripts.Editor.Math;
+using SuperTiled2Unity.Scripts.Extensions;
+using SuperTiled2Unity.Scripts.Math;
 using UnityEngine;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Collision
 {
     // The collision builder for Tile Layers uses this class to combine colliders together
     public class TilePolygonCollection

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using SuperTiled2Unity.Scripts.Editor.CustomImporters;
+using SuperTiled2Unity.Scripts.Editor.Extensions;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Attributes
 {
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
     public class AutoCustomTmxImporterAttribute : Attribute

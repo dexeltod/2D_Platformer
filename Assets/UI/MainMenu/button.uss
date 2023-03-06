@@ -1,0 +1,41 @@
+.buttonRow {
+    background-color: rgba(0, 0, 0, 0);
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    height: 30%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 70%;
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    -unity-background-scale-mode: scale-to-fit;
+    -unity-text-align: middle-center;
+}
+
+.button {
+    -unity-font-definition: none;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-image: url('project://database/Assets/Data/Main/Textures/level-background.png?fileID=2800000&guid=9394941750112c24994cd93d30449a4f&type=3#level-background');
+    background-color: rgba(0, 0, 0, 0);
+    height: 20%;
+    width: 20%;
+    color: rgb(113, 96, 241);
+    -unity-font: url('project://database/Assets/Fonts/pixeleum-48.ttf?fileID=12800000&guid=e5ea161f253b85649ba6741d56b1fd63&type=3#pixeleum-48');
+    font-size: 64px;
+    -unity-background-scale-mode: scale-to-fit;
+    -unity-text-align: middle-center;
+    letter-spacing: 0;
+    -unity-text-outline-width: 0;
+    -unity-text-outline-color: rgba(0, 0, 0, 255);
+    white-space: nowrap;
+}

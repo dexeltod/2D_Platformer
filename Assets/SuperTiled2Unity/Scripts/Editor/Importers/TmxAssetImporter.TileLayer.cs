@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
+using SuperTiled2Unity.Scripts.Editor.Collision;
+using SuperTiled2Unity.Scripts.Editor.Extensions;
+using SuperTiled2Unity.Scripts.Editor.Loaders;
+using SuperTiled2Unity.Scripts.Extensions;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Tilemaps;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Importers
 {
     public partial class TmxAssetImporter
     {

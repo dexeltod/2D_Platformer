@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Helpers
 {
     // Utiltiy class that helps us give items unique names. Must be kept in scope in order to work.
     // Will turn [Name] into [Name (1)], [Name (2)], etc. similar to how Unity gives unique names to similar objects

@@ -48,15 +48,15 @@
 //use_lines: Enables open path clipping. Adds a very minor cost to performance.
 #define use_lines
 
-
 using System;
 using System.Collections.Generic;
+
 //using System.Text;          //for Int128.AsString() & StringBuilder
 //using System.IO;            //debugging with streamReader & StreamWriter
 //using System.Windows.Forms; //debugging to clipboard
 
 // Seanba: Note that ClipperLib is placed in SuperTiled2Unity.Editor namespace so we don't collide with other libraries using clipper
-namespace SuperTiled2Unity.Editor.ClipperLib
+namespace SuperTiled2Unity.Scripts.Editor.ThirdParty
 {
 
 #if use_int32
@@ -1802,7 +1802,7 @@ namespace SuperTiled2Unity.Editor.ClipperLib
                     if (edge.WindDelta == 0 && edge.WindCnt != 1) return false;
                     break;
                 case PolyFillType.pftNonZero:
-                    if (Math.Abs(edge.WindCnt) != 1) return false;
+                    if (System.Math.Abs(edge.WindCnt) != 1) return false;
                     break;
                 case PolyFillType.pftPositive:
                     if (edge.WindCnt != 1) return false;
@@ -1928,7 +1928,7 @@ namespace SuperTiled2Unity.Editor.ClipperLib
                 {
                     //prev edge is 'decreasing' WindCount (WC) toward zero
                     //so we're outside the previous polygon ...
-                    if (Math.Abs(e.WindCnt) > 1)
+                    if (System.Math.Abs(e.WindCnt) > 1)
                     {
                         //outside prev poly but still inside another.
                         //when reversing direction of prev poly use the same WC 
@@ -2251,20 +2251,20 @@ namespace SuperTiled2Unity.Editor.ClipperLib
         {
             OutPt p = btmPt1.Prev;
             while ((p.Pt == btmPt1.Pt) && (p != btmPt1)) p = p.Prev;
-            double dx1p = Math.Abs(GetDx(btmPt1.Pt, p.Pt));
+            double dx1p = System.Math.Abs(GetDx(btmPt1.Pt, p.Pt));
             p = btmPt1.Next;
             while ((p.Pt == btmPt1.Pt) && (p != btmPt1)) p = p.Next;
-            double dx1n = Math.Abs(GetDx(btmPt1.Pt, p.Pt));
+            double dx1n = System.Math.Abs(GetDx(btmPt1.Pt, p.Pt));
 
             p = btmPt2.Prev;
             while ((p.Pt == btmPt2.Pt) && (p != btmPt2)) p = p.Prev;
-            double dx2p = Math.Abs(GetDx(btmPt2.Pt, p.Pt));
+            double dx2p = System.Math.Abs(GetDx(btmPt2.Pt, p.Pt));
             p = btmPt2.Next;
             while ((p.Pt == btmPt2.Pt) && (p != btmPt2)) p = p.Next;
-            double dx2n = Math.Abs(GetDx(btmPt2.Pt, p.Pt));
+            double dx2n = System.Math.Abs(GetDx(btmPt2.Pt, p.Pt));
 
-            if (Math.Max(dx1p, dx1n) == Math.Max(dx2p, dx2n) &&
-              Math.Min(dx1p, dx1n) == Math.Min(dx2p, dx2n))
+            if (System.Math.Max(dx1p, dx1n) == System.Math.Max(dx2p, dx2n) &&
+              System.Math.Min(dx1p, dx1n) == System.Math.Min(dx2p, dx2n))
                 return Area(btmPt1) > 0; //if otherwise identical use orientation
             else
                 return (dx1p >= dx2p && dx1p >= dx2n) || (dx1n >= dx2p && dx1n >= dx2n);
@@ -2521,13 +2521,13 @@ namespace SuperTiled2Unity.Editor.ClipperLib
                 }
                 else if (e1.PolyTyp != e2.PolyTyp)
                 {
-                    if ((e1.WindDelta == 0) && Math.Abs(e2.WindCnt) == 1 &&
+                    if ((e1.WindDelta == 0) && System.Math.Abs(e2.WindCnt) == 1 &&
                       (m_ClipType != ClipType.ctUnion || e2.WindCnt2 == 0))
                     {
                         AddOutPt(e1, pt);
                         if (e1Contributing) e1.OutIdx = Unassigned;
                     }
-                    else if ((e2.WindDelta == 0) && (Math.Abs(e1.WindCnt) == 1) &&
+                    else if ((e2.WindDelta == 0) && (System.Math.Abs(e1.WindCnt) == 1) &&
                       (m_ClipType != ClipType.ctUnion || e1.WindCnt2 == 0))
                     {
                         AddOutPt(e2, pt);
@@ -2591,13 +2591,13 @@ namespace SuperTiled2Unity.Editor.ClipperLib
             {
                 case PolyFillType.pftPositive: e1Wc = e1.WindCnt; break;
                 case PolyFillType.pftNegative: e1Wc = -e1.WindCnt; break;
-                default: e1Wc = Math.Abs(e1.WindCnt); break;
+                default: e1Wc = System.Math.Abs(e1.WindCnt); break;
             }
             switch (e2FillType)
             {
                 case PolyFillType.pftPositive: e2Wc = e2.WindCnt; break;
                 case PolyFillType.pftNegative: e2Wc = -e2.WindCnt; break;
-                default: e2Wc = Math.Abs(e2.WindCnt); break;
+                default: e2Wc = System.Math.Abs(e2.WindCnt); break;
             }
 
             if (e1Contributing && e2Contributing)
@@ -2642,13 +2642,13 @@ namespace SuperTiled2Unity.Editor.ClipperLib
                 {
                     case PolyFillType.pftPositive: e1Wc2 = e1.WindCnt2; break;
                     case PolyFillType.pftNegative: e1Wc2 = -e1.WindCnt2; break;
-                    default: e1Wc2 = Math.Abs(e1.WindCnt2); break;
+                    default: e1Wc2 = System.Math.Abs(e1.WindCnt2); break;
                 }
                 switch (e2FillType2)
                 {
                     case PolyFillType.pftPositive: e2Wc2 = e2.WindCnt2; break;
                     case PolyFillType.pftNegative: e2Wc2 = -e2.WindCnt2; break;
-                    default: e2Wc2 = Math.Abs(e2.WindCnt2); break;
+                    default: e2Wc2 = System.Math.Abs(e2.WindCnt2); break;
                 }
 
                 if (e1.PolyTyp != e2.PolyTyp)
@@ -3144,7 +3144,7 @@ namespace SuperTiled2Unity.Editor.ClipperLib
                 b2 = edge2.Bot.X - edge2.Bot.Y * edge2.Dx;
                 double q = (b2 - b1) / (edge1.Dx - edge2.Dx);
                 ip.Y = Round(q);
-                if (Math.Abs(edge1.Dx) < Math.Abs(edge2.Dx))
+                if (System.Math.Abs(edge1.Dx) < System.Math.Abs(edge2.Dx))
                     ip.X = Round(edge1.Dx * q + b1);
                 else
                     ip.X = Round(edge2.Dx * q + b2);
@@ -3156,7 +3156,7 @@ namespace SuperTiled2Unity.Editor.ClipperLib
                     ip.Y = edge1.Top.Y;
                 else
                     ip.Y = edge2.Top.Y;
-                if (Math.Abs(edge1.Dx) < Math.Abs(edge2.Dx))
+                if (System.Math.Abs(edge1.Dx) < System.Math.Abs(edge2.Dx))
                     ip.X = TopX(edge1, ip.Y);
                 else
                     ip.X = TopX(edge2, ip.Y);
@@ -3166,7 +3166,7 @@ namespace SuperTiled2Unity.Editor.ClipperLib
             {
                 ip.Y = edge1.Curr.Y;
                 //better to use the more vertical edge to derive X ...
-                if (Math.Abs(edge1.Dx) > Math.Abs(edge2.Dx))
+                if (System.Math.Abs(edge1.Dx) > System.Math.Abs(edge2.Dx))
                     ip.X = TopX(edge2, ip.Y);
                 else
                     ip.X = TopX(edge1, ip.Y);
@@ -3511,13 +3511,13 @@ namespace SuperTiled2Unity.Editor.ClipperLib
         {
             if (a1 < a2)
             {
-                if (b1 < b2) { Left = Math.Max(a1, b1); Right = Math.Min(a2, b2); }
-                else { Left = Math.Max(a1, b2); Right = Math.Min(a2, b1); }
+                if (b1 < b2) { Left = System.Math.Max(a1, b1); Right = System.Math.Min(a2, b2); }
+                else { Left = System.Math.Max(a1, b2); Right = System.Math.Min(a2, b1); }
             }
             else
             {
-                if (b1 < b2) { Left = Math.Max(a2, b1); Right = Math.Min(a1, b2); }
-                else { Left = Math.Max(a2, b2); Right = Math.Min(a1, b1); }
+                if (b1 < b2) { Left = System.Math.Max(a2, b1); Right = System.Math.Min(a1, b2); }
+                else { Left = System.Math.Max(a2, b2); Right = System.Math.Min(a1, b1); }
             }
             return Left < Right;
         }
@@ -4199,7 +4199,7 @@ namespace SuperTiled2Unity.Editor.ClipperLib
             //this function is more accurate when the point that's GEOMETRICALLY 
             //between the other 2 points is the one that's tested for distance.  
             //nb: with 'spikes', either pt1 or pt3 is geometrically between the other pts                    
-            if (Math.Abs(pt1.X - pt2.X) > Math.Abs(pt1.Y - pt2.Y))
+            if (System.Math.Abs(pt1.X - pt2.X) > System.Math.Abs(pt1.Y - pt2.Y))
             {
                 if ((pt1.X > pt2.X) == (pt1.X < pt3.X))
                     return DistanceFromLineSqrd(pt1, pt2, pt3) < distSqrd;
@@ -4462,7 +4462,7 @@ namespace SuperTiled2Unity.Editor.ClipperLib
         public double ArcTolerance { get; set; }
         public double MiterLimit { get; set; }
 
-        private const double two_pi = Math.PI * 2;
+        private const double two_pi = System.Math.PI * 2;
         private const double def_arc_tolerance = 0.25;
 
         public ClipperOffset(
@@ -4571,7 +4571,7 @@ namespace SuperTiled2Unity.Editor.ClipperLib
             double dy = (pt2.Y - pt1.Y);
             if ((dx == 0) && (dy == 0)) return new DoublePoint();
 
-            double f = 1 * 1.0 / Math.Sqrt(dx * dx + dy * dy);
+            double f = 1 * 1.0 / System.Math.Sqrt(dx * dx + dy * dy);
             dx *= f;
             dy *= f;
 
@@ -4604,14 +4604,14 @@ namespace SuperTiled2Unity.Editor.ClipperLib
             double y;
             if (ArcTolerance <= 0.0)
                 y = def_arc_tolerance;
-            else if (ArcTolerance > Math.Abs(delta) * def_arc_tolerance)
-                y = Math.Abs(delta) * def_arc_tolerance;
+            else if (ArcTolerance > System.Math.Abs(delta) * def_arc_tolerance)
+                y = System.Math.Abs(delta) * def_arc_tolerance;
             else
                 y = ArcTolerance;
             //see offset_triginometry2.svg in the documentation folder ...
-            double steps = Math.PI / Math.Acos(1 - y / Math.Abs(delta));
-            m_sin = Math.Sin(two_pi / steps);
-            m_cos = Math.Cos(two_pi / steps);
+            double steps = System.Math.PI / System.Math.Acos(1 - y / System.Math.Abs(delta));
+            m_sin = System.Math.Sin(two_pi / steps);
+            m_cos = System.Math.Cos(two_pi / steps);
             m_StepsPerRad = steps / two_pi;
             if (delta < 0.0) m_sin = -m_sin;
 
@@ -4838,7 +4838,7 @@ namespace SuperTiled2Unity.Editor.ClipperLib
             //cross product ...
             m_sinA = (m_normals[k].X * m_normals[j].Y - m_normals[j].X * m_normals[k].Y);
 
-            if (Math.Abs(m_sinA * m_delta) < 1.0)
+            if (System.Math.Abs(m_sinA * m_delta) < 1.0)
             {
                 //dot product ...
                 double cosA = (m_normals[k].X * m_normals[j].X + m_normals[j].Y * m_normals[k].Y);
@@ -4880,7 +4880,7 @@ namespace SuperTiled2Unity.Editor.ClipperLib
 
         internal void DoSquare(int j, int k)
         {
-            double dx = Math.Tan(Math.Atan2(m_sinA,
+            double dx = System.Math.Tan(System.Math.Atan2(m_sinA,
                 m_normals[k].X * m_normals[j].X + m_normals[k].Y * m_normals[j].Y) / 4);
             m_destPoly.Add(new IntPoint(
                 Round(m_srcPoly[j].X + m_delta * (m_normals[k].X - m_normals[k].Y * dx)),
@@ -4901,9 +4901,9 @@ namespace SuperTiled2Unity.Editor.ClipperLib
 
         internal void DoRound(int j, int k)
         {
-            double a = Math.Atan2(m_sinA,
+            double a = System.Math.Atan2(m_sinA,
             m_normals[k].X * m_normals[j].X + m_normals[k].Y * m_normals[j].Y);
-            int steps = Math.Max((int)Round(m_StepsPerRad * Math.Abs(a)), 1);
+            int steps = System.Math.Max((int)Round(m_StepsPerRad * System.Math.Abs(a)), 1);
 
             double X = m_normals[k].X, Y = m_normals[k].Y, X2;
             for (int i = 0; i < steps; ++i)

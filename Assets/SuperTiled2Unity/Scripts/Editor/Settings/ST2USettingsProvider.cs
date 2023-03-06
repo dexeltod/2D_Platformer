@@ -1,9 +1,11 @@
-﻿using UnityEditor;
+﻿using SuperTiled2Unity.Scripts.Editor.Config;
+using SuperTiled2Unity.Scripts.Editor.GUI;
+using SuperTiled2Unity.Scripts.Editor.Importers;
+using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
-
-#if UNITY_2019_1_OR_NEWER
 using UnityEngine.UIElements;
+#if UNITY_2019_1_OR_NEWER
 
 #elif UNITY_2018_3_OR_NEWER
 using UnityEngine.Experimental.UIElements;
@@ -11,7 +13,7 @@ using UnityEngine.Experimental.UIElements;
 #endif
 
 #if UNITY_2018_3_OR_NEWER
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Settings
 {
     public class ST2USettingsProvider : SettingsProvider
     {

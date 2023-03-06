@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using SuperTiled2Unity.Scripts.Math;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace SuperTiled2Unity
+namespace SuperTiled2Unity.Scripts
 {
     public class SuperTile : TileBase
     {

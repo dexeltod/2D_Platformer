@@ -1,6 +1,6 @@
 ﻿using UnityEditor;
 
-namespace SuperTiled2Unity.Editor
+namespace SuperTiled2Unity.Scripts.Editor.Importers
 {
     [CanEditMultipleObjects]
     [CustomEditor(typeof(WorldAssetImporter))]

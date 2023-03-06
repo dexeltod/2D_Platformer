@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SuperTiled2Unity
+namespace SuperTiled2Unity.Scripts
 {
     [Serializable]
     public class CustomProperty
