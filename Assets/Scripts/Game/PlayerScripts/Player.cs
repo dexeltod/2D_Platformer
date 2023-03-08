@@ -1,23 +1,25 @@
+using Game.PlayerScripts.Move;
+using Game.PlayerScripts.StateMachine;
 using UI_Scripts.Shop;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace Game.PlayerScripts
 {
-    [RequireComponent( typeof(Move.PhysicsMovement))]
+    [RequireComponent( typeof(PhysicsMovement))]
     public class Player : MonoBehaviour
     {
-        private Move.PhysicsMovement _physicsMovement;
+        private PhysicsMovement _physicsMovement;
         private float _lookDirection = -1;
         public float LookDirection => _lookDirection;
 
-        private StateMachine.StateService _stateService;
+        private StateService _stateService;
 
         public event UnityAction<int, ItemScriptableObject> Bought;
 
         private void Awake()
         {
-            _physicsMovement = GetComponent<Move.PhysicsMovement>();
+            _physicsMovement = GetComponent<PhysicsMovement>();
         }
 
         private void OnEnable()

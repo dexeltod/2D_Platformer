@@ -13,12 +13,12 @@ namespace Game.PlayerScripts.StateMachine.Transitions
 			_physicsMovement = physicsMovement;
 		}
 
-		public override void Enable()
+		public override void OnEnable()
 		{
 			_physicsMovement.Fallen += OnFall;
 		}
 
-		public override void Disable()
+		public override void OnDisable()
 		{
 			_physicsMovement.Fallen -= OnFall;
 		}

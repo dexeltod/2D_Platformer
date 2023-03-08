@@ -27,12 +27,12 @@ namespace Game.PlayerScripts.StateMachine.Transitions
             _inputService.VerticalButtonUsed -= OnVerticalButtonUsed;
         }
 
-        public override void Enable()
+        public override void OnEnable()
         {
             OnGroundedAndRun(_physicsMovement.IsGrounded);
         }
 
-        public override void Disable()
+        public override void OnDisable()
         {
         }
 

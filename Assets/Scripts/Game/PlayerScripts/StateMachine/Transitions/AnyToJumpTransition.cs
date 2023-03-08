@@ -8,33 +8,35 @@ namespace Game.PlayerScripts.StateMachine.Transitions
 	{
 		private readonly IInputService _inputService;
 		private readonly GroundChecker _groundChecker;
+		private readonly PhysicsMovement _physicsMovement;
 
 		public AnyToJumpTransition(StateService stateService, IInputService inputService,
-			GroundChecker groundChecker) :
+			GroundChecker groundChecker, PhysicsMovement physicsMovement) :
 			base(stateService)
 		{
 			_inputService = inputService;
 			_groundChecker = groundChecker;
-			
+			_physicsMovement = physicsMovement;
 		}
 
-		~AnyToJumpTransition()
-		{
-			
-		}
-
-		public override void Enable()
+		public override void OnEnable()
 		{
 			_inputService.JumpButtonUsed += TryJump;
 		}
 
-		public override void Disable()
+		public override void OnDisable()
 		{
 			_inputService.JumpButtonUsed -= TryJump;
 		}
 
 		private void TryJump()
 		{
+			if (_physicsMovement.IsGrounded == false && _physicsMovement.IsTouchWall)
+			{
+				MoveNextState();
+				return;
+			}
+			
 			if (_groundChecker.IsGrounded == true)
 				MoveNextState();
 		}

@@ -14,6 +14,7 @@ namespace Infrastructure.GameLoading
 	public class PlayerStatesFactory
 	{
 		private readonly GroundChecker _groundChecker;
+		private readonly WallCheckTrigger _wallCheckTrigger;
 		private readonly IInputService _inputService;
 		private readonly Animator _animator;
 		private readonly StateService _stateService;
@@ -29,16 +30,19 @@ namespace Infrastructure.GameLoading
 		private IStateTransition _anyToIdleTransition;
 		private IStateTransition _anyToJumpTransition;
 		private IStateTransition _anyToFallTransition;
-		
+		private IStateTransition _anyToWallSlideTransition;
+
 		private IStateTransition _attackToRunTransition;
 		private IStateTransition _attackToIdleTransition;
 		private IStateTransition _attackToFallTransition;
 
-		public PlayerStatesFactory(GroundChecker groundChecker, IInputService inputService, Animator animator,
+		public PlayerStatesFactory(GroundChecker groundChecker, WallCheckTrigger wallCheckTrigger,
+			IInputService inputService, Animator animator,
 			AnimationHasher hasher, AnimatorFacade animatorFacade, PhysicsMovement physicsMovement,
 			PlayerWeaponList playerWeaponList)
 		{
 			_groundChecker = groundChecker;
+			_wallCheckTrigger = wallCheckTrigger;
 			_inputService = inputService;
 			_animator = animator;
 			_animationHasher = hasher;
@@ -50,22 +54,19 @@ namespace Infrastructure.GameLoading
 			_abstractWeapon = _playerWeaponList.GetEquippedWeapon();
 		}
 
-		
-		public void CreateStateMachineAndSetState()
-		{
+		public void CreateStateMachineAndSetState() => 
 			new StateMachine(_stateService.Get<IdleState>());
-		}
 
 		public void CreateTransitions()
 		{
-			_anyToIdleTransition =
-				new AnyToIdleTransition(_stateService, _inputService, _physicsMovement, _groundChecker);
-			_anyToRunTransition =
-				new AnyToRunTransition(_stateService, _inputService, _physicsMovement, _groundChecker);
+			_anyToIdleTransition = new AnyToIdleTransition(_stateService, _inputService, _physicsMovement, _groundChecker);
+			_anyToRunTransition = new AnyToRunTransition(_stateService, _inputService, _physicsMovement, _groundChecker);
 			_anyToFallTransition = new AnyToFallTransition(_stateService, _physicsMovement);
-			_anyToJumpTransition = new AnyToJumpTransition(_stateService, _inputService, _groundChecker);
+			_anyToJumpTransition = new AnyToJumpTransition(_stateService, _inputService, _groundChecker, _physicsMovement);
 			_anyToAttackTransition = new AnyToAttackTransition(_stateService, _inputService, _groundChecker);
 			_anyToDeadTransition = new AnyToDeadTransition(_stateService);
+
+			_anyToWallSlideTransition = new AnyToWallSlideTransition(_stateService, _wallCheckTrigger, _groundChecker);
 
 			_attackToRunTransition = new AttackToRunTransition(_stateService, _abstractWeapon, _physicsMovement);
 			_attackToIdleTransition = new AttackToIdleTransition(_stateService, _abstractWeapon, _physicsMovement);
@@ -80,8 +81,27 @@ namespace Infrastructure.GameLoading
 			CreateJumpState();
 			CreateAttackState();
 			CreateDeadState();
+			CreateSlideState();
+			CreateWallSlideState();
 		}
 
+		private void CreateWallSlideState()
+		{
+			_stateService.Register(new WallSlideState(_inputService, _animator, _animationHasher,
+				new[]
+				{
+					_anyToJumpTransition,
+					_anyToIdleTransition,
+					_anyToFallTransition,
+				},
+				_animatorFacade, _physicsMovement));
+		}
+
+		private void CreateSlideState()
+		{
+			_stateService.Register(new SlideState(_inputService, _animator, _animationHasher,
+				new IStateTransition[] { }));
+		}
 
 		private void CreateIdleState()
 		{
@@ -123,19 +143,21 @@ namespace Infrastructure.GameLoading
 				{
 					_anyToIdleTransition,
 					_anyToRunTransition,
+					_anyToWallSlideTransition,
 				},
 				_physicsMovement));
 		}
 
 		private void CreateJumpState()
 		{
-			_stateService.Register(new JumpState(_physicsMovement, _inputService, _animator, _animationHasher,
+			_stateService.Register(new JumpState(_physicsMovement, _inputService, _wallCheckTrigger, _animator, _animationHasher,
 				_animatorFacade,
 				transitions: new[]
 				{
 					_anyToIdleTransition,
 					_anyToRunTransition,
 					_anyToFallTransition,
+					_anyToWallSlideTransition,
 				}));
 		}
 
@@ -162,7 +184,5 @@ namespace Infrastructure.GameLoading
 				)
 			);
 		}
-
-		
 	}
 }

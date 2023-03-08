@@ -16,11 +16,11 @@ namespace Game.PlayerScripts.StateMachine
 
 		public event Action<IState> StateChanged;
 
-		public virtual void Enable()
+		public virtual void OnEnable()
 		{
 		}
 
-		public virtual void Disable()
+		public virtual void OnDisable()
 		{
 		}
 	}

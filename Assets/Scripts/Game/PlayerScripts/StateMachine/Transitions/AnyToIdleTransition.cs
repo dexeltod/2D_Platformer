@@ -29,11 +29,11 @@ namespace Game.PlayerScripts.StateMachine.Transitions
 			_inputService.VerticalButtonCanceled -= OnStay;
 		}
 
-		public override void Enable()
+		public override void OnEnable()
 		{
 		}
 
-		public override void Disable()
+		public override void OnDisable()
 		{
 		}
 

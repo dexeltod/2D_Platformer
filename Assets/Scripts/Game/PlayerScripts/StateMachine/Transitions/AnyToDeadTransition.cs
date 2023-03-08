@@ -6,11 +6,11 @@
 		{
 		}
 
-		public override void Enable()
+		public override void OnEnable()
 		{
 		}
 
-		public override void Disable()
+		public override void OnDisable()
 		{
 		}
 

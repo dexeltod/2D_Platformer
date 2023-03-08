@@ -52,7 +52,11 @@ namespace Game.Enemy.StateMachine.Behaviours
             _animator.Play(_animationHasher.RunHash);
         }
 
-        private void OnDisable() => _animator.StopPlayback();
+        private void OnDisable()
+        {
+	        _rigidbody2D.position += Vector2.zero;
+	        _animator.StopPlayback();
+        }
 
         private void FixedUpdate()
         {

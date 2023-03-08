@@ -24,11 +24,11 @@ namespace Game.PlayerScripts.StateMachine.Transitions.AttackTo
 			_abstractWeapon.AttackAnimationEnded -= ChangeState;
 		}
 
-		public override void Enable()
+		public override void OnEnable()
 		{
 		}
 
-		public override void Disable()
+		public override void OnDisable()
 		{
 		}
 

@@ -28,6 +28,7 @@ namespace Infrastructure.GameLoading.Factory
 		private GroundChecker _groundChecker;
 		private AnimatorFacade _animatorFacade;
 		private PlayerStatesFactory _playerStatesFactory;
+		private WallCheckTrigger _wallCheckTrigger;
 
 		public GameObject MainCharacter { get; private set; }
 
@@ -74,6 +75,8 @@ namespace Infrastructure.GameLoading.Factory
 			_groundChecker = MainCharacter.GetComponent<GroundChecker>();
 			_playerMoney = MainCharacter.GetComponent<PlayerMoney>();
 			_animatorFacade = MainCharacter.GetComponent<AnimatorFacade>();
+			
+			_wallCheckTrigger = MainCharacter.GetComponentInChildren<WallCheckTrigger>();
 		}
 
 		private void NullifyComponents()
@@ -85,6 +88,7 @@ namespace Infrastructure.GameLoading.Factory
 			_groundChecker = null;
 			_playerMoney = null;
 			_animatorFacade = null;
+			_wallCheckTrigger = null;
 			
 			GC.Collect();
 		}
@@ -97,7 +101,7 @@ namespace Infrastructure.GameLoading.Factory
 				GC.Collect();
 			}
 
-			_playerStatesFactory = new PlayerStatesFactory(_groundChecker, _inputService, _animator, _animationHasher,
+			_playerStatesFactory = new PlayerStatesFactory(_groundChecker, _wallCheckTrigger, _inputService, _animator, _animationHasher,
 				_animatorFacade,
 				_physicsMovement, _playerWeaponList);
 

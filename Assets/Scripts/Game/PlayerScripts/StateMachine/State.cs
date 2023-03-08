@@ -33,7 +33,7 @@ namespace Game.PlayerScripts.StateMachine
 				transition.StateChanged += OnStateChanging;
 
 			foreach (var transition in _transitions)
-				transition.Enable();
+				transition.OnEnable();
 		}
 
 		public void Exit()
@@ -42,7 +42,7 @@ namespace Game.PlayerScripts.StateMachine
 				transition.StateChanged -= OnStateChanging;
 
 			foreach (var transition in _transitions)
-				transition.Disable();
+				transition.OnDisable();
 
 			OnExit();
 		}
