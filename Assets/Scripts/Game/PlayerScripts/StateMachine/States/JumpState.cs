@@ -10,27 +10,33 @@ namespace Game.PlayerScripts.StateMachine.States
 		private readonly PhysicsMovement _physicsMovement;
 		private readonly WallCheckTrigger _wallCheckTrigger;
 		private readonly AnimatorFacade _animatorFacade;
+		private readonly GroundChecker _groundChecker;
 
-		public JumpState(PhysicsMovement physicsMovement, IInputService inputService, WallCheckTrigger wallCheckTrigger, Animator animator,
-			AnimationHasher hasher, AnimatorFacade animatorFacade, IStateTransition[] transitions)
+		public JumpState(PhysicsMovement physicsMovement, IInputService inputService, WallCheckTrigger wallCheckTrigger,
+			Animator animator,
+			AnimationHasher hasher, AnimatorFacade animatorFacade, GroundChecker groundChecker,
+			IStateTransition[] transitions)
 			: base(inputService, animator, hasher, transitions)
 		{
 			_physicsMovement = physicsMovement;
 			_wallCheckTrigger = wallCheckTrigger;
 			_animatorFacade = animatorFacade;
+			_groundChecker = groundChecker;
 		}
 
 		protected override void OnEnter()
 		{
-			_animatorFacade.Play(AnimationHasher.JumpHash);
-			
-			if (_wallCheckTrigger.IsWallTouched)
+			if (_animatorFacade != null)
+				_animatorFacade.Play(AnimationHasher.JumpHash);
+
+			if (_wallCheckTrigger.IsWallTouched && _groundChecker.IsGrounded == false)
 			{
 				_physicsMovement.DoWallJump();
 				return;
 			}
-			
-			_physicsMovement.Jump();
+
+			if (_physicsMovement != null)
+				_physicsMovement.Jump();
 		}
 	}
 }

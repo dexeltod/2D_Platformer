@@ -4,12 +4,13 @@ using Infrastructure.GameLoading;
 using Infrastructure.Services;
 using Infrastructure.States;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Game.Environment.EnterTriggers.Enter
 {
 	public class EnterInLocationByButtonTrigger : MonoBehaviour
 	{
-		[SerializeField] private string _levelName;
+		[FormerlySerializedAs("_levelConfig")] [SerializeField] private SceneConfig _sceneConfig;
 
 		public event Action<bool> InTriggerEntered;
 
@@ -33,7 +34,7 @@ namespace Game.Environment.EnterTriggers.Enter
 
 		private void OnChangeLevel()
 		{
-			_gameStateMachine.Enter<SceneLoadState, string>(_levelName);
+			_gameStateMachine.Enter<SceneLoadState, string, bool>(_sceneConfig.Name, _sceneConfig.IsStopMusicBetweenScenes, _sceneConfig.Music);
 		}
 
 		private void OnTriggerExit2D(Collider2D collision)

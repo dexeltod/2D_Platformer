@@ -108,7 +108,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.12795046, y: 0.79748595}
+  m_Offset: {x: -0.1582216, y: 0.79748595}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -119,7 +119,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.03538896, y: 0.22041655}
+  m_Size: {x: 0.09593128, y: 0.22041655}
   m_EdgeRadius: 0
 --- !u!114 &4549560561326365396
 MonoBehaviour:
@@ -460,7 +460,7 @@ MonoBehaviour:
   - {x: 0.030651003, y: 0.6976721, z: 0}
   m_ShapePathHash: -1063575435
   m_Mesh: {fileID: 0}
-  m_InstanceId: 121838
+  m_InstanceId: 89112
 --- !u!114 &3334711396594127323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -552,9 +552,9 @@ MonoBehaviour:
   _verticalVelocityLimit: 7
   _racingSpeed: 0.05
   _maxMoveSpeed: 4
-  _wallJumpForce: 7
+  _wallJumpForce: 8
   _maxWallSlideSpeed: 0.5
-  _wallSlideVelocity: 0.01
+  _wallSlideVelocity: 0.005
   _onWallStayTime: 0.5
 --- !u!114 &1359097841
 MonoBehaviour:

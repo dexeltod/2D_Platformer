@@ -1,5 +1,4 @@
 ﻿using System;
-using Infrastructure.Constants;
 using Infrastructure.Data;
 using Infrastructure.Data.PersistentProgress;
 using Infrastructure.Services.SaveLoadService;
@@ -28,7 +27,9 @@ namespace Infrastructure.GameLoading
 
 		public void Exit()
 		{
+			
 		}
+			
 
 		private void OnProgressLoaded()
 		{
@@ -42,7 +43,7 @@ namespace Infrastructure.GameLoading
 
 		private GameProgress CreateNewProgress()
 		{
-			GameProgress gameProgress = new GameProgress(ConstantNames.FirstLevel);
+			GameProgress gameProgress = new GameProgress(ConstantNames.ConstantNames.FirstLevel);
 			
 			LoadWeaponProgress(gameProgress, OnProgressLoaded);
 			return gameProgress;

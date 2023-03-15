@@ -151,7 +151,7 @@ namespace Infrastructure.GameLoading
 		private void CreateJumpState()
 		{
 			_stateService.Register(new JumpState(_physicsMovement, _inputService, _wallCheckTrigger, _animator, _animationHasher,
-				_animatorFacade,
+				_animatorFacade, _groundChecker,
 				transitions: new[]
 				{
 					_anyToIdleTransition,

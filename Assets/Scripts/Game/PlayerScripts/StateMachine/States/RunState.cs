@@ -29,7 +29,8 @@ namespace Game.PlayerScripts.StateMachine.States
 
 		protected override void OnEnter()
 		{
-			_animatorFacade.Play(AnimationHasher.RacingHash);
+			if (_animatorFacade != null)
+				_animatorFacade.Play(AnimationHasher.RacingHash);
 		}
 
 		private void SetFalseRunBool()

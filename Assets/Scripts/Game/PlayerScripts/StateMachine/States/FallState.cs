@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Game.PlayerScripts.StateMachine.States
 {
-	public sealed  class FallState : State
+	public sealed class FallState : State
 	{
 		private readonly AnimatorFacade _animatorFacade;
 		private readonly PhysicsMovement _physicsMovement;
@@ -30,7 +30,10 @@ namespace Game.PlayerScripts.StateMachine.States
 			_animatorFacade.Play(AnimationHasher.FallHash);
 		}
 
-		private void OnButtonCanceled() => 
-			_physicsMovement.SetMoveDirection(0);
+		private void OnButtonCanceled()
+		{
+			if (_physicsMovement != null)
+				_physicsMovement.SetMoveDirection(0);
+		}
 	}
 }

@@ -3,12 +3,12 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Levels/Level_2_TileMap.tmx",
+    "activeFile": "Levels/Level_1_TileMap.tmx",
     "automapping.whileDrawing": true,
     "expandedProjectPaths": [
         ".",
-        "Levels/Rules",
-        "Levels"
+        "Levels",
+        "Levels/Rules"
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
@@ -17,7 +17,7 @@
         },
         ":/automap-tiles.tsx": {
             "dynamicWrapping": false,
-            "scaleInDock": 0.5,
+            "scaleInDock": 1,
             "scaleInEditor": 1
         },
         "Level_3_TileMap.tmx": {
@@ -29,27 +29,27 @@
             }
         },
         "Levels/Level_1_TileMap.tmx": {
-            "scale": 0.33,
-            "selectedLayer": 3,
+            "scale": 1.5,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 1021.2121212121212,
-                "y": 768.1818181818181
+                "x": 750,
+                "y": 248
             }
         },
         "Levels/Level_2_TileMap.tmx": {
-            "scale": 0.5,
+            "scale": 1.5,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 2944,
-                "y": -710
+                "x": 1666,
+                "y": 200.66666666666669
             }
         },
         "Levels/Level_3_TileMap.tmx": {
             "scale": 0.33,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 3854.545454545455,
-                "y": 10253.030303030304
+                "x": 3854.545454545454,
+                "y": 10251.515151515152
             }
         },
         "Levels/Road.tsx": {
@@ -59,18 +59,18 @@
         },
         "Levels/Rules/Road-random-rules.tmx": {
             "scale": 0.015625,
-            "selectedLayer": 2,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 3200,
-                "y": 3232
+                "x": 9472,
+                "y": 11712
             }
         },
         "Levels/Rules/autotile_rules.tmx": {
-            "scale": 0.5,
-            "selectedLayer": 1,
+            "scale": 3,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 1024,
-                "y": 1023
+                "x": 551,
+                "y": 215.66666666666666
             }
         },
         "Levels/Rules/autotile_rules.tmx#Road": {
@@ -109,7 +109,8 @@
             }
         },
         "Street.tsx": {
-            "scaleInDock": 1
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         },
         "TileMap.tmx": {
             "scale": 0.5,
@@ -133,7 +134,6 @@
         "Levels/Level_3_TileMap.tmx",
         "Levels/Level_1_TileMap.tmx",
         "Levels/Rules/autotile_rules.tmx",
-        "Levels/Rules/Road-random-rules.tmx",
         "Road.tsx",
         "Levels/Level_2_TileMap.tmx"
     ],
@@ -141,17 +141,17 @@
     "property.type": "string",
     "recentFiles": [
         "Levels/Level_3_TileMap.tmx",
-        "Levels/Level_1_TileMap.tmx",
-        "Levels/Rules/autotile_rules.tmx",
-        "Levels/Rules/Road-random-rules.tmx",
-        "Road.tsx",
         "Levels/Level_2_TileMap.tmx",
+        "Road.tsx",
+        "Levels/Rules/autotile_rules.tmx",
+        "Levels/Level_1_TileMap.tmx",
+        "Street.tsx",
+        "Levels/Rules/Road-random-rules.tmx",
         "TileMap.tmx",
         "Road-random.tsx",
         "Levels/Road.tsx",
         "Levels/Street.tsx",
-        "Level_3_TileMap.tmx",
-        ":/automap-tiles.tsx"
+        "Level_3_TileMap.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

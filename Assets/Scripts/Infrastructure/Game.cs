@@ -5,11 +5,13 @@ namespace Infrastructure
 {
     public class Game
     {
-        public readonly GameStateMachine StateMachine;
+	    private readonly SoundSetter _soundSetter;
+	    public readonly GameStateMachine StateMachine;
 
-        public Game(ICoroutineRunner coroutineRunner, LoadingCurtain loadingCurtain)
+        public Game(ICoroutineRunner coroutineRunner, LoadingCurtain loadingCurtain, SoundSetter soundSetter)
         {
-            StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), loadingCurtain, ServiceLocator.Container);
+	        _soundSetter = soundSetter;
+	        StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), loadingCurtain, ServiceLocator.Container, _soundSetter);
         }
     }
 }

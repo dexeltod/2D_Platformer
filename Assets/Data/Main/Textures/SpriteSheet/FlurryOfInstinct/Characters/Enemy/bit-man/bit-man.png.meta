@@ -1010,7 +1010,9 @@ TextureImporter:
     indices: 
     edges: []
     weights: []
-    secondaryTextures: []
+    secondaryTextures:
+    - texture: {fileID: 2800000, guid: b99e11a8f20502141acf49ab3cb6e588, type: 3}
+      name: _NormalMap
     nameFileIdTable:
       bit-man_13: -1983175454
       bit-man_23: 1099266184

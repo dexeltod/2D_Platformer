@@ -259,6 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa4b7ea5050455385ede731c20d308f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _levelConfig: {fileID: 11400000, guid: 30157dafee49fed4290e8bae0f3105b3, type: 2}
   _buttonView: {fileID: 111376711}
 --- !u!114 &682221448 stripped
 MonoBehaviour:
@@ -646,6 +647,10 @@ PrefabInstance:
     - target: {fileID: 4091578107817025133, guid: e9ceed9dbb9b3b24b8c66eb9310eedad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4091578108150252736, guid: e9ceed9dbb9b3b24b8c66eb9310eedad, type: 3}
+      propertyPath: m_Name
+      value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 4091578108150252737, guid: e9ceed9dbb9b3b24b8c66eb9310eedad, type: 3}
       propertyPath: m_AnchorMax.y

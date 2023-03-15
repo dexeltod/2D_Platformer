@@ -1,7 +1,7 @@
-﻿using Infrastructure.Constants;
-using Infrastructure.GameLoading;
+﻿using Infrastructure.GameLoading;
 using Infrastructure.GameLoading.AssetManagement;
 using Infrastructure.GameLoading.Factory;
+using Infrastructure.Services;
 using UI_Scripts.Curtain;
 using UnityEngine;
 
@@ -18,8 +18,9 @@ namespace Infrastructure.States
 		private readonly ICameraFactory _cameraFactory;
 		
 		private readonly ISceneLoad _sceneLoad;
-		
-		private GameObject InitialPoint => GameObject.FindWithTag(ConstantNames.PlayerSpawnPointTag);
+		private ISoundService _soundSetter;
+
+		private GameObject InitialPoint => GameObject.FindWithTag(ConstantNames.ConstantNames.PlayerSpawnPointTag);
 
 		public SceneLoadState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain,
 			IPlayerFactory playerFactory, IUIFactory uiFactory, ISceneLoad sceneLoad, ICameraFactory cameraFactory)
@@ -38,7 +39,7 @@ namespace Infrastructure.States
 			var provider = ServiceLocator.Container.GetSingle<IAssetProvider>();
 			provider.CleanUp();
 			_loadingCurtain.Show();
-		
+			_soundSetter = ServiceLocator.Container.GetSingle<ISoundService>();
 			_sceneLoader.Load(levelName, OnLoaded);
 		}
 

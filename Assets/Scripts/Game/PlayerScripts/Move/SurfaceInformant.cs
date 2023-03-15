@@ -38,7 +38,7 @@ namespace Game.PlayerScripts.Move
             _capsuleCollider = GetComponent<CapsuleCollider2D>();
             _capsuleColliderSize = _capsuleCollider.size;
         }
-
+        
         public Vector2 GetProjectionAlongNormal(Vector2 direction)
         {
             CheckAngleSurface();

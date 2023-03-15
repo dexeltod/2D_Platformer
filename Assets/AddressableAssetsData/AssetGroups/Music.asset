@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Music
+  m_EditorClassIdentifier: 
+  m_GroupName: Music
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 85572d68bb4121646b6bcb7c222508fb
+  m_SerializeEntries:
+  - m_GUID: 3fe1960b7e9aed741ad818a779a5bf9e
+    m_Address: Dexeltod - night city
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ff935699d2812dc44a9e7034a358c705
+    m_Address: Dexeltod - rest
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 16ca753ccb6322f4eac684e464af1aad, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 1626071eb93e3e9469ef7a4ea8c7b7e7, type: 2}
+    - {fileID: 11400000, guid: 87dbca32f778a8b4cb2e37cdde0397d2, type: 2}

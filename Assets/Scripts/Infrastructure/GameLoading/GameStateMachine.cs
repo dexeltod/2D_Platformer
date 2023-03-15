@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Infrastructure.Data.PersistentProgress;
 using Infrastructure.GameLoading.Factory;
+using Infrastructure.Services;
 using Infrastructure.Services.SaveLoadService;
 using Infrastructure.States;
 using UI_Scripts.Curtain;
@@ -10,20 +11,26 @@ namespace Infrastructure.GameLoading
 {
 	public class GameStateMachine : IGameStateMachine
 	{
+		private readonly SoundSetter _soundSetter;
+		private readonly ISoundService _soundService;
 		private readonly Dictionary<Type, IExitState> _states;
+
+		private string _currentMusicName;
 		private IExitState _activeState;
 
-		public GameStateMachine(SceneLoader sceneLoader, LoadingCurtain loadingCurtain, ServiceLocator serviceLocator)
+		public GameStateMachine(SceneLoader sceneLoader, LoadingCurtain loadingCurtain,
+			ServiceLocator serviceLocator, SoundSetter soundSetter)
 		{
+			_soundSetter = soundSetter;
 			_states = new Dictionary<Type, IExitState>
 			{
-				[typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, serviceLocator),
-				
-				[typeof(MenuState)] = new MenuState(this, sceneLoader, loadingCurtain),
+				[typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, serviceLocator, _soundSetter),
 
 				[typeof(LoadProgressState)] = new LoadProgressState(this,
 					serviceLocator.GetSingle<IPersistentProgressService>(),
 					serviceLocator.GetSingle<ISaveLoadService>()),
+
+				[typeof(MenuState)] = new MenuState(sceneLoader, loadingCurtain),
 
 				[typeof(SceneLoadState)] = new SceneLoadState(this, sceneLoader, loadingCurtain,
 					serviceLocator.GetSingle<IPlayerFactory>(),
@@ -33,6 +40,8 @@ namespace Infrastructure.GameLoading
 
 				[typeof(GameLoopState)] = new GameLoopState(this),
 			};
+
+			_soundService = serviceLocator.GetSingle<ISoundService>();
 		}
 
 		public void Enter<TState>() where TState : class, IState
@@ -43,6 +52,21 @@ namespace Infrastructure.GameLoading
 
 		public void Enter<TState, TPayload>(TPayload payload) where TState : class, IPayloadState<TPayload>
 		{
+			TState state = ChangeState<TState>();
+			state.Enter(payload);
+		}
+
+		public void Enter<TState, TPayload, T>(TPayload payload, bool isLevelNameIsStopMusicBetweenScenes,
+			string musicName) where TState : class, IPayloadState<TPayload>
+		{
+			if (isLevelNameIsStopMusicBetweenScenes)
+				_soundService.Stop();
+
+			if (musicName == _currentMusicName)
+				return;
+
+			_soundService.Set(musicName);
+
 			TState state = ChangeState<TState>();
 			state.Enter(payload);
 		}

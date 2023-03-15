@@ -2,14 +2,16 @@
 using Infrastructure.GameLoading;
 using Infrastructure.States;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace UI_Scripts.ViewModel
 {
 	[RequireComponent(typeof(MenuButtonView))]
 	public class MenuButtonViewModel : MonoBehaviour
 	{
-		private IGameStateMachine _gameStateMachine;
+		[FormerlySerializedAs("_levelConfig")] [SerializeField] private SceneConfig _sceneConfig;
 		[SerializeField] private MenuButtonView _buttonView;
+		private IGameStateMachine _gameStateMachine;
 
 		private void Awake()
 		{
@@ -28,7 +30,7 @@ namespace UI_Scripts.ViewModel
 
 		private void PlayButtonPressed()
 		{
-			_gameStateMachine.Enter<SceneLoadState, string>("Level_1");
+			_gameStateMachine.Enter<SceneLoadState, string, bool>(_sceneConfig.Name, _sceneConfig.IsStopMusicBetweenScenes, _sceneConfig.Music);
 		}
 	}
 }

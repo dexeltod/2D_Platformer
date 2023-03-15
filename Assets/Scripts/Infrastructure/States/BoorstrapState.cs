@@ -1,12 +1,9 @@
-﻿using Infrastructure.Constants;
-using Infrastructure.Data.PersistentProgress;
+﻿using Infrastructure.Data.PersistentProgress;
 using Infrastructure.GameLoading;
 using Infrastructure.GameLoading.AssetManagement;
 using Infrastructure.GameLoading.Factory;
 using Infrastructure.Services;
 using Infrastructure.Services.SaveLoadService;
-using UI_Scripts.Curtain;
-using UI_Scripts.ViewModel;
 
 namespace Infrastructure.States
 {
@@ -14,10 +11,12 @@ namespace Infrastructure.States
 	{
 		private readonly GameStateMachine _gameStateMachine;
 		private readonly SceneLoader _sceneLoader;
+		private readonly SoundSetter _soundSetter;
 		private readonly ServiceLocator _serviceLocator;
 
-		public BootstrapState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, ServiceLocator serviceLocator)
+		public BootstrapState(GameStateMachine gameStateMachine, SceneLoader sceneLoader,ServiceLocator serviceLocator, SoundSetter soundSetter)
 		{
+			_soundSetter = soundSetter;
 			_gameStateMachine = gameStateMachine;
 			_sceneLoader = sceneLoader;
 			_serviceLocator = serviceLocator;
@@ -26,7 +25,7 @@ namespace Infrastructure.States
 
 		public void Enter()
 		{
-			_sceneLoader.Load(ConstantNames.MenuScene, OnSceneLoaded);
+			_sceneLoader.Load(ConstantNames.ConstantNames.MenuScene, OnSceneLoaded);
 		}
 
 		public void Exit()
@@ -40,7 +39,8 @@ namespace Infrastructure.States
         {
 			_serviceLocator.RegisterAsSingle<IGameStateMachine>(_gameStateMachine);
 			_serviceLocator.RegisterAsSingle<IPersistentProgressService>(new PersistentProgressService());
-			_serviceLocator.RegisterAsSingle<IAssetProvider>(new AssetProvider());
+			 _serviceLocator.RegisterAsSingle<IAssetProvider>(new AssetProvider());
+	        _serviceLocator.RegisterAsSingle<ISoundService>(new SoundService(_soundSetter, _serviceLocator.GetSingle<IAssetProvider>()));
 			
 	        SceneLoadInformer sceneLoadInformer = new SceneLoadInformer();
 	        CameraFactory cameraFactory = new CameraFactory();

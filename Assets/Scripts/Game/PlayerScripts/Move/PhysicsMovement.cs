@@ -50,7 +50,7 @@ namespace Game.PlayerScripts.Move
 		private float _defaultGravityScale;
 
 		private Coroutine _currentWallSlideRoutine;
-		
+		private Coroutine _stopVerticalVelocityRoutine;
 
 		public bool IsTouchWall { get; private set; }
 		public Transform FeetPosition => _feetPosition;
@@ -112,7 +112,14 @@ namespace Game.PlayerScripts.Move
 			if (direction != 0)
 				_currentRunCoroutine = StartCoroutine(StartRunRoutine());
 
+			NullifyHorizontalVelocity();
 			_movementDirection = new Vector2(direction, ZeroVerticalDirection);
+		}
+
+		private void NullifyHorizontalVelocity()
+		{
+			if (_rigidbody2D != null)
+				_rigidbody2D.velocity = new Vector2(0, _rigidbody2D.velocity.y);
 		}
 
 		public void DoWallJump()
@@ -120,16 +127,15 @@ namespace Game.PlayerScripts.Move
 			if (IsGrounded == false && IsTouchWall == false)
 				return;
 
-			float rotateDirection = _isRotate ? 0.5f : -0.5f;
+			float rotateDirection = _isRotate ? 0.2f : -0.2f;
 
 			_isRotate = !_isRotate;
 			Vector2 direction = new Vector2(rotateDirection, 0.9f);
-			
-			_finalOffset += direction;
+
+			_rigidbody2D.AddForce(direction * _wallJumpForce, ForceMode2D.Impulse);
 			_maxJumpStopCount++;
-			
 		}
-		
+
 		public void Jump()
 		{
 			if (IsGrounded == false && IsTouchWall == false)
@@ -167,6 +173,7 @@ namespace Game.PlayerScripts.Move
 			CheckFalling();
 			CheckHorizontalDirection();
 			CheckRunning();
+
 			_rigidbody2D.position += _finalOffset * Time.deltaTime;
 		}
 
@@ -198,7 +205,6 @@ namespace Game.PlayerScripts.Move
 
 			_rigidbody2D.velocity = Vector2.zero;
 			_rigidbody2D.gravityScale = 0;
-			_movementDirection.y = 0;
 
 			float wallStayTime = Time.time + _onWallStayTime;
 
@@ -209,16 +215,17 @@ namespace Game.PlayerScripts.Move
 				if (Time.time > wallStayTime)
 					isWallStay = false;
 
-				yield return fixedUpdateTime;
+				yield return null;
 			}
 
 			while (IsTouchWall == true)
 			{
+				NullifyHorizontalVelocity();
 				_rigidbody2D.gravityScale =
 					Mathf.MoveTowards(_rigidbody2D.gravityScale, _defaultGravityScale, _wallSlideVelocity);
-				yield return fixedUpdateTime;
+				yield return null;
 			}
-			
+
 			_rigidbody2D.gravityScale = _defaultGravityScale;
 		}
 
@@ -272,7 +279,5 @@ namespace Game.PlayerScripts.Move
 				Gizmos.DrawLine(transform.position, (Vector2)transform.position + _finalOffset);
 			}
 		}
-
-		
 	}
 }
