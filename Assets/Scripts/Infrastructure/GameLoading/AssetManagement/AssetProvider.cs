@@ -29,6 +29,9 @@ namespace Infrastructure.GameLoading.AssetManagement
 
 		public async Task<T> LoadAsync<T>(string address) where T : class
 		{
+			if (address == string.Empty)
+				return null;
+			
 			if (_completedCache.TryGetValue(address, out AsyncOperationHandle completedHandle))
 				return completedHandle.Result as T;
 

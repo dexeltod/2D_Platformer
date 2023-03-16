@@ -30,6 +30,7 @@ namespace UI_Scripts.ViewModel
 
 		private void PlayButtonPressed()
 		{
+			
 			_gameStateMachine.Enter<SceneLoadState, string, bool>(_sceneConfig.Name, _sceneConfig.IsStopMusicBetweenScenes, _sceneConfig.Music);
 		}
 	}

@@ -450,9 +450,9 @@ MonoBehaviour:
   m_ShadowGroup: 0
   m_ComponentVersion: 1
   m_HasRenderer: 1
-  m_UseRendererSilhouette: 1
+  m_UseRendererSilhouette: 0
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: 000000000b4ae255
   m_ShapePath:
   - {x: -0.10313846, y: 0.6940885, z: 0}
@@ -460,7 +460,7 @@ MonoBehaviour:
   - {x: 0.030651003, y: 0.6976721, z: 0}
   m_ShapePathHash: -1063575435
   m_Mesh: {fileID: 0}
-  m_InstanceId: 89112
+  m_InstanceId: 92542
 --- !u!114 &3334711396594127323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -550,12 +550,12 @@ MonoBehaviour:
   _isDebug: 1
   _jumpForce: 5.9
   _verticalVelocityLimit: 7
-  _racingSpeed: 0.05
-  _maxMoveSpeed: 4
+  _racingSpeed: 0.03
+  _maxHorizontalMoveSpeed: 4
   _wallJumpForce: 8
-  _maxWallSlideSpeed: 0.5
   _wallSlideVelocity: 0.005
   _onWallStayTime: 0.5
+  _wallBounceDirection: {x: 0.1, y: 0.9}
 --- !u!114 &1359097841
 MonoBehaviour:
   m_ObjectHideFlags: 0

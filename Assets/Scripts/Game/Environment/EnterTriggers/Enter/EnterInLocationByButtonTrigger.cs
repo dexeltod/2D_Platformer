@@ -4,13 +4,12 @@ using Infrastructure.GameLoading;
 using Infrastructure.Services;
 using Infrastructure.States;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Game.Environment.EnterTriggers.Enter
 {
 	public class EnterInLocationByButtonTrigger : MonoBehaviour
 	{
-		[FormerlySerializedAs("_levelConfig")] [SerializeField] private SceneConfig _sceneConfig;
+		[SerializeField] private SceneConfig _sceneConfig;
 
 		public event Action<bool> InTriggerEntered;
 

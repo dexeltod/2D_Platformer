@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Infrastructure.Services;
 using UnityEngine;
@@ -18,13 +17,14 @@ namespace Game.PlayerScripts.Move
 		[SerializeField] private float _jumpForce = 3f;
 		[SerializeField] private float _verticalVelocityLimit = -5f;
 		[SerializeField] private float _racingSpeed;
-		[SerializeField] private float _maxMoveSpeed;
+		[SerializeField] private float _maxHorizontalMoveSpeed;
 
 		[SerializeField] private float _wallJumpForce = 4.5f;
-		[SerializeField] private float _maxWallSlideSpeed;
 		[SerializeField] private float _wallSlideVelocity;
 		[SerializeField] private float _onWallStayTime;
 
+		[SerializeField] private Vector2 _wallBounceDirection;
+		
 		private GroundChecker _groundChecker;
 		private SurfaceInformant _surfaceInformant;
 		private Rigidbody2D _rigidbody2D;
@@ -46,7 +46,6 @@ namespace Game.PlayerScripts.Move
 
 		private float _moveSpeed;
 		private int _currentJumpStopCount;
-		private int _maxJumpStopCount;
 		private float _defaultGravityScale;
 
 		private Coroutine _currentWallSlideRoutine;
@@ -127,13 +126,13 @@ namespace Game.PlayerScripts.Move
 			if (IsGrounded == false && IsTouchWall == false)
 				return;
 
-			float rotateDirection = _isRotate ? 0.2f : -0.2f;
+			float rotateDirection = _isRotate ? _wallBounceDirection.x : -_wallBounceDirection.x;
 
 			_isRotate = !_isRotate;
-			Vector2 direction = new Vector2(rotateDirection, 0.9f);
+			IsTouchWall = false;
+			Vector2 direction = new Vector2(rotateDirection, _wallBounceDirection.y);
 
 			_rigidbody2D.AddForce(direction * _wallJumpForce, ForceMode2D.Impulse);
-			_maxJumpStopCount++;
 		}
 
 		public void Jump()
@@ -142,7 +141,6 @@ namespace Game.PlayerScripts.Move
 				return;
 
 			_rigidbody2D.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
-			_maxJumpStopCount++;
 		}
 
 		private void OnWallTouched(bool isWallTouched)
@@ -181,10 +179,12 @@ namespace Game.PlayerScripts.Move
 		{
 			_moveSpeed = 0;
 
-			while (_moveSpeed < _maxMoveSpeed)
+			WaitForFixedUpdate waitForFixedUpdate = new WaitForFixedUpdate();
+			
+			while (_moveSpeed < _maxHorizontalMoveSpeed)
 			{
-				_moveSpeed = Mathf.MoveTowards(_moveSpeed, _maxMoveSpeed, _racingSpeed);
-				yield return new WaitForFixedUpdate();
+				_moveSpeed = Mathf.MoveTowards(_moveSpeed, _maxHorizontalMoveSpeed, _racingSpeed);
+				yield return waitForFixedUpdate;
 			}
 		}
 
@@ -207,8 +207,6 @@ namespace Game.PlayerScripts.Move
 			_rigidbody2D.gravityScale = 0;
 
 			float wallStayTime = Time.time + _onWallStayTime;
-
-			WaitForFixedUpdate fixedUpdateTime = new WaitForFixedUpdate();
 
 			while (isWallStay == true && IsTouchWall == true)
 			{

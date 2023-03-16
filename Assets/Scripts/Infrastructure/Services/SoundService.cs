@@ -7,6 +7,7 @@ namespace Infrastructure.Services
 	{
 		private readonly SoundSetter _soundSetter;
 		private readonly IAssetProvider _assetProvider;
+		private string _currentSound;
 
 		public SoundService(SoundSetter soundSetter, IAssetProvider assetProvider)
 		{
@@ -16,8 +17,12 @@ namespace Infrastructure.Services
 
 		public async void Set(string audioName)
 		{
+			if (_currentSound == audioName || string.IsNullOrWhiteSpace(audioName) == true)
+				return;
+			
 			AudioClip sound =  await _assetProvider.LoadAsync<AudioClip>(audioName);
 			_soundSetter.SetAudioClip(sound);
+			_currentSound = audioName;
 		}
 
 		public void Stop() => 

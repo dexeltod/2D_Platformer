@@ -21,7 +21,7 @@ namespace Game.Environment.EnterTriggers
 
 		private void OnTriggerEntered(bool isInTrigger)
 		{
-			_buttonImage.gameObject.SetActive(isInTrigger);
+			_buttonImage.enabled = isInTrigger;
 		}
 	}
 }

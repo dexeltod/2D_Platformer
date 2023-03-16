@@ -21,7 +21,7 @@ namespace Editor
 		private static float _angleView;
 		private static bool _canSeePlayer;
 
-		[DrawGizmo(GizmoType.Active | GizmoType.NonSelected)]
+		[DrawGizmo(GizmoType.Active | GizmoType.Selected)]
 		public static void RenderCustomGizmo(EnemyPlayerChecker enemyPlayerChecker, GizmoType gizmo)
 		{
 			_angleDirection = 90f;

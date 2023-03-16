@@ -35,7 +35,7 @@ namespace Infrastructure.GameLoading
 				[typeof(SceneLoadState)] = new SceneLoadState(this, sceneLoader, loadingCurtain,
 					serviceLocator.GetSingle<IPlayerFactory>(),
 					serviceLocator.GetSingle<IUIFactory>(),
-					serviceLocator.GetSingle<ISceneLoad>(), serviceLocator.GetSingle<ICameraFactory>()),
+					serviceLocator.GetSingle<ISceneLoad>()),
 
 
 				[typeof(GameLoopState)] = new GameLoopState(this),
@@ -59,16 +59,16 @@ namespace Infrastructure.GameLoading
 		public void Enter<TState, TPayload, T>(TPayload payload, bool isLevelNameIsStopMusicBetweenScenes,
 			string musicName) where TState : class, IPayloadState<TPayload>
 		{
+			TState state = ChangeState<TState>();
+			state.Enter(payload);
+
+			if (musicName == _currentMusicName || string.IsNullOrWhiteSpace(musicName) == true)
+				return;
+
 			if (isLevelNameIsStopMusicBetweenScenes)
 				_soundService.Stop();
 
-			if (musicName == _currentMusicName)
-				return;
-
 			_soundService.Set(musicName);
-
-			TState state = ChangeState<TState>();
-			state.Enter(payload);
 		}
 
 		private TState ChangeState<TState>() where TState : class, IExitState
