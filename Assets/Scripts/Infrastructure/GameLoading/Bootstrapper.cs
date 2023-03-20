@@ -18,13 +18,14 @@ namespace Infrastructure.GameLoading
 			loadingCurtain.gameObject.SetActive(false);
 			
 			_game = new Game(this, loadingCurtain, soundSetter);
-			_game.StateMachine.Enter<BootstrapState>();
-
+			_game.StateMachine.Enter<InitializeServicesState>();
+			
 			DontDestroyOnLoad(this);
 		}
 
 		private SoundSetter GetMusicSetter() =>
 			Instantiate(_soundSetter);
+		
 		private LoadingCurtain GetLoadingCurtain() => 
 			Instantiate(_loadingCurtain);
 	}

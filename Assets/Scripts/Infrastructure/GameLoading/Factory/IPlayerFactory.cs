@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace Infrastructure.GameLoading.Factory
@@ -8,6 +9,6 @@ namespace Infrastructure.GameLoading.Factory
 	{
 		GameObject MainCharacter { get; }
 		event Action MainCharacterCreated;
-		Task InstantiateHero(GameObject initialPoint);
+		UniTask InstantiateHero(GameObject initialPoint);
 	}
 }

@@ -1,4 +1,5 @@
-﻿using Infrastructure.Data;
+﻿using Cysharp.Threading.Tasks;
+using Infrastructure.Data;
 using Infrastructure.GameLoading;
 
 namespace Infrastructure.Services.SaveLoadService
@@ -6,6 +7,6 @@ namespace Infrastructure.Services.SaveLoadService
     public interface ISaveLoadService : IService
     {
         void SaveProgress();
-        GameProgress LoadProgress();
+        UniTask<GameProgress> LoadProgress();
     }
 }

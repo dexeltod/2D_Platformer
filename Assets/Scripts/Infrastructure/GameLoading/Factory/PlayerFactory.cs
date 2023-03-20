@@ -1,11 +1,15 @@
 ﻿using System;
-using System.Threading.Tasks;
+using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using Game.Animation.AnimationHashes.Characters;
 using Game.PlayerScripts;
 using Game.PlayerScripts.Move;
 using Game.PlayerScripts.Weapons;
+using Infrastructure.Data;
+using Infrastructure.Data.PersistentProgress;
 using Infrastructure.GameLoading.AssetManagement;
 using Infrastructure.Services;
+using UI_Scripts.Shop;
 using UnityEngine;
 
 namespace Infrastructure.GameLoading.Factory
@@ -16,7 +20,9 @@ namespace Infrastructure.GameLoading.Factory
 
 		private readonly AnimationHasher _hasher;
 		private readonly IAssetProvider _assetProvider;
+		private readonly IPersistentProgressService _progressService;
 		private readonly IInputService _inputService;
+		private readonly GameProgress _progress;
 
 		private PlayerWeaponList _playerWeaponList;
 		private WeaponFactory _weaponFactory;
@@ -34,36 +40,56 @@ namespace Infrastructure.GameLoading.Factory
 
 		public event Action MainCharacterCreated;
 
-		public PlayerFactory(IAssetProvider assetProvider)
+		public PlayerFactory(IAssetProvider assetProvider, IPersistentProgressService progressService)
 		{
 			_inputService = ServiceLocator.Container.GetSingle<IInputService>();
 			_assetProvider = assetProvider;
+			_progress = progressService.GameProgress;
 		}
 
-		public async Task InstantiateHero(GameObject initialPoint) =>
-			await CreateHeroGameObject(CreateDependencies, initialPoint);
+		public async UniTask InstantiateHero(GameObject initialPoint)
+		{
+			await CreateHeroGameObject(initialPoint);
+			await CreateDependenciesAsync();
+		}
 
-		private async Task CreateHeroGameObject(Action onHeroInstantiated, GameObject initialPoint)
+		private async UniTask CreateHeroGameObject( GameObject initialPoint)
 		{
 			MainCharacter = await _assetProvider.Instantiate(Player, initialPoint.transform.position);
-			onHeroInstantiated.Invoke();
 		}
 
-		private void CreateDependencies()
+		private async UniTask CreateDependenciesAsync()
 		{
-			NullifyComponents();
-			
-			GetComponents();
-
 			if (_playerWeaponList != null)
 			{
 				_playerWeaponList = null;
 				GC.Collect();
 			}
 
-			_playerWeaponList = new PlayerWeaponList(_weaponFactory, _playerMoney, MainCharacter.transform);
+			List<ItemScriptableObject> items = await GetItems();
+
+			NullifyComponents();
+
+			GetComponents();
+
+			_playerWeaponList = new PlayerWeaponList(_weaponFactory, _playerMoney, MainCharacter.transform, items);
 			CreatePlayerStateMachine();
 			MainCharacterCreated?.Invoke();
+		}
+
+		private async UniTask<List<ItemScriptableObject>> GetItems()
+		{
+			string[] items = _progress.PlayerProgressData.SerializableItemsData.GetItemReferences();
+
+			List<ItemScriptableObject> itemScriptableObjects = new();
+
+			foreach (var item in items)
+			{
+				itemScriptableObjects.Add(await _assetProvider.LoadAsyncByGUID<ItemScriptableObject>(item));
+			}
+
+
+			return itemScriptableObjects;
 		}
 
 		private void GetComponents()
@@ -75,7 +101,7 @@ namespace Infrastructure.GameLoading.Factory
 			_groundChecker = MainCharacter.GetComponent<GroundChecker>();
 			_playerMoney = MainCharacter.GetComponent<PlayerMoney>();
 			_animatorFacade = MainCharacter.GetComponent<AnimatorFacade>();
-			
+
 			_wallCheckTrigger = MainCharacter.GetComponentInChildren<WallCheckTrigger>();
 		}
 
@@ -89,7 +115,7 @@ namespace Infrastructure.GameLoading.Factory
 			_playerMoney = null;
 			_animatorFacade = null;
 			_wallCheckTrigger = null;
-			
+
 			GC.Collect();
 		}
 
@@ -101,7 +127,8 @@ namespace Infrastructure.GameLoading.Factory
 				GC.Collect();
 			}
 
-			_playerStatesFactory = new PlayerStatesFactory(_groundChecker, _wallCheckTrigger, _inputService, _animator, _animationHasher,
+			_playerStatesFactory = new PlayerStatesFactory(_groundChecker, _wallCheckTrigger, _inputService, _animator,
+				_animationHasher,
 				_animatorFacade,
 				_physicsMovement, _playerWeaponList);
 

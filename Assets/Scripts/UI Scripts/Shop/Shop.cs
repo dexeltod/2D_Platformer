@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace UI_Scripts.Shop
 {
-    public class Shop : MonoBehaviour, ISavedProgress
+    public class Shop : MonoBehaviour
     {
         [SerializeField] private ShopItemCellView _weaponPanelPrefab;
         [SerializeField] private List<ItemScriptableObject> _items;
@@ -24,6 +24,11 @@ namespace UI_Scripts.Shop
             Initialize();
         }
 
+        public void Reload(GameProgress progress)
+        {
+	        // progress.PlayerProgressData.PlayerItemsData.AddWeaponInData(new ItemScriptableObject());
+        }
+        
         private void Initialize()
         {
 	        if (_items == null)
@@ -44,14 +49,6 @@ namespace UI_Scripts.Shop
             Reload(_gameProgress);
         }
 
-        public void Reload(GameProgress progress)
-        {
-            progress.PlayerItemsData.AddWeaponInData(new ItemScriptableObject());
-        }
-
-        public void Load(GameProgress progress)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

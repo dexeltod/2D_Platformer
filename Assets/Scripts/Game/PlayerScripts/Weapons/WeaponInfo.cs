@@ -8,5 +8,6 @@ namespace Game.PlayerScripts.Weapons
 		public int Damage;
 		public float AttackSpeed;
 		public float Range;
+		
 	}
 }

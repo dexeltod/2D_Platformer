@@ -13,8 +13,13 @@ MonoBehaviour:
   m_Name: Fist
   m_EditorClassIdentifier: 
   _prefab: {fileID: 611047416249856806, guid: f9aab4e195a9b65478befe009e66fd90, type: 3}
-  _title: 
+  _title: Fist
   _description: 
   _price: 0
   _sprite: {fileID: 0}
   _isBought: 0
+  _assetReference:
+    m_AssetGUID: 48992e0a910f65c4889c7dd22440f301
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

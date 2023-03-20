@@ -22,14 +22,8 @@ namespace Infrastructure.GameLoading
 		public void Enter()
 		{
 			_soundService.Set(ConstantNames.ConstantNames.MusicNames.MenuMusic);
-			_sceneLoader.Load(MainMenu, OnMenuLoaded);
+			_sceneLoader.Load(MainMenu);
 		}
-
-		private void OnMenuLoaded()
-		{
-			
-		}
-
 		public void Exit()
 		{
 			_loadingCurtain.gameObject.SetActive(true);

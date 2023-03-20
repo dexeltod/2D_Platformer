@@ -1,9 +1,12 @@
-﻿using Game.PlayerScripts.Weapons;
+﻿using System;
+using Game.PlayerScripts.Weapons;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace UI_Scripts.Shop
 {
     [CreateAssetMenu(fileName = "Item", menuName = "ShopItemInfo", order = 0)]
+    [Serializable]
     public class ItemScriptableObject : ScriptableObject
     {
         [SerializeField] private Item _prefab;
@@ -12,9 +15,11 @@ namespace UI_Scripts.Shop
         [SerializeField] private int _price;
         [SerializeField] private Sprite _sprite;
         [SerializeField] private bool _isBought;
-        
+        [SerializeField] private AssetReference _assetReference;
+
         public Item Prefab => _prefab;
         public string Title => _title;
+        public string AssetName => _assetReference.AssetGUID;
         public string Description => _description;
         public int Price => _price;
         public Sprite Sprite => _sprite;

@@ -1,5 +1,5 @@
 ﻿using System;
-using Infrastructure.Data;
+using Cysharp.Threading.Tasks;
 using Infrastructure.Data.PersistentProgress;
 using Infrastructure.Services.SaveLoadService;
 using Infrastructure.States;
@@ -18,41 +18,29 @@ namespace Infrastructure.GameLoading
 			_gameStateMachine = gameStateMachine;
 			_progressService = progressService;
 			_saveLoadService = saveLoadService;
+			
 		}
 
-		public void Enter()
+		public async void Enter()
 		{
-			LoadProgressOrInitNew();
+			await LoadProgressOrInitNew(OnProgressLoaded);
 		}
 
 		public void Exit()
 		{
 			
 		}
-			
 
 		private void OnProgressLoaded()
 		{
-			_gameStateMachine.Enter<MenuState>();
+			_gameStateMachine.Enter<BootstrapState>();
 		}
 		
-		private void LoadProgressOrInitNew()
+		private async UniTask LoadProgressOrInitNew(Action progressLoaded)
 		{
-			_progressService.GameProgress = _saveLoadService.LoadProgress() ?? CreateNewProgress();
-		}
-
-		private GameProgress CreateNewProgress()
-		{
-			GameProgress gameProgress = new GameProgress(ConstantNames.ConstantNames.FirstLevel);
-			
-			LoadWeaponProgress(gameProgress, OnProgressLoaded);
-			return gameProgress;
-		}
-
-		private async void LoadWeaponProgress(GameProgress gameProgress, Action progressLoaded)
-		{
-			await gameProgress.PlayerItemsData.SetDefaultWeapon();
+			_progressService.GameProgress = await _saveLoadService.LoadProgress();
 			progressLoaded.Invoke();
 		}
+		
 	}
 }

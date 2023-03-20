@@ -11,7 +11,6 @@ namespace Infrastructure.GameLoading
 {
 	public class GameStateMachine : IGameStateMachine
 	{
-		private readonly SoundSetter _soundSetter;
 		private readonly ISoundService _soundService;
 		private readonly Dictionary<Type, IExitState> _states;
 
@@ -21,22 +20,19 @@ namespace Infrastructure.GameLoading
 		public GameStateMachine(SceneLoader sceneLoader, LoadingCurtain loadingCurtain,
 			ServiceLocator serviceLocator, SoundSetter soundSetter)
 		{
-			_soundSetter = soundSetter;
 			_states = new Dictionary<Type, IExitState>
 			{
-				[typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, serviceLocator, _soundSetter),
-
+				[typeof(InitializeServicesState)] = new InitializeServicesState(this, serviceLocator, soundSetter, sceneLoader),
+				
 				[typeof(LoadProgressState)] = new LoadProgressState(this,
 					serviceLocator.GetSingle<IPersistentProgressService>(),
 					serviceLocator.GetSingle<ISaveLoadService>()),
+				
+				[typeof(BootstrapState)] = new BootstrapState(this, serviceLocator),
 
 				[typeof(MenuState)] = new MenuState(sceneLoader, loadingCurtain),
 
-				[typeof(SceneLoadState)] = new SceneLoadState(this, sceneLoader, loadingCurtain,
-					serviceLocator.GetSingle<IPlayerFactory>(),
-					serviceLocator.GetSingle<IUIFactory>(),
-					serviceLocator.GetSingle<ISceneLoad>()),
-
+				[typeof(SceneLoadState)] = new SceneLoadState(this, sceneLoader, loadingCurtain),
 
 				[typeof(GameLoopState)] = new GameLoopState(this),
 			};

@@ -24,16 +24,10 @@ namespace Game.PlayerScripts
         public event Action<AbstractWeapon> EquippedWeaponChanged;
 
         public PlayerWeaponList(WeaponFactory weaponFactory,
-            PlayerMoney playerMoney, Transform transform)
+	        PlayerMoney playerMoney, Transform transform, List<ItemScriptableObject> items)
         {
-            GameProgress gameProgress = ServiceLocator
-                .Container
-                .GetSingle<IPersistentProgressService>()
-                .GameProgress;
-            
-            _items = gameProgress.PlayerItemsData.GetBoughtItems();
-            
-            _weaponFactory = weaponFactory;
+	        _items = items;
+	        _weaponFactory = weaponFactory;
             _playerMoney = playerMoney;
             _transform = transform;
             

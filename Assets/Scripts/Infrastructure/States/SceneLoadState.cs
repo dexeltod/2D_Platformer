@@ -1,7 +1,7 @@
-﻿using Infrastructure.GameLoading;
+﻿using Cysharp.Threading.Tasks;
+using Infrastructure.GameLoading;
 using Infrastructure.GameLoading.AssetManagement;
 using Infrastructure.GameLoading.Factory;
-using Infrastructure.Services;
 using UI_Scripts.Curtain;
 using UnityEngine;
 
@@ -13,35 +13,48 @@ namespace Infrastructure.States
 		private readonly SceneLoader _sceneLoader;
 		private readonly LoadingCurtain _loadingCurtain;
 
-		private readonly IPlayerFactory _playerFactory;
-		private readonly IUIFactory _uiFactory;
+		private IPlayerFactory _playerFactory;
+		private IUIFactory _uiFactory;
 
-		private readonly ISceneLoad _sceneLoad;
+		private ISceneLoad _sceneLoad;
 
 		private GameObject InitialPoint => GameObject.FindWithTag(ConstantNames.ConstantNames.PlayerSpawnPointTag);
 
-		public SceneLoadState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain,
-			IPlayerFactory playerFactory, IUIFactory uiFactory, ISceneLoad sceneLoad)
+		public SceneLoadState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain)
 		{
-			_playerFactory = playerFactory;
-			_uiFactory = uiFactory;
-			_sceneLoad = sceneLoad;
 			_gameStateMachine = gameStateMachine;
 			_sceneLoader = sceneLoader;
 			_loadingCurtain = loadingCurtain;
+			
 		}
 
 		public void Enter(string levelName)
 		{
+			_playerFactory = ServiceLocator.Container.GetSingle<IPlayerFactory>();
+			_uiFactory = ServiceLocator.Container.GetSingle<IUIFactory>();
+			_sceneLoad = ServiceLocator.Container.GetSingle<ISceneLoad>();
+			
 			var provider = ServiceLocator.Container.GetSingle<IAssetProvider>();
 			provider.CleanUp();
 			_loadingCurtain.Show();
-			_sceneLoader.Load(levelName, OnLoaded);
+			_sceneLoader.Load(levelName, StartLoading);
 		}
 
-		private async void OnLoaded()
+		private async void StartLoading()
 		{
-			await _playerFactory.InstantiateHero(InitialPoint);
+			await Load();
+		}
+		
+		private async UniTask  Load()
+		{
+			await OnLoaded();
+		}
+		
+		private async UniTask OnLoaded()
+		{
+			UniTask playerFactoryTask = _playerFactory.InstantiateHero(InitialPoint);
+			
+			await playerFactoryTask;
 			await _uiFactory.CreateUI();
 
 			_sceneLoad.SceneLoaded += OnSceneLoaded;

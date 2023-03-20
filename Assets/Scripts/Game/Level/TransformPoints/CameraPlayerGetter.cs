@@ -17,7 +17,6 @@ namespace Game.Level.TransformPoints
         {
             _cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
             _sceneLoadInformer = ServiceLocator.Container.GetSingle<ISceneLoadInformer>();
-            _playerFactory = ServiceLocator.Container.GetSingle<IPlayerFactory>();
             _sceneLoadInformer.SceneLoaded += Initialize;
         }
 
@@ -25,6 +24,7 @@ namespace Game.Level.TransformPoints
         {
 	        _sceneLoadInformer.SceneLoaded -= Initialize;
 	        
+            _playerFactory = ServiceLocator.Container.GetSingle<IPlayerFactory>();
             _player = _playerFactory.MainCharacter.transform;
             _cinemachineVirtualCamera.Follow = _player;
             _cinemachineVirtualCamera.LookAt = _player;

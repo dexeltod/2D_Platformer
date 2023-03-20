@@ -1,12 +1,15 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
+using Cysharp.Threading.Tasks.Linq;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace Infrastructure.GameLoading.AssetManagement
 {
+	[Serializable]
 	public class AssetProvider : IAssetProvider
 	{
 		private readonly Dictionary<string, AsyncOperationHandle> _completedCache =
@@ -27,7 +30,15 @@ namespace Infrastructure.GameLoading.AssetManagement
 			_handles.Clear();
 		}
 
-		public async Task<T> LoadAsync<T>(string address) where T : class
+		public async UniTask<T> LoadAsyncByGUID<T>(string address) where T : class
+		{
+			if (_completedCache.TryGetValue(address, out AsyncOperationHandle completedHandle))
+				return completedHandle.Result as T;
+
+			return await RunWithCacheOnComplete(address, Addressables.LoadAssetAsync<T>(address));
+		}
+		
+		public async UniTask<T> LoadAsync<T>(string address) where T : class
 		{
 			if (address == string.Empty)
 				return null;
@@ -46,11 +57,11 @@ namespace Infrastructure.GameLoading.AssetManagement
 			return await RunWithCacheOnComplete(reference.AssetGUID, Addressables.LoadAssetAsync<T>(reference));
 		}
 
-		public Task<GameObject> Instantiate(string path) =>
-			Addressables.InstantiateAsync(path).Task;
+		public UniTask<GameObject> Instantiate(string path) =>
+			Addressables.InstantiateAsync(path).ToUniTask();
 
-		public Task<GameObject> Instantiate(string path, Vector3 position) =>
-			Addressables.InstantiateAsync(path, position, Quaternion.identity).Task;
+		public UniTask<GameObject> Instantiate(string path, Vector3 position) =>
+			Addressables.InstantiateAsync(path, position, Quaternion.identity).ToUniTask();
 
 		private async Task<T> RunWithCacheOnComplete<T>(string cacheKey, AsyncOperationHandle<T> handle) where T : class
 		{
