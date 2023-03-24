@@ -165,7 +165,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 0bc7b968859d54b46bd5434612a696c1, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -279,7 +279,7 @@ MonoBehaviour:
   - {x: 1.5, y: 0, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -16440
+  m_InstanceId: 69116
 --- !u!114 &7008530546984467402
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using Game.Sound.Music;
 using Infrastructure.States;
 using UI_Scripts.Curtain;
 using UnityEngine;

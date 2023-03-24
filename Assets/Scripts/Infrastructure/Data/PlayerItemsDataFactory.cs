@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
+using Infrastructure.Data.Serializable;
 using Infrastructure.GameLoading;
 using Infrastructure.GameLoading.AssetManagement;
 using UI_Scripts.Shop;
@@ -30,8 +31,7 @@ namespace Infrastructure.Data
 
 		public async UniTask InitializeDefaultWeaponAsync()
 		{
-			var task = await _assetProvider.LoadAsync<ItemScriptableObject>(FistAddress);
-			var result =  task;
+			var result = await _assetProvider.LoadAsync<ItemScriptableObject>(FistAddress);
 			AddItem(result);
 		}
 

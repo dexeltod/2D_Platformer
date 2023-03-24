@@ -1,7 +1,9 @@
 using System;
 using Game.PlayerScripts;
+using Game.SceneConfigs;
 using Infrastructure.GameLoading;
 using Infrastructure.Services;
+using Infrastructure.Services.SaveLoadService;
 using Infrastructure.States;
 using UnityEngine;
 
@@ -15,9 +17,11 @@ namespace Game.Environment.EnterTriggers.Enter
 
 		private IGameStateMachine _gameStateMachine;
 		private IInputService _inputService;
+		private ISaveLoadService _saveLoadService;
 
 		private void Awake()
 		{
+			_saveLoadService = ServiceLocator.Container.GetSingle<ISaveLoadService>();
 			_inputService = ServiceLocator.Container.GetSingle<IInputService>();
 			_gameStateMachine = ServiceLocator.Container.GetSingle<IGameStateMachine>();
 		}

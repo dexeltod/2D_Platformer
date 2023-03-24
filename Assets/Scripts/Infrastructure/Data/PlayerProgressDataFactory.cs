@@ -1,5 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 using Infrastructure.Data.PersistentProgress;
+using Infrastructure.Data.Serializable;
 
 namespace Infrastructure.Data
 {

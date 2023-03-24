@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Game.Sound.Music;
 using Infrastructure.Data.PersistentProgress;
 using Infrastructure.GameLoading.Factory;
 using Infrastructure.Services;

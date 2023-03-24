@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Game.PlayerScripts;
 using Infrastructure.Data;
 using Infrastructure.Data.PersistentProgress;
+using Infrastructure.Data.Serializable;
 using Infrastructure.GameLoading;
 using UnityEngine;
 

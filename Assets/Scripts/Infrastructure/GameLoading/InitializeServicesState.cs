@@ -1,4 +1,5 @@
-﻿using Infrastructure.Data.PersistentProgress;
+﻿using Game.Sound.Music;
+using Infrastructure.Data.PersistentProgress;
 using Infrastructure.GameLoading.AssetManagement;
 using Infrastructure.GameLoading.Factory;
 using Infrastructure.Services;

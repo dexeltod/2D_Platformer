@@ -14,7 +14,6 @@ namespace Game.PlayerScripts.StateMachine.States
 			AnimationHasher hasher, AnimatorFacade animatorFacade, IStateTransition[] transitions) : base(inputService,
 			animator, hasher, transitions)
 		{
-			Debug.Log($"_animatorFacade {animatorFacade.name}");
 			_physicsMovement = physicsMovement;
 			_animatorFacade = animatorFacade;
 			InputService.VerticalButtonUsed += SetMoveDirection;

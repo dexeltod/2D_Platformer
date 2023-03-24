@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using Cysharp.Threading.Tasks;
 using Infrastructure.Data;
 using Infrastructure.Data.PersistentProgress;
+using Infrastructure.Data.Serializable;
 using Infrastructure.GameLoading;
 using UnityEngine;
 
@@ -13,8 +13,9 @@ namespace Infrastructure.Services.SaveLoadService
 {
 	public class SaveLoadService : ISaveLoadService
 	{
-		private const string SaveFileFormat = ".dat";
+		private const string SaveFileFormat = ".data";
 		private const string SavesDirectory = "/Saves/";
+		private const string SaveName = "save_";
 
 		private readonly string _saveDirectoryPath;
 		private readonly GameProgressFactory _gameProgressFactory;
@@ -30,7 +31,6 @@ namespace Infrastructure.Services.SaveLoadService
 			_saveDirectoryPath = Application.persistentDataPath + SavesDirectory;
 			Directory.CreateDirectory(_saveDirectoryPath);
 
-
 			_gameProgress = ServiceLocator.Container.GetSingle<IPersistentProgressService>().GameProgress;
 		}
 
@@ -42,20 +42,14 @@ namespace Infrastructure.Services.SaveLoadService
 			}
 		}
 
+		public async void SetStartProgress()
+		{
+			await CreateNewProgress();
+		}
+		
 		public async UniTask<GameProgress> LoadProgress()
 		{
 			string[] files = Directory.GetFiles(_saveDirectoryPath);
-
-			//TODO: for test
-			if (files.Length > 0)
-			{
-				for (int i = 0; i < files.Length; i++)
-				{
-					File.Delete(files[i]);
-				}
-			}
-			
-			files = Directory.GetFiles(_saveDirectoryPath);
 			
 			if (files.Length <= 0)
 				await CreateNewProgress();
@@ -88,7 +82,7 @@ namespace Infrastructure.Services.SaveLoadService
 		private void SetSaveFilePath()
 		{
 			_lastTime = DateTime.UtcNow.ToString("ss.mm.hh.dd.MM.yyyy");
-			_saveFilePath = _saveDirectoryPath + "save_" + _lastTime + SaveFileFormat;
+			_saveFilePath = _saveDirectoryPath + SaveName + _lastTime + SaveFileFormat;
 		}
 	}
 }

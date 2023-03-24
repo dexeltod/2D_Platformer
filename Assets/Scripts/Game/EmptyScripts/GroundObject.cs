@@ -1,6 +1,9 @@
 using UnityEngine;
 
-public class GroundObject : MonoBehaviour
+namespace Game.EmptyScripts
 {
+	public class GroundObject : MonoBehaviour
+	{
+	}
 }
 

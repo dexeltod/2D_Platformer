@@ -1,5 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
-using Infrastructure.Data;
+using Infrastructure.Data.Serializable;
 using Infrastructure.GameLoading;
 
 namespace Infrastructure.Services.SaveLoadService
@@ -8,5 +8,6 @@ namespace Infrastructure.Services.SaveLoadService
     {
         void SaveProgress();
         UniTask<GameProgress> LoadProgress();
+        void SetStartProgress();
     }
 }

@@ -7,6 +7,7 @@ using Game.PlayerScripts.Move;
 using Game.PlayerScripts.Weapons;
 using Infrastructure.Data;
 using Infrastructure.Data.PersistentProgress;
+using Infrastructure.Data.Serializable;
 using Infrastructure.GameLoading.AssetManagement;
 using Infrastructure.Services;
 using UI_Scripts.Shop;

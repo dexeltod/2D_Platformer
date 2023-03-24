@@ -9,9 +9,10 @@ namespace Game.PlayerScripts
     [RequireComponent( typeof(PhysicsMovement))]
     public class Player : MonoBehaviour
     {
+        public float LookDirection { get; } = -1;
+
+        
         private PhysicsMovement _physicsMovement;
-        private float _lookDirection = -1;
-        public float LookDirection => _lookDirection;
 
         private StateService _stateService;
 

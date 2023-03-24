@@ -22,13 +22,7 @@ namespace Infrastructure.Services
 
         ~InputService()
         {
-	        _inputSystem.Disable();
-	        _inputSystem.Player.Move.performed -= OnHorizontalMovement;
-	        _inputSystem.Player.Move.canceled -= OnHorizontalMovement;
-	        _inputSystem.Player.Jump.started -= OnJump;
-	        _inputSystem.Player.Jump.canceled -= OnJump;
-	        _inputSystem.Player.Attack.started -= OnAttack;
-	        _inputSystem.Player.Use.started -= OnUse;
+	        DisableInputs();
         }
         
         public void EnableInputs()
@@ -39,7 +33,7 @@ namespace Infrastructure.Services
             _inputSystem.Player.Jump.started += OnJump;
             _inputSystem.Player.Jump.canceled += OnJump;
             _inputSystem.Player.Attack.started += OnAttack;
-            _inputSystem.Player.Use.started += OnUse;
+            _inputSystem.Player.Use.performed += OnUse;
         }
 
         public void DisableInputs()
@@ -50,12 +44,12 @@ namespace Infrastructure.Services
             _inputSystem.Player.Jump.started -= OnJump;
             _inputSystem.Player.Jump.canceled -= OnJump;
             _inputSystem.Player.Attack.started -= OnAttack;
-            _inputSystem.Player.Use.started -= OnUse;
+            _inputSystem.Player.Use.performed -= OnUse;
         }
 
         private void OnUse(InputAction.CallbackContext context)
         {
-            if (context.started)
+            if (context.performed)
                 InteractButtonUsed?.Invoke();
         }
 

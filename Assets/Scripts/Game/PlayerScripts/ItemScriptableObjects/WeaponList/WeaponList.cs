@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using Infrastructure.Data;
 using Infrastructure.Data.PersistentProgress;
+using Infrastructure.Data.Serializable;
 using UI_Scripts.Shop;
 using UnityEngine;
 

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Infrastructure.Data.PersistentProgress
+namespace Infrastructure.Data.Serializable
 {
 	[Serializable]
 	public class PlayerProgressData

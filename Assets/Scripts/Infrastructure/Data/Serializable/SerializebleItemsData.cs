@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Infrastructure.Data
+namespace Infrastructure.Data.Serializable
 {
 	[Serializable]
 	public class SerializableItemsData

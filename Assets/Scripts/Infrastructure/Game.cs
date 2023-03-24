@@ -1,4 +1,5 @@
-﻿using Infrastructure.GameLoading;
+﻿using Game.Sound.Music;
+using Infrastructure.GameLoading;
 using UI_Scripts.Curtain;
 
 namespace Infrastructure

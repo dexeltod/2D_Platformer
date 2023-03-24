@@ -1,4 +1,5 @@
-﻿using Infrastructure.GameLoading;
+﻿using Infrastructure.Data.Serializable;
+using Infrastructure.GameLoading;
 
 namespace Infrastructure.Data.PersistentProgress
 {
