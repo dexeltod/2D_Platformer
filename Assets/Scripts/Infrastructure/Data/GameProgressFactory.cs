@@ -10,6 +10,7 @@ namespace Infrastructure.Data
 		{
 			PlayerProgressDataFactory playerProgressDataFactory = new();
 			await playerProgressDataFactory.GetItems();
+			
 			PlayerProgressData playerProgressData = playerProgressDataFactory.GetPlayerProgressData();
 			return new GameProgress(playerProgressData);
 		}

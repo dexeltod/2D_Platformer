@@ -17,11 +17,11 @@ namespace Game.Environment.EnterTriggers.Enter
 
 		private IGameStateMachine _gameStateMachine;
 		private IInputService _inputService;
-		private ISaveLoadService _saveLoadService;
+		private ISaveLoadDataService _saveLoadDataService;
 
 		private void Awake()
 		{
-			_saveLoadService = ServiceLocator.Container.GetSingle<ISaveLoadService>();
+			_saveLoadDataService = ServiceLocator.Container.GetSingle<ISaveLoadDataService>();
 			_inputService = ServiceLocator.Container.GetSingle<IInputService>();
 			_gameStateMachine = ServiceLocator.Container.GetSingle<IGameStateMachine>();
 		}

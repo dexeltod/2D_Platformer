@@ -10,14 +10,14 @@ namespace Infrastructure.GameLoading
 	{
 		private readonly GameStateMachine _gameStateMachine;
 		private readonly IPersistentProgressService _progressService;
-		private readonly ISaveLoadService _saveLoadService;
+		private readonly ISaveLoadDataService _saveLoadDataService;
 
 		public LoadProgressState(GameStateMachine gameStateMachine, IPersistentProgressService progressService,
-			ISaveLoadService saveLoadService)
+			ISaveLoadDataService saveLoadDataService)
 		{
 			_gameStateMachine = gameStateMachine;
 			_progressService = progressService;
-			_saveLoadService = saveLoadService;
+			_saveLoadDataService = saveLoadDataService;
 			
 		}
 
@@ -38,7 +38,7 @@ namespace Infrastructure.GameLoading
 		
 		private async UniTask LoadProgressOrInitNew(Action progressLoaded)
 		{
-			_progressService.GameProgress = await _saveLoadService.LoadProgress();
+			_progressService.GameProgress = await _saveLoadDataService.LoadProgress();
 			progressLoaded.Invoke();
 		}
 		

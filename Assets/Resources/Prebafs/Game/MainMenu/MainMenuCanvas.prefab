@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 645081525}
   - component: {fileID: 645081524}
   - component: {fileID: 645081523}
+  - component: {fileID: 7254675723721850292}
   - component: {fileID: 1425999651}
   m_Layer: 5
   m_Name: Exit
@@ -279,6 +280,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7254675723721850292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645081521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c75709d4cd77de848ba0050668de4253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 645081524}
 --- !u!114 &1425999651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -616,6 +630,7 @@ GameObject:
   - component: {fileID: 1824539153}
   - component: {fileID: 1824539152}
   - component: {fileID: 291814956}
+  - component: {fileID: 703102875}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -760,6 +775,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _button: {fileID: 1824539153}
   _audio: {fileID: 0}
+--- !u!114 &703102875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824539150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2ae8a27be3ec454780b324c9dd00484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _menuCanvasButton: {fileID: 1824539153}
+  _desiredWindow: {fileID: 0}
+  _closedWindow: {fileID: 4091578107817025132}
 --- !u!1 &1940411087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1364,7 +1394,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4091578107817025121}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -1480,7 +1510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: cdf046dba928f584f87eae7171380cc8, type: 2}
-  m_Color: {r: 0.8679245, g: 0.09416164, b: 0.09416164, a: 1}
+  m_Color: {r: 0.8666667, g: 0.09411765, b: 0.09411765, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

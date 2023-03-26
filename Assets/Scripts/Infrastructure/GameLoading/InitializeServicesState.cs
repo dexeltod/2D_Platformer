@@ -1,4 +1,5 @@
 ﻿using Game.Sound.Music;
+using Infrastructure.Data;
 using Infrastructure.Data.PersistentProgress;
 using Infrastructure.GameLoading.AssetManagement;
 using Infrastructure.GameLoading.Factory;
@@ -41,7 +42,7 @@ namespace Infrastructure.GameLoading
 			_serviceLocator.RegisterAsSingle<IGameStateMachine>(_gameStateMachine);
 			_serviceLocator.RegisterAsSingle<IPersistentProgressService>(new PersistentProgressService());
 			_serviceLocator.RegisterAsSingle<IAssetProvider>(new AssetProvider());
-			_serviceLocator.RegisterAsSingle<ISaveLoadService>(new SaveLoadService());
+			_serviceLocator.RegisterAsSingle<ISaveLoadDataService>(new SaveLoadDataService(new GameProgressFactory()));
 			_serviceLocator.RegisterAsSingle<ISoundService>(new SoundService(_soundSetter, _serviceLocator.GetSingle<IAssetProvider>()));
 			
 			SceneLoadInformer sceneLoadInformer = new SceneLoadInformer();

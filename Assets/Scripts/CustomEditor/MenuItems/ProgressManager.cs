@@ -8,6 +8,6 @@ namespace CustomEditor.MenuItems
 	{
 		[MenuItem("Tools/Progress/ClearSaves")]
 		private static void ClearProgress() => 
-			FileManagerFacade.DeleteAllFilesInDirectory(ConstantNames.ProgressNames.SavesDirectory);
+			FileManager.DeleteAllFilesInDirectory(ConstantNames.ProgressNames.SavesDirectory);
 	}
 }

@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Utils
 {
-	public static class FileManagerFacade
+	public static class FileManager
 	{
 		public static void DeleteAllFilesInDirectory(string directory)
 		{

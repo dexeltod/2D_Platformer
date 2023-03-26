@@ -27,7 +27,7 @@ namespace Infrastructure.GameLoading
 				
 				[typeof(LoadProgressState)] = new LoadProgressState(this,
 					serviceLocator.GetSingle<IPersistentProgressService>(),
-					serviceLocator.GetSingle<ISaveLoadService>()),
+					serviceLocator.GetSingle<ISaveLoadDataService>()),
 				
 				[typeof(BootstrapState)] = new BootstrapState(this, serviceLocator),
 
