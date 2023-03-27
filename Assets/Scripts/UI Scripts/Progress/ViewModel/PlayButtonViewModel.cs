@@ -1,18 +1,18 @@
-﻿using System;
+﻿
+
 using Game.SceneConfigs;
 using Infrastructure.GameLoading;
 using Infrastructure.States;
 using UI_Scripts.View;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace UI_Scripts.ViewModel
 {
-	[RequireComponent(typeof(MenuButtonView))]
-	public class MenuButtonViewModel : MonoBehaviour
+	public class PlayButtonViewModel : MonoBehaviour
 	{
 		[SerializeField] private SceneConfig _sceneConfig;
 		[SerializeField] private MenuButtonView _buttonView;
+		
 		private IGameStateMachine _gameStateMachine;
 
 		private void Awake()
@@ -22,15 +22,15 @@ namespace UI_Scripts.ViewModel
 
 		private void OnEnable()
 		{
-			_buttonView.PlayButtonPressed += PlayButtonPressed;
+			_buttonView.ButtonPressed += OnButtonPressed;
 		}
 
 		private void OnDisable()
 		{
-			_buttonView.PlayButtonPressed -= PlayButtonPressed;
+			_buttonView.ButtonPressed -= OnButtonPressed;
 		}
 
-		private void PlayButtonPressed()
+		private void OnButtonPressed()
 		{
 			
 			_gameStateMachine.Enter<SceneLoadState, string, bool>(_sceneConfig.Name, _sceneConfig.IsStopMusicBetweenScenes, _sceneConfig.Music);

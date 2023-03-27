@@ -7,22 +7,16 @@ namespace UI_Scripts.View
 	public class MenuButtonView : MonoBehaviour
 	{
 		[SerializeField] private Button _play;
-	
-		public event Action PlayButtonPressed;
-	
-		private void OnEnable()
-		{
+
+		public event Action ButtonPressed;
+
+		private void OnEnable() =>
 			_play.onClick.AddListener(OnPlay);
-		}
 
-		private void OnDisable()
-		{
+		private void OnDisable() =>
 			_play.onClick.RemoveListener(OnPlay);
-		}
 
-		private void OnPlay()
-		{
-			PlayButtonPressed?.Invoke();
-		}
+		private void OnPlay() =>
+			ButtonPressed?.Invoke();
 	}
 }

@@ -4,8 +4,8 @@ using UnityEngine.UI;
 public class MenuCanvasEnabler : MonoBehaviour
 {
 	[SerializeField] private Button _menuCanvasButton;
-	[SerializeField] private Canvas _desiredWindow;
-	[SerializeField] private Canvas _closedWindow;
+	[SerializeField] private GameObject _desiredWindow;
+	[SerializeField] private GameObject _closedWindow;
 
 	private void OnEnable() =>
 		_menuCanvasButton.onClick.AddListener(OnButtonClicked);
@@ -15,7 +15,7 @@ public class MenuCanvasEnabler : MonoBehaviour
 
 	private void OnButtonClicked()
 	{
-		_closedWindow.enabled = false;
-		_desiredWindow.enabled = true;
+		_closedWindow.gameObject.SetActive(false);
+		_desiredWindow.gameObject.SetActive(true);
 	}
 }
