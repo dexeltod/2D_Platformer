@@ -1,24 +1,25 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using View.StartMenu.UIBuilder;
+using ViewModel.MainMenu.Buttons;
 
 namespace UIBuilder
 {
+	[RequireComponent(typeof(UIElementGetterFacadeView))]
 	[RequireComponent(typeof(UIDocument))]
 	public class UnityStyleNuller : MonoBehaviour
 	{
-		[SerializeField] private bool _isNullSlidersStyle;
-		
-		private UIDocument _document;
-		private const string SliderInput = "SoundSlider";
+		[SerializeField] private bool _isNullSlidersStyle = true;
 
+		private UIElementGetterFacadeView _getterFacade;
 		private VisualElement _root;
+		private List<Slider> _sliders;
 
 		private void Awake()
 		{
-			_document = GetComponent<UIDocument>();
-			_root = _document.rootVisualElement;
-
+			_getterFacade = GetComponent<UIElementGetterFacadeView>();
 			NullAllSlidersStyle();
 		}
 
@@ -27,9 +28,13 @@ namespace UIBuilder
 			if (_isNullSlidersStyle == false)
 				return;
 			
-			List<Slider> sliders = _root.Query<Slider>(SliderInput).ToList();
+			_sliders = new()
+			{
+				_getterFacade.GetUIElementQ<Slider>(UIButtonsNames.Master),
+				_getterFacade.GetUIElementQ<Slider>(UIButtonsNames.Music),
+			};
 
-			foreach (var slider in sliders) 
+			foreach (var slider in _sliders) 
 				slider.focusable = false;
 		}
 	}

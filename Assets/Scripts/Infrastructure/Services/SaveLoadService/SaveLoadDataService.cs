@@ -36,6 +36,11 @@ namespace Infrastructure.Services.SaveLoadService
 		public string LoadFromJson(string fileName) => 
 			_jsonDataLoader.Load(fileName);
 
+		public T LoadFromJson<T>(string fileName) 
+		{
+			return _jsonDataLoader.Load<T>(fileName);
+		}
+		
 		public void SaveProgress() =>
 			_binaryDataSaveLoader.Save(_gameProgress);
 

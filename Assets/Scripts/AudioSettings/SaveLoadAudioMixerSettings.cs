@@ -1,4 +1,5 @@
-﻿using Infrastructure.GameLoading;
+﻿using System.Collections.Generic;
+using Infrastructure.GameLoading;
 using Infrastructure.Services.SaveLoadService;
 
 namespace AudioSettings
@@ -9,26 +10,32 @@ namespace AudioSettings
 		private readonly ISaveLoadDataService _saveLoadService;
 		private readonly AudioSettingsData _audioSettingsData;
 		private readonly string _settingType;
-		
+
 		public SaveLoadAudioMixerSettings()
 		{
-			_audioSettingsData = new();
 			_saveLoadService = ServiceLocator.Container.GetSingle<ISaveLoadDataService>();
-			
+			_audioSettingsData = new();
 		}
 
 		public void Save(string settingType, float value)
 		{
 			_audioSettingsData.Save(settingType, value);
-			_saveLoadService.SaveToJson(FileName,_audioSettingsData);
+			_saveLoadService.SaveToJson(FileName, _audioSettingsData);
 		}
 
-		public float LoadFloat()
+		public Dictionary<string, float> LoadSettings()
 		{
-			string json =_saveLoadService.LoadFromJson(FileName);
+			AudioSettingsData settingsData = _saveLoadService.LoadFromJson<AudioSettingsData>(FileName);
 
+			if (settingsData == null)
+				settingsData = new();
 
-			return 0.5f;
+			Dictionary<string, float> settings = new();
+
+			for (int i = 0; i < settingsData.Names.Count; i++)
+				settings.Add(settingsData.Names[i], settingsData.Values[i]);
+
+			return settings;
 		}
 	}
 }

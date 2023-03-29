@@ -2,8 +2,8 @@
     <Style src="project://database/Assets/UI/USS/SettingsWindow/Sliders.uss?fileID=7433441132597879392&amp;guid=9764f1369ea912e4380b33d599c235e3&amp;type=3#Sliders" />
     <ui:VisualElement name="Container" style="justify-content: space-between; height: 100%; -unity-text-align: upper-left; align-items: center; width: 100%;">
         <ui:VisualElement name="Sliders" style="width: 100%;">
-            <ui:Slider picking-mode="Ignore" label="Music" value="53.1" high-value="100" low-value="0" show-input-field="false" text="SAVE" name="SoundSlider" class="sliders" />
-            <ui:Slider picking-mode="Ignore" label="All sounds" value="53.1" high-value="100" low-value="0" show-input-field="false" text="SAVE" name="SoundSlider" class="sliders" />
+            <ui:Slider picking-mode="Ignore" label="All sounds" value="53.1" high-value="100" low-value="0" show-input-field="false" text="SAVE" name="Master" class="sliders" />
+            <ui:Slider picking-mode="Ignore" label="Music" value="53.1" high-value="100" low-value="0" show-input-field="false" text="SAVE" name="Music" class="sliders" />
         </ui:VisualElement>
         <ui:VisualElement name="Buttons" style="flex-direction: row; flex-shrink: 0; align-items: flex-start; width: 100%; -unity-background-scale-mode: scale-to-fit; justify-content: center; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; font-size: 0; -unity-text-align: upper-center;">
             <ui:Button text="MENU" display-tooltip-when-elided="true" name="MenuButton" class="button" />

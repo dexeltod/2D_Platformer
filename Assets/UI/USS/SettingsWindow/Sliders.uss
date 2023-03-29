@@ -1,8 +1,7 @@
 .sliders {
     width: 90%;
     color: rgb(255, 255, 255);
-    -unity-font-definition: url('project://database/Assets/Fonts/pixeleum-48%20SDF.asset?fileID=11400000&guid=9073d83462feb694d89695f5af1cac40&type=2#pixeleum-48 SDF');
-    font-size: 20px;
+    font-size: 16px;
     -unity-text-align: upper-center;
     padding-left: 0;
     padding-right: 0;
@@ -11,15 +10,77 @@
     align-items: stretch;
     justify-content: flex-start;
     flex-direction: row;
+    text-shadow: 0.7px 0.7px 0 rgb(202, 41, 41);
+    transition-duration: 0.2s;
+    -unity-font: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48.ttf?fileID=12800000&guid=a71d3c5456aa00445a1e900e34c45697&type=3#pixeleum-48');
+    -unity-font-definition: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48%20SDF.asset?fileID=11400000&guid=fdba096ff1b726c43a1b7ededfe57fbc&type=2#pixeleum-48 SDF');
+}
+
+.sliders:hover {
+    width: 90%;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    -unity-text-align: upper-center;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-direction: row;
+    text-shadow: 0.7px 0.7px 0 rgb(202, 41, 41);
+    transition-duration: 0.2s;
+    border-left-color: rgb(166, 32, 32);
+    border-right-color: rgb(166, 32, 32);
+    border-top-color: rgb(166, 32, 32);
+    border-bottom-color: rgb(166, 32, 32);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    -unity-font: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48.ttf?fileID=12800000&guid=a71d3c5456aa00445a1e900e34c45697&type=3#pixeleum-48');
+}
+
+.sliders:focus {
+    width: 90%;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    -unity-text-align: upper-center;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-direction: row;
+    text-shadow: 0.7px 0.7px 0 rgb(202, 41, 41);
+    transition-duration: 0.2s;
+    border-left-color: rgb(166, 32, 32);
+    border-right-color: rgb(166, 32, 32);
+    border-top-color: rgb(166, 32, 32);
+    border-bottom-color: rgb(166, 32, 32);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    -unity-font: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48.ttf?fileID=12800000&guid=a71d3c5456aa00445a1e900e34c45697&type=3#pixeleum-48');
 }
 
 .button {
     justify-content: center;
     height: 53px;
     width: 20%;
-    background-image: url('project://database/Assets/Data/Main/Textures/MainMenu/button-PLAY.png?fileID=2800000&guid=e6171c7bb566be140bbef3a23d07ceb2&type=3#button-PLAY');
+    background-image: url('project://database/Assets/Data/Main/Textures/MainMenu/button-background.png?fileID=2800000&guid=5c8ae35ce46fd5c4b9716f7cd6f67743&type=3#button-background');
     background-color: rgba(0, 0, 0, 0);
-    -unity-background-image-tint-color: rgb(209, 33, 33);
+    -unity-background-image-tint-color: rgb(168, 29, 29);
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
@@ -29,7 +90,6 @@
     margin-top: 0;
     margin-bottom: 0;
     color: rgb(255, 255, 255);
-    -unity-font-definition: url('project://database/Assets/Fonts/pixeleum-48%20SDF.asset?fileID=11400000&guid=9073d83462feb694d89695f5af1cac40&type=2#pixeleum-48 SDF');
     align-items: flex-start;
     flex-direction: column;
     -unity-text-align: middle-center;
@@ -45,8 +105,10 @@
     -unity-background-scale-mode: scale-to-fit;
     max-width: none;
     min-width: 0;
-    font-size: 22px;
+    font-size: 16px;
     transition-duration: 0.3s;
+    -unity-font: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48.ttf?fileID=12800000&guid=a71d3c5456aa00445a1e900e34c45697&type=3#pixeleum-48');
+    -unity-font-definition: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48%20SDF.asset?fileID=11400000&guid=fdba096ff1b726c43a1b7ededfe57fbc&type=2#pixeleum-48 SDF');
 }
 
 .button:hover {
@@ -65,7 +127,6 @@
     margin-top: 0;
     margin-bottom: 0;
     color: rgb(255, 255, 255);
-    -unity-font-definition: url('project://database/Assets/Fonts/pixeleum-48%20SDF.asset?fileID=11400000&guid=9073d83462feb694d89695f5af1cac40&type=2#pixeleum-48 SDF');
     align-items: flex-start;
     flex-direction: column;
     -unity-text-align: middle-center;
@@ -84,13 +145,14 @@
     font-size: 22px;
     transition-duration: 0.3s;
     transition-delay: 0s;
+    -unity-font: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48.ttf?fileID=12800000&guid=a71d3c5456aa00445a1e900e34c45697&type=3#pixeleum-48');
 }
 
 .button:active {
     justify-content: center;
     height: 58px;
     width: 24%;
-    background-image: url('project://database/Assets/Data/Main/Textures/MainMenu/button-PLAY.png?fileID=2800000&guid=e6171c7bb566be140bbef3a23d07ceb2&type=3#button-PLAY');
+    background-image: url('project://database/Assets/Data/Main/Textures/MainMenu/button-background.png?fileID=2800000&guid=5c8ae35ce46fd5c4b9716f7cd6f67743&type=3#button-background');
     background-color: rgba(0, 0, 0, 0);
     -unity-background-image-tint-color: rgb(130, 20, 20);
     padding-left: 0;
@@ -101,8 +163,7 @@
     margin-right: 0;
     margin-top: 0;
     margin-bottom: 0;
-    color: rgb(255, 255, 255);
-    -unity-font-definition: url('project://database/Assets/Fonts/pixeleum-48%20SDF.asset?fileID=11400000&guid=9073d83462feb694d89695f5af1cac40&type=2#pixeleum-48 SDF');
+    color: rgb(101, 101, 101);
     align-items: flex-start;
     flex-direction: column;
     -unity-text-align: middle-center;
@@ -121,19 +182,4 @@
     font-size: 22px;
     transition-duration: 0.1s;
     transition-delay: 0s;
-}
-
-.sliders:active {
-    width: 94%;
-    color: rgb(255, 160, 160);
-    -unity-font-definition: url('project://database/Assets/Fonts/pixeleum-48%20SDF.asset?fileID=11400000&guid=9073d83462feb694d89695f5af1cac40&type=2#pixeleum-48 SDF');
-    font-size: 20px;
-    -unity-text-align: upper-center;
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    align-items: stretch;
-    justify-content: flex-start;
-    flex-direction: row;
 }
