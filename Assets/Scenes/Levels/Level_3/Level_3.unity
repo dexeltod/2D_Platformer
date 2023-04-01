@@ -275,11 +275,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1982880117918831497, guid: 89689f8536bed79409d8856ca727ad43, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 110
+      value: 101.72
       objectReference: {fileID: 0}
     - target: {fileID: 1982880117918831497, guid: 89689f8536bed79409d8856ca727ad43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -123.5
+      value: -122.69
       objectReference: {fileID: 0}
     - target: {fileID: 1982880117918831497, guid: 89689f8536bed79409d8856ca727ad43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2317,11 +2317,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3760208425883983186, guid: 10418d1a46ca7a648abd28ff8662baad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 110
+      value: 101.72
       objectReference: {fileID: 0}
     - target: {fileID: 3760208425883983186, guid: 10418d1a46ca7a648abd28ff8662baad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -123.5
+      value: -122.69
       objectReference: {fileID: 0}
     - target: {fileID: 3760208425883983186, guid: 10418d1a46ca7a648abd28ff8662baad, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2369,7 +2369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3760208425883983187, guid: 10418d1a46ca7a648abd28ff8662baad, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 1
+      value: 0.9990458
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10418d1a46ca7a648abd28ff8662baad, type: 3}

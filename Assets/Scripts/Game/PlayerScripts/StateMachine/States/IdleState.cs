@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Game.PlayerScripts.StateMachine.States
 {
-	public sealed  class IdleState : State
+	public sealed class IdleState : State
 	{
 		private readonly PhysicsMovement _physicsMovement;
 		private readonly AnimatorFacade _animatorFacade;
@@ -23,8 +23,9 @@ namespace Game.PlayerScripts.StateMachine.States
 		{
 			if (_animatorFacade != null)
 				_animatorFacade.Play(AnimationHasher.IdleHash);
-			
-			_physicsMovement.SetMoveDirection(0);
+
+			if (_physicsMovement != null)
+				_physicsMovement.SetMoveDirection(0);
 		}
 	}
 }

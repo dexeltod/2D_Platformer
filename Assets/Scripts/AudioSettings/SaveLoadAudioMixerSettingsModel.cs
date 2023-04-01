@@ -4,14 +4,14 @@ using Infrastructure.Services.SaveLoadService;
 
 namespace AudioSettings
 {
-	public class SaveLoadAudioMixerSettings
+	public class SaveLoadAudioMixerSettingsModel
 	{
 		private const string FileName = "AudioSettings";
 		private readonly ISaveLoadDataService _saveLoadService;
 		private readonly AudioSettingsData _audioSettingsData;
 		private readonly string _settingType;
 
-		public SaveLoadAudioMixerSettings()
+		public SaveLoadAudioMixerSettingsModel()
 		{
 			_saveLoadService = ServiceLocator.Container.GetSingle<ISaveLoadDataService>();
 			_audioSettingsData = new();
@@ -23,12 +23,9 @@ namespace AudioSettings
 			_saveLoadService.SaveToJson(FileName, _audioSettingsData);
 		}
 
-		public Dictionary<string, float> LoadSettings()
+		public Dictionary<string, float> Load()
 		{
-			AudioSettingsData settingsData = _saveLoadService.LoadFromJson<AudioSettingsData>(FileName);
-
-			if (settingsData == null)
-				settingsData = new();
+			AudioSettingsData settingsData = _saveLoadService.LoadFromJson<AudioSettingsData>(FileName) ?? new AudioSettingsData();
 
 			Dictionary<string, float> settings = new();
 

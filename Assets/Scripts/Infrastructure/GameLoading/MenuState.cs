@@ -10,18 +10,18 @@ namespace Infrastructure.GameLoading
 		
 		private readonly SceneLoader _sceneLoader;
 		private readonly LoadingCurtain _loadingCurtain;
-		private readonly ISoundService _soundService;
+		private readonly IMusicService _musicService;
 
 		public MenuState(SceneLoader sceneLoader, LoadingCurtain loadingCurtain)
 		{
 			_sceneLoader = sceneLoader;
 			_loadingCurtain = loadingCurtain;
-			_soundService = ServiceLocator.Container.GetSingle<ISoundService>();
+			_musicService = ServiceLocator.Container.GetSingle<IMusicService>();
 		}
 
 		public void Enter()
 		{
-			_soundService.Set(ConstantNames.ConstantNames.MusicNames.MenuMusic);
+			_musicService.Set(ConstantNames.ConstantNames.MusicNames.MenuMusic);
 			_sceneLoader.Load(MainMenu);
 		}
 		public void Exit()

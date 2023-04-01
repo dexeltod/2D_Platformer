@@ -2,7 +2,7 @@
 
 namespace Infrastructure.Services
 {
-	public interface ISoundService : IService
+	public interface IMusicService : IService
 	{
 		void Set(string audioName);
 		void Stop();

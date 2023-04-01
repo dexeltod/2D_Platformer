@@ -12,7 +12,7 @@ namespace Infrastructure.GameLoading
 {
 	public class GameStateMachine : IGameStateMachine
 	{
-		private readonly ISoundService _soundService;
+		private readonly IMusicService _musicService;
 		private readonly Dictionary<Type, IExitState> _states;
 
 		private string _currentMusicName;
@@ -38,7 +38,7 @@ namespace Infrastructure.GameLoading
 				[typeof(GameLoopState)] = new GameLoopState(this),
 			};
 
-			_soundService = serviceLocator.GetSingle<ISoundService>();
+			_musicService = serviceLocator.GetSingle<IMusicService>();
 		}
 
 		public void Enter<TState>() where TState : class, IState
@@ -59,13 +59,19 @@ namespace Infrastructure.GameLoading
 			TState state = ChangeState<TState>();
 			state.Enter(payload);
 
+			SetOrStopMusic<TState, TPayload>(isLevelNameIsStopMusicBetweenScenes, musicName);
+		}
+
+		private void SetOrStopMusic<TState, TPayload>(bool isLevelNameIsStopMusicBetweenScenes, string musicName)
+			where TState : class, IPayloadState<TPayload>
+		{
 			if (musicName == _currentMusicName || string.IsNullOrWhiteSpace(musicName) == true)
 				return;
 
 			if (isLevelNameIsStopMusicBetweenScenes)
-				_soundService.Stop();
+				_musicService.Stop();
 
-			_soundService.Set(musicName);
+			_musicService.Set(musicName);
 		}
 
 		private TState ChangeState<TState>() where TState : class, IExitState

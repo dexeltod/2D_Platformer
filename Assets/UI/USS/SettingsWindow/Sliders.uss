@@ -183,3 +183,79 @@
     transition-duration: 0.1s;
     transition-delay: 0s;
 }
+
+.menuButton {
+    -unity-background-scale-mode: stretch-to-fill;
+    background-image: url('project://database/Assets/Data/Main/Textures/MainMenu/button-background.png?fileID=2800000&guid=5c8ae35ce46fd5c4b9716f7cd6f67743&type=3#button-background');
+    -unity-background-image-tint-color: rgb(202, 33, 33);
+    background-color: rgba(0, 0, 0, 0);
+    -unity-font: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48.ttf?fileID=12800000&guid=a71d3c5456aa00445a1e900e34c45697&type=3#pixeleum-48');
+    -unity-font-definition: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48%20SDF.asset?fileID=11400000&guid=fdba096ff1b726c43a1b7ededfe57fbc&type=2#pixeleum-48 SDF');
+    color: rgba(255, 255, 255, 255);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    width: 120px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    transition-duration: 0.2s;
+    height: 30px;
+    transition-timing-function: linear;
+}
+
+.menuButton:hover {
+    -unity-background-scale-mode: stretch-to-fill;
+    background-image: url('project://database/Assets/Data/Main/Textures/MainMenu/button-background.png?fileID=2800000&guid=5c8ae35ce46fd5c4b9716f7cd6f67743&type=3#button-background');
+    -unity-background-image-tint-color: rgb(202, 33, 33);
+    background-color: rgba(0, 0, 0, 0);
+    -unity-font: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48.ttf?fileID=12800000&guid=a71d3c5456aa00445a1e900e34c45697&type=3#pixeleum-48');
+    -unity-font-definition: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48%20SDF.asset?fileID=11400000&guid=fdba096ff1b726c43a1b7ededfe57fbc&type=2#pixeleum-48 SDF');
+    color: rgb(255, 255, 255);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    width: 130px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    transition-duration: 0.2s;
+    scale: 1 1;
+    rotate: 5deg;
+    height: 35px;
+    transition-timing-function: linear;
+}
+
+.menuButton:active {
+    -unity-background-scale-mode: stretch-to-fill;
+    background-image: url('project://database/Assets/Data/Main/Textures/MainMenu/button-background.png?fileID=2800000&guid=5c8ae35ce46fd5c4b9716f7cd6f67743&type=3#button-background');
+    -unity-background-image-tint-color: rgb(128, 3, 7);
+    background-color: rgba(0, 0, 0, 0);
+    -unity-font: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48.ttf?fileID=12800000&guid=a71d3c5456aa00445a1e900e34c45697&type=3#pixeleum-48');
+    -unity-font-definition: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48%20SDF.asset?fileID=11400000&guid=fdba096ff1b726c43a1b7ededfe57fbc&type=2#pixeleum-48 SDF');
+    color: rgb(137, 53, 3);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    width: 125px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    transition-duration: 0.1s;
+    scale: 1 1;
+    rotate: 5deg;
+    height: 30px;
+    transition-timing-function: ease;
+}

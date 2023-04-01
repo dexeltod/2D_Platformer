@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace Infrastructure.Services
 {
-	public class SoundService : ISoundService
+	public class MusicService : IMusicService
 	{
 		private readonly SoundSetter _soundSetter;
 		private readonly IAssetProvider _assetProvider;
 		private string _currentSound;
 
-		public SoundService(SoundSetter soundSetter, IAssetProvider assetProvider)
+		public MusicService(SoundSetter soundSetter, IAssetProvider assetProvider)
 		{
 			_soundSetter = soundSetter;
 			_assetProvider = assetProvider;

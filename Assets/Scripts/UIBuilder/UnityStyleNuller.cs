@@ -7,19 +7,18 @@ using ViewModel.MainMenu.Buttons;
 
 namespace UIBuilder
 {
-	[RequireComponent(typeof(UIElementGetterFacadeView))]
-	[RequireComponent(typeof(UIDocument))]
+	[RequireComponent(typeof(UIElementGetterFacade))]
 	public class UnityStyleNuller : MonoBehaviour
 	{
 		[SerializeField] private bool _isNullSlidersStyle = true;
 
-		private UIElementGetterFacadeView _getterFacade;
+		private UIElementGetterFacade _getterFacade;
 		private VisualElement _root;
 		private List<Slider> _sliders;
 
 		private void Awake()
 		{
-			_getterFacade = GetComponent<UIElementGetterFacadeView>();
+			_getterFacade = GetComponent<UIElementGetterFacade>();
 			NullAllSlidersStyle();
 		}
 
@@ -30,8 +29,8 @@ namespace UIBuilder
 			
 			_sliders = new()
 			{
-				_getterFacade.GetUIElementQ<Slider>(UIButtonsNames.Master),
-				_getterFacade.GetUIElementQ<Slider>(UIButtonsNames.Music),
+				_getterFacade.GetUIElementQ<Slider>(UiSliderNames.Master),
+				_getterFacade.GetUIElementQ<Slider>(UiSliderNames.Music),
 			};
 
 			foreach (var slider in _sliders) 

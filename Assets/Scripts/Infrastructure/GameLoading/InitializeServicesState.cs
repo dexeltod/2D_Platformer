@@ -43,7 +43,7 @@ namespace Infrastructure.GameLoading
 			_serviceLocator.RegisterAsSingle<IPersistentProgressService>(new PersistentProgressService());
 			_serviceLocator.RegisterAsSingle<IAssetProvider>(new AssetProvider());
 			_serviceLocator.RegisterAsSingle<ISaveLoadDataService>(new SaveLoadDataService(new GameProgressFactory()));
-			_serviceLocator.RegisterAsSingle<ISoundService>(new SoundService(_soundSetter, _serviceLocator.GetSingle<IAssetProvider>()));
+			_serviceLocator.RegisterAsSingle<IMusicService>(new MusicService(_soundSetter, _serviceLocator.GetSingle<IAssetProvider>()));
 			
 			SceneLoadInformer sceneLoadInformer = new SceneLoadInformer();
 	        
