@@ -1,23 +1,26 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIButtonSoundPlayer : MonoBehaviour
+namespace View.StartMenu.View
 {
-	[SerializeField] private Button _button;
-	[SerializeField] private AudioSource _audio;
-
-	private void OnEnable()
+	public class UIButtonSoundPlayer : MonoBehaviour
 	{
-		_button.onClick.AddListener(OnButtonClicked);
-	}
+		[SerializeField] private Button _button;
+		[SerializeField] private AudioSource _audio;
 
-	private void OnDisable()
-	{
-		_button.onClick.RemoveListener(OnButtonClicked);
-	}
+		private void OnEnable()
+		{
+			_button.onClick.AddListener(OnButtonClicked);
+		}
 
-	private void OnButtonClicked()
-	{
-		_audio.Play();
+		private void OnDisable()
+		{
+			_button.onClick.RemoveListener(OnButtonClicked);
+		}
+
+		private void OnButtonClicked()
+		{
+			_audio.Play();
+		}
 	}
 }

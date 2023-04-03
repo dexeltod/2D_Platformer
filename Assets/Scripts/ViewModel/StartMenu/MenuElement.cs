@@ -1,19 +1,19 @@
 ﻿using UnityEngine.UIElements;
-using View.StartMenu.UIBuilder;
+using ViewModel.StartMenu.UIBuilder;
 
-namespace ViewModel.MainMenu.Buttons
+namespace ViewModel.StartMenu
 {
 	public abstract class MenuElement : IVisualElement
 	{
 		public VisualElement ThisElement { get; }
 
-		protected readonly VisualElementSwitcher VisualElementSwitcher;
+		protected readonly VisualElementViewModel VisualElementController;
 		protected readonly UIElementGetterFacade ElementGetter;
 
-		protected MenuElement(VisualElement thisElement, VisualElementSwitcher visualElementSwitcher, UIElementGetterFacade elementGetter)
+		protected MenuElement(VisualElement thisElement, VisualElementViewModel visualElementSwitcher, UIElementGetterFacade elementGetter)
 		{
 			ThisElement = thisElement;
-			VisualElementSwitcher = visualElementSwitcher;
+			VisualElementController = visualElementSwitcher;
 			ElementGetter = elementGetter;
 		}
 	}

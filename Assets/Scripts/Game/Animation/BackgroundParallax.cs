@@ -1,5 +1,6 @@
 using Cinemachine;
 using Infrastructure.GameLoading;
+using Infrastructure.Services.Interfaces;
 using UnityEngine;
 
 namespace Game.Animation

@@ -7,6 +7,7 @@ using Game.PlayerScripts.StateMachine.Transitions;
 using Game.PlayerScripts.StateMachine.Transitions.AttackTo;
 using Game.PlayerScripts.Weapons;
 using Infrastructure.Services;
+using Infrastructure.Services.Interfaces;
 using UnityEngine;
 
 namespace Infrastructure.GameLoading

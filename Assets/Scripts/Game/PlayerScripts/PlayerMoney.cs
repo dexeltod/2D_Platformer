@@ -1,6 +1,6 @@
-using UI_Scripts.Shop;
 using UnityEngine;
 using UnityEngine.Events;
+using View.UI_Scripts.Shop;
 
 namespace Game.PlayerScripts
 {

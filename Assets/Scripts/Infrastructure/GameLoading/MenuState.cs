@@ -1,6 +1,7 @@
 ﻿using Infrastructure.Services;
+using Infrastructure.Services.Interfaces;
 using Infrastructure.States;
-using UI_Scripts.Curtain;
+using View.UI_Scripts.Curtain;
 
 namespace Infrastructure.GameLoading
 {

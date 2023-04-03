@@ -1,6 +1,7 @@
 ﻿using Game.Animation.AnimationHashes.Characters;
 using Game.PlayerScripts.Move;
 using Infrastructure.Services;
+using Infrastructure.Services.Interfaces;
 using UnityEngine;
 
 namespace Game.PlayerScripts.StateMachine.States

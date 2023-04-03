@@ -1,6 +1,6 @@
 ﻿using UnityEngine.UIElements;
 
-namespace View.StartMenu.UIBuilder.SliderViewModel
+namespace ViewModel.StartMenu.UIBuilder
 {
 	public class SliderUIProvider
 	{
@@ -10,11 +10,11 @@ namespace View.StartMenu.UIBuilder.SliderViewModel
 			_uiElementGetterFacade = uiElementGetterFacade;
 
 		public Slider GetSlider(string sliderType) =>
-			_uiElementGetterFacade.GetUIElementQ<Slider>(sliderType);
+			_uiElementGetterFacade.GetFirst<Slider>(sliderType);
 
 		public void SetSliderValue(string sliderType, float value)
 		{
-			var slider = _uiElementGetterFacade.GetUIElementQ<Slider>(sliderType);
+			var slider = _uiElementGetterFacade.GetFirst<Slider>(sliderType);
 			slider.value = value;
 		}
 	}

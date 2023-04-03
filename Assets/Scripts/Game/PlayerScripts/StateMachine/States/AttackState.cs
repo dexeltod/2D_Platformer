@@ -2,6 +2,7 @@
 using Game.PlayerScripts.Move;
 using Game.PlayerScripts.Weapons;
 using Infrastructure.Services;
+using Infrastructure.Services.Interfaces;
 using UnityEngine;
 
 namespace Game.PlayerScripts.StateMachine.States

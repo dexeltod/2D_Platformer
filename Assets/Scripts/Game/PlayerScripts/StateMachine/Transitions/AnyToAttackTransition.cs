@@ -1,5 +1,6 @@
 ﻿using Game.PlayerScripts.Move;
 using Infrastructure.Services;
+using Infrastructure.Services.Interfaces;
 
 namespace Game.PlayerScripts.StateMachine.Transitions
 {

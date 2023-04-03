@@ -1,5 +1,6 @@
 using Infrastructure.GameLoading;
 using Infrastructure.Services;
+using Infrastructure.Services.Interfaces;
 using UnityEngine;
 
 namespace Game.Cameras

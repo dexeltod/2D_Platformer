@@ -1,6 +1,7 @@
 using Cinemachine;
 using Infrastructure.GameLoading;
-using Infrastructure.GameLoading.Factory;
+using Infrastructure.Services.Factory;
+using Infrastructure.Services.Interfaces;
 using UnityEngine;
 
 namespace Game.Level.TransformPoints

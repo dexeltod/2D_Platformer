@@ -1,4 +1,6 @@
-﻿namespace Infrastructure.GameLoading
+﻿using Infrastructure.Services.Interfaces;
+
+namespace Infrastructure.GameLoading
 {
 	public class ServiceLocator
 	{

@@ -3,6 +3,7 @@ using Game.PlayerScripts;
 using Game.SceneConfigs;
 using Infrastructure.GameLoading;
 using Infrastructure.Services;
+using Infrastructure.Services.Interfaces;
 using Infrastructure.Services.SaveLoadService;
 using Infrastructure.States;
 using UnityEngine;
@@ -37,7 +38,7 @@ namespace Game.Environment.EnterTriggers.Enter
 
 		private void OnChangeLevel()
 		{
-			_gameStateMachine.Enter<SceneLoadState, string, bool>(_sceneConfig.Name, _sceneConfig.IsStopMusicBetweenScenes, _sceneConfig.Music);
+			_gameStateMachine.Enter<SceneLoadState, string, bool>(_sceneConfig.Name, _sceneConfig.IsStopMusicBetweenScenes, _sceneConfig.MusicName);
 		}
 
 		private void OnTriggerExit2D(Collider2D collision)

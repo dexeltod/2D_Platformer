@@ -4,7 +4,7 @@ using Game.Enemy.StateMachine;
 using Game.Enemy.StateMachine.States;
 using Game.PlayerScripts;
 using Infrastructure.GameLoading;
-using Infrastructure.GameLoading.Factory;
+using Infrastructure.Services.Factory;
 using UnityEngine;
 using UnityEngine.Events;
 

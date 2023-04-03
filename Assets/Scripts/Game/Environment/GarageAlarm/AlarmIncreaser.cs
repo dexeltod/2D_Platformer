@@ -1,6 +1,6 @@
 using System.Collections;
-using UI_Scripts.GarageSignalBar;
 using UnityEngine;
+using View.UI_Scripts.GarageSignalBar;
 
 namespace Game.Environment.GarageAlarm
 {

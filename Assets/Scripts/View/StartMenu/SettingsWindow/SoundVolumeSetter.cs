@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine.Audio;
 using UnityEngine.UIElements;
-using View.StartMenu.UIBuilder.SliderViewModel;
+using ViewModel.StartMenu.UIBuilder;
 
 namespace View.StartMenu.SettingsWindow
 {
@@ -23,8 +23,11 @@ namespace View.StartMenu.SettingsWindow
 				slider.UnregisterValueChangedCallback(OnSliderChanged);
 		}
 
-		public void SetValue(string soundName, float soundValue) => 
+		public void SetValue(string soundName, float soundValue)
+		{
+			
 			_audioMixer.SetFloat(soundName, soundValue);
+		}
 
 		public void RegisterOnSliderValueChanges(List<string> sliderNames)
 		{

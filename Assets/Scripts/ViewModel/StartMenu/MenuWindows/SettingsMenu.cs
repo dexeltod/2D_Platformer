@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using AudioSettings;
+using Infrastructure.Services.Interfaces;
+using Model.AudioSettings;
 using UnityEngine.Audio;
 using UnityEngine.UIElements;
 using View.StartMenu.SettingsWindow.Sliders;
-using View.StartMenu.UIBuilder;
+using ViewModel.StartMenu.UIBuilder;
 
-namespace ViewModel.MainMenu.Buttons
+namespace ViewModel.StartMenu.MenuWindows
 {
 	public class SettingsMenu : MenuElement
 	{
@@ -21,7 +22,7 @@ namespace ViewModel.MainMenu.Buttons
 		private List<Slider> _slidersViewModel;
 
 		public SettingsMenu(VisualElement thisElement, UIElementGetterFacade uiElementGetterFacade,
-			VisualElementSwitcher visualElementSwitcher, AudioMixer audioMixer) : base(thisElement,
+			VisualElementViewModel visualElementSwitcher, AudioMixer audioMixer) : base(thisElement,
 			visualElementSwitcher,
 			uiElementGetterFacade)
 		{
@@ -29,7 +30,7 @@ namespace ViewModel.MainMenu.Buttons
 			Initialize();
 		}
 
-		~SettingsMenu() => 
+		~SettingsMenu() =>
 			UnsubscribeFromButtons();
 
 		private void Initialize()
@@ -44,9 +45,9 @@ namespace ViewModel.MainMenu.Buttons
 
 		private void GetVisualElements()
 		{
-			_menuElement = ElementGetter.GetUIElementQ<VisualElement>(MenuVisualElementNames.Menu);
-			_saveButton = ElementGetter.GetUIElementQ<Button>(UiButtonNames.Save);
-			_menuButton = ElementGetter.GetUIElementQ<Button>(UiButtonNames.Menu);
+			_menuElement = ElementGetter.GetFirst<VisualElement>(MenuVisualElementNames.Menu);
+			_saveButton = ElementGetter.GetFirst<Button>(UiButtonNames.Save);
+			_menuButton = ElementGetter.GetFirst<Button>(UiButtonNames.Menu);
 		}
 
 		private void SubscribeOnButtons()
@@ -62,7 +63,7 @@ namespace ViewModel.MainMenu.Buttons
 		}
 
 		private void OnMenuButtonClocked() =>
-			VisualElementSwitcher.Enter(ThisElement, _menuElement);
+			VisualElementController.Enter(ThisElement, _menuElement);
 
 		private void OnButtonSaveClicked()
 		{

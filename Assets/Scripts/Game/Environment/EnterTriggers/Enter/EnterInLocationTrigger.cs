@@ -1,7 +1,8 @@
 using Game.PlayerScripts.PlayerData;
 using Infrastructure.GameLoading;
-using Infrastructure.GameLoading.Factory;
 using Infrastructure.Services;
+using Infrastructure.Services.Factory;
+using Infrastructure.Services.Interfaces;
 using UnityEngine;
 
 namespace Game.Environment.EnterTriggers.Enter

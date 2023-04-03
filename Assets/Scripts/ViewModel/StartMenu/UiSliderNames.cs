@@ -1,4 +1,4 @@
-﻿namespace ViewModel.MainMenu.Buttons
+﻿namespace ViewModel.StartMenu
 {
 	public static class UiSliderNames
 	{

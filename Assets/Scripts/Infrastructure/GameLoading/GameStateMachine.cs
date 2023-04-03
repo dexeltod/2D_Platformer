@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using Game.Sound.Music;
 using Infrastructure.Data.PersistentProgress;
-using Infrastructure.GameLoading.Factory;
 using Infrastructure.Services;
+using Infrastructure.Services.Interfaces;
 using Infrastructure.Services.SaveLoadService;
 using Infrastructure.States;
-using UI_Scripts.Curtain;
+using View.UI_Scripts.Curtain;
 
 namespace Infrastructure.GameLoading
 {
@@ -29,7 +29,7 @@ namespace Infrastructure.GameLoading
 					serviceLocator.GetSingle<IPersistentProgressService>(),
 					serviceLocator.GetSingle<ISaveLoadDataService>()),
 				
-				[typeof(BootstrapState)] = new BootstrapState(this, serviceLocator),
+				[typeof(InitializeServicesWithProgressState)] = new InitializeServicesWithProgressState(this, serviceLocator),
 
 				[typeof(MenuState)] = new MenuState(sceneLoader, loadingCurtain),
 

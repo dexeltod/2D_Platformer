@@ -1,6 +1,6 @@
 using Game.PlayerScripts.Move;
 using Infrastructure.GameLoading;
-using Infrastructure.GameLoading.Factory;
+using Infrastructure.Services.Factory;
 using UnityEngine;
 using UnityEngine.VFX;
 

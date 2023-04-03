@@ -33,7 +33,7 @@ namespace Infrastructure.GameLoading
 
 		private void OnProgressLoaded()
 		{
-			_gameStateMachine.Enter<BootstrapState>();
+			_gameStateMachine.Enter<InitializeServicesWithProgressState>();
 		}
 		
 		private async UniTask LoadProgressOrInitNew(Action progressLoaded)

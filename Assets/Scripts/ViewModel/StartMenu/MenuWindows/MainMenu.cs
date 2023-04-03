@@ -1,17 +1,23 @@
-﻿using UnityEngine.Device;
+﻿using Game.SceneConfigs;
+using Infrastructure.Services.Interfaces;
+using Infrastructure.States;
+using UnityEngine.Device;
 using UnityEngine.UIElements;
-using View.StartMenu.UIBuilder;
+using ViewModel.StartMenu.UIBuilder;
 
-namespace ViewModel.MainMenu.Buttons
+namespace ViewModel.StartMenu.MenuWindows
 {
 	public class MainMenu : MenuElement
 	{
 		private const string MainMenuElement = "MainMenu";
 		private const string LevelsMenuElement = "Levels";
 		private const string SettingsMenuElement = "Settings";
+		private const string FirstLevelName = "Level_1";
 
 		private readonly UIElementGetterFacade _uiElementGetter;
-		private readonly VisualElementSwitcher _visualElementSwitcher;
+		private readonly VisualElementViewModel _visualElementSwitcher;
+		private readonly ISceneConfigGetter _sceneConfigGetter;
+		private readonly IGameStateMachine _gameStateMachine;
 		private VisualElement _menuVisualElement;
 		private VisualElement _levelsVisualElement;
 		private VisualElement _settingsVisualElement;
@@ -22,10 +28,13 @@ namespace ViewModel.MainMenu.Buttons
 		private Button _exitButton;
 
 		public MainMenu(VisualElement thisElement, UIElementGetterFacade uiElementGetter,
-			VisualElementSwitcher visualElementSwitcher) : base(thisElement, visualElementSwitcher, uiElementGetter)
+			VisualElementViewModel visualElementSwitcher, ISceneConfigGetter sceneConfigGetter,
+			IGameStateMachine gameStateMachine) : base(thisElement, visualElementSwitcher, uiElementGetter)
 		{
 			_uiElementGetter = uiElementGetter;
 			_visualElementSwitcher = visualElementSwitcher;
+			_sceneConfigGetter = sceneConfigGetter;
+			_gameStateMachine = gameStateMachine;
 			Initialize();
 		}
 
@@ -43,16 +52,16 @@ namespace ViewModel.MainMenu.Buttons
 
 		private void GetElementsToSwitch()
 		{
-			_levelsVisualElement = _uiElementGetter.GetUIElementQ<VisualElement>(LevelsMenuElement);
-			_settingsVisualElement = _uiElementGetter.GetUIElementQ<VisualElement>(SettingsMenuElement);
+			_levelsVisualElement = _uiElementGetter.GetFirst<VisualElement>(LevelsMenuElement);
+			_settingsVisualElement = _uiElementGetter.GetFirst<VisualElement>(SettingsMenuElement);
 		}
 
 		private void GetButtons()
 		{
-			_playButton = _uiElementGetter.GetUIElementQ<Button>(UiButtonNames.Play);
-			_levelsButton = _uiElementGetter.GetUIElementQ<Button>(UiButtonNames.Levels);
-			_settingsButton = _uiElementGetter.GetUIElementQ<Button>(UiButtonNames.Settings);
-			_exitButton = _uiElementGetter.GetUIElementQ<Button>(UiButtonNames.Exit);
+			_playButton = _uiElementGetter.GetFirst<Button>(UiButtonNames.Play);
+			_levelsButton = _uiElementGetter.GetFirst<Button>(UiButtonNames.Levels);
+			_settingsButton = _uiElementGetter.GetFirst<Button>(UiButtonNames.Settings);
+			_exitButton = _uiElementGetter.GetFirst<Button>(UiButtonNames.Exit);
 		}
 
 		private void SubscribeOnButtons()
@@ -80,8 +89,12 @@ namespace ViewModel.MainMenu.Buttons
 		private void OpenSettingsMenu() =>
 			_visualElementSwitcher.Enter(ThisElement, _settingsVisualElement);
 
-		private void OnPlay()
+		private async void OnPlay()
 		{
+			_visualElementSwitcher.Disable(ThisElement);
+			SceneConfig sceneConfig = await _sceneConfigGetter.GetSceneConfig(FirstLevelName);
+			_gameStateMachine.Enter<SceneLoadState, string, bool>(sceneConfig.Name,
+				sceneConfig.IsStopMusicBetweenScenes, sceneConfig.MusicName);
 		}
 	}
 }

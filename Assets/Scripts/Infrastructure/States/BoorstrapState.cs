@@ -2,19 +2,20 @@
 using System.ComponentModel.Design;
 using Infrastructure.Data.PersistentProgress;
 using Infrastructure.GameLoading;
-using Infrastructure.GameLoading.AssetManagement;
-using Infrastructure.GameLoading.Factory;
 using Infrastructure.Services;
+using Infrastructure.Services.AssetManagement;
+using Infrastructure.Services.Factory;
+using Infrastructure.Services.Interfaces;
 
 namespace Infrastructure.States
 {
-	public class BootstrapState : IState
+	public class InitializeServicesWithProgressState : IState
 	{
 		private readonly GameStateMachine _gameStateMachine;
 
 		private readonly ServiceLocator _serviceLocator;
 
-		public BootstrapState(GameStateMachine gameStateMachine, ServiceLocator serviceLocator)
+		public InitializeServicesWithProgressState(GameStateMachine gameStateMachine, ServiceLocator serviceLocator)
 		{
 			_gameStateMachine = gameStateMachine;
 

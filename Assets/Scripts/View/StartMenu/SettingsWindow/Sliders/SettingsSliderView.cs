@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using View.StartMenu.UIBuilder;
-using View.StartMenu.UIBuilder.SliderViewModel;
-using ViewModel.MainMenu.Buttons;
+using ViewModel.StartMenu.MenuWindows;
+using ViewModel.StartMenu.UIBuilder;
 
 namespace View.StartMenu.SettingsWindow.Sliders
 {

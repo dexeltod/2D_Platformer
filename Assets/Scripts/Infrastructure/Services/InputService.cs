@@ -1,4 +1,5 @@
 ﻿using System;
+using Infrastructure.Services.Interfaces;
 using UnityEngine.InputSystem;
 
 namespace Infrastructure.Services

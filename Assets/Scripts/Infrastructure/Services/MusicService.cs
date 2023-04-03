@@ -1,5 +1,6 @@
 ﻿using Game.Sound.Music;
-using Infrastructure.GameLoading.AssetManagement;
+using Infrastructure.Services.AssetManagement;
+using Infrastructure.Services.Interfaces;
 using UnityEngine;
 
 namespace Infrastructure.Services

@@ -3,7 +3,7 @@ using Game.CharactersSettingsSO.Characters.Enemy;
 using Game.Enemy.Services;
 using Game.PlayerScripts;
 using Infrastructure.GameLoading;
-using Infrastructure.GameLoading.Factory;
+using Infrastructure.Services.Factory;
 using UnityEngine;
 
 namespace Game.Enemy.StateMachine.Behaviours

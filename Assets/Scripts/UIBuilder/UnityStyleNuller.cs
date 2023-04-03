@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
-using View.StartMenu.UIBuilder;
-using ViewModel.MainMenu.Buttons;
+using ViewModel.StartMenu;
+using ViewModel.StartMenu.UIBuilder;
 
 namespace UIBuilder
 {
@@ -29,8 +29,8 @@ namespace UIBuilder
 			
 			_sliders = new()
 			{
-				_getterFacade.GetUIElementQ<Slider>(UiSliderNames.Master),
-				_getterFacade.GetUIElementQ<Slider>(UiSliderNames.Music),
+				_getterFacade.GetFirst<Slider>(UiSliderNames.Master),
+				_getterFacade.GetFirst<Slider>(UiSliderNames.Music),
 			};
 
 			foreach (var slider in _sliders) 

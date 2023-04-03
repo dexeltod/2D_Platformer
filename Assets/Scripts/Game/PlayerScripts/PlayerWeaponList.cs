@@ -6,8 +6,8 @@ using Game.PlayerScripts.Weapons;
 using Infrastructure.Data;
 using Infrastructure.Data.PersistentProgress;
 using Infrastructure.GameLoading;
-using UI_Scripts.Shop;
 using UnityEngine;
+using View.UI_Scripts.Shop;
 
 namespace Game.PlayerScripts
 {

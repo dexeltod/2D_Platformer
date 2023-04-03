@@ -1,6 +1,7 @@
 ﻿using Game.Sound.Music;
 using Infrastructure.GameLoading;
-using UI_Scripts.Curtain;
+using Infrastructure.Services;
+using View.UI_Scripts.Curtain;
 
 namespace Infrastructure
 {

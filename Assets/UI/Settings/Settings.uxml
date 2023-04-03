@@ -2,13 +2,13 @@
     <Style src="project://database/Assets/UI/USS/SettingsWindow/Sliders.uss?fileID=7433441132597879392&amp;guid=9764f1369ea912e4380b33d599c235e3&amp;type=3#Sliders" />
     <ui:VisualElement name="Settings" style="justify-content: space-between; height: 100%; -unity-text-align: upper-left; align-items: center; width: 100%; display: none; visibility: visible;">
         <ui:VisualElement name="Sliders" style="width: 100%;">
-            <ui:Slider picking-mode="Ignore" label="All sounds" value="0" high-value="0" low-value="-80" show-input-field="false" text="SAVE" name="Master" class="sliders" />
+            <ui:Slider picking-mode="Ignore" label="All sounds" value="0" high-value="0" low-value="-80" show-input-field="false" text="SAVE" name="Master" focusable="true" class="sliders" />
             <ui:Slider picking-mode="Ignore" label="Music" value="0" high-value="0" low-value="-80" show-input-field="false" text="SAVE" name="Music" class="sliders" />
             <ui:Slider picking-mode="Ignore" label="Interface" value="0" high-value="0" low-value="-80" show-input-field="false" text="SAVE" name="UISounds" inverted="false" focusable="true" class="sliders" />
         </ui:VisualElement>
         <ui:VisualElement name="Buttons" focusable="false" style="flex-direction: row; flex-shrink: 0; align-items: flex-start; width: 100%; -unity-background-scale-mode: scale-to-fit; justify-content: center; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; font-size: 0; -unity-text-align: upper-center;">
-            <ui:Button text="MENU" display-tooltip-when-elided="true" name="MenuButton" class="button" />
-            <ui:Button text="SAVE" display-tooltip-when-elided="true" name="SaveButton" class="button" />
+            <ui:Button text="MENU" display-tooltip-when-elided="true" name="MenuButton" class="menuButton" />
+            <ui:Button text="SAVE" display-tooltip-when-elided="true" name="SaveButton" class="menuButton" />
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="MainMenu" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
@@ -18,6 +18,14 @@
             <ui:Button text="LEVELS" display-tooltip-when-elided="true" name="LevelsButton" class="menuButton" />
             <ui:Button text="SETTINGS" display-tooltip-when-elided="true" name="SettingsButton" class="menuButton" />
             <ui:Button text="EXIT" display-tooltip-when-elided="true" name="ExitButton" class="menuButton" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="Levels" style="width: 100%; height: 100%; display: none;">
+        <ui:VisualElement name="LevelsRow" style="height: 80%;">
+            <ui:Button text="STREET" display-tooltip-when-elided="true" name="Level_1" class="level" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Buttons" style="height: 20%; -unity-text-align: middle-center; align-items: center; justify-content: center;">
+            <ui:Button text="MENU" display-tooltip-when-elided="true" name="MenuButton" class="menuButton" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

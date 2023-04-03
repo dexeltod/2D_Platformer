@@ -1,6 +1,7 @@
 ﻿using System;
 using Game.Animation.AnimationHashes.Characters;
 using Infrastructure.Services;
+using Infrastructure.Services.Interfaces;
 using UnityEngine;
 
 namespace Game.PlayerScripts.StateMachine

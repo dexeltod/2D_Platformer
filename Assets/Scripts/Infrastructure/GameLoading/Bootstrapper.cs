@@ -1,7 +1,7 @@
 using Game.Sound.Music;
 using Infrastructure.States;
-using UI_Scripts.Curtain;
 using UnityEngine;
+using View.UI_Scripts.Curtain;
 
 namespace Infrastructure.GameLoading
 {

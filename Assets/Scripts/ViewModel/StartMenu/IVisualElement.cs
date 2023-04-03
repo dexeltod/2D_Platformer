@@ -1,6 +1,6 @@
 ﻿using UnityEngine.UIElements;
 
-namespace ViewModel.MainMenu.Buttons
+namespace ViewModel.StartMenu
 {
 	public interface IVisualElement
 	{

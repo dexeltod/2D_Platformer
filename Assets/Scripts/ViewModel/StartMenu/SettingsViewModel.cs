@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using AudioSettings;
+using Model.AudioSettings;
 using UnityEngine.Audio;
 using View.StartMenu.SettingsWindow;
-using View.StartMenu.UIBuilder;
-using View.StartMenu.UIBuilder.SliderViewModel;
+using ViewModel.StartMenu.UIBuilder;
 
-namespace ViewModel.MainMenu.Buttons
+namespace ViewModel.StartMenu
 {
 	public class SettingsViewModel
 	{
@@ -39,8 +38,8 @@ namespace ViewModel.MainMenu.Buttons
 			_soundSetter = new SoundVolumeSetter(_sliderUIProvider, _audioMixer);
 
 			SetSliderNames();
-			_soundSetter.RegisterOnSliderValueChanges(_sliderNames);
 			LoadLastSettingsOrInitNew(_saveLoadAudioMixerSettings);
+			_soundSetter.RegisterOnSliderValueChanges(_sliderNames);
 		}
 
 		public Dictionary<string, float> GetValuesInDictionary()

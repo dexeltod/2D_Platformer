@@ -6,12 +6,12 @@ namespace Game.SceneConfigs
 	[CreateAssetMenu(fileName = "ConfigLevel_", menuName = "Data/Level/LevelConfig")]
 	public class SceneConfig : ScriptableObject
 	{
-		[FormerlySerializedAs("_sceneName")] [SerializeField] private string _name;
-		[SerializeField] private string _music;
+		[SerializeField] private string _name;
+		[FormerlySerializedAs("_music")] [SerializeField] private string _musicName;
 		[SerializeField] private bool _isStopMusicBetweenScenes;
 
 		public string Name => _name;
-		public string Music => _music;
+		public string MusicName => _musicName;
 		public bool IsStopMusicBetweenScenes => _isStopMusicBetweenScenes;
 	}
 }

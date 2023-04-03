@@ -146,6 +146,7 @@
     transition-duration: 0.3s;
     transition-delay: 0s;
     -unity-font: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48.ttf?fileID=12800000&guid=a71d3c5456aa00445a1e900e34c45697&type=3#pixeleum-48');
+    rotate: 5deg;
 }
 
 .button:active {
@@ -191,7 +192,7 @@
     background-color: rgba(0, 0, 0, 0);
     -unity-font: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48.ttf?fileID=12800000&guid=a71d3c5456aa00445a1e900e34c45697&type=3#pixeleum-48');
     -unity-font-definition: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48%20SDF.asset?fileID=11400000&guid=fdba096ff1b726c43a1b7ededfe57fbc&type=2#pixeleum-48 SDF');
-    color: rgba(255, 255, 255, 255);
+    color: rgb(255, 255, 255);
     border-left-width: 0;
     border-right-width: 0;
     border-top-width: 0;
@@ -206,6 +207,7 @@
     transition-duration: 0.2s;
     height: 30px;
     transition-timing-function: linear;
+    font-size: 12px;
 }
 
 .menuButton:hover {
@@ -229,7 +231,7 @@
     margin-bottom: 8px;
     transition-duration: 0.2s;
     scale: 1 1;
-    rotate: 5deg;
+    rotate: 2deg;
     height: 35px;
     transition-timing-function: linear;
 }
@@ -237,11 +239,11 @@
 .menuButton:active {
     -unity-background-scale-mode: stretch-to-fill;
     background-image: url('project://database/Assets/Data/Main/Textures/MainMenu/button-background.png?fileID=2800000&guid=5c8ae35ce46fd5c4b9716f7cd6f67743&type=3#button-background');
-    -unity-background-image-tint-color: rgb(128, 3, 7);
+    -unity-background-image-tint-color: rgb(108, 21, 23);
     background-color: rgba(0, 0, 0, 0);
     -unity-font: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48.ttf?fileID=12800000&guid=a71d3c5456aa00445a1e900e34c45697&type=3#pixeleum-48');
     -unity-font-definition: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48%20SDF.asset?fileID=11400000&guid=fdba096ff1b726c43a1b7ededfe57fbc&type=2#pixeleum-48 SDF');
-    color: rgb(137, 53, 3);
+    color: rgb(180, 24, 16);
     border-left-width: 0;
     border-right-width: 0;
     border-top-width: 0;
@@ -255,7 +257,63 @@
     margin-bottom: 8px;
     transition-duration: 0.1s;
     scale: 1 1;
-    rotate: 5deg;
+    rotate: 2deg;
     height: 30px;
     transition-timing-function: ease;
+}
+
+.level {
+    width: 140px;
+    height: 70px;
+    background-color: rgba(171, 138, 138, 0);
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-image: url('project://database/Assets/Data/Main/Textures/MainMenu/levelBorder.png?fileID=2800000&guid=3365f54e3601ee64b841e6a98a2a1eb4&type=3#levelBorder');
+    -unity-background-image-tint-color: rgb(47, 40, 128);
+    -unity-text-align: middle-center;
+    -unity-background-scale-mode: stretch-to-fill;
+    transition-delay: 0s;
+    transition-duration: 0.2s;
+    color: rgb(11, 41, 106);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+}
+
+.level:hover {
+    width: 145px;
+    height: 75px;
+    background-color: rgba(171, 138, 138, 0);
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-image: url('project://database/Assets/Data/Main/Textures/MainMenu/levelBorder.png?fileID=2800000&guid=3365f54e3601ee64b841e6a98a2a1eb4&type=3#levelBorder');
+    -unity-background-image-tint-color: rgb(46, 35, 180);
+    -unity-text-align: middle-center;
+    -unity-background-scale-mode: stretch-to-fill;
+    transition-delay: 0s;
+    transition-duration: 0.1s;
+    color: rgb(180, 58, 37);
+}
+
+.level:active {
+    width: 147px;
+    height: 77px;
+    background-color: rgba(171, 138, 138, 0);
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-image: url('project://database/Assets/Data/Main/Textures/MainMenu/levelBorder.png?fileID=2800000&guid=3365f54e3601ee64b841e6a98a2a1eb4&type=3#levelBorder');
+    -unity-background-image-tint-color: rgb(46, 35, 180);
+    -unity-text-align: middle-center;
+    -unity-background-scale-mode: stretch-to-fill;
+    transition-delay: 0s;
+    transition-duration: 0.1s;
+    color: rgb(180, 58, 37);
+    font-size: 15px;
 }

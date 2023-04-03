@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace View.StartMenu.UIBuilder
+namespace ViewModel.StartMenu.UIBuilder
 {
 	public class UIElementGetterFacade : MonoBehaviour
 	{
@@ -10,16 +10,15 @@ namespace View.StartMenu.UIBuilder
 
 		private UQueryBuilder<VisualElement> _queryBuilder;
 
-		public T GetUIElementQ<T>(string elementType) where T : VisualElement =>
-			_uiDocument.rootVisualElement.Q<T>(elementType);
+		public T GetFirst<T>(string elementName) where T : VisualElement =>
+			_uiDocument.rootVisualElement.Q<T>(elementName);
 
-		public T GetUIElementQuery<T>(string elementType) where T : VisualElement =>
-			_uiDocument.rootVisualElement.Query<T>(elementType);
+		public T GetFirstUIElementQuery<T>(string elementName) where T : VisualElement =>
+			_uiDocument.rootVisualElement.Query<T>(elementName);
 
-		public List<T> GetUIElementChildren<T>(string elementType) where T : VisualElement
+		public List<T> GetChildren<T>(string elementName) where T : VisualElement
 		{
-			
-			VisualElement parentElement = _uiDocument.rootVisualElement.Q<VisualElement>(elementType);
+			VisualElement parentElement = _uiDocument.rootVisualElement.Q<VisualElement>(elementName);
 			IEnumerable<VisualElement> children = parentElement.Children();
 
 			List<T> elements = new();
@@ -30,11 +29,37 @@ namespace View.StartMenu.UIBuilder
 			return elements;
 		}
 
-		public List<T> GetAllElementsByType<T>() where T: VisualElement
+		public List<T> GetAllByType<T>() where T : VisualElement
 		{
 			_queryBuilder = new(_uiDocument.rootVisualElement);
-			List<T> a =_queryBuilder.OfType<T>().ToList();
-			return a;
+			List<T> elements = _queryBuilder.OfType<T>().ToList();
+			return elements;
+		}
+
+		public T GetFirstInChildren<T>(VisualElement parentElement, string elementName) where T : VisualElement
+		{
+			_queryBuilder = new(_uiDocument.rootVisualElement);
+			IEnumerable<VisualElement> children = parentElement.Children();
+
+			foreach (var child in children)
+				if (child.Q<VisualElement>(elementName) != null)
+					return child.Q<T>(elementName);
+			
+			return null;
+		}
+
+		public List<T> GetAllElementsByName<T>(string elementName) where T : VisualElement
+		{
+			_queryBuilder = new(_uiDocument.rootVisualElement);
+			List<T> elements = _queryBuilder.OfType<T>().Where(elem => elem.name == elementName).ToList();
+			return elements;
+		}
+
+		public List<VisualElement> GetAllElementsByName(string elementName)
+		{
+			_queryBuilder = new(_uiDocument.rootVisualElement);
+			List<VisualElement> elements = _queryBuilder.Where(elem => elem.name == elementName).ToList();
+			return elements;
 		}
 	}
 }

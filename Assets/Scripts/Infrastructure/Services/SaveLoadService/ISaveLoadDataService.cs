@@ -1,6 +1,7 @@
 ﻿using Cysharp.Threading.Tasks;
 using Infrastructure.Data.Serializable;
 using Infrastructure.GameLoading;
+using Infrastructure.Services.Interfaces;
 
 namespace Infrastructure.Services.SaveLoadService
 {

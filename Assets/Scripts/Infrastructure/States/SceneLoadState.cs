@@ -1,9 +1,11 @@
 ﻿using Cysharp.Threading.Tasks;
 using Infrastructure.GameLoading;
-using Infrastructure.GameLoading.AssetManagement;
-using Infrastructure.GameLoading.Factory;
-using UI_Scripts.Curtain;
+using Infrastructure.Services;
+using Infrastructure.Services.AssetManagement;
+using Infrastructure.Services.Factory;
+using Infrastructure.Services.Interfaces;
 using UnityEngine;
+using View.UI_Scripts.Curtain;
 
 namespace Infrastructure.States
 {

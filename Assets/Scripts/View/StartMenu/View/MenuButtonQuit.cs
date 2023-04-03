@@ -1,25 +1,27 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Button))]
-public class MenuButtonQuit : MonoBehaviour
+namespace View.StartMenu.View
 {
-	private Button _button;
-
-	private void Awake()
+	[RequireComponent(typeof(Button))]
+	public class MenuButtonQuit : MonoBehaviour
 	{
-		_button = GetComponent<Button>();
-	}
+		private Button _button;
 
-	private void OnEnable() => 
-		_button.onClick.AddListener(PlayButtonPressed);
+		private void Awake()
+		{
+			_button = GetComponent<Button>();
+		}
 
-	private void OnDisable() => 
-		_button.onClick.RemoveListener(PlayButtonPressed);
+		private void OnEnable() => 
+			_button.onClick.AddListener(PlayButtonPressed);
 
-	private void PlayButtonPressed()
-	{
-		Application.Quit();
+		private void OnDisable() => 
+			_button.onClick.RemoveListener(PlayButtonPressed);
+
+		private void PlayButtonPressed()
+		{
+			Application.Quit();
+		}
 	}
 }

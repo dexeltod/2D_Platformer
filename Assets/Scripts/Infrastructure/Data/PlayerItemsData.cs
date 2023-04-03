@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Infrastructure.GameLoading;
-using Infrastructure.GameLoading.AssetManagement;
-using UI_Scripts.Shop;
+using Infrastructure.Services.AssetManagement;
+using View.UI_Scripts.Shop;
 
 namespace Infrastructure.Data
 {

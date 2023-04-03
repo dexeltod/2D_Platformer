@@ -1,11 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Infrastructure.GameLoading;
+using Infrastructure.Services.Interfaces;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UIElements;
-using View.StartMenu.UIBuilder;
+using ViewModel.StartMenu.MenuWindows;
+using ViewModel.StartMenu.UIBuilder;
 
-namespace ViewModel.MainMenu.Buttons
+namespace ViewModel.StartMenu
 {
 	[RequireComponent(typeof(UIElementGetterFacade))]
 	public class StartMenuViewModel : MonoBehaviour
@@ -19,21 +21,25 @@ namespace ViewModel.MainMenu.Buttons
 		private VisualElement _startMenu;
 		private UIElementGetterFacade _uiElementGetter;
 
-		private VisualElementSwitcher _visualElementSwitcher;
+		private VisualElementViewModel _visualElementSwitcher;
 
 		private MainMenu _mainMenu;
 		private SettingsMenu _settingsMenu;
 		private LevelsMenu _levelsMenu;
 
 		private List<Button> _allButtons;
+		private ISceneConfigGetter _sceneConfigGetter;
+		private IGameStateMachine _gameStateMachine;
 
-		private void Awake()
+		private void Start()
 		{
+			_gameStateMachine = ServiceLocator.Container.GetSingle<IGameStateMachine>();
+			_sceneConfigGetter = ServiceLocator.Container.GetSingle<ISceneConfigGetter>();
 			_uiElementGetter = GetComponent<UIElementGetterFacade>();
-			_visualElementSwitcher = new VisualElementSwitcher();
+			_visualElementSwitcher = new VisualElementViewModel();
 
 			CreateMenuWindows();
-			_allButtons = _uiElementGetter.GetAllElementsByType<Button>();
+			_allButtons = _uiElementGetter.GetAllByType<Button>();
 			SubscribeOnButtons();
 		}
 
@@ -42,9 +48,27 @@ namespace ViewModel.MainMenu.Buttons
 
 		private void CreateMenuWindows()
 		{
-			_mainMenu = new MainMenu(_uiElementGetter.GetUIElementQ<VisualElement>(MainMenu), _uiElementGetter, _visualElementSwitcher);
-			_settingsMenu = new SettingsMenu(_uiElementGetter.GetUIElementQ<VisualElement>(Settings),_uiElementGetter, _visualElementSwitcher, _audioMixer);
-			_levelsMenu = new LevelsMenu(_uiElementGetter, _visualElementSwitcher);
+			var mainMenu = new MainMenu(
+				_uiElementGetter.GetFirst<VisualElement>(MenuVisualElementNames.Menu), 
+				_uiElementGetter,
+				_visualElementSwitcher,
+				_sceneConfigGetter,
+				_gameStateMachine
+				);
+			
+			var settingsMenu = new SettingsMenu(
+				_uiElementGetter.GetFirst<VisualElement>(MenuVisualElementNames.Settings),
+				_uiElementGetter,
+				_visualElementSwitcher, 
+				_audioMixer
+				);
+			
+			var levelsMenu = new LevelsMenu(_uiElementGetter.GetFirst<VisualElement>(MenuVisualElementNames.Levels),
+				_visualElementSwitcher,
+				_uiElementGetter,
+				_sceneConfigGetter,
+				_gameStateMachine
+				);
 		}
 
 		private void SubscribeOnButtons()

@@ -1,9 +1,10 @@
 ﻿using Game.Sound.Music;
 using Infrastructure.Data;
 using Infrastructure.Data.PersistentProgress;
-using Infrastructure.GameLoading.AssetManagement;
-using Infrastructure.GameLoading.Factory;
 using Infrastructure.Services;
+using Infrastructure.Services.AssetManagement;
+using Infrastructure.Services.Factory;
+using Infrastructure.Services.Interfaces;
 using Infrastructure.Services.SaveLoadService;
 using Infrastructure.States;
 
@@ -54,6 +55,7 @@ namespace Infrastructure.GameLoading
 			CameraFactory cameraFactory = new CameraFactory();
 			_serviceLocator.RegisterAsSingle<ICameraFactory>(cameraFactory);
 			_serviceLocator.RegisterAsSingle<ICamera>(cameraFactory);
+			_serviceLocator.RegisterAsSingle<ISceneConfigGetter>(new SceneConfigGetter());
 		}
 	}
 }

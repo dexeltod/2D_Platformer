@@ -1,8 +1,9 @@
-﻿namespace ViewModel.MainMenu.Buttons
+﻿namespace ViewModel.StartMenu
 {
 	public static class MenuVisualElementNames
 	{
-		public  static readonly string Menu = "MainMenu";
-		public  static readonly string Settings = "MainMenu";
+		public const string Levels = "Levels";
+		public const string Menu = "MainMenu";
+		public const string Settings = "Settings";
 	}
 }
