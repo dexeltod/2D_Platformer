@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Game.SceneConfigs;
 using Game.Sound.Music;
 using Infrastructure.Data.PersistentProgress;
 using Infrastructure.Services;
@@ -23,13 +24,15 @@ namespace Infrastructure.GameLoading
 		{
 			_states = new Dictionary<Type, IExitState>
 			{
-				[typeof(InitializeServicesState)] = new InitializeServicesState(this, serviceLocator, soundSetter, sceneLoader),
-				
+				[typeof(InitializeServicesState)] =
+					new InitializeServicesState(this, serviceLocator, soundSetter, sceneLoader),
+
 				[typeof(LoadProgressState)] = new LoadProgressState(this,
 					serviceLocator.GetSingle<IPersistentProgressService>(),
 					serviceLocator.GetSingle<ISaveLoadDataService>()),
-				
-				[typeof(InitializeServicesWithProgressState)] = new InitializeServicesWithProgressState(this, serviceLocator),
+
+				[typeof(InitializeServicesWithProgressState)] =
+					new InitializeServicesWithProgressState(this, serviceLocator),
 
 				[typeof(MenuState)] = new MenuState(sceneLoader, loadingCurtain),
 
@@ -53,8 +56,9 @@ namespace Infrastructure.GameLoading
 			state.Enter(payload);
 		}
 
-		public void Enter<TState, TPayload, T>(TPayload payload, bool isLevelNameIsStopMusicBetweenScenes,
-			string musicName) where TState : class, IPayloadState<TPayload>
+		public void Enter<TState, TPayload, T>(TPayload payload, string musicName,
+			bool isLevelNameIsStopMusicBetweenScenes
+		) where TState : class, IPayloadState<TPayload>
 		{
 			TState state = ChangeState<TState>();
 			state.Enter(payload);

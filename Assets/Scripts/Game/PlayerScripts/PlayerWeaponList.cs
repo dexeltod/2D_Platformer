@@ -47,9 +47,12 @@ namespace Game.PlayerScripts
         {
 	        ItemScriptableObject itemScriptableObject = _items.FirstOrDefault();
 
-            AbstractWeapon initializedAbstractWeapon = GetInitializedWeapon(itemScriptableObject.Prefab.GetComponent<AbstractWeapon>());
+	        if (itemScriptableObject != null)
+	        {
+		        AbstractWeapon initializedAbstractWeapon = GetInitializedWeapon(itemScriptableObject.Prefab.GetComponent<AbstractWeapon>());
             
-            SetWeapon(initializedAbstractWeapon);
+		        SetWeapon(initializedAbstractWeapon);
+	        }
         }
 
         private AbstractWeapon GetInitializedWeapon(AbstractWeapon firstAbstractWeapon)

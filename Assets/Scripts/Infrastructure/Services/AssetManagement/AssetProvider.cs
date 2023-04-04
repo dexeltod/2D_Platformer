@@ -34,7 +34,8 @@ namespace Infrastructure.Services.AssetManagement
 			if (_completedCache.TryGetValue(address, out AsyncOperationHandle completedHandle))
 				return completedHandle.Result as T;
 
-			return await RunWithCacheOnComplete(address, Addressables.LoadAssetAsync<T>(address));
+			var result =  await RunWithCacheOnComplete(address, Addressables.LoadAssetAsync<T>(address));
+			return result;
 		}
 		
 		public async UniTask<T> LoadAsync<T>(string address) where T : class
@@ -53,7 +54,8 @@ namespace Infrastructure.Services.AssetManagement
 			if (_completedCache.TryGetValue(reference.AssetGUID, out AsyncOperationHandle completedHandle))
 				return completedHandle.Result as T;
 
-			return await RunWithCacheOnComplete(reference.AssetGUID, Addressables.LoadAssetAsync<T>(reference));
+			var result = await RunWithCacheOnComplete(reference.AssetGUID, Addressables.LoadAssetAsync<T>(reference));
+			return result;
 		}
 
 		public UniTask<GameObject> Instantiate(string path) =>

@@ -61,8 +61,8 @@ namespace ViewModel.StartMenu.MenuWindows
 			string levelName = level.name;
 
 			SceneConfig sceneConfig = await _sceneConfigGetter.GetSceneConfig(levelName);
-			_gameStateMachine.Enter<SceneLoadState, string, bool>(sceneConfig.Name,
-				sceneConfig.IsStopMusicBetweenScenes, sceneConfig.MusicName);
+			_gameStateMachine.Enter<SceneLoadState, string, bool>(sceneConfig.SceneName,
+				sceneConfig.MusicName, sceneConfig.IsStopMusicBetweenScenes);
 		}
 	}
 }

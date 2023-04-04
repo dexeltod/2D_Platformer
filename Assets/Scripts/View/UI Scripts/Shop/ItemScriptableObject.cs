@@ -19,7 +19,7 @@ namespace View.UI_Scripts.Shop
 
         public Item Prefab => _prefab;
         public string Title => _title;
-        public string AssetName => _assetReference.AssetGUID;
+        public string AssetGUID => _assetReference.AssetGUID;
         public string Description => _description;
         public int Price => _price;
         public Sprite Sprite => _sprite;

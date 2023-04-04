@@ -54,7 +54,7 @@ namespace Infrastructure.Services.Factory
 			await CreateDependenciesAsync();
 		}
 
-		private async UniTask CreateHeroGameObject( GameObject initialPoint)
+		private async UniTask CreateHeroGameObject(GameObject initialPoint)
 		{
 			MainCharacter = await _assetProvider.Instantiate(Player, initialPoint.transform.position);
 		}
@@ -88,7 +88,6 @@ namespace Infrastructure.Services.Factory
 			{
 				itemScriptableObjects.Add(await _assetProvider.LoadAsyncByGUID<ItemScriptableObject>(item));
 			}
-
 
 			return itemScriptableObjects;
 		}

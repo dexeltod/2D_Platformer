@@ -1,6 +1,4 @@
-﻿using System;
-using System.ComponentModel.Design;
-using Infrastructure.Data.PersistentProgress;
+﻿using Infrastructure.Data.PersistentProgress;
 using Infrastructure.GameLoading;
 using Infrastructure.Services;
 using Infrastructure.Services.AssetManagement;
@@ -20,7 +18,6 @@ namespace Infrastructure.States
 			_gameStateMachine = gameStateMachine;
 
 			_serviceLocator = serviceLocator;
-			
 		}
 
 		public void Enter()
@@ -37,9 +34,8 @@ namespace Infrastructure.States
 		{
 			_serviceLocator.RegisterAsSingle<IInputService>(new InputService());
 			_serviceLocator.RegisterAsSingle<IPlayerFactory>(
-				new PlayerFactory(_serviceLocator.GetSingle<IAssetProvider>(), _serviceLocator.GetSingle<IPersistentProgressService>()));
-			
-			
+				new PlayerFactory(_serviceLocator.GetSingle<IAssetProvider>(),
+					_serviceLocator.GetSingle<IPersistentProgressService>()));
 		}
 	}
 }

@@ -8,9 +8,11 @@ namespace ViewModel.StartMenu
 		{
 			IStyle lastElement = from.style;
 			lastElement.display = DisplayStyle.None;
+			lastElement.visibility = Visibility.Hidden;
 			
 			IStyle openedElement = to.style;
 			openedElement.display = DisplayStyle.Flex;
+			openedElement.visibility = Visibility.Visible;
 		}
 
 		public void Disable(VisualElement disabledElement)

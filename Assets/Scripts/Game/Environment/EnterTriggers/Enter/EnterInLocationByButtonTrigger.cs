@@ -38,7 +38,8 @@ namespace Game.Environment.EnterTriggers.Enter
 
 		private void OnChangeLevel()
 		{
-			_gameStateMachine.Enter<SceneLoadState, string, bool>(_sceneConfig.Name, _sceneConfig.IsStopMusicBetweenScenes, _sceneConfig.MusicName);
+			_gameStateMachine.Enter<SceneLoadState, string, bool>(_sceneConfig.SceneName, _sceneConfig.MusicName,
+				_sceneConfig.IsStopMusicBetweenScenes);
 		}
 
 		private void OnTriggerExit2D(Collider2D collision)

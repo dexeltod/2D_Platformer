@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83fa43cb95a5b0f40bd3735526ae58ec, type: 3}
   m_Name: ConfigLevel_3
   m_EditorClassIdentifier: 
-  _name: Level_3
-  _music: 
+  _musicName: Dexeltod - night city
+  _sceneName: Level_3
   _isStopMusicBetweenScenes: 0

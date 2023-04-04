@@ -4,6 +4,7 @@ using Game.Enemy.Services;
 using Game.PlayerScripts.PlayerData;
 using Infrastructure.GameLoading;
 using Infrastructure.Services.Factory;
+using Infrastructure.Services.Interfaces;
 using UnityEngine;
 
 namespace Game.Enemy.StateMachine.Behaviours
@@ -24,19 +25,21 @@ namespace Game.Enemy.StateMachine.Behaviours
 		private Coroutine _currentCoroutine;
 		private IPlayerFactory _playerFactory;
 		private WaitForSeconds _waitForSeconds;
+		private ISceneLoadInformer _sceneLoadInformer;
 
 		private void Awake()
 		{
-			_playerFactory = ServiceLocator.Container.GetSingle<IPlayerFactory>();
-			_animator = GetComponent<Animator>();
-			_animationHasher = GetComponent<AnimationHasher>();
-			_playerFactory.MainCharacterCreated += OnLevelLoaded;
+			_sceneLoadInformer = ServiceLocator.Container.GetSingle<ISceneLoadInformer>();
+			_sceneLoadInformer.SceneLoaded += OnLevelLoaded;
 		}
 
 		private void OnLevelLoaded()
 		{
+			_playerFactory = ServiceLocator.Container.GetSingle<IPlayerFactory>();
+			_animator = GetComponent<Animator>();
+			_animationHasher = GetComponent<AnimationHasher>();
 			_playerHealth = _playerFactory.MainCharacter.GetComponent<PlayerHealth>();
-			_playerFactory.MainCharacterCreated -= OnLevelLoaded;
+			_sceneLoadInformer.SceneLoaded -= OnLevelLoaded;
 		}
 
 		private void OnEnable()

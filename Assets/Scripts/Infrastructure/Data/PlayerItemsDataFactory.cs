@@ -11,10 +11,10 @@ namespace Infrastructure.Data
 {
 	public class PlayerItemsDataFactory
 	{
-		private const string FistAddress = "FistInfo";
+		private const string FistAddress = "FistSO";
 
 		private readonly IAssetProvider _assetProvider;
-		private List<ItemScriptableObject> _items = new();
+		private readonly List<ItemScriptableObject> _items = new();
 
 		public PlayerItemsData ItemsData { get; private set; }
 
@@ -47,7 +47,7 @@ namespace Infrastructure.Data
 
 			for (int i = 0; i < items.Count; i++)
 			{
-				itemReferences[i] = items[i].AssetName;
+				itemReferences[i] = items[i].AssetGUID;
 			}
 
 			return itemReferences;

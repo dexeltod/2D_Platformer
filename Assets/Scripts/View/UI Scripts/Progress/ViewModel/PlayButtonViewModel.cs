@@ -11,28 +11,20 @@ namespace View.UI_Scripts.Progress.ViewModel
 	{
 		[SerializeField] private SceneConfig _sceneConfig;
 		[SerializeField] private MenuButtonView _buttonView;
-		
+
 		private IGameStateMachine _gameStateMachine;
 
-		private void Awake()
-		{
+		private void Awake() => 
 			_gameStateMachine = ServiceLocator.Container.GetSingle<IGameStateMachine>();
-		}
 
-		private void OnEnable()
-		{
+		private void OnEnable() => 
 			_buttonView.ButtonPressed += OnButtonPressed;
-		}
 
-		private void OnDisable()
-		{
+		private void OnDisable() => 
 			_buttonView.ButtonPressed -= OnButtonPressed;
-		}
 
-		private void OnButtonPressed()
-		{
-			
-			_gameStateMachine.Enter<SceneLoadState, string, bool>(_sceneConfig.Name, _sceneConfig.IsStopMusicBetweenScenes, _sceneConfig.MusicName);
-		}
+		private void OnButtonPressed() =>
+			_gameStateMachine.Enter<SceneLoadState, string, bool>(_sceneConfig.SceneName, _sceneConfig.MusicName,
+				_sceneConfig.IsStopMusicBetweenScenes);
 	}
 }

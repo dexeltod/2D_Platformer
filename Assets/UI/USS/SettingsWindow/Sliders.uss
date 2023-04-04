@@ -1,7 +1,7 @@
 .sliders {
     width: 90%;
     color: rgb(255, 255, 255);
-    font-size: 16px;
+    font-size: 100%;
     -unity-text-align: upper-center;
     padding-left: 0;
     padding-right: 0;
@@ -43,6 +43,7 @@
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     -unity-font: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48.ttf?fileID=12800000&guid=a71d3c5456aa00445a1e900e34c45697&type=3#pixeleum-48');
+    -unity-font-definition: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48%20SDF.asset?fileID=11400000&guid=fdba096ff1b726c43a1b7ededfe57fbc&type=2#pixeleum-48 SDF');
 }
 
 .sliders:focus {
@@ -72,6 +73,7 @@
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     -unity-font: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48.ttf?fileID=12800000&guid=a71d3c5456aa00445a1e900e34c45697&type=3#pixeleum-48');
+    -unity-font-definition: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48%20SDF.asset?fileID=11400000&guid=fdba096ff1b726c43a1b7ededfe57fbc&type=2#pixeleum-48 SDF');
 }
 
 .button {
@@ -147,6 +149,7 @@
     transition-delay: 0s;
     -unity-font: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48.ttf?fileID=12800000&guid=a71d3c5456aa00445a1e900e34c45697&type=3#pixeleum-48');
     rotate: 5deg;
+    -unity-font-definition: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48%20SDF.asset?fileID=11400000&guid=fdba096ff1b726c43a1b7ededfe57fbc&type=2#pixeleum-48 SDF');
 }
 
 .button:active {
@@ -183,6 +186,8 @@
     font-size: 22px;
     transition-duration: 0.1s;
     transition-delay: 0s;
+    -unity-font-definition: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48%20SDF.asset?fileID=11400000&guid=fdba096ff1b726c43a1b7ededfe57fbc&type=2#pixeleum-48 SDF');
+    -unity-font: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48.ttf?fileID=12800000&guid=a71d3c5456aa00445a1e900e34c45697&type=3#pixeleum-48');
 }
 
 .menuButton {
@@ -281,6 +286,8 @@
     border-right-width: 0;
     border-top-width: 0;
     border-bottom-width: 0;
+    -unity-font: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48.ttf?fileID=12800000&guid=a71d3c5456aa00445a1e900e34c45697&type=3#pixeleum-48');
+    -unity-font-definition: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48%20SDF.asset?fileID=11400000&guid=fdba096ff1b726c43a1b7ededfe57fbc&type=2#pixeleum-48 SDF');
 }
 
 .level:hover {
@@ -298,6 +305,8 @@
     transition-delay: 0s;
     transition-duration: 0.1s;
     color: rgb(180, 58, 37);
+    -unity-font: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48.ttf?fileID=12800000&guid=a71d3c5456aa00445a1e900e34c45697&type=3#pixeleum-48');
+    -unity-font-definition: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48%20SDF.asset?fileID=11400000&guid=fdba096ff1b726c43a1b7ededfe57fbc&type=2#pixeleum-48 SDF');
 }
 
 .level:active {
@@ -316,4 +325,6 @@
     transition-duration: 0.1s;
     color: rgb(180, 58, 37);
     font-size: 15px;
+    -unity-font: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48.ttf?fileID=12800000&guid=a71d3c5456aa00445a1e900e34c45697&type=3#pixeleum-48');
+    -unity-font-definition: url('project://database/Assets/Fonts/pixeleum-48/pixeleum-48%20SDF.asset?fileID=11400000&guid=fdba096ff1b726c43a1b7ededfe57fbc&type=2#pixeleum-48 SDF');
 }

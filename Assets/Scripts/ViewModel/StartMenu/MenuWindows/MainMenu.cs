@@ -1,4 +1,5 @@
-﻿using Game.SceneConfigs;
+﻿using Cysharp.Threading.Tasks;
+using Game.SceneConfigs;
 using Infrastructure.Services.Interfaces;
 using Infrastructure.States;
 using UnityEngine.Device;
@@ -93,8 +94,9 @@ namespace ViewModel.StartMenu.MenuWindows
 		{
 			_visualElementSwitcher.Disable(ThisElement);
 			SceneConfig sceneConfig = await _sceneConfigGetter.GetSceneConfig(FirstLevelName);
-			_gameStateMachine.Enter<SceneLoadState, string, bool>(sceneConfig.Name,
-				sceneConfig.IsStopMusicBetweenScenes, sceneConfig.MusicName);
+			
+			_gameStateMachine.Enter<SceneLoadState, string, bool>(sceneConfig.SceneName,
+				sceneConfig.MusicName, sceneConfig.IsStopMusicBetweenScenes);
 		}
 	}
 }
