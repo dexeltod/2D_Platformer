@@ -21,15 +21,6 @@ namespace Game.PlayerScripts.StateMachine.Transitions.AttackTo
 			_abstractWeapon.AttackAnimationEnded -= ChangeState;
 		}
 		
-		public override void OnEnable()
-		{
-		}
-
-		public override void OnDisable()
-		{
-			
-		}
-		
 		private void ChangeState()
 		{
 			if (_physicsMovement.MovementDirection.x != 0 && _physicsMovement.IsGrounded == true)

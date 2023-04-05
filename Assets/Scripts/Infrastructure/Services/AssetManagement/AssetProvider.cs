@@ -24,7 +24,7 @@ namespace Infrastructure.Services.AssetManagement
 				foreach (var handle in resourceHandles)
 					Addressables.Release(handle);
 			}
-			
+
 			_completedCache.Clear();
 			_handles.Clear();
 		}
@@ -34,19 +34,20 @@ namespace Infrastructure.Services.AssetManagement
 			if (_completedCache.TryGetValue(address, out AsyncOperationHandle completedHandle))
 				return completedHandle.Result as T;
 
-			var result =  await RunWithCacheOnComplete(address, Addressables.LoadAssetAsync<T>(address));
+			var result = await RunWithCacheOnComplete(address, Addressables.LoadAssetAsync<T>(address));
 			return result;
 		}
-		
+
 		public async UniTask<T> LoadAsync<T>(string address) where T : class
 		{
 			if (address == string.Empty)
 				return null;
-			
+
 			if (_completedCache.TryGetValue(address, out AsyncOperationHandle completedHandle))
 				return completedHandle.Result as T;
 
-			return await RunWithCacheOnComplete(address, Addressables.LoadAssetAsync<T>(address));
+			var result = await RunWithCacheOnComplete(address, Addressables.LoadAssetAsync<T>(address));
+			return result;
 		}
 
 		public async Task<T> LoadAsync<T>(AssetReference reference) where T : class
@@ -55,6 +56,26 @@ namespace Infrastructure.Services.AssetManagement
 				return completedHandle.Result as T;
 
 			var result = await RunWithCacheOnComplete(reference.AssetGUID, Addressables.LoadAssetAsync<T>(reference));
+			return result;
+		}
+
+		public async UniTask<T> LoadAsyncWithoutCash<T>(string address) where T : class
+		{
+			var result = await Addressables.LoadAssetAsync<T>(address);
+			return result;
+		}
+
+		public async UniTask<GameObject> InstantiateNoCash(string path, Vector3 position)
+		{
+			if (path == string.Empty)
+				return default;
+
+			if (_completedCache.TryGetValue(path, out AsyncOperationHandle completedHandle))
+				return (GameObject)completedHandle.Result;
+
+			var result = await RunWithCacheOnComplete(path,
+				Addressables.InstantiateAsync(path, position, Quaternion.identity));
+			
 			return result;
 		}
 
@@ -68,7 +89,8 @@ namespace Infrastructure.Services.AssetManagement
 		{
 			handle.Completed += completeHandle => _completedCache[cacheKey] = completeHandle;
 			AddHandle(cacheKey, handle);
-			return await handle.Task;
+			var result = await handle.Task;
+			return result;
 		}
 
 		private void AddHandle<T>(string cacheKey, AsyncOperationHandle<T> handle) where T : class

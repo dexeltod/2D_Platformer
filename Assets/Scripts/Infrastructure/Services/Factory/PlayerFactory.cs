@@ -50,13 +50,15 @@ namespace Infrastructure.Services.Factory
 
 		public async UniTask InstantiateHero(GameObject initialPoint)
 		{
+			_assetProvider.CleanUp();
 			await CreateHeroGameObject(initialPoint);
 			await CreateDependenciesAsync();
 		}
 
 		private async UniTask CreateHeroGameObject(GameObject initialPoint)
 		{
-			MainCharacter = await _assetProvider.Instantiate(Player, initialPoint.transform.position);
+			MainCharacter = null;
+			MainCharacter = await _assetProvider.InstantiateNoCash(Player, initialPoint.transform.position);
 		}
 
 		private async UniTask CreateDependenciesAsync()

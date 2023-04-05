@@ -4,76 +4,87 @@ using Game.Enemy.Services;
 using Game.PlayerScripts;
 using Infrastructure.GameLoading;
 using Infrastructure.Services.Factory;
+using Infrastructure.Services.Interfaces;
 using UnityEngine;
 
 namespace Game.Enemy.StateMachine.Behaviours
 {
-    [RequireComponent(typeof(AnimationHasher), typeof(Animator), typeof(Rigidbody2D))]
-    public class EnemyFollowPlayerBehaviour : MonoBehaviour
-    {
-        [SerializeField] private EnemyData _enemyData;
+	[RequireComponent(typeof(AnimationHasher), typeof(Animator), typeof(Rigidbody2D))]
+	public class EnemyFollowPlayerBehaviour : MonoBehaviour
+	{
+		[SerializeField] private EnemyData _enemyData;
 
-        private IPlayerFactory _playerFactory;
-        private Player _player;
-        private EnemyObserver _enemyObserver;
-        
-        private Rigidbody2D _rigidbody2D;
-        private Vector2 _direction;
-        private Animator _animator;
-        private AnimationHasher _animationHasher;
+		private IPlayerFactory _playerFactory;
+		private Player _player;
+		private EnemyObserver _enemyObserver;
 
-        private bool _isRotateRight;
-        private bool _lastRotateRight;
+		private Rigidbody2D _rigidbody2D;
+		private Vector2 _direction;
+		private Animator _animator;
+		private AnimationHasher _animationHasher;
 
-        private Vector2 _followDirection = new(-1, 0);
-        private Vector2 _targetDirection;
+		private bool _isRotateRight;
+		private bool _lastRotateRight;
 
-        private float _lastFollowDirection;
+		private Vector2 _followDirection = new(-1, 0);
+		private Vector2 _targetDirection;
 
-        private void Awake()
-        {
-            _playerFactory = ServiceLocator.Container.GetSingle<IPlayerFactory>();
-            _enemyObserver = GetComponent<EnemyObserver>();
-            _animator = GetComponent<Animator>();
-            _animationHasher = GetComponent<AnimationHasher>();
-            _rigidbody2D = GetComponent<Rigidbody2D>();
-            _playerFactory.MainCharacterCreated += OnCharacterCreated;
-        }
+		private float _lastFollowDirection;
+		private ISceneLoadInformer _sceneLoadInformer;
+		private bool _isPlayerNotNull;
 
-        private void OnCharacterCreated()
-        {
-            _player = _playerFactory.MainCharacter.GetComponent<Player>();
-            _playerFactory.MainCharacterCreated -= OnCharacterCreated;
-        }
+		private void Start()
+		{
+			_isPlayerNotNull = _player != null;
+		}
 
-        private void OnEnable()
-        {
-	        _animator.StopPlayback();
-            _animator.Play(_animationHasher.RunHash);
-        }
+		private void Awake()
+		{
+			_playerFactory = ServiceLocator.Container.GetSingle<IPlayerFactory>();
+			_sceneLoadInformer = ServiceLocator.Container.GetSingle<ISceneLoadInformer>();
+			_enemyObserver = GetComponent<EnemyObserver>();
+			_animator = GetComponent<Animator>();
+			_animationHasher = GetComponent<AnimationHasher>();
+			_rigidbody2D = GetComponent<Rigidbody2D>();
+			_sceneLoadInformer.SceneLoaded += OnCharacterCreated;
+		}
 
-        private void OnDisable()
-        {
-	        _rigidbody2D.position += Vector2.zero;
-	        _animator.StopPlayback();
-        }
+		private void OnCharacterCreated()
+		{
+			_player = _playerFactory.MainCharacter.GetComponent<Player>();
+			_sceneLoadInformer.SceneLoaded -= OnCharacterCreated;
+		}
 
-        private void FixedUpdate()
-        {
-            _targetDirection = _player.transform.position - transform.position;
-            _rigidbody2D.position += _followDirection * (_enemyData.RunSpeed * Time.deltaTime);
-            CheckDirectionToRotate();
-        }
+		private void OnEnable()
+		{
+			_animator.StopPlayback();
+			_animator.Play(_animationHasher.RunHash);
+		}
 
-        private void CheckDirectionToRotate()
-        {
-            _followDirection.x = _targetDirection.x > 0 ? 1 : -1;
+		private void OnDisable()
+		{
+			_rigidbody2D.position += Vector2.zero;
+			_animator.StopPlayback();
+		}
 
-            if (_lastFollowDirection == _followDirection.x)
-                return;
+		private void FixedUpdate()
+		{
+			if (_isPlayerNotNull)
+				_targetDirection = _player.transform.position - transform.position;
+			
+			_rigidbody2D.position += _followDirection * (_enemyData.RunSpeed * Time.deltaTime);
+			CheckDirectionToRotate();
+		}
 
-            _lastFollowDirection = _followDirection.x;
-            _enemyObserver.SetFacingDirection(_followDirection.x);
-        }
-    }
+		private void CheckDirectionToRotate()
+		{
+			_followDirection.x = _targetDirection.x > 0 ? 1 : -1;
+
+			if (_lastFollowDirection == _followDirection.x)
+				return;
+
+			_lastFollowDirection = _followDirection.x;
+			_enemyObserver.SetFacingDirection(_followDirection.x);
+		}
+	}
 }

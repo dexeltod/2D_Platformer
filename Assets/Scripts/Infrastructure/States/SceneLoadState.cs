@@ -1,4 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
+using Infrastructure.Data.PersistentProgress;
 using Infrastructure.GameLoading;
 using Infrastructure.Services;
 using Infrastructure.Services.AssetManagement;
@@ -14,6 +15,7 @@ namespace Infrastructure.States
 		private readonly GameStateMachine _gameStateMachine;
 		private readonly SceneLoader _sceneLoader;
 		private readonly LoadingCurtain _loadingCurtain;
+		private readonly ServiceLocator _serviceLocator;
 
 		private IPlayerFactory _playerFactory;
 		private IUIFactory _uiFactory;
@@ -22,16 +24,18 @@ namespace Infrastructure.States
 
 		private GameObject InitialPoint => GameObject.FindWithTag(ConstantNames.ConstantNames.PlayerSpawnPointTag);
 
-		public SceneLoadState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain)
+		public SceneLoadState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain, ServiceLocator serviceLocator)
 		{
 			_gameStateMachine = gameStateMachine;
 			_sceneLoader = sceneLoader;
 			_loadingCurtain = loadingCurtain;
-			
+			_serviceLocator = serviceLocator;
 		}
 
 		public void Enter(string levelName)
 		{
+			
+			
 			_playerFactory = ServiceLocator.Container.GetSingle<IPlayerFactory>();
 			_uiFactory = ServiceLocator.Container.GetSingle<IUIFactory>();
 			_sceneLoad = ServiceLocator.Container.GetSingle<ISceneLoad>();

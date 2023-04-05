@@ -36,7 +36,7 @@ namespace Infrastructure.GameLoading
 
 				[typeof(MenuState)] = new MenuState(sceneLoader, loadingCurtain),
 
-				[typeof(SceneLoadState)] = new SceneLoadState(this, sceneLoader, loadingCurtain),
+				[typeof(SceneLoadState)] = new SceneLoadState(this, sceneLoader, loadingCurtain, serviceLocator),
 
 				[typeof(GameLoopState)] = new GameLoopState(this),
 			};
@@ -74,7 +74,7 @@ namespace Infrastructure.GameLoading
 
 			if (isLevelNameIsStopMusicBetweenScenes)
 				_musicService.Stop();
-
+			
 			_musicService.Set(musicName);
 		}
 

@@ -1,8 +1,11 @@
-﻿namespace Infrastructure.Services.Interfaces
+﻿using Cysharp.Threading.Tasks;
+using UnityEngine;
+
+namespace Infrastructure.Services.Interfaces
 {
 	public interface IMusicService : IService
 	{
-		void Set(string audioName);
+		UniTask Set(string audioName);
 		void Stop();
 	}
 }
