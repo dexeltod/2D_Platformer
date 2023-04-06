@@ -1,6 +1,7 @@
 using Game.Sound.Music;
 using Infrastructure.States;
 using UnityEngine;
+using UnityEngine.Serialization;
 using View.UI_Scripts.Curtain;
 
 namespace Infrastructure.GameLoading
@@ -8,24 +9,24 @@ namespace Infrastructure.GameLoading
 	public class Bootstrapper : MonoBehaviour, ICoroutineRunner
 	{
 		[SerializeField] private LoadingCurtain _loadingCurtain;
-		[SerializeField] private SoundSetter _soundSetter;
+		[FormerlySerializedAs("_soundSetter")] [SerializeField] private MusicSetter _musicSetter;
 		
 		private Game _game;
 
 		private void Awake()
 		{
-			SoundSetter soundSetter = GetMusicSetter();
+			MusicSetter musicSetter = GetMusicSetter();
 			var loadingCurtain = GetLoadingCurtain();
 			loadingCurtain.gameObject.SetActive(false);
 			
-			_game = new Game(this, loadingCurtain, soundSetter);
+			_game = new Game(this, loadingCurtain, musicSetter);
 			_game.StateMachine.Enter<InitializeServicesState>();
 			
 			DontDestroyOnLoad(this);
 		}
 
-		private SoundSetter GetMusicSetter() =>
-			Instantiate(_soundSetter);
+		private MusicSetter GetMusicSetter() =>
+			Instantiate(_musicSetter);
 		
 		private LoadingCurtain GetLoadingCurtain() => 
 			Instantiate(_loadingCurtain);

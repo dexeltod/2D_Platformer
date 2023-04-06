@@ -49,6 +49,10 @@ MonoBehaviour:
     m_Address: Level_3
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 0ee8d0ef16ab19b4a992d17130ab0b54
+    m_Address: Punch
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 16ca753ccb6322f4eac684e464af1aad, type: 2}
   m_SchemaSet:

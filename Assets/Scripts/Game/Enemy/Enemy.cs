@@ -3,6 +3,8 @@ using Game.Enemy.Services;
 using Game.Enemy.StateMachine;
 using Game.Enemy.StateMachine.States;
 using Game.PlayerScripts;
+using Game.PlayerScripts.Weapons;
+using Game.PlayerScripts.Weapons.WeaponTypes;
 using Infrastructure.GameLoading;
 using Infrastructure.Services.Factory;
 using UnityEngine;
@@ -10,8 +12,9 @@ using UnityEngine.Events;
 
 namespace Game.Enemy
 {
+	//need decompose
     [RequireComponent(typeof(CapsuleCollider2D))]
-    public abstract class Enemy : MonoBehaviour
+    public abstract class Enemy : MonoBehaviour, IWeaponVisitor
     {
         [SerializeField] private EnemyData _enemyData;
 
@@ -45,17 +48,12 @@ namespace Game.Enemy
         protected void StartFirstState() => 
             _enemyBehaviour.SwitchState<EnemyIdleState>();
 
-        public void ApplyDamage(int damage)
-        {
-            if (Health <= 0)
-            {
-                Dying?.Invoke(this);
-                return;
-            }
+        public void FistVisit(Fist fist) => 
+	        DefaultOverlapVisit(fist);
 
-            WasHit?.Invoke();
-            Health -= damage;
-            ValidateHealth();
+        public void RangeWeaponVisit(RangeAbstractWeapon shotGun)
+        {
+	        throw new System.NotImplementedException();
         }
 
         private void OnLevelLoaded()
@@ -63,11 +61,26 @@ namespace Game.Enemy
             _target = _factory.MainCharacter.GetComponent<Player>();
             _factory.MainCharacterCreated -= OnLevelLoaded;
         }
-	
+
         private void ValidateHealth()
         {
             const int MinHealthValue = 0;
             Health = Mathf.Clamp(Health, MinHealthValue, _maxHealth);
+        }
+
+        private void DefaultOverlapVisit(AbstractWeapon weapon)
+        {
+	        weapon.PlayDamageSound();
+	        
+	        if (Health <= 0)
+	        {
+		        Dying?.Invoke(this);
+		        return;
+	        }
+
+	        WasHit?.Invoke();
+	        Health -= weapon.Damage;
+	        ValidateHealth();
         }
     }
 }

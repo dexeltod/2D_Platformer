@@ -1,15 +1,16 @@
-using System;
 using UnityEngine;
 
 namespace Game.Sound.Music
 {
-	public class SoundSetter : MonoBehaviour
+	[RequireComponent(typeof(AudioSource))]
+	public class MusicSetter : MonoBehaviour
 	{
-		[SerializeField] private AudioSource _audio;
+		private AudioSource _audio;
 		private AudioClip _clip;
 		
 		private void Awake()
 		{
+			_audio = GetComponent<AudioSource>();
 			DontDestroyOnLoad(gameObject);
 		}
 

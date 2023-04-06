@@ -1,4 +1,5 @@
-﻿using Game.PlayerScripts.Weapons.Bullets;
+﻿using Game.Enemy;
+using Game.PlayerScripts.Weapons.Bullets;
 using UnityEngine;
 
 namespace Game.PlayerScripts.Weapons.WeaponTypes
@@ -34,9 +35,9 @@ namespace Game.PlayerScripts.Weapons.WeaponTypes
 			CanAttack = true;
 		}
 
-		public sealed override void GiveDamage(Enemy.Enemy target)
+		public sealed override void GiveDamage(IWeaponVisitor target)
 		{
-			target.ApplyDamage(Damage);
+			target.RangeWeaponVisit(this);
 			_currentBullet.IsTargetReached -= GiveDamage;
 		}
 	}

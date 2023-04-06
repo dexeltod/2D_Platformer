@@ -1,4 +1,5 @@
-﻿using Game.Animation.AnimationHashes.Characters;
+﻿using Cysharp.Threading.Tasks;
+using Game.Animation.AnimationHashes.Characters;
 using Game.PlayerScripts.Weapons.MeleeTrigger;
 using UnityEngine;
 
@@ -11,13 +12,13 @@ namespace Game.PlayerScripts.Weapons
         [SerializeField] private AnimationHasher _animationHasher;
         [SerializeField] private MeleeWeaponTrigger _meleeWeaponTrigger;
 
-        public AbstractWeapon CreateWeapon(AbstractWeapon weaponBase, Transform parent)
+        public async UniTask<AbstractWeapon> CreateWeapon(AbstractWeapon weaponBase, Transform parent)
         {
             weaponBase.gameObject.SetActive(false);
             weaponBase.enabled = false;
 		
             AbstractWeapon instantiatedAbstractWeapon = Instantiate(weaponBase, parent);
-            instantiatedAbstractWeapon.Initialize(_animator, _animatorFacade, _animationHasher, _meleeWeaponTrigger);
+            await instantiatedAbstractWeapon.Initialize(_animator, _animatorFacade, _animationHasher, _meleeWeaponTrigger);
 		
             instantiatedAbstractWeapon.gameObject.SetActive(true);
             instantiatedAbstractWeapon.enabled = true;

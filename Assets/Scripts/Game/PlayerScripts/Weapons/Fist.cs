@@ -1,10 +1,13 @@
+using Game.Enemy;
+using UnityEngine;
+
 namespace Game.PlayerScripts.Weapons
 {
 	public sealed class Fist : AbstractWeapon, IMeleeWeapon
 	{
-		public override void GiveDamage(Enemy.Enemy target)
+		public override void GiveDamage(IWeaponVisitor target)
 		{
-			target.ApplyDamage(Damage);
+			target.FistVisit(this);
 		}
 
 		protected override void Attack()
@@ -12,8 +15,11 @@ namespace Game.PlayerScripts.Weapons
 			if (CanAttack == false)
 				return;
 
+			WeaponAudio.clip = WeaponSound;
+
+			WeaponAudio.Play();
 			CanAttack = false;
-			
+
 			if (Animator != null)
 			{
 				var animation = Animator.GetCurrentAnimatorStateInfo(0);

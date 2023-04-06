@@ -55,17 +55,11 @@ namespace Game.Enemy.StateMachine.Behaviours
 			_sceneLoadInformer.SceneLoaded -= OnCharacterCreated;
 		}
 
-		private void OnEnable()
-		{
-			_animator.StopPlayback();
+		private void OnEnable() => 
 			_animator.Play(_animationHasher.RunHash);
-		}
 
-		private void OnDisable()
-		{
+		private void OnDisable() => 
 			_rigidbody2D.position += Vector2.zero;
-			_animator.StopPlayback();
-		}
 
 		private void FixedUpdate()
 		{
@@ -78,7 +72,9 @@ namespace Game.Enemy.StateMachine.Behaviours
 
 		private void CheckDirectionToRotate()
 		{
-			_followDirection.x = _targetDirection.x > 0 ? 1 : -1;
+			_followDirection.x = _targetDirection.x > 0 
+				? 1 
+				: -1;
 
 			if (_lastFollowDirection == _followDirection.x)
 				return;

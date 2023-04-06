@@ -1,24 +1,35 @@
 using System;
 using System.Collections;
+using Cysharp.Threading.Tasks;
 using Game.Animation.AnimationHashes.Characters;
+using Game.Enemy;
 using Game.PlayerScripts.Weapons.MeleeTrigger;
+using Infrastructure.GameLoading;
+using Infrastructure.Services.AssetManagement;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Game.PlayerScripts.Weapons
 {
+	[RequireComponent(typeof(AudioSource))]
 	public abstract class AbstractWeapon : Item
 	{
+		[SerializeField] protected WeaponInfo WeaponInfo;
+
 		private const string BaseLayer = "Base Layer";
 
-		[SerializeField] private WeaponInfo _weaponInfo;
-		
+		private DamageSoundPlayer _damageSoundPlayer;
+		protected AudioSource WeaponAudio;
+		protected AudioClip WeaponSound;
 		protected Animator Animator;
 		protected AnimationHasher AnimationHasher;
 		protected bool IsRun;
-		protected Coroutine AttackRoutine;
-		
+
+		private AudioClip _damageSound;
+		private IAssetProvider _assetProvider;
 		private AnimatorFacade _animatorFacade;
 		private MeleeWeaponTrigger _meleeWeaponTrigger;
+
 		public int CurrentAnimationHash { get; protected set; }
 		public bool CanAttack { get; protected set; }
 		public int Damage { get; protected set; }
@@ -32,24 +43,32 @@ namespace Game.PlayerScripts.Weapons
 			OnAwake();
 		}
 
-		private void OnEnable() => 
+		private void OnEnable() =>
 			_meleeWeaponTrigger.Touched += GiveDamage;
 
-		private void OnDisable() => 
+		private void OnDisable() =>
 			_meleeWeaponTrigger.Touched -= GiveDamage;
 
-		public void Initialize(Animator animator, AnimatorFacade animatorFacade, AnimationHasher hasher,
+		public async UniTask Initialize(Animator animator, AnimatorFacade animatorFacade, AnimationHasher hasher,
 			MeleeWeaponTrigger meleeWeaponTrigger)
 		{
+			_assetProvider = ServiceLocator.Container.GetSingle<IAssetProvider>();
+
+			WeaponAudio = GetComponent<AudioSource>();
 			_meleeWeaponTrigger = meleeWeaponTrigger;
 			_animatorFacade = animatorFacade;
 			Animator = animator;
 			AnimationHasher = hasher;
 
+			var damageSoundPlayer = await _assetProvider.Instantiate(WeaponInfo.DamageSoundPlayer.AssetGUID, transform.position);
+			_damageSoundPlayer = damageSoundPlayer.GetComponent<DamageSoundPlayer>();
+			_damageSound = await _assetProvider.LoadAsyncByGUID<AudioClip>(WeaponInfo.DamageSound.AssetGUID);
+			WeaponSound = await _assetProvider.LoadAsyncByGUID<AudioClip>(WeaponInfo.WeaponSound.AssetGUID);
+			
 			CanAttack = true;
-			Damage = _weaponInfo.Damage;
-			AttackSpeed = _weaponInfo.AttackSpeed;
-			Range = _weaponInfo.Range;
+			Damage = WeaponInfo.Damage;
+			AttackSpeed = WeaponInfo.AttackSpeed;
+			Range = WeaponInfo.Range;
 
 			Animator.SetFloat(AnimationHasher.AttackSpeedHash, AttackSpeed);
 		}
@@ -57,7 +76,7 @@ namespace Game.PlayerScripts.Weapons
 		public void Use() =>
 			Attack();
 
-		public abstract void GiveDamage(Enemy.Enemy target);
+		public abstract void GiveDamage(IWeaponVisitor target);
 
 		public void SetRunBool(bool isRun) =>
 			IsRun = isRun;
@@ -79,9 +98,14 @@ namespace Game.PlayerScripts.Weapons
 			WaitForSeconds animationTime = new(speed);
 
 			yield return animationTime;
-			
+
 			_meleeWeaponTrigger.gameObject.SetActive(false);
-			AttackAnimationEnded.Invoke();
+			AttackAnimationEnded?.Invoke();
+		}
+
+		public void PlayDamageSound()
+		{
+			_damageSoundPlayer.Play(_damageSound);
 		}
 	}
 }

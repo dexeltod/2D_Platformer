@@ -8,14 +8,14 @@ namespace Infrastructure.Services
 {
 	public class MusicService : IMusicService
 	{
-		private readonly SoundSetter _soundSetter;
+		private readonly MusicSetter _musicSetter;
 		private readonly IAssetProvider _assetProvider;
 		private string _currentSound;
 		private AudioClip _sound;
 
-		public MusicService(SoundSetter soundSetter, IAssetProvider assetProvider)
+		public MusicService(MusicSetter musicSetter, IAssetProvider assetProvider)
 		{
-			_soundSetter = soundSetter;
+			_musicSetter = musicSetter;
 			_assetProvider = assetProvider;
 		}
 
@@ -25,11 +25,11 @@ namespace Infrastructure.Services
 				return;
 			
 			_sound = await _assetProvider.LoadAsyncWithoutCash<AudioClip>(audioName);
-			_soundSetter.SetAudioClip(_sound);
+			_musicSetter.SetAudioClip(_sound);
 			_currentSound = audioName;
 		}
 
 		public void Stop() =>
-			_soundSetter.Stop();
+			_musicSetter.Stop();
 	}
 }

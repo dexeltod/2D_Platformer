@@ -1,6 +1,7 @@
 ﻿using Game.Animation.AnimationHashes.Characters;
 using Game.PlayerScripts.Move;
 using Game.PlayerScripts.Weapons;
+using Game.Sound.Music;
 using Infrastructure.Services;
 using Infrastructure.Services.Interfaces;
 using UnityEngine;
@@ -10,6 +11,7 @@ namespace Game.PlayerScripts.StateMachine.States
 	public sealed class AttackState : State
 	{
 		private readonly PhysicsMovement _physicsMovement;
+		private readonly MusicSetter _musicSetter;
 
 		private AbstractWeapon _currentWeapon;
 

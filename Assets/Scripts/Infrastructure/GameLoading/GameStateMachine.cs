@@ -20,12 +20,12 @@ namespace Infrastructure.GameLoading
 		private IExitState _activeState;
 
 		public GameStateMachine(SceneLoader sceneLoader, LoadingCurtain loadingCurtain,
-			ServiceLocator serviceLocator, SoundSetter soundSetter)
+			ServiceLocator serviceLocator, MusicSetter musicSetter)
 		{
 			_states = new Dictionary<Type, IExitState>
 			{
 				[typeof(InitializeServicesState)] =
-					new InitializeServicesState(this, serviceLocator, soundSetter, sceneLoader),
+					new InitializeServicesState(this, serviceLocator, musicSetter, sceneLoader),
 
 				[typeof(LoadProgressState)] = new LoadProgressState(this,
 					serviceLocator.GetSingle<IPersistentProgressService>(),

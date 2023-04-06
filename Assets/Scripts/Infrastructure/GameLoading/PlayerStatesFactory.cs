@@ -6,6 +6,7 @@ using Game.PlayerScripts.StateMachine.States;
 using Game.PlayerScripts.StateMachine.Transitions;
 using Game.PlayerScripts.StateMachine.Transitions.AttackTo;
 using Game.PlayerScripts.Weapons;
+using Game.Sound.Music;
 using Infrastructure.Services;
 using Infrastructure.Services.Interfaces;
 using UnityEngine;
@@ -22,6 +23,7 @@ namespace Infrastructure.GameLoading
 		private readonly AnimatorFacade _animatorFacade;
 		private readonly PhysicsMovement _physicsMovement;
 		private readonly PlayerWeaponList _playerWeaponList;
+		private readonly MusicSetter _musicSetter;
 		private readonly AbstractWeapon _abstractWeapon;
 		private readonly AnimationHasher _animationHasher;
 

@@ -5,6 +5,7 @@ using Game.Animation.AnimationHashes.Characters;
 using Game.PlayerScripts;
 using Game.PlayerScripts.Move;
 using Game.PlayerScripts.Weapons;
+using Game.Sound.Music;
 using Infrastructure.Data.PersistentProgress;
 using Infrastructure.Data.Serializable;
 using Infrastructure.GameLoading;
@@ -76,6 +77,7 @@ namespace Infrastructure.Services.Factory
 			GetComponents();
 
 			_playerWeaponList = new PlayerWeaponList(_weaponFactory, _playerMoney, MainCharacter.transform, items);
+			await _playerWeaponList.SetStartWeapon();
 			CreatePlayerStateMachine();
 			MainCharacterCreated?.Invoke();
 		}

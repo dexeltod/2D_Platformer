@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace Game.PlayerScripts.Weapons
 {
@@ -8,6 +9,8 @@ namespace Game.PlayerScripts.Weapons
 		public int Damage;
 		public float AttackSpeed;
 		public float Range;
-		
+		public AssetReference WeaponSound;
+		public AssetReference DamageSound;
+		public AssetReference DamageSoundPlayer;
 	}
 }

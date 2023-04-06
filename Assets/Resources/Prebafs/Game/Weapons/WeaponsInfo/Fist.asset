@@ -15,3 +15,18 @@ MonoBehaviour:
   Damage: 10
   AttackSpeed: 1
   Range: 3
+  WeaponSound:
+    m_AssetGUID: 427cdd8b990a6554c9e46a37c238469c
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  DamageSound:
+    m_AssetGUID: 0ee8d0ef16ab19b4a992d17130ab0b54
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  DamageSoundPlayer:
+    m_AssetGUID: ca888188ecabda64cacee1206e6bfe49
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

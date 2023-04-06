@@ -15,12 +15,12 @@ namespace Infrastructure.GameLoading
 		private readonly GameStateMachine _gameStateMachine;
 		private readonly ServiceLocator _serviceLocator;
 		private readonly SceneLoader _sceneLoader;
-		private readonly SoundSetter _soundSetter;
+		private readonly MusicSetter _musicSetter;
 
-		public InitializeServicesState(GameStateMachine gameStateMachine, ServiceLocator serviceLocator, SoundSetter soundSetter,  SceneLoader sceneLoader)
+		public InitializeServicesState(GameStateMachine gameStateMachine, ServiceLocator serviceLocator, MusicSetter musicSetter,  SceneLoader sceneLoader)
 		{
 			_sceneLoader = sceneLoader;
-			_soundSetter = soundSetter;
+			_musicSetter = musicSetter;
 			_gameStateMachine = gameStateMachine;
 			_serviceLocator = serviceLocator;
 			RegisterServices();
@@ -44,7 +44,7 @@ namespace Infrastructure.GameLoading
 			_serviceLocator.RegisterAsSingle<IPersistentProgressService>(new PersistentProgressService());
 			_serviceLocator.RegisterAsSingle<IAssetProvider>(new AssetProvider());
 			_serviceLocator.RegisterAsSingle<ISaveLoadDataService>(new SaveLoadDataService(new GameProgressFactory()));
-			_serviceLocator.RegisterAsSingle<IMusicService>(new MusicService(_soundSetter, _serviceLocator.GetSingle<IAssetProvider>()));
+			_serviceLocator.RegisterAsSingle<IMusicService>(new MusicService(_musicSetter, _serviceLocator.GetSingle<IAssetProvider>()));
 			
 			SceneLoadInformer sceneLoadInformer = new SceneLoadInformer();
 	        

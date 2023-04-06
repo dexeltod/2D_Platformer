@@ -25,6 +25,14 @@ MonoBehaviour:
     m_Address: FistInfo
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 427cdd8b990a6554c9e46a37c238469c
+    m_Address: MeleeWeaponSound
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ca888188ecabda64cacee1206e6bfe49
+    m_Address: DamageSoundPlayer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 16ca753ccb6322f4eac684e464af1aad, type: 2}
   m_SchemaSet:

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Cysharp.Threading.Tasks;
 using Game.Animation.AnimationHashes.Characters;
 using Game.PlayerScripts.Weapons;
 using Infrastructure.Data;
@@ -30,8 +31,6 @@ namespace Game.PlayerScripts
 	        _weaponFactory = weaponFactory;
             _playerMoney = playerMoney;
             _transform = transform;
-            
-            SetStartWeapon();
         }
 
         public AbstractWeapon GetEquippedWeapon() =>
@@ -43,21 +42,21 @@ namespace Game.PlayerScripts
             _items.Add(weaponBase);
         }
 
-        private void SetStartWeapon()
+        public async UniTask SetStartWeapon()
         {
 	        ItemScriptableObject itemScriptableObject = _items.FirstOrDefault();
 
 	        if (itemScriptableObject != null)
 	        {
-		        AbstractWeapon initializedAbstractWeapon = GetInitializedWeapon(itemScriptableObject.Prefab.GetComponent<AbstractWeapon>());
+		        AbstractWeapon initializedAbstractWeapon = await GetInitializedWeapon(itemScriptableObject.Prefab.GetComponent<AbstractWeapon>());
             
 		        SetWeapon(initializedAbstractWeapon);
 	        }
         }
 
-        private AbstractWeapon GetInitializedWeapon(AbstractWeapon firstAbstractWeapon)
+        private async UniTask<AbstractWeapon> GetInitializedWeapon(AbstractWeapon firstAbstractWeapon)
         {
-            AbstractWeapon abstractWeapon = _weaponFactory.CreateWeapon(firstAbstractWeapon, _transform);
+            AbstractWeapon abstractWeapon =  await _weaponFactory.CreateWeapon(firstAbstractWeapon, _transform);
             return abstractWeapon;
         }
 
