@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 namespace Game.PlayerScripts.Move
 {
+	[RequireComponent(typeof(CapsuleCollider2D))]
     public class SurfaceInformant : MonoBehaviour
     {
         [SerializeField] private bool _isDebug;
@@ -97,6 +98,7 @@ namespace Game.PlayerScripts.Move
             Moves?.Invoke(_canWalkOnSlope);
         }
 
+        #if UNITY_EDITOR
         private void OnDrawGizmos()
         {
             if (_isDebug == true)
@@ -111,5 +113,6 @@ namespace Game.PlayerScripts.Move
                 Gizmos.DrawWireSphere(_centerPosition, 0.01f);
             }
         }
+        #endif
     }
 }

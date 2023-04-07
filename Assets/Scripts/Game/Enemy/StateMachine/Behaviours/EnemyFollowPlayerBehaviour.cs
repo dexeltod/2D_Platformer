@@ -10,6 +10,7 @@ using UnityEngine;
 namespace Game.Enemy.StateMachine.Behaviours
 {
 	[RequireComponent(typeof(AnimationHasher), typeof(Animator), typeof(Rigidbody2D))]
+	[RequireComponent(typeof(EnemyObserver))]
 	public class EnemyFollowPlayerBehaviour : MonoBehaviour
 	{
 		[SerializeField] private EnemyData _enemyData;

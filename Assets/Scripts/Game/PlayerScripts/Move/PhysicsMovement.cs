@@ -1,5 +1,4 @@
 using System.Collections;
-using Infrastructure.Services;
 using Infrastructure.Services.Interfaces;
 using UnityEngine;
 using UnityEngine.Events;
@@ -8,6 +7,7 @@ namespace Game.PlayerScripts.Move
 {
 	[RequireComponent(typeof(SurfaceInformant))]
 	[RequireComponent(typeof(Rigidbody2D))]
+	[RequireComponent(typeof(GroundChecker))]
 	public class PhysicsMovement : MonoBehaviour
 	{
 		private const float MinFallVelocity = -0.5f;

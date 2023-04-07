@@ -13,7 +13,7 @@ using UnityEngine.Events;
 namespace Game.Enemy
 {
 	//need decompose
-    [RequireComponent(typeof(CapsuleCollider2D))]
+    [RequireComponent(typeof(CapsuleCollider2D), typeof(EnemyBehaviour))]
     public abstract class Enemy : MonoBehaviour, IWeaponVisitor
     {
         [SerializeField] private EnemyData _enemyData;

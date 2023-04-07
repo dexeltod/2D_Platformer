@@ -8,7 +8,9 @@ namespace Game.Animation.Enviroment.LampPostsGlitch
     public class LampPostGlitcher : MonoBehaviour
     {
         [SerializeField] private bool _isWork = true;
-
+        [SerializeField] private float _minStartDelay = 10;
+        [SerializeField] private float _maxStartDelay = 20;
+        
         private Animator _animator;
 
         private void Start()
@@ -19,10 +21,11 @@ namespace Game.Animation.Enviroment.LampPostsGlitch
 
         private IEnumerator EnableLight()
         {
-            float startDelay = Random.Range(10, 20f);
+            float startDelay = Random.Range(_minStartDelay, _minStartDelay);
             WaitForSeconds workTime = new(startDelay);
 
-            float glitchDelay = Random.Range(0, 1f);
+            float maxGlitchDelay = 1f;
+            float glitchDelay = Random.Range(0, maxGlitchDelay);
             WaitForSeconds glitchTime = new(glitchDelay);
 
             while (_isWork)

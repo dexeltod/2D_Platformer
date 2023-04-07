@@ -21,11 +21,15 @@ namespace Game.PlayerScripts.Weapons.Bullets
         public Bullet Get(Transform parent)
         {
             Bullet bullet = _bullets.FirstOrDefault(bullet => bullet.gameObject.activeSelf == false);
-            bullet.gameObject.SetActive(true);
-            bullet.transform.position = parent.position;
-
+            
             if (bullet != null)
-                return bullet;
+            {
+	            bullet.gameObject.SetActive(true);
+	            bullet.transform.position = parent.position;
+
+	            if (bullet != null)
+		            return bullet;
+            }
 
             return null;
         }

@@ -13,6 +13,7 @@
         <ui:VisualElement name="Sliders" style="width: 100%;">
             <ui:Slider picking-mode="Ignore" label="All" value="0" high-value="0" low-value="-80" show-input-field="false" text="SAVE" name="Master" class="sliders" />
             <ui:Slider picking-mode="Ignore" label="Music" value="0" high-value="0" low-value="-80" show-input-field="false" text="SAVE" name="Music" class="sliders" />
+            <ui:Slider picking-mode="Ignore" label="Sounds" value="0" high-value="0" low-value="-80" show-input-field="false" text="SAVE" name="Sounds" class="sliders" />
             <ui:Slider picking-mode="Ignore" label="Interface" value="0" high-value="0" low-value="-80" show-input-field="false" text="SAVE" name="UISounds" inverted="false" focusable="true" class="sliders" />
         </ui:VisualElement>
         <ui:VisualElement name="Buttons" focusable="false" style="flex-direction: row; flex-shrink: 0; align-items: flex-start; width: 100%; -unity-background-scale-mode: scale-to-fit; justify-content: center; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; font-size: 0; -unity-text-align: upper-center;">

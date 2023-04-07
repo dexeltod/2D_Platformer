@@ -1,14 +1,17 @@
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
-public class DamageSoundPlayer : MonoBehaviour
+namespace Game.Sound
 {
-	[SerializeField] private AudioSource _audioSource;
-
-	public void Play(AudioClip clip)
+	[RequireComponent(typeof(AudioSource))]
+	public class DamageSoundPlayer : MonoBehaviour
 	{
-		_audioSource.enabled = true;
-		_audioSource.clip = clip;
-		_audioSource.Play();
+		[SerializeField] private AudioSource _audioSource;
+
+		public void Play(AudioClip clip)
+		{
+			_audioSource.enabled = true;
+			_audioSource.clip = clip;
+			_audioSource.Play();
+		}
 	}
 }

@@ -4,6 +4,7 @@ using Cysharp.Threading.Tasks;
 using Game.Animation.AnimationHashes.Characters;
 using Game.Enemy;
 using Game.PlayerScripts.Weapons.MeleeTrigger;
+using Game.Sound;
 using Infrastructure.GameLoading;
 using Infrastructure.Services.AssetManagement;
 using UnityEngine;

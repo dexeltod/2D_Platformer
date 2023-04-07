@@ -296,7 +296,7 @@ MonoBehaviour:
   _maxSlopeAngle: 57
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 1544
   _slopeCheckDistance: 1
 --- !u!70 &6749755669405338632
 CapsuleCollider2D:

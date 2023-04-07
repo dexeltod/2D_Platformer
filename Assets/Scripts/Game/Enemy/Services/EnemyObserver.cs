@@ -6,6 +6,7 @@ using UnityEngine.Serialization;
 
 namespace Game.Enemy.Services
 {
+	[RequireComponent(typeof(Collider2D))]
 	public class EnemyObserver : MonoBehaviour
 	{
 		private const int RightRotation = 0;
@@ -20,10 +21,10 @@ namespace Game.Enemy.Services
 		[SerializeField] private Transform _ledgeCheckTransform;
 
 		[Header("Debug")] [SerializeField] private bool _isEnableGizmos;
-
-		private Collider2D _collider2D;
 		public event Action<bool> TouchedPlayer;
 		public event Action<bool> SeenPlayer;
+
+		private Collider2D _collider2D;
 
 		public int FacingDirection { get; private set; }
 
@@ -82,7 +83,7 @@ namespace Game.Enemy.Services
 		}
 
 		private void OnSeeEnemy(bool isSeeEnemy) =>
-			SeenPlayer.Invoke(isSeeEnemy);
+			SeenPlayer?.Invoke(isSeeEnemy);
 
 		private void OnDrawGizmos()
 		{

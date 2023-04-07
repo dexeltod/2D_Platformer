@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game.Enemy.StateMachine.Behaviours
 {
-    [RequireComponent(typeof(AnimationHasher), typeof(Animator))]
+    [RequireComponent(typeof(AnimationHasher), typeof(Animator), typeof(CapsuleCollider2D))]
 
     public class EnemyDieBehaviour : MonoBehaviour
     {

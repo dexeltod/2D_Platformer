@@ -343,7 +343,7 @@ MonoBehaviour:
   _maxSlopeAngle: 57
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 1544
   _slopeCheckDistance: 1
 --- !u!1 &4161490243778442859
 GameObject:

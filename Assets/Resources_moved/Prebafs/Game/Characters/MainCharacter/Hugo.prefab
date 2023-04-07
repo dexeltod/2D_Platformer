@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 8144097415260023477}
   - component: {fileID: 5809762275745763648}
   - component: {fileID: 4549560561326365396}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TriggerForSlide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 1024
 --- !u!1 &5677870524574136158
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,7 +473,7 @@ MonoBehaviour:
   - {x: 0.030651003, y: 0.6976721, z: 0}
   m_ShapePathHash: -1063575435
   m_Mesh: {fileID: 0}
-  m_InstanceId: 109050
+  m_InstanceId: 91048
 --- !u!114 &3334711396594127323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,7 +544,7 @@ MonoBehaviour:
   _maxSlopeAngle: 57
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 1544
   _slopeCheckDistance: 0.6
 --- !u!114 &6716184748015567100
 MonoBehaviour:
@@ -585,7 +585,7 @@ MonoBehaviour:
   _isDebugEnable: 1
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 520
+    m_Bits: 1544
   _groundCheckSize: {x: 0.1, y: 0.01}
 --- !u!114 &5229234808615958028
 MonoBehaviour:

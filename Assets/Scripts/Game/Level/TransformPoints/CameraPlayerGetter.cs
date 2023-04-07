@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace Game.Level.TransformPoints
 {
+	[RequireComponent(typeof(CinemachineVirtualCamera))]
     public class CameraPlayerGetter : MonoBehaviour
     {
         private Transform _player;

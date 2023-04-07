@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Game.Enemy.Services
 {
+	[RequireComponent(typeof(BoxCollider2D))]
 	public class EnemyMeleeDamageTrigger : MonoBehaviour
 	{
 		private Collider2D _collider;
